@@ -1,0 +1,342 @@
+{% extends "base.html" %}
+{% block title %}Meistervorbereitungskurse – Vergleich{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+.page-header{background:var(--navy);padding:2rem 0 1.5rem;color:#fff}
+.page-header h1{font-family:'Syne',sans-serif;font-size:1.75rem;font-weight:700;letter-spacing:-.5px}
+.page-header p{margin-top:.35rem;font-size:.9rem;color:rgba(255,255,255,.65)}
+
+.filter-bar{background:var(--bg-card);border-bottom:1px solid var(--border);padding:.85rem 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.filter-row{display:flex;gap:.55rem;align-items:center;flex-wrap:wrap}
+.filter-row select,.filter-row input[type="date"]{height:36px;padding:0 .7rem;border:1px solid var(--border);border-radius:var(--radius);font-family:inherit;font-size:.85rem;background:var(--bg);color:var(--text);cursor:pointer}
+.filter-row select:focus,.filter-row input[type="date"]:focus{outline:2px solid var(--amber);border-color:transparent}
+.date-range{display:flex;align-items:center;gap:.35rem;font-size:.82rem;color:var(--text-lt)}
+.date-range input{width:140px}
+.btn{height:36px;padding:0 1rem;border:none;border-radius:var(--radius);font-family:inherit;font-size:.85rem;font-weight:500;cursor:pointer;transition:background .15s}
+.btn-ghost{background:transparent;color:var(--text-mid);border:1px solid var(--border)}.btn-ghost:hover{background:var(--bg)}
+.view-toggle{display:flex;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-left:auto}
+.view-toggle button{height:34px;padding:0 .85rem;border:none;font-family:inherit;font-size:.82rem;font-weight:500;cursor:pointer;background:var(--bg);color:var(--text-mid);transition:background .15s,color .15s}
+.view-toggle button.active{background:var(--navy);color:#fff}
+
+/* Multi-select parts dropdown */
+.parts-wrap{position:relative}
+.parts-btn{height:36px;padding:0 .75rem;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg);font-family:inherit;font-size:.85rem;cursor:pointer;white-space:nowrap;color:var(--text)}
+.parts-btn.active-filter{background:var(--navy);color:#fff;border-color:var(--navy)}
+.parts-dropdown{display:none;position:absolute;top:40px;left:0;z-index:200;background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:0 4px 12px rgba(0,0,0,.12);min-width:200px;padding:.5rem}
+.parts-dropdown.open{display:block}
+.parts-dropdown label{display:flex;align-items:center;gap:.5rem;padding:.3rem .4rem;border-radius:4px;cursor:pointer;font-size:.85rem}
+.parts-dropdown label:hover{background:var(--bg)}
+.parts-dropdown hr{border:none;border-top:1px solid var(--border);margin:.4rem 0}
+.parts-apply{display:block;width:100%;margin-top:.4rem;padding:6px;background:var(--navy);color:#fff;border:none;border-radius:4px;font-family:inherit;font-size:.82rem;cursor:pointer}
+
+.main{padding:1.5rem 0 3rem}
+.results-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:.85rem}
+.results-meta{font-size:.82rem;color:var(--text-lt)}
+
+.course-table{width:100%;border-collapse:collapse;background:var(--bg-card);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);font-size:.875rem}
+.course-table thead{background:var(--navy);color:#fff;font-family:'Syne',sans-serif;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase}
+.course-table th{padding:.7rem 1rem;text-align:left;font-weight:600}
+.course-table td{padding:.7rem 1rem;border-bottom:1px solid var(--border);vertical-align:top}
+.course-table tr:last-child td{border-bottom:none}
+.course-table tbody tr:hover{background:#F9F7F3}
+.course-title{font-weight:500;color:var(--navy);line-height:1.35}
+.course-meta{font-size:.78rem;color:var(--text-lt);margin-top:2px}
+.price{font-weight:600;color:var(--text);white-space:nowrap}
+.price-na{color:var(--text-lt)}
+.badge{display:inline-block;padding:2px 8px;border-radius:20px;font-size:.72rem;font-weight:500;background:var(--bg);border:1px solid var(--border);color:var(--text-mid)}
+.badge-full{background:#FEE2E2;border-color:#FCA5A5;color:#991B1B}
+.badge-few{background:#FEF9C3;border-color:#FCD34D;color:#92400E}
+.badge-available{background:#DCFCE7;border-color:#86EFAC;color:#166534}
+.link-icon{font-size:.8rem;color:var(--navy-mid);text-decoration:none}
+.link-icon:hover{text-decoration:underline}
+#map{height:600px;border-radius:var(--radius);box-shadow:var(--shadow)}
+.map-notice{font-size:.82rem;color:var(--text-lt);margin-bottom:.75rem}
+.mv-popup{font-family:'DM Sans',sans-serif;min-width:230px}
+.mv-popup-course{padding:.5rem 0;border-bottom:1px solid #eee}
+.mv-popup-course:last-of-type{border-bottom:none}
+.mv-popup-course strong{font-size:.85rem;color:#1B3A5C;display:block;line-height:1.3}
+.mv-popup-course .meta{font-size:.78rem;color:#666;margin-top:2px}
+.mv-popup-footer{margin-top:.6rem;display:flex;gap:.4rem;flex-wrap:wrap}
+.mv-popup-footer a{display:inline-block;padding:4px 10px;background:#1B3A5C;color:#fff !important;border-radius:4px;font-size:.78rem;text-decoration:none !important}
+.mv-popup-footer a.ext{background:var(--amber,#C97B1A)}
+.pagination{display:flex;gap:.4rem;margin-top:1.25rem;align-items:center;font-size:.85rem}
+.pagination a,.pagination span{display:inline-flex;align-items:center;justify-content:center;min-width:32px;height:32px;padding:0 .5rem;border-radius:var(--radius);border:1px solid var(--border);background:var(--bg-card);color:var(--text-mid)}
+.pagination a:hover{background:var(--bg);text-decoration:none}
+.pagination .current{background:var(--navy);color:#fff;border-color:var(--navy)}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <div class="container">
+    <h1>Meistervorbereitungskurse</h1>
+    <p>Vergleich der Kursangebote von Handwerkskammern in Rheinland-Pfalz</p>
+  </div>
+</div>
+
+<div class="filter-bar">
+  <div class="container">
+    <form method="get" id="filter-form">
+      <input type="hidden" name="view" id="view-input" value="{{ view_mode }}">
+      <div class="filter-row">
+
+        <select name="chamber" onchange="this.form.submit()">
+          <option value="">Alle Kammern</option>
+          {% for c in chambers %}
+            <option value="{{ c.slug }}" {% if sel_chamber == c.slug %}selected{% endif %}>{{ c.short_name }}</option>
+          {% endfor %}
+        </select>
+
+        <select name="trade" onchange="this.form.submit()">
+          <option value="">Alle Gewerke</option>
+          {% for t in trades %}
+            <option value="{{ t.slug }}" {% if sel_trade == t.slug %}selected{% endif %}>{{ t.name }}</option>
+          {% endfor %}
+        </select>
+
+        <select name="format" onchange="this.form.submit()">
+          <option value="">Zeitmodell</option>
+          {% for key, label in formats %}
+            <option value="{{ key }}" {% if sel_format == key %}selected{% endif %}>{{ label }}</option>
+          {% endfor %}
+        </select>
+
+        <select name="teaching" onchange="this.form.submit()">
+          <option value="">Unterrichtsform</option>
+          {% for key, label in teaching_modes %}
+            <option value="{{ key }}" {% if sel_teaching == key %}selected{% endif %}>{{ label }}</option>
+          {% endfor %}
+        </select>
+
+        <!-- Parts multi-select dropdown -->
+        <div class="parts-wrap" id="parts-wrap">
+          <button type="button" class="parts-btn {% if sel_parts %}active-filter{% endif %}" id="parts-btn" onclick="toggleParts(event)">
+            {% if sel_parts %}
+              {% for p in sel_parts %}Teil {% if p == '1' %}I{% elif p == '2' %}II{% elif p == '3' %}III{% elif p == '4' %}IV{% endif %}{% if not forloop.last %}, {% endif %}{% endfor %}{% if sel_include_combos %} +Kombi{% endif %} ▾
+            {% else %}
+              Teile ▾
+            {% endif %}
+          </button>
+          <div class="parts-dropdown" id="parts-dropdown">
+            <label><input type="checkbox" name="part" value="1" {% if '1' in sel_parts %}checked{% endif %}> Teil I – Fachpraxis</label>
+            <label><input type="checkbox" name="part" value="2" {% if '2' in sel_parts %}checked{% endif %}> Teil II – Fachtheorie</label>
+            <label><input type="checkbox" name="part" value="3" {% if '3' in sel_parts %}checked{% endif %}> Teil III – Betriebswirtschaft</label>
+            <label><input type="checkbox" name="part" value="4" {% if '4' in sel_parts %}checked{% endif %}> Teil IV – Pädagogik</label>
+            <hr>
+            <label title="Zeigt auch Kurse an, die den gewählten Teil in Kombination mit weiteren Teilen anbieten">
+              <input type="checkbox" name="include_combos" value="1" {% if sel_include_combos %}checked{% endif %}> Kombikurse einschließen
+            </label>
+            <button type="submit" class="parts-apply">Anwenden</button>
+          </div>
+        </div>
+
+        <div class="date-range">
+          Start ab <input type="date" name="date_from" value="{{ sel_date_from }}" onchange="this.form.submit()">
+          bis      <input type="date" name="date_to"   value="{{ sel_date_to }}"   onchange="this.form.submit()">
+        </div>
+
+        {% if sel_chamber or sel_trade or sel_format or sel_teaching or sel_parts or sel_date_from or sel_date_to %}
+          <a href="/?view={{ view_mode }}" class="btn btn-ghost">✕ Zurücksetzen</a>
+        {% endif %}
+
+        <div class="view-toggle">
+          <button type="button" id="btn-list" class="{% if view_mode != 'map' %}active{% endif %}" onclick="setView('list')">☰ Liste</button>
+          <button type="button" id="btn-map"  class="{% if view_mode == 'map'  %}active{% endif %}" onclick="setView('map')">⊙ Karte</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="main">
+  <div class="container">
+
+    <!-- LIST VIEW -->
+    <div id="view-list" {% if view_mode == 'map' %}style="display:none"{% endif %}>
+      <div class="results-bar">
+        <p class="results-meta">
+          {% if paginator %}{{ paginator.count }}{% else %}{{ offers|length }}{% endif %}
+          Kursangebot{% if paginator and paginator.count != 1 %}e{% endif %} gefunden
+        </p>
+        <select name="per_page" form="filter-form" onchange="document.getElementById('filter-form').submit()"
+                style="height:32px;padding:0 .6rem;border:1px solid var(--border);border-radius:var(--radius);font-family:inherit;font-size:.82rem;background:var(--bg);cursor:pointer">
+          <option value="" {% if not sel_per_page %}selected{% endif %}>30 pro Seite</option>
+          {% for n in per_page_options %}
+            <option value="{{ n }}" {% if sel_per_page == n|stringformat:'s' %}selected{% endif %}>{{ n }} pro Seite</option>
+          {% endfor %}
+          <option value="all" {% if sel_per_page == 'all' %}selected{% endif %}>Alle anzeigen</option>
+        </select>
+      </div>
+
+      <table class="course-table">
+        <thead>
+          <tr>
+            <th>Kurs</th><th>HWK</th><th>Teile</th><th>Zeitmodell</th><th>Unterrichtsform</th>
+            <th>Startdatum</th><th>Enddatum</th><th>Dauer</th>
+            <th>Kursgebühr</th><th>Prüfungsgebühr</th><th>Ort</th><th>Verfügbarkeit</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for offer in offers %}
+          <tr>
+            <td>
+              {% if offer.source_url %}
+                <a class="course-title link-icon" href="{{ offer.source_url }}" target="_blank">{{ offer.title }} ↗</a>
+              {% else %}
+                <div class="course-title">{{ offer.title }}</div>
+              {% endif %}
+              {% if offer.trade %}
+                <div class="course-meta">{{ offer.trade.name }}{% if offer.trade.berufenet_url %} · <a href="{{ offer.trade.berufenet_url }}" target="_blank" class="link-icon">Berufenet ↗</a>{% endif %}</div>
+              {% endif %}
+            </td>
+            <td style="white-space:nowrap;font-size:.82rem;">{{ offer.chamber.short_name }}</td>
+            <td><span class="badge">{{ offer.parts_label }}</span></td>
+            <td>{{ offer.get_format_display }}</td>
+            <td>{{ offer.get_teaching_mode_display }}</td>
+            <td style="white-space:nowrap;font-size:.82rem;">{% if offer.start_date %}{{ offer.start_date|date:"d.m.Y" }}{% else %}—{% endif %}</td>
+            <td style="white-space:nowrap;font-size:.82rem;">{% if offer.end_date %}{{ offer.end_date|date:"d.m.Y" }}{% else %}—{% endif %}</td>
+            <td style="white-space:nowrap;">{% if offer.duration_hours %}{{ offer.duration_hours }} Std.{% else %}—{% endif %}</td>
+            <td>{% if offer.course_fee %}<span class="price">{{ offer.course_fee|floatformat:0 }} €</span>{% else %}<span class="price-na">—</span>{% endif %}</td>
+            <td>{% if offer.exam_fee_scraped %}<span class="price">{{ offer.exam_fee_scraped|floatformat:0 }} €</span>{% else %}<span class="price-na">—</span>{% endif %}</td>
+            <td>{{ offer.city|default:"—" }}</td>
+            <td>
+              {% if offer.availability == 'full' %}<span class="badge badge-full">Ausgebucht</span>
+              {% elif offer.availability == 'few_spots' %}<span class="badge badge-few">Wenige Plätze</span>
+              {% elif offer.availability == 'available' %}<span class="badge badge-available">Freie Plätze</span>
+              {% else %}<span class="badge">–</span>{% endif %}
+            </td>
+          </tr>
+          {% empty %}
+          <tr><td colspan="12" style="text-align:center;color:var(--text-lt);padding:2rem;">Keine Kurse gefunden.</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      {% if is_paginated %}
+      <div class="pagination">
+        {% if page_obj.has_previous %}
+          <a href="?{{ request.GET.urlencode }}&page={{ page_obj.previous_page_number }}">‹</a>
+        {% endif %}
+        <span class="current">{{ page_obj.number }}</span>
+        <span style="color:var(--text-lt)">von {{ paginator.num_pages }}</span>
+        {% if page_obj.has_next %}
+          <a href="?{{ request.GET.urlencode }}&page={{ page_obj.next_page_number }}">›</a>
+        {% endif %}
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- MAP VIEW -->
+    <div id="view-map" {% if view_mode != 'map' %}style="display:none"{% endif %}>
+      <p class="map-notice" id="map-notice">Nur Kurse mit bekannten Koordinaten werden angezeigt. Führe <code>python manage.py geocode_offers</code> aus um Koordinaten zu ermitteln.</p>
+      <div id="map"></div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const MAP_DATA    = {{ map_data_json|safe }};
+const LIST_PARAMS = "{{ list_url_params|escapejs }}";
+
+// View toggle
+function setView(mode) {
+  document.getElementById('view-input').value = mode;
+  document.getElementById('view-list').style.display = mode === 'list' ? '' : 'none';
+  document.getElementById('view-map').style.display  = mode === 'map'  ? '' : 'none';
+  document.getElementById('btn-list').classList.toggle('active', mode === 'list');
+  document.getElementById('btn-map').classList.toggle('active',  mode === 'map');
+  if (mode === 'map' && !window._mapInit) initMap();
+}
+
+// Parts dropdown
+function toggleParts(e) {
+  e.stopPropagation();
+  document.getElementById('parts-dropdown').classList.toggle('open');
+}
+document.addEventListener('click', function(e) {
+  if (!document.getElementById('parts-wrap').contains(e.target)) {
+    document.getElementById('parts-dropdown').classList.remove('open');
+  }
+});
+
+// Map
+function initMap() {
+  window._mapInit = true;
+  if (MAP_DATA.length > 0) document.getElementById('map-notice').style.display = 'none';
+
+  const map = L.map('map').setView([50.0, 7.0], 8);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors © <a href="https://carto.com/">CARTO</a>',
+    maxZoom: 19,
+  }).addTo(map);
+
+  const chamberColors = {};
+  const palette = ['#1B3A5C','#C97B1A','#2E6E4A','#8B2635','#4A3B6B'];
+  let colorIdx = 0;
+
+  const groups = {};
+  MAP_DATA.forEach(function(o) {
+    const key = o.lat.toFixed(4) + ',' + o.lng.toFixed(4);
+    if (!groups[key]) groups[key] = { lat: o.lat, lng: o.lng, offers: [] };
+    groups[key].offers.push(o);
+  });
+
+  Object.values(groups).forEach(function(group) {
+    const offers = group.offers;
+    const firstChamber = offers[0].chamber;
+    if (!chamberColors[firstChamber]) chamberColors[firstChamber] = palette[colorIdx++ % palette.length];
+    const color = chamberColors[firstChamber];
+
+    const marker = L.circleMarker([group.lat, group.lng], {
+      radius: 9, color: color, fillColor: color, fillOpacity: .85, weight: 2,
+    }).addTo(map);
+
+    const visible = offers.slice(0, 3);
+    const extra   = offers.length - visible.length;
+    let html = `<div class="mv-popup"><strong style="font-size:.9rem;color:#1B3A5C">📍 ${visible[0].city}</strong>
+      <div style="font-size:.75rem;color:#888;margin-bottom:.4rem">${firstChamber}</div>`;
+
+    visible.forEach(function(o) {
+      const fee     = o.fee      ? o.fee.toLocaleString('de-DE')      + '\u00a0€' : 'k.A.';
+      const examFee = o.exam_fee ? o.exam_fee.toLocaleString('de-DE') + '\u00a0€' : null;
+      const titleEl = o.url
+        ? `<a href="${o.url}" target="_blank" style="color:#1B3A5C;font-weight:500;font-size:.85rem;display:block;line-height:1.3;text-decoration:none">${o.title} ↗</a>`
+        : `<strong style="font-size:.85rem;color:#1B3A5C;display:block;line-height:1.3">${o.title}</strong>`;
+      html += `<div class="mv-popup-course">
+        ${titleEl}
+        <div class="meta">${o.parts} · ${o.format} · ${o.teaching}</div>
+        <div class="meta">Startdatum: ${o.start || '–'}</div>
+        <div class="meta">Kursgebühr: ${fee}</div>
+        ${examFee ? `<div class="meta">Prüfungsgebühr: ${examFee}</div>` : ''}
+      </div>`;
+    });
+
+    const listHref = '/?' + (LIST_PARAMS ? LIST_PARAMS + '&' : '') + 'view=list';
+    html += `<div class="mv-popup-footer">`;
+    if (extra > 0) html += `<div style="font-size:.75rem;color:#888;margin-bottom:.4rem;width:100%">+ ${extra} weitere Kurs${extra !== 1 ? 'e' : ''} an diesem Standort</div>`;
+    html += `<a href="${listHref}">☰ Zur Liste</a>`;
+    html += `</div></div>`;
+
+    marker.bindPopup(html, { maxWidth: 290 });
+  });
+
+  const legend = L.control({ position: 'bottomright' });
+  legend.onAdd = function() {
+    const div = L.DomUtil.create('div');
+    div.style.cssText = 'background:#fff;padding:8px 12px;border-radius:6px;font-size:.8rem;box-shadow:0 1px 4px rgba(0,0,0,.15)';
+    div.innerHTML = '<strong>Kammer</strong><br>' +
+      Object.entries(chamberColors).map(([n, c]) =>
+        `<span style="display:inline-block;width:10px;height:10px;background:${c};border-radius:50%;margin-right:5px"></span>${n}`
+      ).join('<br>');
+    return div;
+  };
+  legend.addTo(map);
+}
+
+if ('{{ view_mode }}' === 'map') initMap();
+</script>
+{% endblock %}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Meistervergleich{% endblock %}</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #F4F1EB;
+      --bg-card:   #FFFFFF;
+      --navy:      #1B3A5C;
+      --navy-mid:  #2A5080;
+      --amber:     #C97B1A;
+      --amber-lt:  #F0A830;
+      --text:      #1E1E1E;
+      --text-mid:  #555555;
+      --text-lt:   #888888;
+      --border:    #DDD9D0;
+      --radius:    6px;
+      --shadow:    0 1px 4px rgba(0,0,0,.08);
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── Nav ── */
+    nav {
+      background: var(--navy);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+    .nav-brand {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: #FFFFFF;
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    .nav-brand span { color: var(--amber-lt); }
+
+    /* ── Page container ── */
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* ── Misc ── */
+    a { color: var(--navy-mid); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 20px;
+      font-size: .72rem;
+      font-weight: 500;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text-mid);
+    }
+    .badge-full     { background: #FEE2E2; border-color: #FCA5A5; color: #991B1B; }
+    .badge-few      { background: #FEF9C3; border-color: #FCD34D; color: #92400E; }
+    .badge-available{ background: #DCFCE7; border-color: #86EFAC; color: #166534; }
+  </style>
+
+  {% block extra_head %}{% endblock %}
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="/">Meister<span>Vergleich</span></a>
+</nav>
+
+{% block content %}{% endblock %}
+
+</body>
+</html>
