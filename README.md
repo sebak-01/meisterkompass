@@ -68,6 +68,7 @@ meisterkompass/
 │   └── pages/
 │       ├── about.html        # Über MeisterKompass
 │       └── stat.html         # Zahlen zum Meister (statistics, planned)
+│       └── imprint.html      # Imprint   
 ├── .env                      # Local secrets — never commit to Git
 ├── requirements.txt
 └── README.md
@@ -173,8 +174,6 @@ python manage.py geocode_offers
 - [x] Trade name normalisation across chambers
 
 ### Planned
-- [ ] Exam fees for HWK Koblenz (manual entry)
-- [ ] Exam fees for HWK Rheinhessen (manual entry)
 - [ ] Statistics page (Zahlen zum Meister)
 - [ ] GitHub Actions cron job + Render/Neon deployment
 - [ ] AFBG / Meister-BAföG funding calculator
