@@ -27,10 +27,10 @@ jobs:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
           DJANGO_SETTINGS_MODULE: config.settings_prod
-          # Override SSL redirect for management commands (no HTTPS in CI)
-          SECURE_SSL_REDIRECT: "False"
           ALLOWED_HOSTS: "localhost"
           CSRF_TRUSTED_ORIGINS: "http://localhost"
+          # Disable HTTPS redirect for management commands (no HTTPS in CI)
+          SECURE_SSL_REDIRECT: "False"
         run: |
           python manage.py run_scrapers
           python manage.py geocode_offers
