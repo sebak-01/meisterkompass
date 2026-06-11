@@ -126,6 +126,21 @@
 .course-table{min-width:900px}
   #map{height:500px}
 }
+  /* ── Mobile accordion ── */
+  .course-table .mob-summary{display:none}
+  @media(max-width:640px){
+    .course-table .mob-summary{display:block!important}
+    .course-table .col-kurs{display:none!important}
+    .course-table .col-kammer{display:none!important}
+    .course-table .row-toggle{display:flex;justify-content:space-between;align-items:flex-start;
+      cursor:pointer;padding-bottom:.5rem;border-bottom:1px solid var(--border);margin-bottom:.3rem}
+    .row-title{font-weight:600;font-size:.88rem;color:var(--text)}
+    .chevron{transition:transform .2s;display:inline-block}
+    .course-table tr.open .chevron{transform:rotate(180deg)}
+    .course-table tbody td.detail-cell{display:none!important}
+    .course-table tbody tr.open td.detail-cell{display:flex!important}
+  }
+
 </style>
 {% endblock %}
 
@@ -309,8 +324,8 @@
           {% for offer in offers %}
           <tr>
             {# Mobile accordion header — tapping opens the detail cells #}
-            <td class="mob-summary">
-              <div class="row-toggle" onclick="toggleRow(this)">
+            <td class="mob-summary" onclick="toggleRow(this)" style="cursor:pointer">
+              <div class="row-toggle">
                 <div>
                   <div class="row-title">{{ offer.title|cut:"Meistervorbereitungskurs: " }}</div>
                   <div style="font-size:.75rem;color:var(--text-mid);margin-top:.15rem">{{ offer.chamber.short_name }}</div>
@@ -579,9 +594,10 @@ window.addEventListener('scroll', function() {
 });
 
 // ── Mobile accordion ──────────────────────────────────────────────────
-function toggleRow(toggleEl) {
-  var tr = toggleEl.closest('tr');
-  tr.classList.toggle('open');
+function toggleRow(td) {
+  // Works with iOS Safari: onclick on <td> with cursor:pointer
+  var tr = td.closest('tr');
+  if (tr) tr.classList.toggle('open');
 }
 // On desktop resize: reset all open states
 window.addEventListener('resize', function() {
@@ -594,30 +610,3 @@ window.addEventListener('resize', function() {
 
 </script>
 {% endblock %}
-  /* ── Mobile accordion ─────────────────────────────────────── */
-  /* Desktop: hide the mobile summary cell */
-  .mob-summary { display: none; }
-
-  @media (max-width: 640px) {
-    /* Show mobile summary cell, hide desktop Kurs+Kammer cells */
-    .mob-summary { display: block !important; }
-    .col-kurs, .col-kammer { display: none !important; }
-
-    /* Row toggle header */
-    .row-toggle {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      cursor: pointer;
-      padding-bottom: .5rem;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: .3rem;
-    }
-    .row-title { font-weight: 600; font-size: .88rem; color: var(--text); }
-    .chevron { transition: transform .2s; display: inline-block; }
-    .course-table tr.open .chevron { transform: rotate(180deg); }
-
-    /* Detail cells: hidden until row is opened */
-    .detail-cell { display: none !important; }
-    .course-table tr.open .detail-cell { display: flex !important; }
-  }
