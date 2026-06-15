@@ -12,9 +12,6 @@
     "vite": "^5.4.0"
   },
   "dependencies": {
-    "@fontsource-variable/dm-sans": "^5.2.8",
-    "@fontsource-variable/fraunces": "^5.2.9",
-    "@fontsource-variable/jetbrains-mono": "^5.2.8",
     "leaflet": "^1.9.4"
   }
 }
