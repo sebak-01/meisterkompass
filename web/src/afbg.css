@@ -51,6 +51,8 @@
   border: 1px solid var(--line-strong); border-radius: var(--radius);
   font-family: inherit; font-size: .85rem; background-color: var(--paper); color: var(--text);
 }
+/* reserve room for the custom chevron (overrides the shorthand above) */
+.field select { padding-right: 2rem; }
 .field select:focus-visible, .field input:focus-visible { outline: 2.5px solid var(--focus); outline-offset: 1px; }
 .field input[type="number"] { font-variant-numeric: tabular-nums; }
 .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: .65rem; }

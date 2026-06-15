@@ -48,6 +48,8 @@
   background-color: var(--paper); color: var(--text); cursor: pointer;
   transition: border-color .15s, box-shadow .15s;
 }
+/* reserve room for the custom chevron (overrides the shorthand above) */
+.filter-row select { padding-right: 2rem; }
 .filter-row select:hover, .filter-row input[type="date"]:hover { border-color: var(--ink-35); }
 .filter-row select:focus-visible,
 .filter-row input[type="date"]:focus-visible { outline: 2.5px solid var(--focus); outline-offset: 1px; }
@@ -124,7 +126,7 @@
 .results-meta { font-family: var(--mono); font-size: .76rem; letter-spacing: .04em; color: var(--text-lt); text-transform: uppercase; }
 .results-meta #results-count { color: var(--ink); font-weight: 600; }
 #f-per-page {
-  height: 34px; padding: 0 .6rem; border: 1px solid var(--line-strong);
+  height: 34px; padding: 0 2rem 0 .6rem; border: 1px solid var(--line-strong);
   border-radius: var(--radius); font-family: inherit; font-size: .8rem;
   background-color: var(--paper); cursor: pointer; color: var(--text);
 }
