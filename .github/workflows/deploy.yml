@@ -39,9 +39,10 @@ jobs:
 
       - name: Build
         working-directory: web
-        # For a custom domain (meisterkompass.de) the default base "/" is correct.
-        # For a *.github.io/<repo>/ project site, set VITE_BASE here, e.g.:
-        #   env: { VITE_BASE: "/meisterkompass/" }
+        # Project site lives at boredland.github.io/meisterkompass/, so assets
+        # must be served from that base path. For a custom domain, set "/".
+        env:
+          VITE_BASE: "/meisterkompass/"
         run: npm run build
 
       - name: Upload Pages artifact

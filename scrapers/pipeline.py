@@ -303,6 +303,52 @@ def _load_previous_courses() -> list[dict]:
     return []
 
 
+def _scraped_rows_from_courses(records: list[dict]) -> list[dict]:
+    """Re-derive scraped per-part exam-fee rows from existing course records."""
+    rows: list[dict] = []
+    for r in records:
+        if r.get("exam_fee_scraped") is None:
+            continue
+        for part in r["parts"]:
+            rows.append({
+                "chamber_slug": r["chamber_slug"],
+                "trade_slug":   r["trade_slug"],
+                "part":         part,
+                "fee":          float(r["exam_fee_scraped"]),
+            })
+    return rows
+
+
+def rebake() -> int:
+    """
+    Re-resolve exam fees and the derived datasets from the existing
+    ``data/courses.json`` WITHOUT scraping. Use after editing
+    ``data/manual/exam_fees_manual.json`` to apply manual fee changes.
+    """
+    records = _load_previous_courses()
+    if not records:
+        raise SystemExit("No data/courses.json to rebake — run a scrape first.")
+
+    today_iso = date.today().isoformat()
+    scraped_rows = _scraped_rows_from_courses(records)
+    manual_rows = _load_manual_fee_rows()
+    lookup = build_exam_fee_lookup(scraped_rows, manual_rows)
+
+    for rec in records:
+        rec["exam_fee"] = resolve_exam_fee(
+            rec["chamber_slug"], rec["trade_slug"], rec["parts"],
+            rec.get("exam_fee_scraped"), lookup,
+        )
+    records.sort(key=lambda r: (r["chamber_slug"], r["trade_name"] or "", r.get("start_date") or "9999", r.get("source_url", "")))
+
+    nested_fees, flat_fees = build_exam_fees_files(scraped_rows, manual_rows)
+    _write_json(COURSES_JSON, records)
+    _write_json(DATA_DIR / "exam_fees.json", {"nested": nested_fees, "flat": flat_fees})
+    _write_json(DATA_DIR / "course_fees.json", build_course_fees(records, today_iso))
+    logger.info("Rebaked %d courses with %d manual fee row(s).", len(records), len(manual_rows))
+    return len(records)
+
+
 def run(chamber: str | None = None, dry_run: bool = False) -> RunReport:
     today_iso = date.today().isoformat()
     selected = {chamber: SCRAPERS[chamber]} if chamber else dict(SCRAPERS)

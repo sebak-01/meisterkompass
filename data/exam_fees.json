@@ -1,5 +1,29 @@
 {
   "nested": {
+    "hwk-koblenz": {
+      "null": {
+        "1": {
+          "fee": 1200.0,
+          "fee_max": null,
+          "qualifier": "bis zu"
+        },
+        "2": {
+          "fee": 600.0,
+          "fee_max": null,
+          "qualifier": "bis zu"
+        },
+        "3": {
+          "fee": 400.0,
+          "fee_max": null,
+          "qualifier": "bis zu"
+        },
+        "4": {
+          "fee": 400.0,
+          "fee_max": null,
+          "qualifier": "bis zu"
+        }
+      }
+    },
     "hwk-pfalz": {
       "allgemein-teil-iii-iv": {
         "3": {
@@ -86,6 +110,30 @@
         "2": {
           "fee": 1300.0,
           "fee_max": null,
+          "qualifier": ""
+        }
+      }
+    },
+    "hwk-rheinhessen": {
+      "null": {
+        "1": {
+          "fee": 600.0,
+          "fee_max": 2000.0,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 300.0,
+          "fee_max": 700.0,
+          "qualifier": ""
+        },
+        "3": {
+          "fee": 220.0,
+          "fee_max": 300.0,
+          "qualifier": ""
+        },
+        "4": {
+          "fee": 220.0,
+          "fee_max": 500.0,
           "qualifier": ""
         }
       }
@@ -268,7 +316,7 @@
           "qualifier": ""
         },
         "2": {
-          "fee": 1650.0,
+          "fee": 420.0,
           "fee_max": null,
           "qualifier": ""
         },
@@ -477,6 +525,38 @@
   },
   "flat": [
     {
+      "chamber_slug": "hwk-koblenz",
+      "trade_slug": null,
+      "part": 1,
+      "fee": 1200.0,
+      "fee_max": null,
+      "qualifier": "bis zu"
+    },
+    {
+      "chamber_slug": "hwk-koblenz",
+      "trade_slug": null,
+      "part": 2,
+      "fee": 600.0,
+      "fee_max": null,
+      "qualifier": "bis zu"
+    },
+    {
+      "chamber_slug": "hwk-koblenz",
+      "trade_slug": null,
+      "part": 3,
+      "fee": 400.0,
+      "fee_max": null,
+      "qualifier": "bis zu"
+    },
+    {
+      "chamber_slug": "hwk-koblenz",
+      "trade_slug": null,
+      "part": 4,
+      "fee": 400.0,
+      "fee_max": null,
+      "qualifier": "bis zu"
+    },
+    {
       "chamber_slug": "hwk-pfalz",
       "trade_slug": "allgemein-teil-iii-iv",
       "part": 3,
@@ -586,6 +666,38 @@
       "part": 2,
       "fee": 1300.0,
       "fee_max": null,
+      "qualifier": ""
+    },
+    {
+      "chamber_slug": "hwk-rheinhessen",
+      "trade_slug": null,
+      "part": 1,
+      "fee": 600.0,
+      "fee_max": 2000.0,
+      "qualifier": ""
+    },
+    {
+      "chamber_slug": "hwk-rheinhessen",
+      "trade_slug": null,
+      "part": 2,
+      "fee": 300.0,
+      "fee_max": 700.0,
+      "qualifier": ""
+    },
+    {
+      "chamber_slug": "hwk-rheinhessen",
+      "trade_slug": null,
+      "part": 3,
+      "fee": 220.0,
+      "fee_max": 300.0,
+      "qualifier": ""
+    },
+    {
+      "chamber_slug": "hwk-rheinhessen",
+      "trade_slug": null,
+      "part": 4,
+      "fee": 220.0,
+      "fee_max": 500.0,
       "qualifier": ""
     },
     {
@@ -840,7 +952,7 @@
       "chamber_slug": "hwk-saarland",
       "trade_slug": "maler-und-lackierer",
       "part": 2,
-      "fee": 1650.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": ""
     },

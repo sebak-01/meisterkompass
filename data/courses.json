@@ -20,10 +20,10 @@
     "course_fee_display": "5.990 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "St. Elisabeth Str. 2",
@@ -54,10 +54,10 @@
     "course_fee_display": "2.850 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Herrstein",
     "street": "Schlossweg 6",
@@ -88,10 +88,10 @@
     "course_fee_display": "9.800 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 8",
@@ -122,10 +122,10 @@
     "course_fee_display": "9.800 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 8",
@@ -156,10 +156,10 @@
     "course_fee_display": "9.800 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 8",
@@ -190,10 +190,10 @@
     "course_fee_display": "9.800 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 8",
@@ -224,10 +224,10 @@
     "course_fee_display": "9.800 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 8",
@@ -258,10 +258,10 @@
     "course_fee_display": "9.800 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Straße 8",
@@ -292,10 +292,10 @@
     "course_fee_display": "9.800 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 8",
@@ -326,10 +326,10 @@
     "course_fee_display": "9.800 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Straße 8",
@@ -360,10 +360,10 @@
     "course_fee_display": "9.800 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 8",
@@ -394,10 +394,10 @@
     "course_fee_display": "9.800 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Straße 8",
@@ -428,10 +428,10 @@
     "course_fee_display": "9.800 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Straße 8",
@@ -462,10 +462,10 @@
     "course_fee_display": "9.800 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Straße 8",
@@ -496,10 +496,10 @@
     "course_fee_display": "7.350 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 6-8",
@@ -530,10 +530,10 @@
     "course_fee_display": "7.350 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 6-8",
@@ -564,10 +564,10 @@
     "course_fee_display": "4.690 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "St. Elisabeth Str. 2",
@@ -598,10 +598,10 @@
     "course_fee_display": "6.950 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Straße 9",
@@ -632,10 +632,10 @@
     "course_fee_display": "6.950 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Straße 9",
@@ -666,10 +666,10 @@
     "course_fee_display": "5.290 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "St. Elisabeth Str. 2",
@@ -700,10 +700,10 @@
     "course_fee_display": "5.290 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "St. Elisabeth Str. 2",
@@ -734,10 +734,10 @@
     "course_fee_display": "6.350 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "St. Elisabeth Str. 2",
@@ -768,10 +768,10 @@
     "course_fee_display": "6.350 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "St. Elisabeth Str. 2",
@@ -802,10 +802,10 @@
     "course_fee_display": "2.950 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Herrstein",
     "street": "Schlossweg 6",
@@ -836,10 +836,10 @@
     "course_fee_display": "9.700 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 8",
@@ -870,10 +870,10 @@
     "course_fee_display": "9.700 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Straße 8",
@@ -904,10 +904,10 @@
     "course_fee_display": "9.700 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 8",
@@ -938,10 +938,10 @@
     "course_fee_display": "9.700 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 8",
@@ -972,10 +972,10 @@
     "course_fee_display": "9.700 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Straße 8",
@@ -1006,10 +1006,10 @@
     "course_fee_display": "9.700 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 8",
@@ -1040,10 +1040,10 @@
     "course_fee_display": "9.700 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 8",
@@ -1074,10 +1074,10 @@
     "course_fee_display": "9.700 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 8",
@@ -1108,10 +1108,10 @@
     "course_fee_display": "9.700 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 8",
@@ -1142,10 +1142,10 @@
     "course_fee_display": "6.390 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 6-8",
@@ -1176,10 +1176,10 @@
     "course_fee_display": "9.200 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 8",
@@ -1210,10 +1210,10 @@
     "course_fee_display": "9.200 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "St. Elisabeth Str. 2",
@@ -1244,10 +1244,10 @@
     "course_fee_display": "9.200 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 8",
@@ -1278,10 +1278,10 @@
     "course_fee_display": "9.200 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Bad Neuenahr-Ahrweiler",
     "street": "Wilhelmstr. 20",
@@ -1312,10 +1312,10 @@
     "course_fee_display": "9.200 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 8",
@@ -1346,10 +1346,10 @@
     "course_fee_display": "9.200 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "St. Elisabeth Str. 2",
@@ -1380,10 +1380,10 @@
     "course_fee_display": "9.200 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 8",
@@ -1414,10 +1414,10 @@
     "course_fee_display": "9.200 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "St. Elisabeth Str. 2",
@@ -1448,10 +1448,10 @@
     "course_fee_display": "7.350 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "St. Elisabeth Str. 2",
@@ -1482,10 +1482,10 @@
     "course_fee_display": "7.350 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "St. Elisabeth Str. 2",
@@ -1516,10 +1516,10 @@
     "course_fee_display": "7.350 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "St. Elisabeth Str. 2",
@@ -1550,10 +1550,10 @@
     "course_fee_display": "6.950 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 8",
@@ -1584,10 +1584,10 @@
     "course_fee_display": "7.550 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 6",
@@ -1618,10 +1618,10 @@
     "course_fee_display": "7.550 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 6",
@@ -1652,10 +1652,10 @@
     "course_fee_display": "6.390 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 8",
@@ -1686,10 +1686,10 @@
     "course_fee_display": "7.550 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 6",
@@ -1720,10 +1720,10 @@
     "course_fee_display": "8.600 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 8",
@@ -1754,10 +1754,10 @@
     "course_fee_display": "8.600 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 6",
@@ -1788,10 +1788,10 @@
     "course_fee_display": "8.600 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 6",
@@ -1822,10 +1822,10 @@
     "course_fee_display": "6.990 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 6-8",
@@ -1856,10 +1856,10 @@
     "course_fee_display": "6.990 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 6-8",
@@ -1890,10 +1890,10 @@
     "course_fee_display": "6.990 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 6-8",
@@ -1923,10 +1923,10 @@
     "course_fee_display": "4.250 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 600.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 600 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 6-8",
@@ -1957,10 +1957,10 @@
     "course_fee_display": "9.490 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 8",
@@ -1991,10 +1991,10 @@
     "course_fee_display": "9.490 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 8",
@@ -2025,10 +2025,10 @@
     "course_fee_display": "9.490 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 8",
@@ -2059,10 +2059,10 @@
     "course_fee_display": "6.450 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 6",
@@ -2093,10 +2093,10 @@
     "course_fee_display": "9.500 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 8",
@@ -2127,10 +2127,10 @@
     "course_fee_display": "9.500 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 8",
@@ -2161,10 +2161,10 @@
     "course_fee_display": "9.500 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Str. 6",
@@ -2195,10 +2195,10 @@
     "course_fee_display": "3.370 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 800 €"
     },
     "city": "Koblenz",
     "street": "St. Elisabeth Str. 2",
@@ -2229,10 +2229,10 @@
     "course_fee_display": "3.370 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 800 €"
     },
     "city": "Bad Neuenahr-Ahrweiler",
     "street": "Wilhelmstr. 20",
@@ -2263,10 +2263,10 @@
     "course_fee_display": "3.370 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 800 €"
     },
     "city": "Wissen",
     "street": "Rathausstr. 32",
@@ -2297,10 +2297,10 @@
     "course_fee_display": "3.370 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 800 €"
     },
     "city": "Koblenz",
     "street": "St. Elisabeth Str. 2",
@@ -2331,10 +2331,10 @@
     "course_fee_display": "3.370 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 800 €"
     },
     "city": "Cochem",
     "street": "Ravenéstr. 18-20",
@@ -2365,10 +2365,10 @@
     "course_fee_display": "3.370 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 800 €"
     },
     "city": "Bad Neuenahr-Ahrweiler",
     "street": "Wilhelmstr. 20",
@@ -2399,10 +2399,10 @@
     "course_fee_display": "3.370 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 800 €"
     },
     "city": "Bad Kreuznach",
     "street": "Siemensstr. 8",
@@ -2433,10 +2433,10 @@
     "course_fee_display": "3.370 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 800 €"
     },
     "city": "Koblenz",
     "street": "St. Elisabeth Str. 2",
@@ -2467,10 +2467,10 @@
     "course_fee_display": "3.370 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 800 €"
     },
     "city": "Bad Neuenahr-Ahrweiler",
     "street": "Wilhelmstr. 20",
@@ -2501,10 +2501,10 @@
     "course_fee_display": "3.370 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 800 €"
     },
     "city": "Simmern",
     "street": "Vor dem Tor 2",
@@ -2535,10 +2535,10 @@
     "course_fee_display": "3.370 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 800 €"
     },
     "city": "Wissen",
     "street": "Rathausstr. 32",
@@ -2569,10 +2569,10 @@
     "course_fee_display": "3.370 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 800 €"
     },
     "city": "Koblenz",
     "street": "St. Elisabeth Str. 2",
@@ -2603,10 +2603,10 @@
     "course_fee_display": "3.370 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 800 €"
     },
     "city": "Koblenz",
     "street": "St. Elisabeth Str. 2",
@@ -2637,10 +2637,10 @@
     "course_fee_display": "3.370 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 800 €"
     },
     "city": "Cochem",
     "street": "Ravenéstr. 18-20",
@@ -2671,10 +2671,10 @@
     "course_fee_display": "3.370 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 800 €"
     },
     "city": "Herrstein",
     "street": "Schlossweg 6",
@@ -2705,10 +2705,10 @@
     "course_fee_display": "3.370 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 800 €"
     },
     "city": "Koblenz",
     "street": "St. Elisabeth Str. 2",
@@ -2739,10 +2739,10 @@
     "course_fee_display": "3.370 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 800 €"
     },
     "city": "Bad Neuenahr-Ahrweiler",
     "street": "Wilhelmstr. 20",
@@ -2773,10 +2773,10 @@
     "course_fee_display": "3.370 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 800 €"
     },
     "city": "Wissen",
     "street": "Rathausstr. 32",
@@ -2807,10 +2807,10 @@
     "course_fee_display": "3.370 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 800 €"
     },
     "city": "Koblenz",
     "street": "St. Elisabeth Str. 2",
@@ -2841,10 +2841,10 @@
     "course_fee_display": "3.290 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 800 €"
     },
     "city": "Simmern",
     "street": "Vor dem Tor 2",
@@ -2875,10 +2875,10 @@
     "course_fee_display": "3.370 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 800 €"
     },
     "city": "Bad Neuenahr-Ahrweiler",
     "street": "Wilhelmstr. 20",
@@ -2909,10 +2909,10 @@
     "course_fee_display": "3.370 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 800 €"
     },
     "city": "Bad Kreuznach",
     "street": "Siemensstr. 8",
@@ -2943,10 +2943,10 @@
     "course_fee_display": "3.370 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 800 €"
     },
     "city": "Koblenz",
     "street": "St. Elisabeth Str. 2",
@@ -2977,10 +2977,10 @@
     "course_fee_display": "3.370 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 800 €"
     },
     "city": "Bad Neuenahr-Ahrweiler",
     "street": "Wilhelmstr. 20",
@@ -3011,10 +3011,10 @@
     "course_fee_display": "3.370 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 800 €"
     },
     "city": "Wissen",
     "street": "Rathausstr. 32",
@@ -3045,10 +3045,10 @@
     "course_fee_display": "3.370 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 800 €"
     },
     "city": "Simmern",
     "street": "Vor dem Tor 2",
@@ -3079,10 +3079,10 @@
     "course_fee_display": "3.370 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 800 €"
     },
     "city": "Koblenz",
     "street": "St. Elisabeth Str. 2",
@@ -3113,10 +3113,10 @@
     "course_fee_display": "3.370 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 800 €"
     },
     "city": "Koblenz",
     "street": "St. Elisabeth Str. 2",
@@ -3147,10 +3147,10 @@
     "course_fee_display": "3.370 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 800 €"
     },
     "city": "Cochem",
     "street": "Ravenéstr. 18-20",
@@ -3181,10 +3181,10 @@
     "course_fee_display": "3.370 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 800 €"
     },
     "city": "Wissen",
     "street": "Rathausstr. 32",
@@ -3215,10 +3215,10 @@
     "course_fee_display": "3.370 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 800 €"
     },
     "city": "Koblenz",
     "street": "St. Elisabeth Str. 2",
@@ -3249,10 +3249,10 @@
     "course_fee_display": "3.370 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 800 €"
     },
     "city": "Herrstein",
     "street": "Schlossweg 6",
@@ -3283,10 +3283,10 @@
     "course_fee_display": "3.370 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 800 €"
     },
     "city": "Koblenz",
     "street": "St. Elisabeth Str. 2",
@@ -3317,10 +3317,10 @@
     "course_fee_display": "3.370 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 800 €"
     },
     "city": "Wissen",
     "street": "Rathausstr. 32",
@@ -3351,10 +3351,10 @@
     "course_fee_display": "3.370 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 800 €"
     },
     "city": "Bad Neuenahr-Ahrweiler",
     "street": "Wilhelmstr. 20",
@@ -3385,10 +3385,10 @@
     "course_fee_display": "3.370 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 800 €"
     },
     "city": "Cochem",
     "street": "Ravenéstr. 18-20",
@@ -3419,10 +3419,10 @@
     "course_fee_display": "3.370 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 800 €"
     },
     "city": "Koblenz",
     "street": "St. Elisabeth Str. 2",
@@ -3453,10 +3453,10 @@
     "course_fee_display": "3.370 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 800 €"
     },
     "city": "Bad Neuenahr-Ahrweiler",
     "street": "Wilhelmstr. 20",
@@ -3487,10 +3487,10 @@
     "course_fee_display": "9.590 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Straße 8",
@@ -3521,10 +3521,10 @@
     "course_fee_display": "9.590 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Straße 8",
@@ -3555,10 +3555,10 @@
     "course_fee_display": "9.590 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
+      "fee": 1800.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": ""
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
     },
     "city": "Koblenz",
     "street": "August-Horch-Straße 8",
@@ -4668,10 +4668,10 @@
     "course_fee_display": "6.600 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
-      "fee_max": null,
+      "fee": 900.0,
+      "fee_max": 2700.0,
       "qualifier": "",
-      "display": ""
+      "display": "900 € bis 2.700 €"
     },
     "city": "Mainz",
     "street": "Dekan-Laist-Str. 5",
@@ -4702,10 +4702,10 @@
     "course_fee_display": "6.600 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
-      "fee_max": null,
+      "fee": 900.0,
+      "fee_max": 2700.0,
       "qualifier": "",
-      "display": ""
+      "display": "900 € bis 2.700 €"
     },
     "city": "Mainz",
     "street": "Dekan-Laist-Str. 5",
@@ -4736,10 +4736,10 @@
     "course_fee_display": "6.600 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
-      "fee_max": null,
+      "fee": 900.0,
+      "fee_max": 2700.0,
       "qualifier": "",
-      "display": ""
+      "display": "900 € bis 2.700 €"
     },
     "city": "Mainz",
     "street": "Dekan-Laist-Str. 5",
@@ -4770,10 +4770,10 @@
     "course_fee_display": "7.300 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
-      "fee_max": null,
+      "fee": 900.0,
+      "fee_max": 2700.0,
       "qualifier": "",
-      "display": ""
+      "display": "900 € bis 2.700 €"
     },
     "city": "Mainz",
     "street": "",
@@ -4804,10 +4804,10 @@
     "course_fee_display": "5.200 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
-      "fee_max": null,
+      "fee": 900.0,
+      "fee_max": 2700.0,
       "qualifier": "",
-      "display": ""
+      "display": "900 € bis 2.700 €"
     },
     "city": "Mainz",
     "street": "Robert-Bosch-Straße 8",
@@ -4838,10 +4838,10 @@
     "course_fee_display": "4.950 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
-      "fee_max": null,
+      "fee": 900.0,
+      "fee_max": 2700.0,
       "qualifier": "",
-      "display": ""
+      "display": "900 € bis 2.700 €"
     },
     "city": "Mainz",
     "street": "Robert-Bosch-Straße 8",
@@ -4872,10 +4872,10 @@
     "course_fee_display": "4.950 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
-      "fee_max": null,
+      "fee": 900.0,
+      "fee_max": 2700.0,
       "qualifier": "",
-      "display": ""
+      "display": "900 € bis 2.700 €"
     },
     "city": "Mainz",
     "street": "",
@@ -4906,10 +4906,10 @@
     "course_fee_display": "7.500 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
-      "fee_max": null,
+      "fee": 900.0,
+      "fee_max": 2700.0,
       "qualifier": "",
-      "display": ""
+      "display": "900 € bis 2.700 €"
     },
     "city": "Mainz",
     "street": "Dekan-Laist-Str. 5",
@@ -4940,10 +4940,10 @@
     "course_fee_display": "7.500 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
-      "fee_max": null,
+      "fee": 900.0,
+      "fee_max": 2700.0,
       "qualifier": "",
-      "display": ""
+      "display": "900 € bis 2.700 €"
     },
     "city": "Mainz",
     "street": "Dekan-Laist-Str. 5",
@@ -4974,10 +4974,10 @@
     "course_fee_display": "7.900 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
-      "fee_max": null,
+      "fee": 900.0,
+      "fee_max": 2700.0,
       "qualifier": "",
-      "display": ""
+      "display": "900 € bis 2.700 €"
     },
     "city": "Mainz",
     "street": "Robert-Bosch-Str. 8",
@@ -5008,10 +5008,10 @@
     "course_fee_display": "7.900 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
-      "fee_max": null,
+      "fee": 900.0,
+      "fee_max": 2700.0,
       "qualifier": "",
-      "display": ""
+      "display": "900 € bis 2.700 €"
     },
     "city": "Mainz",
     "street": "Robert-Bosch-Str. 8",
@@ -5042,10 +5042,10 @@
     "course_fee_display": "7.900 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
-      "fee_max": null,
+      "fee": 900.0,
+      "fee_max": 2700.0,
       "qualifier": "",
-      "display": ""
+      "display": "900 € bis 2.700 €"
     },
     "city": "Mainz",
     "street": "Robert-Bosch-Str. 8",
@@ -5076,10 +5076,10 @@
     "course_fee_display": "5.700 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
-      "fee_max": null,
+      "fee": 900.0,
+      "fee_max": 2700.0,
       "qualifier": "",
-      "display": ""
+      "display": "900 € bis 2.700 €"
     },
     "city": "Mainz",
     "street": "Dekan-Laist-Str. 5",
@@ -5110,10 +5110,10 @@
     "course_fee_display": "5.700 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
-      "fee_max": null,
+      "fee": 900.0,
+      "fee_max": 2700.0,
       "qualifier": "",
-      "display": ""
+      "display": "900 € bis 2.700 €"
     },
     "city": "Mainz",
     "street": "Dekan-Laist-Str. 5",
@@ -5144,10 +5144,10 @@
     "course_fee_display": "5.700 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
-      "fee_max": null,
+      "fee": 900.0,
+      "fee_max": 2700.0,
       "qualifier": "",
-      "display": ""
+      "display": "900 € bis 2.700 €"
     },
     "city": "Mainz",
     "street": "Dekan-Laist-Str. 5",
@@ -5178,10 +5178,10 @@
     "course_fee_display": "6.300 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
-      "fee_max": null,
+      "fee": 900.0,
+      "fee_max": 2700.0,
       "qualifier": "",
-      "display": ""
+      "display": "900 € bis 2.700 €"
     },
     "city": "Mainz",
     "street": "Dekan-Laist-Str. 5",
@@ -5212,10 +5212,10 @@
     "course_fee_display": "6.100 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
-      "fee_max": null,
+      "fee": 900.0,
+      "fee_max": 2700.0,
       "qualifier": "",
-      "display": ""
+      "display": "900 € bis 2.700 €"
     },
     "city": "Mainz",
     "street": "Robert-Bosch-Str. 8",
@@ -5246,10 +5246,10 @@
     "course_fee_display": "6.200 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
-      "fee_max": null,
+      "fee": 900.0,
+      "fee_max": 2700.0,
       "qualifier": "",
-      "display": ""
+      "display": "900 € bis 2.700 €"
     },
     "city": "Mainz",
     "street": "Robert-Bosch-Str. 8",
@@ -5280,10 +5280,10 @@
     "course_fee_display": "6.200 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
-      "fee_max": null,
+      "fee": 900.0,
+      "fee_max": 2700.0,
       "qualifier": "",
-      "display": ""
+      "display": "900 € bis 2.700 €"
     },
     "city": "Mainz",
     "street": "Robert-Bosch-Str. 8",
@@ -5313,10 +5313,10 @@
     "course_fee_display": "650 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
-      "fee_max": null,
+      "fee": 220.0,
+      "fee_max": 500.0,
       "qualifier": "",
-      "display": ""
+      "display": "220 € bis 500 €"
     },
     "city": "Mainz",
     "street": "Robert-Bosch-Str. 8",
@@ -5346,10 +5346,10 @@
     "course_fee_display": "1.700 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
-      "fee_max": null,
+      "fee": 220.0,
+      "fee_max": 300.0,
       "qualifier": "",
-      "display": ""
+      "display": "220 € bis 300 €"
     },
     "city": "Mainz",
     "street": "Robert-Bosch-Str. 8",
@@ -5379,10 +5379,10 @@
     "course_fee_display": "650 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
-      "fee_max": null,
+      "fee": 220.0,
+      "fee_max": 500.0,
       "qualifier": "",
-      "display": ""
+      "display": "220 € bis 500 €"
     },
     "city": "Mainz",
     "street": "Robert-Bosch-Str. 8",
@@ -5412,10 +5412,10 @@
     "course_fee_display": "1.700 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
-      "fee_max": null,
+      "fee": 220.0,
+      "fee_max": 300.0,
       "qualifier": "",
-      "display": ""
+      "display": "220 € bis 300 €"
     },
     "city": "Mainz",
     "street": "Robert-Bosch-Str. 8",
@@ -5445,10 +5445,10 @@
     "course_fee_display": "650 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
-      "fee_max": null,
+      "fee": 220.0,
+      "fee_max": 500.0,
       "qualifier": "",
-      "display": ""
+      "display": "220 € bis 500 €"
     },
     "city": "Mainz",
     "street": "Robert-Bosch-Str. 8",
@@ -5478,10 +5478,10 @@
     "course_fee_display": "1.700 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
-      "fee_max": null,
+      "fee": 220.0,
+      "fee_max": 300.0,
       "qualifier": "",
-      "display": ""
+      "display": "220 € bis 300 €"
     },
     "city": "Mainz",
     "street": "Robert-Bosch-Str. 8",
@@ -5511,10 +5511,10 @@
     "course_fee_display": "1.700 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
-      "fee_max": null,
+      "fee": 220.0,
+      "fee_max": 300.0,
       "qualifier": "",
-      "display": ""
+      "display": "220 € bis 300 €"
     },
     "city": "Mainz",
     "street": "",
@@ -5545,10 +5545,10 @@
     "course_fee_display": "6.700 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
-      "fee_max": null,
+      "fee": 900.0,
+      "fee_max": 2700.0,
       "qualifier": "",
-      "display": ""
+      "display": "900 € bis 2.700 €"
     },
     "city": "Mainz",
     "street": "Dekan-Laist-Str. 5",
@@ -5579,10 +5579,10 @@
     "course_fee_display": "6.700 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
-      "fee_max": null,
+      "fee": 900.0,
+      "fee_max": 2700.0,
       "qualifier": "",
-      "display": ""
+      "display": "900 € bis 2.700 €"
     },
     "city": "Mainz",
     "street": "Dekan-Laist-Str. 5",
@@ -5613,10 +5613,10 @@
     "course_fee_display": "6.700 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": null,
-      "fee_max": null,
+      "fee": 900.0,
+      "fee_max": 2700.0,
       "qualifier": "",
-      "display": ""
+      "display": "900 € bis 2.700 €"
     },
     "city": "Mainz",
     "street": "Dekan-Laist-Str. 5",

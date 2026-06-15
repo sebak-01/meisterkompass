@@ -13,13 +13,18 @@ import argparse
 import logging
 import sys
 
-from .pipeline import SCRAPERS, run
+from .pipeline import SCRAPERS, rebake, run
 
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Run MeisterKompass scrapers → JSON.")
     parser.add_argument("--chamber", choices=list(SCRAPERS), help="Run only one chamber's scraper.")
     parser.add_argument("--dry-run", action="store_true", help="Scrape and log counts but write nothing.")
+    parser.add_argument(
+        "--rebake", action="store_true",
+        help="Re-resolve exam fees from existing data/courses.json (no scraping). "
+             "Use after editing data/manual/exam_fees_manual.json.",
+    )
     parser.add_argument("--verbose", "-v", action="store_true", help="Debug logging.")
     args = parser.parse_args(argv)
 
@@ -27,6 +32,11 @@ def main(argv: list[str] | None = None) -> int:
         level=logging.DEBUG if args.verbose else logging.INFO,
         format="%(levelname)s %(name)s: %(message)s",
     )
+
+    if args.rebake:
+        n = rebake()
+        print(f"Rebaked {n} courses.")
+        return 0
 
     report = run(chamber=args.chamber, dry_run=args.dry_run)
     print("\nScrape summary:")

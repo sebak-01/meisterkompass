@@ -111,23 +111,23 @@ Pages: **Kursfinder** (filterable list + Leaflet/CartoDB map), **AFBG-Rechner**,
 
 ## Migration from the old Django app (one-time)
 
-The previous version was a Django + PostgreSQL app. Curated exam fees, geocodes, and
-past courses live only in that database. Before retiring Django, export them once
-with `DATABASE_URL` pointing at the old DB. Django is no longer in
-`requirements.txt`, so install it just for this step:
+The previous version was a Django + PostgreSQL app. Its hand-curated exam fees
+(HWK Koblenz "bis zu", HWK Rheinhessen ranges) are the only data the scrapers
+can't regenerate. These were recovered directly from the old live site's AFBG
+page (which embeds the full per-part fee table as JSON) — no database access
+needed:
 
 ```bash
-uv pip install django dj-database-url psycopg2-binary python-decouple
-
-DATABASE_URL=postgresql://USER:PASS@HOST/DB SECRET_KEY=x \
-  DJANGO_SETTINGS_MODULE=config.settings \
-  python scripts/export_legacy_data.py
+python scripts/import_manual_fees_from_live.py   # → data/manual/exam_fees_manual.json
+python -m scrapers.run --rebake                  # re-apply manual fees to data/*.json
 ```
 
-This writes `data/manual/exam_fees_manual.json`, seeds `data/cache/geocode_cache.json`,
-and seeds `data/courses.json` with past courses. Commit the result, then the Django
-project directories (`config/`, `chambers/`, `courses/`, `scraper/`, `manage.py`) can
-be removed.
+`data/manual/exam_fees_manual.json` is thereafter edited by hand and committed via
+PR; `--rebake` re-applies it without re-scraping.
+
+(An alternative `scripts/export_legacy_data.py` exports the same data — plus past
+courses and geocodes — straight from the database if you still have `DATABASE_URL`
+access and Django installed.)
 
 ---
 
