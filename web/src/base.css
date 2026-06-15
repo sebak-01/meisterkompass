@@ -113,13 +113,8 @@ body {
   position: sticky;
   top: 0;
   z-index: 200;
-  box-shadow: inset 0 -1px 0 rgba(255,255,255,.06);
-}
-.topbar::after {
-  content: ""; display: block; height: 3px;
-  background: repeating-linear-gradient(90deg,
-    var(--brass-bright) 0 18px, transparent 18px 24px);
-  opacity: .9;
+  border-bottom: 1px solid rgba(255,255,255,.10);
+  box-shadow: 0 6px 18px -12px rgba(20,48,74,.5);
 }
 .topbar .container { display: flex; align-items: stretch; height: 58px; }
 
@@ -153,7 +148,7 @@ body {
   letter-spacing: .01em;
   color: rgba(255,255,255,.62);
   text-decoration: none;
-  border-bottom: 2px solid transparent;
+  border-bottom: 3px solid transparent;
   transition: color .15s, border-color .15s;
   white-space: nowrap;
 }
@@ -260,7 +255,7 @@ a:hover { text-decoration: underline; text-decoration-color: var(--brass); }
 }
 .mobile-menu {
   display: none;
-  position: fixed; top: 61px; right: 0; left: 0;
+  position: fixed; top: 59px; right: 0; left: 0;
   background: var(--ink);
   border-top: 1px solid rgba(255,255,255,.1);
   z-index: 200; padding: .4rem 0;
