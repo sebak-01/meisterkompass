@@ -15,9 +15,9 @@
   /* Ink (deep navy) */
   --ink:         #14304A;
   --ink-2:       #2E4D69;
-  --ink-70:      rgba(20, 48, 74, .72);
-  --ink-50:      rgba(20, 48, 74, .50);
-  --ink-35:      rgba(20, 48, 74, .35);
+  --ink-70:      rgba(20, 48, 74, .74);
+  --ink-50:      rgba(20, 48, 74, .62);  /* AA-safe for small text on parchment */
+  --ink-35:      rgba(20, 48, 74, .40);
 
   /* Brass accent */
   --brass:       #A55D0E;
@@ -30,7 +30,7 @@
   --line-strong: #C3B597;
 
   /* Status (kraft green / ochre / rust) */
-  --ok:          #2C6A45;  --ok-bg:   #DFEDDC;  --ok-line:  #A9CCA6;
+  --ok:          #2C6A45;  --ok-bg:   #DFEDDC;  --ok-line:  #A9CCA6;  --ok-dark: #235539;
   --warn:        #8A5414;  --warn-bg: #F6E7C9;  --warn-line:#E2C189;
   --full:        #8C2F28;  --full-bg: #F4DAD3;  --full-line:#E0AA9C;
 
@@ -107,6 +107,17 @@ body {
   border-radius: 2px;
 }
 
+/* Custom select chevron — shared by every dropdown (Kursfinder + AFBG).
+   Page CSS sets only background-COLOR so this background-image survives. */
+.filter-row select, .field select, #f-per-page {
+  -webkit-appearance: none; appearance: none;
+  padding-right: 2rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='7' viewBox='0 0 10 7'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%2314304A' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right .7rem center;
+  background-size: 10px 7px;
+}
+
 /* ── Top bar ───────────────────────────────────────────────────── */
 .topbar {
   background: var(--ink);
@@ -179,7 +190,6 @@ a:hover { text-decoration: underline; text-decoration-color: var(--brass); }
   color: var(--text-mid);
 }
 .badge-full      { background: var(--full-bg); border-color: var(--full-line); color: var(--full); }
-.badge-few       { background: var(--warn-bg); border-color: var(--warn-line); color: var(--warn); }
 .badge-available { background: var(--ok-bg);   border-color: var(--ok-line);   color: var(--ok); }
 .badge-waitlist  { background: var(--warn-bg); border-color: var(--warn-line); color: var(--warn); }
 

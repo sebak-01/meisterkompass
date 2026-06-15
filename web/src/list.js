@@ -3,24 +3,16 @@ import chambers from "@data/chambers.json";
 import trades from "@data/trades.json";
 import { initNav } from "./nav.js";
 import { renderMap } from "./map.js";
-
-const PER_PAGE_OPTIONS = [10, 20, 30, 40, 60];
-const ROMAN = { 1: "I", 2: "II", 3: "III", 4: "IV" };
-
-const TOOLTIP_QUALIFIER =
-  "Die Prüfungsgebühr je Teil entstammt dem offiziellen Gebührenverzeichnis. Dies ist die Gebühr, die maximal erhoben werden kann. Häufig ist die Prüfungsgebühr tatsächlich niedriger. Erkundige dich bitte bei der jeweiligen Kammer.";
-const TOOLTIP_RANGE =
-  "Die Spanne der Prüfungsgebühr je Teil entstammt dem offiziellen Gebührenverzeichnis. Die genaue Gebühr innerhalb dieser Spanne wird von der Kammer festgelegt. Erkundige dich bitte bei der jeweiligen Kammer.";
+import { ROMAN, partsLabel, esc, TOOLTIP_QUALIFIER, TOOLTIP_RANGE } from "./util.js";
 
 const todayIso = (() => {
   const d = new Date();
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
 })();
 
-const esc = (s) =>
-  String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const fmtDate = (iso) => (iso ? iso.split("-").reverse().join(".") : "");
-const partsLabel = (parts) => parts.map((p) => ROMAN[p] || p).join(" + ");
+const hasActiveFilters = (s) =>
+  !!(s.chamber || s.trade || s.format || s.available || s.parts.length || s.dateFrom || s.dateTo);
 
 // ── State (URL-driven for shareable links) ────────────────────────────
 function readState() {
@@ -40,9 +32,8 @@ function readState() {
   };
 }
 
-function writeState(s, { resetPage = false } = {}) {
-  if (resetPage) s.page = 1;
-  const q = new URLSearchParams();
+// Append the filter params (everything except view/page) to a URLSearchParams.
+function appendFilterParams(q, s) {
   if (s.chamber) q.set("chamber", s.chamber);
   if (s.trade) q.set("trade", s.trade);
   if (s.format) q.set("format", s.format);
@@ -51,6 +42,12 @@ function writeState(s, { resetPage = false } = {}) {
   if (s.includeCombos) q.set("include_combos", "1");
   if (s.dateFrom) q.set("date_from", s.dateFrom);
   if (s.dateTo) q.set("date_to", s.dateTo);
+}
+
+function writeState(s, { resetPage = false } = {}) {
+  if (resetPage) s.page = 1;
+  const q = new URLSearchParams();
+  appendFilterParams(q, s);
   if (s.perPage && s.perPage !== "20") q.set("per_page", s.perPage);
   if (s.view === "map") q.set("view", "map");
   if (s.page > 1) q.set("page", s.page);
@@ -58,17 +55,10 @@ function writeState(s, { resetPage = false } = {}) {
   history.replaceState(null, "", qs ? `?${qs}` : location.pathname);
 }
 
-// Filter params excluding view/page (for the map "Zur Liste" link + tags).
+// Filter params excluding view/page (for the map "Zur Liste" link).
 function filterParamString(s) {
   const q = new URLSearchParams();
-  if (s.chamber) q.set("chamber", s.chamber);
-  if (s.trade) q.set("trade", s.trade);
-  if (s.format) q.set("format", s.format);
-  if (s.available) q.set("available", "1");
-  s.parts.forEach((p) => q.append("part", p));
-  if (s.includeCombos) q.set("include_combos", "1");
-  if (s.dateFrom) q.set("date_from", s.dateFrom);
-  if (s.dateTo) q.set("date_to", s.dateTo);
+  appendFilterParams(q, s);
   return q.toString();
 }
 
@@ -104,7 +94,7 @@ function applyFilters(s) {
 function availabilityBadge(a, small = false) {
   const style = small ? ' style="font-size:.65rem;padding:1px 6px"' : "";
   if (a === "full") return `<span class="badge badge-full"${style}>Ausgebucht</span>`;
-  if (a === "waitlist") return `<span class="badge badge-waitlist"${style}>${small ? "Warteliste" : "Warteliste"}</span>`;
+  if (a === "waitlist") return `<span class="badge badge-waitlist"${style}>Warteliste</span>`;
   if (a === "available" || a === "few_spots")
     return `<span class="badge badge-available"${style}>${small ? "Frei" : "Freie Plätze"}</span>`;
   return small ? "" : '<span class="badge">–</span>';
@@ -236,17 +226,14 @@ function syncControls(s) {
   partsBtn.textContent = s.parts.length
     ? s.parts.map((p) => "Teil " + ROMAN[p]).join(", ") + (s.includeCombos ? " +Kombi" : "") + " ▾"
     : "Teile ▾";
+  partsBtn.setAttribute("aria-expanded", String(document.getElementById("parts-dropdown").classList.contains("open")));
 
   const av = document.getElementById("btn-available");
   av.classList.toggle("btn-primary", s.available);
   av.classList.toggle("btn-ghost", !s.available);
   av.setAttribute("aria-pressed", String(s.available));
 
-  const partsBtnEl = document.getElementById("parts-btn");
-  partsBtnEl.setAttribute("aria-expanded", String(document.getElementById("parts-dropdown").classList.contains("open")));
-
-  document.getElementById("btn-reset").style.display =
-    s.chamber || s.trade || s.format || s.available || s.parts.length || s.dateFrom || s.dateTo ? "" : "none";
+  document.getElementById("btn-reset").style.display = hasActiveFilters(s) ? "" : "none";
 
   const isMap = s.view === "map";
   const btnList = document.getElementById("btn-list");
@@ -396,7 +383,7 @@ function wire() {
     ftb.setAttribute("aria-expanded", String(open));
   });
   function initMobileFilter() {
-    const active = state.chamber || state.trade || state.format || state.available || state.parts.length || state.dateFrom || state.dateTo;
+    const active = hasActiveFilters(state);
     document.getElementById("filter-badge").style.display = active ? "" : "none";
     if (window.innerWidth <= 640) {
       ftb.style.display = "flex";

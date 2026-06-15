@@ -3,6 +3,13 @@ import tradesData from "@data/trades.json";
 import courseFeesData from "@data/course_fees.json";
 import examFeesData from "@data/exam_fees.json";
 import { initNav } from "./nav.js";
+import { partsLabel } from "./util.js";
+
+const partsKey = (parts) => parts.slice().sort((a, b) => a - b).join(",");
+const makeGroup = (parts, opts = {}) => ({
+  parts, courseFee: null, examFee: null, examFeeMin: null, examFeeMax: null,
+  qualifier: "", isAuto: false, isCombo: false, ...opts,
+});
 
 // Slugs are the stable ids now (no integer DB ids).
 const CHAMBERS = chambersData.map((c) => ({ id: c.slug, name: c.name, slug: c.slug }));
@@ -92,20 +99,11 @@ function onTradeChange() {
 
 function buildGroupsFromOffers(offers, isAuto) {
   offers.forEach((o) => {
-    const alreadyCovered = feeGroups.some((g) =>
-      JSON.stringify(g.parts.slice().sort()) === JSON.stringify(o.parts.slice().sort()),
-    );
+    const alreadyCovered = feeGroups.some((g) => partsKey(g.parts) === partsKey(o.parts));
     if (alreadyCovered) return;
-    feeGroups.push({
-      parts: o.parts.slice().sort(),
-      courseFee: o.fee,
-      examFee: null,
-      examFeeMin: null,
-      examFeeMax: null,
-      qualifier: "",
-      isAuto,
-      isCombo: o.parts.length > 1,
-    });
+    feeGroups.push(makeGroup(o.parts.slice().sort(), {
+      courseFee: o.fee, isAuto, isCombo: o.parts.length > 1,
+    }));
   });
 }
 
@@ -142,7 +140,7 @@ function fillExamFees() {
       const matchingOffers = COURSE_FEES.filter((o) => {
         if (o.chamber_id !== currentCid) return false;
         if (o.exam_fee_scraped == null) return false;
-        const sameParts = JSON.stringify(o.parts.slice().sort()) === JSON.stringify(g.parts.slice().sort());
+        const sameParts = partsKey(o.parts) === partsKey(g.parts);
         const isGeneric = o.is_generic;
         const tradeMatch = isGeneric || (currentTid && o.trade_id === currentTid);
         return sameParts && tradeMatch;
@@ -176,9 +174,7 @@ function onPartCheck(p) {
   }
   if (currentMode === "manual" && checked) {
     const inGroup = feeGroups.some((g) => g.parts.indexOf(p) >= 0);
-    if (!inGroup) {
-      feeGroups.push({ parts: [p], courseFee: null, examFee: null, examFeeMin: null, examFeeMax: null, qualifier: "", isAuto: false, isCombo: false });
-    }
+    if (!inGroup) feeGroups.push(makeGroup([p]));
   }
   renderFeeInputs();
 }
@@ -229,7 +225,7 @@ function renderFeeInputs() {
   }
 
   if (feeGroups.length === 0) {
-    groupsToRender = parts.map((p) => ({ parts: [p], courseFee: null, examFee: null, examFeeMin: null, examFeeMax: null, qualifier: "", isAuto: false, isCombo: false }));
+    groupsToRender = parts.map((p) => makeGroup([p]));
   }
   groupsToRender.sort((a, b) => a.parts[0] - b.parts[0]);
 
@@ -242,7 +238,7 @@ function renderFeeInputs() {
   groupsToRender.forEach((g, idx) => {
     const cFee = g.courseFee != null ? g.courseFee : "";
     const eFee = g.examFee != null ? g.examFee : "";
-    const partsStr = g.parts.map((p) => ["I", "II", "III", "IV"][p - 1]).join(" + ");
+    const partsStr = partsLabel(g.parts);
     const title = g.parts.length > 1
       ? "Teile " + partsStr + (g.isAuto ? '<span class="auto-badge">Auto</span>' : '') + ' <span class="combo-note">(Kombikurs)</span>'
       : PART_LABELS[g.parts[0]] + (g.isAuto ? '<span class="auto-badge">Auto</span>' : '');
@@ -308,10 +304,10 @@ function calculate() {
   let allParts = [];
   groups.forEach((g) => { allParts = allParts.concat(g.parts); });
   allParts.sort();
-  const partsLabel = allParts.map((p) => ["I", "II", "III", "IV"][p - 1]).join(" + ");
+  const partsStr = partsLabel(allParts);
 
   let html =
-    '<div class="result-row"><span class="label">Lehrgangsgebühren (Teile ' + partsLabel + ')</span><span class="value">' + fmt(totalCourse) + "</span></div>" +
+    '<div class="result-row"><span class="label">Lehrgangsgebühren (Teile ' + partsStr + ')</span><span class="value">' + fmt(totalCourse) + "</span></div>" +
     '<div class="result-row"><span class="label">Prüfungsgebühren</span><span class="value">' + fmt(totalExam) + "</span></div>" +
     '<div class="result-row highlight"><span class="label">Gesamtkosten</span><span class="value">' + fmt(total) + "</span></div>";
 

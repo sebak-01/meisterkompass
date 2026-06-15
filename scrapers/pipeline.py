@@ -16,7 +16,7 @@ from datetime import date
 from pathlib import Path
 
 from .base import ScrapeResult, normalize_trade
-from .fees import build_exam_fee_lookup, resolve_exam_fee
+from .fees import _fmt, build_exam_fee_lookup, resolve_exam_fee
 from .geocode import Geocoder, build_query
 from .hwk_koblenz import HwkKoblenzScraper
 from .hwk_pfalz import HwkPfalzScraper
@@ -67,9 +67,7 @@ def _to_iso(value) -> str | None:
 
 
 def _course_fee_display(fee: float | None) -> str:
-    if fee is None:
-        return "—"
-    return f"{fee:,.0f}".replace(",", ".") + " €"
+    return "—" if fee is None else _fmt(fee)
 
 
 def _course_key(rec: dict) -> tuple:
@@ -207,13 +205,12 @@ def _load_manual_fee_rows() -> list[dict]:
     return json.loads(MANUAL_FEES_JSON.read_text(encoding="utf-8"))
 
 
-def build_exam_fees_files(scraped_rows: list[dict], manual_rows: list[dict]) -> tuple[dict, list[dict]]:
+def build_exam_fees_files(lookup: dict) -> tuple[dict, list[dict]]:
     """
-    Returns (nested, flat) exam-fee structures.
+    Returns (nested, flat) exam-fee structures from a prebuilt fee lookup.
       nested: {chamber_slug: {trade_slug|'null': {part: {fee, fee_max, qualifier}}}}
       flat:   [{chamber_slug, trade_slug|null, part, fee, fee_max, qualifier}]
     """
-    lookup = build_exam_fee_lookup(scraped_rows, manual_rows)
     nested: dict = {}
     flat: list[dict] = []
     for (chamber_slug, trade_slug, part), v in sorted(lookup.items(), key=lambda kv: (kv[0][0], kv[0][1] or "", kv[0][2])):
@@ -303,6 +300,24 @@ def _load_previous_courses() -> list[dict]:
     return []
 
 
+def _course_sort_key(r: dict) -> tuple:
+    return (r["chamber_slug"], r["trade_name"] or "", r.get("start_date") or "9999", r.get("source_url", ""))
+
+
+def _resolve_and_write_derived(records: list[dict], scraped_rows: list[dict], manual_rows: list[dict], today_iso: str):
+    """Resolve each course's exam fee, then write courses/exam_fees/course_fees JSON."""
+    lookup = build_exam_fee_lookup(scraped_rows, manual_rows)
+    for rec in records:
+        rec["exam_fee"] = resolve_exam_fee(
+            rec["chamber_slug"], rec["trade_slug"], rec["parts"], rec.get("exam_fee_scraped"), lookup,
+        )
+    records.sort(key=_course_sort_key)
+    nested_fees, flat_fees = build_exam_fees_files(lookup)
+    _write_json(COURSES_JSON, records)
+    _write_json(DATA_DIR / "exam_fees.json", {"nested": nested_fees, "flat": flat_fees})
+    _write_json(DATA_DIR / "course_fees.json", build_course_fees(records, today_iso))
+
+
 def _scraped_rows_from_courses(records: list[dict]) -> list[dict]:
     """Re-derive scraped per-part exam-fee rows from existing course records."""
     rows: list[dict] = []
@@ -332,19 +347,7 @@ def rebake() -> int:
     today_iso = date.today().isoformat()
     scraped_rows = _scraped_rows_from_courses(records)
     manual_rows = _load_manual_fee_rows()
-    lookup = build_exam_fee_lookup(scraped_rows, manual_rows)
-
-    for rec in records:
-        rec["exam_fee"] = resolve_exam_fee(
-            rec["chamber_slug"], rec["trade_slug"], rec["parts"],
-            rec.get("exam_fee_scraped"), lookup,
-        )
-    records.sort(key=lambda r: (r["chamber_slug"], r["trade_name"] or "", r.get("start_date") or "9999", r.get("source_url", "")))
-
-    nested_fees, flat_fees = build_exam_fees_files(scraped_rows, manual_rows)
-    _write_json(COURSES_JSON, records)
-    _write_json(DATA_DIR / "exam_fees.json", {"nested": nested_fees, "flat": flat_fees})
-    _write_json(DATA_DIR / "course_fees.json", build_course_fees(records, today_iso))
+    _resolve_and_write_derived(records, scraped_rows, manual_rows, today_iso)
     logger.info("Rebaked %d courses with %d manual fee row(s).", len(records), len(manual_rows))
     return len(records)
 
@@ -379,26 +382,12 @@ def run(chamber: str | None = None, dry_run: bool = False) -> RunReport:
     geocoder.save()
 
     manual_rows = _load_manual_fee_rows()
-    exam_lookup = build_exam_fee_lookup(scraped_exam_rows, manual_rows)
-    for rec in records:
-        rec["exam_fee"] = resolve_exam_fee(
-            rec["chamber_slug"], rec["trade_slug"], rec["parts"],
-            rec.get("exam_fee_scraped"), exam_lookup,
-        )
+    _resolve_and_write_derived(records, scraped_exam_rows, manual_rows, today_iso)
 
-    records.sort(key=lambda r: (r["chamber_slug"], r["trade_name"] or "", r.get("start_date") or "9999", r.get("source_url", "")))
-
-    nested_fees, flat_fees = build_exam_fees_files(scraped_exam_rows, manual_rows)
-    course_fees = build_course_fees(records, today_iso)
     previous_chambers = json.loads((DATA_DIR / "chambers.json").read_text(encoding="utf-8")) if (DATA_DIR / "chambers.json").exists() else []
     chambers, trades = build_chambers_and_trades(records, results, previous_chambers)
-
-    _write_json(COURSES_JSON, records)
-    _write_json(DATA_DIR / "exam_fees.json", {"nested": nested_fees, "flat": flat_fees})
-    _write_json(DATA_DIR / "course_fees.json", course_fees)
     _write_json(DATA_DIR / "chambers.json", chambers)
     _write_json(DATA_DIR / "trades.json", trades)
 
-    logger.info("Wrote %d courses, %d chambers, %d trades, %d course-fee rows.",
-                len(records), len(chambers), len(trades), len(course_fees))
+    logger.info("Wrote %d courses, %d chambers, %d trades.", len(records), len(chambers), len(trades))
     return RunReport(per_chamber=per_chamber, total_courses=len(records))

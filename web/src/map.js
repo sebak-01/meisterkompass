@@ -1,5 +1,6 @@
 // Leaflet map rendering, ported from the original list.html initMap().
 import L from "leaflet";
+import { esc, eur } from "./util.js";
 
 let map = null;
 
@@ -42,28 +43,28 @@ export function renderMap(mapData, listHref) {
 
     const visible = offers.slice(0, 3);
     const extra = offers.length - visible.length;
-    let html = `<div class="mv-popup"><strong style="font-size:.9rem;color:#1B3A5C">📍 ${visible[0].city}</strong>
-      <div style="font-size:.75rem;color:#888;margin-bottom:.4rem">${firstChamber}</div>`;
+    let html = `<div class="mv-popup"><strong style="font-size:.9rem;color:#1B3A5C">📍 ${esc(visible[0].city)}</strong>
+      <div style="font-size:.75rem;color:#888;margin-bottom:.4rem">${esc(firstChamber)}</div>`;
 
     visible.forEach((o) => {
-      const fee = o.fee ? o.fee.toLocaleString("de-DE") + " €" : "k.A.";
+      const fee = o.fee ? eur(o.fee) : "k.A.";
       const examFeeDisplay = o.exam_fee_display || null;
       const titleEl = o.url
-        ? `<a href="${o.url}" target="_blank" style="color:#1B3A5C;font-weight:500;font-size:.85rem;display:block;line-height:1.3;text-decoration:none">${o.title} ↗</a>`
-        : `<strong style="font-size:.85rem;color:#1B3A5C;display:block;line-height:1.3">${o.title}</strong>`;
+        ? `<a href="${esc(o.url)}" target="_blank" rel="noopener" style="color:#1B3A5C;font-weight:500;font-size:.85rem;display:block;line-height:1.3;text-decoration:none">${esc(o.title)} ↗</a>`
+        : `<strong style="font-size:.85rem;color:#1B3A5C;display:block;line-height:1.3">${esc(o.title)}</strong>`;
       html += `<div class="mv-popup-course">
         ${titleEl}
-        <div class="meta">${o.parts} · ${o.format}</div>
-        <div class="meta">Startdatum: ${o.start || "–"}</div>
+        <div class="meta">${esc(o.parts)} · ${esc(o.format)}</div>
+        <div class="meta">Startdatum: ${esc(o.start) || "–"}</div>
         <div class="meta">Kursgebühr: ${fee}</div>
-        ${examFeeDisplay ? `<div class="meta">Prüfungsgebühr: ${examFeeDisplay}</div>` : ""}
+        ${examFeeDisplay ? `<div class="meta">Prüfungsgebühr: ${esc(examFeeDisplay)}</div>` : ""}
       </div>`;
     });
 
     html += `<div class="mv-popup-footer">`;
     if (extra > 0)
       html += `<div style="font-size:.75rem;color:#888;margin-bottom:.4rem;width:100%">+ ${extra} weitere Kurs${extra !== 1 ? "e" : ""} an diesem Standort</div>`;
-    html += `<a href="${listHref}">☰ Zur Liste</a></div></div>`;
+    html += `<a href="${esc(listHref)}">☰ Zur Liste</a></div></div>`;
 
     marker.bindPopup(html, { maxWidth: 290 });
   });
@@ -74,7 +75,7 @@ export function renderMap(mapData, listHref) {
     div.style.cssText = "background:#fff;padding:8px 12px;border-radius:6px;font-size:.8rem;box-shadow:0 1px 4px rgba(0,0,0,.15)";
     div.innerHTML = "<strong>Kammer</strong><br>" +
       Object.entries(chamberColors).map(([n, c]) =>
-        `<span style="display:inline-block;width:10px;height:10px;background:${c};border-radius:50%;margin-right:5px"></span>${n}`,
+        `<span style="display:inline-block;width:10px;height:10px;background:${c};border-radius:50%;margin-right:5px"></span>${esc(n)}`,
       ).join("<br>");
     return div;
   };

@@ -45,7 +45,7 @@
   height: 38px; padding: 0 .7rem;
   border: 1px solid var(--line-strong); border-radius: var(--radius);
   font-family: inherit; font-size: .85rem;
-  background: var(--paper); color: var(--text); cursor: pointer;
+  background-color: var(--paper); color: var(--text); cursor: pointer;
   transition: border-color .15s, box-shadow .15s;
 }
 .filter-row select:hover, .filter-row input[type="date"]:hover { border-color: var(--ink-35); }
@@ -63,7 +63,7 @@
 .btn-ghost { background: var(--paper); color: var(--text-mid); border-color: var(--line-strong); }
 .btn-ghost:hover { background: var(--card-2); border-color: var(--ink-35); color: var(--ink); }
 .btn-primary { background: var(--ok); color: #fff; }
-.btn-primary:hover { background: #235539; }
+.btn-primary:hover { background: var(--ok-dark); }
 
 .view-toggle {
   display: flex; margin-left: auto;
@@ -126,7 +126,7 @@
 #f-per-page {
   height: 34px; padding: 0 .6rem; border: 1px solid var(--line-strong);
   border-radius: var(--radius); font-family: inherit; font-size: .8rem;
-  background: var(--paper); cursor: pointer; color: var(--text);
+  background-color: var(--paper); cursor: pointer; color: var(--text);
 }
 
 /* ── Ledger table ──────────────────────────────────────────────── */
@@ -188,7 +188,7 @@
 .fee-info-btn:hover::after, .fee-info-btn:focus-visible::after { opacity: 1; }
 
 /* ── Map ───────────────────────────────────────────────────────── */
-#map { height: 600px; border: 1px solid var(--line); border-radius: var(--radius-lg); box-shadow: var(--shadow); }
+#map { height: 600px; border: 1px solid var(--line); border-radius: var(--radius-lg); box-shadow: var(--shadow); background: #E7E1D4; }
 .map-notice { font-size: .82rem; color: var(--text-lt); margin-bottom: .85rem; }
 .mv-popup { font-family: var(--sans); min-width: 230px; }
 .mv-popup-course { padding: .55rem 0; border-bottom: 1px solid var(--line-soft); }
@@ -201,7 +201,6 @@
   color: #fff !important; border-radius: var(--radius); font-size: .76rem;
   font-family: var(--mono); letter-spacing: .03em; text-decoration: none !important;
 }
-.mv-popup-footer a.ext { background: var(--brass); }
 
 /* ── Pagination ────────────────────────────────────────────────── */
 .pagination { display: flex; gap: .4rem; margin-top: 1.5rem; align-items: center; font-size: .85rem; }
@@ -285,7 +284,6 @@
   .course-table .mob-summary { display: block !important; padding-top: 0; }
   .course-table .mob-summary::before { display: none; }
   .course-table .col-kurs { display: none !important; }
-  .course-table .col-kammer { display: none !important; }
   .course-table .row-toggle {
     display: flex; justify-content: space-between; align-items: flex-start;
     cursor: pointer; padding-bottom: .55rem; border-bottom: 1px solid var(--line-soft); margin-bottom: .35rem;
