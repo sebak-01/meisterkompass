@@ -31,8 +31,12 @@ let feeGroups = [];
 function setMode(mode) {
   currentMode = mode;
   document.getElementById("mode-auto").style.display = mode === "auto" ? "" : "none";
-  document.getElementById("btn-mode-auto").classList.toggle("active", mode === "auto");
-  document.getElementById("btn-mode-manual").classList.toggle("active", mode === "manual");
+  const ba = document.getElementById("btn-mode-auto");
+  const bm = document.getElementById("btn-mode-manual");
+  ba.classList.toggle("active", mode === "auto");
+  bm.classList.toggle("active", mode === "manual");
+  ba.setAttribute("aria-pressed", String(mode === "auto"));
+  bm.setAttribute("aria-pressed", String(mode === "manual"));
   if (mode === "manual") {
     feeGroups = [];
     [1, 2, 3, 4].forEach((p) => { document.getElementById("chk" + p).checked = false; });
@@ -247,10 +251,10 @@ function renderFeeInputs() {
       '<div class="part-fee-block' + (g.isCombo ? " combo-block" : "") + '">' +
         '<div class="part-title">' + title + "</div>" +
         '<div class="field-row">' +
-          '<div class="field"><label>Kursgebühr (€)</label>' +
-          '<input type="number" id="g-course-' + idx + '" value="' + cFee + '" min="0" step="10" placeholder="z. B. 7.300"></div>' +
-          '<div class="field"><label>' + buildExamLabel(g) + "</label>" +
-          '<input type="number" id="g-exam-' + idx + '" value="' + eFee + '" min="0" step="10" placeholder="z. B. 1.130"></div>' +
+          '<div class="field"><label for="g-course-' + idx + '">Kursgebühr (€)</label>' +
+          '<input type="number" id="g-course-' + idx + '" aria-label="Kursgebühr ' + partsStr + '" value="' + cFee + '" min="0" step="10" placeholder="z. B. 7.300"></div>' +
+          '<div class="field"><label for="g-exam-' + idx + '">' + buildExamLabel(g) + "</label>" +
+          '<input type="number" id="g-exam-' + idx + '" aria-label="Prüfungsgebühr ' + partsStr + '" value="' + eFee + '" min="0" step="10" placeholder="z. B. 1.130"></div>' +
         "</div>" +
       "</div>";
   });

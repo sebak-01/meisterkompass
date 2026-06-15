@@ -165,10 +165,10 @@ function rowHtml(c) {
 }
 
 function emptyRow() {
-  return `<tr><td colspan="10"><div style="text-align:center;padding:3rem 1rem">
-    <div style="font-size:2.5rem;margin-bottom:.75rem">🔍</div>
-    <div style="font-weight:600;color:var(--text);margin-bottom:.35rem">Keine Kurse gefunden</div>
-    <div style="font-size:.85rem;color:var(--text-lt)">Passe die Filter an oder setze sie zurück, um mehr Ergebnisse zu sehen.</div>
+  return `<tr><td colspan="10"><div class="empty-state">
+    <div class="glyph" aria-hidden="true">⌖</div>
+    <div class="title">Keine Kurse gefunden</div>
+    <div class="hint">Passe die Filter an oder setze sie zurück, um mehr Ergebnisse zu sehen.</div>
   </div></td></tr>`;
 }
 
@@ -198,9 +198,9 @@ function renderPagination(s, total) {
   const pages = Math.ceil(total / per);
   if (pages <= 1) { el.innerHTML = ""; return; }
   let html = "";
-  if (s.page > 1) html += `<a data-page="${s.page - 1}">‹</a>`;
-  html += `<span class="current">${s.page}</span><span style="color:var(--text-lt)">von ${pages}</span>`;
-  if (s.page < pages) html += `<a data-page="${s.page + 1}">›</a>`;
+  if (s.page > 1) html += `<a data-page="${s.page - 1}" role="button" tabindex="0" aria-label="Vorherige Seite">‹</a>`;
+  html += `<span class="current" aria-current="page">${s.page}</span><span style="color:var(--text-lt)">von ${pages}</span>`;
+  if (s.page < pages) html += `<a data-page="${s.page + 1}" role="button" tabindex="0" aria-label="Nächste Seite">›</a>`;
   el.innerHTML = html;
 }
 
@@ -240,14 +240,23 @@ function syncControls(s) {
   const av = document.getElementById("btn-available");
   av.classList.toggle("btn-primary", s.available);
   av.classList.toggle("btn-ghost", !s.available);
+  av.setAttribute("aria-pressed", String(s.available));
+
+  const partsBtnEl = document.getElementById("parts-btn");
+  partsBtnEl.setAttribute("aria-expanded", String(document.getElementById("parts-dropdown").classList.contains("open")));
 
   document.getElementById("btn-reset").style.display =
     s.chamber || s.trade || s.format || s.available || s.parts.length || s.dateFrom || s.dateTo ? "" : "none";
 
-  document.getElementById("btn-list").classList.toggle("active", s.view !== "map");
-  document.getElementById("btn-map").classList.toggle("active", s.view === "map");
-  document.getElementById("view-list").style.display = s.view === "map" ? "none" : "";
-  document.getElementById("view-map").style.display = s.view === "map" ? "" : "none";
+  const isMap = s.view === "map";
+  const btnList = document.getElementById("btn-list");
+  const btnMap = document.getElementById("btn-map");
+  btnList.classList.toggle("active", !isMap);
+  btnMap.classList.toggle("active", isMap);
+  btnList.setAttribute("aria-pressed", String(!isMap));
+  btnMap.setAttribute("aria-pressed", String(isMap));
+  document.getElementById("view-list").style.display = isMap ? "none" : "";
+  document.getElementById("view-map").style.display = isMap ? "" : "none";
 }
 
 // ── Master render ─────────────────────────────────────────────────────
@@ -338,9 +347,13 @@ function wire() {
   // Parts dropdown
   const partsBtn = document.getElementById("parts-btn");
   const partsDrop = document.getElementById("parts-dropdown");
-  partsBtn.addEventListener("click", (e) => { e.stopPropagation(); partsDrop.classList.toggle("open"); });
+  const syncPartsAria = () => partsBtn.setAttribute("aria-expanded", String(partsDrop.classList.contains("open")));
+  partsBtn.addEventListener("click", (e) => { e.stopPropagation(); partsDrop.classList.toggle("open"); syncPartsAria(); });
   document.addEventListener("click", (e) => {
-    if (!document.getElementById("parts-wrap").contains(e.target)) partsDrop.classList.remove("open");
+    if (!document.getElementById("parts-wrap").contains(e.target)) { partsDrop.classList.remove("open"); syncPartsAria(); }
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && partsDrop.classList.contains("open")) { partsDrop.classList.remove("open"); syncPartsAria(); partsBtn.focus(); }
   });
   document.getElementById("parts-apply").addEventListener("click", () => {
     const parts = [...document.querySelectorAll(".f-part")].filter((cb) => cb.checked).map((cb) => Number(cb.value));
@@ -360,9 +373,12 @@ function wire() {
   });
 
   // Pagination (delegated)
-  document.getElementById("pagination").addEventListener("click", (e) => {
+  const goPage = (a) => { update({ page: parseInt(a.dataset.page, 10) }); window.scrollTo({ top: 0, behavior: "smooth" }); };
+  const pager = document.getElementById("pagination");
+  pager.addEventListener("click", (e) => { const a = e.target.closest("a[data-page]"); if (a) goPage(a); });
+  pager.addEventListener("keydown", (e) => {
     const a = e.target.closest("a[data-page]");
-    if (a) { update({ page: parseInt(a.dataset.page, 10) }); window.scrollTo({ top: 0, behavior: "smooth" }); }
+    if (a && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); goPage(a); }
   });
 
   // Mobile accordion (delegated)
@@ -375,8 +391,9 @@ function wire() {
   const ftb = document.getElementById("filter-toggle-btn");
   const panel = document.getElementById("filter-panel-mobile");
   ftb.addEventListener("click", () => {
-    panel.classList.toggle("open");
-    ftb.querySelector(".ftb-chevron").style.transform = panel.classList.contains("open") ? "rotate(180deg)" : "";
+    const open = panel.classList.toggle("open");
+    ftb.querySelector(".ftb-chevron").style.transform = open ? "rotate(180deg)" : "";
+    ftb.setAttribute("aria-expanded", String(open));
   });
   function initMobileFilter() {
     const active = state.chamber || state.trade || state.format || state.available || state.parts.length || state.dateFrom || state.dateTo;
