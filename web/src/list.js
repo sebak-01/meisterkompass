@@ -1,4 +1,4 @@
-import courses from "@data/courses.json";
+import courses from "virtual:courses";  // courses.json with frontend-unused fields stripped
 import chambers from "@data/chambers.json";
 import trades from "@data/trades.json";
 import { initNav } from "./nav.js";

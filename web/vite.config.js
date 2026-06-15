@@ -34,10 +34,30 @@ function prerenderList() {
   };
 }
 
+// Expose courses.json to the bundle with frontend-unused fields stripped.
+// data/courses.json stays full (it's the scraper pipeline's state file); only
+// the shipped payload is trimmed. Keep this DROP set in sync with what
+// render.js / map.js actually read.
+function trimmedCourses() {
+  const VID = "virtual:courses";
+  const RESOLVED = "\0" + VID;
+  const DROP = new Set(["teaching_mode", "street", "zip_code", "chamber_region", "exam_fee_scraped"]);
+  return {
+    name: "trimmed-courses",
+    resolveId(id) { return id === VID ? RESOLVED : null; },
+    load(id) {
+      if (id !== RESOLVED) return null;
+      const all = JSON.parse(readFileSync(resolve(repoRoot, "data/courses.json"), "utf8"));
+      const trimmed = all.map((c) => Object.fromEntries(Object.entries(c).filter(([k]) => !DROP.has(k))));
+      return `export default ${JSON.stringify(trimmed)};`;
+    },
+  };
+}
+
 export default defineConfig({
   root: __dirname,
   base,
-  plugins: [prerenderList()],
+  plugins: [prerenderList(), trimmedCourses()],
   resolve: {
     alias: { "@data": resolve(repoRoot, "data") },
   },

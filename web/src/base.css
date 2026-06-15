@@ -3,6 +3,11 @@
    Engineering-blueprint editorial system: parchment, ink, brass.
    =================================================================== */
 
+/* Self-hosted fonts (no Google Fonts round-trip; bundled by Vite). */
+@import "@fontsource-variable/fraunces/index.css";
+@import "@fontsource-variable/dm-sans/index.css";
+@import "@fontsource-variable/jetbrains-mono/index.css";
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -35,9 +40,9 @@
   --full:        #8C2F28;  --full-bg: #F4DAD3;  --full-line:#E0AA9C;
 
   /* Type */
-  --display: "Fraunces", Georgia, serif;
-  --sans:    "DM Sans", system-ui, sans-serif;
-  --mono:    "JetBrains Mono", ui-monospace, monospace;
+  --display: "Fraunces Variable", "Fraunces", Georgia, serif;
+  --sans:    "DM Sans Variable", "DM Sans", system-ui, sans-serif;
+  --mono:    "JetBrains Mono Variable", "JetBrains Mono", ui-monospace, monospace;
 
   --text:    var(--ink);
   --text-mid:var(--ink-70);
