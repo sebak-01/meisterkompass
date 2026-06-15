@@ -115,11 +115,11 @@
 .result-row.highlight .value { font-size: 1.1rem; }
 .result-row.positive .value { color: #7BE3A4; }
 .result-row.loan .value { color: var(--brass-bright); }
-.result-row.deduct .label { color: rgba(255,255,255,.45); font-size: .78rem; }
-.result-row.deduct .value { color: rgba(255,255,255,.45); font-size: .78rem; }
+.result-row.deduct .label { color: rgba(255,255,255,.62); font-size: .78rem; }
+.result-row.deduct .value { color: rgba(255,255,255,.62); font-size: .78rem; }
 .result-divider { border: none; border-top: 1px solid rgba(255,255,255,.2); margin: .55rem 0; }
-.result-note { font-size: .75rem; color: rgba(255,255,255,.5); margin-top: .9rem; line-height: 1.55; }
-.result-empty { text-align: center; color: rgba(255,255,255,.45); font-size: .85rem; padding: 1.5rem 0; }
+.result-note { font-size: .75rem; color: rgba(255,255,255,.62); margin-top: .9rem; line-height: 1.55; }
+.result-empty { text-align: center; color: rgba(255,255,255,.62); font-size: .85rem; padding: 1.5rem 0; }
 
 .info-box {
   background: var(--brass-tint); border: 1px solid var(--warn-line); border-radius: var(--radius);
@@ -139,6 +139,8 @@
 .afbg-explainer ul { font-size: .875rem; color: var(--text-mid); line-height: 1.8; margin-left: 1.2rem; }
 .afbg-explainer p { font-size: .875rem; color: var(--text-mid); line-height: 1.7; }
 .afbg-explainer strong { color: var(--ink); }
+/* in-text links must be distinguishable by more than colour (a11y) */
+.afbg-explainer a { text-decoration: underline; text-decoration-color: var(--brass); }
 
 .result-stack { display: flex; flex-direction: column; gap: 1rem; position: sticky; top: 74px; }
 @media (max-width: 880px) { .result-stack { position: static; } }
