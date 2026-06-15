@@ -28,6 +28,19 @@ const todayIso = (() => {
 const hasActiveFilters = (s) =>
   !!(s.chamber || s.trade || s.format || s.available || s.parts.length || s.dateFrom || s.dateTo);
 
+// Past courses live in a separate chunk, fetched only when a date filter
+// reaches into the past — keeps the default (upcoming) payload small.
+let pool = courses;
+let archiveLoaded = false;
+const needsArchive = (s) =>
+  (s.dateFrom && s.dateFrom < todayIso) || (s.dateTo && s.dateTo < todayIso);
+async function ensureArchive() {
+  if (archiveLoaded) return;
+  const { default: archive } = await import("virtual:courses-archive");
+  pool = courses.concat(archive);
+  archiveLoaded = true;
+}
+
 // ── State (URL-driven for shareable links) ────────────────────────────
 function readState() {
   const q = new URLSearchParams(location.search);
@@ -164,7 +177,7 @@ function syncControls(s) {
 let state = readState();
 
 function render() {
-  const filtered = applyFilters(courses, state, todayIso);
+  const filtered = applyFilters(pool, state, todayIso);
 
   // Clamp the current page to the available range before slicing.
   if (state.perPage !== "all") {
@@ -206,11 +219,17 @@ function render() {
   }
 }
 
+// Render, first loading the past-courses archive if the filter reaches back.
+function refresh() {
+  if (needsArchive(state) && !archiveLoaded) ensureArchive().then(render);
+  else render();
+}
+
 function update(patch, opts) {
   Object.assign(state, patch);
   writeState(state, opts);
   syncControls(state);
-  render();
+  refresh();
 }
 
 // ── Wiring ────────────────────────────────────────────────────────────
@@ -321,4 +340,4 @@ initNav();
 populateChamberSelect();
 syncControls(state);
 wire();
-render();
+refresh();

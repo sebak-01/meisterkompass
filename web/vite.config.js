@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { defineConfig } from "vite";
 
@@ -34,22 +34,30 @@ function prerenderList() {
   };
 }
 
-// Expose courses.json to the bundle with frontend-unused fields stripped.
-// data/courses.json stays full (it's the scraper pipeline's state file); only
-// the shipped payload is trimmed. Keep this DROP set in sync with what
-// render.js / map.js actually read.
+// Expose the course datasets to the bundle with frontend-unused fields stripped.
+// The data/*.json files stay full (the scraper pipeline's state); only the
+// shipped payload is trimmed. virtual:courses = upcoming (bundled);
+// virtual:courses-archive = past (lazy dynamic-imported on demand).
+// Keep DROP in sync with the fields render.js / map.js actually read.
 function trimmedCourses() {
-  const VID = "virtual:courses";
-  const RESOLVED = "\0" + VID;
   const DROP = new Set(["teaching_mode", "street", "zip_code", "chamber_region", "exam_fee_scraped"]);
+  const SOURCES = {
+    "virtual:courses": "data/courses.json",
+    "virtual:courses-archive": "data/courses_archive.json",
+  };
+  const resolved = (id) => "\0" + id;
   return {
     name: "trimmed-courses",
-    resolveId(id) { return id === VID ? RESOLVED : null; },
+    resolveId(id) { return id in SOURCES ? resolved(id) : null; },
     load(id) {
-      if (id !== RESOLVED) return null;
-      const all = JSON.parse(readFileSync(resolve(repoRoot, "data/courses.json"), "utf8"));
-      const trimmed = all.map((c) => Object.fromEntries(Object.entries(c).filter(([k]) => !DROP.has(k))));
-      return `export default ${JSON.stringify(trimmed)};`;
+      for (const [vid, file] of Object.entries(SOURCES)) {
+        if (id !== resolved(vid)) continue;
+        const path = resolve(repoRoot, file);
+        const all = existsSync(path) ? JSON.parse(readFileSync(path, "utf8")) : [];
+        const trimmed = all.map((c) => Object.fromEntries(Object.entries(c).filter(([k]) => !DROP.has(k))));
+        return `export default ${JSON.stringify(trimmed)};`;
+      }
+      return null;
     },
   };
 }

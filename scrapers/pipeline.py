@@ -42,7 +42,8 @@ FORMAT_DISPLAY = {
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = REPO_ROOT / "data"
-COURSES_JSON = DATA_DIR / "courses.json"
+COURSES_JSON = DATA_DIR / "courses.json"            # upcoming + undated (bundled into the site)
+ARCHIVE_JSON = DATA_DIR / "courses_archive.json"    # past courses (lazy-loaded on demand)
 MANUAL_FEES_JSON = DATA_DIR / "manual" / "exam_fees_manual.json"
 GEOCODE_CACHE = DATA_DIR / "cache" / "geocode_cache.json"
 
@@ -289,9 +290,13 @@ def _write_json(path: Path, data):
 
 
 def _load_previous_courses() -> list[dict]:
-    if COURSES_JSON.exists():
-        return json.loads(COURSES_JSON.read_text(encoding="utf-8"))
-    return []
+    # The dataset is split into upcoming (COURSES_JSON) + archived (ARCHIVE_JSON)
+    # on disk; the pipeline works on their union so history is never lost.
+    records: list[dict] = []
+    for path in (COURSES_JSON, ARCHIVE_JSON):
+        if path.exists():
+            records.extend(json.loads(path.read_text(encoding="utf-8")))
+    return records
 
 
 def _course_sort_key(r: dict) -> tuple:
@@ -306,7 +311,11 @@ def _resolve_and_write_derived(records: list[dict], scraped_rows: list[dict], ma
             rec["chamber_slug"], rec["trade_slug"], rec["parts"], rec.get("exam_fee_scraped"), lookup,
         )
     records.sort(key=_course_sort_key)
-    _write_json(COURSES_JSON, records)
+    # Split upcoming/undated (bundled) from past (lazy-loaded archive).
+    upcoming = [r for r in records if not _is_past(r, today_iso)]
+    archived = [r for r in records if _is_past(r, today_iso)]
+    _write_json(COURSES_JSON, upcoming)
+    _write_json(ARCHIVE_JSON, archived)
     _write_json(DATA_DIR / "exam_fees.json", {"nested": build_exam_fees_nested(lookup)})
     _write_json(DATA_DIR / "course_fees.json", build_course_fees(records, today_iso))
 
