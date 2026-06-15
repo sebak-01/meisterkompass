@@ -135,15 +135,22 @@ class BaseScraper(ABC):
     @abstractmethod
     def fetch_raw_courses(self) -> list[RawCourseOffer]: ...
 
+    max_retries: int = 3
+
     def get(self, url: str, **kwargs) -> requests.Response | None:
-        try:
-            time.sleep(self.request_delay)
-            r = self.session.get(url, timeout=20, **kwargs)
-            r.raise_for_status()
-            return r
-        except requests.RequestException as exc:
-            logger.warning("GET %s failed: %s", url, exc)
-            return None
+        last_exc: Exception | None = None
+        for attempt in range(self.max_retries):
+            try:
+                time.sleep(self.request_delay)
+                r = self.session.get(url, timeout=20, **kwargs)
+                r.raise_for_status()
+                return r
+            except requests.RequestException as exc:
+                last_exc = exc
+                if attempt + 1 < self.max_retries:
+                    time.sleep(1.5 * (attempt + 1))   # back off before retrying transient errors
+        logger.warning("GET %s failed after %d attempts: %s", url, self.max_retries, last_exc)
+        return None
 
     def parse_html(self, url: str, **kwargs) -> BeautifulSoup | None:
         r = self.get(url, **kwargs)

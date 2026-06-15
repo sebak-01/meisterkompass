@@ -11,6 +11,7 @@ DB-based cleanup and coordinate fixes.
 
 import json
 import logging
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
@@ -354,23 +355,43 @@ def rebake() -> int:
     return len(records)
 
 
+def _collect_chamber(slug: str, cls: type) -> ScrapeResult | None:
+    """Run one chamber's scraper; on failure log and return None (run continues)."""
+    logger.info("▶ %s", slug)
+    try:
+        result = cls().collect()
+        logger.info("  %s: %d offers", slug, len(result.offers))
+        return result
+    except Exception:
+        logger.exception("  %s: scrape failed — keeping previous data for this chamber", slug)
+        return None
+
+
 def run(chamber: str | None = None, dry_run: bool = False) -> RunReport:
     today_iso = date.today().isoformat()
     selected = {chamber: SCRAPERS[chamber]} if chamber else dict(SCRAPERS)
 
-    results: dict[str, ScrapeResult] = {}
+    # Scrape chambers concurrently — they're independent and each scraper's own
+    # request_delay still rate-limits its (distinct) host politely.
+    with ThreadPoolExecutor(max_workers=len(selected)) as pool:
+        futures = {slug: pool.submit(_collect_chamber, slug, cls) for slug, cls in selected.items()}
+        raw = {slug: fut.result() for slug, fut in futures.items()}
+
+    results: dict[str, ScrapeResult] = {slug: r for slug, r in raw.items() if r is not None}
     fresh_by_chamber: dict[str, list[dict]] = {}
     scraped_exam_rows: list[dict] = []
     per_chamber: dict[str, int] = {}
 
-    for slug, cls in selected.items():
-        logger.info("▶ %s", slug)
-        result = cls().collect()
-        results[slug] = result
+    for slug in selected:
+        result = results.get(slug)
+        if result is None:
+            # Failed/empty scrape → empty set; merge_courses keeps previous data.
+            fresh_by_chamber[slug] = []
+            per_chamber[slug] = 0
+            continue
         fresh_by_chamber[slug] = [offer_to_record(result, o) for o in result.offers]
         scraped_exam_rows.extend(result.exam_fee_rows)
         per_chamber[slug] = len(result.offers)
-        logger.info("  %s: %d offers", slug, len(result.offers))
 
     if dry_run:
         logger.info("Dry run — nothing written.")
