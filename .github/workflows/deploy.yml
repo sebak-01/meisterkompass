@@ -8,6 +8,11 @@ on:
       - "web/**"
       - ".github/workflows/deploy.yml"
   workflow_dispatch:
+  # The scrape job commits with GITHUB_TOKEN, which by design does not trigger
+  # the push event above. Chain off the scrape workflow's completion instead.
+  workflow_run:
+    workflows: ["Daily scrape → data JSON"]
+    types: [completed]
 
 permissions:
   contents: read
@@ -22,6 +27,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # When chained from the scrape workflow, only deploy if it succeeded.
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Check out code
         uses: actions/checkout@v4
