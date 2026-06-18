@@ -81,6 +81,10 @@ KNOWN_COORDS: dict[str, tuple[float, float]] = {
     "robert-bosch": (49.959692, 8.260685),   # Robert-Bosch-Str./Straße 8
     "dekan-laist":  (49.966844, 8.267110),   # Dekan-Laist-Str. 5
 }
+# Fallback for courses whose street couldn't be parsed. All HWK Rheinhessen
+# courses run at the Hechtsheim Bildungszentrum, so default there rather than
+# let city-level geocoding drop the pin on the A60 motorway through Mainz.
+DEFAULT_COORDS: tuple[float, float] = KNOWN_COORDS["robert-bosch"]
 
 def resolve_coords(street: str) -> tuple[float, float] | None:
     """Return hardcoded coordinates for known HWK Rheinhessen streets."""

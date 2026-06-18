@@ -4776,10 +4776,10 @@
       "display": "900 € bis 2.700 €"
     },
     "city": "Mainz",
-    "street": "",
+    "street": "Robert-Bosch-Straße 8",
     "zip_code": "55129",
-    "latitude": 49.9647693,
-    "longitude": 8.2434157,
+    "latitude": 49.959692,
+    "longitude": 8.260685,
     "availability": "unknown",
     "source_url": "https://www.hwk.de/seminar/elektrotechniker-teil-i-und-ii-eli/"
   },
@@ -4878,10 +4878,10 @@
       "display": "900 € bis 2.700 €"
     },
     "city": "Mainz",
-    "street": "",
+    "street": "Robert-Bosch-Straße 8",
     "zip_code": "55129",
-    "latitude": 49.9647693,
-    "longitude": 8.2434157,
+    "latitude": 49.959692,
+    "longitude": 8.260685,
     "availability": "unknown",
     "source_url": "https://www.hwk.de/seminar/meisterkurs-friseure-teile-iii-vollzeit-fri-vz/"
   },
@@ -5517,10 +5517,10 @@
       "display": "220 € bis 300 €"
     },
     "city": "Mainz",
-    "street": "",
+    "street": "Robert-Bosch-Straße 8",
     "zip_code": "55129",
-    "latitude": 49.9647693,
-    "longitude": 8.2434157,
+    "latitude": 49.959692,
+    "longitude": 8.260685,
     "availability": "unknown",
     "source_url": "https://www.hwk.de/seminar/fachmann-frau-fuer-kaufmaennsche-betriebsfuehrung-fkm-vz/"
   },

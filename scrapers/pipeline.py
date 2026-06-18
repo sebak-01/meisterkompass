@@ -21,7 +21,11 @@ from .fees import _fmt, build_exam_fee_lookup, resolve_exam_fee
 from .geocode import Geocoder, build_query
 from .hwk_koblenz import HwkKoblenzScraper
 from .hwk_pfalz import HwkPfalzScraper
-from .hwk_rheinhessen import HwkRheinhessenScraper, resolve_coords as rh_resolve_coords
+from .hwk_rheinhessen import (
+    HwkRheinhessenScraper,
+    resolve_coords as rh_resolve_coords,
+    DEFAULT_COORDS as RH_DEFAULT_COORDS,
+)
 from .hwk_saarland import HWK_SAARLAND_LAT, HWK_SAARLAND_LNG, HwkSaarlandScraper
 from .hwk_trier import HwkTrierScraper
 
@@ -185,10 +189,8 @@ def apply_coordinates(records: list[dict], geocoder: Geocoder):
             rec["latitude"], rec["longitude"] = HWK_SAARLAND_LAT, HWK_SAARLAND_LNG
             continue
         if cs == "hwk-rheinhessen":
-            known = rh_resolve_coords(rec.get("street", ""))
-            if known:
-                rec["latitude"], rec["longitude"] = known
-                continue
+            rec["latitude"], rec["longitude"] = rh_resolve_coords(rec.get("street", "")) or RH_DEFAULT_COORDS
+            continue
         if not rec.get("city"):
             continue
         query = build_query(rec.get("street", ""), rec.get("zip_code", ""), rec["city"], rec.get("chamber_region", ""))
