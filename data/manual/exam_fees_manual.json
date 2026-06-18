@@ -1,0 +1,66 @@
+[
+  {
+    "chamber_slug": "hwk-koblenz",
+    "trade_slug": null,
+    "part": 1,
+    "fee": 1200.0,
+    "fee_max": null,
+    "qualifier": "bis zu"
+  },
+  {
+    "chamber_slug": "hwk-koblenz",
+    "trade_slug": null,
+    "part": 2,
+    "fee": 600.0,
+    "fee_max": null,
+    "qualifier": "bis zu"
+  },
+  {
+    "chamber_slug": "hwk-koblenz",
+    "trade_slug": null,
+    "part": 3,
+    "fee": 400.0,
+    "fee_max": null,
+    "qualifier": "bis zu"
+  },
+  {
+    "chamber_slug": "hwk-koblenz",
+    "trade_slug": null,
+    "part": 4,
+    "fee": 400.0,
+    "fee_max": null,
+    "qualifier": "bis zu"
+  },
+  {
+    "chamber_slug": "hwk-rheinhessen",
+    "trade_slug": null,
+    "part": 1,
+    "fee": 600.0,
+    "fee_max": 2000.0,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-rheinhessen",
+    "trade_slug": null,
+    "part": 2,
+    "fee": 300.0,
+    "fee_max": 700.0,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-rheinhessen",
+    "trade_slug": null,
+    "part": 3,
+    "fee": 220.0,
+    "fee_max": 300.0,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-rheinhessen",
+    "trade_slug": null,
+    "part": 4,
+    "fee": 220.0,
+    "fee_max": 500.0,
+    "qualifier": ""
+  }
+]

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AFBG-Rechner – MeisterKompass</title>
+  <meta name="description" content="Aufstiegs-BAföG für Meistervorbereitungskurse berechnen – Zuschuss, KfW-Darlehen, Darlehenserlass und Meisterprojekt.">
+  <meta name="theme-color" content="#14304A">
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MeisterKompass">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:title" content="AFBG-Rechner – MeisterKompass">
+  <meta property="og:description" content="Berechne deine Förderung nach dem Aufstiegs-BAföG: Zuschuss, KfW-Darlehen, Darlehenserlass und Meisterprojekt.">
+  <link rel="canonical" href="https://boredland.github.io/meisterkompass/afbg.html">
+  <meta property="og:url" content="https://boredland.github.io/meisterkompass/afbg.html">
+  <meta property="og:image" content="https://boredland.github.io/meisterkompass/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AFBG-Rechner – MeisterKompass">
+  <meta name="twitter:description" content="Berechne deine Förderung nach dem Aufstiegs-BAföG: Zuschuss, KfW-Darlehen, Darlehenserlass und Meisterprojekt.">
+  <meta name="twitter:image" content="https://boredland.github.io/meisterkompass/og-image.png">
+  <link rel="stylesheet" href="./src/base.css">
+  <link rel="stylesheet" href="./src/afbg.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "AFBG-Rechner – MeisterKompass",
+    "url": "https://boredland.github.io/meisterkompass/afbg.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "inLanguage": "de",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+    "description": "Berechnet die Förderung nach dem Aufstiegs-BAföG (AFBG) für Lehrgangs- und Prüfungsgebühren sowie das Meisterprojekt."
+  }
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Zum Inhalt springen</a>
+
+<header class="topbar">
+  <div class="container">
+    <a class="nav-brand" href="./index.html" aria-label="MeisterKompass – Startseite">
+      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+        <circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.55"/>
+        <polygon points="16,5 19.5,16 16,16" fill="currentColor"/>
+        <polygon points="16,27 12.5,16 16,16" fill="#ffffff"/>
+        <circle cx="16" cy="16" r="1.8" fill="#ffffff"/>
+      </svg>
+      Meister<span>Kompass</span>
+    </a>
+    <nav class="nav-tabs" aria-label="Hauptnavigation">
+      <a href="./index.html">Kursfinder</a>
+      <a href="./afbg.html" aria-current="page" class="active">AFBG-Rechner</a>
+      <a href="./about.html">Über MeisterKompass</a>
+      <a href="./imprint.html">Impressum</a>
+    </nav>
+    <button class="hamburger" id="hamburger-btn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">☰</button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="./index.html">Kursfinder</a>
+    <a href="./afbg.html" aria-current="page" class="active">AFBG-Rechner</a>
+    <a href="./about.html">Über MeisterKompass</a>
+    <a href="./imprint.html">Impressum</a>
+  </div>
+</header>
+
+<main id="main-content">
+<div class="afbg-hero">
+  <div class="container">
+    <p class="eyebrow">Aufstiegs-BAföG</p>
+    <h1>AFBG-Rechner</h1>
+    <p>Berechne deine Förderung nach dem Aufstiegs-BAföG für einzelne Kursteile oder den vollständigen Meisterabschluss.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="afbg-layout">
+    <div class="card">
+      <h2>Kursgebühren eingeben</h2>
+      <div class="mode-toggle" role="group" aria-label="Eingabemodus">
+        <button type="button" id="btn-mode-auto" class="active" aria-pressed="true">⊙ Aus Kursfinder laden</button>
+        <button type="button" id="btn-mode-manual" aria-pressed="false">✎ Manuell eingeben</button>
+      </div>
+
+      <div id="mode-auto">
+        <div class="info-box">Wähle eine <strong>Kammer</strong> und einen <strong>Beruf/Fachrichtung</strong> – die Gebühren werden automatisch aus dem nächsten verfügbaren Kurs befüllt.</div>
+        <div class="field">
+          <label for="auto-chamber">Handwerkskammer</label>
+          <select id="auto-chamber"><option value="">– Kammer wählen –</option></select>
+        </div>
+        <div class="field">
+          <label for="auto-trade">Beruf/Fachrichtung</label>
+          <select id="auto-trade" disabled><option value="">– Beruf/Fachrichtung wählen –</option></select>
+        </div>
+      </div>
+
+      <h3>Kursteile auswählen</h3>
+      <div class="parts-grid">
+        <label class="part-check"><input type="checkbox" id="chk1" value="1"> Teil I – Fachpraxis</label>
+        <label class="part-check"><input type="checkbox" id="chk2" value="2"> Teil II – Fachtheorie</label>
+        <label class="part-check"><input type="checkbox" id="chk3" value="3"> Teil III – BWL/Recht</label>
+        <label class="part-check"><input type="checkbox" id="chk4" value="4"> Teil IV – Pädagogik</label>
+      </div>
+
+      <div id="combo-options" style="display:none;margin:.6rem 0">
+        <label style="display:flex;align-items:center;gap:.4rem;font-size:.8rem;
+               background:var(--paper);border:1px solid var(--line-strong);border-radius:100px;
+               padding:.3rem .8rem;cursor:pointer;user-select:none;width:fit-content">
+          <input type="checkbox" id="prefer-singles">
+          Einzelne Kursteile den Kombi-Kursen bevorzugen
+        </label>
+      </div>
+
+      <div id="fee-inputs"></div>
+
+      <div class="part-fee-block" style="border-color:#E0CCEC;background:#F6EFFA">
+        <div class="part-title" style="color:#6B3FA0">
+          Meisterprojekt
+          <span style="font-size:.7rem;font-weight:400;color:var(--text-lt);margin-left:.4rem">(optional)</span>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="fee-projekt">Materialkosten Projekt (€)
+              <span class="fee-info-wrap-calc">
+                <button class="fee-info-btn-calc" type="button"
+                  data-tooltip="Materialkosten für das praktische Meisterprojekt (Teil I). Diese Kosten können als Teil der Prüfungsgebühren AFBG-förderfähig sein. Erkundige dich bei deiner Kammer, ob und in welcher Höhe diese Kosten offiziell angesetzt werden." aria-label="Hinweis zu Materialkosten">i</button>
+              </span>
+            </label>
+            <input type="number" id="fee-projekt" value="" min="0" step="50" placeholder="z. B. 2.800">
+          </div>
+          <div class="field">
+            <span style="color:var(--text-lt);font-size:.75rem;margin-top:.4rem;display:block">
+              Separat gefördert: bis zu 2.000 € der tatsächlichen Kosten. Davon 50 % Zuschuss, 50 % KfW-Darlehen (kein Darlehenserlass).
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn-calc" id="btn-calc">Förderung berechnen</button>
+    </div>
+
+    <div class="result-stack">
+      <section class="result-card" id="result-box-main" aria-live="polite">
+        <h2>Deine AFBG-Förderung für Lehrgangs- und Prüfungsgebühren</h2>
+        <div class="result-empty" id="result-empty">Wähle Kursteile und gib Gebühren ein, dann klicke auf „Förderung berechnen".</div>
+        <div id="result-content" style="display:none"></div>
+      </section>
+      <section class="result-card" id="result-box-projekt" style="display:none;background:#3D2060">
+        <h2>Deine AFBG-Förderung für dein Meisterprojekt</h2>
+        <div id="result-projekt-content"></div>
+      </section>
+      <section class="result-card" id="result-box-total" style="display:none;background:#16402E">
+        <h2 style="color:rgba(255,255,255,.78)">Gesamtübersicht</h2>
+        <div id="result-total-content"></div>
+      </section>
+    </div>
+  </div>
+
+  <div class="card afbg-explainer">
+    <h2>So funktioniert das Aufstiegs-BAföG (AFBG)</h2>
+    <p style="margin-bottom:.75rem">Das AFBG fördert Lehrgangs- und Prüfungsgebühren bis zu <strong>15.000 €</strong>:</p>
+    <ul>
+      <li><strong>50 % Zuschuss</strong> – wird nicht zurückgezahlt</li>
+      <li><strong>50 % zinsgünstiges KfW-Darlehen</strong></li>
+      <li><strong>50 % Darlehenserlass</strong> bei bestandener Prüfung</li>
+      <li>Effektiver Eigenanteil bei Bestehen: ca. <strong>25 %</strong> der geförderten Kosten</li>
+    </ul>
+    <p style="margin-top:1rem;margin-bottom:.5rem">Das AFBG fördert Materialkosten des Meisterprüfungsprojekts (und vergleichbaren Arbeiten) bis zu <strong>2.000 €</strong>:</p>
+    <ul style="margin-bottom:.75rem">
+      <li><strong>50 % Zuschuss</strong> – wird nicht zurückgezahlt</li>
+      <li><strong>50 % zinsgünstiges KfW-Darlehen</strong> – kein Darlehenserlass</li>
+    </ul>
+    <p style="margin-top:1rem;margin-bottom:.5rem">
+      Wenn du an einer Vollzeitmaßnahme teilnimmst, kannst du zusätzlich einen Beitrag zum Lebensunterhalt erhalten.
+      Diese Unterhaltsförderung ist unter anderem abhängig von deinem Einkommen und Vermögen.
+      Informiere dich auf <a href="https://www.aufstiegs-bafoeg.de/aufstiegsbafoeg/de/die-foerderung/wie-wird-gefoerdert/wie-wird-gefoerdert_node.html" target="_blank" rel="noopener">www.aufstiegs-bafoeg.de</a>
+    </p>
+    <p style="font-size:.8rem;color:var(--text-lt);margin-top:.75rem">
+      Quelle: BMBFSFJ,
+      <a href="https://www.aufstiegs-bafoeg.de/aufstiegsbafoeg/de/home/home_node.html" target="_blank" rel="noopener">www.aufstiegs-bafoeg.de</a>.
+      Angaben ohne Gewähr. (Stand: 03. Juni 2026)
+    </p>
+  </div>
+</div>
+</main>
+
+<script type="module" src="./src/afbg.js"></script>
+</body>
+</html>

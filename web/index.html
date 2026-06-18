@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meistervorbereitungskurse vergleichen (RLP & Saarland) – MeisterKompass</title>
+  <meta name="description" content="Meistervorbereitungskurse der Handwerkskammern in Rheinland-Pfalz und dem Saarland vergleichen – Gebühren, Termine, Prüfungsgebühren und Standorte.">
+  <meta name="theme-color" content="#14304A">
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MeisterKompass">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:title" content="MeisterKompass – Meistervorbereitungskurse im Vergleich">
+  <meta property="og:description" content="Gebühren, Termine, Prüfungsgebühren und Standorte aller fünf Handwerkskammern in Rheinland-Pfalz und dem Saarland – plus AFBG-Förderrechner.">
+  <link rel="canonical" href="https://boredland.github.io/meisterkompass/">
+  <meta property="og:url" content="https://boredland.github.io/meisterkompass/">
+  <meta property="og:image" content="https://boredland.github.io/meisterkompass/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MeisterKompass – Meistervorbereitungskurse im Vergleich">
+  <meta name="twitter:description" content="Gebühren, Termine, Prüfungsgebühren und Standorte aller fünf Handwerkskammern – plus AFBG-Förderrechner.">
+  <meta name="twitter:image" content="https://boredland.github.io/meisterkompass/og-image.png">
+  <link rel="stylesheet" href="./src/base.css">
+  <link rel="stylesheet" href="./src/list.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://boredland.github.io/meisterkompass/#website",
+        "url": "https://boredland.github.io/meisterkompass/",
+        "name": "MeisterKompass",
+        "description": "Vergleich von Meistervorbereitungskursen der Handwerkskammern in Rheinland-Pfalz und dem Saarland.",
+        "inLanguage": "de"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://boredland.github.io/meisterkompass/#org",
+        "name": "MeisterKompass",
+        "url": "https://boredland.github.io/meisterkompass/",
+        "logo": "https://boredland.github.io/meisterkompass/og-image.png"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Zum Inhalt springen</a>
+
+<header class="topbar">
+  <div class="container">
+    <a class="nav-brand" href="./index.html" aria-label="MeisterKompass – Startseite">
+      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+        <circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.55"/>
+        <polygon points="16,5 19.5,16 16,16" fill="currentColor"/>
+        <polygon points="16,27 12.5,16 16,16" fill="#ffffff"/>
+        <circle cx="16" cy="16" r="1.8" fill="#ffffff"/>
+      </svg>
+      Meister<span>Kompass</span>
+    </a>
+    <nav class="nav-tabs" aria-label="Hauptnavigation">
+      <a href="./index.html" aria-current="page" class="active">Kursfinder</a>
+      <a href="./afbg.html">AFBG-Rechner</a>
+      <a href="./about.html">Über MeisterKompass</a>
+      <a href="./imprint.html">Impressum</a>
+    </nav>
+    <button class="hamburger" id="hamburger-btn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">☰</button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="./index.html" aria-current="page" class="active">Kursfinder</a>
+    <a href="./afbg.html">AFBG-Rechner</a>
+    <a href="./about.html">Über MeisterKompass</a>
+    <a href="./imprint.html">Impressum</a>
+  </div>
+</header>
+
+<button id="back-to-top" aria-label="Nach oben scrollen">↑</button>
+
+<main id="main-content">
+<div class="page-header">
+  <div class="container">
+    <p class="eyebrow">Handwerk · Rheinland-Pfalz &amp; Saarland</p>
+    <h1>Meistervorbereitungskurse im Vergleich</h1>
+    <p class="lede">Gebühren, Termine, Prüfungsgebühren und Standorte aller fünf Handwerkskammern – an einem Ort.</p>
+    <div class="header-stats">
+      <div class="stat"><span class="num" id="count-courses">0</span><span class="lbl">Kursangebote</span></div>
+      <div class="stat"><span class="num" id="count-chambers">0</span><span class="lbl">Kammern</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="filter-bar">
+  <div class="container">
+    <button type="button" class="filter-toggle-btn" id="filter-toggle-btn" aria-expanded="false" aria-controls="filter-panel-mobile">
+      <span>🔍 Filter</span>
+      <span id="filter-badge" style="display:none;background:var(--brass);color:#fff;border-radius:100px;font-size:.7rem;padding:1px 8px">aktiv</span>
+      <span class="ftb-chevron" aria-hidden="true">▼</span>
+    </button>
+    <div class="filter-panel-mobile" id="filter-panel-mobile">
+      <div class="filter-row" role="search" aria-label="Kurse filtern">
+        <select id="f-chamber" aria-label="Handwerkskammer"><option value="">Alle Kammern</option></select>
+        <select id="f-trade" aria-label="Beruf oder Fachrichtung"><option value="">Beruf / Fachrichtung</option></select>
+        <select id="f-format" aria-label="Zeitmodell">
+          <option value="">Zeitmodell</option>
+          <option value="full_time">Vollzeit</option>
+          <option value="part_time">Teilzeit</option>
+        </select>
+
+        <div class="parts-wrap" id="parts-wrap">
+          <button type="button" class="parts-btn" id="parts-btn" aria-haspopup="true" aria-expanded="false" aria-controls="parts-dropdown">Teile ▾</button>
+          <div class="parts-dropdown" id="parts-dropdown" role="group" aria-label="Prüfungsteile">
+            <label><input type="checkbox" class="f-part" value="1"> Teil I – Fachpraxis</label>
+            <label><input type="checkbox" class="f-part" value="2"> Teil II – Fachtheorie</label>
+            <label><input type="checkbox" class="f-part" value="3"> Teil III – Betriebswirtschaft</label>
+            <label><input type="checkbox" class="f-part" value="4"> Teil IV – Pädagogik</label>
+            <hr>
+            <label title="Zeigt auch Kurse an, die den gewählten Teil in Kombination mit weiteren Teilen anbieten">
+              <input type="checkbox" id="f-include-combos" value="1"> Kombikurse einschließen
+            </label>
+            <button type="button" class="parts-apply" id="parts-apply">Anwenden</button>
+          </div>
+        </div>
+
+        <button type="button" id="btn-available" class="btn btn-ghost" aria-pressed="false"
+                style="white-space:nowrap" title="Nur Kurse mit freien Plätzen anzeigen">✓ Plätze verfügbar</button>
+
+        <div class="date-range">
+          <label for="f-date-from">Start ab</label>
+          <input type="date" id="f-date-from" aria-label="Startdatum ab">
+          <label for="f-date-to">bis</label>
+          <input type="date" id="f-date-to" aria-label="Startdatum bis">
+        </div>
+
+        <button type="button" id="btn-reset" class="btn btn-ghost" style="display:none">✕ Zurücksetzen</button>
+
+        <div class="view-toggle" role="group" aria-label="Ansicht wählen">
+          <button type="button" id="btn-list" class="active" aria-pressed="true">☰ Liste</button>
+          <button type="button" id="btn-map" aria-pressed="false">⊙ Karte</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="container">
+    <div id="view-list">
+      <div id="active-filters" style="display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.7rem" aria-label="Aktive Filter"></div>
+      <div class="results-bar">
+        <p class="results-meta" role="status" aria-live="polite"><span id="results-count">0</span> <span id="results-noun">Kursangebote</span> gefunden</p>
+        <select id="f-per-page" aria-label="Einträge pro Seite">
+          <option value="10">10 pro Seite</option>
+          <option value="20" selected>20 pro Seite</option>
+          <option value="30">30 pro Seite</option>
+          <option value="40">40 pro Seite</option>
+          <option value="60">60 pro Seite</option>
+          <option value="all">Alle anzeigen</option>
+        </select>
+      </div>
+
+      <div class="table-scroll-wrap">
+        <div class="table-scroll" id="scroll-main">
+          <table class="course-table" id="main-table">
+            <caption class="visually-hidden">Liste der Meistervorbereitungskurse</caption>
+            <thead>
+              <tr>
+                <th scope="col" class="mob-summary"><span class="visually-hidden">Übersicht</span></th>
+                <th scope="col">Kurs</th><th scope="col">Kammer</th><th scope="col">Teile</th><th scope="col">Zeitmodell</th>
+                <th scope="col">Laufzeit</th><th scope="col">Dauer</th>
+                <th scope="col">Kursgebühr</th><th scope="col">Prüfungsgebühr</th><th scope="col">Ort</th><th scope="col">Verfügbarkeit</th>
+              </tr>
+            </thead>
+            <tbody id="course-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+      <nav class="pagination" id="pagination" aria-label="Seitennavigation"></nav>
+    </div>
+
+    <div id="view-map" style="display:none">
+      <p class="map-notice" id="map-notice">Nur Kurse mit bekannten Koordinaten werden angezeigt.</p>
+      <div id="map" role="region" aria-label="Karte der Kursstandorte"></div>
+    </div>
+  </div>
+</div>
+</main>
+
+<script type="module" src="./src/list.js"></script>
+</body>
+</html>

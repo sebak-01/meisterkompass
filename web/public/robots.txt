@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://boredland.github.io/meisterkompass/sitemap.xml

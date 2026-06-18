@@ -1,0 +1,122 @@
+[
+  {
+    "slug": "backer",
+    "name": "Bäcker"
+  },
+  {
+    "slug": "dachdecker",
+    "name": "Dachdecker"
+  },
+  {
+    "slug": "edelsteinschleifer-und-graveure",
+    "name": "Edelsteinschleifer- und Graveure"
+  },
+  {
+    "slug": "elektrotechniker",
+    "name": "Elektrotechniker"
+  },
+  {
+    "slug": "fahrzeuglackierer",
+    "name": "Fahrzeuglackierer"
+  },
+  {
+    "slug": "feinwerkmechaniker",
+    "name": "Feinwerkmechaniker"
+  },
+  {
+    "slug": "fleischer",
+    "name": "Fleischer"
+  },
+  {
+    "slug": "fliesen-platten-und-mosaikleger",
+    "name": "Fliesen-, Platten- und Mosaikleger"
+  },
+  {
+    "slug": "friseur",
+    "name": "Friseur"
+  },
+  {
+    "slug": "gerustbauer",
+    "name": "Gerüstbauer"
+  },
+  {
+    "slug": "gold-und-silberschmiede",
+    "name": "Gold- und Silberschmiede"
+  },
+  {
+    "slug": "informationstechniker",
+    "name": "Informationstechniker"
+  },
+  {
+    "slug": "installateur-und-heizungsbauer",
+    "name": "Installateur- und Heizungsbauer"
+  },
+  {
+    "slug": "karosserie-und-fahrzeugbauer",
+    "name": "Karosserie- und Fahrzeugbauer"
+  },
+  {
+    "slug": "kfz-techniker",
+    "name": "Kfz.-Techniker"
+  },
+  {
+    "slug": "konditor",
+    "name": "Konditor"
+  },
+  {
+    "slug": "konditoren",
+    "name": "Konditoren"
+  },
+  {
+    "slug": "land-und-baumaschinenmechatroniker",
+    "name": "Land- und Baumaschinenmechatroniker"
+  },
+  {
+    "slug": "maler-und-lackierer",
+    "name": "Maler und Lackierer"
+  },
+  {
+    "slug": "maurer-und-betonbauer",
+    "name": "Maurer und Betonbauer"
+  },
+  {
+    "slug": "metallbauer",
+    "name": "Metallbauer"
+  },
+  {
+    "slug": "schornsteinfeger",
+    "name": "Schornsteinfeger"
+  },
+  {
+    "slug": "steinmetze-und-steinbildhauer",
+    "name": "Steinmetze und Steinbildhauer"
+  },
+  {
+    "slug": "straenbauer",
+    "name": "Straßenbauer"
+  },
+  {
+    "slug": "stuckateur",
+    "name": "Stuckateur"
+  },
+  {
+    "slug": "stuckateure",
+    "name": "Stuckateure"
+  },
+  {
+    "slug": "tischler",
+    "name": "Tischler"
+  },
+  {
+    "slug": "allgemein-teil-iii-iv",
+    "name": "Wirtschaft, Recht, Pädagogik"
+  },
+  {
+    "slug": "zahntechniker",
+    "name": "Zahntechniker"
+  },
+  {
+    "slug": "zimmerer",
+    "name": "Zimmerer"
+  }
+]

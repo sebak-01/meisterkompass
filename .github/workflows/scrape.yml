@@ -1,13 +1,21 @@
-name: Weekly scraper
+name: Daily scrape → data JSON
 
 on:
   schedule:
-    - cron: "0 3 * * 5"   # Every Friday at 03:00 UTC
-  workflow_dispatch:        # Allow manual trigger from GitHub UI
+    - cron: "0 3 * * *"   # Daily at 03:00 UTC
+  workflow_dispatch:        # Allow manual trigger from the GitHub UI
+
+permissions:
+  contents: write
+
+concurrency:
+  group: scrape
+  cancel-in-progress: false
 
 jobs:
   scrape:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
 
     steps:
       - name: Check out code
@@ -22,18 +30,20 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run all scrapers
-        env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
-          SECRET_KEY: ${{ secrets.SECRET_KEY }}
-          DJANGO_SETTINGS_MODULE: config.settings_prod
-          ALLOWED_HOSTS: "localhost"
-          CSRF_TRUSTED_ORIGINS: "http://localhost"
-          # Disable HTTPS redirect for management commands (no HTTPS in CI)
-          SECURE_SSL_REDIRECT: "False"
+      - name: Run scrapers → data/*.json
+        run: python -m scrapers.run
+
+      - name: Commit data changes
         run: |
-          python manage.py run_scrapers
-          python manage.py geocode_offers
+          git config user.name  "scrape-bot"
+          git config user.email "scrape-bot@users.noreply.github.com"
+          git add data/
+          if git diff --staged --quiet; then
+            echo "No data changes."
+          else
+            git commit -m "data: scheduled scrape $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push
+          fi
 
       - name: Notify on failure
         if: failure()

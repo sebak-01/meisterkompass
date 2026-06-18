@@ -1,0 +1,8 @@
+# Runtime versions for MeisterKompass.
+# Provision with:  mise install
+#
+# Python  → scrapers (deps installed with uv: `uv pip install -r requirements.txt`)
+# Node    → static site build in web/ (deps with npm: `npm ci`)
+[tools]
+python = "3.12"
+node = "22"
