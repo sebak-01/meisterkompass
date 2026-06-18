@@ -230,6 +230,7 @@ class HwkRheinhessenScraper(BaseScraper):
             course_fee=course_fee,
             city=city,
             exam_fee_scraped=None,
+            street=street,
             zip_code=zip_code,
             availability="unknown",
             source_url=source_url,
