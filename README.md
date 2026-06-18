@@ -6,8 +6,6 @@ courses offered by Handwerkskammern (HWK) in Germany.
 Enables direct comparison of prices, duration, and exam fees across chambers,
 as well as calculation of AFBG (Aufstiegs-BAföG) funding.
 
-**Live:** https://boredland.github.io/meisterkompass/
-
 Current scope: five chambers — four in Rhineland-Palatinate (Koblenz, Pfalz,
 Rheinhessen, Trier) and HWK des Saarlandes.
 
