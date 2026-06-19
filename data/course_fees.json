@@ -589,17 +589,6 @@
   },
   {
     "chamber_slug": "hwk-koblenz",
-    "trade_slug": "gerustbauer",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 6350.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-koblenz",
     "trade_slug": "tischler",
     "parts": [
       1,
@@ -853,6 +842,17 @@
     ],
     "fee": 7050.0,
     "exam_fee_scraped": 1000.0,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-koblenz",
+    "trade_slug": "gerustbauer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 6350.0,
+    "exam_fee_scraped": null,
     "is_generic": false
   },
   {
