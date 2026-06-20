@@ -102,6 +102,10 @@ function renderTags(s) {
     if (t) tags.push(mk(t.name, { trade: "" }));
   }
   if (s.format) tags.push(mk(s.format === "full_time" ? "Vollzeit" : "Teilzeit", { format: "" }));
+  if (s.parts.length) {
+    const label = s.parts.map((p) => "Teil " + ROMAN[p]).join(", ") + (s.includeCombos ? " +Kombi" : "");
+    tags.push(mk(label, { parts: [], includeCombos: false }));
+  }
   if (s.available) tags.push(mk("Nur freie Plätze", { available: false }));
   if (s.dateFrom) tags.push(mk("ab " + s.dateFrom, { dateFrom: "" }));
   box.innerHTML = tags.join("");
@@ -151,8 +155,8 @@ function syncControls(s) {
   const partsBtn = document.getElementById("parts-btn");
   partsBtn.classList.toggle("active-filter", s.parts.length > 0);
   partsBtn.textContent = s.parts.length
-    ? s.parts.map((p) => "Teil " + ROMAN[p]).join(", ") + (s.includeCombos ? " +Kombi" : "") + " ▾"
-    : "Teile ▾";
+    ? s.parts.map((p) => "Teil " + ROMAN[p]).join(", ") + (s.includeCombos ? " +Kombi" : "")
+    : "Teile";
   partsBtn.setAttribute("aria-expanded", String(document.getElementById("parts-dropdown").classList.contains("open")));
 
   const av = document.getElementById("btn-available");
