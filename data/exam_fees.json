@@ -413,6 +413,13 @@
       }
     },
     "hwk-trier": {
+      "allgemein-teil-iii-iv": {
+        "4": {
+          "fee": 225.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
       "elektrotechniker": {
         "1": {
           "fee": 1130.0,

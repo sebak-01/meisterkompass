@@ -7889,12 +7889,12 @@
     "duration_hours": 100,
     "course_fee": 600.0,
     "course_fee_display": "600 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 225.0,
     "exam_fee": {
-      "fee": null,
+      "fee": 225.0,
       "fee_max": null,
       "qualifier": "",
-      "display": ""
+      "display": "225 €"
     },
     "city": "Trier",
     "street": "Loebstraße 18",
@@ -7955,12 +7955,12 @@
     "duration_hours": 100,
     "course_fee": 600.0,
     "course_fee_display": "600 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 225.0,
     "exam_fee": {
-      "fee": null,
+      "fee": 225.0,
       "fee_max": null,
       "qualifier": "",
-      "display": ""
+      "display": "225 €"
     },
     "city": "Trier",
     "street": "Loebstraße 18",
