@@ -1,5 +1,5 @@
 """
-scraper/hwk_trier.py
+scrapers/hwk_trier.py
 
 Scraper for HWK Trier Meistervorbereitungskurse.
 
@@ -31,6 +31,11 @@ DURATION_PATTERN = re.compile(r"(\d+)[\s\xa0]*Std\.", re.IGNORECASE)
 DATE_PATTERN     = re.compile(r"(\d{2})\.(\d{2})\.(\d{4})")
 ZIP_CITY_PATTERN = re.compile(r"(\d{5})\s+(.+)")
 
+# Fallback patterns for the "Kosten" prose block, seen on Parts III/IV pages:
+#   "600 Euro Kursgebühren" / "225 Euro Prüfungsgebühren"
+KURS_PROSE_PATTERN  = re.compile(r"([\d.]+)(?:,(\d{2}))?\s*Euro\s*Kursgebühren", re.IGNORECASE)
+PRUEF_PROSE_PATTERN = re.compile(r"([\d.]+)(?:,(\d{2}))?\s*Euro\s*Prüfungsgebühren", re.IGNORECASE)
+
 FORMAT_MAP = {
     "vollzeit":   "full_time",
     "teilzeit":   "part_time",
@@ -61,6 +66,9 @@ def parse_price(text: str) -> float | None:
     m = PRICE_PATTERN.search(text)
     return float(m.group(1).replace(".", "") + "." + m.group(2)) if m else None
 
+def _parse_euro_prose(match: re.Match) -> float:
+    whole, cents = match.group(1), match.group(2)
+    return float(whole.replace(".", "") + "." + (cents or "00"))
 
 def parse_duration(text: str) -> int | None:
     m = DURATION_PATTERN.search(text)
@@ -290,6 +298,17 @@ class HwkTrierScraper(BaseScraper):
             course_fee = float(kurs_match.group(1).replace(".", "") + "." + kurs_match.group(2))
         if pruef_match:
             exam_fee_scraped = float(pruef_match.group(1).replace(".", "") + "." + pruef_match.group(2))
+
+        # Fallback: Parts III/IV pages state fees in prose under "Kosten"
+        # instead of the "Gebühren: Kurs:/Prüfung:" block.
+        if course_fee is None:
+            kurs_prose = KURS_PROSE_PATTERN.search(page_text)
+            if kurs_prose:
+                course_fee = _parse_euro_prose(kurs_prose)
+        if exam_fee_scraped is None:
+            pruef_prose = PRUEF_PROSE_PATTERN.search(page_text)
+            if pruef_prose:
+                exam_fee_scraped = _parse_euro_prose(pruef_prose)
 
         # Schedule
         dates = DATE_PATTERN.findall(page_text)

@@ -1,5 +1,5 @@
 """
-scraper/hwk_saarland.py — HWK Saarland
+scrapers/hwk_saarland.py — HWK Saarland
 
 Page structure (WordPress, www.hwk-saarland.de):
   - portal.hwk-saarland.de/seminar/* all redirect 301 → www.hwk-saarland.de/seminar/*

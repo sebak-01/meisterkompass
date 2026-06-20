@@ -1,5 +1,5 @@
 """
-scraper/hwk_rheinhessen.py
+scrapers/hwk_rheinhessen.py
 
 Scraper for Handwerkskammer Rheinhessen Meistervorbereitungskurse.
 Source: https://www.hwk.de/meisterkurse/

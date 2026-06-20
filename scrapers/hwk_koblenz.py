@@ -1,5 +1,5 @@
 """
-scraper/hwk_koblenz.py
+scrapers/hwk_koblenz.py
 
 Scraper for HWK Koblenz Meistervorbereitungskurse.
 Source: https://www.hwk-koblenz.de/52,0,courselist.html?search-filter-template=0&search-type=6

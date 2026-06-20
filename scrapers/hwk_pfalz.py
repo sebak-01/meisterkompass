@@ -1,5 +1,5 @@
 """
-scraper/hwk_pfalz.py
+scrapers/hwk_pfalz.py
 
 Scraper for Handwerkskammer der Pfalz Meistervorbereitungskurse.
 Source: https://www.hwk-pfalz.de/kurse/liste-51,0,courselist.html?search-type=6
