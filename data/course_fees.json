@@ -715,14 +715,14 @@
     "is_generic": false
   },
   {
-    "chamber_slug": "hwk-trier",
-    "trade_slug": "elektrotechniker",
+    "chamber_slug": "hwk-koblenz",
+    "trade_slug": "gerustbauer",
     "parts": [
       1,
       2
     ],
-    "fee": 9300.0,
-    "exam_fee_scraped": 1130.0,
+    "fee": 6350.0,
+    "exam_fee_scraped": null,
     "is_generic": false
   },
   {
@@ -766,6 +766,17 @@
     ],
     "fee": 4200.0,
     "exam_fee_scraped": 400.0,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-trier",
+    "trade_slug": "elektrotechniker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 9300.0,
+    "exam_fee_scraped": 1130.0,
     "is_generic": false
   },
   {
@@ -842,17 +853,6 @@
     ],
     "fee": 7050.0,
     "exam_fee_scraped": 1000.0,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-koblenz",
-    "trade_slug": "gerustbauer",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 6350.0,
-    "exam_fee_scraped": null,
     "is_generic": false
   },
   {

@@ -235,7 +235,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=115146&search-onr=52&img=17"
+    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=115146&search-onr=52&img=18"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -269,7 +269,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=112332&search-onr=52&img=18"
+    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=112332&search-onr=52&img=19"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -303,7 +303,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=116774&search-onr=52&img=1"
+    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=116774&search-onr=52&img=2"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -337,7 +337,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=114994&search-onr=52&img=2"
+    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=114994&search-onr=52&img=3"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -371,7 +371,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=119250&search-onr=52&img=4"
+    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=119250&search-onr=52&img=5"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -405,7 +405,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=117151&search-onr=52&img=5"
+    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=117151&search-onr=52&img=6"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -439,7 +439,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=118637&search-onr=52&img=7"
+    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=118637&search-onr=52&img=8"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -473,7 +473,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=120060&search-onr=52&img=9"
+    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=120060&search-onr=52&img=10"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -785,6 +785,40 @@
     "chamber_slug": "hwk-koblenz",
     "chamber_name": "HWK Koblenz",
     "chamber_region": "Rheinland-Pfalz",
+    "trade_slug": "gerustbauer",
+    "trade_name": "Gerüstbauer",
+    "title": "Gerüstbauer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-10-23",
+    "end_date": "2029-04-28",
+    "duration_hours": 500,
+    "course_fee": 6350.0,
+    "course_fee_display": "6.350 €",
+    "exam_fee_scraped": null,
+    "exam_fee": {
+      "fee": 1800.0,
+      "fee_max": null,
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €"
+    },
+    "city": "Koblenz",
+    "street": "St. Elisabeth Str. 2",
+    "zip_code": "56073",
+    "latitude": 50.3603382,
+    "longitude": 7.5844202,
+    "availability": "available",
+    "source_url": "https://www.hwk-koblenz.de/kurse/geruestbauer-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=120978&search-onr=52&img=14"
+  },
+  {
+    "chamber_slug": "hwk-koblenz",
+    "chamber_name": "HWK Koblenz",
+    "chamber_region": "Rheinland-Pfalz",
     "trade_slug": "gold-und-silberschmiede",
     "trade_name": "Gold- und Silberschmiede",
     "title": "Gold- und Silberschmiede (Teile I + II)",
@@ -949,7 +983,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=110696&search-onr=52&img=16"
+    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=110696&search-onr=52&img=17"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -983,7 +1017,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=115931&search-onr=52&img=19"
+    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=115931&search-onr=52&img=20"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -1017,7 +1051,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=113746&search-onr=52&img=20"
+    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=113746&search-onr=52&img=1"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -1051,7 +1085,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=115926&search-onr=52&img=3"
+    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=115926&search-onr=52&img=4"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -1085,7 +1119,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=118234&search-onr=52&img=6"
+    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=118234&search-onr=52&img=7"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -1119,7 +1153,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=119662&search-onr=52&img=8"
+    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=119662&search-onr=52&img=9"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -1561,7 +1595,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/land-und-baumaschinenmechatroniker-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=120601&search-onr=52&img=14"
+    "source_url": "https://www.hwk-koblenz.de/kurse/land-und-baumaschinenmechatroniker-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=120601&search-onr=52&img=15"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -2341,7 +2375,7 @@
     "zip_code": "53474",
     "latitude": 50.5456433,
     "longitude": 7.1017081,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-crashkurs-52,0,coursedetail.html?id=114772&search-onr=52&img=16"
   },
   {
@@ -3532,7 +3566,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/zimmerer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=120631&search-onr=52&img=15"
+    "source_url": "https://www.hwk-koblenz.de/kurse/zimmerer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=120631&search-onr=52&img=16"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -7564,7 +7598,7 @@
     "zip_code": "54292",
     "latitude": 49.775426,
     "longitude": 6.6804464,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-trier.de/kurse/teil-iii-elektrotechniker-54,0,coursedetail.html?id=60549&search-onr=54&img=2"
   },
   {
