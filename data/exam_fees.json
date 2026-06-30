@@ -87,13 +87,6 @@
           "qualifier": ""
         }
       },
-      "kfz-techniker": {
-        "2": {
-          "fee": 600.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
       "land-und-baumaschinenmechatroniker": {
         "1": {
           "fee": 1100.0,
@@ -152,11 +145,6 @@
         }
       },
       "backer": {
-        "1": {
-          "fee": 990.0,
-          "fee_max": null,
-          "qualifier": ""
-        },
         "2": {
           "fee": 560.0,
           "fee_max": null,
@@ -220,11 +208,6 @@
         }
       },
       "fliesen-platten-und-mosaikleger": {
-        "1": {
-          "fee": 990.0,
-          "fee_max": null,
-          "qualifier": ""
-        },
         "2": {
           "fee": 330.0,
           "fee_max": null,
