@@ -370,6 +370,16 @@
   },
   {
     "chamber_slug": "hwk-saarland",
+    "trade_slug": "backer",
+    "parts": [
+      1
+    ],
+    "fee": 2710.0,
+    "exam_fee_scraped": 990.0,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-saarland",
     "trade_slug": "friseur",
     "parts": [
       1,
@@ -386,6 +396,16 @@
       1
     ],
     "fee": 2640.0,
+    "exam_fee_scraped": 990.0,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-saarland",
+    "trade_slug": "elektrotechniker",
+    "parts": [
+      1
+    ],
+    "fee": 4265.0,
     "exam_fee_scraped": 990.0,
     "is_generic": false
   },
@@ -529,6 +549,16 @@
   },
   {
     "chamber_slug": "hwk-saarland",
+    "trade_slug": "kfz-techniker",
+    "parts": [
+      1
+    ],
+    "fee": 4095.0,
+    "exam_fee_scraped": 990.0,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-saarland",
     "trade_slug": "fliesen-platten-und-mosaikleger",
     "parts": [
       2
@@ -656,6 +686,16 @@
   },
   {
     "chamber_slug": "hwk-saarland",
+    "trade_slug": "feinwerkmechaniker",
+    "parts": [
+      1
+    ],
+    "fee": 4810.0,
+    "exam_fee_scraped": 990.0,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-saarland",
     "trade_slug": "tischler",
     "parts": [
       1
@@ -695,6 +735,16 @@
     ],
     "fee": 9590.0,
     "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-saarland",
+    "trade_slug": "fliesen-platten-und-mosaikleger",
+    "parts": [
+      1
+    ],
+    "fee": 485.0,
+    "exam_fee_scraped": 990.0,
     "is_generic": false
   },
   {
@@ -806,6 +856,16 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-saarland",
+    "trade_slug": "installateur-und-heizungsbauer",
+    "parts": [
+      1
+    ],
+    "fee": 3035.0,
+    "exam_fee_scraped": 990.0,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-koblenz",
     "trade_slug": "karosserie-und-fahrzeugbauer",
     "parts": [
@@ -838,6 +898,16 @@
     ],
     "fee": 6040.0,
     "exam_fee_scraped": 1790.0,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-saarland",
+    "trade_slug": "fahrzeuglackierer",
+    "parts": [
+      1
+    ],
+    "fee": 2480.0,
+    "exam_fee_scraped": null,
     "is_generic": false
   },
   {

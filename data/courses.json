@@ -5564,6 +5564,39 @@
     "chamber_region": "Saarland",
     "trade_slug": "backer",
     "trade_name": "Bäcker",
+    "title": "Bäcker (Teil I)",
+    "parts": [
+      1
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-03-01",
+    "end_date": "2028-02-18",
+    "duration_hours": 193,
+    "course_fee": 2710.0,
+    "course_fee_display": "2.710 €",
+    "exam_fee_scraped": 990.0,
+    "exam_fee": {
+      "fee": 990.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "990 €"
+    },
+    "city": "Saarbrücken",
+    "street": "Hohenzollernstraße 47-49",
+    "zip_code": "66117",
+    "latitude": 49.2297,
+    "longitude": 6.9967,
+    "availability": "available",
+    "source_url": "https://www.hwk-saarland.de/seminar/mv-teil-i-baecker-m1ba/"
+  },
+  {
+    "chamber_slug": "hwk-saarland",
+    "chamber_name": "HWK des Saarlandes",
+    "chamber_region": "Saarland",
+    "trade_slug": "backer",
+    "trade_name": "Bäcker",
     "title": "Bäcker (Teil II)",
     "parts": [
       2
@@ -5590,6 +5623,39 @@
     "longitude": 6.9967,
     "availability": "available",
     "source_url": "https://www.hwk-saarland.de/seminar/mv-teil-ii-baecker-m2ba/"
+  },
+  {
+    "chamber_slug": "hwk-saarland",
+    "chamber_name": "HWK des Saarlandes",
+    "chamber_region": "Saarland",
+    "trade_slug": "backer",
+    "trade_name": "Bäcker",
+    "title": "Bäcker (Teil I)",
+    "parts": [
+      1
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2029-03-05",
+    "end_date": "2030-02-18",
+    "duration_hours": 193,
+    "course_fee": 2710.0,
+    "course_fee_display": "2.710 €",
+    "exam_fee_scraped": 990.0,
+    "exam_fee": {
+      "fee": 990.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "990 €"
+    },
+    "city": "Saarbrücken",
+    "street": "Hohenzollernstraße 47-49",
+    "zip_code": "66117",
+    "latitude": 49.2297,
+    "longitude": 6.9967,
+    "availability": "available",
+    "source_url": "https://www.hwk-saarland.de/seminar/mv-teil-i-baecker-m1ba/"
   },
   {
     "chamber_slug": "hwk-saarland",
@@ -5663,6 +5729,39 @@
     "chamber_region": "Saarland",
     "trade_slug": "elektrotechniker",
     "trade_name": "Elektrotechniker",
+    "title": "Elektrotechniker (Teil I)",
+    "parts": [
+      1
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-04-05",
+    "end_date": "2028-04-07",
+    "duration_hours": 420,
+    "course_fee": 4265.0,
+    "course_fee_display": "4.265 €",
+    "exam_fee_scraped": 990.0,
+    "exam_fee": {
+      "fee": 990.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "990 €"
+    },
+    "city": "Saarbrücken",
+    "street": "Hohenzollernstraße 47-49",
+    "zip_code": "66117",
+    "latitude": 49.2297,
+    "longitude": 6.9967,
+    "availability": "available",
+    "source_url": "https://www.hwk-saarland.de/seminar/mv-teil-i-elektrotechniker-m1et/"
+  },
+  {
+    "chamber_slug": "hwk-saarland",
+    "chamber_name": "HWK des Saarlandes",
+    "chamber_region": "Saarland",
+    "trade_slug": "elektrotechniker",
+    "trade_name": "Elektrotechniker",
     "title": "Elektrotechniker (Teil II)",
     "parts": [
       2
@@ -5689,6 +5788,39 @@
     "longitude": 6.9967,
     "availability": "available",
     "source_url": "https://www.hwk-saarland.de/seminar/mv-teil-ii-elektrotechniker-m2et/"
+  },
+  {
+    "chamber_slug": "hwk-saarland",
+    "chamber_name": "HWK des Saarlandes",
+    "chamber_region": "Saarland",
+    "trade_slug": "elektrotechniker",
+    "trade_name": "Elektrotechniker",
+    "title": "Elektrotechniker (Teil I)",
+    "parts": [
+      1
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-03-02",
+    "end_date": "2029-05-05",
+    "duration_hours": 420,
+    "course_fee": 4265.0,
+    "course_fee_display": "4.265 €",
+    "exam_fee_scraped": 990.0,
+    "exam_fee": {
+      "fee": 990.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "990 €"
+    },
+    "city": "Saarbrücken",
+    "street": "Hohenzollernstraße 47-49",
+    "zip_code": "66117",
+    "latitude": 49.2297,
+    "longitude": 6.9967,
+    "availability": "available",
+    "source_url": "https://www.hwk-saarland.de/seminar/mv-teil-i-elektrotechniker-m1et/"
   },
   {
     "chamber_slug": "hwk-saarland",
@@ -5730,6 +5862,39 @@
     "chamber_slug": "hwk-saarland",
     "chamber_name": "HWK des Saarlandes",
     "chamber_region": "Saarland",
+    "trade_slug": "fahrzeuglackierer",
+    "trade_name": "Fahrzeuglackierer",
+    "title": "Fahrzeuglackierer (Teil I)",
+    "parts": [
+      1
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": null,
+    "end_date": null,
+    "duration_hours": 172,
+    "course_fee": 2480.0,
+    "course_fee_display": "2.480 €",
+    "exam_fee_scraped": null,
+    "exam_fee": {
+      "fee": null,
+      "fee_max": null,
+      "qualifier": "",
+      "display": ""
+    },
+    "city": "Saarbrücken",
+    "street": "Hohenzollernstraße 47-49",
+    "zip_code": "66117",
+    "latitude": 49.2297,
+    "longitude": 6.9967,
+    "availability": "unknown",
+    "source_url": "https://www.hwk-saarland.de/seminar/mv-fahrzeuglackierer-teil-i-m1fa/"
+  },
+  {
+    "chamber_slug": "hwk-saarland",
+    "chamber_name": "HWK des Saarlandes",
+    "chamber_region": "Saarland",
     "trade_slug": "feinwerkmechaniker",
     "trade_name": "Feinwerkmechaniker",
     "title": "Feinwerkmechaniker (Teil II)",
@@ -5758,6 +5923,39 @@
     "longitude": 6.9967,
     "availability": "available",
     "source_url": "https://www.hwk-saarland.de/seminar/mv-teil-ii-feinwerkmechaniker-m2fm1/"
+  },
+  {
+    "chamber_slug": "hwk-saarland",
+    "chamber_name": "HWK des Saarlandes",
+    "chamber_region": "Saarland",
+    "trade_slug": "feinwerkmechaniker",
+    "trade_name": "Feinwerkmechaniker",
+    "title": "Feinwerkmechaniker (Teil I)",
+    "parts": [
+      1
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-06-20",
+    "end_date": "2029-07-10",
+    "duration_hours": 302,
+    "course_fee": 4810.0,
+    "course_fee_display": "4.810 €",
+    "exam_fee_scraped": 990.0,
+    "exam_fee": {
+      "fee": 990.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "990 €"
+    },
+    "city": "Saarbrücken",
+    "street": "Hohenzollernstraße 47-49",
+    "zip_code": "66117",
+    "latitude": 49.2297,
+    "longitude": 6.9967,
+    "availability": "available",
+    "source_url": "https://www.hwk-saarland.de/seminar/mv-teil-i-feinwerkmechaniker-m1fm/"
   },
   {
     "chamber_slug": "hwk-saarland",
@@ -5827,6 +6025,39 @@
     "longitude": 6.9967,
     "availability": "available",
     "source_url": "https://www.hwk-saarland.de/seminar/mv-teil-ii-fliesenleger-m2fl/"
+  },
+  {
+    "chamber_slug": "hwk-saarland",
+    "chamber_name": "HWK des Saarlandes",
+    "chamber_region": "Saarland",
+    "trade_slug": "fliesen-platten-und-mosaikleger",
+    "trade_name": "Fliesen-, Platten- und Mosaikleger",
+    "title": "Fliesen-, Platten- und Mosaikleger (Teil I)",
+    "parts": [
+      1
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2029-01-12",
+    "end_date": "2029-01-16",
+    "duration_hours": 56,
+    "course_fee": 485.0,
+    "course_fee_display": "485 €",
+    "exam_fee_scraped": 990.0,
+    "exam_fee": {
+      "fee": 990.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "990 €"
+    },
+    "city": "Saarbrücken",
+    "street": "Hohenzollernstraße 47-49",
+    "zip_code": "66117",
+    "latitude": 49.2297,
+    "longitude": 6.9967,
+    "availability": "available",
+    "source_url": "https://www.hwk-saarland.de/seminar/mv-teil-i-fliesenleger-m1fl/"
   },
   {
     "chamber_slug": "hwk-saarland",
@@ -5937,6 +6168,39 @@
     "chamber_region": "Saarland",
     "trade_slug": "installateur-und-heizungsbauer",
     "trade_name": "Installateur und Heizungsbauer",
+    "title": "Installateur und Heizungsbauer (Teil I)",
+    "parts": [
+      1
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-11-24",
+    "end_date": "2027-04-22",
+    "duration_hours": 240,
+    "course_fee": 3035.0,
+    "course_fee_display": "3.035 €",
+    "exam_fee_scraped": 990.0,
+    "exam_fee": {
+      "fee": 990.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "990 €"
+    },
+    "city": "Saarbrücken",
+    "street": "Hohenzollernstraße 47-49",
+    "zip_code": "66117",
+    "latitude": 49.2297,
+    "longitude": 6.9967,
+    "availability": "unknown",
+    "source_url": "https://www.hwk-saarland.de/seminar/mv-teil-i-installateur-und-heizungsbauer-m1ih/"
+  },
+  {
+    "chamber_slug": "hwk-saarland",
+    "chamber_name": "HWK des Saarlandes",
+    "chamber_region": "Saarland",
+    "trade_slug": "installateur-und-heizungsbauer",
+    "trade_name": "Installateur und Heizungsbauer",
     "title": "Installateur und Heizungsbauer (Teil II)",
     "parts": [
       2
@@ -5970,6 +6234,39 @@
     "chamber_region": "Saarland",
     "trade_slug": "installateur-und-heizungsbauer",
     "trade_name": "Installateur und Heizungsbauer",
+    "title": "Installateur und Heizungsbauer (Teil I)",
+    "parts": [
+      1
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-01-15",
+    "end_date": "2028-06-20",
+    "duration_hours": 240,
+    "course_fee": 3035.0,
+    "course_fee_display": "3.035 €",
+    "exam_fee_scraped": 990.0,
+    "exam_fee": {
+      "fee": 990.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "990 €"
+    },
+    "city": "Saarbrücken",
+    "street": "Hohenzollernstraße 47-49",
+    "zip_code": "66117",
+    "latitude": 49.2297,
+    "longitude": 6.9967,
+    "availability": "unknown",
+    "source_url": "https://www.hwk-saarland.de/seminar/mv-teil-i-installateur-und-heizungsbauer-m1ih/"
+  },
+  {
+    "chamber_slug": "hwk-saarland",
+    "chamber_name": "HWK des Saarlandes",
+    "chamber_region": "Saarland",
+    "trade_slug": "installateur-und-heizungsbauer",
+    "trade_name": "Installateur und Heizungsbauer",
     "title": "Installateur und Heizungsbauer (Teil II)",
     "parts": [
       2
@@ -5996,6 +6293,39 @@
     "longitude": 6.9967,
     "availability": "available",
     "source_url": "https://www.hwk-saarland.de/seminar/mv-teil-ii-installateur-und-heizungsbauer-m2ih/"
+  },
+  {
+    "chamber_slug": "hwk-saarland",
+    "chamber_name": "HWK des Saarlandes",
+    "chamber_region": "Saarland",
+    "trade_slug": "installateur-und-heizungsbauer",
+    "trade_name": "Installateur und Heizungsbauer",
+    "title": "Installateur und Heizungsbauer (Teil I)",
+    "parts": [
+      1
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2029-01-13",
+    "end_date": "2029-06-17",
+    "duration_hours": 240,
+    "course_fee": 3035.0,
+    "course_fee_display": "3.035 €",
+    "exam_fee_scraped": 990.0,
+    "exam_fee": {
+      "fee": 990.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "990 €"
+    },
+    "city": "Saarbrücken",
+    "street": "Hohenzollernstraße 47-49",
+    "zip_code": "66117",
+    "latitude": 49.2297,
+    "longitude": 6.9967,
+    "availability": "unknown",
+    "source_url": "https://www.hwk-saarland.de/seminar/mv-teil-i-installateur-und-heizungsbauer-m1ih/"
   },
   {
     "chamber_slug": "hwk-saarland",
@@ -6065,6 +6395,72 @@
     "longitude": 6.9967,
     "availability": "available",
     "source_url": "https://www.hwk-saarland.de/seminar/mv-teil-ii-kraftfahrzeugtechniker-m2km/"
+  },
+  {
+    "chamber_slug": "hwk-saarland",
+    "chamber_name": "HWK des Saarlandes",
+    "chamber_region": "Saarland",
+    "trade_slug": "kfz-techniker",
+    "trade_name": "Kfz.-Techniker",
+    "title": "Kfz.-Techniker (Teil I)",
+    "parts": [
+      1
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-09-06",
+    "end_date": "2028-06-22",
+    "duration_hours": 272,
+    "course_fee": 4095.0,
+    "course_fee_display": "4.095 €",
+    "exam_fee_scraped": 990.0,
+    "exam_fee": {
+      "fee": 990.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "990 €"
+    },
+    "city": "Saarbrücken",
+    "street": "Hohenzollernstraße 47-49",
+    "zip_code": "66117",
+    "latitude": 49.2297,
+    "longitude": 6.9967,
+    "availability": "available",
+    "source_url": "https://www.hwk-saarland.de/seminar/mv-teil-i-kraftfahrzeugtechniker-m1km/"
+  },
+  {
+    "chamber_slug": "hwk-saarland",
+    "chamber_name": "HWK des Saarlandes",
+    "chamber_region": "Saarland",
+    "trade_slug": "kfz-techniker",
+    "trade_name": "Kfz.-Techniker",
+    "title": "Kfz.-Techniker (Teil I)",
+    "parts": [
+      1
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-09-04",
+    "end_date": "2029-06-21",
+    "duration_hours": 272,
+    "course_fee": 4095.0,
+    "course_fee_display": "4.095 €",
+    "exam_fee_scraped": 990.0,
+    "exam_fee": {
+      "fee": 990.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "990 €"
+    },
+    "city": "Saarbrücken",
+    "street": "Hohenzollernstraße 47-49",
+    "zip_code": "66117",
+    "latitude": 49.2297,
+    "longitude": 6.9967,
+    "availability": "available",
+    "source_url": "https://www.hwk-saarland.de/seminar/mv-teil-i-kraftfahrzeugtechniker-m1km/"
   },
   {
     "chamber_slug": "hwk-saarland",

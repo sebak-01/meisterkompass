@@ -145,6 +145,11 @@
         }
       },
       "backer": {
+        "1": {
+          "fee": 990.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
         "2": {
           "fee": 560.0,
           "fee_max": null,
@@ -208,6 +213,11 @@
         }
       },
       "fliesen-platten-und-mosaikleger": {
+        "1": {
+          "fee": 990.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
         "2": {
           "fee": 330.0,
           "fee_max": null,
