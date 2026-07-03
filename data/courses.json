@@ -4594,74 +4594,6 @@
     "format": "part_time",
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
-    "start_date": "2026-09-03",
-    "end_date": "2028-01-18",
-    "duration_hours": 950,
-    "course_fee": 6600.0,
-    "course_fee_display": "6.600 €",
-    "exam_fee_scraped": null,
-    "exam_fee": {
-      "fee": 900.0,
-      "fee_max": 2700.0,
-      "qualifier": "",
-      "display": "900 € bis 2.700 €"
-    },
-    "city": "Mainz",
-    "street": "Dekan-Laist-Str. 5",
-    "zip_code": "55129",
-    "latitude": 49.966844,
-    "longitude": 8.26711,
-    "availability": "available",
-    "source_url": "https://www.hwk.de/seminar/dd/"
-  },
-  {
-    "chamber_slug": "hwk-rheinhessen",
-    "chamber_name": "HWK Rheinhessen",
-    "chamber_region": "Rheinland-Pfalz",
-    "trade_slug": "dachdecker",
-    "trade_name": "Dachdecker",
-    "title": "Dachdecker (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-09-02",
-    "end_date": "2029-01-23",
-    "duration_hours": 950,
-    "course_fee": 6600.0,
-    "course_fee_display": "6.600 €",
-    "exam_fee_scraped": null,
-    "exam_fee": {
-      "fee": 900.0,
-      "fee_max": 2700.0,
-      "qualifier": "",
-      "display": "900 € bis 2.700 €"
-    },
-    "city": "Mainz",
-    "street": "Dekan-Laist-Str. 5",
-    "zip_code": "55129",
-    "latitude": 49.966844,
-    "longitude": 8.26711,
-    "availability": "available",
-    "source_url": "https://www.hwk.de/seminar/dd/"
-  },
-  {
-    "chamber_slug": "hwk-rheinhessen",
-    "chamber_name": "HWK Rheinhessen",
-    "chamber_region": "Rheinland-Pfalz",
-    "trade_slug": "dachdecker",
-    "trade_name": "Dachdecker",
-    "title": "Dachdecker (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
     "start_date": "2028-09-07",
     "end_date": "2030-01-22",
     "duration_hours": 950,
@@ -4675,46 +4607,12 @@
       "display": "900 € bis 2.700 €"
     },
     "city": "Mainz",
-    "street": "Dekan-Laist-Str. 5",
-    "zip_code": "55129",
-    "latitude": 49.966844,
-    "longitude": 8.26711,
-    "availability": "available",
-    "source_url": "https://www.hwk.de/seminar/dd/"
-  },
-  {
-    "chamber_slug": "hwk-rheinhessen",
-    "chamber_name": "HWK Rheinhessen",
-    "chamber_region": "Rheinland-Pfalz",
-    "trade_slug": "elektrotechniker",
-    "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": null,
-    "end_date": null,
-    "duration_hours": null,
-    "course_fee": 7300.0,
-    "course_fee_display": "7.300 €",
-    "exam_fee_scraped": null,
-    "exam_fee": {
-      "fee": 900.0,
-      "fee_max": 2700.0,
-      "qualifier": "",
-      "display": "900 € bis 2.700 €"
-    },
-    "city": "Mainz",
     "street": "Robert-Bosch-Straße 8",
     "zip_code": "55129",
     "latitude": 49.959692,
     "longitude": 8.260685,
-    "availability": "unknown",
-    "source_url": "https://www.hwk.de/seminar/elektrotechniker-teil-i-und-ii-eli/"
+    "availability": "full",
+    "source_url": "https://www.hwk.de/seminar/dd/"
   },
   {
     "chamber_slug": "hwk-rheinhessen",
@@ -4747,7 +4645,7 @@
     "zip_code": "55129",
     "latitude": 49.959692,
     "longitude": 8.260685,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwk.de/seminar/fliesenleger-i-und-ii-fli/"
   },
   {
@@ -4781,76 +4679,8 @@
     "zip_code": "55129",
     "latitude": 49.959692,
     "longitude": 8.260685,
-    "availability": "available",
-    "source_url": "https://www.hwk.de/seminar/fri-tz/"
-  },
-  {
-    "chamber_slug": "hwk-rheinhessen",
-    "chamber_name": "HWK Rheinhessen",
-    "chamber_region": "Rheinland-Pfalz",
-    "trade_slug": "friseur",
-    "trade_name": "Friseur",
-    "title": "Friseur (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": null,
-    "end_date": null,
-    "duration_hours": null,
-    "course_fee": 4950.0,
-    "course_fee_display": "4.950 €",
-    "exam_fee_scraped": null,
-    "exam_fee": {
-      "fee": 900.0,
-      "fee_max": 2700.0,
-      "qualifier": "",
-      "display": "900 € bis 2.700 €"
-    },
-    "city": "Mainz",
-    "street": "Robert-Bosch-Straße 8",
-    "zip_code": "55129",
-    "latitude": 49.959692,
-    "longitude": 8.260685,
-    "availability": "unknown",
-    "source_url": "https://www.hwk.de/seminar/meisterkurs-friseure-teile-iii-vollzeit-fri-vz/"
-  },
-  {
-    "chamber_slug": "hwk-rheinhessen",
-    "chamber_name": "HWK Rheinhessen",
-    "chamber_region": "Rheinland-Pfalz",
-    "trade_slug": "installateur-und-heizungsbauer",
-    "trade_name": "Installateur- und Heizungsbauer",
-    "title": "Installateur- und Heizungsbauer (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-09-01",
-    "end_date": "2027-12-21",
-    "duration_hours": 1000,
-    "course_fee": 7500.0,
-    "course_fee_display": "7.500 €",
-    "exam_fee_scraped": null,
-    "exam_fee": {
-      "fee": 900.0,
-      "fee_max": 2700.0,
-      "qualifier": "",
-      "display": "900 € bis 2.700 €"
-    },
-    "city": "Mainz",
-    "street": "Dekan-Laist-Str. 5",
-    "zip_code": "55129",
-    "latitude": 49.966844,
-    "longitude": 8.26711,
     "availability": "full",
-    "source_url": "https://www.hwk.de/seminar/installateur-und-heizungsbauer-teile-i-und-ii-inst/"
+    "source_url": "https://www.hwk.de/seminar/fri-tz/"
   },
   {
     "chamber_slug": "hwk-rheinhessen",
@@ -4879,80 +4709,12 @@
       "display": "900 € bis 2.700 €"
     },
     "city": "Mainz",
-    "street": "Dekan-Laist-Str. 5",
+    "street": "Robert-Bosch-Straße 8",
     "zip_code": "55129",
-    "latitude": 49.966844,
-    "longitude": 8.26711,
+    "latitude": 49.959692,
+    "longitude": 8.260685,
     "availability": "full",
     "source_url": "https://www.hwk.de/seminar/installateur-und-heizungsbauer-teile-i-und-ii-inst/"
-  },
-  {
-    "chamber_slug": "hwk-rheinhessen",
-    "chamber_name": "HWK Rheinhessen",
-    "chamber_region": "Rheinland-Pfalz",
-    "trade_slug": "kfz-techniker",
-    "trade_name": "Kfz.-Techniker",
-    "title": "Kfz.-Techniker (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-08-14",
-    "end_date": "2028-06-22",
-    "duration_hours": 840,
-    "course_fee": 7900.0,
-    "course_fee_display": "7.900 €",
-    "exam_fee_scraped": null,
-    "exam_fee": {
-      "fee": 900.0,
-      "fee_max": 2700.0,
-      "qualifier": "",
-      "display": "900 € bis 2.700 €"
-    },
-    "city": "Mainz",
-    "street": "Robert-Bosch-Str. 8",
-    "zip_code": "55129",
-    "latitude": 49.959692,
-    "longitude": 8.260685,
-    "availability": "available",
-    "source_url": "https://www.hwk.de/seminar/kraftfahrzeugtechniker-teile-i-und-ii-kfz/"
-  },
-  {
-    "chamber_slug": "hwk-rheinhessen",
-    "chamber_name": "HWK Rheinhessen",
-    "chamber_region": "Rheinland-Pfalz",
-    "trade_slug": "kfz-techniker",
-    "trade_name": "Kfz.-Techniker",
-    "title": "Kfz.-Techniker (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-08-13",
-    "end_date": "2029-07-05",
-    "duration_hours": 840,
-    "course_fee": 7900.0,
-    "course_fee_display": "7.900 €",
-    "exam_fee_scraped": null,
-    "exam_fee": {
-      "fee": 900.0,
-      "fee_max": 2700.0,
-      "qualifier": "",
-      "display": "900 € bis 2.700 €"
-    },
-    "city": "Mainz",
-    "street": "Robert-Bosch-Str. 8",
-    "zip_code": "55129",
-    "latitude": 49.959692,
-    "longitude": 8.260685,
-    "availability": "available",
-    "source_url": "https://www.hwk.de/seminar/kraftfahrzeugtechniker-teile-i-und-ii-kfz/"
   },
   {
     "chamber_slug": "hwk-rheinhessen",
@@ -4981,80 +4743,12 @@
       "display": "900 € bis 2.700 €"
     },
     "city": "Mainz",
-    "street": "Robert-Bosch-Str. 8",
+    "street": "Robert-Bosch-Straße 8",
     "zip_code": "55129",
     "latitude": 49.959692,
     "longitude": 8.260685,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwk.de/seminar/kraftfahrzeugtechniker-teile-i-und-ii-kfz/"
-  },
-  {
-    "chamber_slug": "hwk-rheinhessen",
-    "chamber_name": "HWK Rheinhessen",
-    "chamber_region": "Rheinland-Pfalz",
-    "trade_slug": "maler-und-lackierer",
-    "trade_name": "Maler und Lackierer",
-    "title": "Maler und Lackierer (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-09-04",
-    "end_date": "2027-07-24",
-    "duration_hours": 600,
-    "course_fee": 5700.0,
-    "course_fee_display": "5.700 €",
-    "exam_fee_scraped": null,
-    "exam_fee": {
-      "fee": 900.0,
-      "fee_max": 2700.0,
-      "qualifier": "",
-      "display": "900 € bis 2.700 €"
-    },
-    "city": "Mainz",
-    "street": "Dekan-Laist-Str. 5",
-    "zip_code": "55129",
-    "latitude": 49.966844,
-    "longitude": 8.26711,
-    "availability": "available",
-    "source_url": "https://www.hwk.de/seminar/mal/"
-  },
-  {
-    "chamber_slug": "hwk-rheinhessen",
-    "chamber_name": "HWK Rheinhessen",
-    "chamber_region": "Rheinland-Pfalz",
-    "trade_slug": "maler-und-lackierer",
-    "trade_name": "Maler und Lackierer",
-    "title": "Maler und Lackierer (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-09-03",
-    "end_date": "2028-07-22",
-    "duration_hours": 600,
-    "course_fee": 5700.0,
-    "course_fee_display": "5.700 €",
-    "exam_fee_scraped": null,
-    "exam_fee": {
-      "fee": 900.0,
-      "fee_max": 2700.0,
-      "qualifier": "",
-      "display": "900 € bis 2.700 €"
-    },
-    "city": "Mainz",
-    "street": "Dekan-Laist-Str. 5",
-    "zip_code": "55129",
-    "latitude": 49.966844,
-    "longitude": 8.26711,
-    "availability": "available",
-    "source_url": "https://www.hwk.de/seminar/mal/"
   },
   {
     "chamber_slug": "hwk-rheinhessen",
@@ -5083,11 +4777,11 @@
       "display": "900 € bis 2.700 €"
     },
     "city": "Mainz",
-    "street": "Dekan-Laist-Str. 5",
+    "street": "Robert-Bosch-Straße 8",
     "zip_code": "55129",
-    "latitude": 49.966844,
-    "longitude": 8.26711,
-    "availability": "available",
+    "latitude": 49.959692,
+    "longitude": 8.260685,
+    "availability": "full",
     "source_url": "https://www.hwk.de/seminar/mal/"
   },
   {
@@ -5117,11 +4811,11 @@
       "display": "900 € bis 2.700 €"
     },
     "city": "Mainz",
-    "street": "Dekan-Laist-Str. 5",
+    "street": "Robert-Bosch-Straße 8",
     "zip_code": "55129",
-    "latitude": 49.966844,
-    "longitude": 8.26711,
-    "availability": "available",
+    "latitude": 49.959692,
+    "longitude": 8.260685,
+    "availability": "full",
     "source_url": "https://www.hwk.de/seminar/maurer-und-betonbauer-teile-i-und-ii-mau/"
   },
   {
@@ -5151,46 +4845,12 @@
       "display": "900 € bis 2.700 €"
     },
     "city": "Mainz",
-    "street": "Robert-Bosch-Str. 8",
+    "street": "Robert-Bosch-Straße 8",
     "zip_code": "55129",
     "latitude": 49.959692,
     "longitude": 8.260685,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwk.de/seminar/metallbauer-teile-i-und-ii-met/"
-  },
-  {
-    "chamber_slug": "hwk-rheinhessen",
-    "chamber_name": "HWK Rheinhessen",
-    "chamber_region": "Rheinland-Pfalz",
-    "trade_slug": "tischler",
-    "trade_name": "Tischler",
-    "title": "Tischler (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-09-06",
-    "end_date": "2028-11-24",
-    "duration_hours": 750,
-    "course_fee": 6700.0,
-    "course_fee_display": "6.700 €",
-    "exam_fee_scraped": null,
-    "exam_fee": {
-      "fee": 900.0,
-      "fee_max": 2700.0,
-      "qualifier": "",
-      "display": "900 € bis 2.700 €"
-    },
-    "city": "Mainz",
-    "street": "Robert-Bosch-Str. 8",
-    "zip_code": "55129",
-    "latitude": 49.959692,
-    "longitude": 8.260685,
-    "availability": "available",
-    "source_url": "https://www.hwk.de/seminar/tischler-teile-i-und-ii-ti/"
   },
   {
     "chamber_slug": "hwk-rheinhessen",
@@ -5219,45 +4879,12 @@
       "display": "900 € bis 2.700 €"
     },
     "city": "Mainz",
-    "street": "Robert-Bosch-Str. 8",
-    "zip_code": "55129",
-    "latitude": 49.959692,
-    "longitude": 8.260685,
-    "availability": "available",
-    "source_url": "https://www.hwk.de/seminar/tischler-teile-i-und-ii-ti/"
-  },
-  {
-    "chamber_slug": "hwk-rheinhessen",
-    "chamber_name": "HWK Rheinhessen",
-    "chamber_region": "Rheinland-Pfalz",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-07-20",
-    "end_date": "2026-07-25",
-    "duration_hours": 60,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
-    "exam_fee_scraped": null,
-    "exam_fee": {
-      "fee": 220.0,
-      "fee_max": 500.0,
-      "qualifier": "",
-      "display": "220 € bis 500 €"
-    },
-    "city": "Mainz",
-    "street": "Robert-Bosch-Str. 8",
+    "street": "Robert-Bosch-Straße 8",
     "zip_code": "55129",
     "latitude": 49.959692,
     "longitude": 8.260685,
     "availability": "full",
-    "source_url": "https://www.hwk.de/seminar/vorbereitung-ausbildereignung-in-vollzeit-aevo-ada-vz/"
+    "source_url": "https://www.hwk.de/seminar/tischler-teile-i-und-ii-ti/"
   },
   {
     "chamber_slug": "hwk-rheinhessen",
@@ -5285,45 +4912,12 @@
       "display": "220 € bis 300 €"
     },
     "city": "Mainz",
-    "street": "Robert-Bosch-Str. 8",
+    "street": "Robert-Bosch-Straße 8",
     "zip_code": "55129",
     "latitude": 49.959692,
     "longitude": 8.260685,
     "availability": "available",
     "source_url": "https://www.hwk.de/seminar/fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-fkm-tz/"
-  },
-  {
-    "chamber_slug": "hwk-rheinhessen",
-    "chamber_name": "HWK Rheinhessen",
-    "chamber_region": "Rheinland-Pfalz",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-08-31",
-    "end_date": "2026-09-05",
-    "duration_hours": 60,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
-    "exam_fee_scraped": null,
-    "exam_fee": {
-      "fee": 220.0,
-      "fee_max": 500.0,
-      "qualifier": "",
-      "display": "220 € bis 500 €"
-    },
-    "city": "Mainz",
-    "street": "Robert-Bosch-Str. 8",
-    "zip_code": "55129",
-    "latitude": 49.959692,
-    "longitude": 8.260685,
-    "availability": "full",
-    "source_url": "https://www.hwk.de/seminar/vorbereitung-ausbildereignung-in-vollzeit-aevo-ada-vz/"
   },
   {
     "chamber_slug": "hwk-rheinhessen",
@@ -5351,7 +4945,7 @@
       "display": "220 € bis 300 €"
     },
     "city": "Mainz",
-    "street": "Robert-Bosch-Str. 8",
+    "street": "Robert-Bosch-Straße 8",
     "zip_code": "55129",
     "latitude": 49.959692,
     "longitude": 8.260685,
@@ -5384,7 +4978,7 @@
       "display": "220 € bis 500 €"
     },
     "city": "Mainz",
-    "street": "Robert-Bosch-Str. 8",
+    "street": "Robert-Bosch-Straße 8",
     "zip_code": "55129",
     "latitude": 49.959692,
     "longitude": 8.260685,
@@ -5417,113 +5011,12 @@
       "display": "220 € bis 300 €"
     },
     "city": "Mainz",
-    "street": "Robert-Bosch-Str. 8",
+    "street": "Robert-Bosch-Straße 8",
     "zip_code": "55129",
     "latitude": 49.959692,
     "longitude": 8.260685,
     "availability": "available",
     "source_url": "https://www.hwk.de/seminar/teil-iii-tz/"
-  },
-  {
-    "chamber_slug": "hwk-rheinhessen",
-    "chamber_name": "HWK Rheinhessen",
-    "chamber_region": "Rheinland-Pfalz",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Fachmann/-frau für kaufmännische Betriebsführung",
-    "parts": [
-      3
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": null,
-    "end_date": null,
-    "duration_hours": null,
-    "course_fee": 1700.0,
-    "course_fee_display": "1.700 €",
-    "exam_fee_scraped": null,
-    "exam_fee": {
-      "fee": 220.0,
-      "fee_max": 300.0,
-      "qualifier": "",
-      "display": "220 € bis 300 €"
-    },
-    "city": "Mainz",
-    "street": "Robert-Bosch-Straße 8",
-    "zip_code": "55129",
-    "latitude": 49.959692,
-    "longitude": 8.260685,
-    "availability": "unknown",
-    "source_url": "https://www.hwk.de/seminar/fachmann-frau-fuer-kaufmaennsche-betriebsfuehrung-fkm-vz/"
-  },
-  {
-    "chamber_slug": "hwk-rheinhessen",
-    "chamber_name": "HWK Rheinhessen",
-    "chamber_region": "Rheinland-Pfalz",
-    "trade_slug": "zimmerer",
-    "trade_name": "Zimmerer",
-    "title": "Zimmerer (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-09-03",
-    "end_date": "2027-12-18",
-    "duration_hours": 960,
-    "course_fee": 6700.0,
-    "course_fee_display": "6.700 €",
-    "exam_fee_scraped": null,
-    "exam_fee": {
-      "fee": 900.0,
-      "fee_max": 2700.0,
-      "qualifier": "",
-      "display": "900 € bis 2.700 €"
-    },
-    "city": "Mainz",
-    "street": "Dekan-Laist-Str. 5",
-    "zip_code": "55129",
-    "latitude": 49.966844,
-    "longitude": 8.26711,
-    "availability": "full",
-    "source_url": "https://www.hwk.de/seminar/zimmerer-teile-i-und-ii-zim/"
-  },
-  {
-    "chamber_slug": "hwk-rheinhessen",
-    "chamber_name": "HWK Rheinhessen",
-    "chamber_region": "Rheinland-Pfalz",
-    "trade_slug": "zimmerer",
-    "trade_name": "Zimmerer",
-    "title": "Zimmerer (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-09-02",
-    "end_date": "2028-12-15",
-    "duration_hours": 960,
-    "course_fee": 6700.0,
-    "course_fee_display": "6.700 €",
-    "exam_fee_scraped": null,
-    "exam_fee": {
-      "fee": 900.0,
-      "fee_max": 2700.0,
-      "qualifier": "",
-      "display": "900 € bis 2.700 €"
-    },
-    "city": "Mainz",
-    "street": "Dekan-Laist-Str. 5",
-    "zip_code": "55129",
-    "latitude": 49.966844,
-    "longitude": 8.26711,
-    "availability": "available",
-    "source_url": "https://www.hwk.de/seminar/zimmerer-teile-i-und-ii-zim/"
   },
   {
     "chamber_slug": "hwk-rheinhessen",
@@ -5552,11 +5045,11 @@
       "display": "900 € bis 2.700 €"
     },
     "city": "Mainz",
-    "street": "Dekan-Laist-Str. 5",
+    "street": "Robert-Bosch-Straße 8",
     "zip_code": "55129",
-    "latitude": 49.966844,
-    "longitude": 8.26711,
-    "availability": "available",
+    "latitude": 49.959692,
+    "longitude": 8.260685,
+    "availability": "full",
     "source_url": "https://www.hwk.de/seminar/zimmerer-teile-i-und-ii-zim/"
   },
   {
