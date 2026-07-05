@@ -28,6 +28,10 @@ from .hwk_rheinhessen import (
 )
 from .hwk_saarland import HWK_SAARLAND_LAT, HWK_SAARLAND_LNG, HwkSaarlandScraper
 from .hwk_trier import HwkTrierScraper
+from .hwk_kassel import HwkKasselScraper
+from .hwk_rhein_main import HwkRheinMainScraper
+from .hwk_wiesbaden import HwkWiesbadenScraper
+
 
 logger = logging.getLogger(__name__)
 
@@ -37,6 +41,9 @@ SCRAPERS: dict[str, type] = {
     "hwk-pfalz":       HwkPfalzScraper,
     "hwk-rheinhessen": HwkRheinhessenScraper,
     "hwk-saarland":    HwkSaarlandScraper,
+    "hwk-kassel":      HwkKasselScraper,
+    "hwk-rhein-main":  HwkRheinMainScraper,
+    "hwk-wiesbaden":   HwkWiesbadenScraper,
 }
 
 FORMAT_DISPLAY = {
@@ -215,10 +222,29 @@ def build_exam_fees_nested(lookup: dict) -> dict:
       {chamber_slug: {trade_slug|'null': {part: {fee, fee_max, qualifier}}}}
     """
     nested: dict = {}
-    for (chamber_slug, trade_slug, part), v in sorted(lookup.items(), key=lambda kv: (kv[0][0], kv[0][1] or "", kv[0][2])):
+    
+    # Helper function to turn any part representation (int, set, frozenset) into a sortable tuple
+    def sort_key(kv):
+        chamber_slug, trade_slug, part = kv[0]
+        if isinstance(part, (set, frozenset)):
+            part_sort = tuple(sorted(part))
+        elif isinstance(part, tuple):
+            part_sort = part
+        else:
+            part_sort = (part,)  # Wrap single int in a tuple
+        return (chamber_slug, trade_slug or "", part_sort)
+
+    for (chamber_slug, trade_slug, part), v in sorted(lookup.items(), key=sort_key):
         tkey = trade_slug if trade_slug else "null"
-        nested.setdefault(chamber_slug, {}).setdefault(tkey, {})[str(part)] = {
-            "fee": v["fee"], "fee_max": v["fee_max"], "qualifier": v["qualifier"],
+        
+        # Format the key cleanly if it's a frozenset/iterable (e.g., "1, 2" instead of "frozenset({1, 2})")
+        if isinstance(part, (set, frozenset, tuple)):
+            part_str = ",".join(map(str, sorted(part)))
+        else:
+            part_str = str(part)
+
+        nested.setdefault(chamber_slug, {}).setdefault(tkey, {})[part_str] = {
+            "fee": v["fee"], "fee_max": v["fee_max"], "qualifier": v["qualifier"]
         }
     return nested
 

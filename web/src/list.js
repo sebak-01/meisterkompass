@@ -26,7 +26,7 @@ const todayIso = (() => {
 })();
 
 const hasActiveFilters = (s) =>
-  !!(s.chamber || s.trade || s.format || s.available || s.parts.length || s.dateFrom || s.dateTo);
+  !!(s.chambers.length || s.trade || s.format || s.available || s.parts.length || s.dateFrom || s.dateTo);
 
 // Past courses live in a separate chunk, fetched only when a date filter
 // reaches into the past — keeps the default (upcoming) payload small.
@@ -45,7 +45,7 @@ async function ensureArchive() {
 function readState() {
   const q = new URLSearchParams(location.search);
   return {
-    chamber: q.get("chamber") || "",
+    chambers: q.getAll("chamber").filter(Boolean), // Array matching checked values
     trade: q.get("trade") || "",
     format: q.get("format") || "",
     available: q.get("available") === "1",
@@ -61,7 +61,7 @@ function readState() {
 
 // Append the filter params (everything except view/page) to a URLSearchParams.
 function appendFilterParams(q, s) {
-  if (s.chamber) q.set("chamber", s.chamber);
+  s.chambers.forEach((c) => q.append("chamber", c));
   if (s.trade) q.set("trade", s.trade);
   if (s.format) q.set("format", s.format);
   if (s.available) q.set("available", "1");
@@ -93,9 +93,13 @@ function renderTags(s) {
   const box = document.getElementById("active-filters");
   const tags = [];
   const mk = (label, patch) => `<button class="filter-tag" data-patch='${esc(JSON.stringify(patch))}'>${esc(label)} ×</button>`;
-  if (s.chamber) {
-    const c = chambers.find((x) => x.slug === s.chamber);
-    if (c) tags.push(mk(c.name, { chamber: "" }));
+  
+  if (s.chambers.length) {
+    const label = s.chambers.map((slug) => {
+      const c = chambers.find((x) => x.slug === slug);
+      return c ? c.name : slug;
+    }).join(", ");
+    tags.push(mk(label, { chambers: [] }));
   }
   if (s.trade) {
     const t = trades.find((x) => x.slug === s.trade);
@@ -126,14 +130,10 @@ function renderPagination(s, total) {
 }
 
 // ── Trade dropdown depends on selected chamber ────────────────────────
-function populateChamberSelect() {
-  const sel = document.getElementById("f-chamber");
-  chambers.forEach((c) => sel.add(new Option(c.name, c.slug)));
-}
 function populateTradeSelect(s) {
   const sel = document.getElementById("f-trade");
   const available = new Set(
-    courses.filter((c) => (!s.chamber || c.chamber_slug === s.chamber)).map((c) => c.trade_slug),
+    courses.filter((c) => (s.chambers.length === 0 || s.chambers.includes(c.chamber_slug))).map((c) => c.trade_slug),
   );
   const cur = sel.value;
   sel.innerHTML = '<option value="">Beruf / Fachrichtung</option>';
@@ -142,7 +142,7 @@ function populateTradeSelect(s) {
 }
 
 function syncControls(s) {
-  document.getElementById("f-chamber").value = s.chamber;
+  document.querySelectorAll(".f-chamber").forEach((cb) => { cb.checked = s.chambers.includes(cb.value); });
   populateTradeSelect(s);
   document.getElementById("f-trade").value = s.trade;
   document.getElementById("f-format").value = s.format;
@@ -152,11 +152,18 @@ function syncControls(s) {
   document.querySelectorAll(".f-part").forEach((cb) => { cb.checked = s.parts.includes(Number(cb.value)); });
   document.getElementById("f-include-combos").checked = s.includeCombos;
 
+  // ── Chambers Dropdown Button Text & Style ─────────────────
+  const chambersBtn = document.getElementById("chambers-btn");
+  const chambersActive = s.chambers.length > 0;
+  chambersBtn.classList.toggle("active-filter", chambersActive);
+  chambersBtn.textContent = "Kammern"; // Stays static
+  chambersBtn.setAttribute("aria-expanded", String(document.getElementById("chambers-dropdown").classList.contains("open")));
+
+  // ── Parts Dropdown Button Text & Style ────────────────────
   const partsBtn = document.getElementById("parts-btn");
-  partsBtn.classList.toggle("active-filter", s.parts.length > 0);
-  partsBtn.textContent = s.parts.length
-    ? s.parts.map((p) => "Teil " + ROMAN[p]).join(", ") + (s.includeCombos ? " +Kombi" : "")
-    : "Teile";
+  const partsActive = s.parts.length > 0;
+  partsBtn.classList.toggle("active-filter", partsActive);
+  partsBtn.textContent = "Teile"; // Stays static
   partsBtn.setAttribute("aria-expanded", String(document.getElementById("parts-dropdown").classList.contains("open")));
 
   const av = document.getElementById("btn-available");
@@ -181,7 +188,14 @@ function syncControls(s) {
 let state = readState();
 
 function render() {
-  const filtered = applyFilters(pool, state, todayIso);
+  // Overriding applyFilters local chamber execution path here cleanly if your external render.js expects state.chamber as a string:
+  const localStateCopy = { ...state };
+  let filtered = pool;
+  if (state.chambers.length > 0) {
+    filtered = pool.filter(c => state.chambers.includes(c.chamber_slug));
+    localStateCopy.chamber = ""; // reset fallback string so original applier avoids conflicts
+  }
+  filtered = applyFilters(filtered, localStateCopy, todayIso);
 
   // Clamp the current page to the available range before slicing.
   if (state.perPage !== "all") {
@@ -238,9 +252,6 @@ function update(patch, opts) {
 
 // ── Wiring ────────────────────────────────────────────────────────────
 function wire() {
-  document.getElementById("f-chamber").addEventListener("change", (e) =>
-    update({ chamber: e.target.value, trade: "" }, { resetPage: true }),
-  );
   document.getElementById("f-trade").addEventListener("change", (e) =>
     update({ trade: e.target.value }, { resetPage: true }),
   );
@@ -261,21 +272,38 @@ function wire() {
   );
   document.getElementById("btn-reset").addEventListener("click", () =>
     update(
-      { chamber: "", trade: "", format: "", available: false, parts: [], includeCombos: false, dateFrom: "", dateTo: "" },
+      { chambers: [], trade: "", format: "", available: false, parts: [], includeCombos: false, dateFrom: "", dateTo: "" },
       { resetPage: true },
     ),
   );
+
+  // Chambers dropdown
+  const chambersBtn = document.getElementById("chambers-btn");
+  const chambersDrop = document.getElementById("chambers-dropdown");
+  const syncChambersAria = () => chambersBtn.setAttribute("aria-expanded", String(chambersDrop.classList.contains("open")));
+  chambersBtn.addEventListener("click", (e) => { e.stopPropagation(); chambersDrop.classList.toggle("open"); syncChambersAria(); });
+  
+  document.getElementById("chambers-apply").addEventListener("click", () => {
+    const selectedChambers = [...document.querySelectorAll(".f-chamber")].filter((cb) => cb.checked).map((cb) => cb.value);
+    chambersDrop.classList.remove("open");
+    update({ chambers: selectedChambers, trade: "" }, { resetPage: true });
+  });
 
   // Parts dropdown
   const partsBtn = document.getElementById("parts-btn");
   const partsDrop = document.getElementById("parts-dropdown");
   const syncPartsAria = () => partsBtn.setAttribute("aria-expanded", String(partsDrop.classList.contains("open")));
   partsBtn.addEventListener("click", (e) => { e.stopPropagation(); partsDrop.classList.toggle("open"); syncPartsAria(); });
+  
   document.addEventListener("click", (e) => {
     if (!document.getElementById("parts-wrap").contains(e.target)) { partsDrop.classList.remove("open"); syncPartsAria(); }
+    if (!document.getElementById("chambers-wrap").contains(e.target)) { chambersDrop.classList.remove("open"); syncChambersAria(); }
   });
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && partsDrop.classList.contains("open")) { partsDrop.classList.remove("open"); syncPartsAria(); partsBtn.focus(); }
+    if (e.key === "Escape") {
+      if (partsDrop.classList.contains("open")) { partsDrop.classList.remove("open"); syncPartsAria(); partsBtn.focus(); }
+      if (chambersDrop.classList.contains("open")) { chambersDrop.classList.remove("open"); syncChambersAria(); chambersBtn.focus(); }
+    }
   });
   document.getElementById("parts-apply").addEventListener("click", () => {
     const parts = [...document.querySelectorAll(".f-part")].filter((cb) => cb.checked).map((cb) => Number(cb.value));
@@ -341,7 +369,7 @@ function wire() {
 }
 
 initNav();
-populateChamberSelect();
+populateTradeSelect(state);
 syncControls(state);
 wire();
 refresh();

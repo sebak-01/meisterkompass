@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meistervorbereitungskurse vergleichen (RLP & Saarland) – MeisterKompass</title>
-  <meta name="description" content="Meistervorbereitungskurse der Handwerkskammern in Rheinland-Pfalz und dem Saarland vergleichen – Kurse, Termine, Gebühren und Standorte.">
+  <meta name="description" content="Meistervorbereitungskurse der Handwerkskammern in Hessen, Rheinland-Pfalz und dem Saarland vergleichen – Kurse, Termine, Gebühren und Standorte.">
   <meta name="theme-color" content="#14304A">
   <link rel="icon" type="image/svg+xml" href="./favicon.svg">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="MeisterKompass">
   <meta property="og:locale" content="de_DE">
   <meta property="og:title" content="MeisterKompass – Meistervorbereitungskurse im Vergleich">
-  <meta property="og:description" content="Kurse, Termine, Gebühren und Standorte von Handwerkskammern in Rheinland-Pfalz und dem Saarland – plus AFBG-Förderrechner.">
+  <meta property="og:description" content="Kurse, Termine, Gebühren und Standorte von Handwerkskammern in Hessen, Rheinland-Pfalz und dem Saarland – plus AFBG-Förderrechner.">
   <link rel="canonical" href="https://meisterkompass.eu/">
   <meta property="og:url" content="https://meisterkompass.eu/">
   <meta property="og:image" content="https://meisterkompass.eu/og-image.png">
@@ -32,7 +32,7 @@
         "@id": "https://meisterkompass.eu/#website",
         "url": "https://meisterkompass.eu/",
         "name": "MeisterKompass",
-        "description": "Vergleich von Meistervorbereitungskursen der Handwerkskammern in Rheinland-Pfalz und dem Saarland.",
+        "description": "Vergleich von Meistervorbereitungskursen der Handwerkskammern in Hessen, Rheinland-Pfalz und dem Saarland.",
         "inLanguage": "de"
       },
       {
@@ -81,7 +81,7 @@
 <main id="main-content">
 <div class="page-header">
   <div class="container">
-    <p class="eyebrow">Handwerk · Rheinland-Pfalz &amp; Saarland</p>
+    <p class="eyebrow">Handwerk · Hessen &amp; Rheinland-Pfalz &amp; Saarland</p>
     <h1>Meistervorbereitungskurse im Vergleich</h1>
     <p class="lede">Kurse, Termine, Gebühren und Standorte von Handwerkskammern – auf einer Seite.</p>
     <div class="header-stats">
@@ -100,7 +100,29 @@
     </button>
     <div class="filter-panel-mobile" id="filter-panel-mobile">
       <div class="filter-row" role="search" aria-label="Kurse filtern">
-        <select id="f-chamber" aria-label="Handwerkskammer"><option value="">Alle Kammern</option></select>
+        
+        <div class="parts-wrap" id="chambers-wrap">
+          <button type="button" class="parts-btn" id="chambers-btn" aria-haspopup="true" aria-expanded="false" aria-controls="chambers-dropdown">Kammern ▾</button>
+          <div class="parts-dropdown" id="chambers-dropdown" role="group" aria-label="Handwerkskammern">
+            <div style="font-weight:bold; padding: 2px 4px; font-size: 0.85rem; color: var(--brass, #14304A);">Hessen</div>
+            <label><input type="checkbox" class="f-chamber" value="hwk-rhein-main"> HWK Frankfurt-Rhein-Main</label>
+            <label><input type="checkbox" class="f-chamber" value="hwk-kassel"> HWK Kassel</label>
+            <label><input type="checkbox" class="f-chamber" value="hwk-wiesbaden"> HWK Wiesbaden</label>
+            <hr>
+            <div style="font-weight:bold; padding: 2px 4px; font-size: 0.85rem; color: var(--brass, #14304A);">Rheinland-Pfalz</div>
+            <label><input type="checkbox" class="f-chamber" value="hwk-koblenz"> HWK Koblenz</label>        
+             
+            <label><input type="checkbox" class="f-chamber" value="hwk-pfalz"> HWK der Pfalz</label>
+            <label><input type="checkbox" class="f-chamber" value="hwk-rheinhessen"> HWK Rheinhessen</label>
+            <label><input type="checkbox" class="f-chamber" value="hwk-trier"> HWK Trier</label>
+            <hr>
+            <div style="font-weight:bold; padding: 2px 4px; font-size: 0.85rem; color: var(--brass, #14304A);">Saarland</div>
+            <label><input type="checkbox" class="f-chamber" value="hwk-saarland"> HWK des Saarland</label>
+            <hr>
+            <button type="button" class="parts-apply" id="chambers-apply">Anwenden</button>
+          </div>
+        </div>
+        
         <select id="f-trade" aria-label="Beruf oder Fachrichtung"><option value="">Beruf / Fachrichtung</option></select>
         <select id="f-format" aria-label="Zeitmodell">
           <option value="">Zeitmodell</option>

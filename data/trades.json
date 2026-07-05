@@ -68,8 +68,16 @@
     "name": "Konditoren"
   },
   {
+    "slug": "kosmetiker",
+    "name": "Kosmetiker"
+  },
+  {
     "slug": "land-und-baumaschinenmechatroniker",
     "name": "Land- und Baumaschinenmechatroniker"
+  },
+  {
+    "slug": "maler-gestaltung",
+    "name": "Maler (Gestaltung)"
   },
   {
     "slug": "maler-und-lackierer",
@@ -82,6 +90,14 @@
   {
     "slug": "metallbauer",
     "name": "Metallbauer"
+  },
+  {
+    "slug": "rollladen-und-sonnenschutztechniker",
+    "name": "Rollladen- und Sonnenschutztechniker"
+  },
+  {
+    "slug": "schilder-und-lichtreklamehersteller",
+    "name": "Schilder- und Lichtreklamehersteller"
   },
   {
     "slug": "schornsteinfeger",
@@ -112,11 +128,19 @@
     "name": "Wirtschaft, Recht, Pädagogik"
   },
   {
+    "slug": "warme-kalte-schallschutzisolierer",
+    "name": "Wärme-, Kälte-, Schallschutzisolierer"
+  },
+  {
     "slug": "zahntechniker",
     "name": "Zahntechniker"
   },
   {
     "slug": "zimmerer",
     "name": "Zimmerer"
+  },
+  {
+    "slug": "zweirad-motorrad",
+    "name": "Zweirad (Motorrad)"
   }
 ]

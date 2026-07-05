@@ -17,7 +17,7 @@
   line-height: 1.04;
   letter-spacing: -.02em;
 }
-.page-header .lede { margin-top: .55rem; font-size: .95rem; color: rgba(255,255,255,.7); max-width: 50ch; }
+.page-header .lede { margin-top: .55rem; font-size: .95rem; color: rgba(255,255,255,.7); max-width: 65ch; }
 .header-stats { display: flex; gap: 2.25rem; margin-top: 1.5rem; flex-wrap: wrap; }
 .header-stats .stat { display: flex; align-items: baseline; gap: .5rem; }
 .header-stats .num {
@@ -35,7 +35,7 @@
   background: var(--card);
   border-bottom: 1px solid var(--line);
   padding: .8rem 0;
-  position: sticky; top: 58px; z-index: 100;
+  position: sticky; top: 58px; z-index: 1010;
   box-shadow: 0 10px 24px -22px rgba(20,48,74,.6);
 }
 .filter-row { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; }
@@ -96,7 +96,7 @@
 }
 .parts-btn:hover { border-color: var(--ink-35); }
 .parts-dropdown {
-  display: none; position: absolute; top: 44px; left: auto; z-index: 200;
+  display: none; position: absolute; top: 44px; left: auto; z-index: 1010;
   background: var(--card); border: 1px solid var(--line-strong); border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg); min-width: 230px; padding: .55rem;
 }

@@ -11,9 +11,11 @@ resolves a single display object per course offer.
 
 from decimal import Decimal
 
-# lookup key: (chamber_slug, trade_slug_or_None, part) -> fee dict
+# lookup key: (chamber_slug, trade_slug_or_None, part_or_partset) -> fee dict
+#   part_or_partset is either a single int (per-part fee) or a frozenset[int]
+#   (an exact combo-bundle override for that exact set of parts together).
 #   fee dict: {"fee": float, "fee_max": float|None, "qualifier": str}
-ExamFeeLookup = dict[tuple[str, str | None, int], dict]
+ExamFeeLookup = dict[tuple[str, str | None, int | frozenset[int]], dict]
 
 
 def _fmt(amount: Decimal) -> str:
@@ -26,12 +28,21 @@ def build_exam_fee_lookup(scraped_rows: list[dict], manual_rows: list[dict]) -> 
     Merge scraped per-part exam fees with manual entries. Manual wins on
     collision. Each row carries chamber_slug, part, fee and optionally
     trade_slug (None/"" => all-trades), fee_max, qualifier.
+
+    A row may carry a ``parts`` list instead of a single ``part`` to register
+    an exact combo-bundle fee (e.g. Teile I+II at a flat price).
     """
     lookup: ExamFeeLookup = {}
 
     def add(row: dict):
         trade = row.get("trade_slug") or None
-        key = (row["chamber_slug"], trade, int(row["part"]))
+        if "parts" in row:
+            # Combo-bundle row: an exact total for a SET of parts booked/
+            # examined together (e.g. Teile I+II at a flat discounted price
+            # rather than the sum of each part's individual fee).
+            key = (row["chamber_slug"], trade, frozenset(int(p) for p in row["parts"]))
+        else:
+            key = (row["chamber_slug"], trade, int(row["part"]))
         lookup[key] = {
             "fee":       float(row["fee"]),
             "fee_max":   float(row["fee_max"]) if row.get("fee_max") else None,
@@ -57,18 +68,39 @@ def resolve_exam_fee(
 
     Priority:
       1. ``exam_fee_scraped`` stated on the course page (Trier/Pfalz/Saarland)
-      2. ExamFee lookup — summed across the offer's parts; trade-specific first,
-         then all-trades (trade=None) fallback.
+      2a. Exact combo-bundle override for the offer's full set of parts
+          (e.g. Teile I+II at a flat discounted price — see HWK Frankfurt-
+          Rhein-Main, which charges 730 € for I+II rather than 420+420=840 €)
+      2b. ExamFee lookup — summed across the offer's parts; trade-specific
+          first, then all-trades (trade=None) fallback.
 
-    Mirrors the original ``CourseOffer.resolved_exam_fee_info`` output exactly:
-        {fee, fee_max, qualifier, display}
+    Returns {fee, fee_max, qualifier, display}.
+    The frontend uses chamber_slug on the course record to decide which
+    tooltip text to show (TOOLTIP_QUALIFIER, TOOLTIP_RANGE, TOOLTIP_HESSEN)
+    — tooltip texts live in web/src/util.js, not in the data pipeline.
     """
     # Priority 1: scraped fee on the page
     if exam_fee_scraped is not None:
         fee = Decimal(str(exam_fee_scraped))
         return {"fee": float(fee), "fee_max": None, "qualifier": "", "display": _fmt(fee)}
 
-    # Priority 2: per-part ExamFee lookup
+    # Priority 2a: exact combo-bundle override for this exact set of parts.
+    # Checked trade-specific first, then the all-trades (trade=None) fallback
+    # — same precedence as the per-part lookup below.
+    parts_key = frozenset(included_parts)
+    combo = lookup.get((chamber_slug, trade_slug, parts_key)) or lookup.get((chamber_slug, None, parts_key))
+    if combo:
+        fee = Decimal(str(combo["fee"]))
+        fee_max = Decimal(str(combo["fee_max"])) if combo["fee_max"] is not None else None
+        if fee_max is not None:
+            display = f"{_fmt(fee)} bis {_fmt(fee_max)}"
+            return {"fee": float(fee), "fee_max": float(fee_max), "qualifier": "", "display": display}
+        qualifier = combo["qualifier"]
+        fee_str = _fmt(fee)
+        display = f"{qualifier} {fee_str}".strip() if qualifier else fee_str
+        return {"fee": float(fee), "fee_max": None, "qualifier": qualifier, "display": display}
+
+    # Priority 2b: per-part ExamFee lookup
     total_min = Decimal("0")
     total_max = Decimal("0")
     qualifier = ""

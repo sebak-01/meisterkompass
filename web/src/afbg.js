@@ -3,7 +3,7 @@ import tradesData from "@data/trades.json";
 import courseFeesData from "@data/course_fees.json";
 import examFeesData from "@data/exam_fees.json";
 import { initNav } from "./nav.js";
-import { partsLabel } from "./util.js";
+import { partsLabel, TOOLTIP_HESSEN, HESSEN_CHAMBERS } from "./util.js";
 
 const partsKey = (parts) => parts.slice().sort((a, b) => a - b).join(",");
 const makeGroup = (parts, opts = {}) => ({
@@ -113,28 +113,46 @@ function fillExamFees() {
   const efChamber = EXAM_FEES[cidStr] || {};
   const tidStr = currentTid ? String(currentTid) : null;
 
+  // Build efByPart with string keys — supports both per-part keys ("1", "2")
+  // and combo-bundle keys ("1,2", "3,4", "1,2,3,4") from exam_fees.json.
   const efByPart = {};
   const efNull = efChamber["null"] || {};
   const efTrade = tidStr && efChamber[tidStr] ? efChamber[tidStr] : {};
-  Object.keys(efNull).forEach((k) => { efByPart[parseInt(k)] = efNull[k]; });
-  Object.keys(efTrade).forEach((k) => { efByPart[parseInt(k)] = efTrade[k]; });
+  Object.keys(efNull).forEach((k) => { efByPart[k] = efNull[k]; });
+  Object.keys(efTrade).forEach((k) => { efByPart[k] = efTrade[k]; });
 
   feeGroups.forEach((g) => {
     let totalFee = 0, totalMin = 0, totalMax = 0;
     let hasMax = false, qualifier = "", hasAny = false;
 
-    g.parts.forEach((p) => {
-      const ef = efByPart[p];
-      if (ef) {
-        hasAny = true;
-        const fee = ef.fee_max ? Math.round((ef.fee + ef.fee_max) / 2) : ef.fee;
-        totalFee += fee;
-        totalMin += ef.fee;
-        if (ef.fee_max) { totalMax += ef.fee_max; hasMax = true; }
-        else { totalMax += ef.fee; }
-        if (ef.qualifier) qualifier = ef.qualifier;
-      }
-    });
+    // Priority 2a: exact combo-bundle key (e.g. "1,2" for Teile I+II).
+    // Mirrors fees.py's resolve_exam_fee priority 2a.
+    const comboKey = partsKey(g.parts);
+    const comboEf = g.parts.length > 1 ? efByPart[comboKey] : null;
+
+    if (comboEf) {
+      hasAny = true;
+      const fee = comboEf.fee_max ? Math.round((comboEf.fee + comboEf.fee_max) / 2) : comboEf.fee;
+      totalFee = fee;
+      totalMin = comboEf.fee;
+      if (comboEf.fee_max) { totalMax = comboEf.fee_max; hasMax = true; }
+      else { totalMax = comboEf.fee; }
+      if (comboEf.qualifier) qualifier = comboEf.qualifier;
+    } else {
+      // Priority 2b: sum per-part fees.
+      g.parts.forEach((p) => {
+        const ef = efByPart[String(p)];
+        if (ef) {
+          hasAny = true;
+          const fee = ef.fee_max ? Math.round((ef.fee + ef.fee_max) / 2) : ef.fee;
+          totalFee += fee;
+          totalMin += ef.fee;
+          if (ef.fee_max) { totalMax += ef.fee_max; hasMax = true; }
+          else { totalMax += ef.fee; }
+          if (ef.qualifier) qualifier = ef.qualifier;
+        }
+      });
+    }
 
     if (!hasAny) {
       const matchingOffers = COURSE_FEES.filter((o) => {
@@ -262,17 +280,19 @@ function buildExamLabel(g) {
   let label = "Prüfungsgebühr (€)";
   if (g.examFeeMax) {
     const tt = "Die Spanne der Prüfungsgebühr je Teil entstammt dem offiziellen Gebührenverzeichnis. Die genaue Gebühr innerhalb dieser Spanne wird von der Kammer festgelegt. Erkundige dich gerne bei der jeweiligen Kammer.";
-    const span = Math.round(g.examFeeMin).toLocaleString("de-DE") + " bis " + Math.round(g.examFeeMax).toLocaleString("de-DE") + " €";
+    const span = Math.round(g.examFeeMin).toLocaleString("de-DE") + " bis " + Math.round(g.examFeeMax).toLocaleString("de-DE") + " €";
     label += ' <span class="fee-info-wrap-calc"><small style="color:var(--text-lt)">' + span + '</small><button class="fee-info-btn-calc" type="button" data-tooltip="' + tt + '">i</button></span>';
   } else if (g.qualifier) {
     const tt2 = "Die Prüfungsgebühr je Teil entstammt dem offiziellen Gebührenverzeichnis. Dies ist die Gebühr, die maximal erhoben werden kann. Häufig ist die Prüfungsgebühr tatsächlich niedriger. Erkundige dich gerne bei der jeweiligen Kammer.";
     label += ' <span class="fee-info-wrap-calc"><small style="color:var(--text-lt)">' + g.qualifier + '</small><button class="fee-info-btn-calc" type="button" data-tooltip="' + tt2 + '">i</button></span>';
+  } else if (g.examFee && currentCid && HESSEN_CHAMBERS.has(currentCid)) {
+    label += ' <button class="fee-info-btn-calc" type="button" data-tooltip="' + TOOLTIP_HESSEN + '">i</button>';
   }
   return label;
 }
 
 function fmt(v) {
-  return v.toLocaleString("de-DE", { minimumFractionDigits: 0, maximumFractionDigits: 0 }) + " €";
+  return v.toLocaleString("de-DE", { minimumFractionDigits: 0, maximumFractionDigits: 0 }) + " €";
 }
 
 function calculate() {

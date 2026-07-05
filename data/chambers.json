@@ -1,5 +1,15 @@
 [
   {
+    "slug": "hwk-rhein-main",
+    "name": "HWK Frankfurt-Rhein-Main",
+    "region": "Hessen"
+  },
+  {
+    "slug": "hwk-kassel",
+    "name": "HWK Kassel",
+    "region": "Hessen"
+  },
+  {
     "slug": "hwk-koblenz",
     "name": "HWK Koblenz",
     "region": "Rheinland-Pfalz"
@@ -13,6 +23,11 @@
     "slug": "hwk-trier",
     "name": "HWK Trier",
     "region": "Rheinland-Pfalz"
+  },
+  {
+    "slug": "hwk-wiesbaden",
+    "name": "HWK Wiesbaden",
+    "region": "Hessen"
   },
   {
     "slug": "hwk-pfalz",
