@@ -1,5 +1,6 @@
 [
   {
+<<<<<<< HEAD
     "chamber_slug": "hwk-kassel",
     "chamber_name": "HWK Kassel",
     "chamber_region": "Hessen",
@@ -202,6 +203,8 @@
     "source_url": "https://www.hwk-saarland.de/seminar/m3/"
   },
   {
+=======
+>>>>>>> 7117843e6690eea26825bda8c14dbf1c96f3b6b8
     "chamber_slug": "hwk-trier",
     "chamber_name": "HWK Trier",
     "chamber_region": "Rheinland-Pfalz",
@@ -233,6 +236,7 @@
     "longitude": 6.6805129,
     "availability": "available",
     "source_url": "https://www.hwk-trier.de/kurse/teil-iv-berufs-und-arbeitspaedagogik-54,0,coursedetail.html?id=60562&search-onr=54&img=1"
+<<<<<<< HEAD
   },
   {
     "chamber_slug": "hwk-trier",
@@ -333,5 +337,7 @@
     "longitude": 8.4921662,
     "availability": "available",
     "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-vollzeit-44,0,coursedetail.html?id=48863&search-onr=44&img=2"
+=======
+>>>>>>> 7117843e6690eea26825bda8c14dbf1c96f3b6b8
   }
 ]

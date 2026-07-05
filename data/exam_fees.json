@@ -96,7 +96,80 @@
           "qualifier": ""
         },
         "4": {
+<<<<<<< HEAD
           "fee": 235.0,
+=======
+          "fee": 600.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "dachdecker": {
+        "2": {
+          "fee": 350.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "elektrotechniker": {
+        "1": {
+          "fee": 1600.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 1600.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "fliesen-platten-und-mosaikleger": {
+        "2": {
+          "fee": 400.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "informationstechniker": {
+        "1": {
+          "fee": 1100.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 1100.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "installateur-und-heizungsbauer": {
+        "1": {
+          "fee": 1000.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 400.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "land-und-baumaschinenmechatroniker": {
+        "1": {
+          "fee": 1100.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "straenbauer": {
+        "1": {
+          "fee": 1300.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 1300.0,
+>>>>>>> 7117843e6690eea26825bda8c14dbf1c96f3b6b8
           "fee_max": null,
           "qualifier": ""
         }
