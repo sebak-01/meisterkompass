@@ -60,8 +60,6 @@ Berufsbildungszentrum Marburg GmbH (bbz-marburg.de):
 
 Exam fees:
   HWK Kassel publishes one fee schedule per Meisterprüfung part that is
-  identical across every trade and every provider:
-      Teil I: 420 €, Teil II: 420 €, Teil III: 340 €, Teil IV: 235 €
   (https://www.hwk-kassel.de/weiterbildung/meister/-in-im-handwerk,
   verified 2026-06-24). Because this is chamber-wide rather than per-offer,
   it is injected as trade_slug=None rows via an overridden collect() rather
