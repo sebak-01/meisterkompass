@@ -248,12 +248,12 @@
       },
       "elektrotechniker": {
         "1": {
-          "fee": 1790.0,
+          "fee": 990.0,
           "fee_max": null,
           "qualifier": ""
         },
         "2": {
-          "fee": 1790.0,
+          "fee": 560.0,
           "fee_max": null,
           "qualifier": ""
         },
@@ -270,12 +270,12 @@
       },
       "feinwerkmechaniker": {
         "1": {
-          "fee": 1790.0,
+          "fee": 990.0,
           "fee_max": null,
           "qualifier": ""
         },
         "2": {
-          "fee": 1790.0,
+          "fee": 300.0,
           "fee_max": null,
           "qualifier": ""
         },
@@ -304,12 +304,12 @@
       },
       "friseur": {
         "1": {
-          "fee": 1790.0,
+          "fee": 1550.0,
           "fee_max": null,
           "qualifier": ""
         },
         "2": {
-          "fee": 1790.0,
+          "fee": 1550.0,
           "fee_max": null,
           "qualifier": ""
         },
@@ -326,12 +326,12 @@
       },
       "installateur-und-heizungsbauer": {
         "1": {
-          "fee": 1790.0,
+          "fee": 990.0,
           "fee_max": null,
           "qualifier": ""
         },
         "2": {
-          "fee": 1790.0,
+          "fee": 560.0,
           "fee_max": null,
           "qualifier": ""
         },
@@ -348,12 +348,12 @@
       },
       "kfz-techniker": {
         "1": {
-          "fee": 1400.0,
+          "fee": 990.0,
           "fee_max": null,
           "qualifier": ""
         },
         "2": {
-          "fee": 1400.0,
+          "fee": 170.0,
           "fee_max": null,
           "qualifier": ""
         },
@@ -382,7 +382,7 @@
       },
       "maler-und-lackierer": {
         "1": {
-          "fee": 1650.0,
+          "fee": 990.0,
           "fee_max": null,
           "qualifier": ""
         },
@@ -416,12 +416,12 @@
       },
       "metallbauer": {
         "1": {
-          "fee": 1790.0,
+          "fee": 990.0,
           "fee_max": null,
           "qualifier": ""
         },
         "2": {
-          "fee": 1790.0,
+          "fee": 560.0,
           "fee_max": null,
           "qualifier": ""
         },
@@ -462,12 +462,12 @@
       },
       "tischler": {
         "1": {
-          "fee": 1300.0,
+          "fee": 810.0,
           "fee_max": null,
           "qualifier": ""
         },
         "2": {
-          "fee": 1300.0,
+          "fee": 250.0,
           "fee_max": null,
           "qualifier": ""
         },
