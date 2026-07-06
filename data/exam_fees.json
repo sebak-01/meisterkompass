@@ -387,7 +387,11 @@
           "qualifier": ""
         },
         "2": {
+<<<<<<< HEAD
           "fee": 420.0,
+=======
+          "fee": 1650.0,
+>>>>>>> 269a7060d0e28e2fce44100e014ffc2e43f20a27
           "fee_max": null,
           "qualifier": ""
         },

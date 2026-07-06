@@ -1,5 +1,39 @@
 [
   {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "fleischer",
+    "trade_name": "Fleischer",
+    "title": "Fleischer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-06-29",
+    "end_date": "2026-08-07",
+    "duration_hours": 300,
+    "course_fee": null,
+    "course_fee_display": "—",
+    "exam_fee_scraped": null,
+    "exam_fee": {
+      "fee": 730.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "730 €"
+    },
+    "city": "Kassel",
+    "street": "Falderbaumstraße 18-20",
+    "zip_code": "34123",
+    "latitude": 51.2841009,
+    "longitude": 9.498614,
+    "availability": "available",
+    "source_url": "https://www.bz-kassel.de/bildungsangebot/fleischerhandwerk/kursdetail/kurs-1236"
+  },
+  {
     "chamber_slug": "hwk-trier",
     "chamber_name": "HWK Trier",
     "chamber_region": "Rheinland-Pfalz",
