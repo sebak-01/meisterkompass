@@ -1,10 +1,5 @@
 # ignore local data files (except the manual)
-data/courses.json
-data/courses_archive.json
-data/course_fees.json
-data/exam_fees.json
-data/trades.json
-data/chambers.json
+data/*.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -191,4 +186,3 @@ cython_debug/
 # Node / Vite (web/)
 node_modules/
 .vite/
-# NOTE: data/*.json are intentionally tracked (the scraped dataset).
