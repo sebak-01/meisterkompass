@@ -8179,39 +8179,6 @@
     "parts": [
       3
     ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-07-27",
-    "end_date": "2026-11-27",
-    "duration_hours": 300,
-    "course_fee": 1700.0,
-    "course_fee_display": "1.700 €",
-    "exam_fee_scraped": null,
-    "exam_fee": {
-      "fee": 220.0,
-      "fee_max": 300.0,
-      "qualifier": "",
-      "display": "220 € bis 300 €"
-    },
-    "city": "Mainz",
-    "street": "Robert-Bosch-Straße 8",
-    "zip_code": "55129",
-    "latitude": 49.959692,
-    "longitude": 8.260685,
-    "availability": "available",
-    "source_url": "https://www.hwk.de/seminar/fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-fkm-tz/"
-  },
-  {
-    "chamber_slug": "hwk-rheinhessen",
-    "chamber_name": "HWK Rheinhessen",
-    "chamber_region": "Rheinland-Pfalz",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
@@ -10863,7 +10830,7 @@
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
     "start_date": "2026-09-28",
-    "end_date": "2026-11-20",
+    "end_date": "2026-11-12",
     "duration_hours": 300,
     "course_fee": 4200.0,
     "course_fee_display": "4.200 €",
