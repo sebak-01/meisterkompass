@@ -1,6 +1,3 @@
-# ignore local data files (except the manual)
-data/*.json
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -186,3 +183,7 @@ cython_debug/
 # Node / Vite (web/)
 node_modules/
 .vite/
+
+# ignore local data files (except the manual)
+data/*.json
+data/courses.json
