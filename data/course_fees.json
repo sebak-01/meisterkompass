@@ -68,17 +68,6 @@
     "is_generic": false
   },
   {
-    "chamber_slug": "hwk-pfalz",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      3,
-      4
-    ],
-    "fee": 2300.0,
-    "exam_fee_scraped": 600.0,
-    "is_generic": true
-  },
-  {
     "chamber_slug": "hwk-saarland",
     "trade_slug": "feinwerkmechaniker",
     "parts": [
@@ -335,16 +324,6 @@
     "is_generic": false
   },
   {
-    "chamber_slug": "hwk-rheinhessen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      3
-    ],
-    "fee": 1700.0,
-    "exam_fee_scraped": null,
-    "is_generic": true
-  },
-  {
     "chamber_slug": "hwk-saarland",
     "trade_slug": "metallbauer",
     "parts": [
@@ -451,7 +430,7 @@
   },
   {
     "chamber_slug": "hwk-rhein-main",
-    "trade_slug": "maler-gestaltung",
+    "trade_slug": "maler",
     "parts": [
       1,
       2
@@ -534,6 +513,17 @@
     "fee": 9490.0,
     "exam_fee_scraped": null,
     "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-pfalz",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      3,
+      4
+    ],
+    "fee": 2300.0,
+    "exam_fee_scraped": 600.0,
+    "is_generic": true
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -897,6 +887,17 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-rhein-main",
+    "trade_slug": "fahrzeuglackierer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 11490.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-trier",
     "trade_slug": "maler-und-lackierer",
     "parts": [
@@ -915,6 +916,16 @@
     ],
     "fee": 4100.0,
     "exam_fee_scraped": 350.0,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-saarland",
+    "trade_slug": "installateur-und-heizungsbauer",
+    "parts": [
+      1
+    ],
+    "fee": 3035.0,
+    "exam_fee_scraped": 990.0,
     "is_generic": false
   },
   {
@@ -1168,6 +1179,16 @@
     "chamber_slug": "hwk-rheinhessen",
     "trade_slug": "allgemein-teil-iii-iv",
     "parts": [
+      3
+    ],
+    "fee": 1700.0,
+    "exam_fee_scraped": null,
+    "is_generic": true
+  },
+  {
+    "chamber_slug": "hwk-rheinhessen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
       4
     ],
     "fee": 650.0,
@@ -1301,16 +1322,6 @@
     ],
     "fee": 4000.0,
     "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-saarland",
-    "trade_slug": "installateur-und-heizungsbauer",
-    "parts": [
-      1
-    ],
-    "fee": 3035.0,
-    "exam_fee_scraped": 990.0,
     "is_generic": false
   },
   {
