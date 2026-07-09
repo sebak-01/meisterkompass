@@ -16,7 +16,7 @@ from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
 
-from .base import ScrapeResult, normalize_trade
+from .base import GENERIC_TRADE_SLUG, ScrapeResult, normalize_trade
 from .fees import _fmt, build_exam_fee_lookup, resolve_exam_fee
 from .geocode import Geocoder, build_query
 from .hwk_koblenz import HwkKoblenzScraper
@@ -350,17 +350,33 @@ def _resolve_and_write_derived(records: list[dict], scraped_rows: list[dict], ma
 
 
 def _scraped_rows_from_courses(records: list[dict]) -> list[dict]:
-    """Re-derive scraped per-part exam-fee rows from existing course records."""
+    """
+    Re-derive scraped exam-fee rows from existing course records (for --rebake,
+    which runs without scraping). Mirrors ``BaseScraper.scraped_exam_fee_rows``:
+    single-part courses → per-part rows; multi-part combos → one exact-set
+    combo-bundle row at the combined price; the generic trade slug maps back to
+    ``None`` so trade-independent Parts III/IV resolve for every trade.
+    """
     rows: list[dict] = []
     for r in records:
         if r.get("exam_fee_scraped") is None:
             continue
-        for part in r["parts"]:
+        trade_slug = None if r["trade_slug"] == GENERIC_TRADE_SLUG else r["trade_slug"]
+        parts = r["parts"]
+        fee = float(r["exam_fee_scraped"])
+        if len(parts) == 1:
             rows.append({
                 "chamber_slug": r["chamber_slug"],
-                "trade_slug":   r["trade_slug"],
-                "part":         part,
-                "fee":          float(r["exam_fee_scraped"]),
+                "trade_slug":   trade_slug,
+                "part":         parts[0],
+                "fee":          fee,
+            })
+        else:
+            rows.append({
+                "chamber_slug": r["chamber_slug"],
+                "trade_slug":   trade_slug,
+                "parts":        sorted(parts),
+                "fee":          fee,
             })
     return rows
 

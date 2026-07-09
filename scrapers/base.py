@@ -155,42 +155,55 @@ class BaseScraper(ABC):
 
     def scraped_exam_fee_rows(self, offers: list[RawCourseOffer]) -> list[dict]:
         """
-        Derive per-part exam-fee rows from any offer carrying ``exam_fee_scraped``.
+        Derive exam-fee lookup rows from any offer carrying ``exam_fee_scraped``.
 
-        Replaces the (previously duplicated) HWK Trier / HWK Pfalz
-        ``_save_courses`` overrides. Any scraper that sets ``exam_fee_scraped``
-        on its offers now contributes scraped exam fees automatically.
+        Any scraper that sets ``exam_fee_scraped`` on its offers contributes
+        scraped exam fees automatically (replacing the old per-chamber
+        ``_save_courses`` overrides).
 
-        Offers are processed broadest-combo-first, most-specific-last. This
-        matters because ``build_exam_fee_lookup`` keys purely on
-        ``(chamber_slug, trade_slug, part)`` and does last-write-wins on
-        collision — it has no notion of "this row came from a combo course".
-        If a chamber offers both single-part courses (e.g. Teil I on its own,
-        with its own exam fee) and a Vollzeit combo bundling several parts
-        together (with one combined exam fee), and the combo happens to be
-        iterated after the single-part offers, the combo's fee would silently
-        overwrite the correct single-part fee for every part it touches.
+        Two offer shapes map to two different row kinds, matching how
+        ``resolve_exam_fee`` consumes them:
 
-        Concretely: HWK Saarland's Elektrotechniker Teil I costs 990 €, but
-        its Vollzeit combo (Teile I+II+III+IV) has a combined exam fee of
-        1.790 €. Without this ordering, TRADE_PAGES iteration order caused
-        the combo row to land last and overwrite Teil I's 990 € with 1.790 €
-        for every part — so selecting just "Teil I" in the AFBG-Rechner would
-        show the full combo's fee instead of the single-part fee. Sorting by
-        descending part count ensures single-part (more specific) rows are
-        always written last and therefore win.
+        - **Single-part offer** (e.g. HWK Saarland's "Elektrotechniker Teil I",
+          990 €) → a per-part row ``{part, fee}``. These feed the per-part sum.
+        - **Multi-part combo offer** (e.g. the "Teile I+II+III+IV" Vollzeit
+          course at one combined, discounted 1.790 €) → a single combo-bundle
+          row ``{parts, fee}`` keyed on the exact set of parts.
+
+        Emitting a combo as one exact-set row is essential: the combined fee is
+        *not* the sum of its parts, and spreading it as a per-part fee onto each
+        part (the previous behaviour) both overstated any part lacking its own
+        single-part course and, once summed back up, produced a total far above
+        the real combined price (Saarland Tischler resolved to 3.660 € instead
+        of the scraped 1.300 €). Parts III/IV, which no trade sells on their own,
+        still resolve via the trade-independent generic rows below.
+
+        Trade-independent courses (Parts III/IV, ``trade_name is None``) are
+        keyed with ``trade_slug=None`` — the same convention as the manual fee
+        rows and the ``(chamber, None, part)`` fallback in ``resolve_exam_fee``
+        — so that e.g. "Teil IV" resolves for every trade, not only when the
+        literal generic slug happens to be queried.
         """
         rows: list[dict] = []
-        for raw in sorted(offers, key=lambda o: -len(o.parts)):
+        for raw in offers:
             if raw.exam_fee_scraped is None:
                 continue
-            trade_slug, _ = normalize_trade(raw.trade_name)
-            for part in raw.parts:
+            trade_slug = None if raw.trade_name is None else normalize_trade(raw.trade_name)[0]
+            fee = float(raw.exam_fee_scraped)
+            if len(raw.parts) == 1:
                 rows.append({
                     "chamber_slug": self.chamber_slug,
                     "trade_slug":   trade_slug,
-                    "part":         part,
-                    "fee":          float(raw.exam_fee_scraped),
+                    "part":         raw.parts[0],
+                    "fee":          fee,
+                    "source_url":   raw.source_url,
+                })
+            else:
+                rows.append({
+                    "chamber_slug": self.chamber_slug,
+                    "trade_slug":   trade_slug,
+                    "parts":        sorted(raw.parts),
+                    "fee":          fee,
                     "source_url":   raw.source_url,
                 })
         return rows
