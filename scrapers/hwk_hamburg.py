@@ -31,6 +31,7 @@ HWK Koblenz — they're left for manual curation in
 import json
 import logging
 import re
+from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
 
@@ -47,8 +48,8 @@ GENERIC_PAGES: dict[str, int] = {
     "/weiterbildung/ada-ausbildung-der-ausbilder/": 4,
 }
 
-WORKLOAD_PATTERN = re.compile(r"PT(\d+)H", re.IGNORECASE)
-TRADE_PATTERN    = re.compile(r"Meistervorbereitung\s+im\s+(.+?)(?:handwerk)?$", re.IGNORECASE)
+WORKLOAD_PATTERN = re.compile(r"PT([\d.]+)H", re.IGNORECASE)
+TRADE_PATTERN    = re.compile(r"Meistervorbereitung\s+im\s+(.+?)handwerk\b", re.IGNORECASE)
 
 # Delivery mode (schema.org courseMode) → the project's teaching_mode.
 MODE_MAP = {
@@ -69,24 +70,50 @@ FORMAT_BY_MODE = {
 }
 
 
+def _schema_token(value) -> str:
+    """Lowercase a schema.org enum value, tolerating list and full-URI forms
+    (e.g. ``["https://schema.org/OnSite"]`` → ``onsite``)."""
+    if isinstance(value, list):
+        value = value[0] if value else ""
+    return str(value or "").strip().rstrip("/").rsplit("/", 1)[-1].lower()
+
+
 def parse_workload_hours(workload: str | None) -> int | None:
     if not workload:
         return None
     m = WORKLOAD_PATTERN.search(workload)
-    return int(m.group(1)) if m else None
+    return int(float(m.group(1))) if m else None
 
 
-def parse_mode(course_mode: str | None) -> str:
-    return MODE_MAP.get((course_mode or "").strip().lower(), "presence")
+def parse_mode(course_mode) -> str:
+    return MODE_MAP.get(_schema_token(course_mode), "presence")
 
 
-def parse_format(course_mode: str | None) -> str:
-    return FORMAT_BY_MODE.get((course_mode or "").strip().lower(), "full_time")
+def parse_format(course_mode) -> str:
+    return FORMAT_BY_MODE.get(_schema_token(course_mode), "full_time")
+
+
+def parse_price(value) -> float | None:
+    """Coerce a schema.org price (number or string like ``"2.490,00"`` / ``"2490 EUR"``)."""
+    if value is None:
+        return None
+    if isinstance(value, (int, float)):
+        return float(value)
+    cleaned = re.sub(r"[^\d.,]", "", str(value))
+    if not cleaned:
+        return None
+    # German grouping: strip thousands '.', treat ',' as decimal separator.
+    if "," in cleaned:
+        cleaned = cleaned.replace(".", "").replace(",", ".")
+    try:
+        return float(cleaned)
+    except ValueError:
+        return None
 
 
 def parse_trade(course_name: str) -> str | None:
     """Extract the trade from a trade page's course name; None if not a trade page."""
-    m = TRADE_PATTERN.match(course_name.strip())
+    m = TRADE_PATTERN.search(course_name or "")
     if not m:
         return None
     trade = m.group(1).strip().rstrip("- ").strip()
@@ -114,26 +141,25 @@ class HwkHamburgScraper(BaseScraper):
 
         # Trade pages (Teile I + II) are discovered from the overview; the two
         # cross-trade pages (Teile III / IV) are fixed entry points.
-        trade_paths = self._discover_trade_paths(overview)
+        trade_urls = self._discover_trade_urls(overview)
         logger.info("HWK Hamburg: %d trade page(s) + %d cross-trade page(s).",
-                    len(trade_paths), len(GENERIC_PAGES))
+                    len(trade_urls), len(GENERIC_PAGES))
 
         offers: list[RawCourseOffer] = []
-        for path in trade_paths:
-            offers.extend(self._parse_course_page(BASE_URL + path, parts=[1, 2], generic=False))
+        for url in trade_urls:
+            offers.extend(self._parse_course_page(url, parts=[1, 2], generic=False))
         for path, part in GENERIC_PAGES.items():
-            offers.extend(self._parse_course_page(BASE_URL + path, parts=[part], generic=True))
+            offers.extend(self._parse_course_page(urljoin(BASE_URL, path), parts=[part], generic=True))
 
         logger.info("HWK Hamburg: parsed %d course offers total.", len(offers))
         return offers
 
-    def _discover_trade_paths(self, overview: BeautifulSoup) -> list[str]:
-        paths: set[str] = set()
+    def _discover_trade_urls(self, overview: BeautifulSoup) -> list[str]:
+        urls: set[str] = set()
         for a in overview.find_all("a", href=True):
-            href = a["href"]
-            if "/weiterbildung/meistervorbereitung-im-" in href:
-                paths.add(href.replace(BASE_URL, "").split("?")[0])
-        return sorted(paths)
+            if "/weiterbildung/meistervorbereitung-im-" in a["href"]:
+                urls.add(urljoin(BASE_URL, a["href"].split("?")[0]))
+        return sorted(urls)
 
     def _parse_course_page(self, url: str, parts: list[int], generic: bool) -> list[RawCourseOffer]:
         soup = self.parse_html(url)
@@ -150,7 +176,11 @@ class HwkHamburgScraper(BaseScraper):
         title = build_course_title(trade_name, parts)
 
         instances = course.get("hasCourseInstance") or []
-        prices = self._offer_prices(course.get("offers"), len(instances))
+        if isinstance(instances, dict):        # single instance serialized as one object
+            instances = [instances]
+        elif not isinstance(instances, list):
+            instances = []
+        prices = self._offer_prices(course.get("offers"), instances)
 
         offers: list[RawCourseOffer] = []
         for idx, inst in enumerate(instances):
@@ -164,36 +194,67 @@ class HwkHamburgScraper(BaseScraper):
         return offers
 
     @staticmethod
-    def _extract_course(soup: BeautifulSoup) -> dict | None:
+    def _is_course(item) -> bool:
+        """True if a JSON-LD node is a Course, tolerating list-valued or
+        fully-qualified (``https://schema.org/Course``) ``@type``."""
+        if not isinstance(item, dict):
+            return False
+        types = item.get("@type")
+        types = types if isinstance(types, list) else [types]
+        return any(str(t).rstrip("/").rsplit("/", 1)[-1] == "Course" for t in types)
+
+    @classmethod
+    def _extract_course(cls, soup: BeautifulSoup) -> dict | None:
         for block in soup.find_all("script", type="application/ld+json"):
             try:
                 data = json.loads(block.string or "")
             except (json.JSONDecodeError, TypeError):
                 continue
-            for item in (data if isinstance(data, list) else [data]):
-                if isinstance(item, dict) and item.get("@type") == "Course":
+            nodes = data if isinstance(data, list) else [data]
+            # Unwrap @graph containers, keeping any bare nodes alongside.
+            expanded = []
+            for node in nodes:
+                if isinstance(node, dict) and isinstance(node.get("@graph"), list):
+                    expanded.extend(node["@graph"])
+                else:
+                    expanded.append(node)
+            for item in expanded:
+                if cls._is_course(item):
                     return item
         return None
 
     @staticmethod
-    def _offer_prices(offers, count: int) -> list[float | None]:
+    def _offer_prices(course_offers, instances: list) -> list[float | None]:
         """
-        Normalise the ``offers`` array (which is positionally parallel to
-        ``hasCourseInstance``) into a per-instance price list. Each entry is
-        either an Offer dict or a single-element list wrapping one.
+        Resolve a per-instance price. Prefer an Offer attached to the instance
+        itself; otherwise fall back to the Course-level ``offers`` array, which
+        is positionally parallel to ``hasCourseInstance``. A single Course-level
+        offer is broadcast to every instance (schema.org arrays are unordered
+        sets, so one price commonly covers all runs).
         """
-        prices: list[float | None] = [None] * count
-        if not isinstance(offers, list):
-            return prices
-        for idx in range(min(count, len(offers))):
-            entry = offers[idx]
+        def price_of(entry):
             if isinstance(entry, list):
                 entry = entry[0] if entry else None
-            if isinstance(entry, dict) and entry.get("price") is not None:
-                try:
-                    prices[idx] = float(entry["price"])
-                except (TypeError, ValueError):
-                    pass
+            if isinstance(entry, dict):
+                return parse_price(entry.get("price"))
+            return None
+
+        course_offers = course_offers if isinstance(course_offers, list) else None
+        single = None
+        if course_offers and len(course_offers) == 1:
+            single = price_of(course_offers[0])
+
+        prices: list[float | None] = []
+        for idx, inst in enumerate(instances):
+            inst_price = price_of(inst.get("offers")) if isinstance(inst, dict) else None
+            if inst_price is not None:
+                prices.append(inst_price)
+            elif single is not None:
+                prices.append(single)
+            elif course_offers and idx < len(course_offers):
+                prices.append(price_of(course_offers[idx]))
+            else:
+                prices.append(None)
         return prices
 
     def _build_offer(self, inst: dict, price: float | None, trade_name: str | None,
@@ -201,7 +262,10 @@ class HwkHamburgScraper(BaseScraper):
         course_mode = inst.get("courseMode")
         workload = parse_workload_hours(inst.get("courseWorkload"))
 
-        address = (inst.get("location") or {}).get("address") or {}
+        location = inst.get("location")
+        location = location[0] if isinstance(location, list) and location else location
+        address = location.get("address") if isinstance(location, dict) else None
+        address = address if isinstance(address, dict) else {}
         street   = (address.get("streetAddress") or "").strip()
         zip_code = (address.get("postalCode") or "").strip()
         city     = (address.get("addressLocality") or "Hamburg").strip()
