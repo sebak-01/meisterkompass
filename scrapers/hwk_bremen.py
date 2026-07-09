@@ -42,12 +42,13 @@ DEFAULT_CITY   = "Bremen"
 ROMAN = {"I": 1, "II": 2, "III": 3, "IV": 4}
 
 # A template is Meistervorbereitung iff its Abschluss names a Meister part.
-MEISTER_PATTERN = re.compile(r"(?:Meisterprüfung|Handwerksmeister)\s+Teil", re.IGNORECASE)
+MEISTER_PATTERN = re.compile(r"(?:Meisterprüfung|Handwerksmeister)\s+Teile?\b", re.IGNORECASE)
 # One or more part tokens joined by '+', e.g. "Teil III + IV", "Teil I+II".
 PARTS_PATTERN = re.compile(
-    r"Teil\s+((?:IV|III|II|I)(?:\s*\+\s*(?:IV|III|II|I))*)", re.IGNORECASE,
+    r"Teile?\s+((?:IV|III|II|I)(?:\s*\+\s*(?:IV|III|II|I))*)", re.IGNORECASE,
 )
-PRICE_PATTERN = re.compile(r"([\d.]+),(\d{2})")
+# German fee text: "8.100,00 €", "850,00 €", also whole-euro "8.100 €" / "8.100,- €".
+PRICE_PATTERN = re.compile(r"(\d[\d.]*)(?:,(\d{2}))?")
 
 # Vollzeit/Teilzeit lives on the template (``zeitablauf``), not the run.
 FORMAT_MAP = {"vollzeit": "full_time", "teilzeit": "part_time"}
@@ -80,7 +81,7 @@ def parse_trade(titel: str) -> str | None:
     t = re.sub(r"^\s*Online\s*-\s*", "", t, flags=re.IGNORECASE)
     t = re.sub(r"\b(?:MV|Meistervorbereitung)\b", "", t, flags=re.IGNORECASE)
     t = re.sub(r"\bim\b", "", t, flags=re.IGNORECASE)
-    t = re.split(r"\bTeil\b", t, flags=re.IGNORECASE)[0]
+    t = re.split(r"\bTeile?\b", t, flags=re.IGNORECASE)[0]
     t = re.sub(r"\s{2,}", " ", t).strip(" -/")
     t = re.sub(r"handwerk$", "", t, flags=re.IGNORECASE).strip(" -")
     return t or None
@@ -92,7 +93,9 @@ def parse_price(gebuehrentext: str | None) -> float | None:
     m = PRICE_PATTERN.search(gebuehrentext.replace("\xa0", " "))
     if not m:
         return None
-    return float(m.group(1).replace(".", "") + "." + m.group(2))
+    euros = m.group(1).replace(".", "")
+    cents = m.group(2) or "00"
+    return float(f"{euros}.{cents}")
 
 
 def parse_format(zeitablauf: str | None) -> str:
@@ -119,7 +122,12 @@ class HwkBremenScraper(BaseScraper):
             logger.error("HWK Bremen: could not parse KDB XML: %s", exc)
             return []
 
-        templates = [v for v in root if v.tag == "vorlage"]
+        # Strip any XML namespace so tag lookups stay simple, and find <vorlage>
+        # anywhere in the tree (not only as a direct child) in case the feed ever
+        # wraps them in a container element.
+        for elem in root.iter():
+            elem.tag = elem.tag.rsplit("}", 1)[-1]
+        templates = list(root.iter("vorlage"))
         offers: list[RawCourseOffer] = []
         meister = 0
         for vorlage in templates:
@@ -171,8 +179,8 @@ class HwkBremenScraper(BaseScraper):
             parts=parts,
             format_key=format_key,
             teaching_mode="presence",
-            start_date=(kurs.findtext("beginn") or None),
-            end_date=(kurs.findtext("ende") or None),
+            start_date=self._clean_date(kurs.findtext("beginn")),
+            end_date=self._clean_date(kurs.findtext("ende")),
             duration_hours=duration_hours,
             course_fee=parse_price(kurs.findtext("gebuehrentext")),
             city=city,
@@ -196,15 +204,22 @@ class HwkBremenScraper(BaseScraper):
         street  = f"{strasse} {hausnr}".strip()
         zip_code = (lehrgangsort.findtext("plz") or "").strip()
         city     = (lehrgangsort.findtext("ort") or "").strip()
-        return (
-            street or DEFAULT_STREET,
-            zip_code or DEFAULT_ZIP,
-            city or DEFAULT_CITY,
-        )
+        # Only substitute the HQ default when no address was given at all; never
+        # splice the default street onto a real branch's city/PLZ.
+        if not (street or zip_code or city):
+            return DEFAULT_STREET, DEFAULT_ZIP, DEFAULT_CITY
+        return street, zip_code, city
 
     @staticmethod
     def _parse_int(value: str | None) -> int | None:
         if not value:
             return None
-        m = re.search(r"\d+", value)
+        m = re.search(r"\d+", value.replace(".", ""))
         return int(m.group()) if m else None
+
+    @staticmethod
+    def _clean_date(value: str | None) -> str | None:
+        """Normalise a run date to ``YYYY-MM-DD`` (trim whitespace and any time part)."""
+        if not value:
+            return None
+        return value.strip().split("T")[0] or None
