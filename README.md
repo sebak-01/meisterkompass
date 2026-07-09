@@ -82,10 +82,12 @@ chamber scrape:
 
 - **BZ Bildungszentrum Kassel GmbH** (bz-kassel.de) — implemented
 - **Berufsbildungszentrum Marburg GmbH** (bbz-marburg.de) — implemented
-- FTZ / Innung Kfz-Gewerbe Kassel, BBZ Mitte GmbH, Kreishandwerkerschaft
-  Waldeck-Frankenberg, Bubiza, Holzfachschule Bad Wildungen — stubbed,
-  pending raw HTML / network-captured JSON (BBZ Mitte's listing is
-  JS-rendered and blocked by robots.txt for the fetch tool)
+- **Bubiza** (bubiza.de) — implemented (Zimmerer/Dachdecker; per-part fees,
+  combined-run fee = sum of component parts)
+- FTZ / Innung Kfz-Gewerbe Kassel (info page only), BBZ Mitte GmbH
+  (JS-rendered kursfinder), Kreishandwerkerschaft Waldeck-Frankenberg
+  (PDF-only schedules), Holzfachschule Bad Wildungen (PrimeFaces/JSF) —
+  blocked: no server-rendered, structured course listing to scrape
 
 Exam fees for HWK Kassel are chamber-wide rather than per-offer, so they're
 injected via an overridden `collect()` rather than `exam_fee_scraped` on
@@ -217,7 +219,7 @@ has since been removed entirely.
 ### Done
 - [x] Migrated from Django/Postgres to a static site (checked-in JSON + GitHub Pages)
 - [x] Four RLP chambers + HWK des Saarlandes scraped and live
-- [x] Hessen expansion: HWK Frankfurt-Rhein-Main, HWK Kassel (2 of 8 providers), HWK Wiesbaden
+- [x] Hessen expansion: HWK Frankfurt-Rhein-Main, HWK Kassel (3 of 8 providers), HWK Wiesbaden
 - [x] Exam fees with "bis zu" qualifier, ranges, combo-bundle prices, and tooltips
       (scraped + manual overlay)
 - [x] Filterable course list (multi-select chambers) + interactive map;
@@ -228,11 +230,16 @@ has since been removed entirely.
 - [x] Custom domain (meisterkompass.eu)
 
 ### In progress
-- [ ] HWK Frankfurt-Rhein-Main: reconcile availability-handling logic against the
-      current GitHub repo version (comparison started, not completed)
-- [ ] HWK Kassel: implement the remaining 5 stubbed providers (FTZ/Innung Kfz-Gewerbe
-      Kassel, BBZ Mitte, Kreishandwerkerschaft Waldeck-Frankenberg, Bubiza,
-      Holzfachschule Bad Wildungen) — blocked on BBZ Mitte pending raw HTML/JSON
+- [x] HWK Frankfurt-Rhein-Main: reconciled module handling — the detail pages
+      use `with-modul` attributes (selector anchors + BAföG-Rechner price cards +
+      per-run `<tbody>`), not `div.tab-pane`; each module now yields its own
+      correctly-parted offer with its own fee instead of collapsing to the
+      h1's parts
+- [ ] HWK Kassel: 3 of 8 providers implemented (BZ Kassel, BBZ Marburg, Bubiza).
+      Remaining five have no server-rendered structured listing to scrape:
+      FTZ/Innung Kfz-Gewerbe Kassel (info page only), BBZ Mitte (JS-rendered),
+      Kreishandwerkerschaft Waldeck-Frankenberg (PDF-only), Holzfachschule Bad
+      Wildungen (PrimeFaces/JSF); Beratungsstelle Denkmalpflege offers none
 
 ### Planned
 - [ ] Berufenet links per trade (field already in the model)

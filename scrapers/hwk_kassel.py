@@ -10,14 +10,14 @@ each with its own website. This module is structured so each provider gets
 its own self-contained fetch method; a failure in one provider is logged
 and skipped rather than aborting the whole chamber scrape.
 
-Providers (verified 2026-06-24):
+Providers (verified 2026-07-09):
   - BZ Bildungszentrum Kassel GmbH   — bz-kassel.de            [IMPLEMENTED]
   - Berufsbildungszentrum Marburg    — bbz-marburg.de          [IMPLEMENTED]
-  - FTZ / Innung Kfz-Gewerbe Kassel  — kfz-innung-kassel.de    [TODO]
-  - BBZ Mitte GmbH                   — bbz-mitte.de            [TODO]
-  - Kreishandwerkerschaft Waldeck-Frankenberg — khkb.de         [TODO]
-  - Bubiza (Zimmerer/Ausbau)         — bubiza.de               [TODO]
-  - Holzfachschule Bad Wildungen     — holzfachschule.de       [TODO]
+  - Bubiza (Zimmerer/Ausbau)         — bubiza.de               [IMPLEMENTED]
+  - FTZ / Innung Kfz-Gewerbe Kassel  — kfz-innung-kassel.de    [BLOCKED: info page only]
+  - BBZ Mitte GmbH                   — bbz-mitte.de            [BLOCKED: JS-rendered]
+  - Kreishandwerkerschaft Waldeck-Frankenberg — khkb.de        [BLOCKED: PDF-only]
+  - Holzfachschule Bad Wildungen     — holzfachschule.de       [BLOCKED: JS/JSF]
   - Beratungsstelle Handwerk u. Denkmalpflege — denkmalpflegeberatung.de
     (no Meistervorbereitungskurse offered — intentionally not scraped)
 
@@ -69,6 +69,7 @@ Exam fees:
 
 import logging
 import re
+from datetime import datetime
 
 from bs4 import BeautifulSoup, Tag
 
@@ -199,6 +200,65 @@ def parse_int(text: str | None) -> int | None:
 
 
 # ----------------------------------------------------------------------
+# Bubiza (Zimmerer/Ausbaugewerbe)
+# ----------------------------------------------------------------------
+
+BUBIZA_BASE     = "https://www.bubiza.de"
+BUBIZA_LIST_URL = f"{BUBIZA_BASE}/kurse/vollzeit-hoehere-berufsbildung.html"
+
+BUBIZA_DEFAULT_STREET = "Auedamm 18"
+BUBIZA_DEFAULT_ZIP    = "34123"
+BUBIZA_DEFAULT_CITY   = "Kassel"
+
+
+def _parse_bubiza_label_parts(text: str) -> list[int]:
+    """Extract Meisterprüfung parts from a Bubiza Kosten/Termine line label.
+    The label must lead the line as "Teil(e) …" or "T[.] …", e.g.
+    "Teile I+II" → [1,2], "T I - IV" → [1,2,3,4], "Teil III" → [3].
+    Returns [] when the line carries no leading part label (so a bare dated
+    run or a flat price line is not misread as covering some parts)."""
+    m = re.match(
+        rf"\s*(?:Teile?|T\.?)\s+(?P<p>{_ROMAN_ALT}(?:\s*(?:[-–+]|und|bis)\s*{_ROMAN_ALT})*)",
+        text, re.I,
+    )
+    if not m:
+        return []
+    raw = m.group("p").upper()
+    rng = re.search(rf"({_ROMAN_ALT})\s*(?:-|–|BIS)\s*({_ROMAN_ALT})", raw)
+    if rng:
+        lo, hi = sorted((ROMAN[rng.group(1)], ROMAN[rng.group(2)]))
+        return list(range(lo, hi + 1))
+    tokens = re.split(r"\s*(?:\+|UND)\s*", raw)
+    return sorted({ROMAN[t] for t in tokens if t in ROMAN})
+
+
+def _parse_bubiza_price(text: str) -> float | None:
+    """Parse a Bubiza "zzt. 10.490,00 Euro" / "zzt. 7.990,- Euro" price."""
+    m = re.search(r"zzt\.\s*([\d.]+)(?:,(\d{2})|,-|-)?\s*Euro", text, re.I)
+    if not m:
+        return None
+    return float(m.group(1).replace(".", "") + "." + (m.group(2) or "00"))
+
+
+def _parse_bubiza_sub(text: str) -> str | None:
+    """Return the run sub-type ("grund"/"aufbau") when a part-group has more
+    than one scheduling variant on the same page, else None."""
+    m = re.search(r"\b(Grund|Aufbau)", text, re.I)
+    return m.group(1).lower() if m else None
+
+
+def _extract_bubiza_trade(title: str) -> str | None:
+    """Extract the trade name from a Bubiza Meisterkurs title.
+    Maps 'Zimmermeister' → 'Zimmerer', 'Dachdeckermeister' → 'Dachdecker'."""
+    t = title.lower()
+    if "zimm" in t:
+        return "Zimmerer"
+    if "dachdeck" in t:
+        return "Dachdecker"
+    return None
+
+
+# ----------------------------------------------------------------------
 # Berufsbildungszentrum Marburg GmbH
 # ----------------------------------------------------------------------
 
@@ -324,15 +384,26 @@ class HwkKasselScraper(BaseScraper):
         except Exception:
             logger.exception("HWK Kassel/BBZ Marburg: provider failed — skipping.")
 
+        # ---- Provider: Bubiza (Zimmerer/Ausbaugewerbe) ---------------
+        try:
+            bubiza_offers = self._fetch_bubiza()
+            logger.info("HWK Kassel/Bubiza: %d course offers.", len(bubiza_offers))
+            offers.extend(bubiza_offers)
+        except Exception:
+            logger.exception("HWK Kassel/Bubiza: provider failed — skipping.")
+
         # ---- Remaining providers: not yet implemented -----------------
         # Each should follow the same pattern: its own _fetch_<provider>()
         # method, wrapped in try/except here, contributing RawCourseOffers
         # to the same `offers` list.
         #   FTZ / Innung Kfz-Gewerbe Kassel — www.kfz-innung-kassel.de
+        #     (info page only — no structured course listing; blocked)
         #   BBZ Mitte GmbH               — www.bbz-mitte.de
+        #     (JS-rendered kursfinder; blocked on raw HTML / API endpoint)
         #   Kreishandwerkerschaft Waldeck-Frankenberg — www.khkb.de
-        #   Bubiza (Zimmerer/Ausbaugewerbe) — www.bubiza.de
+        #     (Meistervorbereitungslehrgänge only via PDF; blocked)
         #   Holzfachschule Bad Wildungen — www.holzfachschule.de
+        #     (PrimeFaces JSF; JS-rendered; blocked)
 
         logger.info("HWK Kassel: %d course offers total.", len(offers))
         return offers
@@ -650,3 +721,208 @@ class HwkKasselScraper(BaseScraper):
             end   = f"{m.group(6)}-{m.group(5)}-{m.group(4)}"
             runs.append((start, end))
         return runs
+
+    # ------------------------------------------------------------------
+    # Bubiza (Zimmerer/Ausbaugewerbe)
+    # ------------------------------------------------------------------
+
+    def _fetch_bubiza(self) -> list[RawCourseOffer]:
+        soup = self.parse_html(BUBIZA_LIST_URL)
+        if soup is None:
+            logger.error("Bubiza: could not fetch course list at %s", BUBIZA_LIST_URL)
+            return []
+
+        cards = self._collect_bubiza_cards(soup)
+        logger.info("Bubiza: %d Meisterkurs page(s) found.", len(cards))
+
+        offers: list[RawCourseOffer] = []
+        for card in cards:
+            try:
+                offers.extend(self._parse_bubiza_page(card))
+            except Exception as exc:
+                logger.warning("Bubiza: error parsing %s: %s", card["url"], exc)
+        return offers
+
+    def _collect_bubiza_cards(self, soup: BeautifulSoup) -> list[dict]:
+        """Collect Bubiza Meisterkurs course links from the Vollzeit listing.
+        Each <li> contains an <a> to a detail page.  Only courses whose
+        title contains "meister" (excluding Industriemeister) qualify."""
+        cards: list[dict] = []
+        seen: set[str] = set()
+        for li in soup.find_all("li"):
+            a = li.find("a", href=True)
+            if a is None:
+                continue
+            href = a["href"]
+            if not href.endswith(".html") or "/vollzeit-hoehere-berufsbildung/" not in href:
+                continue
+            full = href if href.startswith("http") else BUBIZA_BASE + href
+            if full in seen:
+                continue
+            title = a.get_text(strip=True)
+            if not MEISTER_RE.search(title) or EXCLUDE_INDUSTRIEMEISTER_RE.search(title):
+                continue
+            seen.add(full)
+            cards.append({"title": title, "url": full})
+        return cards
+
+    def _parse_bubiza_page(self, card: dict) -> list[RawCourseOffer]:
+        """Parse a Bubiza Meisterkurs detail page into one or more offers.
+
+        Bubiza pages come in two shapes:
+          * per-part pricing — a "Kosten" block lists a fee per part-group
+            ("Teile I+II", "Teil III", "Teil IV"), and dated runs are
+            labelled with the same part-groups. A combined run ("Teile I-IV")
+            is priced as the sum of its component groups.
+          * flat pricing — a single course fee with no part breakdown; every
+            dated run shares that fee (parts inferred from the run labels or,
+            failing that, the course body).
+        """
+        soup = self.parse_html(card["url"])
+        if soup is None:
+            logger.warning("Bubiza: could not fetch %s", card["url"])
+            return []
+
+        page_text = soup.get_text("\n")
+        title = card["title"]
+        trade_name = _extract_bubiza_trade(title)
+        today = datetime.today().strftime("%Y-%m-%d")
+
+        groups, flat_fee = self._parse_bubiza_kosten(page_text)
+        runs = self._parse_bubiza_runs(page_text)
+        labelled = [r for r in runs if r[0]]
+
+        def make_offer(parts: list[int], fee: float | None, start, end, avail: str, note=None):
+            resolved_trade = None if set(parts) <= {3, 4} else trade_name
+            raw = {"title": title}
+            if note:
+                raw["note"] = note
+            return RawCourseOffer(
+                title=build_course_title(resolved_trade, parts),
+                trade_name=resolved_trade, parts=parts,
+                format_key="full_time", teaching_mode="presence",
+                start_date=start, end_date=end, duration_hours=None,
+                course_fee=fee,
+                city=BUBIZA_DEFAULT_CITY, street=BUBIZA_DEFAULT_STREET,
+                zip_code=BUBIZA_DEFAULT_ZIP,
+                exam_fee_scraped=None, availability=avail,
+                source_url=card["url"], scraped_raw=raw,
+            )
+
+        offers: list[RawCourseOffer] = []
+        seen: set[tuple] = set()
+
+        # Shape 1: per-part pricing with labelled runs.
+        if groups and labelled:
+            for parts, sub, start, end in labelled:
+                if start < today:
+                    continue
+                key = (tuple(parts), start, end)
+                if key in seen:
+                    continue
+                seen.add(key)
+                fee = self._resolve_bubiza_fee(groups, flat_fee, parts, sub)
+                offers.append(make_offer(parts, fee, start, end, "available"))
+            return offers
+
+        # Shape 2: flat pricing.
+        if flat_fee is not None:
+            future_labelled = [r for r in labelled if r[2] >= today]
+            if future_labelled:
+                # Emit each future part-I run (the actual course intake);
+                # component Teil III/IV runs share the same flat fee and are
+                # part of the same programme, so only the leading part-I run
+                # represents a bookable course offer here.
+                for parts, sub, start, end in future_labelled:
+                    if 1 not in parts:
+                        continue
+                    key = (tuple(parts), start, end)
+                    if key in seen:
+                        continue
+                    seen.add(key)
+                    offers.append(make_offer(parts, flat_fee, start, end, "available"))
+                if offers:
+                    return offers
+            # No usable labelled runs — a single price-only offer.
+            bare_future = [r for r in runs if not r[0] and r[2] >= today]
+            parts = self._infer_bubiza_parts(title, page_text)
+            if bare_future:
+                for _p, _s, start, end in bare_future:
+                    offers.append(make_offer(parts, flat_fee, start, end, "available"))
+                return offers
+            return [make_offer(parts, flat_fee, None, None, "unknown",
+                               note="Keine Termine veröffentlicht")]
+
+        return []
+
+    def _parse_bubiza_kosten(self, page_text: str) -> tuple[dict, float | None]:
+        """Parse the "Kosten" block into ``({(frozenset(parts), sub): fee}, flat_fee)``.
+        A fee line with no part prefix becomes the flat fee. Lines mentioning
+        "Prüfung" (exam fees, not course fees) are skipped."""
+        idx = page_text.find("Kosten")
+        if idx < 0:
+            return {}, None
+        window = page_text[idx:idx + 800]
+        groups: dict = {}
+        flat: float | None = None
+        for line in window.splitlines():
+            line = line.strip()
+            if not line or "prüfung" in line.lower():
+                continue
+            fee = _parse_bubiza_price(line)
+            if fee is None:
+                continue
+            parts = _parse_bubiza_label_parts(line)
+            if parts:
+                groups[(frozenset(parts), _parse_bubiza_sub(line))] = fee
+            else:
+                flat = fee
+        return groups, flat
+
+    def _parse_bubiza_runs(self, page_text: str) -> list[tuple]:
+        """Parse every dated run on the page into
+        ``[(parts, sub_type, start, end)]``; ``parts`` is ``[]`` for a run
+        whose line carries no "Teil …" label."""
+        result: list[tuple] = []
+        for line in page_text.splitlines():
+            line = line.strip()
+            dm = DATE_RANGE_RE.search(line)
+            if not dm:
+                continue
+            start = f"{dm.group(3)}-{dm.group(2)}-{dm.group(1)}"
+            end   = f"{dm.group(6)}-{dm.group(5)}-{dm.group(4)}"
+            result.append((_parse_bubiza_label_parts(line), _parse_bubiza_sub(line), start, end))
+        return result
+
+    @staticmethod
+    def _resolve_bubiza_fee(
+        groups: dict, flat_fee: float | None,
+        run_parts: list[int], run_sub: str | None,
+    ) -> float | None:
+        """Resolve a run's fee: exact (parts, sub) match, else sum of the
+        component part-groups (for a combined "Teile I-IV" run), else flat."""
+        run_set = frozenset(run_parts)
+        for key in ((run_set, run_sub), (run_set, None)):
+            if key in groups:
+                return groups[key]
+        total = 0.0
+        matched = False
+        for (ks, _sub), fee in groups.items():
+            if ks < run_set:      # strict subset → a component of this combo
+                total += fee
+                matched = True
+        return total if matched else flat_fee
+
+    @staticmethod
+    def _infer_bubiza_parts(title: str, page_text: str) -> list[int]:
+        """Best-effort parts for a flat-priced Bubiza page with no usable run
+        labels. Collects every distinct "Teil <roman>" body mention that
+        heads a real content phrase (Fachpraxis/Fachtheorie/…), defaulting to
+        I+II (the fachpraxis/fachtheorie core) when nothing is found."""
+        found: set[int] = set()
+        for m in re.finditer(
+            rf"Teil\s+({_ROMAN_ALT})\s+(?:Fachpraxis|Fachtheorie|der\s+Meister)",
+            page_text, re.I,
+        ):
+            found.add(ROMAN[m.group(1).upper()])
+        return sorted(found) or [1, 2]

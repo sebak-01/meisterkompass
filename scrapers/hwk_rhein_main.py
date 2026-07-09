@@ -4,13 +4,26 @@ scrapers/hwk_rhein_main.py
 Scraper for Handwerkskammer Frankfurt-Rhein-Main Meisterkurse.
 Source: https://portal.hwk-rhein-main.de/seminare/suche/
 
+Page structure (verified 2026-07-09):
+  - Each Meisterkurs detail page hosts one or more purchasable modules
+    (e.g. "Teile I - IV", "Teil III + IV", "Teil IV only") distinguished
+    by a free-form ``with-modul`` attribute shared across three element types:
+      * ``<a with-modul="X">`` inside the module-selector ``<tr>`` row
+        (selector anchors for the user-facing "Modul wählen" toggle);
+      * ``<div with-modul="X">`` — the BAföG-Rechner price card per module
+        (the single source of truth for each module's Kursgebühr);
+      * ``<tbody with-modul="X">`` — one per scheduled run, containing
+        the date-range, inline fee ("Gebühr:"), location, and availability.
+  - Pages with zero modules (``auf Anfrage`` / ``in Planung``) have no
+    ``div[with-modul]`` and no ``tbody[with-modul]`` elements.
+  - There are NO ``div.tab-pane`` elements on any current page.
 """
 
 import logging
 import re
 from datetime import datetime
 
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Tag
 
 from .base import BaseScraper, RawCourseOffer, build_course_title
 
@@ -20,33 +33,33 @@ BASE_URL     = "https://portal.hwk-rhein-main.de"
 OVERVIEW_URL = f"{BASE_URL}/seminare/suche/"
 
 ROMAN = {"I": 1, "II": 2, "III": 3, "IV": 4}
-ROMAN_ORDER = ["I", "II", "III", "IV"]
+_ROMAN_ALT = r"(?:IV|III|II|I)"
 
+# Meisterkurs h1 title: "Bäcker - Meisterkurs Teile I bis IV (Vollzeit)"
 TITLE_RE = re.compile(
     r"^(?P<trade>.*?)\s*[-–]?\s*Meisterkurs\s+Teile?\s+"
-    r"(?P<parts>(?:IV|III|II|I)(?:\s*(?:bis|und|\+|,)\s*(?:IV|III|II|I))*)"
-    r"(?:\s+Schwerpunkt\s+(?P<schwerpunkt>[A-Za-zÄÖÜäöüß]+))?",
+    r"(?P<parts>(?:IV|III|II|I)(?:\s*(?:bis|und|\+|,)\s*(?:IV|III|II|I))*)",
     re.IGNORECASE,
 )
-FORMAT_TAIL_RE = re.compile(r"\(([^)]+)\)\s*$")
-
-# Strictly scoped match patterns for single blocks
-ORT_RE = re.compile(r"Lehrgangsort:\s*(?P<ort>.+)", re.IGNORECASE)
-ZEITEN_DATES_RE = re.compile(r"(?P<start>\d{2}\.\d{2}\.\d{4})\s*[-–]\s*(?P<end>\d{2}\.\d{2}\.\d{4})")
-GEBUEHR_RE = re.compile(r"Gebühr:\s*(?P<fee>Kostenlos|[\d.]+,\d{2}\s*€)", re.IGNORECASE)
-ANMELDEGEBUEHR_RE = re.compile(r"Zzgl\.\s*(?P<anmeldegebuehr>[\d.]+(?:,\d{2})?)\s*€\s*Anmeldegebühr", re.IGNORECASE)
-
+# Module-selector label: "Termine Teil III + IV", "Termine Teile I - IV"
+# Excludes labels starting with "Teil" followed by a bare number ("Teil 1")
 MODULE_TAB_LABEL_RE = re.compile(
-    r"Termine\s+Teile?\s+(?P<parts>(?:IV|III|II|I)(?:\s*[-–+]\s*(?:IV|III|II|I))*)",
+    rf"Termine\s+Teile?\s+(?P<parts>{_ROMAN_ALT}(?:\s*(?:[-–+]|und|bis)\s*{_ROMAN_ALT})*)",
     re.IGNORECASE,
 )
+# Feld: Lehrgangsort / Zeiten / Gebühr / Anmeldegebühr in tbody text
+ORT_RE           = re.compile(r"Lehrgangsort:\s*(?P<ort>.+)", re.IGNORECASE)
+DATES_RE         = re.compile(r"(?P<start>\d{2}\.\d{2}\.\d{4})\s*[-–]\s*(?P<end>\d{2}\.\d{2}\.\d{4})")
+GEBUEHR_RE       = re.compile(r"Gebühr:\s*(?P<fee>Kostenlos|[\d.]+,\d{2}\s*€)", re.IGNORECASE)
+ANMELDEGEBUEHR_RE = re.compile(r"Zzgl\.\s*(?P<anmeldegebuehr>[\d.]+(?:,\d{2})?)\s*€\s*Anmeldegebühr", re.IGNORECASE)
+KURSGEBUEHR_RE   = re.compile(r"Kursgebühr\s*([\d.]+),(\d{2})\s*€")
 
-KURSGEBUEHR_RE = re.compile(r"Kursgebühr[:\s]*([\d.]+),(\d{2})\s*€")
-
+# Location lookup — Lehrgangsort contains the venue name, not a street
+# address, so match the keyword inside the text.
 LOCATION_MAP: dict[str, dict] = {
     "frankfurt":   {"city": "Frankfurt am Main", "zip_code": "60327", "street": "Schönstraße 21"},
-    "weiterstadt": {"city": "Weiterstadt",        "zip_code": "64331", "street": "Rudolf-Diesel-Straße 30"},
-    "bensheim":    {"city": "Bensheim",           "zip_code": "64625", "street": "Werner-von-Siemens-Straße 30"},
+    "weiterstadt": {"city": "Weiterstadt",       "zip_code": "64331", "street": "Rudolf-Diesel-Straße 30"},
+    "bensheim":    {"city": "Bensheim",          "zip_code": "64625", "street": "Werner-von-Siemens-Straße 30"},
 }
 DEFAULT_LOCATION = LOCATION_MAP["frankfurt"]
 
@@ -67,47 +80,66 @@ def _detect_availability(text_lower: str) -> str:
     return "available"
 
 
+# ---------------------------------------------------------------------------
+# Parts parsing
+# ---------------------------------------------------------------------------
+
 def parse_parts(raw: str) -> list[int]:
+    """Parse roman-numeral parts list from a free-form string like "III + IV"
+    or "I bis IV" or "I und II". Returns a sorted list of ints."""
     raw = raw.strip().upper()
-    for sep in (" BIS ", " - ", " – "):
-        if sep in raw:
-            a, b = (t.strip() for t in raw.split(sep, 1))
-            if a in ROMAN and b in ROMAN:
-                return list(range(ROMAN[a], ROMAN[b] + 1))
+    # Range: "I - IV", "I bis IV"
+    m = re.search(rf"\b({_ROMAN_ALT})\s*(?:-|–|BIS)\s*({_ROMAN_ALT})\b", raw)
+    if m:
+        lo, hi = sorted((ROMAN[m.group(1)], ROMAN[m.group(2)]))
+        return list(range(lo, hi + 1))
+    # Individual list: "III + IV", "I und II"
     tokens = re.split(r"\s*(?:UND|\+|,)\s*", raw)
     return sorted({ROMAN[t] for t in tokens if t in ROMAN})
 
 
-def parse_title(h1_text: str) -> tuple[str | None, list[int]] | None:
+def parse_h1_parts(h1_text: str) -> list[int]:
+    """Extract parts from the Meisterkurs h1 heading."""
+    m = TITLE_RE.match(h1_text.strip())
+    return parse_parts(m.group("parts")) if m else []
+
+
+def parse_title_and_trade(h1_text: str, parts: list[int]) -> tuple[str | None, list[int]]:
+    """Parse trade name and *effective* parts from h1.  Returns
+    ``(trade_name, parts)`` — for generic parts III/IV, trade_name is None."""
     m = TITLE_RE.match(h1_text.strip())
     if not m:
-        return None
-    parts = parse_parts(m.group("parts"))
-    if not parts:
-        return None
+        return None, parts
     trade_raw = m.group("trade").strip().strip("-–").strip()
-    schwerpunkt = m.group("schwerpunkt")
     trade_name = trade_raw or None
-    if trade_name and schwerpunkt:
-        trade_name = f"{trade_name} ({schwerpunkt.strip()})"
     if trade_name and set(parts) <= {3, 4}:
         trade_name = None
     return trade_name, parts
 
 
+# ---------------------------------------------------------------------------
+# Format / teaching mode
+# ---------------------------------------------------------------------------
+
 def parse_format_and_mode(h1_text: str) -> tuple[str, str]:
-    m = FORMAT_TAIL_RE.search(h1_text.strip())
+    m = re.search(r"\(([^)]+)\)\s*$", h1_text.strip())
     raw = m.group(1).lower() if m else h1_text.lower()
     format_key = "part_time"
     for kw, val in FORMAT_KEYWORDS.items():
         if kw in raw:
             format_key = val
             break
-    has_online = "online" in raw
-    has_presence = "präsenz" in raw or not has_online
-    teaching_mode = "hybrid" if (has_online and "präsenz" in raw) else ("online" if has_online else "presence")
+    has_online  = "online" in raw
+    teaching_mode = (
+        "hybrid" if (has_online and "präsenz" in raw)
+        else ("online" if has_online else "presence")
+    )
     return format_key, teaching_mode
 
+
+# ---------------------------------------------------------------------------
+# Price / date / location helpers
+# ---------------------------------------------------------------------------
 
 def parse_price(text: str) -> float | None:
     if text.strip().lower() == "kostenlos":
@@ -128,6 +160,10 @@ def fmt_date(d: str) -> str:
     dd, mm, yyyy = d.split(".")
     return f"{yyyy}-{mm}-{dd}"
 
+
+# ---------------------------------------------------------------------------
+# Scraper
+# ---------------------------------------------------------------------------
 
 class HwkRheinMainScraper(BaseScraper):
     chamber_slug    = "hwk-rhein-main"
@@ -167,6 +203,10 @@ class HwkRheinMainScraper(BaseScraper):
                 urls.append(full_url)
         return urls
 
+    # ------------------------------------------------------------------
+    # Detail page parsing
+    # ------------------------------------------------------------------
+
     def _scrape_detail_page(self, url: str) -> list[RawCourseOffer]:
         soup = self.parse_html(url)
         if soup is None:
@@ -178,189 +218,154 @@ class HwkRheinMainScraper(BaseScraper):
         if "meisterkurs" not in h1_text.lower():
             return []
 
-        parsed = parse_title(h1_text)
-        if parsed is None:
-            logger.debug("Could not parse trade/parts from %r at %s", h1_text, url)
+        h1_parts = parse_h1_parts(h1_text)
+        if not h1_parts:
+            logger.debug("Could not parse parts from h1 %r at %s", h1_text, url)
             return []
-        trade_name, parts = parsed
+        h1_trade, h1_parts = parse_title_and_trade(h1_text, h1_parts)
         format_key, teaching_mode = parse_format_and_mode(h1_text)
-        title = build_course_title(trade_name, parts)
 
-        # Detect structural tabs / multi-module divs
-        tab_containers = soup.find_all("div", class_="tab-pane")
+        # Build the code → label lookup from selector anchors.
+        # Each <a with-modul="X"> sits inside a <tr> containing a label
+        # like "Termine Teil III + IV"; the label's roman-numeral content
+        # encodes the module's parts.
+        code2label: dict[str, str] = {}
+        for anchor in soup.find_all("a", attrs={"with-modul": True}):
+            tr = anchor.find_parent("tr")
+            if tr is None:
+                continue
+            label_text = tr.get_text(" ", strip=True)
+            lbl_match = MODULE_TAB_LABEL_RE.search(label_text)
+            if lbl_match:
+                code2label.setdefault(anchor["with-modul"].strip(), lbl_match.group("parts"))
 
-        if tab_containers:
-            offers: list[RawCourseOffer] = []
-            for container, tab_label in self._pair_tab_labels(soup, tab_containers):
-                tab_m = MODULE_TAB_LABEL_RE.search(tab_label)
-                tab_parts = parse_parts(tab_m.group("parts")) if tab_m else parts
-                if not tab_parts:
-                    tab_parts = parts
+        # Enumerate purchasable modules: one <div with-modul> per module,
+        # each carrying the Kursgebühr from the BAföG-Rechner card.
+        module_divs = soup.find_all("div", attrs={"with-modul": True})
 
-                t_name = None if set(tab_parts) <= {3, 4} else trade_name
-                t_title = build_course_title(t_name, tab_parts)
-
-                offers.extend(self._parse_container_termine(container, url, t_name, tab_parts, t_title, format_key, teaching_mode))
-            return offers
-
-        return self._parse_container_termine(soup, url, trade_name, parts, title, format_key, teaching_mode)
-
-    def _pair_tab_labels(self, soup: BeautifulSoup, tab_containers: list) -> list[tuple]:
-        """
-        Return ``[(container, label_text), ...]`` pairing each tab-pane with its
-        "Modul wählen" label (e.g. "Termine Teile I - IV", "Termine Teile I + II").
-
-        Some course pages (e.g. the "Zweirad" Meisterkurs, which offers a choice
-        between "Teile I - IV" and "Teile I + II" with different dates/fees) render
-        the module-selector links as plain ``href="#"`` anchors with no id linking
-        them to their ``div.tab-pane`` — so a plain ``soup.find("a",
-        href=f"#{tab_id}")`` lookup silently fails and every module falls back to
-        the same (wrong, page-title-derived) parts. When that href-based lookup
-        can't resolve a label for a given container, fall back to pairing tab
-        containers with "Termine Teile ..." labels positionally, in document
-        order — the two lists have matching length and order for every course
-        page seen so far.
-        """
-        # Collect every "Termine Teile ..." label on the page, in document order,
-        # deduplicated. Scanned via get_text() rather than raw NavigableStrings
-        # so labels split across nested tags (e.g. a bold span inside a link)
-        # are still picked up whole.
-        all_labels: list[str] = []
-        seen_labels: set[str] = set()
-        for tag in soup.find_all(["a", "strong", "b", "td", "th"]):
-            text = tag.get_text(strip=True)
-            if MODULE_TAB_LABEL_RE.search(text) and text not in seen_labels:
-                seen_labels.add(text)
-                all_labels.append(text)
-
-        pairs: list[tuple] = []
-        for i, container in enumerate(tab_containers):
-            tab_id = container.get("id", "")
-            tab_link = soup.find("a", href=f"#{tab_id}") if tab_id else None
-            label = tab_link.get_text(strip=True) if tab_link else ""
-
-            if not MODULE_TAB_LABEL_RE.search(label) and i < len(all_labels):
-                label = all_labels[i]
-
-            pairs.append((container, label))
-        return pairs
-
-    def _parse_container_termine(
-        self, container: BeautifulSoup, url: str, trade_name: str | None, parts: list[int],
-        title: str, format_key: str, teaching_mode: str,
-    ) -> list[RawCourseOffer]:
-        groups: dict[tuple[str, str, str], dict] = {}
-        order: list[tuple[str, str, str]] = []
-
-        # Find individual structural blocks or rows containing course items
-        # Typically structured as rows, tables, or generic paragraphs with Lehrgangsort
-        paragraphs = container.find_all(["p", "div", "tr"])
-
-        current_ort = None
-        current_dates = None
-
-        for elem in paragraphs:
-            text = re.sub(r"\s+", " ", elem.get_text(separator=" ", strip=True))
-            text_lower = text.lower()
-
-            ort_m = ORT_RE.search(text)
-            if ort_m:
-                current_ort = ort_m.group("ort").strip()
-                # Try to clean up tail end if elements are packed together
-                if "Zeiten:" in current_ort:
-                    current_ort = current_ort.split("Zeiten:")[0].strip()
-
-            dates_m = ZEITEN_DATES_RE.search(text)
-            if dates_m:
-                current_dates = (dates_m.group("start"), dates_m.group("end"))
-
-            fee_m = GEBUEHR_RE.search(text)
-            if fee_m and current_ort and current_dates:
-                start_raw, end_raw = current_dates
-
-                # Check expiration date right here:
-                try:
-                    start_dt = datetime.strptime(start_raw, "%d.%m.%Y")
-                    if start_dt < datetime.now():
-                        continue  # Skip expired runs!
-                except ValueError:
-                    pass
-
-                availability = _detect_availability(text_lower)
-
-                key = (current_ort, start_raw, end_raw)
-                fee = parse_price(fee_m.group("fee"))
-
-                amb_m = ANMELDEGEBUEHR_RE.search(text)
-                anmeldegebuehr = amb_m.group("anmeldegebuehr") if amb_m else None
-
-                if key not in groups:
-                    groups[key] = {
-                        "fee": fee,
-                        "anmeldegebuehr": anmeldegebuehr,
-                        "availability": availability,
-                    }
-                    order.append(key)
-                else:
-                    if fee is not None and (groups[key]["fee"] is None or fee > groups[key]["fee"]):
-                        groups[key]["fee"] = fee
-                        groups[key]["anmeldegebuehr"] = anmeldegebuehr
-                    groups[key]["availability"] = availability
-
-        # Per-module fallback: a run's inline "Gebühr:" sometimes reads
-        # "Kostenlos" even though the module has a real total fee shown in its
-        # own "Kursgebühr" (BAföG-Rechner) figure elsewhere in this same
-        # container — use that as the fee for any run left without one, rather
-        # than reporting the module as free.
-        container_fee_m = KURSGEBUEHR_RE.search(container.get_text(separator=" "))
-        container_fee = (
-            float(container_fee_m.group(1).replace(".", "") + "." + container_fee_m.group(2))
-            if container_fee_m else None
-        )
-
-        offers: list[RawCourseOffer] = []
-        for key in order:
-            ort, start_raw, end_raw = key
-            loc = parse_location(ort)
-            fee = groups[key]["fee"]
-            if fee is None and container_fee is not None:
-                fee = container_fee
-            offers.append(RawCourseOffer(
-                title=title,
-                trade_name=trade_name,
-                parts=parts,
-                format_key=format_key,
-                teaching_mode=teaching_mode,
-                start_date=fmt_date(start_raw),
-                end_date=fmt_date(end_raw),
-                duration_hours=None,
-                course_fee=fee,
-                city=loc["city"],
-                street=loc["street"],
-                zip_code=loc["zip_code"],
-                exam_fee_scraped=None,
-                availability=groups[key]["availability"],
-                source_url=url,
-                scraped_raw={
-                    "h1": title, "lehrgangsort": ort,
-                    "anmeldegebuehr": groups[key]["anmeldegebuehr"],
-                },
-            ))
-
-        if not offers:
-            # Fallback out to general page text if no dated blocks match active conditions
-            page_text = container.get_text(separator=" ")
-            fee_m = KURSGEBUEHR_RE.search(page_text)
-            fallback_availability = _detect_availability(page_text.lower())
-            if fee_m:
-                course_fee = float(fee_m.group(1).replace(".", "") + "." + fee_m.group(2))
-                loc = parse_location(current_ort) if current_ort else DEFAULT_LOCATION
-                offers.append(RawCourseOffer(
-                    title=title, trade_name=trade_name, parts=parts,
+        if not module_divs:
+            # Pages with zero modules ("auf Anfrage" / "in Planung"):
+            # emit a single dateless offer so the price shows up, or skip.
+            page_text = soup.get_text(separator=" ")
+            if "auf anfrage" in page_text.lower() or "planung" in page_text.lower():
+                return []
+            kurs_m = KURSGEBUEHR_RE.search(page_text)
+            if kurs_m:
+                fee = float(kurs_m.group(1).replace(".", "") + "." + kurs_m.group(2))
+                title = build_course_title(h1_trade, h1_parts)
+                return [RawCourseOffer(
+                    title=title, trade_name=h1_trade, parts=h1_parts,
                     format_key=format_key, teaching_mode=teaching_mode,
                     start_date=None, end_date=None, duration_hours=None,
-                    course_fee=course_fee, city=loc["city"], street=loc["street"], zip_code=loc["zip_code"],
-                    exam_fee_scraped=None, availability=fallback_availability, source_url=url,
-                    scraped_raw={"h1": title, "note": "Termine vergangen oder nicht verfügbar", "course_fee": course_fee},
-                ))
+                    course_fee=fee,
+                    city=DEFAULT_LOCATION["city"],
+                    street=DEFAULT_LOCATION["street"],
+                    zip_code=DEFAULT_LOCATION["zip_code"],
+                    exam_fee_scraped=None,
+                    availability=_detect_availability(page_text.lower()),
+                    source_url=url,
+                    scraped_raw={"h1": h1_text, "note": "Keine Termininformation"},
+                )]
+            return []
+
+        offers: list[RawCourseOffer] = []
+        for div in module_divs:
+            code = div["with-modul"].strip()
+
+            # Module parts: prefer the selector label (roman numerals),
+            # fall back to parsing the raw module code, then the h1.
+            label_parts = parse_parts(code2label.get(code, ""))
+            code_parts  = parse_parts(code)
+            parts = label_parts or code_parts or h1_parts
+            if not parts:
+                continue
+
+            trade_name = None if set(parts) <= {3, 4} else h1_trade
+            title = build_course_title(trade_name, parts)
+
+            # Module Kursgebühr from the BAföG-Rechner card.
+            kurs_m = KURSGEBUEHR_RE.search(div.get_text(separator=" "))
+            module_fee = (
+                float(kurs_m.group(1).replace(".", "") + "." + kurs_m.group(2))
+                if kurs_m else None
+            )
+
+            # Scheduled runs: <tbody with-modul="…"> matching this code.
+            tbodies = [
+                tb for tb in soup.find_all("tbody", attrs={"with-modul": True})
+                if tb["with-modul"].strip() == code
+            ]
+            for tb in tbodies:
+                offers.extend(
+                    self._parse_tbody_run(tb, url, trade_name, parts, title,
+                                          format_key, teaching_mode, module_fee)
+                )
+
         return offers
+
+    def _parse_tbody_run(
+        self,
+        tb: Tag,
+        url: str,
+        trade_name: str | None,
+        parts: list[int],
+        title: str,
+        format_key: str,
+        teaching_mode: str,
+        module_fee: float | None,
+    ) -> list[RawCourseOffer]:
+        """Parse a single ``<tbody with-modul>`` (one scheduled run) into
+        zero or one ``RawCourseOffer``."""
+        text = re.sub(r"\s+", " ", tb.get_text(separator=" ", strip=True))
+
+        dm = DATES_RE.search(text)
+        if not dm:
+            return []
+
+        # Skip past runs.
+        try:
+            start_dt = datetime.strptime(dm.group("start"), "%d.%m.%Y")
+            if start_dt < datetime.now():
+                return []
+        except ValueError:
+            pass
+
+        fm = GEBUEHR_RE.search(text)
+        fee = parse_price(fm.group("fee")) if fm else None
+        # Prefer inline fee; fall back to the module-level Kursgebühr.
+        if fee is None:
+            fee = module_fee
+
+        ort_m = ORT_RE.search(text)
+        ort_text = ort_m.group("ort").strip() if ort_m else ""
+        if "Zeiten:" in ort_text:
+            ort_text = ort_text.split("Zeiten:")[0].strip()
+
+        amb_m = ANMELDEGEBUEHR_RE.search(text)
+        anmeldegebuehr = amb_m.group("anmeldegebuehr") if amb_m else None
+
+        availability = _detect_availability(text.lower())
+        loc = parse_location(ort_text)
+
+        return [RawCourseOffer(
+            title=title,
+            trade_name=trade_name,
+            parts=parts,
+            format_key=format_key,
+            teaching_mode=teaching_mode,
+            start_date=fmt_date(dm.group("start")),
+            end_date=fmt_date(dm.group("end")),
+            duration_hours=None,
+            course_fee=fee,
+            city=loc["city"],
+            street=loc["street"],
+            zip_code=loc["zip_code"],
+            exam_fee_scraped=None,
+            availability=availability,
+            source_url=url,
+            scraped_raw={
+                "h1": title,
+                "lehrgangsort": ort_text,
+                "anmeldegebuehr": anmeldegebuehr,
+            },
+        )]
