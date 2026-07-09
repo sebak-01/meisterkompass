@@ -3,6 +3,74 @@
     "chamber_slug": "hwk-kassel",
     "chamber_name": "HWK Kassel",
     "chamber_region": "Hessen",
+    "trade_slug": "dachdecker",
+    "trade_name": "Dachdecker",
+    "title": "Dachdecker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-11-02",
+    "end_date": "2027-01-29",
+    "duration_hours": null,
+    "course_fee": 3990.0,
+    "course_fee_display": "3.990 €",
+    "exam_fee_scraped": null,
+    "exam_fee": {
+      "fee": 730.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "730 €"
+    },
+    "city": "Kassel",
+    "street": "Auedamm 18",
+    "zip_code": "34123",
+    "latitude": 51.3021202,
+    "longitude": 9.4991416,
+    "availability": "available",
+    "source_url": "https://www.bubiza.de/kurse/vollzeit-hoehere-berufsbildung/dachdeckermeister-fuer-dachdeckergesellen.html"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "dachdecker",
+    "trade_name": "Dachdecker",
+    "title": "Dachdecker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-10-04",
+    "end_date": "2028-02-04",
+    "duration_hours": null,
+    "course_fee": 5990.0,
+    "course_fee_display": "5.990 €",
+    "exam_fee_scraped": null,
+    "exam_fee": {
+      "fee": 730.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "730 €"
+    },
+    "city": "Kassel",
+    "street": "Auedamm 18",
+    "zip_code": "34123",
+    "latitude": 51.3021202,
+    "longitude": 9.4991416,
+    "availability": "available",
+    "source_url": "https://www.bubiza.de/kurse/vollzeit-hoehere-berufsbildung/dachdeckermeister-fuer-dachdeckergesellen.html"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
     "trade_slug": "elektrotechniker",
     "trade_name": "Elektrotechniker",
     "title": "Elektrotechniker (Teile I + II)",
@@ -1712,6 +1780,39 @@
     "chamber_region": "Hessen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
+    "parts": [
+      4
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-10-12",
+    "end_date": "2027-10-28",
+    "duration_hours": null,
+    "course_fee": 890.0,
+    "course_fee_display": "890 €",
+    "exam_fee_scraped": null,
+    "exam_fee": {
+      "fee": 235.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "235 €"
+    },
+    "city": "Kassel",
+    "street": "Auedamm 18",
+    "zip_code": "34123",
+    "latitude": 51.3021202,
+    "longitude": 9.4991416,
+    "availability": "available",
+    "source_url": "https://www.bubiza.de/kurse/vollzeit-hoehere-berufsbildung/zimmermeister-holzbau-deutschland-anerkannt-1.html"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Wirtschaft und Recht (Teil III)",
     "parts": [
       3
@@ -1811,6 +1912,39 @@
     "chamber_region": "Hessen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-11-02",
+    "end_date": "2027-12-17",
+    "duration_hours": null,
+    "course_fee": 1990.0,
+    "course_fee_display": "1.990 €",
+    "exam_fee_scraped": null,
+    "exam_fee": {
+      "fee": 340.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "340 €"
+    },
+    "city": "Kassel",
+    "street": "Auedamm 18",
+    "zip_code": "34123",
+    "latitude": 51.3021202,
+    "longitude": 9.4991416,
+    "availability": "available",
+    "source_url": "https://www.bubiza.de/kurse/vollzeit-hoehere-berufsbildung/zimmermeister-holzbau-deutschland-anerkannt-1.html"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Berufs- und Arbeitspädagogik (Teil IV)",
     "parts": [
       4
@@ -1837,6 +1971,511 @@
     "longitude": 8.7666044,
     "availability": "available",
     "source_url": "https://www.bbz-marburg.de/kurs/ada-vz-96/"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
+    "parts": [
+      4
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-01-31",
+    "end_date": "2028-02-17",
+    "duration_hours": null,
+    "course_fee": 890.0,
+    "course_fee_display": "890 €",
+    "exam_fee_scraped": null,
+    "exam_fee": {
+      "fee": 235.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "235 €"
+    },
+    "city": "Kassel",
+    "street": "Auedamm 18",
+    "zip_code": "34123",
+    "latitude": 51.3021202,
+    "longitude": 9.4991416,
+    "availability": "available",
+    "source_url": "https://www.bubiza.de/kurse/vollzeit-hoehere-berufsbildung/zimmermeister-holzbau-deutschland-anerkannt.html"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-02-28",
+    "end_date": "2028-04-21",
+    "duration_hours": null,
+    "course_fee": 1990.0,
+    "course_fee_display": "1.990 €",
+    "exam_fee_scraped": null,
+    "exam_fee": {
+      "fee": 340.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "340 €"
+    },
+    "city": "Kassel",
+    "street": "Auedamm 18",
+    "zip_code": "34123",
+    "latitude": 51.3021202,
+    "longitude": 9.4991416,
+    "availability": "available",
+    "source_url": "https://www.bubiza.de/kurse/vollzeit-hoehere-berufsbildung/zimmermeister-holzbau-deutschland-anerkannt.html"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
+    "parts": [
+      4
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-10-17",
+    "end_date": "2028-11-02",
+    "duration_hours": null,
+    "course_fee": 890.0,
+    "course_fee_display": "890 €",
+    "exam_fee_scraped": null,
+    "exam_fee": {
+      "fee": 235.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "235 €"
+    },
+    "city": "Kassel",
+    "street": "Auedamm 18",
+    "zip_code": "34123",
+    "latitude": 51.3021202,
+    "longitude": 9.4991416,
+    "availability": "available",
+    "source_url": "https://www.bubiza.de/kurse/vollzeit-hoehere-berufsbildung/zimmermeister-holzbau-deutschland-anerkannt-1.html"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-11-07",
+    "end_date": "2028-12-21",
+    "duration_hours": null,
+    "course_fee": 1990.0,
+    "course_fee_display": "1.990 €",
+    "exam_fee_scraped": null,
+    "exam_fee": {
+      "fee": 340.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "340 €"
+    },
+    "city": "Kassel",
+    "street": "Auedamm 18",
+    "zip_code": "34123",
+    "latitude": 51.3021202,
+    "longitude": 9.4991416,
+    "availability": "available",
+    "source_url": "https://www.bubiza.de/kurse/vollzeit-hoehere-berufsbildung/zimmermeister-holzbau-deutschland-anerkannt-1.html"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "zimmerer",
+    "trade_name": "Zimmerer",
+    "title": "Zimmerer (Teil I)",
+    "parts": [
+      1
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-08-11",
+    "end_date": "2026-10-02",
+    "duration_hours": null,
+    "course_fee": 3650.0,
+    "course_fee_display": "3.650 €",
+    "exam_fee_scraped": null,
+    "exam_fee": {
+      "fee": 420.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "420 €"
+    },
+    "city": "Kassel",
+    "street": "Auedamm 18",
+    "zip_code": "34123",
+    "latitude": 51.3021202,
+    "longitude": 9.4991416,
+    "availability": "available",
+    "source_url": "https://www.bubiza.de/kurse/vollzeit-hoehere-berufsbildung/zimmermeister-fuer-architekten-ingenieure-techniker.html"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "zimmerer",
+    "trade_name": "Zimmerer",
+    "title": "Zimmerer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-01-11",
+    "end_date": "2027-09-23",
+    "duration_hours": null,
+    "course_fee": 10490.0,
+    "course_fee_display": "10.490 €",
+    "exam_fee_scraped": null,
+    "exam_fee": {
+      "fee": 730.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "730 €"
+    },
+    "city": "Kassel",
+    "street": "Auedamm 18",
+    "zip_code": "34123",
+    "latitude": 51.3021202,
+    "longitude": 9.4991416,
+    "availability": "available",
+    "source_url": "https://www.bubiza.de/kurse/vollzeit-hoehere-berufsbildung/zimmermeister-holzbau-deutschland-anerkannt-1.html"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "zimmerer",
+    "trade_name": "Zimmerer",
+    "title": "Zimmerer (Teile I + II + III + IV)",
+    "parts": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-02-01",
+    "end_date": "2028-01-28",
+    "duration_hours": null,
+    "course_fee": 11900.0,
+    "course_fee_display": "11.900 €",
+    "exam_fee_scraped": null,
+    "exam_fee": {
+      "fee": 820.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "820 €"
+    },
+    "city": "Kassel",
+    "street": "Auedamm 18",
+    "zip_code": "34123",
+    "latitude": 51.3021202,
+    "longitude": 9.4991416,
+    "availability": "available",
+    "source_url": "https://www.bubiza.de/kurse/vollzeit-hoehere-berufsbildung/zimmermeister-techniker.html"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "zimmerer",
+    "trade_name": "Zimmerer",
+    "title": "Zimmerer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-05-03",
+    "end_date": "2028-01-13",
+    "duration_hours": null,
+    "course_fee": 10490.0,
+    "course_fee_display": "10.490 €",
+    "exam_fee_scraped": null,
+    "exam_fee": {
+      "fee": 730.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "730 €"
+    },
+    "city": "Kassel",
+    "street": "Auedamm 18",
+    "zip_code": "34123",
+    "latitude": 51.3021202,
+    "longitude": 9.4991416,
+    "availability": "available",
+    "source_url": "https://www.bubiza.de/kurse/vollzeit-hoehere-berufsbildung/zimmermeister-holzbau-deutschland-anerkannt.html"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "zimmerer",
+    "trade_name": "Zimmerer",
+    "title": "Zimmerer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-08-09",
+    "end_date": "2028-01-13",
+    "duration_hours": null,
+    "course_fee": 7990.0,
+    "course_fee_display": "7.990 €",
+    "exam_fee_scraped": null,
+    "exam_fee": {
+      "fee": 730.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "730 €"
+    },
+    "city": "Kassel",
+    "street": "Auedamm 18",
+    "zip_code": "34123",
+    "latitude": 51.3021202,
+    "longitude": 9.4991416,
+    "availability": "available",
+    "source_url": "https://www.bubiza.de/kurse/vollzeit-hoehere-berufsbildung/zimmermeister-fuer-dachdeckermeister.html"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "zimmerer",
+    "trade_name": "Zimmerer",
+    "title": "Zimmerer (Teil I)",
+    "parts": [
+      1
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-08-10",
+    "end_date": "2027-10-01",
+    "duration_hours": null,
+    "course_fee": 3650.0,
+    "course_fee_display": "3.650 €",
+    "exam_fee_scraped": null,
+    "exam_fee": {
+      "fee": 420.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "420 €"
+    },
+    "city": "Kassel",
+    "street": "Auedamm 18",
+    "zip_code": "34123",
+    "latitude": 51.3021202,
+    "longitude": 9.4991416,
+    "availability": "available",
+    "source_url": "https://www.bubiza.de/kurse/vollzeit-hoehere-berufsbildung/zimmermeister-fuer-architekten-ingenieure-techniker.html"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "zimmerer",
+    "trade_name": "Zimmerer",
+    "title": "Zimmerer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-01-10",
+    "end_date": "2028-09-27",
+    "duration_hours": null,
+    "course_fee": 10490.0,
+    "course_fee_display": "10.490 €",
+    "exam_fee_scraped": null,
+    "exam_fee": {
+      "fee": 730.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "730 €"
+    },
+    "city": "Kassel",
+    "street": "Auedamm 18",
+    "zip_code": "34123",
+    "latitude": 51.3021202,
+    "longitude": 9.4991416,
+    "availability": "available",
+    "source_url": "https://www.bubiza.de/kurse/vollzeit-hoehere-berufsbildung/zimmermeister-holzbau-deutschland-anerkannt-1.html"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "zimmerer",
+    "trade_name": "Zimmerer",
+    "title": "Zimmerer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-05-02",
+    "end_date": "2029-01-11",
+    "duration_hours": null,
+    "course_fee": 10490.0,
+    "course_fee_display": "10.490 €",
+    "exam_fee_scraped": null,
+    "exam_fee": {
+      "fee": 730.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "730 €"
+    },
+    "city": "Kassel",
+    "street": "Auedamm 18",
+    "zip_code": "34123",
+    "latitude": 51.3021202,
+    "longitude": 9.4991416,
+    "availability": "available",
+    "source_url": "https://www.bubiza.de/kurse/vollzeit-hoehere-berufsbildung/zimmermeister-holzbau-deutschland-anerkannt.html"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "zimmerer",
+    "trade_name": "Zimmerer",
+    "title": "Zimmerer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-08-14",
+    "end_date": "2029-01-11",
+    "duration_hours": null,
+    "course_fee": 7990.0,
+    "course_fee_display": "7.990 €",
+    "exam_fee_scraped": null,
+    "exam_fee": {
+      "fee": 730.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "730 €"
+    },
+    "city": "Kassel",
+    "street": "Auedamm 18",
+    "zip_code": "34123",
+    "latitude": 51.3021202,
+    "longitude": 9.4991416,
+    "availability": "available",
+    "source_url": "https://www.bubiza.de/kurse/vollzeit-hoehere-berufsbildung/zimmermeister-fuer-dachdeckermeister.html"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "zimmerer",
+    "trade_name": "Zimmerer",
+    "title": "Zimmerer (Teil I)",
+    "parts": [
+      1
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-08-15",
+    "end_date": "2028-10-06",
+    "duration_hours": null,
+    "course_fee": 3650.0,
+    "course_fee_display": "3.650 €",
+    "exam_fee_scraped": null,
+    "exam_fee": {
+      "fee": 420.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "420 €"
+    },
+    "city": "Kassel",
+    "street": "Auedamm 18",
+    "zip_code": "34123",
+    "latitude": 51.3021202,
+    "longitude": 9.4991416,
+    "availability": "available",
+    "source_url": "https://www.bubiza.de/kurse/vollzeit-hoehere-berufsbildung/zimmermeister-fuer-architekten-ingenieure-techniker.html"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "zimmerer",
+    "trade_name": "Zimmerer",
+    "title": "Zimmerer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": null,
+    "end_date": null,
+    "duration_hours": null,
+    "course_fee": 7990.0,
+    "course_fee_display": "7.990 €",
+    "exam_fee_scraped": null,
+    "exam_fee": {
+      "fee": 730.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "730 €"
+    },
+    "city": "Kassel",
+    "street": "Auedamm 18",
+    "zip_code": "34123",
+    "latitude": 51.3021202,
+    "longitude": 9.4991416,
+    "availability": "unknown",
+    "source_url": "https://www.bubiza.de/kurse/vollzeit-hoehere-berufsbildung/dachdeckermeister-fuer-zimmermeister.html"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -3745,7 +4384,7 @@
     "chamber_slug": "hwk-koblenz",
     "chamber_name": "HWK Koblenz",
     "chamber_region": "Rheinland-Pfalz",
-    "trade_slug": "straenbauer",
+    "trade_slug": "strassenbauer",
     "trade_name": "Straßenbauer",
     "title": "Straßenbauer (Teile I + II)",
     "parts": [
@@ -3779,7 +4418,7 @@
     "chamber_slug": "hwk-koblenz",
     "chamber_name": "HWK Koblenz",
     "chamber_region": "Rheinland-Pfalz",
-    "trade_slug": "straenbauer",
+    "trade_slug": "strassenbauer",
     "trade_name": "Straßenbauer",
     "title": "Straßenbauer (Teile I + II)",
     "parts": [
@@ -3813,7 +4452,7 @@
     "chamber_slug": "hwk-koblenz",
     "chamber_name": "HWK Koblenz",
     "chamber_region": "Rheinland-Pfalz",
-    "trade_slug": "straenbauer",
+    "trade_slug": "strassenbauer",
     "trade_name": "Straßenbauer",
     "title": "Straßenbauer (Teile I + II)",
     "parts": [
@@ -5811,7 +6450,7 @@
     "chamber_slug": "hwk-pfalz",
     "chamber_name": "HWK der Pfalz",
     "chamber_region": "Rheinland-Pfalz",
-    "trade_slug": "straenbauer",
+    "trade_slug": "strassenbauer",
     "trade_name": "Straßenbauer",
     "title": "Straßenbauer (Teile I + II)",
     "parts": [
@@ -6202,10 +6841,10 @@
     "course_fee_display": "—",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": 1200.0,
+      "fee": 600.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.200 €"
+      "display": "600 €"
     },
     "city": "Kaiserslautern",
     "street": "Am Altenhof 15",
@@ -6236,10 +6875,10 @@
     "course_fee_display": "—",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": 1200.0,
+      "fee": 600.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.200 €"
+      "display": "600 €"
     },
     "city": "Kaiserslautern",
     "street": "Am Altenhof 15",
@@ -6270,10 +6909,10 @@
     "course_fee_display": "—",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": 1200.0,
+      "fee": 600.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.200 €"
+      "display": "600 €"
     },
     "city": "Kaiserslautern",
     "street": "Am Altenhof 15",
@@ -6304,10 +6943,10 @@
     "course_fee_display": "—",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": 1200.0,
+      "fee": 600.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.200 €"
+      "display": "600 €"
     },
     "city": "Kaiserslautern",
     "street": "Am Altenhof 15",
@@ -6338,10 +6977,10 @@
     "course_fee_display": "—",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": 1200.0,
+      "fee": 600.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.200 €"
+      "display": "600 €"
     },
     "city": "Kaiserslautern",
     "street": "Am Altenhof 15",
@@ -6372,10 +7011,10 @@
     "course_fee_display": "—",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": 1200.0,
+      "fee": 600.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.200 €"
+      "display": "600 €"
     },
     "city": "Kaiserslautern",
     "street": "Am Altenhof 15",
@@ -6391,12 +7030,9 @@
     "chamber_region": "Hessen",
     "trade_slug": "backer",
     "trade_name": "Bäcker",
-    "title": "Bäcker (Teile I + II + III + IV)",
+    "title": "Bäcker (Teil I)",
     "parts": [
-      1,
-      2,
-      3,
-      4
+      1
     ],
     "format": "full_time",
     "format_display": "Vollzeit",
@@ -6404,14 +7040,14 @@
     "start_date": "2026-09-07",
     "end_date": "2026-11-26",
     "duration_hours": null,
-    "course_fee": 4500.0,
-    "course_fee_display": "4.500 €",
+    "course_fee": 750.0,
+    "course_fee_display": "750 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": 820.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "820 €"
+      "display": "420 €"
     },
     "city": "Weiterstadt",
     "street": "Rudolf-Diesel-Straße 30",
@@ -6427,12 +7063,9 @@
     "chamber_region": "Hessen",
     "trade_slug": "backer",
     "trade_name": "Bäcker",
-    "title": "Bäcker (Teile I + II + III + IV)",
+    "title": "Bäcker (Teil I)",
     "parts": [
-      1,
-      2,
-      3,
-      4
+      1
     ],
     "format": "full_time",
     "format_display": "Vollzeit",
@@ -6440,14 +7073,14 @@
     "start_date": "2027-01-04",
     "end_date": "2027-03-25",
     "duration_hours": null,
-    "course_fee": 4990.0,
-    "course_fee_display": "4.990 €",
+    "course_fee": 750.0,
+    "course_fee_display": "750 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": 820.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "820 €"
+      "display": "420 €"
     },
     "city": "Weiterstadt",
     "street": "Rudolf-Diesel-Straße 30",
@@ -6463,12 +7096,9 @@
     "chamber_region": "Hessen",
     "trade_slug": "backer",
     "trade_name": "Bäcker",
-    "title": "Bäcker (Teile I + II + III + IV)",
+    "title": "Bäcker (Teil I)",
     "parts": [
-      1,
-      2,
-      3,
-      4
+      1
     ],
     "format": "full_time",
     "format_display": "Vollzeit",
@@ -6476,14 +7106,14 @@
     "start_date": "2027-09-06",
     "end_date": "2027-11-25",
     "duration_hours": null,
-    "course_fee": 4990.0,
-    "course_fee_display": "4.990 €",
+    "course_fee": 750.0,
+    "course_fee_display": "750 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": 820.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "820 €"
+      "display": "420 €"
     },
     "city": "Weiterstadt",
     "street": "Rudolf-Diesel-Straße 30",
@@ -6635,12 +7265,9 @@
     "chamber_region": "Hessen",
     "trade_slug": "fleischer",
     "trade_name": "Fleischer",
-    "title": "Fleischer (Teile I + II + III + IV)",
+    "title": "Fleischer (Teil I)",
     "parts": [
-      1,
-      2,
-      3,
-      4
+      1
     ],
     "format": "full_time",
     "format_display": "Vollzeit",
@@ -6648,14 +7275,14 @@
     "start_date": "2026-09-07",
     "end_date": "2026-11-26",
     "duration_hours": null,
-    "course_fee": 4700.0,
-    "course_fee_display": "4.700 €",
+    "course_fee": 1500.0,
+    "course_fee_display": "1.500 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": 820.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "820 €"
+      "display": "420 €"
     },
     "city": "Weiterstadt",
     "street": "Rudolf-Diesel-Straße 30",
@@ -6671,12 +7298,9 @@
     "chamber_region": "Hessen",
     "trade_slug": "fleischer",
     "trade_name": "Fleischer",
-    "title": "Fleischer (Teile I + II + III + IV)",
+    "title": "Fleischer (Teil I)",
     "parts": [
-      1,
-      2,
-      3,
-      4
+      1
     ],
     "format": "full_time",
     "format_display": "Vollzeit",
@@ -6684,14 +7308,14 @@
     "start_date": "2027-01-04",
     "end_date": "2027-03-25",
     "duration_hours": null,
-    "course_fee": 4990.0,
-    "course_fee_display": "4.990 €",
+    "course_fee": 1500.0,
+    "course_fee_display": "1.500 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": 820.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "820 €"
+      "display": "420 €"
     },
     "city": "Weiterstadt",
     "street": "Rudolf-Diesel-Straße 30",
@@ -6707,12 +7331,9 @@
     "chamber_region": "Hessen",
     "trade_slug": "fleischer",
     "trade_name": "Fleischer",
-    "title": "Fleischer (Teile I + II + III + IV)",
+    "title": "Fleischer (Teil I)",
     "parts": [
-      1,
-      2,
-      3,
-      4
+      1
     ],
     "format": "full_time",
     "format_display": "Vollzeit",
@@ -6720,14 +7341,14 @@
     "start_date": "2027-09-07",
     "end_date": "2027-11-26",
     "duration_hours": null,
-    "course_fee": 4990.0,
-    "course_fee_display": "4.990 €",
+    "course_fee": 1500.0,
+    "course_fee_display": "1.500 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": 820.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "820 €"
+      "display": "420 €"
     },
     "city": "Weiterstadt",
     "street": "Rudolf-Diesel-Straße 30",
@@ -6947,10 +7568,9 @@
     "chamber_region": "Hessen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "title": "Wirtschaft und Recht (Teil III)",
     "parts": [
-      3,
-      4
+      3
     ],
     "format": "full_time",
     "format_display": "Vollzeit",
@@ -6958,14 +7578,14 @@
     "start_date": "2026-08-10",
     "end_date": "2026-09-29",
     "duration_hours": null,
-    "course_fee": 2990.0,
-    "course_fee_display": "2.990 €",
+    "course_fee": 2290.0,
+    "course_fee_display": "2.290 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": 490.0,
+      "fee": 340.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "490 €"
+      "display": "340 €"
     },
     "city": "Frankfurt am Main",
     "street": "Schönstraße 21",
@@ -6981,10 +7601,9 @@
     "chamber_region": "Hessen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "title": "Wirtschaft und Recht (Teil III)",
     "parts": [
-      3,
-      4
+      3
     ],
     "format": "part_time",
     "format_display": "Teilzeit",
@@ -6992,14 +7611,14 @@
     "start_date": "2026-08-15",
     "end_date": "2027-03-12",
     "duration_hours": null,
-    "course_fee": 2990.0,
-    "course_fee_display": "2.990 €",
+    "course_fee": 2290.0,
+    "course_fee_display": "2.290 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": 490.0,
+      "fee": 340.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "490 €"
+      "display": "340 €"
     },
     "city": "Frankfurt am Main",
     "street": "Schönstraße 21",
@@ -7015,9 +7634,8 @@
     "chamber_region": "Hessen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
     "parts": [
-      3,
       4
     ],
     "format": "part_time",
@@ -7030,10 +7648,10 @@
     "course_fee_display": "770 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": 490.0,
+      "fee": 235.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "490 €"
+      "display": "235 €"
     },
     "city": "Frankfurt am Main",
     "street": "Schönstraße 21",
@@ -7049,10 +7667,9 @@
     "chamber_region": "Hessen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "title": "Wirtschaft und Recht (Teil III)",
     "parts": [
-      3,
-      4
+      3
     ],
     "format": "full_time",
     "format_display": "Vollzeit",
@@ -7060,14 +7677,14 @@
     "start_date": "2026-08-27",
     "end_date": "2026-10-16",
     "duration_hours": null,
-    "course_fee": 2990.0,
-    "course_fee_display": "2.990 €",
+    "course_fee": 2290.0,
+    "course_fee_display": "2.290 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": 490.0,
+      "fee": 340.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "490 €"
+      "display": "340 €"
     },
     "city": "Frankfurt am Main",
     "street": "Schönstraße 21",
@@ -7083,44 +7700,9 @@
     "chamber_region": "Hessen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "title": "Wirtschaft und Recht (Teil III)",
     "parts": [
-      3,
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-09-04",
-    "end_date": "2026-12-11",
-    "duration_hours": null,
-    "course_fee": 2290.0,
-    "course_fee_display": "2.290 €",
-    "exam_fee_scraped": null,
-    "exam_fee": {
-      "fee": 490.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "490 €"
-    },
-    "city": "Frankfurt am Main",
-    "street": "Schönstraße 21",
-    "zip_code": "60327",
-    "latitude": 50.1013705,
-    "longitude": 8.65682,
-    "availability": "available",
-    "source_url": "https://portal.hwk-rhein-main.de/seminar/ml-99sp/"
-  },
-  {
-    "chamber_slug": "hwk-rhein-main",
-    "chamber_name": "HWK Frankfurt-Rhein-Main",
-    "chamber_region": "Hessen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
-    "parts": [
-      3,
-      4
+      3
     ],
     "format": "full_time",
     "format_display": "Vollzeit",
@@ -7132,10 +7714,10 @@
     "course_fee_display": "2.290 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": 490.0,
+      "fee": 340.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "490 €"
+      "display": "340 €"
     },
     "city": "Frankfurt am Main",
     "street": "Schönstraße 21",
@@ -7151,9 +7733,8 @@
     "chamber_region": "Hessen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
     "parts": [
-      3,
       4
     ],
     "format": "part_time",
@@ -7166,10 +7747,10 @@
     "course_fee_display": "770 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": 490.0,
+      "fee": 235.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "490 €"
+      "display": "235 €"
     },
     "city": "Weiterstadt",
     "street": "Rudolf-Diesel-Straße 30",
@@ -7185,10 +7766,9 @@
     "chamber_region": "Hessen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "title": "Wirtschaft und Recht (Teil III)",
     "parts": [
-      3,
-      4
+      3
     ],
     "format": "full_time",
     "format_display": "Vollzeit",
@@ -7200,10 +7780,10 @@
     "course_fee_display": "2.290 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": 490.0,
+      "fee": 340.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "490 €"
+      "display": "340 €"
     },
     "city": "Frankfurt am Main",
     "street": "Schönstraße 21",
@@ -7219,10 +7799,9 @@
     "chamber_region": "Hessen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "title": "Wirtschaft und Recht (Teil III)",
     "parts": [
-      3,
-      4
+      3
     ],
     "format": "part_time",
     "format_display": "Teilzeit",
@@ -7234,10 +7813,10 @@
     "course_fee_display": "2.290 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": 490.0,
+      "fee": 340.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "490 €"
+      "display": "340 €"
     },
     "city": "Weiterstadt",
     "street": "Rudolf-Diesel-Straße 30",
@@ -7253,44 +7832,9 @@
     "chamber_region": "Hessen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "title": "Wirtschaft und Recht (Teil III)",
     "parts": [
-      3,
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-01-08",
-    "end_date": "2027-02-13",
-    "duration_hours": null,
-    "course_fee": 770.0,
-    "course_fee_display": "770 €",
-    "exam_fee_scraped": null,
-    "exam_fee": {
-      "fee": 490.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "490 €"
-    },
-    "city": "Frankfurt am Main",
-    "street": "Schönstraße 21",
-    "zip_code": "60327",
-    "latitude": 50.1013705,
-    "longitude": 8.65682,
-    "availability": "available",
-    "source_url": "https://portal.hwk-rhein-main.de/seminar/ml-99sp/"
-  },
-  {
-    "chamber_slug": "hwk-rhein-main",
-    "chamber_name": "HWK Frankfurt-Rhein-Main",
-    "chamber_region": "Hessen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
-    "parts": [
-      3,
-      4
+      3
     ],
     "format": "part_time",
     "format_display": "Teilzeit",
@@ -7302,10 +7846,10 @@
     "course_fee_display": "2.320 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": 490.0,
+      "fee": 340.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "490 €"
+      "display": "340 €"
     },
     "city": "Frankfurt am Main",
     "street": "Schönstraße 21",
@@ -7321,10 +7865,9 @@
     "chamber_region": "Hessen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "title": "Wirtschaft und Recht (Teil III)",
     "parts": [
-      3,
-      4
+      3
     ],
     "format": "full_time",
     "format_display": "Vollzeit",
@@ -7332,14 +7875,14 @@
     "start_date": "2027-01-11",
     "end_date": "2027-03-05",
     "duration_hours": null,
-    "course_fee": 2990.0,
-    "course_fee_display": "2.990 €",
+    "course_fee": 2290.0,
+    "course_fee_display": "2.290 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": 490.0,
+      "fee": 340.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "490 €"
+      "display": "340 €"
     },
     "city": "Frankfurt am Main",
     "street": "Schönstraße 21",
@@ -7355,10 +7898,9 @@
     "chamber_region": "Hessen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "title": "Wirtschaft und Recht (Teil III)",
     "parts": [
-      3,
-      4
+      3
     ],
     "format": "full_time",
     "format_display": "Vollzeit",
@@ -7366,14 +7908,14 @@
     "start_date": "2027-01-13",
     "end_date": "2027-03-05",
     "duration_hours": null,
-    "course_fee": 3190.0,
-    "course_fee_display": "3.190 €",
+    "course_fee": 2320.0,
+    "course_fee_display": "2.320 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": 490.0,
+      "fee": 340.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "490 €"
+      "display": "340 €"
     },
     "city": "Frankfurt am Main",
     "street": "Schönstraße 21",
@@ -7389,10 +7931,9 @@
     "chamber_region": "Hessen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "title": "Wirtschaft und Recht (Teil III)",
     "parts": [
-      3,
-      4
+      3
     ],
     "format": "full_time",
     "format_display": "Vollzeit",
@@ -7404,10 +7945,10 @@
     "course_fee_display": "2.320 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": 490.0,
+      "fee": 340.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "490 €"
+      "display": "340 €"
     },
     "city": "Weiterstadt",
     "street": "Rudolf-Diesel-Straße 30",
@@ -7457,10 +7998,9 @@
     "chamber_region": "Hessen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "title": "Wirtschaft und Recht (Teil III)",
     "parts": [
-      3,
-      4
+      3
     ],
     "format": "full_time",
     "format_display": "Vollzeit",
@@ -7468,14 +8008,14 @@
     "start_date": "2027-03-08",
     "end_date": "2027-05-07",
     "duration_hours": null,
-    "course_fee": 2990.0,
-    "course_fee_display": "2.990 €",
+    "course_fee": 2290.0,
+    "course_fee_display": "2.290 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": 490.0,
+      "fee": 340.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "490 €"
+      "display": "340 €"
     },
     "city": "Frankfurt am Main",
     "street": "Schönstraße 21",
@@ -7491,10 +8031,9 @@
     "chamber_region": "Hessen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "title": "Wirtschaft und Recht (Teil III)",
     "parts": [
-      3,
-      4
+      3
     ],
     "format": "full_time",
     "format_display": "Vollzeit",
@@ -7506,10 +8045,10 @@
     "course_fee_display": "2.320 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": 490.0,
+      "fee": 340.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "490 €"
+      "display": "340 €"
     },
     "city": "Frankfurt am Main",
     "street": "Schönstraße 21",
@@ -7525,10 +8064,9 @@
     "chamber_region": "Hessen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "title": "Wirtschaft und Recht (Teil III)",
     "parts": [
-      3,
-      4
+      3
     ],
     "format": "full_time",
     "format_display": "Vollzeit",
@@ -7536,14 +8074,14 @@
     "start_date": "2027-05-10",
     "end_date": "2027-07-06",
     "duration_hours": null,
-    "course_fee": 2990.0,
-    "course_fee_display": "2.990 €",
+    "course_fee": 2290.0,
+    "course_fee_display": "2.290 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": 490.0,
+      "fee": 340.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "490 €"
+      "display": "340 €"
     },
     "city": "Frankfurt am Main",
     "street": "Schönstraße 21",
@@ -7559,10 +8097,9 @@
     "chamber_region": "Hessen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "title": "Wirtschaft und Recht (Teil III)",
     "parts": [
-      3,
-      4
+      3
     ],
     "format": "full_time",
     "format_display": "Vollzeit",
@@ -7570,14 +8107,14 @@
     "start_date": "2027-05-12",
     "end_date": "2027-07-06",
     "duration_hours": null,
-    "course_fee": 3190.0,
-    "course_fee_display": "3.190 €",
+    "course_fee": 2320.0,
+    "course_fee_display": "2.320 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": 490.0,
+      "fee": 340.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "490 €"
+      "display": "340 €"
     },
     "city": "Frankfurt am Main",
     "street": "Schönstraße 21",
@@ -7593,9 +8130,8 @@
     "chamber_region": "Hessen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
     "parts": [
-      3,
       4
     ],
     "format": "part_time",
@@ -7608,10 +8144,10 @@
     "course_fee_display": "870 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": 490.0,
+      "fee": 235.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "490 €"
+      "display": "235 €"
     },
     "city": "Frankfurt am Main",
     "street": "Schönstraße 21",
@@ -7627,10 +8163,9 @@
     "chamber_region": "Hessen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "title": "Wirtschaft und Recht (Teil III)",
     "parts": [
-      3,
-      4
+      3
     ],
     "format": "full_time",
     "format_display": "Vollzeit",
@@ -7638,14 +8173,14 @@
     "start_date": "2027-07-01",
     "end_date": "2027-08-20",
     "duration_hours": null,
-    "course_fee": 3190.0,
-    "course_fee_display": "3.190 €",
+    "course_fee": 2320.0,
+    "course_fee_display": "2.320 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": 490.0,
+      "fee": 340.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "490 €"
+      "display": "340 €"
     },
     "city": "Frankfurt am Main",
     "street": "Schönstraße 21",
@@ -7661,10 +8196,9 @@
     "chamber_region": "Hessen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "title": "Wirtschaft und Recht (Teil III)",
     "parts": [
-      3,
-      4
+      3
     ],
     "format": "full_time",
     "format_display": "Vollzeit",
@@ -7672,14 +8206,14 @@
     "start_date": "2027-09-15",
     "end_date": "2027-11-06",
     "duration_hours": null,
-    "course_fee": 3190.0,
-    "course_fee_display": "3.190 €",
+    "course_fee": 2320.0,
+    "course_fee_display": "2.320 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": 490.0,
+      "fee": 340.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "490 €"
+      "display": "340 €"
     },
     "city": "Frankfurt am Main",
     "street": "Schönstraße 21",
@@ -7695,10 +8229,9 @@
     "chamber_region": "Hessen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "title": "Wirtschaft und Recht (Teil III)",
     "parts": [
-      3,
-      4
+      3
     ],
     "format": "full_time",
     "format_display": "Vollzeit",
@@ -7710,10 +8243,10 @@
     "course_fee_display": "2.320 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": 490.0,
+      "fee": 340.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "490 €"
+      "display": "340 €"
     },
     "city": "Weiterstadt",
     "street": "Rudolf-Diesel-Straße 30",
@@ -7729,10 +8262,9 @@
     "chamber_region": "Hessen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "title": "Wirtschaft und Recht (Teil III)",
     "parts": [
-      3,
-      4
+      3
     ],
     "format": "full_time",
     "format_display": "Vollzeit",
@@ -7744,10 +8276,10 @@
     "course_fee_display": "2.320 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": 490.0,
+      "fee": 340.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "490 €"
+      "display": "340 €"
     },
     "city": "Frankfurt am Main",
     "street": "Schönstraße 21",
@@ -7829,9 +8361,9 @@
     "chamber_slug": "hwk-rhein-main",
     "chamber_name": "HWK Frankfurt-Rhein-Main",
     "chamber_region": "Hessen",
-    "trade_slug": "zweirad-motorrad",
-    "trade_name": "Zweirad (Motorrad)",
-    "title": "Zweirad (Motorrad) (Teile I + II + III + IV)",
+    "trade_slug": "zweirad",
+    "trade_name": "Zweirad",
+    "title": "Zweirad (Teile I + II + III + IV)",
     "parts": [
       1,
       2,
@@ -7865,14 +8397,12 @@
     "chamber_slug": "hwk-rhein-main",
     "chamber_name": "HWK Frankfurt-Rhein-Main",
     "chamber_region": "Hessen",
-    "trade_slug": "zweirad-motorrad",
-    "trade_name": "Zweirad (Motorrad)",
-    "title": "Zweirad (Motorrad) (Teile I + II + III + IV)",
+    "trade_slug": "zweirad",
+    "trade_name": "Zweirad",
+    "title": "Zweirad (Teile I + II)",
     "parts": [
       1,
-      2,
-      3,
-      4
+      2
     ],
     "format": "full_time",
     "format_display": "Vollzeit",
@@ -7884,10 +8414,10 @@
     "course_fee_display": "8.490 €",
     "exam_fee_scraped": null,
     "exam_fee": {
-      "fee": 820.0,
+      "fee": 730.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "820 €"
+      "display": "730 €"
     },
     "city": "Frankfurt am Main",
     "street": "Schönstraße 21",
@@ -7930,40 +8460,6 @@
     "longitude": 8.260685,
     "availability": "full",
     "source_url": "https://www.hwk.de/seminar/dd/"
-  },
-  {
-    "chamber_slug": "hwk-rheinhessen",
-    "chamber_name": "HWK Rheinhessen",
-    "chamber_region": "Rheinland-Pfalz",
-    "trade_slug": "elektrotechniker",
-    "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-08-24",
-    "end_date": "2029-08-31",
-    "duration_hours": 1100,
-    "course_fee": 7900.0,
-    "course_fee_display": "7.900 €",
-    "exam_fee_scraped": null,
-    "exam_fee": {
-      "fee": 900.0,
-      "fee_max": 2700.0,
-      "qualifier": "",
-      "display": "900 € bis 2.700 €"
-    },
-    "city": "Mainz",
-    "street": "Robert-Bosch-Straße 8",
-    "zip_code": "55129",
-    "latitude": 49.959692,
-    "longitude": 8.260685,
-    "availability": "available",
-    "source_url": "https://www.hwk.de/seminar/elektrotechniker-teil-i-und-ii-eli/"
   },
   {
     "chamber_slug": "hwk-rheinhessen",
@@ -8350,7 +8846,7 @@
     "format": "part_time",
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
-    "start_date": "2026-10-19",
+    "start_date": "2026-11-10",
     "end_date": "2028-01-17",
     "duration_hours": 230,
     "course_fee": 2890.0,
@@ -9750,7 +10246,7 @@
     "chamber_slug": "hwk-saarland",
     "chamber_name": "HWK des Saarlandes",
     "chamber_region": "Saarland",
-    "trade_slug": "straenbauer",
+    "trade_slug": "strassenbauer",
     "trade_name": "Straßenbauer",
     "title": "Straßenbauer (Teil I)",
     "parts": [
@@ -9783,7 +10279,7 @@
     "chamber_slug": "hwk-saarland",
     "chamber_name": "HWK des Saarlandes",
     "chamber_region": "Saarland",
-    "trade_slug": "straenbauer",
+    "trade_slug": "strassenbauer",
     "trade_name": "Straßenbauer",
     "title": "Straßenbauer (Teil II)",
     "parts": [

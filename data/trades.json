@@ -108,7 +108,7 @@
     "name": "Steinmetze und Steinbildhauer"
   },
   {
-    "slug": "straenbauer",
+    "slug": "strassenbauer",
     "name": "Straßenbauer"
   },
   {
@@ -140,7 +140,7 @@
     "name": "Zimmerer"
   },
   {
-    "slug": "zweirad-motorrad",
-    "name": "Zweirad (Motorrad)"
+    "slug": "zweirad",
+    "name": "Zweirad"
   }
 ]
