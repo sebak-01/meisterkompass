@@ -33,7 +33,12 @@ def slugify(value: str) -> str:
     Minimal ASCII slugify matching Django's ``django.utils.text.slugify``
     output for the trade names this project sees (umlauts transliterate via
     NFKD, then non-word chars collapse to single hyphens).
+
+    ``ß`` is expanded to ``ss`` first: unlike the umlauts, it has no NFKD
+    decomposition and would otherwise be dropped entirely, turning
+    "Straßenbauer" into "straenbauer" instead of "strassenbauer".
     """
+    value = value.replace("ß", "ss").replace("ẞ", "ss")
     value = unicodedata.normalize("NFKD", value).encode("ascii", "ignore").decode("ascii")
     value = re.sub(r"[^\w\s-]", "", value.lower())
     return re.sub(r"[-\s]+", "-", value).strip("-_")
