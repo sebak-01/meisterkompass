@@ -16,7 +16,7 @@ Providers (verified 2026-07-09):
   - Bubiza (Zimmerer/Ausbau)         — bubiza.de               [IMPLEMENTED]
   - BBZ Mitte GmbH                   — bbz-mitte.de            [IMPLEMENTED]
   - Holzfachschule Bad Wildungen     — holzfachschule.de       [IMPLEMENTED]
-  - FTZ / Innung Kfz-Gewerbe Kassel  — kfz-innung-kassel.de    [BLOCKED: info page only]
+  - FTZ / Innung Kfz-Gewerbe Kassel  — kfz-innung-kassel.de    [IMPLEMENTED: dateless/priceless only]
   - Kreishandwerkerschaft Waldeck-Frankenberg — khkb.de        [BLOCKED: PDF-only]
   - Beratungsstelle Handwerk u. Denkmalpflege — denkmalpflegeberatung.de
     (no Meistervorbereitungskurse offered — intentionally not scraped)
@@ -91,6 +91,22 @@ Holzfachschule Bad Wildungen (holzfachschule.de):
     (date range + price + availability badge: ``availibility-red`` =
     "ausgebucht" → full, otherwise available); one RawCourseOffer per run,
     with a dateless placeholder when no run is scheduled ("auf Anfrage").
+
+FTZ / Innung des Kfz-Gewerbes Kassel (kfz-innung-kassel.de):
+  - TYPO3 site; its Seminare page is fully server-rendered (courses are
+    accordion items: button trigger = title, sibling content div = body).
+    FTZ is the ONLY HWK Kassel provider that lists Kfz-Meister courses — BZ
+    Kassel carries none — so scraping it is what makes Kfz-Meister visible.
+  - CAVEATS: FTZ publishes no schedule or price on this page. All three
+    Kfz-Meister courses are "auf Anfrage", so every offer is a dateless,
+    priceless placeholder (start_date/end_date/course_fee = None,
+    availability="unknown"), kept visible via the same fallback as elsewhere.
+  - Part wording is non-standard: "Servicetechniker"/"Berufsspezialist"/"ST"
+    denotes the fachpraktische Teil-1-Stufe and "ST+II" the I+II combo, so a
+    dedicated parse_ftz_parts() maps them (the shared parser only sees the
+    written-out "Teil II"). Industriemeister titles are excluded as usual.
+  - The three courses share one page, so each offer's source_url carries the
+    accordion item's anchor fragment to keep dedup keys distinct.
 
 Exam fees:
   HWK Kassel publishes one fee schedule per Meisterprüfung part that is
@@ -504,6 +520,53 @@ def parse_hfs_format(text: str) -> str:
     return "full_time"
 
 
+# ----------------------------------------------------------------------
+# FTZ / Innung des Kfz-Gewerbes Kassel
+# ----------------------------------------------------------------------
+
+# TYPO3 site. Its Seminare page is fully server-rendered — courses are
+# accordion items (button trigger = title, sibling content div = body). Three
+# of them are Kfz-Meister courses; FTZ is the ONLY HWK Kassel provider that
+# lists Kfz-Meister courses at all (BZ Kassel has none). BIG CAVEATS, all
+# because FTZ publishes no schedule here — every offer is a dateless, priceless
+# placeholder ("auf Anfrage"):
+#   - No dates: start_date/end_date are always None.
+#   - No prices: course_fee is always None.
+#   - Non-standard part wording ("ST" = Servicetechniker = fachpraktischer
+#     Teil 1; "II" = Teil II) needs a dedicated parts resolver.
+# The three courses share one page, so each offer's source_url carries the
+# accordion item's anchor fragment to stay distinct in the dedup key
+# (chamber_slug, source_url, start_date) — without it all three collapse to one.
+FTZ_BASE      = "https://www.kfz-innung-kassel.de"
+FTZ_LIST_URL  = f"{FTZ_BASE}/aus-und-weiterbildung-im-ftz/seminare-im-ftz"
+
+FTZ_DEFAULT_STREET = "Falderbaumstraße 20"
+FTZ_DEFAULT_ZIP     = "34123"
+FTZ_DEFAULT_CITY    = "Kassel"
+
+FTZ_TRADE_NAME = "Kfz.-Techniker"
+
+# A course qualifies as a Kfz-Meister course if its title mentions "meister"
+# or the Servicetechniker/Berufsspezialist stage (fachpraktischer Teil 1).
+FTZ_MEISTER_RE = re.compile(r"meister|servicetechnik|berufsspezialist", re.IGNORECASE)
+
+
+def parse_ftz_parts(title: str) -> list[int]:
+    """
+    Resolve Meisterprüfung parts from an FTZ Kfz title. FTZ labels the
+    fachpraktische Teil-1-Stufe "Servicetechniker"/"Berufsspezialist"/"ST"
+    rather than "Teil I", and combines it as "ST+II"; "Teil II" is written
+    out. Returns [] for the non-Meister Kfz seminars (AU, HV, Klima, …).
+    """
+    lower = title.lower()
+    parts: set[int] = set()
+    if "servicetechnik" in lower or "berufsspezialist" in lower or re.search(r"\bst\b", lower) or "(st" in lower:
+        parts.add(1)
+    if re.search(r"teil\s*ii\b", lower) or re.search(r"\+\s*ii\b", lower) or "st+ii" in lower:
+        parts.add(2)
+    return sorted(parts)
+
+
 class HwkKasselScraper(BaseScraper):
     chamber_slug    = "hwk-kassel"
     chamber_name    = "Handwerkskammer Kassel"
@@ -562,12 +625,18 @@ class HwkKasselScraper(BaseScraper):
         except Exception:
             logger.exception("HWK Kassel/Holzfachschule: provider failed — skipping.")
 
+        # ---- Provider: FTZ / Innung des Kfz-Gewerbes Kassel -----------
+        try:
+            ftz_offers = self._fetch_ftz_kfz()
+            logger.info("HWK Kassel/FTZ Kfz-Innung: %d course offers.", len(ftz_offers))
+            offers.extend(ftz_offers)
+        except Exception:
+            logger.exception("HWK Kassel/FTZ Kfz-Innung: provider failed — skipping.")
+
         # ---- Remaining providers: not yet implemented -----------------
         # Each should follow the same pattern: its own _fetch_<provider>()
         # method, wrapped in try/except here, contributing RawCourseOffers
         # to the same `offers` list.
-        #   FTZ / Innung Kfz-Gewerbe Kassel — www.kfz-innung-kassel.de
-        #     (info page only — no structured course listing; blocked)
         #   Kreishandwerkerschaft Waldeck-Frankenberg — www.khkb.de
         #     (Meistervorbereitungslehrgänge only via PDF; blocked)
 
@@ -1392,3 +1461,73 @@ class HwkKasselScraper(BaseScraper):
                 "availability": availability,
             })
         return runs
+
+    # ------------------------------------------------------------------
+    # FTZ / Innung des Kfz-Gewerbes Kassel
+    # ------------------------------------------------------------------
+
+    def _fetch_ftz_kfz(self) -> list[RawCourseOffer]:
+        soup = self.parse_html(FTZ_LIST_URL)
+        if soup is None:
+            logger.error("FTZ Kfz-Innung: could not fetch Seminare page at %s", FTZ_LIST_URL)
+            return []
+
+        offers: list[RawCourseOffer] = []
+        for item in soup.select("div.m-accordion-kfz-1__item"):
+            try:
+                offer = self._parse_ftz_item(item)
+            except Exception as exc:
+                logger.warning("FTZ Kfz-Innung: error parsing accordion item: %s", exc)
+                continue
+            if offer:
+                offers.append(offer)
+        return offers
+
+    def _parse_ftz_item(self, item: Tag) -> RawCourseOffer | None:
+        """
+        Parse one Seminare accordion item into a Kfz-Meister offer, or None for
+        the non-Meister Kfz seminars (AU, HV, Klimaanlagen, …). FTZ publishes
+        no schedule or price here, so every offer is a dateless, priceless
+        "auf Anfrage" placeholder — kept visible so Kfz-Meister availability
+        shows up at all (no other HWK Kassel provider lists it).
+        """
+        trigger = item.select_one("button.js-accordion-trigger")
+        content = item.select_one("div.js-accordion-content")
+        if trigger is None or content is None:
+            return None
+
+        title = trigger.get_text(" ", strip=True)
+        if not FTZ_MEISTER_RE.search(title) or EXCLUDE_INDUSTRIEMEISTER_RE.search(title):
+            return None
+
+        parts = parse_ftz_parts(title)
+        if not parts:
+            logger.debug("FTZ Kfz-Innung: could not parse parts for %r", title)
+            return None
+
+        # The three Kfz-Meister courses live on one page; anchor the source_url
+        # to this item so its dedup key (chamber_slug, source_url, start_date)
+        # stays distinct — otherwise all dateless offers collapse into one.
+        anchor = content.get("id", "")
+        source_url = f"{FTZ_LIST_URL}#{anchor}" if anchor else FTZ_LIST_URL
+
+        format_key = "full_time" if "vollzeit" in title.lower() else "part_time"
+
+        return RawCourseOffer(
+            title=build_course_title(FTZ_TRADE_NAME, parts),
+            trade_name=FTZ_TRADE_NAME,
+            parts=parts,
+            format_key=format_key,
+            teaching_mode="presence",
+            start_date=None,       # FTZ publishes no schedule ("auf Anfrage")
+            end_date=None,
+            duration_hours=None,
+            course_fee=None,       # price "auf Anfrage" — not published
+            city=FTZ_DEFAULT_CITY,
+            street=FTZ_DEFAULT_STREET,
+            zip_code=FTZ_DEFAULT_ZIP,
+            exam_fee_scraped=None,  # resolved chamber-wide — see collect()
+            availability="unknown",
+            source_url=source_url,
+            scraped_raw={"title": title, "note": "auf Anfrage — keine Termine/Preise veröffentlicht"},
+        )
