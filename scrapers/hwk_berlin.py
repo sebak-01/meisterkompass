@@ -51,7 +51,7 @@ PREFIX_PATTERN = re.compile(r"^(?:Meistervorbereitungslehrgang|MVL)\s*", re.IGNO
 # Matches one or more consecutive part tokens, each optionally re-prefixed with
 # "Teil" (Berlin writes "Teil I und Teil II", not Koblenz's "Teile I und II").
 PARTS_PATTERN = re.compile(
-    r"Teile?\s+((?:IV|III|II|I)(?:\s+und\s+(?:Teil\s+)?(?:IV|III|II|I))*)",
+    r"Teile?\s+((?:\bIV\b|\bIII\b|\bII\b|\bI\b)(?:\s+und\s+(?:Teil\s+)?(?:\bIV\b|\bIII\b|\bII\b|\bI\b))*)",
     re.IGNORECASE,
 )
 # Anchors the start of the parts clause, used to slice off the trade name.
@@ -160,7 +160,14 @@ class HwkBerlinScraper(BaseScraper):
 
     def _parse_total(self, soup: BeautifulSoup) -> int:
         m = re.search(r"von\s+(\d+);\s*Seite", soup.get_text())
-        return int(m.group(1)) if m else len(soup.select("a[href*='coursedetail']"))
+        if m:
+            return int(m.group(1))
+        # No total-count marker: fall back to the first page's card count. This
+        # silently caps the scrape at one page, so surface it rather than hide it.
+        fallback = len(soup.select("a[href*='coursedetail']"))
+        logger.warning("HWK Berlin: total-count marker not found; falling back to "
+                       "first-page count (%d) — pagination may be truncated.", fallback)
+        return fallback
 
     def _parse_page(self, soup: BeautifulSoup) -> list[RawCourseOffer]:
         offers = []
