@@ -31,6 +31,7 @@ from .hwk_trier import HwkTrierScraper
 from .hwk_kassel import HwkKasselScraper
 from .hwk_rhein_main import HwkRheinMainScraper
 from .hwk_wiesbaden import HwkWiesbadenScraper
+from .hwk_bremen import HwkBremenScraper
 
 
 logger = logging.getLogger(__name__)
@@ -44,6 +45,7 @@ SCRAPERS: dict[str, type] = {
     "hwk-kassel":      HwkKasselScraper,
     "hwk-rhein-main":  HwkRheinMainScraper,
     "hwk-wiesbaden":   HwkWiesbadenScraper,
+    "hwk-bremen":      HwkBremenScraper,
 }
 
 FORMAT_DISPLAY = {
