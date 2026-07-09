@@ -184,6 +184,9 @@ cython_debug/
 node_modules/
 .vite/
 
-# ignore local data files (except the manual)
-data/*.json
-data/courses.json
+# The dataset in data/ is the site's build input and is intentionally
+# committed (see README: "static site backed by checked-in JSON data").
+# The scrapers regenerate these files; the daily scrape workflow commits
+# the changes. Do NOT ignore them — a gitignored data file silently drops
+# out of `git add data/` and breaks the web build on a fresh checkout.
+# (currently none — the whole data/ tree is committed).
