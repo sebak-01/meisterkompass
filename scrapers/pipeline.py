@@ -59,7 +59,7 @@ ARCHIVE_JSON = DATA_DIR / "courses_archive.json"    # past courses (lazy-loaded 
 MANUAL_FEES_JSON = DATA_DIR / "manual" / "exam_fees_manual.json"
 GEOCODE_CACHE = DATA_DIR / "cache" / "geocode_cache.json"
 
-AVAIL_RANK = {"available": 0, "few_spots": 1, "full": 2, "unknown": 3}
+AVAIL_RANK = {"available": 0, "waitlist": 1, "unknown": 2, "full": 3}
 
 
 def _short_name(name: str) -> str:
@@ -257,7 +257,7 @@ def build_course_fees(records: list[dict], today_iso: str) -> list[dict]:
     def sort_key(rec: dict):
         sd = rec.get("start_date")
         is_future = sd is None or sd >= today_iso
-        avail = AVAIL_RANK.get(rec.get("availability"), 3)
+        avail = AVAIL_RANK.get(rec.get("availability"), AVAIL_RANK["unknown"])
         if sd:
             d = date.fromisoformat(sd).toordinal()
             date_score = d if is_future else (10_000_000 - d)
