@@ -15,9 +15,9 @@ Providers (verified 2026-07-09):
   - Berufsbildungszentrum Marburg    — bbz-marburg.de          [IMPLEMENTED]
   - Bubiza (Zimmerer/Ausbau)         — bubiza.de               [IMPLEMENTED]
   - BBZ Mitte GmbH                   — bbz-mitte.de            [IMPLEMENTED]
+  - Holzfachschule Bad Wildungen     — holzfachschule.de       [IMPLEMENTED]
   - FTZ / Innung Kfz-Gewerbe Kassel  — kfz-innung-kassel.de    [BLOCKED: info page only]
   - Kreishandwerkerschaft Waldeck-Frankenberg — khkb.de        [BLOCKED: PDF-only]
-  - Holzfachschule Bad Wildungen     — holzfachschule.de       [BLOCKED: JS/JSF]
   - Beratungsstelle Handwerk u. Denkmalpflege — denkmalpflegeberatung.de
     (no Meistervorbereitungskurse offered — intentionally not scraped)
 
@@ -75,6 +75,22 @@ BBZ Mitte GmbH (bbz-mitte.de):
     <div.seminar-date> boxes, each carrying its own date range, price
     ("… €"), Unterrichtsform and "(NNN UE)" hours; one RawCourseOffer is
     emitted per run, mirroring the BBZ Marburg multi-run pattern.
+
+Holzfachschule Bad Wildungen (holzfachschule.de):
+  - holzfachschule.de is a Jimdo marketing site, but the actual course
+    catalogue lives on a separate booking system at
+    veranstaltung.holzfachschule.de (PrimeFaces/JSF, yet fully server-
+    rendered — PrimeFaces only supplies the CSS theme; the seminar list and
+    detail markup are static HTML). The Meistervorbereitung target group is
+    selected by URL (index?zielGruppe=Meistervorbereitung).
+  - Filtering: the list still includes IHK Industriemeister courses (out of
+    scope, dropped) and a standalone AEVO Ausbilderlehrgang (no Meister part,
+    dropped for lack of a parseable Teil). Each remaining <article> links to
+    a /seminar/<slug>_<id> detail page.
+  - The detail "Termine" section lists scheduled runs as <div data-vid> rows
+    (date range + price + availability badge: ``availibility-red`` =
+    "ausgebucht" → full, otherwise available); one RawCourseOffer per run,
+    with a dateless placeholder when no run is scheduled ("auf Anfrage").
 
 Exam fees:
   HWK Kassel publishes one fee schedule per Meisterprüfung part that is
@@ -435,6 +451,59 @@ def parse_bbzm_hours(text: str) -> int | None:
     return int(m.group(1)) if m else None
 
 
+# ----------------------------------------------------------------------
+# Holzfachschule Bad Wildungen
+# ----------------------------------------------------------------------
+
+# holzfachschule.de itself is a Jimdo marketing site, but its actual course
+# catalogue lives on a separate booking system at veranstaltung.holzfachschule.de
+# (a PrimeFaces/JSF app whose PAGES are nonetheless fully server-rendered —
+# PrimeFaces here only styles the theme, the seminar list/detail markup is
+# static HTML). The Meistervorbereitung target group is filtered by URL:
+# index?zielGruppe=Meistervorbereitung. Each result <article> links to a
+# /seminar/<slug>_<id> detail page whose "Termine" section lists scheduled
+# runs as <div data-vid> rows (date range + price + availability badge).
+HFS_BASE      = "https://veranstaltung.holzfachschule.de"
+HFS_LIST_URL  = f"{HFS_BASE}/index?zielGruppe=Meistervorbereitung&veranstalter=Holzfachschule"
+
+HFS_DEFAULT_STREET = "Auf der Roten Erde 9"
+HFS_DEFAULT_ZIP     = "34537"
+HFS_DEFAULT_CITY    = "Bad Wildungen"
+
+# Map a course title to a canonical trade name (aligned to data/trades.json
+# slugs); ordered, first match wins. Generic Teil III/IV courses ("Meister
+# Teil III + IV") carry no trade and resolve to the shared generic trade.
+HFS_TRADE_PATTERNS: list[tuple[re.Pattern, str]] = [
+    (re.compile(r"tischler|schreiner", re.IGNORECASE), "Tischler"),
+    (re.compile(r"modellbauer", re.IGNORECASE),        "Modellbauer"),
+]
+
+
+def extract_hfs_trade(title: str, parts: list[int]) -> str | None:
+    """
+    Resolve a Holzfachschule course title to a canonical trade name, or None
+    for generic Teil III/IV-only courses (which resolve to the shared generic
+    trade downstream). See HFS_TRADE_PATTERNS.
+    """
+    if set(parts) <= {3, 4}:
+        return None
+    for pattern, name in HFS_TRADE_PATTERNS:
+        if pattern.search(title):
+            return name
+    return None
+
+
+def parse_hfs_format(text: str) -> str:
+    """
+    Holzfachschule Meistervorbereitung runs full-time by default; only a
+    Teilzeit/berufsbegleitend/Abendschule wording downgrades to part_time.
+    """
+    lower = text.lower()
+    if any(w in lower for w in ("teilzeit", "berufsbegleitend", "abendschule", "wochenend")):
+        return "part_time"
+    return "full_time"
+
+
 class HwkKasselScraper(BaseScraper):
     chamber_slug    = "hwk-kassel"
     chamber_name    = "Handwerkskammer Kassel"
@@ -485,6 +554,14 @@ class HwkKasselScraper(BaseScraper):
         except Exception:
             logger.exception("HWK Kassel/BBZ Mitte: provider failed — skipping.")
 
+        # ---- Provider: Holzfachschule Bad Wildungen -------------------
+        try:
+            hfs_offers = self._fetch_holzfachschule()
+            logger.info("HWK Kassel/Holzfachschule: %d course offers.", len(hfs_offers))
+            offers.extend(hfs_offers)
+        except Exception:
+            logger.exception("HWK Kassel/Holzfachschule: provider failed — skipping.")
+
         # ---- Remaining providers: not yet implemented -----------------
         # Each should follow the same pattern: its own _fetch_<provider>()
         # method, wrapped in try/except here, contributing RawCourseOffers
@@ -493,8 +570,6 @@ class HwkKasselScraper(BaseScraper):
         #     (info page only — no structured course listing; blocked)
         #   Kreishandwerkerschaft Waldeck-Frankenberg — www.khkb.de
         #     (Meistervorbereitungslehrgänge only via PDF; blocked)
-        #   Holzfachschule Bad Wildungen — www.holzfachschule.de
-        #     (PrimeFaces JSF; JS-rendered; blocked)
 
         logger.info("HWK Kassel: %d course offers total.", len(offers))
         return offers
@@ -1187,5 +1262,133 @@ class HwkKasselScraper(BaseScraper):
                 "fee":        fields.get("fee"),
                 "form":       fields.get("Unterrichtsform", ""),
                 "zeiten":     fields.get("Zeiten", ""),
+            })
+        return runs
+
+    # ------------------------------------------------------------------
+    # Holzfachschule Bad Wildungen
+    # ------------------------------------------------------------------
+
+    def _fetch_holzfachschule(self) -> list[RawCourseOffer]:
+        soup = self.parse_html(HFS_LIST_URL)
+        if soup is None:
+            logger.error("Holzfachschule: could not fetch course list at %s", HFS_LIST_URL)
+            return []
+
+        cards = self._collect_hfs_cards(soup)
+        logger.info("Holzfachschule: %d Meisterkurs card(s) found.", len(cards))
+
+        offers: list[RawCourseOffer] = []
+        for card in cards:
+            try:
+                offers.extend(self._parse_hfs_offer(card))
+            except Exception as exc:
+                logger.warning("Holzfachschule: error parsing %s: %s", card["detail_url"], exc)
+        return offers
+
+    def _collect_hfs_cards(self, soup: BeautifulSoup) -> list[dict]:
+        """
+        The Meistervorbereitung result list renders each course as an
+        <article> with an <h2.event-title> and a link to /seminar/<slug>_<id>.
+        Industriemeister (IHK, out of scope) and any card whose title yields
+        no Meisterprüfung part (e.g. the standalone AEVO Ausbilderlehrgang)
+        are dropped.
+        """
+        cards: list[dict] = []
+        seen_urls: set[str] = set()
+
+        for article in soup.select("article"):
+            heading = article.select_one("h2.event-title")
+            link = article.select_one("a[href*='seminar/']")
+            title = heading.get_text(strip=True) if heading else ""
+            href = link.get("href", "") if link else ""
+            if not title or not href:
+                continue
+            if not href.startswith("http"):
+                href = f"{HFS_BASE}/{href.lstrip('/')}"
+            if href in seen_urls:
+                continue
+            if EXCLUDE_INDUSTRIEMEISTER_RE.search(title):
+                continue
+            seen_urls.add(href)
+            cards.append({"title": title, "detail_url": href})
+
+        return cards
+
+    def _parse_hfs_offer(self, card: dict) -> list[RawCourseOffer]:
+        title = card["title"]
+        parts = parse_parts_from_text(title)
+        if not parts:
+            logger.debug("Holzfachschule: could not parse parts for %r", title)
+            return []
+
+        soup = self.parse_html(card["detail_url"])
+        if soup is None:
+            logger.warning("Holzfachschule: could not fetch detail page %s", card["detail_url"])
+            return []
+
+        trade_name = extract_hfs_trade(title, parts)
+        # Meistervorbereitung at Holzfachschule is offered in full-time day
+        # form only (the listing's Zeitmodell filter offers just "Vollzeit");
+        # detect a part-time wording defensively but default to full_time.
+        format_key = parse_hfs_format(soup.get_text(" ", strip=True))
+
+        base = dict(
+            title=build_course_title(trade_name, parts),
+            trade_name=trade_name,
+            parts=parts,
+            format_key=format_key,
+            teaching_mode="presence",
+            duration_hours=None,  # not published per course
+            city=HFS_DEFAULT_CITY,
+            street=HFS_DEFAULT_STREET,
+            zip_code=HFS_DEFAULT_ZIP,
+            exam_fee_scraped=None,  # resolved chamber-wide — see collect()
+            source_url=card["detail_url"],
+        )
+
+        runs = self._parse_hfs_runs(soup)
+        if not runs:
+            # No scheduled run ("Aktuell sind keine Termine verfügbar") — keep
+            # a dateless placeholder visible, same fallback as BBZ Marburg.
+            return [RawCourseOffer(
+                **base, start_date=None, end_date=None, course_fee=None,
+                availability="unknown",
+                scraped_raw={"title": title, "note": "Keine Termine veröffentlicht"},
+            )]
+
+        return [
+            RawCourseOffer(
+                **base,
+                start_date=run["start_date"],
+                end_date=run["end_date"],
+                course_fee=run["fee"],
+                availability=run["availability"],
+                scraped_raw={"title": title},
+            )
+            for run in runs
+        ]
+
+    def _parse_hfs_runs(self, soup: BeautifulSoup) -> list[dict]:
+        """
+        The "Termine" section lists each scheduled run as a <div data-vid>
+        carrying "Zeitraum: DD.MM.YYYY - DD.MM.YYYY", "Preis: N,NN €" and an
+        availability badge (``availibility-red`` = "ausgebucht" → full; any
+        other colour shows an "in den Warenkorb" button → available).
+        """
+        runs: list[dict] = []
+        for row in soup.select("div[data-vid]"):
+            text = row.get_text(" ", strip=True)
+            start_date, end_date = parse_date_range(text)
+            if not start_date:
+                continue
+            badge = row.select_one("[class*='availibility-']")
+            badge_cls = " ".join(badge.get("class", [])) if badge else ""
+            availability = "full" if "availibility-red" in badge_cls else "available"
+            runs.append({
+                "start_date":   start_date,
+                "end_date":     end_date,
+                "fee":          parse_price(text),
+                "availability": availability,
             })
         return runs

@@ -87,10 +87,12 @@ chamber scrape:
 - **BBZ Mitte GmbH** (bbz-mitte.de) — implemented (its `/de/kursfinder` list is
   JS-rendered, but the underlying `/de/seminar-navigator/search-results` AJAX
   endpoint returns the same results server-side as a static HTML fragment)
-- FTZ / Innung Kfz-Gewerbe Kassel (info page only), Kreishandwerkerschaft
-  Waldeck-Frankenberg (PDF-only schedules), Holzfachschule Bad Wildungen
-  (PrimeFaces/JSF) — blocked: no server-rendered, structured course listing
-  to scrape
+- **Holzfachschule Bad Wildungen** (holzfachschule.de) — implemented (courses
+  live on the `veranstaltung.holzfachschule.de` booking system; PrimeFaces/JSF
+  but the seminar list and detail pages are fully server-rendered)
+- FTZ / Innung Kfz-Gewerbe Kassel (info page only) and Kreishandwerkerschaft
+  Waldeck-Frankenberg (PDF-only schedules) — blocked: no server-rendered,
+  structured course listing to scrape
 
 Exam fees for HWK Kassel are chamber-wide rather than per-offer, so they're
 injected via an overridden `collect()` rather than `exam_fee_scraped` on
@@ -222,7 +224,7 @@ has since been removed entirely.
 ### Done
 - [x] Migrated from Django/Postgres to a static site (checked-in JSON + GitHub Pages)
 - [x] Four RLP chambers + HWK des Saarlandes scraped and live
-- [x] Hessen expansion: HWK Frankfurt-Rhein-Main, HWK Kassel (4 of 8 providers), HWK Wiesbaden
+- [x] Hessen expansion: HWK Frankfurt-Rhein-Main, HWK Kassel (5 of 8 providers), HWK Wiesbaden
 - [x] Exam fees with "bis zu" qualifier, ranges, combo-bundle prices, and tooltips
       (scraped + manual overlay)
 - [x] Filterable course list (multi-select chambers) + interactive map;
@@ -238,11 +240,11 @@ has since been removed entirely.
       per-run `<tbody>`), not `div.tab-pane`; each module now yields its own
       correctly-parted offer with its own fee instead of collapsing to the
       h1's parts
-- [ ] HWK Kassel: 4 of 8 providers implemented (BZ Kassel, BBZ Marburg, Bubiza,
-      BBZ Mitte). Remaining four have no server-rendered structured listing to
-      scrape: FTZ/Innung Kfz-Gewerbe Kassel (info page only), Kreishandwerkerschaft
-      Waldeck-Frankenberg (PDF-only), Holzfachschule Bad Wildungen (PrimeFaces/JSF);
-      Beratungsstelle Denkmalpflege offers none
+- [ ] HWK Kassel: 5 of 8 providers implemented (BZ Kassel, BBZ Marburg, Bubiza,
+      BBZ Mitte, Holzfachschule Bad Wildungen). The remaining two have no
+      server-rendered structured listing to scrape: FTZ/Innung Kfz-Gewerbe
+      Kassel (info page only) and Kreishandwerkerschaft Waldeck-Frankenberg
+      (PDF-only); Beratungsstelle Denkmalpflege offers none
 
 ### Planned
 - [ ] Berufenet links per trade (field already in the model)
