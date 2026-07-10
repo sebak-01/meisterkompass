@@ -242,6 +242,12 @@ class HwkRheinMainScraper(BaseScraper):
         # Enumerate purchasable modules: one <div with-modul> per module,
         # each carrying the Kursgebühr from the BAföG-Rechner card.
         module_divs = soup.find_all("div", attrs={"with-modul": True})
+        # Only process modules that appear in the visible "Modul wählen"
+        # selector (the <a with-modul> anchors).  Hidden BAföG cards for
+        # modules that aren't listed in the selector belong to other
+        # registration paths and must not be scraped as standalone offers.
+        if code2label:
+            module_divs = [d for d in module_divs if d["with-modul"].strip() in code2label]
 
         if not module_divs:
             # Pages with zero modules ("auf Anfrage" / "in Planung"):
