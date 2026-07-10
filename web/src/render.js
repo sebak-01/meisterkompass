@@ -156,28 +156,35 @@ export function rowHtml(c) {
   </tr>`;
 }
 
-// ── Chamber filter (region-grouped checkboxes) ─────────────────────────
+// ── Chamber filter (region accordion) ──────────────────────────────────
 // Derived from data/chambers.json so the HWK list never drifts from the data.
 // Rendered at build time (vite prerender) and re-rendered idempotently on the
-// client, mirroring rowHtml's SSG-then-hydrate pattern. Groups preserve the
-// region order in which chambers first appear in the source array.
-const REGION_LABEL_STYLE = "font-weight:bold; padding: 2px 4px; font-size: 0.85rem; color: var(--brass, #14304A);";
+// client, mirroring rowHtml's SSG-then-hydrate pattern.
+const REGION_ORDER = ["Baden-Württemberg", "Hessen", "Rheinland-Pfalz", "Saarland"];
+
+function regionSortKey(region) {
+  const idx = REGION_ORDER.indexOf(region);
+  return idx === -1 ? REGION_ORDER.length : idx;
+}
 
 export function chamberFilterHtml(chambers) {
-  const groups = [];
   const byRegion = new Map();
   for (const c of chambers) {
     const region = c.region || "";
-    if (!byRegion.has(region)) { byRegion.set(region, []); groups.push(region); }
+    if (!byRegion.has(region)) byRegion.set(region, []);
     byRegion.get(region).push(c);
   }
-  return groups.map((region) => {
-    const header = region ? `<div style="${REGION_LABEL_STYLE}">${esc(region)}</div>` : "";
+  const regions = [...byRegion.keys()].sort((a, b) => regionSortKey(a) - regionSortKey(b));
+  return `<div class="region-accordion">${regions.map((region) => {
     const labels = byRegion.get(region).map((c) =>
       `<label><input type="checkbox" class="f-chamber" value="${esc(c.slug)}"> ${esc(c.name)}</label>`,
     ).join("");
-    return `${header}${labels}<hr>`;
-  }).join("");
+    const summary = region ? esc(region) : "Sonstige";
+    return `<details class="region-panel">
+      <summary class="region-panel-summary">${summary}</summary>
+      <div class="region-panel-body">${labels}</div>
+    </details>`;
+  }).join("")}</div>`;
 }
 
 export function emptyRow() {
