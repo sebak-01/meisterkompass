@@ -30,5 +30,9 @@ export const TOOLTIP_HESSEN =
 export const ANMELDEGEBUEHR_NOTE =
   "Die HWK Frankfurt-Rhein-Main erhebt möglicherweise eine zusätzliche Anmeldegebühr. Informiere dich zu den genauen Gebühren bei der HWK Frankfurt-Rhein-Main.";
 
+/** HWK Region Stuttgart charges a separate practical-exam fee for Part I. */
+export const STUTTGART_PRACTICAL_EXAM_NOTE =
+  "Die HWK Region Stuttgart erhebt zusätzlich für die Abnahme der praktischen Prüfung eine Sondergebühr in Höhe von 250,00 EUR.";
+
 /** Slugs of the three Hessen chambers — used by render.js and afbg.js to select TOOLTIP_HESSEN. */
 export const HESSEN_CHAMBERS = new Set(["hwk-rhein-main", "hwk-wiesbaden", "hwk-kassel"]);

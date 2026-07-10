@@ -134,6 +134,14 @@ class KarlsruheParserTests(unittest.TestCase):
 
 
 class StuttgartParserTests(unittest.TestCase):
+    def test_manual_exam_fees(self):
+        fee_path = Path(__file__).resolve().parents[1] / "data" / "manual" / "exam_fees_manual.json"
+        lookup = build_exam_fee_lookup([], json.loads(fee_path.read_text(encoding="utf-8")))
+        expected = {1: 360.0, 2: 330.0, 3: 180.0, 4: 180.0}
+        for part, fee in expected.items():
+            resolved = resolve_exam_fee("hwk-stuttgart", "any-trade", [part], None, lookup)
+            self.assertEqual(resolved["fee"], fee)
+
     def test_appointment_data_attributes_are_authoritative(self):
         spec = next(course for course in STUTTGART_COURSES if course.slug == "meisterkurs-teil-3")
         soup = BeautifulSoup(
@@ -171,6 +179,18 @@ class StuttgartParserTests(unittest.TestCase):
 
 
 class UlmParserTests(unittest.TestCase):
+    def test_manual_exam_fees_and_complete_bundle(self):
+        fee_path = Path(__file__).resolve().parents[1] / "data" / "manual" / "exam_fees_manual.json"
+        lookup = build_exam_fee_lookup([], json.loads(fee_path.read_text(encoding="utf-8")))
+        expected = {1: 580.0, 2: 470.0, 3: 260.0, 4: 280.0}
+        for part, fee in expected.items():
+            resolved = resolve_exam_fee("hwk-ulm", "any-trade", [part], None, lookup)
+            self.assertEqual(resolved["fee"], fee)
+
+        bundle = resolve_exam_fee("hwk-ulm", "any-trade", [1, 2, 3, 4], None, lookup)
+        self.assertEqual(bundle["fee"], 1570.0)
+        self.assertEqual(bundle["display"], "1.570 €")
+
     def test_title_mapping(self):
         self.assertEqual(
             parse_ulm_title("Meisterkurs Kraftfahrzeugtechnik Teil I und II in Teilzeit"),
