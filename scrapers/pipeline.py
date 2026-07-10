@@ -32,6 +32,8 @@ from .hwk_kassel import HwkKasselScraper
 from .hwk_karlsruhe import HwkKarlsruheScraper
 from .hwk_mannheim import HwkMannheimScraper
 from .hwk_rhein_main import HwkRheinMainScraper
+from .hwk_stuttgart import HwkStuttgartScraper
+from .hwk_ulm import HwkUlmScraper
 from .hwk_wiesbaden import HwkWiesbadenScraper
 
 
@@ -48,6 +50,8 @@ SCRAPERS: dict[str, type] = {
     "hwk-wiesbaden":   HwkWiesbadenScraper,
     "hwk-karlsruhe":   HwkKarlsruheScraper,
     "hwk-mannheim":    HwkMannheimScraper,
+    "hwk-stuttgart":   HwkStuttgartScraper,
+    "hwk-ulm":         HwkUlmScraper,
 }
 
 FORMAT_DISPLAY = {

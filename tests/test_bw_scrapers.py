@@ -15,6 +15,8 @@ from scrapers.hwk_mannheim import (
     parse_parts,
     parse_trade,
 )
+from scrapers.hwk_stuttgart import COURSES as STUTTGART_COURSES, HwkStuttgartScraper
+from scrapers.hwk_ulm import HwkUlmScraper, parse_title as parse_ulm_title
 
 
 def course_card(title: str, details: str, href: str = "/kurse/example,coursedetail.html?id=1") -> BeautifulSoup:
@@ -129,6 +131,112 @@ class KarlsruheParserTests(unittest.TestCase):
         self.assertEqual(parse_karlsruhe_availability("wenige Plätze"), "available")
         self.assertEqual(parse_karlsruhe_availability("Warteliste"), "waitlist")
         self.assertEqual(parse_karlsruhe_availability("Termin folgt"), "unknown")
+
+
+class StuttgartParserTests(unittest.TestCase):
+    def test_appointment_data_attributes_are_authoritative(self):
+        spec = next(course for course in STUTTGART_COURSES if course.slug == "meisterkurs-teil-3")
+        soup = BeautifulSoup(
+            """
+            <div class="appointment-listing-container">
+              <div class="card"
+                   data-appointment-id="158040"
+                   data-appointment-price="1790.0"
+                   data-appointment-teaching-units="203"
+                   data-appointment-learning-method="Blended Learning"
+                   data-appointment-start-date="05/03/2027"
+                   data-appointment-end-date="31/07/2027">
+                05.03.2027 - 31.07.2027 € 1.790,-
+              </div>
+            </div>
+            """,
+            "html.parser",
+        )
+        offers = HwkStuttgartScraper()._parse_course(soup, spec)
+        self.assertEqual(len(offers), 1)
+        self.assertEqual(offers[0].parts, [3])
+        self.assertEqual(offers[0].start_date, "2027-03-05")
+        self.assertEqual(offers[0].end_date, "2027-07-31")
+        self.assertEqual(offers[0].course_fee, 1790.0)
+        self.assertEqual(offers[0].duration_hours, 203)
+        self.assertEqual(offers[0].teaching_mode, "hybrid")
+
+    def test_stuttgart_placeholder_keeps_published_fee_and_duration(self):
+        spec = next(course for course in STUTTGART_COURSES if course.slug == "shk-meister")
+        soup = BeautifulSoup("<main>Dauer: 2 Jahre, 1.160 Unterrichtseinheiten Termine auf Anfrage</main>", "html.parser")
+        offer = HwkStuttgartScraper._placeholder(soup, spec)
+        self.assertIsNone(offer.start_date)
+        self.assertEqual(offer.duration_hours, 1160)
+        self.assertEqual(offer.course_fee, 6420.0)
+
+
+class UlmParserTests(unittest.TestCase):
+    def test_title_mapping(self):
+        self.assertEqual(
+            parse_ulm_title("Meisterkurs Kraftfahrzeugtechnik Teil I und II in Teilzeit"),
+            ("Kfz.-Techniker", [1, 2]),
+        )
+        self.assertEqual(
+            parse_ulm_title("Meisterkurs Teil IV - Ausbilderschein nach AEVO in Vollzeit"),
+            (None, [4]),
+        )
+
+    def test_multiple_structured_runs_are_parsed_independently(self):
+        soup = BeautifulSoup(
+            """
+            <div class="col-sm-6">
+              <strong>Nächster Termin</strong>
+              11.09.2026 - 19.06.2027 Es gibt noch freie Plätze
+              Kurstyp Teilzeitlehrgang, 884 UE
+              Kursort Bildungsakademie Ulm, Ulm
+              Kurs-Nr. Kurs 25, 1-MV-METALL-TZ
+              Gebühr 7.370 Euro
+            </div>
+            <div class="col-sm-6">
+              <strong>Termin</strong>
+              10.09.2027 - 24.06.2028 Kurs ausgebucht
+              Kurstyp Teilzeitlehrgang, 884 UE
+              Kursort Bildungsakademie Ulm, Ulm
+              Kurs-Nr. Kurs 26, 1-MV-METALL-TZ
+              Gebühr 7.370 Euro
+            </div>
+            """,
+            "html.parser",
+        )
+        offers = HwkUlmScraper()._parse_runs(
+            soup,
+            "https://www.hwk-ulm.de/seminar/1-mv-metall-tz/",
+            "Meisterkurs Metallbau Teil I und II in Teilzeit",
+            "Metallbauer",
+            [1, 2],
+        )
+        self.assertEqual(len(offers), 2)
+        self.assertEqual([offer.start_date for offer in offers], ["2026-09-11", "2027-09-10"])
+        self.assertEqual([offer.availability for offer in offers], ["available", "full"])
+        self.assertTrue(all(offer.course_fee == 7370.0 for offer in offers))
+
+    def test_planned_run_is_retained_without_dates(self):
+        soup = BeautifulSoup(
+            """
+            <div class="col-sm-6">
+              <strong>Nächster Termin</strong><strong>Termine in Planung</strong>
+              Kurstyp Teilzeitlehrgang, 610 UE
+              Kursort Ulm
+              Kurs-Nr. 1-MV-FLIESEN
+            </div>
+            """,
+            "html.parser",
+        )
+        offers = HwkUlmScraper()._parse_runs(
+            soup,
+            "https://www.hwk-ulm.de/seminar/1-mv-fliesen-platten/",
+            "Meisterkurs Fliesen-, Platten- und Mosaikleger Teil I und II in Teilzeit",
+            "Fliesen-, Platten- und Mosaikleger",
+            [1, 2],
+        )
+        self.assertEqual(len(offers), 1)
+        self.assertIsNone(offers[0].start_date)
+        self.assertEqual(offers[0].duration_hours, 610)
 
 
 if __name__ == "__main__":
