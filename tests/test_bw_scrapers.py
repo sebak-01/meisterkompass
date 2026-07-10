@@ -74,13 +74,14 @@ class KarlsruheParserTests(unittest.TestCase):
         lookup = build_exam_fee_lookup([], json.loads(fee_path.read_text(encoding="utf-8")))
 
         expected_parts = {1: 400.0, 2: 350.0, 3: 200.0, 4: 200.0}
-        for part, expected_fee in expected_parts.items():
-            resolved = resolve_exam_fee("hwk-karlsruhe", "any-trade", [part], None, lookup)
-            self.assertEqual(resolved["fee"], expected_fee)
+        for chamber_slug in ("hwk-karlsruhe", "hwk-mannheim"):
+            for part, expected_fee in expected_parts.items():
+                resolved = resolve_exam_fee(chamber_slug, "any-trade", [part], None, lookup)
+                self.assertEqual(resolved["fee"], expected_fee)
 
-        bundle = resolve_exam_fee("hwk-karlsruhe", "elektrotechniker", [1, 2, 3, 4], None, lookup)
-        self.assertEqual(bundle["fee"], 1150.0)
-        self.assertEqual(bundle["display"], "1.150 €")
+            bundle = resolve_exam_fee(chamber_slug, "any-trade", [1, 2, 3, 4], None, lookup)
+            self.assertEqual(bundle["fee"], 1150.0)
+            self.assertEqual(bundle["display"], "1.150 €")
 
     def test_section_uses_known_trade_and_parts(self):
         section = COURSE_SECTIONS[3]
