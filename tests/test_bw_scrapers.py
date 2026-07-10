@@ -286,6 +286,7 @@ class FreiburgParserTests(unittest.TestCase):
         self.assertEqual(offer.course_fee, 9200.0)
         self.assertEqual(offer.duration_hours, 850)
         self.assertEqual(offer.format_key, "full_time")
+        self.assertEqual(offer.teaching_mode, "presence")
         self.assertEqual(offer.availability, "available")
 
 
@@ -343,6 +344,22 @@ class ReutlingenParserTests(unittest.TestCase):
         self.assertEqual(offers[0].start_date, "2026-11-10")
         self.assertEqual(offers[0].course_fee, 8250.0)
         self.assertEqual(offers[0].city, "Tübingen")
+
+    def test_combined_module_fee_is_used(self):
+        spec = next(item for item in REUTLINGEN_COURSES if item.slug == "r-mv-iii-iv-vz")
+        soup = BeautifulSoup(
+            """
+            <main><div><h4>28.09.2027 — 07.12.2027</h4>
+              Es gibt noch freie Plätze Seminardauer 355 Unterrichtseinheiten
+              Kursnummer 19 Kurstyp Vollzeit
+              Teil III und Teil IV 28.09.2027 - 07.12.2027 2.950,00 €
+              Teil III 1.995,00 € Teil IV 950,00 €
+            </div></main>
+            """,
+            "html.parser",
+        )
+        offers = HwkReutlingenScraper()._parse_course(soup, spec)
+        self.assertEqual(offers[0].course_fee, 2950.0)
 
 
 class HeilbronnParserTests(unittest.TestCase):

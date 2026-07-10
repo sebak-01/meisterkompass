@@ -16,6 +16,10 @@ OVERVIEW_URL = f"{BASE_URL}/weiterbildung/der-weg-zum-meister/vorbereitung-und-p
 DATE_RE = re.compile(r"^(\d{2})\.(\d{2})\.(\d{4})\s*[—–-]\s*(\d{2})\.(\d{2})\.(\d{4})$")
 DURATION_RE = re.compile(r"Seminardauer\s+([\d.]+)\s+Unterrichtseinheiten", re.IGNORECASE)
 PRICE_RE = re.compile(r"Kosten\s+([\d.]+),(\d{2})\s*€", re.IGNORECASE)
+COMBINED_PRICE_RE = re.compile(
+    r"Teil\s+(?:I\s+und\s+II|III\s+und\s+Teil\s+IV).*?([\d.]+),(\d{2})\s*€",
+    re.IGNORECASE,
+)
 COURSE_NO_RE = re.compile(r"Kursnummer\s+(\S+)", re.IGNORECASE)
 
 
@@ -25,6 +29,7 @@ class CourseSpec:
     trade_name: str | None
     parts: tuple[int, ...]
     default_format: str
+    default_location: str = "reutlingen"
 
     @property
     def url(self) -> str:
@@ -36,7 +41,7 @@ COURSES = (
     CourseSpec("t-mv-i-ii_elo-we", "Elektrotechniker", (1, 2), "part_time"),
     CourseSpec("t-mv-i-ii_metall-tz", "Metallbauer", (1, 2), "part_time"),
     CourseSpec("r-mv-i-ii_friseur-tz", "Friseur", (1, 2), "part_time"),
-    CourseSpec("r-mv-i-ii_massschn-vz", "Maßschneider", (1, 2), "full_time"),
+    CourseSpec("r-mv-i-ii_massschn-vz", "Maßschneider", (1, 2), "full_time", "sigmaringen"),
     CourseSpec("r-mv-i-ii_shk-tz", "Installateur und Heizungsbauer", (1, 2), "part_time"),
     CourseSpec("r-mv-ii_kfz-tz", "Kfz.-Techniker", (2,), "part_time"),
     CourseSpec("r-mv-iii-iv-tz", None, (3, 4), "part_time"),
@@ -113,9 +118,11 @@ class HwkReutlingenScraper(BaseScraper):
                 continue
             seen.add((start_date, course_no))
             duration_match = DURATION_RE.search(text)
-            price_match = PRICE_RE.search(text)
+            price_match = PRICE_RE.search(text) or COMBINED_PRICE_RE.search(text)
             format_key = "full_time" if "Kurstyp Vollzeit" in text else "part_time"
             location = parse_location(text)
+            if spec.default_location == "sigmaringen":
+                location = LOCATIONS["sigmaringen"]
             offers.append(RawCourseOffer(
                 title=build_course_title(spec.trade_name, list(spec.parts)),
                 trade_name=spec.trade_name,

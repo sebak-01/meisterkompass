@@ -36,17 +36,19 @@ class CourseSpec:
     trade_name: str | None
     parts: tuple[int, ...]
     default_format: str
+    teaching_mode: str = "presence"
+    hybrid_in_offenburg: bool = False
 
 
 COURSES = {
     "mvkel-technik": CourseSpec("Elektrotechniker", (1, 2), "part_time"),
     "mvkfeinwerk": CourseSpec("Feinwerkmechaniker", (1, 2), "full_time"),
     "mvkinstheiz": CourseSpec("Installateur und Heizungsbauer", (1, 2), "part_time"),
-    "mvkmetallb": CourseSpec("Metallbauer", (1, 2), "part_time"),
-    "mvk-schreiner": CourseSpec("Tischler", (1, 2), "part_time"),
-    "mvkteiliii-tz": CourseSpec(None, (3,), "part_time"),
+    "mvkmetallb": CourseSpec("Metallbauer", (1, 2), "full_time", hybrid_in_offenburg=True),
+    "mvk-schreiner": CourseSpec("Tischler", (1, 2), "part_time", "hybrid"),
+    "mvkteiliii-tz": CourseSpec(None, (3,), "part_time", "hybrid"),
     "mvkteiliii-vz": CourseSpec(None, (3,), "full_time"),
-    "mvkteiliv-tz": CourseSpec(None, (4,), "part_time"),
+    "mvkteiliv-tz": CourseSpec(None, (4,), "part_time", "hybrid"),
     "mvkteiliv-vz": CourseSpec(None, (4,), "full_time"),
     "mvk-zahntechnik": CourseSpec("Zahntechniker", (1, 2), "full_time"),
 }
@@ -72,15 +74,6 @@ def parse_availability(text: str) -> str:
     if free:
         return "available" if int(free.group(1)) > 0 else "full"
     return "unknown"
-
-
-def parse_mode(text: str) -> str:
-    lower = text.lower()
-    if "blended learning" in lower or ("online" in lower and "präsenz" in lower):
-        return "hybrid"
-    if "online" in lower and "präsenz" not in lower:
-        return "online"
-    return "presence"
 
 
 class HwkFreiburgScraper(BaseScraper):
@@ -152,7 +145,7 @@ class HwkFreiburgScraper(BaseScraper):
         price_match = PRICE_RE.search(text)
         city_raw = date_match.group(7).strip()
         location = LOCATIONS["offenburg"] if "offenburg" in city_raw.lower() else LOCATIONS["freiburg"]
-        mode = parse_mode(text)
+        mode = "hybrid" if spec.hybrid_in_offenburg and location["city"] == "Offenburg" else spec.teaching_mode
         format_key = spec.default_format
         if mode == "hybrid":
             format_key = "part_time"
