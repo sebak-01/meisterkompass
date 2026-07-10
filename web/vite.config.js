@@ -18,7 +18,8 @@ function prerenderList() {
     async transformIndexHtml(html, ctx) {
       if (!ctx.filename.replace(/\\/g, "/").endsWith("/index.html")) return html;
       const courses = JSON.parse(readFileSync(resolve(repoRoot, "data/courses.json"), "utf8"));
-      const { applyFilters, rowHtml, emptyRow, pageItems, defaultState } = await import("./src/render.js");
+      const chamberData = JSON.parse(readFileSync(resolve(repoRoot, "data/chambers.json"), "utf8"));
+      const { applyFilters, rowHtml, emptyRow, pageItems, defaultState, chamberFilterHtml } = await import("./src/render.js");
       const today = new Date().toISOString().slice(0, 10);
       const state = defaultState();
       const filtered = applyFilters(courses, state, today);
@@ -27,6 +28,7 @@ function prerenderList() {
       const chambers = new Set(filtered.map((c) => c.chamber_slug)).size;
       return html
         .replace('<tbody id="course-tbody"></tbody>', `<tbody id="course-tbody">${rows}</tbody>`)
+        .replace('<div id="chambers-options"><!-- populated from data/chambers.json (build-time SSG + runtime) --></div>', `<div id="chambers-options">${chamberFilterHtml(chamberData)}</div>`)
         .replace('id="count-courses">0<', `id="count-courses">${filtered.length}<`)
         .replace('id="count-chambers">0<', `id="count-chambers">${chambers}<`)
         .replace('id="results-count">0<', `id="results-count">${filtered.length}<`);
