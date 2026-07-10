@@ -182,7 +182,12 @@ class HwkKarlsruheScraper(BaseScraper):
         )
         duration_match = DURATION_RE.search(authoritative_text)
         duration_hours = int(duration_match.group(1)) if duration_match else None
-        format_key, teaching_mode = parse_format_and_mode(authoritative_text)
+        # Detail pages contain recommendations for other courses, so their
+        # format keywords can conflict with this run.  The card heading names
+        # this run's format; the detail page remains authoritative for online
+        # or hybrid delivery information.
+        format_key, _ = parse_format_and_mode(source_title)
+        _, teaching_mode = parse_format_and_mode(authoritative_text)
         location = self._parse_detail_location(detail_text)
 
         return RawCourseOffer(

@@ -95,6 +95,7 @@ class KarlsruheParserTests(unittest.TestCase):
         self.assertEqual(offers[0].parts, [1, 2, 3, 4])
         self.assertEqual(offers[0].course_fee, 8500.0)
         self.assertEqual(offers[0].availability, "full")
+        self.assertEqual(offers[0].format_key, "part_time")
         self.assertEqual(offers[0].teaching_mode, "hybrid")
         self.assertEqual(offers[0].street, "Hertzstr. 177")
 
