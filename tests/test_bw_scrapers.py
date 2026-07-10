@@ -70,15 +70,33 @@ class KarlsruheParserTests(unittest.TestCase):
         section = COURSE_SECTIONS[3]
         soup = course_card(
             "Meistervorbereitung für Elektrotechnik Teil 1-4",
-            "8.500,00 € 1290 UE Karlsruhe ausgebucht",
+            "Karlsruhe",
         )
-        offers = HwkKarlsruheScraper()._parse_section(soup, section)
+        detail = BeautifulSoup(
+            """
+            <h1>Meistervorbereitung für Elektrotechnik</h1>
+            <p>ausgebucht</p>
+            <h3>Gebühren</h3><p>Kurs: 8.500,00 €</p>
+            <h3>Unterricht</h3>
+            <p>31.08.2026 - 31.01.2029</p>
+            <p>montags bis donnerstags, mit Online-Anteilen</p>
+            <p>Abend</p><p>Lehrgangsdauer 1290 UE</p>
+            <h3>Lehrgangsort</h3><p>Hertzstr. 177<br>76187 Karlsruhe</p>
+            <p>Benjamin Sorenson<br>Tel. 0721 1600-430</p>
+            """,
+            "html.parser",
+        )
+        scraper = HwkKarlsruheScraper()
+        scraper.parse_html = lambda _url: detail
+        offers = scraper._parse_section(soup, section)
 
         self.assertEqual(len(offers), 1)
         self.assertEqual(offers[0].trade_name, "Elektrotechniker")
         self.assertEqual(offers[0].parts, [1, 2, 3, 4])
         self.assertEqual(offers[0].course_fee, 8500.0)
         self.assertEqual(offers[0].availability, "full")
+        self.assertEqual(offers[0].teaching_mode, "hybrid")
+        self.assertEqual(offers[0].street, "Hertzstr. 177")
 
     def test_placeholder_preserves_unscheduled_offering(self):
         section = COURSE_SECTIONS[0]

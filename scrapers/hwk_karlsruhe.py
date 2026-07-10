@@ -151,9 +151,6 @@ class HwkKarlsruheScraper(BaseScraper):
 
     @staticmethod
     def _card_container(link: Tag) -> Tag | None:
-        row = link.find_parent("div", class_="row")
-        if row is not None:
-            return row
         node: Tag | None = link
         for _ in range(7):
             node = node.parent if node is not None else None
@@ -170,19 +167,23 @@ class HwkKarlsruheScraper(BaseScraper):
         source_title = link.get_text(" ", strip=True)
         container = self._card_container(link)
         card_text = container.get_text(" ", strip=True) if container else source_title
+        detail = self.parse_html(detail_url)
+        detail_text = detail.get_text(" ", strip=True) if detail is not None else ""
+        authoritative_text = detail_text or card_text
 
-        dates = DATE_RE.findall(card_text)
+        dates = DATE_RE.findall(authoritative_text)
         start_date = f"{dates[0][2]}-{dates[0][1]}-{dates[0][0]}" if dates else None
         end_date = f"{dates[1][2]}-{dates[1][1]}-{dates[1][0]}" if len(dates) > 1 else None
-        price_match = PRICE_RE.search(card_text)
+        price_match = PRICE_RE.search(authoritative_text)
         course_fee = (
             float(price_match.group(1).replace(".", "") + "." + price_match.group(2))
             if price_match
             else None
         )
-        duration_match = DURATION_RE.search(card_text)
+        duration_match = DURATION_RE.search(authoritative_text)
         duration_hours = int(duration_match.group(1)) if duration_match else None
-        format_key, teaching_mode = parse_format_and_mode(card_text)
+        format_key, teaching_mode = parse_format_and_mode(authoritative_text)
+        location = self._parse_detail_location(detail_text)
 
         return RawCourseOffer(
             title=build_course_title(section.trade_name, list(section.parts)),
@@ -194,13 +195,34 @@ class HwkKarlsruheScraper(BaseScraper):
             end_date=end_date,
             duration_hours=duration_hours,
             course_fee=course_fee,
-            city=DEFAULT_LOCATION["city"],
-            street=DEFAULT_LOCATION["street"],
-            zip_code=DEFAULT_LOCATION["zip_code"],
-            availability=parse_availability(card_text),
+            city=location["city"],
+            street=location["street"],
+            zip_code=location["zip_code"],
+            availability=parse_availability(authoritative_text),
             source_url=detail_url,
-            scraped_raw={"title": source_title, "card_text": card_text[:500], "section_url": section.url},
+            scraped_raw={
+                "title": source_title,
+                "card_text": card_text[:500],
+                "detail_text": detail_text[:700],
+                "section_url": section.url,
+            },
         )
+
+    @staticmethod
+    def _parse_detail_location(detail_text: str) -> dict:
+        if detail_text:
+            match = re.search(
+                r"Lehrgangsort\s+(.+?)\s+(\d{5})\s+([A-ZÄÖÜ][A-Za-zÄÖÜäöüß -]+?)(?=\s+[A-ZÄÖÜ][a-zäöüß]+\s+[A-ZÄÖÜ]|"
+                r"\s+Tel\.|\s+Servicezeiten|\s+ausgebucht|\s+freie Plätze|\s+wenige Plätze)",
+                detail_text,
+            )
+            if match:
+                return {
+                    "street": match.group(1).strip(),
+                    "zip_code": match.group(2),
+                    "city": match.group(3).strip(),
+                }
+        return DEFAULT_LOCATION
 
     @staticmethod
     def _placeholder(section: CourseSection) -> RawCourseOffer:
