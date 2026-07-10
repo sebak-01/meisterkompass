@@ -3,7 +3,7 @@ import chambers from "@data/chambers.json";
 import trades from "@data/trades.json";
 import { initNav } from "./nav.js";
 import { ROMAN, partsLabel, esc } from "./util.js";
-import { applyFilters, rowHtml, emptyRow, pageItems, fmtDate } from "./render.js";
+import { applyFilters, rowHtml, emptyRow, pageItems, fmtDate, chamberFilterHtml } from "./render.js";
 
 // Leaflet (~140 KB) + its CSS are loaded only when the map view is first opened,
 // keeping the default list view's bundle small.
@@ -369,6 +369,7 @@ function wire() {
 }
 
 initNav();
+document.getElementById("chambers-options").innerHTML = chamberFilterHtml(chambers);
 populateTradeSelect(state);
 syncControls(state);
 wire();

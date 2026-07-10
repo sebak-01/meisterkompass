@@ -129,12 +129,36 @@ export function rowHtml(c) {
     <td data-label="Teile" class="detail-cell" style="white-space:nowrap">${partsBadges(c.parts)}</td>
     <td data-label="Zeitmodell" class="detail-cell">${esc(c.format_display)}</td>
     <td data-label="Laufzeit" class="detail-cell" style="font-size:.82rem;font-variant-numeric:tabular-nums;">${laufzeit}</td>
-    <td data-label="Dauer" class="detail-cell col-duration" style="white-space:nowrap;">${c.duration_hours ? c.duration_hours + " Std." : "—"}</td>
+    <td data-label="Dauer" class="detail-cell col-duration" style="white-space:nowrap;">${c.duration_hours ? c.duration_hours.toLocaleString("de-DE") + " Std." : "—"}</td>
     <td data-label="Kursgebühr" class="detail-cell">${courseFeeCell(c)}</td>
     <td data-label="Prüfungsgebühr" class="detail-cell">${examFeeCell(c.exam_fee, c.chamber_slug)}</td>
     <td data-label="Ort" class="detail-cell">${esc(c.city || "—")}</td>
     <td data-label="Verfügbarkeit" class="detail-cell">${availabilityBadge(c.availability)}</td>
   </tr>`;
+}
+
+// ── Chamber filter (region-grouped checkboxes) ─────────────────────────
+// Derived from data/chambers.json so the HWK list never drifts from the data.
+// Rendered at build time (vite prerender) and re-rendered idempotently on the
+// client, mirroring rowHtml's SSG-then-hydrate pattern. Groups preserve the
+// region order in which chambers first appear in the source array.
+const REGION_LABEL_STYLE = "font-weight:bold; padding: 2px 4px; font-size: 0.85rem; color: var(--brass, #14304A);";
+
+export function chamberFilterHtml(chambers) {
+  const groups = [];
+  const byRegion = new Map();
+  for (const c of chambers) {
+    const region = c.region || "";
+    if (!byRegion.has(region)) { byRegion.set(region, []); groups.push(region); }
+    byRegion.get(region).push(c);
+  }
+  return groups.map((region) => {
+    const header = region ? `<div style="${REGION_LABEL_STYLE}">${esc(region)}</div>` : "";
+    const labels = byRegion.get(region).map((c) =>
+      `<label><input type="checkbox" class="f-chamber" value="${esc(c.slug)}"> ${esc(c.name)}</label>`,
+    ).join("");
+    return `${header}${labels}<hr>`;
+  }).join("");
 }
 
 export function emptyRow() {

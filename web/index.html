@@ -104,21 +104,7 @@
         <div class="parts-wrap" id="chambers-wrap">
           <button type="button" class="parts-btn" id="chambers-btn" aria-haspopup="true" aria-expanded="false" aria-controls="chambers-dropdown">Kammern ▾</button>
           <div class="parts-dropdown" id="chambers-dropdown" role="group" aria-label="Handwerkskammern">
-            <div style="font-weight:bold; padding: 2px 4px; font-size: 0.85rem; color: var(--brass, #14304A);">Hessen</div>
-            <label><input type="checkbox" class="f-chamber" value="hwk-rhein-main"> HWK Frankfurt-Rhein-Main</label>
-            <label><input type="checkbox" class="f-chamber" value="hwk-kassel"> HWK Kassel</label>
-            <label><input type="checkbox" class="f-chamber" value="hwk-wiesbaden"> HWK Wiesbaden</label>
-            <hr>
-            <div style="font-weight:bold; padding: 2px 4px; font-size: 0.85rem; color: var(--brass, #14304A);">Rheinland-Pfalz</div>
-            <label><input type="checkbox" class="f-chamber" value="hwk-koblenz"> HWK Koblenz</label>        
-             
-            <label><input type="checkbox" class="f-chamber" value="hwk-pfalz"> HWK der Pfalz</label>
-            <label><input type="checkbox" class="f-chamber" value="hwk-rheinhessen"> HWK Rheinhessen</label>
-            <label><input type="checkbox" class="f-chamber" value="hwk-trier"> HWK Trier</label>
-            <hr>
-            <div style="font-weight:bold; padding: 2px 4px; font-size: 0.85rem; color: var(--brass, #14304A);">Saarland</div>
-            <label><input type="checkbox" class="f-chamber" value="hwk-saarland"> HWK des Saarland</label>
-            <hr>
+            <div id="chambers-options"><!-- populated from data/chambers.json (build-time SSG + runtime) --></div>
             <button type="button" class="parts-apply" id="chambers-apply">Anwenden</button>
           </div>
         </div>
