@@ -230,5 +230,197 @@
     "fee": 820.0,
     "fee_max": null,
     "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-karlsruhe",
+    "trade_slug": null,
+    "part": 1,
+    "fee": 400.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-karlsruhe",
+    "trade_slug": null,
+    "part": 2,
+    "fee": 350.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-karlsruhe",
+    "trade_slug": null,
+    "part": 3,
+    "fee": 200.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-karlsruhe",
+    "trade_slug": null,
+    "part": 4,
+    "fee": 200.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-karlsruhe",
+    "trade_slug": null,
+    "parts": [1, 2, 3, 4],
+    "fee": 1150.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-mannheim",
+    "trade_slug": null,
+    "part": 1,
+    "fee": 400.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-mannheim",
+    "trade_slug": null,
+    "part": 2,
+    "fee": 350.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-mannheim",
+    "trade_slug": null,
+    "part": 3,
+    "fee": 200.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-mannheim",
+    "trade_slug": null,
+    "part": 4,
+    "fee": 200.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-mannheim",
+    "trade_slug": null,
+    "parts": [1, 2, 3, 4],
+    "fee": 1150.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-ulm",
+    "trade_slug": null,
+    "part": 1,
+    "fee": 580.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-ulm",
+    "trade_slug": null,
+    "part": 2,
+    "fee": 470.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-ulm",
+    "trade_slug": null,
+    "part": 3,
+    "fee": 260.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-ulm",
+    "trade_slug": null,
+    "part": 4,
+    "fee": 280.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-ulm",
+    "trade_slug": null,
+    "parts": [1, 2, 3, 4],
+    "fee": 1570.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-stuttgart",
+    "trade_slug": null,
+    "part": 1,
+    "fee": 360.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-stuttgart",
+    "trade_slug": null,
+    "part": 2,
+    "fee": 330.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-stuttgart",
+    "trade_slug": null,
+    "part": 3,
+    "fee": 180.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-stuttgart",
+    "trade_slug": null,
+    "part": 4,
+    "fee": 180.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-reutlingen",
+    "trade_slug": null,
+    "part": 1,
+    "fee": 300.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-reutlingen",
+    "trade_slug": null,
+    "part": 2,
+    "fee": 350.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-reutlingen",
+    "trade_slug": null,
+    "part": 3,
+    "fee": 200.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-reutlingen",
+    "trade_slug": null,
+    "part": 4,
+    "fee": 250.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-reutlingen",
+    "trade_slug": null,
+    "parts": [1, 2, 3, 4],
+    "fee": 1100.0,
+    "fee_max": null,
+    "qualifier": ""
   }
 ]

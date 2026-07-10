@@ -42,7 +42,10 @@ function prerenderList() {
 // virtual:courses-archive = past (lazy dynamic-imported on demand).
 // Keep DROP in sync with the fields render.js / map.js actually read.
 function trimmedCourses() {
-  const DROP = new Set(["teaching_mode", "street", "zip_code", "chamber_region", "exam_fee_scraped"]);
+  const DROP = new Set([
+    "teaching_mode", "street", "zip_code", "chamber_region",
+    "exam_fee_scraped", "exam_fee_qualifier",
+  ]);
   const SOURCES = {
     "virtual:courses": "data/courses.json",
     "virtual:courses-archive": "data/courses_archive.json",

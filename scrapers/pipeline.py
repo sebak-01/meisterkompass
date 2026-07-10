@@ -20,7 +20,11 @@ from .base import GENERIC_TRADE_SLUG, ScrapeResult, normalize_trade
 from .fees import _fmt, build_exam_fee_lookup, resolve_exam_fee
 from .geocode import Geocoder, build_query
 from .hwk_koblenz import HwkKoblenzScraper
+from .hwk_freiburg import HwkFreiburgScraper
+from .hwk_heilbronn import HwkHeilbronnScraper
+from .hwk_konstanz import HwkKonstanzScraper
 from .hwk_pfalz import HwkPfalzScraper
+from .hwk_reutlingen import HwkReutlingenScraper
 from .hwk_rheinhessen import (
     HwkRheinhessenScraper,
     resolve_coords as rh_resolve_coords,
@@ -29,7 +33,11 @@ from .hwk_rheinhessen import (
 from .hwk_saarland import HWK_SAARLAND_LAT, HWK_SAARLAND_LNG, HwkSaarlandScraper
 from .hwk_trier import HwkTrierScraper
 from .hwk_kassel import HwkKasselScraper
+from .hwk_karlsruhe import HwkKarlsruheScraper
+from .hwk_mannheim import HwkMannheimScraper
 from .hwk_rhein_main import HwkRheinMainScraper
+from .hwk_stuttgart import HwkStuttgartScraper
+from .hwk_ulm import HwkUlmScraper
 from .hwk_wiesbaden import HwkWiesbadenScraper
 
 
@@ -44,6 +52,14 @@ SCRAPERS: dict[str, type] = {
     "hwk-kassel":      HwkKasselScraper,
     "hwk-rhein-main":  HwkRheinMainScraper,
     "hwk-wiesbaden":   HwkWiesbadenScraper,
+    "hwk-karlsruhe":   HwkKarlsruheScraper,
+    "hwk-mannheim":    HwkMannheimScraper,
+    "hwk-stuttgart":   HwkStuttgartScraper,
+    "hwk-ulm":         HwkUlmScraper,
+    "hwk-freiburg":    HwkFreiburgScraper,
+    "hwk-konstanz":    HwkKonstanzScraper,
+    "hwk-reutlingen":  HwkReutlingenScraper,
+    "hwk-heilbronn-franken": HwkHeilbronnScraper,
 }
 
 FORMAT_DISPLAY = {
@@ -113,6 +129,7 @@ def offer_to_record(result: ScrapeResult, offer) -> dict:
         "course_fee":       fee,
         "course_fee_display": _course_fee_display(fee),
         "exam_fee_scraped": _to_float(offer.exam_fee_scraped),
+        "exam_fee_qualifier": offer.exam_fee_qualifier,
         "exam_fee":         None,   # resolved later
         "city":             offer.city,
         "street":           offer.street,
@@ -338,6 +355,7 @@ def _resolve_and_write_derived(records: list[dict], scraped_rows: list[dict], ma
     for rec in records:
         rec["exam_fee"] = resolve_exam_fee(
             rec["chamber_slug"], rec["trade_slug"], rec["parts"], rec.get("exam_fee_scraped"), lookup,
+            rec.get("exam_fee_qualifier", ""),
         )
     records.sort(key=_course_sort_key)
     # Split upcoming/undated (bundled) from past (lazy-loaded archive).
@@ -370,6 +388,7 @@ def _scraped_rows_from_courses(records: list[dict]) -> list[dict]:
                 "trade_slug":   trade_slug,
                 "part":         parts[0],
                 "fee":          fee,
+                "qualifier":    r.get("exam_fee_qualifier", ""),
             })
         else:
             rows.append({
@@ -377,6 +396,7 @@ def _scraped_rows_from_courses(records: list[dict]) -> list[dict]:
                 "trade_slug":   trade_slug,
                 "parts":        sorted(parts),
                 "fee":          fee,
+                "qualifier":    r.get("exam_fee_qualifier", ""),
             })
     return rows
 

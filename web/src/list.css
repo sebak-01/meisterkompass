@@ -108,12 +108,35 @@
 .parts-dropdown label:hover { background: var(--card-2); }
 .parts-dropdown input[type="checkbox"] { accent-color: var(--brass); width: 15px; height: 15px; }
 .parts-dropdown hr { border: none; border-top: 1px solid var(--line-soft); margin: .45rem 0; }
-.parts-apply {
-  display: block; width: 100%; margin-top: .45rem; padding: 8px;
-  background: var(--ink); color: #fff; border: none; border-radius: var(--radius);
-  font-family: var(--mono); font-size: .74rem; letter-spacing: .06em; cursor: pointer;
+
+/* Region accordion inside Kammern dropdown */
+.region-accordion { display: flex; flex-direction: column; gap: .25rem; }
+.region-panel {
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--paper);
 }
-.parts-apply:hover { background: var(--ink-2); }
+.region-panel-summary {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .45rem .55rem; cursor: pointer; list-style: none;
+  font-family: var(--mono); font-size: .72rem; font-weight: 600;
+  letter-spacing: .06em; text-transform: uppercase; color: var(--brass);
+  user-select: none;
+}
+.region-panel-summary::-webkit-details-marker { display: none; }
+.region-panel-summary::after {
+  content: "▾"; font-size: .65rem; color: var(--text-lt); transition: transform .15s;
+}
+.region-panel[open] > .region-panel-summary::after { transform: rotate(180deg); }
+.region-panel-summary:hover { background: var(--card-2); }
+.region-panel-body { padding: .15rem .35rem .4rem; }
+.region-panel-body label { padding: .35rem .45rem; font-size: .82rem; }
+
+.parts-btn.active-filter,
+.parts-btn.active-filter:hover { border-color: var(--brass); color: var(--brass); }
+
+#chambers-dropdown { min-width: 280px; max-height: min(70vh, 420px); overflow-y: auto; }
 
 /* ── Main ──────────────────────────────────────────────────────── */
 .main { padding: 1.75rem 0 4rem; }

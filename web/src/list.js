@@ -282,10 +282,10 @@ function wire() {
   const chambersDrop = document.getElementById("chambers-dropdown");
   const syncChambersAria = () => chambersBtn.setAttribute("aria-expanded", String(chambersDrop.classList.contains("open")));
   chambersBtn.addEventListener("click", (e) => { e.stopPropagation(); chambersDrop.classList.toggle("open"); syncChambersAria(); });
-  
-  document.getElementById("chambers-apply").addEventListener("click", () => {
+
+  chambersDrop.addEventListener("change", (e) => {
+    if (!e.target.classList.contains("f-chamber")) return;
     const selectedChambers = [...document.querySelectorAll(".f-chamber")].filter((cb) => cb.checked).map((cb) => cb.value);
-    chambersDrop.classList.remove("open");
     update({ chambers: selectedChambers, trade: "" }, { resetPage: true });
   });
 
@@ -294,7 +294,16 @@ function wire() {
   const partsDrop = document.getElementById("parts-dropdown");
   const syncPartsAria = () => partsBtn.setAttribute("aria-expanded", String(partsDrop.classList.contains("open")));
   partsBtn.addEventListener("click", (e) => { e.stopPropagation(); partsDrop.classList.toggle("open"); syncPartsAria(); });
-  
+
+  const applyPartsFilter = () => {
+    const parts = [...document.querySelectorAll(".f-part")].filter((cb) => cb.checked).map((cb) => Number(cb.value));
+    const includeCombos = document.getElementById("f-include-combos").checked;
+    update({ parts, includeCombos }, { resetPage: true });
+  };
+  partsDrop.addEventListener("change", (e) => {
+    if (e.target.classList.contains("f-part") || e.target.id === "f-include-combos") applyPartsFilter();
+  });
+
   document.addEventListener("click", (e) => {
     if (!document.getElementById("parts-wrap").contains(e.target)) { partsDrop.classList.remove("open"); syncPartsAria(); }
     if (!document.getElementById("chambers-wrap").contains(e.target)) { chambersDrop.classList.remove("open"); syncChambersAria(); }
@@ -304,12 +313,6 @@ function wire() {
       if (partsDrop.classList.contains("open")) { partsDrop.classList.remove("open"); syncPartsAria(); partsBtn.focus(); }
       if (chambersDrop.classList.contains("open")) { chambersDrop.classList.remove("open"); syncChambersAria(); chambersBtn.focus(); }
     }
-  });
-  document.getElementById("parts-apply").addEventListener("click", () => {
-    const parts = [...document.querySelectorAll(".f-part")].filter((cb) => cb.checked).map((cb) => Number(cb.value));
-    const includeCombos = document.getElementById("f-include-combos").checked;
-    partsDrop.classList.remove("open");
-    update({ parts, includeCombos }, { resetPage: true });
   });
 
   // View toggle

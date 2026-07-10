@@ -2,7 +2,19 @@
 // Imported by both list.js (browser, runtime) and the Vite prerender plugin
 // (Node, build time) so the prerendered HTML matches what the client produces.
 
-import { ROMAN, partsLabel, esc, TOOLTIP_QUALIFIER, TOOLTIP_RANGE, TOOLTIP_HESSEN, ANMELDEGEBUEHR_NOTE, HESSEN_CHAMBERS } from "./util.js";
+import {
+  ROMAN,
+  partsLabel,
+  esc,
+  TOOLTIP_QUALIFIER,
+  TOOLTIP_APPROXIMATE,
+  TOOLTIP_RANGE,
+  TOOLTIP_HESSEN,
+  ANMELDEGEBUEHR_NOTE,
+  STUTTGART_PRACTICAL_EXAM_NOTE,
+  REUTLINGEN_ADDITIONAL_EXAM_NOTE,
+  HESSEN_CHAMBERS,
+} from "./util.js";
 
 export const fmtDate = (iso) => (iso ? iso.split("-").reverse().join(".") : "");
 
@@ -63,15 +75,22 @@ function availabilityBadge(a, small = false) {
 /**
  * Renders the exam-fee table cell with the appropriate info button.
  * Tooltip text selection (matching util.js constants):
- *   qualifier set  → TOOLTIP_QUALIFIER  (e.g. HWK Koblenz "bis zu")
- *   fee_max set    → TOOLTIP_RANGE      (e.g. HWK Rheinhessen range)
- *   Hessen chamber → TOOLTIP_HESSEN     (HWK Rhein-Main / Wiesbaden / Kassel)
- *   scraped fee    → no button (exact value stated on the course page)
+ *   Stuttgart Part I → STUTTGART_PRACTICAL_EXAM_NOTE (additional practical fee)
+ *   qualifier set    → TOOLTIP_QUALIFIER  (e.g. HWK Koblenz "bis zu")
+ *   fee_max set      → TOOLTIP_RANGE      (e.g. HWK Rheinhessen range)
+ *   Hessen chamber   → TOOLTIP_HESSEN     (HWK Rhein-Main / Wiesbaden / Kassel)
+ *   scraped fee      → no button (exact value stated on the course page)
  */
-function examFeeCell(ef, chamberSlug = "") {
+function examFeeCell(ef, chamberSlug = "", parts = []) {
   if (!ef || !ef.fee) return '<span class="price-na">—</span>';
   let btn = "";
-  if (ef.qualifier)
+  if (chamberSlug === "hwk-stuttgart" && parts.includes(1))
+    btn = `<button class="fee-info-btn" data-tooltip="${esc(STUTTGART_PRACTICAL_EXAM_NOTE)}" type="button">i</button>`;
+  else if (chamberSlug === "hwk-reutlingen" && parts.includes(1))
+    btn = `<button class="fee-info-btn" data-tooltip="${esc(REUTLINGEN_ADDITIONAL_EXAM_NOTE)}" type="button">i</button>`;
+  else if (ef.qualifier === "ca.")
+    btn = `<button class="fee-info-btn" data-tooltip="${esc(TOOLTIP_APPROXIMATE)}" type="button">i</button>`;
+  else if (ef.qualifier)
     btn = `<button class="fee-info-btn" data-tooltip="${esc(TOOLTIP_QUALIFIER)}" type="button">i</button>`;
   else if (ef.fee_max)
     btn = `<button class="fee-info-btn" data-tooltip="${esc(TOOLTIP_RANGE)}" type="button">i</button>`;
@@ -131,34 +150,41 @@ export function rowHtml(c) {
     <td data-label="Laufzeit" class="detail-cell" style="font-size:.82rem;font-variant-numeric:tabular-nums;">${laufzeit}</td>
     <td data-label="Dauer" class="detail-cell col-duration" style="white-space:nowrap;">${c.duration_hours ? c.duration_hours.toLocaleString("de-DE") + " Std." : "—"}</td>
     <td data-label="Kursgebühr" class="detail-cell">${courseFeeCell(c)}</td>
-    <td data-label="Prüfungsgebühr" class="detail-cell">${examFeeCell(c.exam_fee, c.chamber_slug)}</td>
+    <td data-label="Prüfungsgebühr" class="detail-cell">${examFeeCell(c.exam_fee, c.chamber_slug, c.parts)}</td>
     <td data-label="Ort" class="detail-cell">${esc(c.city || "—")}</td>
     <td data-label="Verfügbarkeit" class="detail-cell">${availabilityBadge(c.availability)}</td>
   </tr>`;
 }
 
-// ── Chamber filter (region-grouped checkboxes) ─────────────────────────
+// ── Chamber filter (region accordion) ──────────────────────────────────
 // Derived from data/chambers.json so the HWK list never drifts from the data.
 // Rendered at build time (vite prerender) and re-rendered idempotently on the
-// client, mirroring rowHtml's SSG-then-hydrate pattern. Groups preserve the
-// region order in which chambers first appear in the source array.
-const REGION_LABEL_STYLE = "font-weight:bold; padding: 2px 4px; font-size: 0.85rem; color: var(--brass, #14304A);";
+// client, mirroring rowHtml's SSG-then-hydrate pattern.
+const REGION_ORDER = ["Baden-Württemberg", "Hessen", "Rheinland-Pfalz", "Saarland"];
+
+function regionSortKey(region) {
+  const idx = REGION_ORDER.indexOf(region);
+  return idx === -1 ? REGION_ORDER.length : idx;
+}
 
 export function chamberFilterHtml(chambers) {
-  const groups = [];
   const byRegion = new Map();
   for (const c of chambers) {
     const region = c.region || "";
-    if (!byRegion.has(region)) { byRegion.set(region, []); groups.push(region); }
+    if (!byRegion.has(region)) byRegion.set(region, []);
     byRegion.get(region).push(c);
   }
-  return groups.map((region) => {
-    const header = region ? `<div style="${REGION_LABEL_STYLE}">${esc(region)}</div>` : "";
+  const regions = [...byRegion.keys()].sort((a, b) => regionSortKey(a) - regionSortKey(b));
+  return `<div class="region-accordion">${regions.map((region) => {
     const labels = byRegion.get(region).map((c) =>
       `<label><input type="checkbox" class="f-chamber" value="${esc(c.slug)}"> ${esc(c.name)}</label>`,
     ).join("");
-    return `${header}${labels}<hr>`;
-  }).join("");
+    const summary = region ? esc(region) : "Sonstige";
+    return `<details class="region-panel">
+      <summary class="region-panel-summary">${summary}</summary>
+      <div class="region-panel-body">${labels}</div>
+    </details>`;
+  }).join("")}</div>`;
 }
 
 export function emptyRow() {
