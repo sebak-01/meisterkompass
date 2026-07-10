@@ -16,7 +16,11 @@ from scrapers.hwk_karlsruhe import (
     HwkKarlsruheScraper,
     parse_availability as parse_karlsruhe_availability,
 )
-from scrapers.hwk_konstanz import COURSES as KONSTANZ_COURSES, HwkKonstanzScraper
+from scrapers.hwk_konstanz import (
+    COURSES as KONSTANZ_COURSES,
+    HwkKonstanzScraper,
+    parse_exam_fee as parse_konstanz_exam_fee,
+)
 from scrapers.hwk_reutlingen import COURSES as REUTLINGEN_COURSES, HwkReutlingenScraper
 from scrapers.hwk_mannheim import (
     HwkMannheimScraper,
@@ -297,9 +301,19 @@ class FreiburgParserTests(unittest.TestCase):
 
 
 class KonstanzParserTests(unittest.TestCase):
+    def test_part_iv_approximate_exam_fee(self):
+        fee, qualifier = parse_konstanz_exam_fee(
+            "Prüfungsgebühr ca. Euro 180,-.",
+            (4,),
+        )
+        self.assertEqual(fee, 180.0)
+        self.assertEqual(qualifier, "ca.")
+
     def test_vernr_cards_are_independent_runs(self):
         soup = BeautifulSoup(
             """
+            <p>Prüfungsgebühren für Teil I von 330,- € und für Teil II von 300,- €.</p>
+            <p>Zusätzlich gewerksspezifische Prüfungsgebühren von 1.480,- € für Teil I.</p>
             <a class="termin_details" vernr="1001">08.03.2027 – 08.10.2027: Teilzeit Rottweil</a>
             <div id="uni-kurs-1001">
               ausreichend freie Plätze Kosten 4.090,00 €
@@ -326,10 +340,21 @@ class KonstanzParserTests(unittest.TestCase):
         )
         self.assertEqual(len(offers), 2)
         self.assertEqual([offer.course_fee for offer in offers], [4090.0, 4190.0])
+        self.assertTrue(all(offer.exam_fee_scraped == 2110.0 for offer in offers))
         self.assertEqual([offer.availability for offer in offers], ["available", "full"])
 
 
 class ReutlingenParserTests(unittest.TestCase):
+    def test_manual_exam_fees_and_complete_bundle(self):
+        fee_path = Path(__file__).resolve().parents[1] / "data" / "manual" / "exam_fees_manual.json"
+        lookup = build_exam_fee_lookup([], json.loads(fee_path.read_text(encoding="utf-8")))
+        expected = {1: 300.0, 2: 350.0, 3: 200.0, 4: 250.0}
+        for part, fee in expected.items():
+            resolved = resolve_exam_fee("hwk-reutlingen", "any-trade", [part], None, lookup)
+            self.assertEqual(resolved["fee"], fee)
+        bundle = resolve_exam_fee("hwk-reutlingen", "any-trade", [1, 2, 3, 4], None, lookup)
+        self.assertEqual(bundle["fee"], 1100.0)
+
     def test_plain_date_heading_parses_run_not_next_summary(self):
         spec = next(item for item in REUTLINGEN_COURSES if item.slug == "t-mv-i-ii_metall-tz")
         soup = BeautifulSoup(

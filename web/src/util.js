@@ -38,5 +38,9 @@ export const ANMELDEGEBUEHR_NOTE =
 export const STUTTGART_PRACTICAL_EXAM_NOTE =
   "Die HWK Region Stuttgart erhebt zusätzlich für die Abnahme der praktischen Prüfung eine Sondergebühr in Höhe von 250,00 EUR.";
 
+/** HWK Reutlingen may pass on additional practical-exam expenses for Part I. */
+export const REUTLINGEN_ADDITIONAL_EXAM_NOTE =
+  "Bei Meisterprüfungen, für die von der HWK Reutlingen zusätzlich Personal-, Material-, Raum- und Sachkosten geleistet werden, ist die Gebühr entsprechend zu erhöhen. Je nach Gewerk liegt der Rahmen zwischen 300 € und 1.500 €";
+
 /** Slugs of the three Hessen chambers — used by render.js and afbg.js to select TOOLTIP_HESSEN. */
 export const HESSEN_CHAMBERS = new Set(["hwk-rhein-main", "hwk-wiesbaden", "hwk-kassel"]);

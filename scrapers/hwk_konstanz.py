@@ -18,6 +18,24 @@ DATE_RE = re.compile(r"(\d{2})\.(\d{2})\.(\d{4})\s*[–—-]\s*(\d{2})\.(\d{2})\
 PRICE_RE = re.compile(r"Kosten\s+([\d.]+),(\d{2})\s*€", re.IGNORECASE)
 DURATION_RE = re.compile(r"Lehrgangsdauer\s*([\d.]+)\s*UE", re.IGNORECASE)
 ADDRESS_RE = re.compile(r"Lehrgangsort\s+(.+?)\s+(\d{5})\s+(.+?)(?=\s+(?:ausgebucht|wenige|ausreichend|Kursinformation|Kurs buchen|Infomaterial))", re.IGNORECASE)
+PARTS_I_II_EXAM_RE = re.compile(
+    r"Prüfungsgebühren\s+für\s+Teil\s+I\s+von\s+([\d.]+),?-?\s*€\s+und\s+"
+    r"für\s+Teil\s+II\s+von\s+([\d.]+),?-?\s*€",
+    re.IGNORECASE,
+)
+TRADE_EXAM_RE = re.compile(
+    r"gewerksspezifische\s+Prüfungsgebühren?\s+von\s+([\d.]+),?-?\s*€",
+    re.IGNORECASE,
+)
+PARTS_III_IV_EXAM_RE = re.compile(
+    r"Prüfungsgebühren\s+für\s+Teil\s+III\s+von\s+([\d.]+),?-?\s*€\s+und\s+"
+    r"für\s+Teil\s+IV\s+von\s+([\d.]+),?-?\s*€",
+    re.IGNORECASE,
+)
+PART_IV_EXAM_RE = re.compile(
+    r"Prüfungsgebühr(?:en)?(?:\s+ca\.\s+Euro|\s+für\s+Teil\s+IV)\s+([\d.]+),?-?\s*€?",
+    re.IGNORECASE,
+)
 
 
 @dataclass(frozen=True)
@@ -97,6 +115,31 @@ def parse_location(text: str) -> dict:
     return LOCATIONS["singen"]
 
 
+def _amount(value: str) -> float:
+    return float(value.replace(".", ""))
+
+
+def parse_exam_fee(text: str, parts: tuple[int, ...]) -> tuple[float | None, str]:
+    if set(parts) == {1, 2}:
+        base = PARTS_I_II_EXAM_RE.search(text)
+        trade = TRADE_EXAM_RE.search(text)
+        if base:
+            total = _amount(base.group(1)) + _amount(base.group(2))
+            if trade:
+                total += _amount(trade.group(1))
+            return total, ""
+    if set(parts) == {3, 4}:
+        match = PARTS_III_IV_EXAM_RE.search(text)
+        if match:
+            return _amount(match.group(1)) + _amount(match.group(2)), ""
+    if tuple(parts) == (4,):
+        match = PART_IV_EXAM_RE.search(text)
+        if match:
+            qualifier = "ca." if "ca." in match.group(0).lower() else ""
+            return _amount(match.group(1)), qualifier
+    return None, ""
+
+
 class HwkKonstanzScraper(BaseScraper):
     chamber_slug = "hwk-konstanz"
     chamber_name = "Handwerkskammer Konstanz"
@@ -137,6 +180,8 @@ class HwkKonstanzScraper(BaseScraper):
 
     def _parse_course(self, soup: BeautifulSoup, detail_url: str, spec: CourseSpec) -> list[RawCourseOffer]:
         offers = []
+        page_text = (soup.select_one("main") or soup).get_text(" ", strip=True)
+        exam_fee, exam_fee_qualifier = parse_exam_fee(page_text, spec.parts)
         seen: set[str] = set()
         for link in soup.select("a.termin_details[vernr]"):
             vernr = link.get("vernr", "")
@@ -164,6 +209,8 @@ class HwkKonstanzScraper(BaseScraper):
                 end_date=f"{date_match.group(6)}-{date_match.group(5)}-{date_match.group(4)}",
                 duration_hours=int(duration_match.group(1).replace(".", "")) if duration_match else None,
                 course_fee=float(price_match.group(1).replace(".", "") + "." + price_match.group(2)) if price_match else None,
+                exam_fee_scraped=exam_fee,
+                exam_fee_qualifier=exam_fee_qualifier,
                 city=location["city"],
                 street=location["street"],
                 zip_code=location["zip_code"],

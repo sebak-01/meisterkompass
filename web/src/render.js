@@ -12,6 +12,7 @@ import {
   TOOLTIP_HESSEN,
   ANMELDEGEBUEHR_NOTE,
   STUTTGART_PRACTICAL_EXAM_NOTE,
+  REUTLINGEN_ADDITIONAL_EXAM_NOTE,
   HESSEN_CHAMBERS,
 } from "./util.js";
 
@@ -85,6 +86,8 @@ function examFeeCell(ef, chamberSlug = "", parts = []) {
   let btn = "";
   if (chamberSlug === "hwk-stuttgart" && parts.includes(1))
     btn = `<button class="fee-info-btn" data-tooltip="${esc(STUTTGART_PRACTICAL_EXAM_NOTE)}" type="button">i</button>`;
+  else if (chamberSlug === "hwk-reutlingen" && parts.includes(1))
+    btn = `<button class="fee-info-btn" data-tooltip="${esc(REUTLINGEN_ADDITIONAL_EXAM_NOTE)}" type="button">i</button>`;
   else if (ef.qualifier === "ca.")
     btn = `<button class="fee-info-btn" data-tooltip="${esc(TOOLTIP_APPROXIMATE)}" type="button">i</button>`;
   else if (ef.qualifier)
