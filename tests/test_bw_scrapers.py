@@ -1,0 +1,99 @@
+import unittest
+
+from bs4 import BeautifulSoup
+
+from scrapers.hwk_karlsruhe import (
+    COURSE_SECTIONS,
+    HwkKarlsruheScraper,
+    parse_availability as parse_karlsruhe_availability,
+)
+from scrapers.hwk_mannheim import (
+    HwkMannheimScraper,
+    parse_parts,
+    parse_trade,
+)
+
+
+def course_card(title: str, details: str, href: str = "/kurse/example,coursedetail.html?id=1") -> BeautifulSoup:
+    return BeautifulSoup(
+        f"""
+        <div class="row">
+          <h3>01.09.2026 - 20.11.2026: Vollzeit
+            <a href="{href}">{title}</a>
+          </h3>
+          <div>{details}</div>
+        </div>
+        """,
+        "html.parser",
+    )
+
+
+class MannheimParserTests(unittest.TestCase):
+    def test_parts_and_trade_variants(self):
+        title = "Meistervorbereitung Maler und Lackierer Teil I + II Maler"
+        parts = parse_parts(title)
+        self.assertEqual(parts, [1, 2])
+        self.assertEqual(parse_trade(title, parts), "Maler und Lackierer")
+
+        aevo = "Ausbilderschein - Vorbereitung auf die AEVO Prüfung (Meister Teil IV)"
+        self.assertEqual(parse_parts(aevo), [4])
+        self.assertIsNone(parse_trade(aevo, [4]))
+
+    def test_card_parses_fee_duration_dates_and_waitlist(self):
+        soup = course_card(
+            "Meistervorbereitung Teil III + IV",
+            "3.250,00 € 400 UE Mannheim Warteliste",
+        )
+        offer = HwkMannheimScraper()._parse_card(soup.select_one("a"))
+
+        self.assertEqual(offer.parts, [3, 4])
+        self.assertIsNone(offer.trade_name)
+        self.assertEqual(offer.start_date, "2026-09-01")
+        self.assertEqual(offer.end_date, "2026-11-20")
+        self.assertEqual(offer.course_fee, 3250.0)
+        self.assertEqual(offer.duration_hours, 400)
+        self.assertEqual(offer.availability, "waitlist")
+        self.assertEqual(offer.format_key, "full_time")
+
+    def test_card_keeps_unpublished_fee_as_none(self):
+        soup = course_card(
+            "Meistervorbereitung Konditoren Teil I + II",
+            "400 UE Mannheim Gebühren stehen noch nicht fest",
+        )
+        offer = HwkMannheimScraper()._parse_card(soup.select_one("a"))
+        self.assertEqual(offer.trade_name, "Konditor")
+        self.assertIsNone(offer.course_fee)
+
+
+class KarlsruheParserTests(unittest.TestCase):
+    def test_section_uses_known_trade_and_parts(self):
+        section = COURSE_SECTIONS[3]
+        soup = course_card(
+            "Meistervorbereitung für Elektrotechnik Teil 1-4",
+            "8.500,00 € 1290 UE Karlsruhe ausgebucht",
+        )
+        offers = HwkKarlsruheScraper()._parse_section(soup, section)
+
+        self.assertEqual(len(offers), 1)
+        self.assertEqual(offers[0].trade_name, "Elektrotechniker")
+        self.assertEqual(offers[0].parts, [1, 2, 3, 4])
+        self.assertEqual(offers[0].course_fee, 8500.0)
+        self.assertEqual(offers[0].availability, "full")
+
+    def test_placeholder_preserves_unscheduled_offering(self):
+        section = COURSE_SECTIONS[0]
+        offer = HwkKarlsruheScraper._placeholder(section)
+        self.assertEqual(offer.parts, [1])
+        self.assertEqual(offer.format_key, "part_or_full")
+        self.assertIsNone(offer.start_date)
+        self.assertIsNone(offer.course_fee)
+        self.assertEqual(offer.source_url, section.url)
+
+    def test_availability_vocabulary(self):
+        self.assertEqual(parse_karlsruhe_availability("wenige Plätze"), "available")
+        self.assertEqual(parse_karlsruhe_availability("Warteliste"), "waitlist")
+        self.assertEqual(parse_karlsruhe_availability("Termin folgt"), "unknown")
+
+
+if __name__ == "__main__":
+    unittest.main()
