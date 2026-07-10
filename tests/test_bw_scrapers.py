@@ -1,7 +1,10 @@
+import json
 import unittest
+from pathlib import Path
 
 from bs4 import BeautifulSoup
 
+from scrapers.fees import build_exam_fee_lookup, resolve_exam_fee
 from scrapers.hwk_karlsruhe import (
     COURSE_SECTIONS,
     HwkKarlsruheScraper,
@@ -66,6 +69,19 @@ class MannheimParserTests(unittest.TestCase):
 
 
 class KarlsruheParserTests(unittest.TestCase):
+    def test_manual_exam_fees_include_parts_and_complete_bundle(self):
+        fee_path = Path(__file__).resolve().parents[1] / "data" / "manual" / "exam_fees_manual.json"
+        lookup = build_exam_fee_lookup([], json.loads(fee_path.read_text(encoding="utf-8")))
+
+        expected_parts = {1: 400.0, 2: 350.0, 3: 200.0, 4: 200.0}
+        for part, expected_fee in expected_parts.items():
+            resolved = resolve_exam_fee("hwk-karlsruhe", "any-trade", [part], None, lookup)
+            self.assertEqual(resolved["fee"], expected_fee)
+
+        bundle = resolve_exam_fee("hwk-karlsruhe", "elektrotechniker", [1, 2, 3, 4], None, lookup)
+        self.assertEqual(bundle["fee"], 1150.0)
+        self.assertEqual(bundle["display"], "1.150 €")
+
     def test_section_uses_known_trade_and_parts(self):
         section = COURSE_SECTIONS[3]
         soup = course_card(
