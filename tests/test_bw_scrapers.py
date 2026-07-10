@@ -273,6 +273,7 @@ class FreiburgParserTests(unittest.TestCase):
               Zeiten: Mo-Do 8:00-16:15 Uhr
               Dauer: 850 Unterrichtsstunden
               Preis: € 9200,00
+              Preisinfo: Zzgl. € 750,00 Prüfungsgebühr (Stand Okt. 2024)
             </main>
             """,
             "html.parser",
@@ -284,6 +285,7 @@ class FreiburgParserTests(unittest.TestCase):
         )
         self.assertEqual(offer.start_date, "2026-11-17")
         self.assertEqual(offer.course_fee, 9200.0)
+        self.assertEqual(offer.exam_fee_scraped, 750.0)
         self.assertEqual(offer.duration_hours, 850)
         self.assertEqual(offer.format_key, "full_time")
         self.assertEqual(offer.teaching_mode, "presence")

@@ -27,6 +27,10 @@ DATE_LOCATION_RE = re.compile(
 )
 DURATION_RE = re.compile(r"Dauer:\s*([\d.]+)\s*Unterrichtsstunden", re.IGNORECASE)
 PRICE_RE = re.compile(r"Preis:\s*€?\s*([\d.]+),(\d{2})", re.IGNORECASE)
+EXAM_FEE_RE = re.compile(
+    r"(?:zzgl\.\s*)?€\s*([\d.]+),(\d{2})\s*Prüfungsgebühr",
+    re.IGNORECASE,
+)
 FREE_RE = re.compile(r"Freie Plätze:\s*(\d+)", re.IGNORECASE)
 APPOINTMENT_RE = re.compile(r"/seminar/(?P<slug>[^/]+)/(?P<id>\d+)/?$")
 
@@ -143,6 +147,7 @@ class HwkFreiburgScraper(BaseScraper):
             return None
         duration_match = DURATION_RE.search(text)
         price_match = PRICE_RE.search(text)
+        exam_fee_match = EXAM_FEE_RE.search(text)
         city_raw = date_match.group(7).strip()
         location = LOCATIONS["offenburg"] if "offenburg" in city_raw.lower() else LOCATIONS["freiburg"]
         mode = "hybrid" if spec.hybrid_in_offenburg and location["city"] == "Offenburg" else spec.teaching_mode
@@ -161,6 +166,11 @@ class HwkFreiburgScraper(BaseScraper):
             end_date=f"{date_match.group(6)}-{date_match.group(5)}-{date_match.group(4)}",
             duration_hours=int(duration_match.group(1).replace(".", "")) if duration_match else None,
             course_fee=float(price_match.group(1).replace(".", "") + "." + price_match.group(2)) if price_match else None,
+            exam_fee_scraped=(
+                float(exam_fee_match.group(1).replace(".", "") + "." + exam_fee_match.group(2))
+                if exam_fee_match
+                else None
+            ),
             city=location["city"],
             street=location["street"],
             zip_code=location["zip_code"],
