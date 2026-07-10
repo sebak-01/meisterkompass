@@ -5,11 +5,15 @@ from pathlib import Path
 from bs4 import BeautifulSoup
 
 from scrapers.fees import build_exam_fee_lookup, resolve_exam_fee
+from scrapers.hwk_freiburg import COURSES as FREIBURG_COURSES, HwkFreiburgScraper
+from scrapers.hwk_heilbronn import COURSES as HEILBRONN_COURSES, HwkHeilbronnScraper
 from scrapers.hwk_karlsruhe import (
     COURSE_SECTIONS,
     HwkKarlsruheScraper,
     parse_availability as parse_karlsruhe_availability,
 )
+from scrapers.hwk_konstanz import COURSES as KONSTANZ_COURSES, HwkKonstanzScraper
+from scrapers.hwk_reutlingen import COURSES as REUTLINGEN_COURSES, HwkReutlingenScraper
 from scrapers.hwk_mannheim import (
     HwkMannheimScraper,
     parse_parts,
@@ -257,6 +261,108 @@ class UlmParserTests(unittest.TestCase):
         self.assertEqual(len(offers), 1)
         self.assertIsNone(offers[0].start_date)
         self.assertEqual(offers[0].duration_hours, 610)
+
+
+class FreiburgParserTests(unittest.TestCase):
+    def test_numeric_appointment_parses_current_values(self):
+        soup = BeautifulSoup(
+            """
+            <main>
+              Termine: 17.11.2026 - 28.05.2027, Freiburg (3 freie Plätze)
+              Freie Plätze: 3
+              Zeiten: Mo-Do 8:00-16:15 Uhr
+              Dauer: 850 Unterrichtsstunden
+              Preis: € 9200,00
+            </main>
+            """,
+            "html.parser",
+        )
+        offer = HwkFreiburgScraper._parse_appointment(
+            soup,
+            "https://www.gewerbeakademie.de/weiterbildung/kursangebot/seminar/mvkfeinwerk/32/",
+            FREIBURG_COURSES["mvkfeinwerk"],
+        )
+        self.assertEqual(offer.start_date, "2026-11-17")
+        self.assertEqual(offer.course_fee, 9200.0)
+        self.assertEqual(offer.duration_hours, 850)
+        self.assertEqual(offer.format_key, "full_time")
+        self.assertEqual(offer.availability, "available")
+
+
+class KonstanzParserTests(unittest.TestCase):
+    def test_vernr_cards_are_independent_runs(self):
+        soup = BeautifulSoup(
+            """
+            <a class="termin_details" vernr="1001">08.03.2027 – 08.10.2027: Teilzeit Rottweil</a>
+            <div id="uni-kurs-1001">
+              ausreichend freie Plätze Kosten 4.090,00 €
+              Unterricht 08.03.2027 – 08.10.2027
+              Lehrgangsdauer 300 UE
+              Lehrgangsort Steinhauserstraße 18 78628 Rottweil
+              Kurs buchen
+            </div>
+            <a class="termin_details" vernr="1002">06.03.2028 – 13.10.2028: Teilzeit Rottweil</a>
+            <div id="uni-kurs-1002">
+              ausgebucht Kosten 4.190,00 €
+              Unterricht 06.03.2028 – 13.10.2028
+              Lehrgangsdauer 300 UE
+              Lehrgangsort Steinhauserstraße 18 78628 Rottweil
+              Warteliste
+            </div>
+            """,
+            "html.parser",
+        )
+        offers = HwkKonstanzScraper()._parse_course(
+            soup,
+            "https://www.bildungsakademie.de/seminar/mv_baecker/",
+            KONSTANZ_COURSES["mv_baecker"],
+        )
+        self.assertEqual(len(offers), 2)
+        self.assertEqual([offer.course_fee for offer in offers], [4090.0, 4190.0])
+        self.assertEqual([offer.availability for offer in offers], ["available", "full"])
+
+
+class ReutlingenParserTests(unittest.TestCase):
+    def test_plain_date_heading_parses_run_not_next_summary(self):
+        spec = next(item for item in REUTLINGEN_COURSES if item.slug == "t-mv-i-ii_metall-tz")
+        soup = BeautifulSoup(
+            """
+            <main>
+              <h4>Nächster Kurs: 10.11.2026 — 30.10.2027</h4>
+              <div><h4>10.11.2026 — 30.10.2027</h4>
+                Es gibt noch freie Plätze Bildungsakademie Tübingen
+                Seminardauer 700 Unterrichtseinheiten Kosten 8.250,00 €
+                Kursnummer 8 Kurstyp Teilzeit
+              </div>
+            </main>
+            """,
+            "html.parser",
+        )
+        offers = HwkReutlingenScraper()._parse_course(soup, spec)
+        self.assertEqual(len(offers), 1)
+        self.assertEqual(offers[0].start_date, "2026-11-10")
+        self.assertEqual(offers[0].course_fee, 8250.0)
+        self.assertEqual(offers[0].city, "Tübingen")
+
+
+class HeilbronnParserTests(unittest.TestCase):
+    def test_run_and_hybrid_location_override(self):
+        spec = next(item for item in HEILBRONN_COURSES if item.slug == "mv-iiiiv-e-learning")
+        soup = BeautifulSoup(
+            """
+            <main><div><h4>07.10.2028 — 14.07.2029</h4>
+              Es gibt noch freie Plätze Handwerkskammer Heilbronn Allee 76 74072 Heilbronn
+              Online und Präsenz Seminardauer 320 Stunden Gebühr 2.090 EURO
+              Kursnummer 3 Kurstyp Teilzeit
+            </div></main>
+            """,
+            "html.parser",
+        )
+        offers = HwkHeilbronnScraper()._parse_course(soup, spec)
+        self.assertEqual(len(offers), 1)
+        self.assertEqual(offers[0].teaching_mode, "hybrid")
+        self.assertEqual(offers[0].street, "Allee 76")
+        self.assertEqual(offers[0].course_fee, 2090.0)
 
 
 if __name__ == "__main__":

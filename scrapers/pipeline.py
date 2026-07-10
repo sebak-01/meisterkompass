@@ -20,7 +20,11 @@ from .base import GENERIC_TRADE_SLUG, ScrapeResult, normalize_trade
 from .fees import _fmt, build_exam_fee_lookup, resolve_exam_fee
 from .geocode import Geocoder, build_query
 from .hwk_koblenz import HwkKoblenzScraper
+from .hwk_freiburg import HwkFreiburgScraper
+from .hwk_heilbronn import HwkHeilbronnScraper
+from .hwk_konstanz import HwkKonstanzScraper
 from .hwk_pfalz import HwkPfalzScraper
+from .hwk_reutlingen import HwkReutlingenScraper
 from .hwk_rheinhessen import (
     HwkRheinhessenScraper,
     resolve_coords as rh_resolve_coords,
@@ -52,6 +56,10 @@ SCRAPERS: dict[str, type] = {
     "hwk-mannheim":    HwkMannheimScraper,
     "hwk-stuttgart":   HwkStuttgartScraper,
     "hwk-ulm":         HwkUlmScraper,
+    "hwk-freiburg":    HwkFreiburgScraper,
+    "hwk-konstanz":    HwkKonstanzScraper,
+    "hwk-reutlingen":  HwkReutlingenScraper,
+    "hwk-heilbronn-franken": HwkHeilbronnScraper,
 }
 
 FORMAT_DISPLAY = {
