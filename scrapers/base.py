@@ -96,6 +96,7 @@ class RawCourseOffer:
     city:             str
     # Fields with defaults (must come after all non-default fields)
     exam_fee_scraped: float | None = None   # stated on course page (e.g. HWK Trier)
+    exam_fee_qualifier: str = ""            # e.g. "ca." when a published component is approximate
     street:           str = ""
     zip_code:         str = ""
     availability:     str = "unknown"
@@ -201,6 +202,7 @@ class BaseScraper(ABC):
                     "trade_slug":   trade_slug,
                     "part":         raw.parts[0],
                     "fee":          fee,
+                    "qualifier":    raw.exam_fee_qualifier,
                     "source_url":   raw.source_url,
                 })
             else:
@@ -209,6 +211,7 @@ class BaseScraper(ABC):
                     "trade_slug":   trade_slug,
                     "parts":        sorted(raw.parts),
                     "fee":          fee,
+                    "qualifier":    raw.exam_fee_qualifier,
                     "source_url":   raw.source_url,
                 })
         return rows

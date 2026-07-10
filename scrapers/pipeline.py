@@ -129,6 +129,7 @@ def offer_to_record(result: ScrapeResult, offer) -> dict:
         "course_fee":       fee,
         "course_fee_display": _course_fee_display(fee),
         "exam_fee_scraped": _to_float(offer.exam_fee_scraped),
+        "exam_fee_qualifier": offer.exam_fee_qualifier,
         "exam_fee":         None,   # resolved later
         "city":             offer.city,
         "street":           offer.street,
@@ -354,6 +355,7 @@ def _resolve_and_write_derived(records: list[dict], scraped_rows: list[dict], ma
     for rec in records:
         rec["exam_fee"] = resolve_exam_fee(
             rec["chamber_slug"], rec["trade_slug"], rec["parts"], rec.get("exam_fee_scraped"), lookup,
+            rec.get("exam_fee_qualifier", ""),
         )
     records.sort(key=_course_sort_key)
     # Split upcoming/undated (bundled) from past (lazy-loaded archive).
@@ -386,6 +388,7 @@ def _scraped_rows_from_courses(records: list[dict]) -> list[dict]:
                 "trade_slug":   trade_slug,
                 "part":         parts[0],
                 "fee":          fee,
+                "qualifier":    r.get("exam_fee_qualifier", ""),
             })
         else:
             rows.append({
@@ -393,6 +396,7 @@ def _scraped_rows_from_courses(records: list[dict]) -> list[dict]:
                 "trade_slug":   trade_slug,
                 "parts":        sorted(parts),
                 "fee":          fee,
+                "qualifier":    r.get("exam_fee_qualifier", ""),
             })
     return rows
 

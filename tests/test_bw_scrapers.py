@@ -6,7 +6,11 @@ from bs4 import BeautifulSoup
 
 from scrapers.fees import build_exam_fee_lookup, resolve_exam_fee
 from scrapers.hwk_freiburg import COURSES as FREIBURG_COURSES, HwkFreiburgScraper
-from scrapers.hwk_heilbronn import COURSES as HEILBRONN_COURSES, HwkHeilbronnScraper
+from scrapers.hwk_heilbronn import (
+    COURSES as HEILBRONN_COURSES,
+    HwkHeilbronnScraper,
+    parse_exam_fee as parse_heilbronn_exam_fee,
+)
 from scrapers.hwk_karlsruhe import (
     COURSE_SECTIONS,
     HwkKarlsruheScraper,
@@ -365,6 +369,28 @@ class ReutlingenParserTests(unittest.TestCase):
 
 
 class HeilbronnParserTests(unittest.TestCase):
+    def test_combined_exam_fee_preserves_approximate_surcharge(self):
+        text = (
+            "Prüfungsgebühr Teil I und II: 775,00 Euro "
+            "Berufsspezifische Prüfungsgebühr für Teil I der Meisterprüfung: circa 750,00 Euro"
+        )
+        fee, qualifier = parse_heilbronn_exam_fee(text, (1, 2))
+        self.assertEqual(fee, 1525.0)
+        self.assertEqual(qualifier, "ca.")
+
+        resolved = resolve_exam_fee(
+            "hwk-heilbronn-franken", "friseur", [1, 2], fee, {}, qualifier
+        )
+        self.assertEqual(resolved["display"], "ca. 1.525 €")
+
+    def test_generic_parts_exam_fee_is_summed(self):
+        fee, qualifier = parse_heilbronn_exam_fee(
+            "Prüfungsgebühr Teil III: 200 Euro Teil IV: 200,00 Euro",
+            (3, 4),
+        )
+        self.assertEqual(fee, 400.0)
+        self.assertEqual(qualifier, "")
+
     def test_run_and_hybrid_location_override(self):
         spec = next(item for item in HEILBRONN_COURSES if item.slug == "mv-iiiiv-e-learning")
         soup = BeautifulSoup(

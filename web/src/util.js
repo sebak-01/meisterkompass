@@ -18,6 +18,10 @@ export const esc = (s) =>
 export const TOOLTIP_QUALIFIER =
   "Die Prüfungsgebühr je Teil entstammt dem offiziellen Gebührenverzeichnis. Dies ist die Gebühr, die maximal erhoben werden kann. Häufig ist die Prüfungsgebühr tatsächlich niedriger. Erkundige dich bitte bei der jeweiligen Kammer.";
 
+/** Published fee contains an explicitly approximate component. */
+export const TOOLTIP_APPROXIMATE =
+  "Die angegebene Prüfungsgebühr enthält einen von der Kammer als circa-Betrag veröffentlichten Bestandteil. Die tatsächliche Gebühr kann abweichen.";
+
 /** HWK Rheinhessen: fee is a range (fee … fee_max). */
 export const TOOLTIP_RANGE =
   "Die Spanne der Prüfungsgebühr je Teil entstammt dem offiziellen Gebührenverzeichnis. Die genaue Gebühr innerhalb dieser Spanne wird von der Kammer festgelegt. Erkundige dich bitte bei der jeweiligen Kammer.";

@@ -17,6 +17,19 @@ DATE_RE = re.compile(r"^(\d{2})\.(\d{2})\.(\d{4})\s*[—–-]\s*(\d{2})\.(\d{2})
 DURATION_RE = re.compile(r"Seminardauer\s+(\d{2,4})\s+(?:Stunden|Unterrichtseinheiten)", re.IGNORECASE)
 FEE_RE = re.compile(r"Gebühr\s+([\d.]+)(?:,(\d{2}))?\s*(?:EURO|€)", re.IGNORECASE)
 COURSE_NO_RE = re.compile(r"Kursnummer\s+(\S+)", re.IGNORECASE)
+BASE_EXAM_FEE_RE = re.compile(
+    r"Prüfungsgebühr\s+Teil\s+I\s+und\s+II:\s*([\d.]+)(?:,(\d{2}))?\s*Euro",
+    re.IGNORECASE,
+)
+PRACTICAL_SURCHARGE_RE = re.compile(
+    r"Berufsspezifische\s+Prüfungsgebühr\s+für\s+Teil\s+I[^:]*:\s*circa\s*"
+    r"([\d.]+)(?:,(\d{2}))?\s*Euro",
+    re.IGNORECASE,
+)
+PART_EXAM_FEE_RE = re.compile(
+    r"Teil\s+(III|IV):\s*([\d.]+)(?:,(\d{2}))?\s*Euro",
+    re.IGNORECASE,
+)
 
 
 @dataclass(frozen=True)
@@ -70,6 +83,31 @@ def parse_availability(text: str) -> str:
     return "unknown"
 
 
+def _german_amount(match: re.Match, whole_group: int, cents_group: int) -> float:
+    return float(match.group(whole_group).replace(".", "") + "." + (match.group(cents_group) or "00"))
+
+
+def parse_exam_fee(text: str, parts: tuple[int, ...]) -> tuple[float | None, str]:
+    if set(parts) == {1, 2}:
+        base = BASE_EXAM_FEE_RE.search(text)
+        surcharge = PRACTICAL_SURCHARGE_RE.search(text)
+        if base and surcharge:
+            total = _german_amount(base, 1, 2) + _german_amount(surcharge, 1, 2)
+            return total, "ca."
+        if base:
+            return _german_amount(base, 1, 2), ""
+    if set(parts) <= {3, 4}:
+        fees = {
+            match.group(1).upper(): _german_amount(match, 2, 3)
+            for match in PART_EXAM_FEE_RE.finditer(text)
+        }
+        wanted = ("III" if part == 3 else "IV" for part in parts)
+        values = [fees[roman] for roman in wanted if roman in fees]
+        if len(values) == len(parts):
+            return sum(values), ""
+    return None, ""
+
+
 class HwkHeilbronnScraper(BaseScraper):
     chamber_slug = "hwk-heilbronn-franken"
     chamber_name = "Handwerkskammer Heilbronn-Franken"
@@ -87,7 +125,9 @@ class HwkHeilbronnScraper(BaseScraper):
                 continue
             parsed = self._parse_course(soup, spec)
             if not parsed:
-                parsed = [self._placeholder(spec)]
+                page_text = (soup.select_one("main") or soup).get_text(" ", strip=True)
+                exam_fee, qualifier = parse_exam_fee(page_text, spec.parts)
+                parsed = [self._placeholder(spec, exam_fee, qualifier)]
             logger.info("  Heilbronn %s → %d offer(s)", spec.slug, len(parsed))
             offers.extend(parsed)
         logger.info("HWK Heilbronn-Franken: parsed %d offers.", len(offers))
@@ -95,6 +135,8 @@ class HwkHeilbronnScraper(BaseScraper):
 
     def _parse_course(self, soup: BeautifulSoup, spec: CourseSpec) -> list[RawCourseOffer]:
         main = soup.select_one("main") or soup
+        page_text = main.get_text(" ", strip=True)
+        exam_fee, exam_fee_qualifier = parse_exam_fee(page_text, spec.parts)
         offers = []
         seen: set[tuple[str, str]] = set()
         for heading in main.find_all("h4"):
@@ -128,6 +170,8 @@ class HwkHeilbronnScraper(BaseScraper):
                 end_date=f"{date_match.group(6)}-{date_match.group(5)}-{date_match.group(4)}",
                 duration_hours=int(duration_match.group(1)) if duration_match else None,
                 course_fee=float(fee_match.group(1).replace(".", "") + "." + (fee_match.group(2) or "00")) if fee_match else None,
+                exam_fee_scraped=exam_fee,
+                exam_fee_qualifier=exam_fee_qualifier,
                 city=location["city"],
                 street=location["street"],
                 zip_code=location["zip_code"],
@@ -150,7 +194,7 @@ class HwkHeilbronnScraper(BaseScraper):
         return None
 
     @staticmethod
-    def _placeholder(spec: CourseSpec) -> RawCourseOffer:
+    def _placeholder(spec: CourseSpec, exam_fee: float | None = None, exam_fee_qualifier: str = "") -> RawCourseOffer:
         return RawCourseOffer(
             title=build_course_title(spec.trade_name, list(spec.parts)),
             trade_name=spec.trade_name,
@@ -161,6 +205,8 @@ class HwkHeilbronnScraper(BaseScraper):
             end_date=None,
             duration_hours=None,
             course_fee=None,
+            exam_fee_scraped=exam_fee,
+            exam_fee_qualifier=exam_fee_qualifier,
             city=DEFAULT_LOCATION["city"],
             street=DEFAULT_LOCATION["street"],
             zip_code=DEFAULT_LOCATION["zip_code"],

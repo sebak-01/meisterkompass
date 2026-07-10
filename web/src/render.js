@@ -7,6 +7,7 @@ import {
   partsLabel,
   esc,
   TOOLTIP_QUALIFIER,
+  TOOLTIP_APPROXIMATE,
   TOOLTIP_RANGE,
   TOOLTIP_HESSEN,
   ANMELDEGEBUEHR_NOTE,
@@ -84,6 +85,8 @@ function examFeeCell(ef, chamberSlug = "", parts = []) {
   let btn = "";
   if (chamberSlug === "hwk-stuttgart" && parts.includes(1))
     btn = `<button class="fee-info-btn" data-tooltip="${esc(STUTTGART_PRACTICAL_EXAM_NOTE)}" type="button">i</button>`;
+  else if (ef.qualifier === "ca.")
+    btn = `<button class="fee-info-btn" data-tooltip="${esc(TOOLTIP_APPROXIMATE)}" type="button">i</button>`;
   else if (ef.qualifier)
     btn = `<button class="fee-info-btn" data-tooltip="${esc(TOOLTIP_QUALIFIER)}" type="button">i</button>`;
   else if (ef.fee_max)

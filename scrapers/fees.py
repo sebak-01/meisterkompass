@@ -62,6 +62,7 @@ def resolve_exam_fee(
     included_parts: list[int],
     exam_fee_scraped: float | None,
     lookup: ExamFeeLookup,
+    exam_fee_qualifier: str = "",
 ) -> dict:
     """
     Returns the best exam-fee display info for a course offer.
@@ -82,7 +83,10 @@ def resolve_exam_fee(
     # Priority 1: scraped fee on the page
     if exam_fee_scraped is not None:
         fee = Decimal(str(exam_fee_scraped))
-        return {"fee": float(fee), "fee_max": None, "qualifier": "", "display": _fmt(fee)}
+        qualifier = exam_fee_qualifier.strip()
+        fee_str = _fmt(fee)
+        display = f"{qualifier} {fee_str}".strip() if qualifier else fee_str
+        return {"fee": float(fee), "fee_max": None, "qualifier": qualifier, "display": display}
 
     # Priority 2a: exact combo-bundle override for this exact set of parts.
     # Checked trade-specific first, then the all-trades (trade=None) fallback
