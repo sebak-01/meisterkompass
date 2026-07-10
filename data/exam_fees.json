@@ -1,5 +1,141 @@
 {
   "nested": {
+    "hwk-freiburg": {
+      "null": {
+        "3": {
+          "fee": 200.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "4": {
+          "fee": 200.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "elektrotechniker": {
+        "1,2": {
+          "fee": 750.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "feinwerkmechaniker": {
+        "1,2": {
+          "fee": 750.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "installateur-und-heizungsbauer": {
+        "1,2": {
+          "fee": 750.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "metallbauer": {
+        "1,2": {
+          "fee": 750.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "tischler": {
+        "1,2": {
+          "fee": 750.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "zahntechniker": {
+        "1,2": {
+          "fee": 750.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      }
+    },
+    "hwk-heilbronn-franken": {
+      "null": {
+        "3,4": {
+          "fee": 400.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "friseur": {
+        "1,2": {
+          "fee": 1525.0,
+          "fee_max": null,
+          "qualifier": "ca."
+        }
+      },
+      "installateur-und-heizungsbauer": {
+        "1,2": {
+          "fee": 1495.0,
+          "fee_max": null,
+          "qualifier": "ca."
+        }
+      },
+      "karosserie-und-fahrzeugbauer": {
+        "1,2": {
+          "fee": 1665.0,
+          "fee_max": null,
+          "qualifier": "ca."
+        }
+      },
+      "land-und-baumaschinenmechatroniker": {
+        "1,2": {
+          "fee": 1395.0,
+          "fee_max": null,
+          "qualifier": "ca."
+        }
+      },
+      "metallbauer": {
+        "1,2": {
+          "fee": 1425.0,
+          "fee_max": null,
+          "qualifier": "ca."
+        }
+      },
+      "zimmerer": {
+        "1,2": {
+          "fee": 1425.0,
+          "fee_max": null,
+          "qualifier": "ca."
+        }
+      }
+    },
+    "hwk-karlsruhe": {
+      "null": {
+        "1": {
+          "fee": 400.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "1,2,3,4": {
+          "fee": 1150.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 350.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "3": {
+          "fee": 200.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "4": {
+          "fee": 200.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      }
+    },
     "hwk-kassel": {
       "null": {
         "1": {
@@ -63,6 +199,154 @@
         }
       }
     },
+    "hwk-konstanz": {
+      "null": {
+        "3,4": {
+          "fee": 360.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "4": {
+          "fee": 180.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "backer": {
+        "1,2": {
+          "fee": 2110.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "dachdecker": {
+        "1,2": {
+          "fee": 1620.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "elektrotechniker": {
+        "1,2": {
+          "fee": 2050.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "feinwerkmechaniker": {
+        "1,2": {
+          "fee": 2120.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "fliesen-platten-und-mosaikleger": {
+        "1,2": {
+          "fee": 2110.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "friseur": {
+        "1,2": {
+          "fee": 1550.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "installateur-und-heizungsbauer": {
+        "1,2": {
+          "fee": 1580.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "klempner": {
+        "1,2": {
+          "fee": 1920.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "konditor": {
+        "1,2": {
+          "fee": 2420.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "maler-und-lackierer": {
+        "1,2": {
+          "fee": 2430.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "maurer-und-betonbauer": {
+        "1,2": {
+          "fee": 1480.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "metallbauer": {
+        "1,2": {
+          "fee": 2120.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "stuckateur": {
+        "1,2": {
+          "fee": 1880.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "tischler": {
+        "1,2": {
+          "fee": 2141.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "zimmerer": {
+        "1,2": {
+          "fee": 1230.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      }
+    },
+    "hwk-mannheim": {
+      "null": {
+        "1": {
+          "fee": 400.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "1,2,3,4": {
+          "fee": 1150.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 350.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "3": {
+          "fee": 200.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "4": {
+          "fee": 200.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      }
+    },
     "hwk-pfalz": {
       "null": {
         "3,4": {
@@ -121,6 +405,35 @@
       "strassenbauer": {
         "1,2": {
           "fee": 1300.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      }
+    },
+    "hwk-reutlingen": {
+      "null": {
+        "1": {
+          "fee": 300.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "1,2,3,4": {
+          "fee": 1100.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 350.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "3": {
+          "fee": 200.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "4": {
+          "fee": 250.0,
           "fee_max": null,
           "qualifier": ""
         }
@@ -418,6 +731,30 @@
         }
       }
     },
+    "hwk-stuttgart": {
+      "null": {
+        "1": {
+          "fee": 360.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 330.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "3": {
+          "fee": 180.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "4": {
+          "fee": 180.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      }
+    },
     "hwk-trier": {
       "null": {
         "4": {
@@ -485,6 +822,35 @@
       "zimmerer": {
         "1,2": {
           "fee": 1130.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      }
+    },
+    "hwk-ulm": {
+      "null": {
+        "1": {
+          "fee": 580.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "1,2,3,4": {
+          "fee": 1570.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 470.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "3": {
+          "fee": 260.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "4": {
+          "fee": 280.0,
           "fee_max": null,
           "qualifier": ""
         }

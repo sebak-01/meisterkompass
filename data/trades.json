@@ -1,5 +1,9 @@
 [
   {
+    "slug": "buchbinder",
+    "name": "Buchbinder"
+  },
+  {
     "slug": "backer",
     "name": "Bäcker"
   },
@@ -60,6 +64,10 @@
     "name": "Kfz.-Techniker"
   },
   {
+    "slug": "klempner",
+    "name": "Klempner"
+  },
+  {
     "slug": "konditor",
     "name": "Konditor"
   },
@@ -86,6 +94,10 @@
   {
     "slug": "maurer-und-betonbauer",
     "name": "Maurer und Betonbauer"
+  },
+  {
+    "slug": "massschneider",
+    "name": "Maßschneider"
   },
   {
     "slug": "metallbauer",

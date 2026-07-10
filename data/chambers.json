@@ -1,5 +1,10 @@
 [
   {
+    "slug": "hwk-rhein-main",
+    "name": "HWK Frankfurt-Rhein-Main",
+    "region": "Hessen"
+  },
+  {
     "slug": "hwk-freiburg",
     "name": "HWK Freiburg",
     "region": "Baden-Württemberg"
@@ -15,6 +20,16 @@
     "region": "Baden-Württemberg"
   },
   {
+    "slug": "hwk-kassel",
+    "name": "HWK Kassel",
+    "region": "Hessen"
+  },
+  {
+    "slug": "hwk-koblenz",
+    "name": "HWK Koblenz",
+    "region": "Rheinland-Pfalz"
+  },
+  {
     "slug": "hwk-konstanz",
     "name": "HWK Konstanz",
     "region": "Baden-Württemberg"
@@ -25,39 +40,14 @@
     "region": "Baden-Württemberg"
   },
   {
-    "slug": "hwk-reutlingen",
-    "name": "HWK Reutlingen",
-    "region": "Baden-Württemberg"
-  },
-  {
     "slug": "hwk-stuttgart",
     "name": "HWK Region Stuttgart",
     "region": "Baden-Württemberg"
   },
   {
-    "slug": "hwk-ulm",
-    "name": "HWK Ulm",
+    "slug": "hwk-reutlingen",
+    "name": "HWK Reutlingen",
     "region": "Baden-Württemberg"
-  },
-  {
-    "slug": "hwk-rhein-main",
-    "name": "HWK Frankfurt-Rhein-Main",
-    "region": "Hessen"
-  },
-  {
-    "slug": "hwk-kassel",
-    "name": "HWK Kassel",
-    "region": "Hessen"
-  },
-  {
-    "slug": "hwk-wiesbaden",
-    "name": "HWK Wiesbaden",
-    "region": "Hessen"
-  },
-  {
-    "slug": "hwk-koblenz",
-    "name": "HWK Koblenz",
-    "region": "Rheinland-Pfalz"
   },
   {
     "slug": "hwk-rheinhessen",
@@ -68,6 +58,16 @@
     "slug": "hwk-trier",
     "name": "HWK Trier",
     "region": "Rheinland-Pfalz"
+  },
+  {
+    "slug": "hwk-ulm",
+    "name": "HWK Ulm",
+    "region": "Baden-Württemberg"
+  },
+  {
+    "slug": "hwk-wiesbaden",
+    "name": "HWK Wiesbaden",
+    "region": "Hessen"
   },
   {
     "slug": "hwk-pfalz",

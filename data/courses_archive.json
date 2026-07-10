@@ -19,6 +19,7 @@
     "course_fee": null,
     "course_fee_display": "—",
     "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 730.0,
       "fee_max": null,
@@ -32,5 +33,40 @@
     "longitude": 9.498614,
     "availability": "available",
     "source_url": "https://www.bz-kassel.de/bildungsangebot/fleischerhandwerk/kursdetail/kurs-1236"
+  },
+  {
+    "chamber_slug": "hwk-konstanz",
+    "chamber_name": "HWK Konstanz",
+    "chamber_region": "Baden-Württemberg",
+    "trade_slug": "elektrotechniker",
+    "trade_name": "Elektrotechniker",
+    "title": "Elektrotechniker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-07-06",
+    "end_date": "2027-01-27",
+    "duration_hours": 1269,
+    "course_fee": 7250.0,
+    "course_fee_display": "7.250 €",
+    "exam_fee_scraped": 2050.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 2050.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "2.050 €"
+    },
+    "city": "Singen",
+    "street": "Lange Straße 20",
+    "zip_code": "78224",
+    "latitude": 47.7546664,
+    "longitude": 8.8426339,
+    "availability": "available",
+    "source_url": "https://www.bildungsakademie.de/seminar/mv_elektro/#uni-kurs-1001020"
   }
 ]

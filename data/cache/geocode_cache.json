@@ -3,6 +3,10 @@
     49.9647693,
     8.2434157
   ],
+  "Allee 76, 74072 Heilbronn, Deutschland": [
+    49.145351,
+    9.2236557
+  ],
   "Am Altenhof 15, 67655 Kaiserslautern, Deutschland": [
     49.4441065,
     7.7686373
@@ -55,9 +59,33 @@
     51.2841009,
     9.498614
   ],
+  "Friedrichstraße 3, 79761 Waldshut-Tiengen, Deutschland": [
+    47.6246072,
+    8.2170138
+  ],
   "Goerdelerstraße 139, 36100 Petersberg, Deutschland": [
     50.5673891,
     9.699491
+  ],
+  "Gutenbergstraße 49, 68167 Mannheim, Deutschland": [
+    49.4936232,
+    8.5038439
+  ],
+  "Hertzstr. 177, 76187 Karlsruhe, Deutschland": [
+    49.039484,
+    8.36939
+  ],
+  "Hertzstraße 177, 76187 Karlsruhe, Deutschland": [
+    49.039484,
+    8.36939
+  ],
+  "Hindenburgstraße 58, 72762 Reutlingen, Deutschland": [
+    48.4857514,
+    9.2063686
+  ],
+  "Holderäckerstraße 37, 70499 Stuttgart, Deutschland": [
+    48.8229051,
+    9.0972983
   ],
   "Im Grein 5, 76829 Landau in der Pfalz, Deutschland": [
     49.2117701,
@@ -71,6 +99,14 @@
     49.4760852,
     8.4080881
   ],
+  "Köllestraße 55, 89077 Ulm, Deutschland": [
+    48.3856229,
+    9.9563226
+  ],
+  "Lange Straße 20, 78224 Singen, Deutschland": [
+    47.7546664,
+    8.8426339
+  ],
   "Loebstr.  18, 54292 Trier, Deutschland": [
     49.775426,
     6.6804464
@@ -78,6 +114,10 @@
   "Loebstraße 18, 54292 Trier, Deutschland": [
     49.7754619,
     6.6805129
+  ],
+  "Raichbergstraße 87, 72072 Tübingen, Deutschland": [
+    48.5004109,
+    9.059163
   ],
   "Rathausstr. 32, 57537 Wissen, Deutschland": [
     50.7821939,
@@ -90,6 +130,10 @@
   "Rudolf-Diesel-Straße 30, 64331 Weiterstadt, Deutschland": [
     49.9011703,
     8.6137976
+  ],
+  "Römerstraße 22, 72488 Sigmaringen, Deutschland": [
+    48.0822981,
+    9.193541
   ],
   "Schlossweg 6, 55756 Herrstein, Deutschland": [
     49.7813929,
@@ -107,6 +151,14 @@
     50.3603382,
     7.5844202
   ],
+  "Steinbeisstraße 38, 88046 Friedrichshafen, Deutschland": [
+    47.6497715,
+    9.5015606
+  ],
+  "Steinhauserstraße 18, 78628 Rottweil, Deutschland": [
+    48.1699796,
+    8.622332
+  ],
   "Umgehungsstraße 1-3, 35043 Marburg, Deutschland": [
     50.7872688,
     8.7666044
@@ -115,8 +167,20 @@
     49.9837081,
     7.5250674
   ],
+  "Wannenäckerstraße 62, 74078 Heilbronn, Deutschland": [
+    49.1847456,
+    9.169312
+  ],
+  "Wasserstraße 19, 77652 Offenburg, Deutschland": [
+    48.4713854,
+    7.9361019
+  ],
   "Wilhelmstr. 20, 53474 Bad Neuenahr-Ahrweiler, Deutschland": [
     50.5456433,
     7.1017081
+  ],
+  "Wirthstraße 28, 79110 Freiburg, Deutschland": [
+    48.0251899,
+    7.8137345
   ]
 }
