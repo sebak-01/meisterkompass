@@ -92,7 +92,7 @@ BFW_COURSE_URL = (
     "https://www.bfw.de/angebot/aufstiegsfortbildung/karlsruhe/"
     "augenoptikmeister-in-teil-1-und-2-wochenendunterricht/"
 )
-BAKER_COURSE_URL = "https://bivsuedwest.de/meistervorbereitungskurse/"
+GLASER_COURSE_URL = "https://www.fenster-fachschule.de/"
 CALW_COURSE_URL = "https://www.handwerk-calw.de/seminare/meistervorbereitungskurse"
 
 IFB_MANNHEIM_LOCATION = {
@@ -105,10 +105,10 @@ BFW_LOCATION = {
     "street": "Daimlerstraße 46",
     "zip_code": "76185",
 }
-BAKER_LOCATION = {
+GLASER_LOCATION = {
     "city": "Karlsruhe",
-    "street": "Ottostraße 9",
-    "zip_code": "76227",
+    "street": "Otto-Wels-Straße 11",
+    "zip_code": "76189",
 }
 CALW_LOCATION = {
     "city": "Nagold",
@@ -194,7 +194,7 @@ class HwkKarlsruheScraper(BaseScraper):
                 for url, fmt, mode in IFB_COURSES
             ],
             (BFW_COURSE_URL, self._parse_bfw_course),
-            (BAKER_COURSE_URL, self._parse_baker_course),
+            (GLASER_COURSE_URL, self._parse_glaser_course),
             (CALW_COURSE_URL, self._parse_calw_courses),
         ]
         for url, parser in providers:
@@ -215,6 +215,7 @@ class HwkKarlsruheScraper(BaseScraper):
     def _external_offer(
         *,
         trade_name: str,
+        parts: list[int],
         format_key: str,
         teaching_mode: str,
         start_date: str | None,
@@ -226,9 +227,9 @@ class HwkKarlsruheScraper(BaseScraper):
         provider: str,
     ) -> RawCourseOffer:
         return RawCourseOffer(
-            title=build_course_title(trade_name, [1, 2]),
+            title=build_course_title(trade_name, parts),
             trade_name=trade_name,
-            parts=[1, 2],
+            parts=parts,
             format_key=format_key,
             teaching_mode=teaching_mode,
             start_date=start_date,
@@ -277,6 +278,7 @@ class HwkKarlsruheScraper(BaseScraper):
             )
             offers.append(self._external_offer(
                 trade_name="Augenoptiker",
+                parts=[1, 2],
                 format_key=format_key,
                 teaching_mode=teaching_mode,
                 start_date=start_date,
@@ -301,6 +303,7 @@ class HwkKarlsruheScraper(BaseScraper):
             return []
         return [self._external_offer(
             trade_name="Augenoptiker",
+            parts=[1, 2],
             format_key="part_time",
             teaching_mode="hybrid",
             start_date=_iso_date(dates.groups()[:3]),
@@ -312,28 +315,24 @@ class HwkKarlsruheScraper(BaseScraper):
             provider="bfw – Unternehmen für Bildung",
         )]
 
-    def _parse_baker_course(self, soup: BeautifulSoup, source_url: str) -> list[RawCourseOffer]:
-        text = (soup.select_one("main") or soup).get_text(" ", strip=True)
-        section_match = re.search(
-            r"Standort Karlsruhe\s+\(Teilzeitkurs\)\s*:(.*?)(?:Prüfungsgebühren|$)",
-            text,
-            re.IGNORECASE | re.DOTALL,
-        )
-        if section_match is None:
+    def _parse_glaser_course(self, soup: BeautifulSoup, source_url: str) -> list[RawCourseOffer]:
+        text = soup.get_text(" ", strip=True)
+        dates = re.search(r"Kursjahr\s+" + DATE_RANGE_RE.pattern, text, re.IGNORECASE)
+        fee_match = re.search(r"Teile\s*1\s*-\s*4\s*:\s*EUR\s*([\d.]+,\d{2})", text, re.IGNORECASE)
+        if dates is None:
             return []
-        section = section_match.group(1)
-        fee_match = re.search(r"beträgt\s+([\d.]+,\d{2})\s+Euro", section, re.IGNORECASE)
         return [self._external_offer(
-            trade_name="Bäcker",
+            trade_name="Glaser",
+            parts=[1, 2, 3, 4],
             format_key="part_time",
-            teaching_mode="presence",
-            start_date=None,
-            end_date=None,
+            teaching_mode="hybrid",
+            start_date=_iso_date(dates.groups()[:3]),
+            end_date=_iso_date(dates.groups()[3:6]),
             course_fee=_euro_amount(fee_match.group(1)) if fee_match else None,
-            location=BAKER_LOCATION,
-            availability=parse_availability(section),
+            location=GLASER_LOCATION,
+            availability=parse_availability(text),
             source_url=source_url,
-            provider="ADB Südwest e.V. Standort Karlsruhe",
+            provider="Fachschule für Glas-, Fenster- und Fassadenbau Karlsruhe",
         )]
 
     def _parse_calw_courses(self, soup: BeautifulSoup, source_url: str) -> list[RawCourseOffer]:
@@ -356,6 +355,7 @@ class HwkKarlsruheScraper(BaseScraper):
                 continue
             offers.append(self._external_offer(
                 trade_name="Kfz.-Techniker",
+                parts=[1, 2],
                 format_key="part_time",
                 teaching_mode="presence",
                 start_date=_iso_date(dates.groups()[:3]),

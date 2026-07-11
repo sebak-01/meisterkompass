@@ -188,24 +188,31 @@ class KarlsruheParserTests(unittest.TestCase):
         self.assertEqual(offers[0].course_fee, 6599.0)
         self.assertEqual(offers[0].teaching_mode, "hybrid")
 
-    def test_baker_provider_keeps_month_only_intake_as_undated(self):
+    def test_glaser_provider_parses_complete_hybrid_course(self):
         soup = BeautifulSoup(
             """
-            <main>
-              <h3>ADB Südwest e.V. Standort Karlsruhe (Teilzeitkurs):</h3>
-              <p>Beginn: Mai 2026 Dauer: ca. 10-12 Monate</p>
-              <p>Die gesamte Kursgebühr für die Vorbereitung zu den
-                 Prüfungsteilen I und II beträgt 3.150,00 Euro.</p>
-              <h3>Prüfungsgebühren bei der Handwerkskammer Karlsruhe:</h3>
+            <main>Der Meisterkurs auf einen Blick
+              Kursjahr 14.09.2026 - 30.07.2027
+              Abschlussziel Vorbereitung auf Meisterprüfung Teile 1-4
+              Kursformat Online-Unterricht, Lernplattform und Praxis
+              Kosten Teile 1-4: EUR 8.100,00
+              Teile 1-2: EUR 7.500,00
             </main>
             """,
             "html.parser",
         )
-        offers = HwkKarlsruheScraper()._parse_baker_course(soup, "https://bivsuedwest.de/course/")
+        offers = HwkKarlsruheScraper()._parse_glaser_course(
+            soup,
+            "https://www.fenster-fachschule.de/",
+        )
 
         self.assertEqual(len(offers), 1)
-        self.assertIsNone(offers[0].start_date)
-        self.assertEqual(offers[0].course_fee, 3150.0)
+        self.assertEqual(offers[0].trade_name, "Glaser")
+        self.assertEqual(offers[0].parts, [1, 2, 3, 4])
+        self.assertEqual(offers[0].start_date, "2026-09-14")
+        self.assertEqual(offers[0].end_date, "2027-07-30")
+        self.assertEqual(offers[0].course_fee, 8100.0)
+        self.assertEqual(offers[0].teaching_mode, "hybrid")
         self.assertEqual(offers[0].city, "Karlsruhe")
 
     def test_calw_parser_uses_listing_card_not_mismatched_slug(self):
@@ -283,6 +290,35 @@ class StuttgartParserTests(unittest.TestCase):
         self.assertIsNone(offer.start_date)
         self.assertEqual(offer.duration_hours, 1160)
         self.assertEqual(offer.course_fee, 6420.0)
+
+    def test_baker_course_uses_stuttgart_full_time_section(self):
+        soup = BeautifulSoup(
+            """
+            <main>
+              <h3>ADB Südwest e.V. Standort Stuttgart (Vollzeitkurs):</h3>
+              <p>Lehrgangsdauer: MK 2027 (Gesamtkurs)</p>
+              <p>Teile 1-4: 11.01. bis 25.06.2027 (inkl. Prüfungszeitraum)</p>
+              <p>Für die Teile 1-2: 22.03. bis 25.06.2027</p>
+              <p>Die gesamte Kursgebühr für die Vorbereitung zu den
+                 Prüfungsteilen beträgt 4.950,00 Euro.</p>
+              <h3>ADB Südwest e.V. Standort Karlsruhe (Teilzeitkurs):</h3>
+              <p>Beginn Mai 2026, 3.150,00 Euro</p>
+            </main>
+            """,
+            "html.parser",
+        )
+        offers = HwkStuttgartScraper._parse_baker_course(
+            soup,
+            "https://bivsuedwest.de/meistervorbereitungskurse/",
+        )
+
+        self.assertEqual(len(offers), 1)
+        self.assertEqual(offers[0].trade_name, "Bäcker")
+        self.assertEqual(offers[0].parts, [1, 2, 3, 4])
+        self.assertEqual(offers[0].start_date, "2027-01-11")
+        self.assertEqual(offers[0].end_date, "2027-06-25")
+        self.assertEqual(offers[0].course_fee, 4950.0)
+        self.assertEqual(offers[0].city, "Stuttgart")
 
 
 class UlmParserTests(unittest.TestCase):
