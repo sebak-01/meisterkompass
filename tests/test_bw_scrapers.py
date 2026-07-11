@@ -144,6 +144,101 @@ class KarlsruheParserTests(unittest.TestCase):
         self.assertEqual(parse_karlsruhe_availability("Warteliste"), "waitlist")
         self.assertEqual(parse_karlsruhe_availability("Termin folgt"), "unknown")
 
+    def test_ifb_courses_parse_each_dated_run(self):
+        soup = BeautifulSoup(
+            """
+            <main>
+              <p>Kurs-Beginn: 21.09.2026 (Der Kurs ist ausgebucht.)
+                 Kurs-Abschluss: 25.03.2027</p>
+              <p>Kurs-Beginn: 22.03.2027 Kurs-Abschluss: 24.09.2027</p>
+              <p>Kurs-Gebühr: 9.950,- EUR</p>
+            </main>
+            """,
+            "html.parser",
+        )
+        offers = HwkKarlsruheScraper()._parse_ifb_courses(
+            soup,
+            "https://ifb-karlsruhe.de/meisterkurs-augenoptik-vollzeit/",
+            "full_time",
+            "presence",
+        )
+
+        self.assertEqual([offer.start_date for offer in offers], ["2026-09-21", "2027-03-22"])
+        self.assertTrue(all(offer.course_fee == 9950.0 for offer in offers))
+        self.assertEqual([offer.availability for offer in offers], ["full", "unknown"])
+        self.assertTrue(all(offer.city == "Mannheim" for offer in offers))
+
+    def test_bfw_course_parses_hybrid_weekend_offer(self):
+        soup = BeautifulSoup(
+            """
+            <main>
+              Nächster Kurstermin 09.10.2026 - 20.02.2028
+              Der Kurs dauert 18 Monate. 18 Präsenztermine und 6 Onlinetermine.
+              Kosten € 6.599,00
+              Bildungsstätte Daimlerstraße 46 76185 Karlsruhe
+            </main>
+            """,
+            "html.parser",
+        )
+        offers = HwkKarlsruheScraper()._parse_bfw_course(soup, "https://www.bfw.de/course/")
+
+        self.assertEqual(len(offers), 1)
+        self.assertEqual(offers[0].start_date, "2026-10-09")
+        self.assertEqual(offers[0].end_date, "2028-02-20")
+        self.assertEqual(offers[0].course_fee, 6599.0)
+        self.assertEqual(offers[0].teaching_mode, "hybrid")
+
+    def test_baker_provider_keeps_month_only_intake_as_undated(self):
+        soup = BeautifulSoup(
+            """
+            <main>
+              <h3>ADB Südwest e.V. Standort Karlsruhe (Teilzeitkurs):</h3>
+              <p>Beginn: Mai 2026 Dauer: ca. 10-12 Monate</p>
+              <p>Die gesamte Kursgebühr für die Vorbereitung zu den
+                 Prüfungsteilen I und II beträgt 3.150,00 Euro.</p>
+              <h3>Prüfungsgebühren bei der Handwerkskammer Karlsruhe:</h3>
+            </main>
+            """,
+            "html.parser",
+        )
+        offers = HwkKarlsruheScraper()._parse_baker_course(soup, "https://bivsuedwest.de/course/")
+
+        self.assertEqual(len(offers), 1)
+        self.assertIsNone(offers[0].start_date)
+        self.assertEqual(offers[0].course_fee, 3150.0)
+        self.assertEqual(offers[0].city, "Karlsruhe")
+
+    def test_calw_parser_uses_listing_card_not_mismatched_slug(self):
+        soup = BeautifulSoup(
+            """
+            <main>
+              <h2>Meistervorbereitungskurse im KFZ-Handwerk</h2>
+              <p>Kursgebühr: 4.200,00 € (Ratenzahlung)</p>
+              <div class="ph-event">
+                MEISTERVORBEREITUNGSKURS TEIL 3
+                11.01.2027 bis 31.07.2027
+                <a href="/seminare/termindetails/kfz-looking-slug">Details</a>
+              </div>
+              <div class="ph-event">
+                MEISTERVORBEREITUNGSKURS IM KFZ-HANDWERK (Teile 1+2)
+                01.02.2027 von 18:00 Uhr bis 18.12.2027 18:15 Uhr
+                <a href="/seminare/termindetails/wrong-historical-slug">Details</a>
+              </div>
+            </main>
+            """,
+            "html.parser",
+        )
+        offers = HwkKarlsruheScraper()._parse_calw_courses(
+            soup,
+            "https://www.handwerk-calw.de/seminare/meistervorbereitungskurse",
+        )
+
+        self.assertEqual(len(offers), 1)
+        self.assertEqual(offers[0].start_date, "2027-02-01")
+        self.assertEqual(offers[0].end_date, "2027-12-18")
+        self.assertEqual(offers[0].course_fee, 4200.0)
+        self.assertTrue(offers[0].source_url.endswith("/wrong-historical-slug"))
+
 
 class StuttgartParserTests(unittest.TestCase):
     def test_manual_exam_fees(self):
