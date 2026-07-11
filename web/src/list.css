@@ -177,6 +177,14 @@
   white-space: nowrap;
 }
 .course-table td { padding: .8rem 1rem; border-bottom: 1px solid var(--line-soft); vertical-align: top; }
+.chamber-cell {
+  width: 185px;
+  max-width: 185px;
+  white-space: normal;
+  text-wrap: balance;
+  line-height: 1.3;
+  font-size: .82rem;
+}
 .course-table tbody tr { transition: background .12s; }
 .course-table tbody tr:last-child td { border-bottom: none; }
 .course-table tbody tr:hover { background: var(--card-2); }
