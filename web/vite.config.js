@@ -14,25 +14,31 @@ const readChambers = () =>
 
 // Pre-render the default Kursfinder table into index.html at build time (SSG):
 // instant first paint, crawlable content, works without JS. The runtime JS
-// re-renders idempotently on load using the same render.js module.
+// re-renders idempotently on load using the same render.js module. The page's
+// title, meta descriptions, JSON-LD and eyebrow also carry {{REGIONS}} /
+// {{REGIONS_SHORT}} tokens filled from chambers.json so they never drift.
 function prerenderList() {
   return {
     name: "prerender-list",
     async transformIndexHtml(html, ctx) {
       if (!ctx.filename.replace(/\\/g, "/").endsWith("/index.html")) return html;
       const courses = JSON.parse(readFileSync(resolve(repoRoot, "data/courses.json"), "utf8"));
-      const { applyFilters, rowHtml, emptyRow, pageItems, defaultState } = await import("./src/render.js");
+      const { applyFilters, rowHtml, emptyRow, pageItems, defaultState, regionsPhrase, regionsShort } = await import("./src/render.js");
+      const { esc } = await import("./src/util.js");
       const today = new Date().toISOString().slice(0, 10);
       const state = defaultState();
       const filtered = applyFilters(courses, state, today);
       const items = pageItems(filtered, state);
       const rows = items.length ? items.map(rowHtml).join("") : emptyRow();
+      const chamberData = readChambers();
       const chambers = new Set(filtered.map((c) => c.chamber_slug)).size;
       return html
         .replace('<tbody id="course-tbody"></tbody>', `<tbody id="course-tbody">${rows}</tbody>`)
         .replace('id="count-courses">0<', `id="count-courses">${filtered.length}<`)
         .replace('id="count-chambers">0<', `id="count-chambers">${chambers}<`)
-        .replace('id="results-count">0<', `id="results-count">${filtered.length}<`);
+        .replace('id="results-count">0<', `id="results-count">${filtered.length}<`)
+        .replaceAll("{{REGIONS}}", esc(regionsPhrase(chamberData)))
+        .replaceAll("{{REGIONS_SHORT}}", esc(regionsShort(chamberData)));
     },
   };
 }

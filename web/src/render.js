@@ -166,11 +166,19 @@ const byRegion = (chambers) => {
 // German state names are otherwise article-less; only "das Saarland" needs one.
 const REGION_DATIVE = { Saarland: "dem Saarland" };
 
+/** Region names in German collation order, e.g. ["Hessen", "Rheinland-Pfalz", "Saarland"]. */
+const regionsSorted = (chambers) => [...byRegion(chambers).keys()].sort(alphabetically);
+
 /** "Hessen, Rheinland-Pfalz und dem Saarland" — dative enumeration for prose. */
 export function regionsPhrase(chambers) {
-  const regions = [...byRegion(chambers).keys()].sort(alphabetically).map((r) => REGION_DATIVE[r] || r);
+  const regions = regionsSorted(chambers).map((r) => REGION_DATIVE[r] || r);
   if (regions.length <= 1) return regions.join("");
   return `${regions.slice(0, -1).join(", ")} und ${regions.at(-1)}`;
+}
+
+/** "Hessen & Rheinland-Pfalz & Saarland" — compact nominative list for title/eyebrow. */
+export function regionsShort(chambers) {
+  return regionsSorted(chambers).join(" & ");
 }
 
 /** <li> list of full chamber names ("HWK X" → "Handwerkskammer X"). */
