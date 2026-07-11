@@ -36,7 +36,7 @@ export const ANMELDEGEBUEHR_NOTE =
 
 /** HWK Region Stuttgart charges a separate practical-exam fee for Part I. */
 export const STUTTGART_PRACTICAL_EXAM_NOTE =
-  "Die HWK Region Stuttgart erhebt zusätzlich für die Abnahme der praktischen Prüfung eine Sondergebühr in Höhe von 250,00 €.";
+  "Die HWK Region Stuttgart erhebt zusätzlich für die Abnahme der praktischen Prüfung eine Sondergebühr in Höhe von 250 €.";
 
 /** HWK Reutlingen may pass on additional practical-exam expenses for Part I. */
 export const REUTLINGEN_ADDITIONAL_EXAM_NOTE =
