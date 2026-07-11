@@ -430,6 +430,49 @@ class FreiburgParserTests(unittest.TestCase):
         self.assertEqual(offer.teaching_mode, "presence")
         self.assertEqual(offer.availability, "available")
 
+    def test_sold_out_sibling_does_not_mark_selected_appointment_full(self):
+        soup = BeautifulSoup(
+            """
+            <main>
+              Termine: 16.11.2027 - 26.05.2028, Freiburg
+              - 17.11.2026 - 28.05.2027, Freiburg (ausgebucht)
+              Meistervorbereitungskurs Metallbauer/in, Teile 1+2
+              Zeiten: Mo-Do 8:00-16:15 Uhr
+              Dauer: 850 Unterrichtsstunden
+              Preis: € 9800,00
+            </main>
+            """,
+            "html.parser",
+        )
+        offer = HwkFreiburgScraper._parse_appointment(
+            soup,
+            "https://www.gewerbeakademie.de/weiterbildung/kursangebot/seminar/mvkmetallb/34/",
+            FREIBURG_COURSES["mvkmetallb"],
+        )
+
+        self.assertEqual(offer.start_date, "2027-11-16")
+        self.assertEqual(offer.availability, "available")
+
+    def test_selected_appointment_keeps_explicit_sold_out_status(self):
+        soup = BeautifulSoup(
+            """
+            <main>
+              Termine: 16.11.2027 - 26.05.2028, Freiburg (ausgebucht)
+              Zeiten: Mo-Do 8:00-16:15 Uhr
+              Dauer: 850 Unterrichtsstunden
+              Preis: € 9800,00
+            </main>
+            """,
+            "html.parser",
+        )
+        offer = HwkFreiburgScraper._parse_appointment(
+            soup,
+            "https://www.gewerbeakademie.de/weiterbildung/kursangebot/seminar/mvkmetallb/34/",
+            FREIBURG_COURSES["mvkmetallb"],
+        )
+
+        self.assertEqual(offer.availability, "full")
+
 
 class KonstanzParserTests(unittest.TestCase):
     def test_part_iv_approximate_exam_fee(self):
