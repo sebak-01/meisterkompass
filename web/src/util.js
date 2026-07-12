@@ -34,17 +34,15 @@ export const TOOLTIP_HESSEN =
 export const ANMELDEGEBUEHR_NOTE =
   "Die HWK Frankfurt-Rhein-Main erhebt möglicherweise eine zusätzliche Anmeldegebühr. Informiere dich zu den genauen Gebühren bei der HWK Frankfurt-Rhein-Main.";
 
-/** HWK Region Stuttgart charges a separate practical-exam fee for Part I. */
-export const STUTTGART_PRACTICAL_EXAM_NOTE =
-  "Die HWK Region Stuttgart erhebt zusätzlich für die Abnahme der praktischen Prüfung eine Sondergebühr in Höhe von 250 €.";
-
+/** HWK Schwaben / HWK Region Stuttgart: trade-specific exam fees may apply on top of published fees. */
+export const TRADE_SPECIFIC_EXAM_NOTE =
+  "Die Kammer erhebt möglicherweise zzgl. gewerkspezifische Prüfungsgebühren.";
 /** HWK Reutlingen may pass on additional practical-exam expenses for Part I. */
 export const REUTLINGEN_ADDITIONAL_EXAM_NOTE =
   "Bei Meisterprüfungen, für die von der HWK Reutlingen zusätzlich Personal-, Material-, Raum- und Sachkosten geleistet werden, ist die Gebühr entsprechend zu erhöhen. Je nach Gewerk liegt der Rahmen zwischen 300 € und 1.500 €";
 
 /** HWK Schwaben may charge trade-specific exam surcharges on top of the published base fees. */
-export const SCHWABEN_ADDITIONAL_EXAM_NOTE =
-  "Die Kammer erhebt möglicherweise zzgl. gewerkspezifische Prüfungsgebühren.";
+export const SCHWABEN_ADDITIONAL_EXAM_NOTE = TRADE_SPECIFIC_EXAM_NOTE;
 
 /** Slugs of the three Hessen chambers — used by render.js and afbg.js to select TOOLTIP_HESSEN. */
 export const HESSEN_CHAMBERS = new Set(["hwk-rhein-main", "hwk-wiesbaden", "hwk-kassel"]);
