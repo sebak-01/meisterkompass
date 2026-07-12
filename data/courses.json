@@ -37741,13 +37741,13 @@
     "duration_hours": 504,
     "course_fee": 4400.0,
     "course_fee_display": "4.400 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 500.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": null,
+      "fee": 500.0,
       "fee_max": null,
       "qualifier": "",
-      "display": ""
+      "display": "500 €"
     },
     "city": "Kempten",
     "street": "Kotterner Straße 39",
@@ -38791,13 +38791,13 @@
     "duration_hours": 1100,
     "course_fee": 7950.0,
     "course_fee_display": "7.950 €",
-    "exam_fee_scraped": 500.0,
+    "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 500.0,
+      "fee": null,
       "fee_max": null,
       "qualifier": "",
-      "display": "500 €"
+      "display": ""
     },
     "city": "Augsburg",
     "street": "Siebentischstraße 52 - 58",
@@ -38826,13 +38826,13 @@
     "duration_hours": 1100,
     "course_fee": 7950.0,
     "course_fee_display": "7.950 €",
-    "exam_fee_scraped": 500.0,
+    "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 500.0,
+      "fee": null,
       "fee_max": null,
       "qualifier": "",
-      "display": "500 €"
+      "display": ""
     },
     "city": "Augsburg",
     "street": "Siebentischstraße 52 - 58",
@@ -38861,13 +38861,13 @@
     "duration_hours": 1300,
     "course_fee": 8250.0,
     "course_fee_display": "8.250 €",
-    "exam_fee_scraped": 500.0,
+    "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 500.0,
+      "fee": null,
       "fee_max": null,
       "qualifier": "",
-      "display": "500 €"
+      "display": ""
     },
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
@@ -38896,13 +38896,13 @@
     "duration_hours": 1300,
     "course_fee": 8250.0,
     "course_fee_display": "8.250 €",
-    "exam_fee_scraped": 500.0,
+    "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 500.0,
+      "fee": null,
       "fee_max": null,
       "qualifier": "",
-      "display": "500 €"
+      "display": ""
     },
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
@@ -38931,13 +38931,13 @@
     "duration_hours": 1300,
     "course_fee": 8250.0,
     "course_fee_display": "8.250 €",
-    "exam_fee_scraped": 500.0,
+    "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 500.0,
+      "fee": null,
       "fee_max": null,
       "qualifier": "",
-      "display": "500 €"
+      "display": ""
     },
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
@@ -38966,13 +38966,13 @@
     "duration_hours": 900,
     "course_fee": 7750.0,
     "course_fee_display": "7.750 €",
-    "exam_fee_scraped": 500.0,
+    "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 500.0,
+      "fee": null,
       "fee_max": null,
       "qualifier": "",
-      "display": "500 €"
+      "display": ""
     },
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
@@ -39001,13 +39001,13 @@
     "duration_hours": 900,
     "course_fee": 7750.0,
     "course_fee_display": "7.750 €",
-    "exam_fee_scraped": 500.0,
+    "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 500.0,
+      "fee": null,
       "fee_max": null,
       "qualifier": "",
-      "display": "500 €"
+      "display": ""
     },
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
@@ -40781,13 +40781,13 @@
     "duration_hours": 1497,
     "course_fee": 8250.0,
     "course_fee_display": "8.250 €",
-    "exam_fee_scraped": 500.0,
+    "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 500.0,
+      "fee": null,
       "fee_max": null,
       "qualifier": "",
-      "display": "500 €"
+      "display": ""
     },
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
@@ -40816,13 +40816,13 @@
     "duration_hours": 1497,
     "course_fee": 8000.0,
     "course_fee_display": "8.000 €",
-    "exam_fee_scraped": 500.0,
+    "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 500.0,
+      "fee": null,
       "fee_max": null,
       "qualifier": "",
-      "display": "500 €"
+      "display": ""
     },
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
@@ -40851,13 +40851,13 @@
     "duration_hours": 1497,
     "course_fee": 8000.0,
     "course_fee_display": "8.000 €",
-    "exam_fee_scraped": 500.0,
+    "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 500.0,
+      "fee": null,
       "fee_max": null,
       "qualifier": "",
-      "display": "500 €"
+      "display": ""
     },
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
@@ -40886,13 +40886,13 @@
     "duration_hours": 1497,
     "course_fee": 8000.0,
     "course_fee_display": "8.000 €",
-    "exam_fee_scraped": 500.0,
+    "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 500.0,
+      "fee": null,
       "fee_max": null,
       "qualifier": "",
-      "display": "500 €"
+      "display": ""
     },
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
