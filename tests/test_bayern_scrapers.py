@@ -246,6 +246,26 @@ class BavariaRegistrationTests(unittest.TestCase):
         self.assertEqual(offer.course_fee, 6850.0)
         self.assertEqual(offer.duration_hours, 584)
 
+    def test_schwaben_removes_exam_fee_qualifier(self):
+        offer = RawCourseOffer(
+            title="Elektrotechniker (Teile I + II)",
+            trade_name="Elektrotechniker",
+            parts=[1, 2],
+            format_key="full_time",
+            teaching_mode="presence",
+            start_date="2028-11-06",
+            end_date="2029-06-08",
+            duration_hours=1360,
+            course_fee=8150.0,
+            exam_fee_scraped=500.0,
+            exam_fee_qualifier="ca.",
+            city="Kempten",
+        )
+
+        result = HwkSchwabenScraper().postprocess_offer(offer)
+        self.assertEqual(result.exam_fee_scraped, 500.0)
+        self.assertEqual(result.exam_fee_qualifier, "")
+
 
 if __name__ == "__main__":
     unittest.main()

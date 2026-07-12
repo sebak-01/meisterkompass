@@ -1,5 +1,6 @@
 """Courses from the Handwerkskammer für Schwaben."""
 
+from .base import RawCourseOffer
 from .hwk_bayern import BavariaCatalogue, BavariaOdavScraper
 
 
@@ -19,3 +20,7 @@ class HwkSchwabenScraper(BavariaOdavScraper):
         default_zip="86161",
         implicit_trade_parts=True,
     )
+
+    def postprocess_offer(self, offer: RawCourseOffer) -> RawCourseOffer:
+        offer.exam_fee_qualifier = ""
+        return offer
