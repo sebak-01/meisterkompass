@@ -293,13 +293,13 @@ function buildExamLabel(g) {
   if (currentCid === "hwk-reutlingen" && g.parts.includes(1)) {
     label += ' <button class="fee-info-btn-calc" type="button" data-tooltip="' + REUTLINGEN_ADDITIONAL_EXAM_NOTE + '">i</button>';
   } else if (g.examFeeMax) {
-    const tt = "Die Spanne der Prüfungsgebühr je Teil entstammt dem offiziellen Gebührenverzeichnis. Die genaue Gebühr innerhalb dieser Spanne wird von der Kammer festgelegt. Erkundige dich gerne bei der jeweiligen Kammer.";
+    const tt = "Die Spanne der Prüfungsgebühr je Teil entstammt dem offiziellen Gebührenverzeichnis. Die genaue Gebühr innerhalb dieser Spanne wird von der Kammer festgelegt. Erkundige dich gerne bei der Kammer.";
     const span = Math.round(g.examFeeMin).toLocaleString("de-DE") + " bis " + Math.round(g.examFeeMax).toLocaleString("de-DE") + " €";
     label += ' <span class="fee-info-wrap-calc"><small style="color:var(--text-lt)">' + span + '</small><button class="fee-info-btn-calc" type="button" data-tooltip="' + tt + '">i</button></span>';
   } else if (g.qualifier) {
     const tt2 = g.qualifier === "ca."
       ? TOOLTIP_APPROXIMATE
-      : "Die Prüfungsgebühr je Teil entstammt dem offiziellen Gebührenverzeichnis. Dies ist die Gebühr, die maximal erhoben werden kann. Häufig ist die Prüfungsgebühr tatsächlich niedriger. Erkundige dich gerne bei der jeweiligen Kammer.";
+      : "Die Prüfungsgebühr je Teil entstammt dem offiziellen Gebührenverzeichnis. Dies ist die Gebühr, die maximal erhoben werden kann. Häufig ist die Prüfungsgebühr tatsächlich niedriger. Erkundige dich bitte bei der Kammer.";
     const qualifierAmount = Math.round(g.examFeeMin).toLocaleString("de-DE") + " €";
     label += ' <span class="fee-info-wrap-calc"><small style="color:var(--text-lt)">' + g.qualifier + " " + qualifierAmount + '</small><button class="fee-info-btn-calc" type="button" data-tooltip="' + tt2 + '">i</button></span>';
   } else if (g.examFee && currentCid && HESSEN_CHAMBERS.has(currentCid)) {

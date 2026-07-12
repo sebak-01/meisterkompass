@@ -16,7 +16,7 @@ export const esc = (s) =>
 
 /** HWK Koblenz: fee carries a "bis zu" qualifier — maximal amount. */
 export const TOOLTIP_QUALIFIER =
-  "Die Prüfungsgebühr je Teil entstammt dem offiziellen Gebührenverzeichnis. Dies ist die Gebühr, die maximal erhoben werden kann. Häufig ist die Prüfungsgebühr tatsächlich niedriger. Erkundige dich bitte bei der jeweiligen Kammer.";
+  "Die Prüfungsgebühr je Teil entstammt dem offiziellen Gebührenverzeichnis. Dies ist die Gebühr, die maximal erhoben werden kann. Häufig ist die Prüfungsgebühr tatsächlich niedriger. Erkundige dich bitte bei der Kammer.";
 
 /** Published fee contains an explicitly approximate component. */
 export const TOOLTIP_APPROXIMATE =
@@ -24,7 +24,7 @@ export const TOOLTIP_APPROXIMATE =
 
 /** HWK Rheinhessen: fee is a range (fee … fee_max). */
 export const TOOLTIP_RANGE =
-  "Die Spanne der Prüfungsgebühr je Teil entstammt dem offiziellen Gebührenverzeichnis. Die genaue Gebühr innerhalb dieser Spanne wird von der Kammer festgelegt. Erkundige dich bitte bei der jeweiligen Kammer.";
+  "Die Spanne der Prüfungsgebühr je Teil entstammt dem offiziellen Gebührenverzeichnis. Die genaue Gebühr innerhalb dieser Spanne wird von der Kammer festgelegt. Erkundige dich bitte bei der Kammer.";
 
 /** HWK Frankfurt-Rhein-Main, HWK Wiesbaden, HWK Kassel: exact fee from fee schedule, subject to change. */
 export const TOOLTIP_HESSEN =
