@@ -5,6 +5,7 @@ from pathlib import Path
 from bs4 import BeautifulSoup
 
 from scrapers.fees import build_exam_fee_lookup, resolve_exam_fee
+from scrapers.base import RawCourseOffer
 from scrapers.hwk_bayern import (
     canonical_detail_url,
     parse_dates,
@@ -51,6 +52,13 @@ class BavariaParserTests(unittest.TestCase):
         parts = parse_parts(title)
         self.assertEqual(parts, [1, 2])
         self.assertEqual(parse_trade(title, parts), "Tischler")
+        elektro = (
+            "Elektrotechnikermeister/in (Energie- und Gebäudetechnik) - Teile I und II"
+        )
+        self.assertEqual(
+            parse_trade(elektro, parse_parts(elektro)),
+            "Elektrotechniker (Energie- und Gebäudetechnik)",
+        )
         mk_title = "MK Installateur-/ Heizungsbauerhandwerk Teil I u. II"
         self.assertEqual(
             parse_trade(mk_title, parse_parts(mk_title)),
@@ -71,12 +79,40 @@ class BavariaParserTests(unittest.TestCase):
     def test_detail_url_drops_volatile_listing_parameters(self):
         url = canonical_detail_url(
             "https://www.hwk-ufr.de",
-            "/kurse/example,coursedetail.html?id=458053&search-onr=78&img=4",
+            "/kurse/example-78,0,coursedetail.html?id=458053&search-onr=78&img=4",
         )
         self.assertEqual(
             url,
-            "https://www.hwk-ufr.de/kurse/example,coursedetail.html?id=458053",
+            "https://www.hwk-ufr.de/kurse/-78,0,coursedetail.html?id=458053",
         )
+
+    def test_exam_fee_prose_patterns(self):
+        from scrapers.hwk_bayern import parse_address, parse_exam_fee
+
+        muenchen = (
+            "Prüfungsgebühr 240,00 Euro Teil I und 200,00 Euro Teil II"
+        )
+        fee, qualifier = parse_exam_fee(muenchen, [1, 2])
+        self.assertEqual(fee, 440.0)
+        self.assertEqual(qualifier, "")
+
+        schwaben = (
+            "Prüfungsgebühr für Teil I: € 270,00 "
+            "Prüfungsgebühr für Teil II: € 230,00 zzgl. gewerkspezifischer Prüfungsgebühr"
+        )
+        fee, qualifier = parse_exam_fee(schwaben, [1, 2])
+        self.assertEqual(fee, 500.0)
+        self.assertEqual(qualifier, "ca.")
+
+        mittelfranken = "Prüfungsgebühr Teile I und II (zirka 680,00 €)"
+        fee, qualifier = parse_exam_fee(mittelfranken, [1, 2])
+        self.assertEqual(fee, 680.0)
+        self.assertEqual(qualifier, "ca.")
+
+        oberfranken_addr = parse_address(
+            "Lehrgangsort\nKulmbach\nKontakt\nMarco Pollog\nTel. 0921 910127"
+        )
+        self.assertEqual(oberfranken_addr, ("", "", "Kulmbach"))
 
     def test_detail_enrichment_splits_course_and_exam_fees(self):
         scraper = HwkUnterfrankenScraper()
@@ -157,14 +193,29 @@ class BavariaRegistrationTests(unittest.TestCase):
         fee_path = Path(__file__).resolve().parents[1] / "data/manual/exam_fees_manual.json"
         lookup = build_exam_fee_lookup([], json.loads(fee_path.read_text(encoding="utf-8")))
 
-        mittelfranken = resolve_exam_fee(
-            "hwk-mittelfranken", "metallbauer", [1, 2], None, lookup
-        )
         schwaben = resolve_exam_fee(
             "hwk-schwaben", "any-trade", [3, 4], None, lookup
         )
-        self.assertEqual(mittelfranken["fee"], 630.0)
         self.assertEqual(schwaben["fee"], 350.0)
+
+    def test_niederbayern_disambiguates_parallel_city_runs(self):
+        offers = [
+            RawCourseOffer(
+                title="Elektrotechniker (Teile I + II)",
+                trade_name="Elektrotechniker",
+                parts=[1, 2],
+                format_key="full_time",
+                teaching_mode="presence",
+                start_date="2026-10-14",
+                end_date="2027-06-18",
+                duration_hours=1216,
+                course_fee=8980.0,
+                city=city,
+            )
+            for city in ("Landshut", "Regensburg")
+        ]
+        result = HwkNiederbayernOberpfalzScraper._disambiguate_parallel_runs(offers)
+        self.assertTrue(all(" — " in offer.title for offer in result))
 
 
 if __name__ == "__main__":

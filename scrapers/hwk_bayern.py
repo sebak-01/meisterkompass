@@ -115,6 +115,26 @@ def parse_parts(title: str, *, implicit_trade_parts: bool = False) -> list[int]:
     return []
 
 
+def _trade_specialization(title: str, canonical: str) -> str:
+    match = re.search(
+        rf"{re.escape(canonical)}(?:meister/in|meister|meisterschule)?\s*\(([^)]+)\)",
+        title,
+        re.IGNORECASE,
+    )
+    if not match:
+        match = re.search(
+            r"(?:meister/in|meister)\s*\(([^)]+)\)\s*-",
+            title,
+            re.IGNORECASE,
+        )
+    if not match:
+        return canonical
+    spec = match.group(1).strip()
+    if spec.lower().startswith("fachrichtung "):
+        spec = spec.split(None, 1)[1]
+    return f"{canonical} ({spec})"
+
+
 def parse_trade(title: str, parts: list[int]) -> str | None:
     if not parts or set(parts) <= {3, 4}:
         return None
@@ -126,7 +146,7 @@ def parse_trade(title: str, parts: list[int]) -> str | None:
         return "Fahrzeuglackierer"
     for source, canonical in TRADE_ALIASES.items():
         if source in lower:
-            return canonical
+            return _trade_specialization(title, canonical)
     return None
 
 
@@ -176,27 +196,126 @@ def canonical_detail_url(base_url: str, href: str) -> str:
     absolute = urljoin(base_url, href)
     split = urlsplit(absolute)
     course_id = parse_qs(split.query).get("id", [""])[0]
-    query = urlencode({"id": course_id}) if course_id else ""
-    return urlunsplit((split.scheme, split.netloc, split.path, query, ""))
+    if not course_id:
+        return absolute
+    prefix_match = re.search(r"(\d+),0,coursedetail\.html", split.path)
+    if prefix_match:
+        prefix = prefix_match.group(1)
+    else:
+        prefix = parse_qs(split.query).get("search-onr", ["0"])[0]
+    path = f"/kurse/-{prefix},0,coursedetail.html"
+    return urlunsplit((split.scheme, split.netloc, path, urlencode({"id": course_id}), ""))
+
+
+def _section_text(text: str, heading: str, *, stop_headings: tuple[str, ...]) -> str:
+    index = text.lower().find(heading.lower())
+    if index < 0:
+        return ""
+    block = text[index:]
+    end = len(block)
+    for stop in stop_headings:
+        pos = block.find(f"\n{stop}\n")
+        if pos > 0:
+            end = min(end, pos)
+    return block[:end]
 
 
 def parse_address(text: str) -> tuple[str, str, str] | None:
-    index = text.lower().find("lehrgangsort")
-    if index < 0:
+    block = _section_text(
+        text,
+        "Lehrgangsort",
+        stop_headings=("Kontakt", "Details", "Angebotsnummer", "Unterricht", "Information"),
+    )
+    if not block:
         return None
-    block = text[index:index + 500]
-    match = re.search(r"(\d{5})\s+([^\n|]+)", block)
-    if not match or match.group(1) == "00000":
-        return None
-    city = match.group(2).strip(" ,")
-    lines = block[:match.start()].splitlines()
-    street = ""
-    for candidate in reversed(lines):
-        candidate = candidate.strip()
-        if candidate and candidate.lower() != "lehrgangsort" and re.search(r"\d", candidate):
-            street = candidate
-            break
-    return street, match.group(1), city
+    lines = [
+        line.strip()
+        for line in block.splitlines()
+        if line.strip() and line.strip().lower() != "lehrgangsort"
+    ]
+    for index, line in enumerate(lines):
+        match = re.match(r"(\d{5})\s+(.+)", line)
+        if not match or match.group(1) == "00000":
+            continue
+        street = ""
+        if index > 0 and re.search(r"\d", lines[index - 1]):
+            street = lines[index - 1]
+        return street, match.group(1), match.group(2).strip(" ,")
+    if lines:
+        city = lines[0]
+        if city and len(city) < 60 and not re.search(r"@|tel\.|telefon|--at--", city, re.I):
+            return "", "", city
+    return None
+
+
+def _amount_from_match(match: re.Match, whole_group: int, cents_group: int) -> float:
+    cents = match.group(cents_group) or "00"
+    return float(match.group(whole_group).replace(".", "") + "." + cents)
+
+
+def parse_exam_fee(text: str, parts: list[int]) -> tuple[float | None, str]:
+    """Parse Bavarian ODAV exam-fee prose and structured fee blocks."""
+    structured = parse_euro(text, "Prüfung")
+    if structured is not None:
+        return structured, ""
+
+    lower = text.lower()
+    qualifier = ""
+    if any(word in lower for word in ("zirka", "ca.", "circa", "zzgl.")):
+        qualifier = "ca."
+
+    part_amounts: dict[int, float] = {}
+    patterns = (
+        r"Prüfungsgebühr(?:\s+für)?\s+(?:den\s+)?Teil\s+(I{1,3}|IV)\s*[:：]?\s*(?:€\s*)?"
+        r"([\d.]+),(\d{2})",
+        r"Prüfungsgebühr\s+([\d.]+),(\d{2})\s*Euro\s+Teil\s+(I{1,3}|IV)",
+        r"([\d.]+),(\d{2})\s*Euro\s+Teil\s+(I{1,3}|IV)\b",
+    )
+    for pattern in patterns:
+        for match in re.finditer(pattern, text, re.IGNORECASE):
+            if pattern.startswith(r"Prüfungsgebühr(?:\s+für)?"):
+                part = ROMAN[match.group(1).upper()]
+                amount = _amount_from_match(match, 2, 3)
+            elif pattern.startswith(r"Prüfungsgebühr\s+"):
+                part = ROMAN[match.group(3).upper()]
+                amount = _amount_from_match(match, 1, 2)
+            else:
+                part = ROMAN[match.group(3).upper()]
+                amount = _amount_from_match(match, 1, 2)
+            part_amounts[part] = amount
+
+    if not part_amounts:
+        combo = re.search(
+            r"Prüfungsgebühr\s+Teile?\s+(?:I\s+und\s+II|III\s+und\s+IV|I{1,3}\s+und\s+II)"
+            r".*?\(?\s*(?:zirka|ca\.|circa)?\s*([\d.]+),(\d{2})\s*€",
+            text,
+            re.IGNORECASE | re.DOTALL,
+        )
+        if combo and set(parts) <= {1, 2, 3, 4}:
+            return _amount_from_match(combo, 1, 2), "ca." if combo.group(0).lower().find("zirka") >= 0 or "ca." in combo.group(0).lower() else qualifier
+
+    if set(parts) == {3, 4}:
+        generic = re.search(
+            r"Prüfungsgebühr.*?(?:Teile?\s+III\s+und\s+IV|die\s+Teile\s+III\s+und\s+IV).*?"
+            r"(?:je\s*)?(?:€\s*)?([\d.]+),(\d{2})",
+            text,
+            re.IGNORECASE | re.DOTALL,
+        )
+        if generic:
+            return _amount_from_match(generic, 1, 2) * 2, qualifier
+
+    values = [part_amounts[part] for part in parts if part in part_amounts]
+    if len(values) == len(parts) and values:
+        return sum(values), qualifier
+
+    prose_total = re.search(
+        r"Prüfungsgebühr(?:\s*:\s*|\s+)([\d.]+),(\d{2})\s*(?:Euro|€)",
+        text,
+        re.IGNORECASE,
+    )
+    if prose_total:
+        return _amount_from_match(prose_total, 1, 2), qualifier
+    return None, ""
 
 
 @dataclass(frozen=True)
@@ -325,9 +444,17 @@ class BavariaOdavScraper(BaseScraper):
             city = self.catalogue.default_city
 
         course_fee = parse_euro(main_text, "Kurs") if soup else card["course_fee"]
-        exam_fee = parse_euro(main_text, "Prüfung") if soup else None
+        exam_fee, exam_fee_qualifier = (
+            parse_exam_fee(main_text, parts) if soup else (None, "")
+        )
         if course_fee is None and not self.catalogue.details_required:
             course_fee = card["course_fee"]
+        offer_number = None
+        if soup:
+            offer_number_match = re.search(
+                r"Angebotsnummer\s+([A-Za-z0-9-]+)", main_text, re.IGNORECASE
+            )
+            offer_number = offer_number_match.group(1) if offer_number_match else None
 
         offer = RawCourseOffer(
             title=build_course_title(trade_name, parts),
@@ -342,6 +469,7 @@ class BavariaOdavScraper(BaseScraper):
             ),
             course_fee=course_fee,
             exam_fee_scraped=exam_fee,
+            exam_fee_qualifier=exam_fee_qualifier,
             city=city,
             street=street,
             zip_code=zip_code,
@@ -351,9 +479,17 @@ class BavariaOdavScraper(BaseScraper):
                 "title": detail_title,
                 "card_text": card["card_text"],
                 "guaranteed": "garantierte durchführung" in main_text.lower(),
+                "offer_number": offer_number,
             },
         )
-        return self.transform_offer(offer, main_text)
+        result = self.transform_offer(offer, main_text)
+        if isinstance(result, list):
+            return [self.postprocess_offer(item) for item in result]
+        return self.postprocess_offer(result) if result else None
+
+    def postprocess_offer(self, offer: RawCourseOffer) -> RawCourseOffer:
+        """Hook for chamber-specific offer normalization."""
+        return offer
 
     def transform_offer(
         self, offer: RawCourseOffer, detail_text: str
