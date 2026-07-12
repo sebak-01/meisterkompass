@@ -35,9 +35,16 @@ PARTS_RE = re.compile(
 
 # Long/specific keys must precede their shorter forms.
 TRADE_ALIASES = {
+    "rollladen- und sonnenschutztechniker": "Rollladen- und Sonnenschutztechniker",
+    "ofen- und luftheizungsbauer": "Ofen- und Luftheizungsbauer",
+    "orthopädieschuhmacher": "Orthopädieschuhmacher",
+    "orthopädietechniker": "Orthopädietechniker",
     "land- und baumaschinenmechatroniker": "Land- und Baumaschinenmechatroniker",
     "installateur- und heizungsbauer": "Installateur- und Heizungsbauer",
     "installateur und heizungsbauer": "Installateur- und Heizungsbauer",
+    "installateur- und heizungsbau": "Installateur- und Heizungsbauer",
+    "installateur-/ heizungsbauer": "Installateur- und Heizungsbauer",
+    "installateur-/": "Installateur- und Heizungsbauer",
     "karosserie- u. fahrzeugbauer": "Karosserie- und Fahrzeugbauer",
     "karosserie- und fahrzeugbauer": "Karosserie- und Fahrzeugbauer",
     "fliesen-, platten- und mosaikleger": "Fliesen-, Platten- und Mosaikleger",
@@ -48,9 +55,11 @@ TRADE_ALIASES = {
     "kraftfahrzeugtechniker": "Kfz.-Techniker",
     "kfz-techniker": "Kfz.-Techniker",
     "elektrotechniker": "Elektrotechniker",
+    "elektrotechnikmeister": "Elektrotechniker",
     "feinwerkmechaniker": "Feinwerkmechaniker",
     "fahrzeuglackierer": "Fahrzeuglackierer",
     "metallbauer": "Metallbauer",
+    "metallbaumeister": "Metallbauer",
     "schreiner-/tischler": "Tischler",
     "schreiner": "Tischler",
     "tischler": "Tischler",
@@ -61,12 +70,16 @@ TRADE_ALIASES = {
     "zahntechniker": "Zahntechniker",
     "raumausstatter": "Raumausstatter",
     "gerüstbauer": "Gerüstbauer",
+    "brauer- und mälzer": "Brauer und Mälzer",
+    "fliesenleger": "Fliesen-, Platten- und Mosaikleger",
+    "kosmetiker": "Kosmetiker",
     "stuckateur": "Stuckateur",
     "zimmerer": "Zimmerer",
     "konditor": "Konditor",
     "friseur": "Friseur",
     "bäcker": "Bäcker",
     "dachdecker": "Dachdecker",
+    "glaser": "Glaser",
 }
 
 

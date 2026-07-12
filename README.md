@@ -6,8 +6,11 @@ courses offered by Handwerkskammern (HWK) in Germany.
 Enables direct comparison of prices, duration, and exam fees across chambers,
 as well as calculation of AFBG (Aufstiegs-BAföG) funding.
 
-Current scope: eight chambers across three Bundesländer —
+Current scope: 22 chambers across five Bundesländer —
 
+- **Bayern:** München und Oberbayern, Niederbayern-Oberpfalz, Oberfranken,
+  Mittelfranken, Unterfranken, Schwaben
+- **Baden-Württemberg:** all eight chambers
 - **Hessen:** Frankfurt-Rhein-Main, Kassel, Wiesbaden
 - **Rheinland-Pfalz:** Koblenz, der Pfalz, Rheinhessen, Trier
 - **Saarland:** HWK des Saarlandes
@@ -50,6 +53,9 @@ meisterkompass/
 │   ├── hwk_kassel.py          # HWK Kassel — multi-provider (see below)
 │   ├── hwk_rhein_main.py      # HWK Frankfurt-Rhein-Main — tabbed multi-module pages
 │   ├── hwk_wiesbaden.py       # HWK Wiesbaden
+│   ├── hwk_bayern.py          # shared ODAV catalogue/detail parser for Bavaria
+│   ├── hwk_{muenchen_und_oberbayern,niederbayern_oberpfalz,oberfranken}.py
+│   ├── hwk_{mittelfranken,unterfranken,schwaben}.py
 │   ├── fees.py                # exam-fee resolution (scraped + manual overlay, combo-bundle keys)
 │   ├── geocode.py             # Photon geocoder + committed cache
 │   ├── pipeline.py            # scrape → merge → geocode → resolve → split → write JSON
@@ -230,6 +236,7 @@ has since been removed entirely.
 - [x] Migrated from Django/Postgres to a static site (checked-in JSON + GitHub Pages)
 - [x] Four RLP chambers + HWK des Saarlandes scraped and live
 - [x] Hessen expansion: HWK Frankfurt-Rhein-Main, HWK Kassel (6 of 8 providers), HWK Wiesbaden
+- [x] All chambers in Baden-Württemberg and Bayern integrated
 - [x] Exam fees with "bis zu" qualifier, ranges, combo-bundle prices, and tooltips
       (scraped + manual overlay)
 - [x] Filterable course list (multi-select chambers) + interactive map;
@@ -257,13 +264,9 @@ has since been removed entirely.
 
 #### Remaining Handwerkskammern by Bundesland
 
-> Covered: Hessen (Frankfurt-Rhein-Main, Kassel, Wiesbaden) · RLP (Koblenz, Trier,
-> Pfalz, Rheinhessen) · Saarland.
+> Covered: Bayern · Baden-Württemberg · Hessen (Frankfurt-Rhein-Main, Kassel,
+> Wiesbaden) · RLP (Koblenz, Trier, Pfalz, Rheinhessen) · Saarland.
 
-- **Baden-Württemberg:** Freiburg · Heilbronn-Franken · Karlsruhe · Konstanz · Mannheim
-  Rhein-Neckar-Odenwald · Reutlingen · Region Stuttgart · Ulm
-- **Bayern:** München und Oberbayern · Niederbayern-Oberpfalz · Oberfranken ·
-  Mittelfranken · Unterfranken · Schwaben
 - **Berlin:** Berlin
 - **Brandenburg:** Cottbus · Frankfurt (Oder) / Ostbrandenburg · Potsdam
 - **Bremen:** Bremen

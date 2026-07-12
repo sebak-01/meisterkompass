@@ -422,5 +422,53 @@
     "fee": 1100.0,
     "fee_max": null,
     "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-mittelfranken",
+    "trade_slug": null,
+    "part": 1,
+    "fee": 340.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-mittelfranken",
+    "trade_slug": null,
+    "part": 2,
+    "fee": 290.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-mittelfranken",
+    "trade_slug": null,
+    "part": 3,
+    "fee": 165.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-mittelfranken",
+    "trade_slug": null,
+    "part": 4,
+    "fee": 165.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-schwaben",
+    "trade_slug": null,
+    "part": 3,
+    "fee": 175.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-schwaben",
+    "trade_slug": null,
+    "part": 4,
+    "fee": 175.0,
+    "fee_max": null,
+    "qualifier": ""
   }
 ]

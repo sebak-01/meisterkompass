@@ -1,6 +1,7 @@
 """Courses from the Handwerkskammer für Mittelfranken."""
 
 from copy import deepcopy
+import re
 
 from .base import RawCourseOffer, build_course_title
 from .hwk_bayern import BavariaCatalogue, BavariaOdavScraper
@@ -27,7 +28,9 @@ class HwkMittelfrankenScraper(BavariaOdavScraper):
     ) -> RawCourseOffer | list[RawCourseOffer]:
         """The academy sells one shared Feinwerkmechaniker/Metallbauer run."""
         lower = detail_text.lower()
-        if "feinwerkmechanikerhandwerk und metallbauerhandwerk" not in lower:
+        if not re.search(
+            r"feinwerkmechanikerhandwerk\s+und\s+metallbauerhandwerk", lower
+        ):
             return offer
 
         result: list[RawCourseOffer] = []

@@ -1,7 +1,10 @@
+import json
 import unittest
+from pathlib import Path
 
 from bs4 import BeautifulSoup
 
+from scrapers.fees import build_exam_fee_lookup, resolve_exam_fee
 from scrapers.hwk_bayern import (
     canonical_detail_url,
     parse_dates,
@@ -144,6 +147,19 @@ class BavariaRegistrationTests(unittest.TestCase):
         for slug, scraper_class in expected.items():
             self.assertIs(SCRAPERS[slug], scraper_class)
             self.assertEqual(scraper_class.chamber_region, "Bayern")
+
+    def test_published_generic_exam_fee_schedules(self):
+        fee_path = Path(__file__).resolve().parents[1] / "data/manual/exam_fees_manual.json"
+        lookup = build_exam_fee_lookup([], json.loads(fee_path.read_text(encoding="utf-8")))
+
+        mittelfranken = resolve_exam_fee(
+            "hwk-mittelfranken", "metallbauer", [1, 2], None, lookup
+        )
+        schwaben = resolve_exam_fee(
+            "hwk-schwaben", "any-trade", [3, 4], None, lookup
+        )
+        self.assertEqual(mittelfranken["fee"], 630.0)
+        self.assertEqual(schwaben["fee"], 350.0)
 
 
 if __name__ == "__main__":
