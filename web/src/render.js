@@ -14,6 +14,7 @@ import {
   TRADE_SPECIFIC_EXAM_NOTE,
   hasTradeSpecificExamParts,
   REUTLINGEN_ADDITIONAL_EXAM_NOTE,
+  SCHWABEN_ADDITIONAL_EXAM_NOTE,
   HESSEN_CHAMBERS,
 } from "./util.js";
 
@@ -76,7 +77,9 @@ function availabilityBadge(a, small = false) {
 /**
  * Renders the exam-fee table cell with the appropriate info button.
  * Tooltip text selection (matching util.js constants):
- *   Stuttgart/Schwaben Teil I or I+II → TRADE_SPECIFIC_EXAM_NOTE
+ *   Stuttgart Teil I or I+II → TRADE_SPECIFIC_EXAM_NOTE
+ *   Reutlingen Part I → REUTLINGEN_ADDITIONAL_EXAM_NOTE
+ *   Schwaben Parts I/II → SCHWABEN_ADDITIONAL_EXAM_NOTE (trade-specific surcharge)
  *   qualifier set    → TOOLTIP_QUALIFIER  (e.g. HWK Koblenz "bis zu")
  *   fee_max set      → TOOLTIP_RANGE      (e.g. HWK Rheinhessen range)
  *   Hessen chamber   → TOOLTIP_HESSEN     (HWK Rhein-Main / Wiesbaden / Kassel)
@@ -89,6 +92,8 @@ function examFeeCell(ef, chamberSlug = "", parts = []) {
     btn = `<button class="fee-info-btn" data-tooltip="${esc(TRADE_SPECIFIC_EXAM_NOTE)}" type="button">i</button>`;
   else if (chamberSlug === "hwk-reutlingen" && parts.includes(1))
     btn = `<button class="fee-info-btn" data-tooltip="${esc(REUTLINGEN_ADDITIONAL_EXAM_NOTE)}" type="button">i</button>`;
+  else if (chamberSlug === "hwk-schwaben" && parts.some((part) => part === 1 || part === 2))
+    btn = `<button class="fee-info-btn" data-tooltip="${esc(SCHWABEN_ADDITIONAL_EXAM_NOTE)}" type="button">i</button>`;
   else if (ef.qualifier === "ca.")
     btn = `<button class="fee-info-btn" data-tooltip="${esc(TOOLTIP_APPROXIMATE)}" type="button">i</button>`;
   else if (ef.qualifier)
@@ -161,7 +166,7 @@ export function rowHtml(c) {
 // Derived from data/chambers.json so the HWK list never drifts from the data.
 // Rendered at build time (vite prerender) and re-rendered idempotently on the
 // client, mirroring rowHtml's SSG-then-hydrate pattern.
-const REGION_ORDER = ["Baden-Württemberg", "Hessen", "Rheinland-Pfalz", "Saarland"];
+const REGION_ORDER = ["Bayern", "Baden-Württemberg", "Hessen", "Rheinland-Pfalz", "Saarland"];
 
 function regionSortKey(region) {
   const idx = REGION_ORDER.indexOf(region);

@@ -41,11 +41,13 @@ function prerenderList() {
       const rows = items.length ? items.map(rowHtml).join("") : emptyRow();
       const chamberData = readChambers();
       const chambers = new Set(filtered.map((c) => c.chamber_slug)).size;
+      const trades = new Set(filtered.map((c) => c.trade_slug)).size;
       return html
         .replace('<tbody id="course-tbody"></tbody>', `<tbody id="course-tbody">${rows}</tbody>`)
         .replace('<div id="chambers-options"><!-- populated from data/chambers.json (build-time SSG + runtime) --></div>', `<div id="chambers-options">${chamberFilterHtml(chamberData)}</div>`)
         .replace('id="count-courses">0<', `id="count-courses">${filtered.length}<`)
         .replace('id="count-chambers">0<', `id="count-chambers">${chambers}<`)
+        .replace('id="count-trades">0<', `id="count-trades">${trades}<`)
         .replace('id="results-count">0<', `id="results-count">${filtered.length}<`)
         .replaceAll("{{REGIONS}}", esc(regionsPhrase(chamberData)))
         .replaceAll("{{REGIONS_EYEBROW}}", esc(regionsEyebrow(chamberData)));

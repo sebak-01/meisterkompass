@@ -16,7 +16,7 @@ export const esc = (s) =>
 
 /** HWK Koblenz: fee carries a "bis zu" qualifier — maximal amount. */
 export const TOOLTIP_QUALIFIER =
-  "Die Prüfungsgebühr je Teil entstammt dem offiziellen Gebührenverzeichnis. Dies ist die Gebühr, die maximal erhoben werden kann. Häufig ist die Prüfungsgebühr tatsächlich niedriger. Erkundige dich bitte bei der jeweiligen Kammer.";
+  "Die Prüfungsgebühr je Teil entstammt dem offiziellen Gebührenverzeichnis. Dies ist die Gebühr, die maximal erhoben werden kann. Häufig ist die Prüfungsgebühr tatsächlich niedriger. Erkundige dich bitte bei der Kammer.";
 
 /** Published fee contains an explicitly approximate component. */
 export const TOOLTIP_APPROXIMATE =
@@ -24,7 +24,7 @@ export const TOOLTIP_APPROXIMATE =
 
 /** HWK Rheinhessen: fee is a range (fee … fee_max). */
 export const TOOLTIP_RANGE =
-  "Die Spanne der Prüfungsgebühr je Teil entstammt dem offiziellen Gebührenverzeichnis. Die genaue Gebühr innerhalb dieser Spanne wird von der Kammer festgelegt. Erkundige dich bitte bei der jeweiligen Kammer.";
+  "Die Spanne der Prüfungsgebühr je Teil entstammt dem offiziellen Gebührenverzeichnis. Die genaue Gebühr innerhalb dieser Spanne wird von der Kammer festgelegt. Erkundige dich bitte bei der Kammer.";
 
 /** HWK Frankfurt-Rhein-Main, HWK Wiesbaden, HWK Kassel: exact fee from fee schedule, subject to change. */
 export const TOOLTIP_HESSEN =
@@ -46,6 +46,9 @@ export const hasTradeSpecificExamParts = (parts) =>
 /** HWK Reutlingen may pass on additional practical-exam expenses for Part I. */
 export const REUTLINGEN_ADDITIONAL_EXAM_NOTE =
   "Bei Meisterprüfungen, für die von der HWK Reutlingen zusätzlich Personal-, Material-, Raum- und Sachkosten geleistet werden, ist die Gebühr entsprechend zu erhöhen. Je nach Gewerk liegt der Rahmen zwischen 300 € und 1.500 €";
+
+/** HWK Schwaben may charge trade-specific exam surcharges on top of the published base fees. */
+export const SCHWABEN_ADDITIONAL_EXAM_NOTE = TRADE_SPECIFIC_EXAM_NOTE;
 
 /** Slugs of the three Hessen chambers — used by render.js and afbg.js to select TOOLTIP_HESSEN. */
 export const HESSEN_CHAMBERS = new Set(["hwk-rhein-main", "hwk-wiesbaden", "hwk-kassel"]);

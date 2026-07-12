@@ -11,9 +11,21 @@
     49.4441065,
     7.7686373
   ],
+  "Am Lurzenhof 10 b, 84036 Landshut, Deutschland": [
+    48.5594648,
+    12.1999128
+  ],
+  "Am Stadtberg 19, 89407 Dillingen, Deutschland": [
+    48.5753811,
+    10.4972272
+  ],
   "Am Turnerheim 1, 67657 Kaiserslautern, Deutschland": [
     49.4495183,
     7.7678746
+  ],
+  "Ansbach, Bayern, Deutschland": [
+    49.2888745,
+    10.5597693
   ],
   "Auedamm 18, 34123 Kassel, Deutschland": [
     51.3021202,
@@ -43,17 +55,49 @@
     50.3835106,
     7.5590697
   ],
+  "Bernhard-Suttner-Straße 5, 92637 Weiden, Deutschland": [
+    49.6703429,
+    12.1626407
+  ],
   "Brunhildenstraße 110, 65189 Wiesbaden, Deutschland": [
     50.0652806,
     8.2590004
+  ],
+  "Brückenkopf 3, 85051 Ingolstadt, Deutschland": [
+    48.7587386,
+    11.4306481
+  ],
+  "Brückenkopf 5, 85051 Ingolstadt, Deutschland": [
+    48.7589347,
+    11.4306089
+  ],
+  "Charlottenhof 1, 92421 Schwandorf, Deutschland": [
+    49.3456906,
+    12.1756219
+  ],
+  "Christangerstraße 12, 84347 Pfarrkirchen, Deutschland": [
+    48.4287108,
+    12.9312606
   ],
   "Daimlerstraße 46, 76185 Karlsruhe, Deutschland": [
     49.0313222,
     8.3591262
   ],
+  "Deumentenstraße 1, 90489 Nürnberg, Deutschland": [
+    49.4638359,
+    11.0973984
+  ],
+  "Dieselstr. 12, 97082 Würzburg, Deutschland": [
+    49.7990834,
+    9.9071335
+  ],
   "Dillufer 40, 35576 Wetzlar, Deutschland": [
     50.5548159,
     8.4921662
+  ],
+  "Ditthornstraße 10, 93055 Regensburg, Deutschland": [
+    49.0144753,
+    12.1382992
   ],
   "Falderbaumstraße 18-20, 34123 Kassel, Deutschland": [
     51.2841009,
@@ -63,17 +107,45 @@
     51.2841009,
     9.498614
   ],
+  "Freyunger Straße 8, 94065 Waldkirchen, Deutschland": [
+    48.7345043,
+    13.6043761
+  ],
   "Friedrichstraße 3, 79761 Waldshut-Tiengen, Deutschland": [
     47.6246072,
     8.2170138
+  ],
+  "Fritz-Hoffmann-Straße 3, 91301 Forchheim, Deutschland": [
+    49.7353293,
+    11.0593688
+  ],
+  "Frühlingstraße 13, 93413 Cham, Deutschland": [
+    49.224435,
+    12.6796411
+  ],
+  "Galgenleite 3, 97424 Schweinfurt, Deutschland": [
+    50.0538491,
+    10.2229162
   ],
   "Goerdelerstraße 139, 36100 Petersberg, Deutschland": [
     50.5673891,
     9.699491
   ],
+  "Graflinger Straße 105, 94469 Deggendorf, Deutschland": [
+    48.84793,
+    12.9572569
+  ],
+  "Gute Änger 11, 85356 Freising, Deutschland": [
+    48.3888054,
+    11.7586366
+  ],
   "Gutenbergstraße 49, 68167 Mannheim, Deutschland": [
     49.4936232,
     8.5038439
+  ],
+  "Hasenhägweg 67, 63741 Aschaffenburg, Deutschland": [
+    49.9881654,
+    9.1079515
   ],
   "Hertzstr. 177, 76187 Karlsruhe, Deutschland": [
     49.039484,
@@ -83,9 +155,21 @@
     49.039484,
     8.36939
   ],
+  "Hertzstraße 24a, 96050 Bamberg, Deutschland": [
+    49.8918568,
+    10.926158
+  ],
+  "Hindelanger Straße 39, 87527 Sonthofen, Deutschland": [
+    47.5125094,
+    10.291493
+  ],
   "Hindenburgstraße 58, 72762 Reutlingen, Deutschland": [
     48.4857514,
     9.2063686
+  ],
+  "Hinterer Floßanger 1, 96450 Coburg, Deutschland": [
+    50.2713886,
+    10.9718498
   ],
   "Holderäckerstraße 37, 70499 Stuttgart, Deutschland": [
     48.8229051,
@@ -99,9 +183,45 @@
     49.4261268,
     7.7748284
   ],
+  "Johannes-Kepler-Straße 14, 94315 Straubing, Deutschland": [
+    48.8708639,
+    12.5760232
+  ],
+  "Kaiser-Max-Straße 39-41, 87600 Kaufbeuren, Deutschland": [
+    47.8789751,
+    10.6193068
+  ],
+  "Kapuziner Straße 66 a, 94474 Vilshofen an der Donau, Deutschland": [
+    48.6384463,
+    13.1775956
+  ],
   "Karlsbader Str. 2, 67065 Ludwigshafen am Rhein, Deutschland": [
     49.4760852,
     8.4080881
+  ],
+  "Kerschensteinerstraße 3, 82362 Weilheim, Deutschland": [
+    47.8455509,
+    11.146713
+  ],
+  "Kerschensteinerstraße 5, 92318 Neumarkt i.d.OPf., Deutschland": [
+    49.2637832,
+    11.4680476
+  ],
+  "Kerschensteinerstraße 8-10, 95448 Bayreuth, Deutschland": [
+    49.9423427,
+    11.599074
+  ],
+  "Klepperstraße 22, 83026 Rosenheim, Deutschland": [
+    47.8472914,
+    12.1201462
+  ],
+  "Kotterner Straße 39, 87435 Kempten, Deutschland": [
+    47.7174731,
+    10.3185888
+  ],
+  "Kulmbach, Bayern, Deutschland": [
+    50.1071246,
+    11.4581813
   ],
   "Köllestraße 55, 89077 Ulm, Deutschland": [
     48.3856229,
@@ -110,6 +230,10 @@
   "Lange Straße 20, 78224 Singen, Deutschland": [
     47.7546664,
     8.8426339
+  ],
+  "Lenbachstraße 8, 90489 Nürnberg, Deutschland": [
+    49.458562,
+    11.0909732
   ],
   "Loebstr.  18, 54292 Trier, Deutschland": [
     49.775426,
@@ -123,9 +247,46 @@
     48.5473835,
     8.7138169
   ],
+  "Memminger Straße 59, 89264 Weißenhorn, Deutschland": [
+    48.3019927,
+    10.1603345
+  ],
+  "Mühldorfstraße  6, 81671 München, Deutschland": [
+    48.1282296,
+    11.6098462
+  ],
+  "Mühldorfstraße 6, 81671 München, Deutschland": [
+    48.1282296,
+    11.6098462
+  ],
+  "Mühlstraße 19, 95028 Hof, Deutschland": [
+    50.3151869,
+    11.9193794
+  ],
+  "Mühlwiesen 4, 83278 Traunstein, Deutschland": [
+    47.8554324,
+    12.6342171
+  ],
+  "Münchner Straße 40, 82362 Weilheim, Deutschland": [
+    47.8458688,
+    11.1463017
+  ],
+  "Nürnberg, Bayern, Deutschland": [
+    49.453872,
+    11.077298
+  ],
+  "Online -  www.bildungschwaben.de/ilias, Bayern, Deutschland": null,
+  "Online, Bayern, Deutschland": [
+    49.1249172,
+    10.7805332
+  ],
   "Otto-Wels-Straße 11, 76189 Karlsruhe, Deutschland": [
     48.9878212,
     8.3629187
+  ],
+  "Pestalozzistraße 2, 95676 Wiesau, Deutschland": [
+    49.9123388,
+    12.1901088
   ],
   "Raichbergstraße 87, 72072 Tübingen, Deutschland": [
     48.5004109,
@@ -151,13 +312,37 @@
     49.7813929,
     7.3375888
   ],
+  "Schweinfurt, Bayern, Deutschland": [
+    50.0451485,
+    10.2340647
+  ],
   "Schönstraße 21, 60327 Frankfurt am Main, Deutschland": [
     50.1013705,
     8.65682
   ],
+  "Siebentischstraße 52 - 58, 86161 Augsburg, Deutschland": [
+    48.3486219,
+    10.9175439
+  ],
+  "Siebentischstraße 54, 86161 Augsburg, Deutschland": [
+    48.3558357,
+    10.9155787
+  ],
+  "Sieboldstraße 9, 90411 Nürnberg, Deutschland": [
+    49.4815534,
+    11.1248482
+  ],
   "Siemensstr. 8, 55543 Bad Kreuznach, Deutschland": [
     49.850123,
     7.8827044
+  ],
+  "Simmerlingweg 4 und 15, 94036 Passau, Deutschland": [
+    48.5626047,
+    13.4060264
+  ],
+  "Sonntagshornstraße 14, 83278 Traunstein, Deutschland": [
+    47.8548488,
+    12.6246309
   ],
   "St. Elisabeth Str. 2, 56073 Koblenz, Deutschland": [
     50.3603382,
@@ -174,6 +359,10 @@
   "Theodor-Heuss-Anlage 12, 68165 Mannheim, Deutschland": [
     49.4775101,
     8.503477
+  ],
+  "Töginger Straße 49, 84453 Mühldorf, Deutschland": [
+    48.2462844,
+    12.5306834
   ],
   "Umgehungsstraße 1-3, 35043 Marburg, Deutschland": [
     50.7872688,
@@ -202,5 +391,9 @@
   "Wirthstraße 28, 79110 Freiburg, Deutschland": [
     48.0251899,
     7.8137345
+  ],
+  "Äußere Badstraße 24, 95448 Bayreuth, Deutschland": [
+    49.9421486,
+    11.6001204
   ]
 }
