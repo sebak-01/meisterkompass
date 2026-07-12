@@ -144,7 +144,7 @@ export function rowHtml(c) {
       </div>
     </td>
     <td data-label="Kurs" class="col-kurs">${titleLink}${tradeMeta}</td>
-    <td data-label="Kammer" class="detail-cell" style="white-space:nowrap;font-size:.82rem;">${esc(c.chamber_name)}</td>
+    <td data-label="Kammer" class="detail-cell chamber-cell">${esc(c.chamber_name)}</td>
     <td data-label="Teile" class="detail-cell" style="white-space:nowrap">${partsBadges(c.parts)}</td>
     <td data-label="Zeitmodell" class="detail-cell">${esc(c.format_display)}</td>
     <td data-label="Laufzeit" class="detail-cell" style="font-size:.82rem;font-variant-numeric:tabular-nums;">${laufzeit}</td>

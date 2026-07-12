@@ -144,6 +144,108 @@ class KarlsruheParserTests(unittest.TestCase):
         self.assertEqual(parse_karlsruhe_availability("Warteliste"), "waitlist")
         self.assertEqual(parse_karlsruhe_availability("Termin folgt"), "unknown")
 
+    def test_ifb_courses_parse_each_dated_run(self):
+        soup = BeautifulSoup(
+            """
+            <main>
+              <p>Kurs-Beginn: 21.09.2026 (Der Kurs ist ausgebucht.)
+                 Kurs-Abschluss: 25.03.2027</p>
+              <p>Kurs-Beginn: 22.03.2027 Kurs-Abschluss: 24.09.2027</p>
+              <p>Kurs-Gebühr: 9.950,- EUR</p>
+            </main>
+            """,
+            "html.parser",
+        )
+        offers = HwkKarlsruheScraper()._parse_ifb_courses(
+            soup,
+            "https://ifb-karlsruhe.de/meisterkurs-augenoptik-vollzeit/",
+            "full_time",
+            "presence",
+        )
+
+        self.assertEqual([offer.start_date for offer in offers], ["2026-09-21", "2027-03-22"])
+        self.assertTrue(all(offer.course_fee == 9950.0 for offer in offers))
+        self.assertEqual([offer.availability for offer in offers], ["full", "unknown"])
+        self.assertTrue(all(offer.city == "Mannheim" for offer in offers))
+
+    def test_bfw_course_parses_hybrid_weekend_offer(self):
+        soup = BeautifulSoup(
+            """
+            <main>
+              Nächster Kurstermin 09.10.2026 - 20.02.2028
+              Der Kurs dauert 18 Monate. 18 Präsenztermine und 6 Onlinetermine.
+              Kosten € 6.599,00
+              Bildungsstätte Daimlerstraße 46 76185 Karlsruhe
+            </main>
+            """,
+            "html.parser",
+        )
+        offers = HwkKarlsruheScraper()._parse_bfw_course(soup, "https://www.bfw.de/course/")
+
+        self.assertEqual(len(offers), 1)
+        self.assertEqual(offers[0].start_date, "2026-10-09")
+        self.assertEqual(offers[0].end_date, "2028-02-20")
+        self.assertEqual(offers[0].course_fee, 6599.0)
+        self.assertEqual(offers[0].teaching_mode, "hybrid")
+
+    def test_glaser_provider_parses_complete_hybrid_course(self):
+        soup = BeautifulSoup(
+            """
+            <main>Der Meisterkurs auf einen Blick
+              Kursjahr 14.09.2026 - 30.07.2027
+              Abschlussziel Vorbereitung auf Meisterprüfung Teile 1-4
+              Kursformat Online-Unterricht, Lernplattform und Praxis
+              Kosten Teile 1-4: EUR 8.100,00
+              Teile 1-2: EUR 7.500,00
+            </main>
+            """,
+            "html.parser",
+        )
+        offers = HwkKarlsruheScraper()._parse_glaser_course(
+            soup,
+            "https://www.fenster-fachschule.de/",
+        )
+
+        self.assertEqual(len(offers), 1)
+        self.assertEqual(offers[0].trade_name, "Glaser")
+        self.assertEqual(offers[0].parts, [1, 2, 3, 4])
+        self.assertEqual(offers[0].start_date, "2026-09-14")
+        self.assertEqual(offers[0].end_date, "2027-07-30")
+        self.assertEqual(offers[0].course_fee, 8100.0)
+        self.assertEqual(offers[0].teaching_mode, "hybrid")
+        self.assertEqual(offers[0].city, "Karlsruhe")
+
+    def test_calw_parser_uses_listing_card_not_mismatched_slug(self):
+        soup = BeautifulSoup(
+            """
+            <main>
+              <h2>Meistervorbereitungskurse im KFZ-Handwerk</h2>
+              <p>Kursgebühr: 4.200,00 € (Ratenzahlung)</p>
+              <div class="ph-event">
+                MEISTERVORBEREITUNGSKURS TEIL 3
+                11.01.2027 bis 31.07.2027
+                <a href="/seminare/termindetails/kfz-looking-slug">Details</a>
+              </div>
+              <div class="ph-event">
+                MEISTERVORBEREITUNGSKURS IM KFZ-HANDWERK (Teile 1+2)
+                01.02.2027 von 18:00 Uhr bis 18.12.2027 18:15 Uhr
+                <a href="/seminare/termindetails/wrong-historical-slug">Details</a>
+              </div>
+            </main>
+            """,
+            "html.parser",
+        )
+        offers = HwkKarlsruheScraper()._parse_calw_courses(
+            soup,
+            "https://www.handwerk-calw.de/seminare/meistervorbereitungskurse",
+        )
+
+        self.assertEqual(len(offers), 1)
+        self.assertEqual(offers[0].start_date, "2027-02-01")
+        self.assertEqual(offers[0].end_date, "2027-12-18")
+        self.assertEqual(offers[0].course_fee, 4200.0)
+        self.assertTrue(offers[0].source_url.endswith("/wrong-historical-slug"))
+
 
 class StuttgartParserTests(unittest.TestCase):
     def test_manual_exam_fees(self):
@@ -188,6 +290,35 @@ class StuttgartParserTests(unittest.TestCase):
         self.assertIsNone(offer.start_date)
         self.assertEqual(offer.duration_hours, 1160)
         self.assertEqual(offer.course_fee, 6420.0)
+
+    def test_baker_course_uses_stuttgart_full_time_section(self):
+        soup = BeautifulSoup(
+            """
+            <main>
+              <h3>ADB Südwest e.V. Standort Stuttgart (Vollzeitkurs):</h3>
+              <p>Lehrgangsdauer: MK 2027 (Gesamtkurs)</p>
+              <p>Teile 1-4: 11.01. bis 25.06.2027 (inkl. Prüfungszeitraum)</p>
+              <p>Für die Teile 1-2: 22.03. bis 25.06.2027</p>
+              <p>Die gesamte Kursgebühr für die Vorbereitung zu den
+                 Prüfungsteilen beträgt 4.950,00 Euro.</p>
+              <h3>ADB Südwest e.V. Standort Karlsruhe (Teilzeitkurs):</h3>
+              <p>Beginn Mai 2026, 3.150,00 Euro</p>
+            </main>
+            """,
+            "html.parser",
+        )
+        offers = HwkStuttgartScraper._parse_baker_course(
+            soup,
+            "https://bivsuedwest.de/meistervorbereitungskurse/",
+        )
+
+        self.assertEqual(len(offers), 1)
+        self.assertEqual(offers[0].trade_name, "Bäcker")
+        self.assertEqual(offers[0].parts, [1, 2, 3, 4])
+        self.assertEqual(offers[0].start_date, "2027-01-11")
+        self.assertEqual(offers[0].end_date, "2027-06-25")
+        self.assertEqual(offers[0].course_fee, 4950.0)
+        self.assertEqual(offers[0].city, "Stuttgart")
 
 
 class UlmParserTests(unittest.TestCase):
@@ -298,6 +429,49 @@ class FreiburgParserTests(unittest.TestCase):
         self.assertEqual(offer.format_key, "full_time")
         self.assertEqual(offer.teaching_mode, "presence")
         self.assertEqual(offer.availability, "available")
+
+    def test_sold_out_sibling_does_not_mark_selected_appointment_full(self):
+        soup = BeautifulSoup(
+            """
+            <main>
+              Termine: 16.11.2027 - 26.05.2028, Freiburg
+              - 17.11.2026 - 28.05.2027, Freiburg (ausgebucht)
+              Meistervorbereitungskurs Metallbauer/in, Teile 1+2
+              Zeiten: Mo-Do 8:00-16:15 Uhr
+              Dauer: 850 Unterrichtsstunden
+              Preis: € 9800,00
+            </main>
+            """,
+            "html.parser",
+        )
+        offer = HwkFreiburgScraper._parse_appointment(
+            soup,
+            "https://www.gewerbeakademie.de/weiterbildung/kursangebot/seminar/mvkmetallb/34/",
+            FREIBURG_COURSES["mvkmetallb"],
+        )
+
+        self.assertEqual(offer.start_date, "2027-11-16")
+        self.assertEqual(offer.availability, "available")
+
+    def test_selected_appointment_keeps_explicit_sold_out_status(self):
+        soup = BeautifulSoup(
+            """
+            <main>
+              Termine: 16.11.2027 - 26.05.2028, Freiburg (ausgebucht)
+              Zeiten: Mo-Do 8:00-16:15 Uhr
+              Dauer: 850 Unterrichtsstunden
+              Preis: € 9800,00
+            </main>
+            """,
+            "html.parser",
+        )
+        offer = HwkFreiburgScraper._parse_appointment(
+            soup,
+            "https://www.gewerbeakademie.de/weiterbildung/kursangebot/seminar/mvkmetallb/34/",
+            FREIBURG_COURSES["mvkmetallb"],
+        )
+
+        self.assertEqual(offer.availability, "full")
 
 
 class KonstanzParserTests(unittest.TestCase):

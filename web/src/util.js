@@ -4,7 +4,7 @@ export const ROMAN = { 1: "I", 2: "II", 3: "III", 4: "IV" };
 
 export const partsLabel = (parts) => parts.map((p) => ROMAN[p] || p).join(" + ");
 
-/** German EUR, no decimals, non-breaking space: 1234 → "1.234 €". */
+/** German euro formatting, no decimals, non-breaking space: 1234 → "1.234 €". */
 export const eur = (value) =>
   Number(value).toLocaleString("de-DE", { maximumFractionDigits: 0 }) + " €";
 
@@ -36,7 +36,7 @@ export const ANMELDEGEBUEHR_NOTE =
 
 /** HWK Region Stuttgart charges a separate practical-exam fee for Part I. */
 export const STUTTGART_PRACTICAL_EXAM_NOTE =
-  "Die HWK Region Stuttgart erhebt zusätzlich für die Abnahme der praktischen Prüfung eine Sondergebühr in Höhe von 250,00 EUR.";
+  "Die HWK Region Stuttgart erhebt zusätzlich für die Abnahme der praktischen Prüfung eine Sondergebühr in Höhe von 250 €.";
 
 /** HWK Reutlingen may pass on additional practical-exam expenses for Part I. */
 export const REUTLINGEN_ADDITIONAL_EXAM_NOTE =

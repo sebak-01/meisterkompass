@@ -22,7 +22,8 @@ BASE_URL = "https://www.gewerbeakademie.de"
 CATEGORY_URL = f"{BASE_URL}/weiterbildung/kursangebot/kategorie/meister-kompetenz/"
 
 DATE_LOCATION_RE = re.compile(
-    r"Termine:\s*(\d{2})\.(\d{2})\.(\d{4})\s*[-–]\s*(\d{2})\.(\d{2})\.(\d{4}),\s*([^()]+?)(?=\s*(?:\(|Freie Plätze:|Zeiten:))",
+    r"Termine:\s*(\d{2})\.(\d{2})\.(\d{4})\s*[-–]\s*(\d{2})\.(\d{2})\.(\d{4}),\s*"
+    r"([^()]+?)(?=\s*(?:\(|(?:[-–]\s*)?\d{2}\.\d{2}\.\d{4}\s*[-–]|Freie Plätze:|Zeiten:))",
     re.IGNORECASE,
 )
 DURATION_RE = re.compile(r"Dauer:\s*([\d.]+)\s*Unterrichtsstunden", re.IGNORECASE)
@@ -33,6 +34,10 @@ EXAM_FEE_RE = re.compile(
 )
 FREE_RE = re.compile(r"Freie Plätze:\s*(\d+)", re.IGNORECASE)
 APPOINTMENT_RE = re.compile(r"/seminar/(?P<slug>[^/]+)/(?P<id>\d+)/?$")
+DATE_RANGE_ONLY_RE = re.compile(
+    r"\d{2}\.\d{2}\.\d{4}\s*[-–]\s*\d{2}\.\d{2}\.\d{4}",
+    re.IGNORECASE,
+)
 
 
 @dataclass(frozen=True)
@@ -78,6 +83,24 @@ def parse_availability(text: str) -> str:
     if free:
         return "available" if int(free.group(1)) > 0 else "full"
     return "unknown"
+
+
+def parse_appointment_availability(text: str, date_match: re.Match) -> str:
+    """Resolve status only from the selected appointment's date block."""
+    tail_start = date_match.end()
+    tail = text[tail_start:]
+    boundaries = [len(tail), 300]
+    next_date = DATE_RANGE_ONLY_RE.search(tail)
+    if next_date:
+        boundaries.append(next_date.start())
+    times = re.search(r"\bZeiten\s*:", tail, re.IGNORECASE)
+    if times:
+        boundaries.append(times.start())
+    context = text[date_match.start():tail_start + min(boundaries)]
+    status = parse_availability(context)
+    # A numeric appointment with published dates remains bookable unless the
+    # provider explicitly marks that appointment as full or waitlisted.
+    return "available" if status == "unknown" else status
 
 
 class HwkFreiburgScraper(BaseScraper):
@@ -174,7 +197,7 @@ class HwkFreiburgScraper(BaseScraper):
             city=location["city"],
             street=location["street"],
             zip_code=location["zip_code"],
-            availability=parse_availability(text),
+            availability=parse_appointment_availability(text, date_match),
             source_url=url,
             scraped_raw={"appointment_url": url, "course_text": text[:800]},
         )
