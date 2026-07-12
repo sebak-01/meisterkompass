@@ -119,7 +119,7 @@ def parse_trade(title: str, parts: list[int]) -> str | None:
     if not parts or set(parts) <= {3, 4}:
         return None
     lower = title.lower()
-    if "meister" not in lower:
+    if "meister" not in lower and not re.match(r"\s*mk\b", lower):
         return None
     # The specialization is the actual trade in this Oberfranken title.
     if "fachrichtung fahrzeuglackierer" in lower:

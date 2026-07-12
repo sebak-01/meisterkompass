@@ -51,6 +51,11 @@ class BavariaParserTests(unittest.TestCase):
         parts = parse_parts(title)
         self.assertEqual(parts, [1, 2])
         self.assertEqual(parse_trade(title, parts), "Tischler")
+        mk_title = "MK Installateur-/ Heizungsbauerhandwerk Teil I u. II"
+        self.assertEqual(
+            parse_trade(mk_title, parse_parts(mk_title)),
+            "Installateur- und Heizungsbauer",
+        )
         self.assertIsNone(parse_trade("Teile III und IV für alle Gewerke", [3, 4]))
 
     def test_exact_and_approximate_dates(self):
