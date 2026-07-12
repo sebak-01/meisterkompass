@@ -194,3 +194,54 @@ export function emptyRow() {
     <div class="hint">Passe die Filter an oder setze sie zurück, um mehr Ergebnisse zu sehen.</div>
   </div></td></tr>`;
 }
+
+// ── About-page coverage (region + chamber list, built from chambers.json) ──
+// Rendered at build time (vite prerender) so the "Über"-page prose, its <ul>,
+// and the SEO meta descriptions never drift from the data as chambers are added.
+// Chambers are grouped by region (alphabetical, German collation) then by name.
+
+const alphabetically = (a, b) => a.localeCompare(b, "de");
+
+const byRegion = (chambers) => {
+  const groups = new Map();
+  for (const c of chambers) {
+    const region = c.region || "";
+    if (!groups.has(region)) groups.set(region, []);
+    groups.get(region).push(c);
+  }
+  return groups;
+};
+
+// Bundesländer that carry a definite article in the dative "in …" phrase.
+// German state names are otherwise article-less; only "das Saarland" needs one.
+const REGION_DATIVE = { Saarland: "dem Saarland" };
+
+/** Region names in German collation order, e.g. ["Hessen", "Rheinland-Pfalz", "Saarland"]. */
+const regionsSorted = (chambers) => [...byRegion(chambers).keys()].sort(alphabetically);
+
+/** "Hessen, Rheinland-Pfalz und dem Saarland" — dative enumeration for prose. */
+export function regionsPhrase(chambers) {
+  const regions = regionsSorted(chambers).map((r) => REGION_DATIVE[r] || r);
+  if (regions.length <= 1) return regions.join("");
+  return `${regions.slice(0, -1).join(", ")} und ${regions.at(-1)}`;
+}
+
+/** "Hessen & Rheinland-Pfalz & Saarland" — compact nominative list for title/eyebrow. */
+export function regionsShort(chambers) {
+  return regionsSorted(chambers).join(" & ");
+}
+
+/** "Hessen · Rheinland-Pfalz · Saarland" — nominative list for the page eyebrow. */
+export function regionsEyebrow(chambers) {
+  return regionsSorted(chambers).join(" · ");
+}
+
+/** <li> list of full chamber names ("HWK X" → "Handwerkskammer X"). */
+export function coverageChambersHtml(chambers) {
+  const groups = byRegion(chambers);
+  return [...groups.keys()].sort(alphabetically).flatMap((region) =>
+    groups.get(region)
+      .sort((a, b) => alphabetically(a.name, b.name))
+      .map((c) => `<li>${esc(c.name.replace(/^HWK /, "Handwerkskammer "))}</li>`),
+  ).join("");
+}
