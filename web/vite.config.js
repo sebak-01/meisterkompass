@@ -9,29 +9,65 @@ const repoRoot = resolve(__dirname, "..");
 // project site (user.github.io/<repo>/) set VITE_BASE=/<repo>/ in CI.
 const base = process.env.VITE_BASE || "/";
 
+const readChambers = () =>
+  JSON.parse(readFileSync(resolve(repoRoot, "data/chambers.json"), "utf8"));
+
 // Pre-render the default Kursfinder table into index.html at build time (SSG):
 // instant first paint, crawlable content, works without JS. The runtime JS
-// re-renders idempotently on load using the same render.js module.
+// re-renders idempotently on load using the same render.js module. The page's
+// meta descriptions, JSON-LD and eyebrow also carry region tokens filled from
+// chambers.json so they never drift.
 function prerenderList() {
   return {
     name: "prerender-list",
     async transformIndexHtml(html, ctx) {
       if (!ctx.filename.replace(/\\/g, "/").endsWith("/index.html")) return html;
       const courses = JSON.parse(readFileSync(resolve(repoRoot, "data/courses.json"), "utf8"));
-      const chamberData = JSON.parse(readFileSync(resolve(repoRoot, "data/chambers.json"), "utf8"));
-      const { applyFilters, rowHtml, emptyRow, pageItems, defaultState, chamberFilterHtml } = await import("./src/render.js");
+      const {
+        applyFilters,
+        rowHtml,
+        emptyRow,
+        pageItems,
+        defaultState,
+        chamberFilterHtml,
+        regionsPhrase,
+        regionsEyebrow,
+      } = await import("./src/render.js");
+      const { esc } = await import("./src/util.js");
       const today = new Date().toISOString().slice(0, 10);
       const state = defaultState();
       const filtered = applyFilters(courses, state, today);
       const items = pageItems(filtered, state);
       const rows = items.length ? items.map(rowHtml).join("") : emptyRow();
+      const chamberData = readChambers();
       const chambers = new Set(filtered.map((c) => c.chamber_slug)).size;
+      const trades = new Set(filtered.map((c) => c.trade_slug)).size;
       return html
         .replace('<tbody id="course-tbody"></tbody>', `<tbody id="course-tbody">${rows}</tbody>`)
         .replace('<div id="chambers-options"><!-- populated from data/chambers.json (build-time SSG + runtime) --></div>', `<div id="chambers-options">${chamberFilterHtml(chamberData)}</div>`)
         .replace('id="count-courses">0<', `id="count-courses">${filtered.length}<`)
         .replace('id="count-chambers">0<', `id="count-chambers">${chambers}<`)
-        .replace('id="results-count">0<', `id="results-count">${filtered.length}<`);
+        .replace('id="count-trades">0<', `id="count-trades">${trades}<`)
+        .replace('id="results-count">0<', `id="results-count">${filtered.length}<`)
+        .replaceAll("{{REGIONS}}", esc(regionsPhrase(chamberData)))
+        .replaceAll("{{REGIONS_EYEBROW}}", esc(regionsEyebrow(chamberData)));
+    },
+  };
+}
+
+// Pre-render the "Über MeisterKompass" coverage into about.html at build time:
+// its prose and SEO meta descriptions are derived from data/chambers.json so
+// none of them drift as chambers are added.
+// The page ships no runtime script beyond nav, so this is pure SSG (no hydrate).
+function prerenderAbout() {
+  return {
+    name: "prerender-about",
+    async transformIndexHtml(html, ctx) {
+      if (!ctx.filename.replace(/\\/g, "/").endsWith("/about.html")) return html;
+      const { regionsPhrase } = await import("./src/render.js");
+      const { esc } = await import("./src/util.js");
+      const chambers = readChambers();
+      return html.replaceAll("{{REGIONS}}", esc(regionsPhrase(chambers)));
     },
   };
 }
@@ -70,7 +106,7 @@ function trimmedCourses() {
 export default defineConfig({
   root: __dirname,
   base,
-  plugins: [prerenderList(), trimmedCourses()],
+  plugins: [prerenderList(), prerenderAbout(), trimmedCourses()],
   resolve: {
     alias: { "@data": resolve(repoRoot, "data") },
   },

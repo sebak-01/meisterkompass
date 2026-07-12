@@ -13,6 +13,7 @@ import {
   ANMELDEGEBUEHR_NOTE,
   STUTTGART_PRACTICAL_EXAM_NOTE,
   REUTLINGEN_ADDITIONAL_EXAM_NOTE,
+  SCHWABEN_ADDITIONAL_EXAM_NOTE,
   HESSEN_CHAMBERS,
 } from "./util.js";
 
@@ -76,6 +77,8 @@ function availabilityBadge(a, small = false) {
  * Renders the exam-fee table cell with the appropriate info button.
  * Tooltip text selection (matching util.js constants):
  *   Stuttgart Part I → STUTTGART_PRACTICAL_EXAM_NOTE (additional practical fee)
+ *   Reutlingen Part I → REUTLINGEN_ADDITIONAL_EXAM_NOTE
+ *   Schwaben Parts I/II → SCHWABEN_ADDITIONAL_EXAM_NOTE (trade-specific surcharge)
  *   qualifier set    → TOOLTIP_QUALIFIER  (e.g. HWK Koblenz "bis zu")
  *   fee_max set      → TOOLTIP_RANGE      (e.g. HWK Rheinhessen range)
  *   Hessen chamber   → TOOLTIP_HESSEN     (HWK Rhein-Main / Wiesbaden / Kassel)
@@ -88,6 +91,8 @@ function examFeeCell(ef, chamberSlug = "", parts = []) {
     btn = `<button class="fee-info-btn" data-tooltip="${esc(STUTTGART_PRACTICAL_EXAM_NOTE)}" type="button">i</button>`;
   else if (chamberSlug === "hwk-reutlingen" && parts.includes(1))
     btn = `<button class="fee-info-btn" data-tooltip="${esc(REUTLINGEN_ADDITIONAL_EXAM_NOTE)}" type="button">i</button>`;
+  else if (chamberSlug === "hwk-schwaben" && parts.some((part) => part === 1 || part === 2))
+    btn = `<button class="fee-info-btn" data-tooltip="${esc(SCHWABEN_ADDITIONAL_EXAM_NOTE)}" type="button">i</button>`;
   else if (ef.qualifier === "ca.")
     btn = `<button class="fee-info-btn" data-tooltip="${esc(TOOLTIP_APPROXIMATE)}" type="button">i</button>`;
   else if (ef.qualifier)
@@ -160,7 +165,7 @@ export function rowHtml(c) {
 // Derived from data/chambers.json so the HWK list never drifts from the data.
 // Rendered at build time (vite prerender) and re-rendered idempotently on the
 // client, mirroring rowHtml's SSG-then-hydrate pattern.
-const REGION_ORDER = ["Baden-Württemberg", "Hessen", "Rheinland-Pfalz", "Saarland"];
+const REGION_ORDER = ["Bayern", "Baden-Württemberg", "Hessen", "Rheinland-Pfalz", "Saarland"];
 
 function regionSortKey(region) {
   const idx = REGION_ORDER.indexOf(region);
@@ -193,4 +198,55 @@ export function emptyRow() {
     <div class="title">Keine Kurse gefunden</div>
     <div class="hint">Passe die Filter an oder setze sie zurück, um mehr Ergebnisse zu sehen.</div>
   </div></td></tr>`;
+}
+
+// ── About-page coverage (region + chamber list, built from chambers.json) ──
+// Rendered at build time (vite prerender) so the "Über"-page prose, its <ul>,
+// and the SEO meta descriptions never drift from the data as chambers are added.
+// Chambers are grouped by region (alphabetical, German collation) then by name.
+
+const alphabetically = (a, b) => a.localeCompare(b, "de");
+
+const byRegion = (chambers) => {
+  const groups = new Map();
+  for (const c of chambers) {
+    const region = c.region || "";
+    if (!groups.has(region)) groups.set(region, []);
+    groups.get(region).push(c);
+  }
+  return groups;
+};
+
+// Bundesländer that carry a definite article in the dative "in …" phrase.
+// German state names are otherwise article-less; only "das Saarland" needs one.
+const REGION_DATIVE = { Saarland: "dem Saarland" };
+
+/** Region names in German collation order, e.g. ["Hessen", "Rheinland-Pfalz", "Saarland"]. */
+const regionsSorted = (chambers) => [...byRegion(chambers).keys()].sort(alphabetically);
+
+/** "Hessen, Rheinland-Pfalz und dem Saarland" — dative enumeration for prose. */
+export function regionsPhrase(chambers) {
+  const regions = regionsSorted(chambers).map((r) => REGION_DATIVE[r] || r);
+  if (regions.length <= 1) return regions.join("");
+  return `${regions.slice(0, -1).join(", ")} und ${regions.at(-1)}`;
+}
+
+/** "Hessen & Rheinland-Pfalz & Saarland" — compact nominative list for title/eyebrow. */
+export function regionsShort(chambers) {
+  return regionsSorted(chambers).join(" & ");
+}
+
+/** "Hessen · Rheinland-Pfalz · Saarland" — nominative list for the page eyebrow. */
+export function regionsEyebrow(chambers) {
+  return regionsSorted(chambers).join(" · ");
+}
+
+/** <li> list of full chamber names ("HWK X" → "Handwerkskammer X"). */
+export function coverageChambersHtml(chambers) {
+  const groups = byRegion(chambers);
+  return [...groups.keys()].sort(alphabetically).flatMap((region) =>
+    groups.get(region)
+      .sort((a, b) => alphabetically(a.name, b.name))
+      .map((c) => `<li>${esc(c.name.replace(/^HWK /, "Handwerkskammer "))}</li>`),
+  ).join("");
 }

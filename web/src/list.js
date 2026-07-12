@@ -206,6 +206,7 @@ function render() {
 
   document.getElementById("count-courses").textContent = filtered.length;
   document.getElementById("count-chambers").textContent = new Set(filtered.map((c) => c.chamber_slug)).size;
+  document.getElementById("count-trades").textContent = new Set(filtered.map((c) => c.trade_slug)).size;
   document.getElementById("results-count").textContent = filtered.length;
   document.getElementById("results-noun").textContent = filtered.length === 1 ? "Kursangebot" : "Kursangebote";
 
