@@ -6,6 +6,7 @@ import { initNav } from "./nav.js";
 import {
   partsLabel,
   REUTLINGEN_ADDITIONAL_EXAM_NOTE,
+  TRADE_SPECIFIC_EXAM_NOTE,
   SCHWABEN_ADDITIONAL_EXAM_NOTE,
   TOOLTIP_APPROXIMATE,
   TOOLTIP_HESSEN,
@@ -293,6 +294,8 @@ function buildExamLabel(g) {
   let label = "Prüfungsgebühr (€)";
   if (currentCid === "hwk-reutlingen" && g.parts.includes(1)) {
     label += ' <button class="fee-info-btn-calc" type="button" data-tooltip="' + REUTLINGEN_ADDITIONAL_EXAM_NOTE + '">i</button>';
+  } else if (currentCid === "hwk-stuttgart" && g.parts.includes(1)) {
+    label += ' <button class="fee-info-btn-calc" type="button" data-tooltip="' + TRADE_SPECIFIC_EXAM_NOTE + '">i</button>';
   } else if (currentCid === "hwk-schwaben" && g.parts.some((part) => part === 1 || part === 2)) {
     label += ' <button class="fee-info-btn-calc" type="button" data-tooltip="' + SCHWABEN_ADDITIONAL_EXAM_NOTE + '">i</button>';
   } else if (g.examFeeMax) {
