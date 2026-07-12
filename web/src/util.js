@@ -34,9 +34,14 @@ export const TOOLTIP_HESSEN =
 export const ANMELDEGEBUEHR_NOTE =
   "Die HWK Frankfurt-Rhein-Main erhebt möglicherweise eine zusätzliche Anmeldegebühr. Informiere dich zu den genauen Gebühren bei der HWK Frankfurt-Rhein-Main.";
 
-/** HWK Region Stuttgart charges a separate practical-exam fee for Part I. */
-export const STUTTGART_PRACTICAL_EXAM_NOTE =
-  "Die HWK Region Stuttgart erhebt zusätzlich für die Abnahme der praktischen Prüfung eine Sondergebühr in Höhe von 250 €.";
+/** HWK Schwaben / HWK Region Stuttgart: trade-specific exam fees may apply on top of published fees. */
+export const TRADE_SPECIFIC_EXAM_NOTE =
+  "Die Kammer erhebt möglicherweise zzgl. gewerkspezifische Prüfungsgebühren.";
+
+/** True for Teil I or Teil I+II courses (used for trade-specific exam-fee tooltips). */
+export const hasTradeSpecificExamParts = (parts) =>
+  (parts.length === 1 && parts[0] === 1) ||
+  (parts.length === 2 && parts.includes(1) && parts.includes(2));
 
 /** HWK Reutlingen may pass on additional practical-exam expenses for Part I. */
 export const REUTLINGEN_ADDITIONAL_EXAM_NOTE =
