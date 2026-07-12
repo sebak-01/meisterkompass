@@ -1,5 +1,9 @@
 [
   {
+    "slug": "augenoptiker",
+    "name": "Augenoptiker"
+  },
+  {
     "slug": "buchbinder",
     "name": "Buchbinder"
   },
@@ -42,6 +46,10 @@
   {
     "slug": "gerustbauer",
     "name": "Gerüstbauer"
+  },
+  {
+    "slug": "glaser",
+    "name": "Glaser"
   },
   {
     "slug": "gold-und-silberschmiede",

@@ -1,5 +1,40 @@
 [
   {
+    "chamber_slug": "hwk-karlsruhe",
+    "chamber_name": "HWK Karlsruhe",
+    "chamber_region": "Baden-Württemberg",
+    "trade_slug": "kfz-techniker",
+    "trade_name": "Kfz.-Techniker",
+    "title": "Kfz.-Techniker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-02-01",
+    "end_date": "2026-12-31",
+    "duration_hours": null,
+    "course_fee": 4200.0,
+    "course_fee_display": "4.200 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 750.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "750 €"
+    },
+    "city": "Nagold",
+    "street": "Max-Eyth-Straße 23",
+    "zip_code": "72202",
+    "latitude": 48.5473835,
+    "longitude": 8.7138169,
+    "availability": "unknown",
+    "source_url": "https://www.handwerk-calw.de/seminare/termindetails/meistervorbereitungskurs-teil-4-fuer-alle-handwerke-1"
+  },
+  {
     "chamber_slug": "hwk-kassel",
     "chamber_name": "HWK Kassel",
     "chamber_region": "Hessen",

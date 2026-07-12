@@ -136,7 +136,7 @@
     "zip_code": "79110",
     "latitude": 48.0251899,
     "longitude": 7.8137345,
-    "availability": "unknown",
+    "availability": "available",
     "source_url": "https://www.gewerbeakademie.de/weiterbildung/kursangebot/kategorie/meister-kompetenz/seminar/mvkfeinwerk/33/"
   },
   {
@@ -241,7 +241,7 @@
     "zip_code": "79110",
     "latitude": 48.0251899,
     "longitude": 7.8137345,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.gewerbeakademie.de/weiterbildung/kursangebot/kategorie/meister-kompetenz/seminar/mvkmetallb/34/"
   },
   {
@@ -276,7 +276,7 @@
     "zip_code": "79110",
     "latitude": 48.0251899,
     "longitude": 7.8137345,
-    "availability": "unknown",
+    "availability": "available",
     "source_url": "https://www.gewerbeakademie.de/weiterbildung/kursangebot/kategorie/meister-kompetenz/seminar/mvk-schreiner/12/"
   },
   {
@@ -344,7 +344,7 @@
     "zip_code": "77652",
     "latitude": 48.4713854,
     "longitude": 7.9361019,
-    "availability": "unknown",
+    "availability": "available",
     "source_url": "https://www.gewerbeakademie.de/weiterbildung/kursangebot/kategorie/meister-kompetenz/seminar/mvkteiliv-tz/80/"
   },
   {
@@ -480,7 +480,7 @@
     "zip_code": "79110",
     "latitude": 48.0251899,
     "longitude": 7.8137345,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.gewerbeakademie.de/weiterbildung/kursangebot/kategorie/meister-kompetenz/seminar/mvkteiliii-vz/54/"
   },
   {
@@ -514,7 +514,7 @@
     "zip_code": "77652",
     "latitude": 48.4713854,
     "longitude": 7.9361019,
-    "availability": "unknown",
+    "availability": "available",
     "source_url": "https://www.gewerbeakademie.de/weiterbildung/kursangebot/kategorie/meister-kompetenz/seminar/mvkteiliv-tz/76/"
   },
   {
@@ -548,7 +548,7 @@
     "zip_code": "77652",
     "latitude": 48.4713854,
     "longitude": 7.9361019,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.gewerbeakademie.de/weiterbildung/kursangebot/kategorie/meister-kompetenz/seminar/mvkteiliii-tz/82/"
   },
   {
@@ -582,7 +582,7 @@
     "zip_code": "79110",
     "latitude": 48.0251899,
     "longitude": 7.8137345,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.gewerbeakademie.de/weiterbildung/kursangebot/kategorie/meister-kompetenz/seminar/mvkteiliv-vz/67/"
   },
   {
@@ -616,7 +616,7 @@
     "zip_code": "79110",
     "latitude": 48.0251899,
     "longitude": 7.8137345,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.gewerbeakademie.de/weiterbildung/kursangebot/kategorie/meister-kompetenz/seminar/mvkteiliii-vz/55/"
   },
   {
@@ -645,12 +645,12 @@
       "qualifier": "",
       "display": "200 €"
     },
-    "city": "Offenburg",
-    "street": "Wasserstraße 19",
-    "zip_code": "77652",
-    "latitude": 48.4713854,
-    "longitude": 7.9361019,
-    "availability": "full",
+    "city": "Freiburg",
+    "street": "Wirthstraße 28",
+    "zip_code": "79110",
+    "latitude": 48.0251899,
+    "longitude": 7.8137345,
+    "availability": "available",
     "source_url": "https://www.gewerbeakademie.de/weiterbildung/kursangebot/kategorie/meister-kompetenz/seminar/mvkteiliii-tz/83/"
   },
   {
@@ -684,7 +684,7 @@
     "zip_code": "79110",
     "latitude": 48.0251899,
     "longitude": 7.8137345,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.gewerbeakademie.de/weiterbildung/kursangebot/kategorie/meister-kompetenz/seminar/mvkteiliv-vz/68/"
   },
   {
@@ -718,7 +718,7 @@
     "zip_code": "79110",
     "latitude": 48.0251899,
     "longitude": 7.8137345,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.gewerbeakademie.de/weiterbildung/kursangebot/kategorie/meister-kompetenz/seminar/mvkteiliii-vz/56/"
   },
   {
@@ -752,7 +752,7 @@
     "zip_code": "79110",
     "latitude": 48.0251899,
     "longitude": 7.8137345,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.gewerbeakademie.de/weiterbildung/kursangebot/kategorie/meister-kompetenz/seminar/mvkteiliv-vz/69/"
   },
   {
@@ -822,7 +822,7 @@
     "zip_code": "79110",
     "latitude": 48.0251899,
     "longitude": 7.8137345,
-    "availability": "unknown",
+    "availability": "available",
     "source_url": "https://www.gewerbeakademie.de/weiterbildung/kursangebot/kategorie/meister-kompetenz/seminar/mvk-zahntechnik/19/"
   },
   {
@@ -857,7 +857,7 @@
     "zip_code": "79110",
     "latitude": 48.0251899,
     "longitude": 7.8137345,
-    "availability": "unknown",
+    "availability": "available",
     "source_url": "https://www.gewerbeakademie.de/weiterbildung/kursangebot/kategorie/meister-kompetenz/seminar/mvk-zahntechnik/20/"
   },
   {
@@ -1809,6 +1809,181 @@
     "chamber_slug": "hwk-karlsruhe",
     "chamber_name": "HWK Karlsruhe",
     "chamber_region": "Baden-Württemberg",
+    "trade_slug": "augenoptiker",
+    "trade_name": "Augenoptiker",
+    "title": "Augenoptiker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-09-21",
+    "end_date": "2027-03-25",
+    "duration_hours": null,
+    "course_fee": 9950.0,
+    "course_fee_display": "9.950 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 750.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "750 €"
+    },
+    "city": "Mannheim",
+    "street": "Theodor-Heuss-Anlage 12",
+    "zip_code": "68165",
+    "latitude": 49.4775101,
+    "longitude": 8.503477,
+    "availability": "full",
+    "source_url": "https://ifb-karlsruhe.de/meisterkurs-augenoptik-vollzeit/"
+  },
+  {
+    "chamber_slug": "hwk-karlsruhe",
+    "chamber_name": "HWK Karlsruhe",
+    "chamber_region": "Baden-Württemberg",
+    "trade_slug": "augenoptiker",
+    "trade_name": "Augenoptiker",
+    "title": "Augenoptiker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "hybrid",
+    "start_date": "2026-10-09",
+    "end_date": "2028-02-20",
+    "duration_hours": null,
+    "course_fee": 6599.0,
+    "course_fee_display": "6.599 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 750.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "750 €"
+    },
+    "city": "Karlsruhe",
+    "street": "Daimlerstraße 46",
+    "zip_code": "76185",
+    "latitude": 49.0313222,
+    "longitude": 8.3591262,
+    "availability": "unknown",
+    "source_url": "https://www.bfw.de/angebot/aufstiegsfortbildung/karlsruhe/augenoptikmeister-in-teil-1-und-2-wochenendunterricht/"
+  },
+  {
+    "chamber_slug": "hwk-karlsruhe",
+    "chamber_name": "HWK Karlsruhe",
+    "chamber_region": "Baden-Württemberg",
+    "trade_slug": "augenoptiker",
+    "trade_name": "Augenoptiker",
+    "title": "Augenoptiker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "hybrid",
+    "start_date": "2027-01-23",
+    "end_date": "2027-12-12",
+    "duration_hours": null,
+    "course_fee": 8250.0,
+    "course_fee_display": "8.250 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 750.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "750 €"
+    },
+    "city": "Mannheim",
+    "street": "Theodor-Heuss-Anlage 12",
+    "zip_code": "68165",
+    "latitude": 49.4775101,
+    "longitude": 8.503477,
+    "availability": "unknown",
+    "source_url": "https://ifb-karlsruhe.de/meisterkurs-augenoptik-teilzeit-internet/"
+  },
+  {
+    "chamber_slug": "hwk-karlsruhe",
+    "chamber_name": "HWK Karlsruhe",
+    "chamber_region": "Baden-Württemberg",
+    "trade_slug": "augenoptiker",
+    "trade_name": "Augenoptiker",
+    "title": "Augenoptiker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-03-17",
+    "end_date": "2028-03-19",
+    "duration_hours": null,
+    "course_fee": 9500.0,
+    "course_fee_display": "9.500 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 750.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "750 €"
+    },
+    "city": "Mannheim",
+    "street": "Theodor-Heuss-Anlage 12",
+    "zip_code": "68165",
+    "latitude": 49.4775101,
+    "longitude": 8.503477,
+    "availability": "unknown",
+    "source_url": "https://ifb-karlsruhe.de/meisterkurs-augenoptik-teilzeit-block/"
+  },
+  {
+    "chamber_slug": "hwk-karlsruhe",
+    "chamber_name": "HWK Karlsruhe",
+    "chamber_region": "Baden-Württemberg",
+    "trade_slug": "augenoptiker",
+    "trade_name": "Augenoptiker",
+    "title": "Augenoptiker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-03-22",
+    "end_date": "2027-09-24",
+    "duration_hours": null,
+    "course_fee": 9950.0,
+    "course_fee_display": "9.950 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 750.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "750 €"
+    },
+    "city": "Mannheim",
+    "street": "Theodor-Heuss-Anlage 12",
+    "zip_code": "68165",
+    "latitude": 49.4775101,
+    "longitude": 8.503477,
+    "availability": "unknown",
+    "source_url": "https://ifb-karlsruhe.de/meisterkurs-augenoptik-vollzeit/"
+  },
+  {
+    "chamber_slug": "hwk-karlsruhe",
+    "chamber_name": "HWK Karlsruhe",
+    "chamber_region": "Baden-Württemberg",
     "trade_slug": "elektrotechniker",
     "trade_name": "Elektrotechniker",
     "title": "Elektrotechniker (Teile I + II + III + IV)",
@@ -1883,6 +2058,43 @@
     "chamber_slug": "hwk-karlsruhe",
     "chamber_name": "HWK Karlsruhe",
     "chamber_region": "Baden-Württemberg",
+    "trade_slug": "glaser",
+    "trade_name": "Glaser",
+    "title": "Glaser (Teile I + II + III + IV)",
+    "parts": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "hybrid",
+    "start_date": "2026-09-14",
+    "end_date": "2027-07-30",
+    "duration_hours": null,
+    "course_fee": 8100.0,
+    "course_fee_display": "8.100 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 1150.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "1.150 €"
+    },
+    "city": "Karlsruhe",
+    "street": "Otto-Wels-Straße 11",
+    "zip_code": "76189",
+    "latitude": 48.9878212,
+    "longitude": 8.3629187,
+    "availability": "unknown",
+    "source_url": "https://www.fenster-fachschule.de/"
+  },
+  {
+    "chamber_slug": "hwk-karlsruhe",
+    "chamber_name": "HWK Karlsruhe",
+    "chamber_region": "Baden-Württemberg",
     "trade_slug": "karosserie-und-fahrzeugbauer",
     "trade_name": "Karosserie- und Fahrzeugbauer",
     "title": "Karosserie- und Fahrzeugbauer (Teile I + II)",
@@ -1913,6 +2125,41 @@
     "longitude": 8.36939,
     "availability": "unknown",
     "source_url": "https://www.bia-karlsruhe.de/artikel/karosserie-und-fahrzeugbau-teile-iii-3631,0,30.html"
+  },
+  {
+    "chamber_slug": "hwk-karlsruhe",
+    "chamber_name": "HWK Karlsruhe",
+    "chamber_region": "Baden-Württemberg",
+    "trade_slug": "kfz-techniker",
+    "trade_name": "Kfz.-Techniker",
+    "title": "Kfz.-Techniker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-02-01",
+    "end_date": "2027-12-18",
+    "duration_hours": null,
+    "course_fee": 4200.0,
+    "course_fee_display": "4.200 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 750.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "750 €"
+    },
+    "city": "Nagold",
+    "street": "Max-Eyth-Straße 23",
+    "zip_code": "72202",
+    "latitude": 48.5473835,
+    "longitude": 8.7138169,
+    "availability": "unknown",
+    "source_url": "https://www.handwerk-calw.de/seminare/termindetails/meistervorbereitungskurs-im-kfz-handwerk-teile-1-2"
   },
   {
     "chamber_slug": "hwk-karlsruhe",
@@ -2202,41 +2449,6 @@
       1,
       2
     ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-08-24",
-    "end_date": "2027-06-11",
-    "duration_hours": 1200,
-    "course_fee": 9500.0,
-    "course_fee_display": "9.500 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 730.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "730 €"
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/elektrotechnikermeister-teil-ii-i-vollzeit"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "elektrotechniker",
-    "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
     "format": "part_time",
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
@@ -2260,143 +2472,6 @@
     "longitude": 9.498614,
     "availability": "available",
     "source_url": "https://www.bz-kassel.de/bildungsangebot/elektro-und-gebaeudetechnik/kursdetail/kurs-412"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "elektrotechniker",
-    "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teil II)",
-    "parts": [
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-02-16",
-    "end_date": "2028-09-23",
-    "duration_hours": null,
-    "course_fee": 6150.0,
-    "course_fee_display": "6.150 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 420.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "420 €"
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/elektrotechnikermeister-teil-ii"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "elektrotechniker",
-    "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-08-23",
-    "end_date": "2028-06-14",
-    "duration_hours": 1200,
-    "course_fee": 9750.0,
-    "course_fee_display": "9.750 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 730.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "730 €"
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/elektrotechnikermeister-teil-ii-i-vollzeit"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "elektrotechniker",
-    "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teil I)",
-    "parts": [
-      1
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": null,
-    "end_date": null,
-    "duration_hours": null,
-    "course_fee": null,
-    "course_fee_display": "—",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 420.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "420 €"
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/elektrotechnikermeister-teil-i"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "elektrotechniker",
-    "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teil II)",
-    "parts": [
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": null,
-    "end_date": null,
-    "duration_hours": null,
-    "course_fee": null,
-    "course_fee_display": "—",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 420.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "420 €"
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/elektrotechnikermeister-teil-ii"
   },
   {
     "chamber_slug": "hwk-kassel",
@@ -2895,40 +2970,6 @@
     "chamber_region": "Hessen",
     "trade_slug": "kfz-techniker",
     "trade_name": "Kfz.-Techniker",
-    "title": "Kfz.-Techniker (Teil II)",
-    "parts": [
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-03-08",
-    "end_date": "2027-06-11",
-    "duration_hours": 530,
-    "course_fee": 3990.0,
-    "course_fee_display": "3.990 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 420.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "420 €"
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-im-kfz-techniker-handwerk"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "kfz-techniker",
-    "trade_name": "Kfz.-Techniker",
     "title": "Kfz.-Techniker (Teile I + II)",
     "parts": [
       1,
@@ -2957,40 +2998,6 @@
     "longitude": 8.7666044,
     "availability": "available",
     "source_url": "https://www.bbz-marburg.de/kurs/mv-kfz-tz/"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "kfz-techniker",
-    "trade_name": "Kfz.-Techniker",
-    "title": "Kfz.-Techniker (Teil I)",
-    "parts": [
-      1
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-06-14",
-    "end_date": "2027-08-06",
-    "duration_hours": 320,
-    "course_fee": 2990.0,
-    "course_fee_display": "2.990 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 420.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "420 €"
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/kraftfahrzeugservicetechniker"
   },
   {
     "chamber_slug": "hwk-kassel",
@@ -3060,74 +3067,6 @@
     "longitude": 8.7666044,
     "availability": "available",
     "source_url": "https://www.bbz-marburg.de/kurs/mv-kfz-tz/"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "kfz-techniker",
-    "trade_name": "Kfz.-Techniker",
-    "title": "Kfz.-Techniker (Teil II)",
-    "parts": [
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2028-03-13",
-    "end_date": "2028-06-16",
-    "duration_hours": 530,
-    "course_fee": 4600.0,
-    "course_fee_display": "4.600 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 420.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "420 €"
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-im-kfz-techniker-handwerk"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "kfz-techniker",
-    "trade_name": "Kfz.-Techniker",
-    "title": "Kfz.-Techniker (Teil I)",
-    "parts": [
-      1
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2028-06-19",
-    "end_date": "2028-08-11",
-    "duration_hours": 320,
-    "course_fee": 3700.0,
-    "course_fee_display": "3.700 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 420.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "420 €"
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/kraftfahrzeugservicetechniker"
   },
   {
     "chamber_slug": "hwk-kassel",
@@ -3231,76 +3170,6 @@
     "longitude": 9.498614,
     "availability": "unknown",
     "source_url": "https://www.kfz-innung-kassel.de/aus-und-weiterbildung-im-ftz/seminare-im-ftz#accordion-content-1109-490"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "land-und-baumaschinenmechatroniker",
-    "trade_name": "Land- und Baumaschinenmechatroniker",
-    "title": "Land- und Baumaschinenmechatroniker (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-09-28",
-    "end_date": "2027-04-23",
-    "duration_hours": 1100,
-    "course_fee": 10500.0,
-    "course_fee_display": "10.500 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 730.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "730 €"
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-landmaschinenmechaniker-handwerk-teile-i-ii"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "land-und-baumaschinenmechatroniker",
-    "trade_name": "Land- und Baumaschinenmechatroniker",
-    "title": "Land- und Baumaschinenmechatroniker (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-10-04",
-    "end_date": "2028-04-28",
-    "duration_hours": 1100,
-    "course_fee": 11000.0,
-    "course_fee_display": "11.000 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 730.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "730 €"
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-landmaschinenmechaniker-handwerk-teile-i-ii"
   },
   {
     "chamber_slug": "hwk-kassel",
@@ -3596,41 +3465,6 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
-    "start_date": "2027-01-18",
-    "end_date": "2027-06-11",
-    "duration_hours": null,
-    "course_fee": 9500.0,
-    "course_fee_display": "9.500 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 730.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "730 €"
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungslehrgang-im-tischler-schreinerhandwerk"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "tischler",
-    "trade_name": "Tischler",
-    "title": "Tischler (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
     "start_date": "2027-03-01",
     "end_date": "2027-07-09",
     "duration_hours": null,
@@ -3720,40 +3554,6 @@
     "longitude": 9.1225344,
     "availability": "available",
     "source_url": "https://veranstaltung.holzfachschule.de/seminar/meister-teil-iii-iv_104853"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-08-10",
-    "end_date": "2026-10-02",
-    "duration_hours": null,
-    "course_fee": 1750.0,
-    "course_fee_display": "1.750 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 340.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "340 €"
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-teil-iii-fuer-alle-gewerke-im-handwerk"
   },
   {
     "chamber_slug": "hwk-kassel",
@@ -3993,40 +3793,6 @@
     "longitude": 9.1225344,
     "availability": "available",
     "source_url": "https://veranstaltung.holzfachschule.de/seminar/meister-teil-iii-iv_104853"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-01-04",
-    "end_date": "2027-02-26",
-    "duration_hours": null,
-    "course_fee": 1830.0,
-    "course_fee_display": "1.830 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 340.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "340 €"
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-teil-iii-fuer-alle-gewerke-im-handwerk"
   },
   {
     "chamber_slug": "hwk-kassel",
@@ -4415,40 +4181,6 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
-    "start_date": "2027-05-10",
-    "end_date": "2027-07-09",
-    "duration_hours": null,
-    "course_fee": 1830.0,
-    "course_fee_display": "1.830 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 340.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "340 €"
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-teil-iii-fuer-alle-gewerke-im-handwerk"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
     "start_date": "2027-06-14",
     "end_date": "2027-07-16",
     "duration_hours": 240,
@@ -4605,40 +4337,6 @@
     "longitude": 8.7666044,
     "availability": "available",
     "source_url": "https://www.bbz-marburg.de/kurs/ada-vz-96/"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-08-09",
-    "end_date": "2027-10-01",
-    "duration_hours": null,
-    "course_fee": 1830.0,
-    "course_fee_display": "1.830 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 340.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "340 €"
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-teil-iii-fuer-alle-gewerke-im-handwerk"
   },
   {
     "chamber_slug": "hwk-kassel",
@@ -17755,6 +17453,43 @@
     "longitude": 9.0972983,
     "availability": "unknown",
     "source_url": "https://www.bia-stuttgart.de/kurse/buchbindermeister/"
+  },
+  {
+    "chamber_slug": "hwk-stuttgart",
+    "chamber_name": "HWK Region Stuttgart",
+    "chamber_region": "Baden-Württemberg",
+    "trade_slug": "backer",
+    "trade_name": "Bäcker",
+    "title": "Bäcker (Teile I + II + III + IV)",
+    "parts": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-01-11",
+    "end_date": "2027-06-25",
+    "duration_hours": null,
+    "course_fee": 4950.0,
+    "course_fee_display": "4.950 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 1050.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "1.050 €"
+    },
+    "city": "Stuttgart",
+    "street": "Wilhelmstraße 7",
+    "zip_code": "70182",
+    "latitude": 48.770631,
+    "longitude": 9.1801632,
+    "availability": "unknown",
+    "source_url": "https://bivsuedwest.de/meistervorbereitungskurse/"
   },
   {
     "chamber_slug": "hwk-stuttgart",
