@@ -53,6 +53,7 @@ meisterkompass/
 │   ├── hwk_kassel.py          # HWK Kassel — multi-provider (see below)
 │   ├── hwk_rhein_main.py      # HWK Frankfurt-Rhein-Main — tabbed multi-module pages
 │   ├── hwk_wiesbaden.py       # HWK Wiesbaden
+│   ├── hwk_{freiburg,heilbronn,karlsruhe,konstanz,mannheim,reutlingen,stuttgart,ulm}.py
 │   ├── hwk_bayern.py          # shared ODAV catalogue/detail parser for Bavaria
 │   ├── hwk_{muenchen_und_oberbayern,niederbayern_oberpfalz,oberfranken}.py
 │   ├── hwk_{mittelfranken,unterfranken,schwaben}.py
@@ -74,9 +75,39 @@ meisterkompass/
 │   ├── public/                 # favicon.svg, og-image.png, fonts/, sitemap.xml, robots.txt
 │   └── src/                    # base/list/afbg.css + nav/list/map/afbg/render/util.js
 ├── scripts/import_manual_fees_from_live.py  # recover curated fees from old site
+├── tests/test_{bw,bayern}_scrapers.py       # offline parser + fee-resolution tests
 ├── mise.toml                    # pins python 3.12 + node 22
 └── .github/workflows/{scrape.yml, deploy.yml}
 ```
+
+#### Bayern — shared ODAV catalogue architecture
+
+All six Bavarian chambers publish Meister courses through the same server-rendered
+ODAV course CMS (paginated `courselist.html` + per-run `coursedetail.html?id=…`).
+`hwk_bayern.py` implements the shared two-pass flow; each chamber file only sets
+metadata, catalogue URL, and any chamber-specific hooks:
+
+| Chamber | Slug | Source |
+|---|---|---|
+| München und Oberbayern | `hwk-muenchen-und-oberbayern` | hwk-muenchen.de |
+| Niederbayern-Oberpfalz | `hwk-niederbayern-oberpfalz` | hwkno.de |
+| Oberfranken | `hwk-oberfranken` | hwk-oberfranken.de |
+| Mittelfranken | `hwk-mittelfranken` | hwk-akademie.de (chamber host blocks bots) |
+| Unterfranken | `hwk-unterfranken` | hwk-ufr.de |
+| Schwaben | `hwk-schwaben` | bildungschwaben.de |
+
+Caveats worth knowing when scraping or interpreting the data:
+
+- **Unterfranken** lists combined prices on the catalogue page (`inkl. Prüfung`);
+  the scraper always fetches detail pages to split `Kurs:` and `Prüfung:`.
+- **Oberfranken** and **Unterfranken** publish per-run exam fees on detail pages;
+  other Bavarian chambers rely on scraped `Prüfung:` where present, or curated
+  schedules (Mittelfranken, Schwaben Parts III/IV in `exam_fees_manual.json`).
+- **Mittelfranken** shares one booking for a combined Feinwerkmechaniker/Metallbauer
+  run — the scraper emits two offers with distinct `source_url` fragments.
+- **Schwaben** trade Meisterkurse often omit explicit part numbers in the title;
+  `*-Meisterkurs` titles are mapped to Parts I+II.
+- Month-only start dates (e.g. `September 2027`) are stored as `YYYY-MM-01`.
 
 #### HWK Kassel — multi-provider architecture
 
@@ -131,6 +162,16 @@ python -m scrapers.run                      # all chambers → write data/*.json
 python -m scrapers.run --chamber hwk-pfalz  # one chamber
 python -m scrapers.run --dry-run            # scrape + log counts, write nothing
 python -m scrapers.run --rebake             # re-apply manual fees, no scraping
+
+# all six Bavarian chambers (stops on first failure)
+python -m scrapers.run --chamber hwk-muenchen-und-oberbayern && \
+python -m scrapers.run --chamber hwk-niederbayern-oberpfalz && \
+python -m scrapers.run --chamber hwk-oberfranken && \
+python -m scrapers.run --chamber hwk-mittelfranken && \
+python -m scrapers.run --chamber hwk-unterfranken && \
+python -m scrapers.run --chamber hwk-schwaben
+
+python -m unittest discover -s tests        # offline parser + fee tests
 ```
 
 The pipeline:
@@ -148,8 +189,9 @@ The pipeline:
   history accumulates.
 
 Manually-curated exam fees (HWK Koblenz "bis zu", HWK Rheinhessen ranges, the
-three Hessen chambers' fee schedules incl. combo-bundle keys) are edited by hand
-in `data/manual/exam_fees_manual.json`; run `--rebake` to apply them.
+three Hessen chambers' fee schedules incl. combo-bundle keys, Mittelfranken and
+Schwaben generic Parts III/IV) are edited by hand in
+`data/manual/exam_fees_manual.json`; run `--rebake` to apply them.
 
 ---
 
@@ -260,7 +302,7 @@ has since been removed entirely.
 
 ### Planned
 - [ ] Berufenet links per trade (field already in the model)
-- [ ] Nationwide expansion — add the remaining German Handwerkskammern (45 of 53)
+- [ ] Nationwide expansion — add the remaining German Handwerkskammern (31 of 53)
 
 #### Remaining Handwerkskammern by Bundesland
 
