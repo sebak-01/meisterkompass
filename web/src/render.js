@@ -13,6 +13,7 @@ import {
   ANMELDEGEBUEHR_NOTE,
   STUTTGART_PRACTICAL_EXAM_NOTE,
   REUTLINGEN_ADDITIONAL_EXAM_NOTE,
+  SCHWABEN_ADDITIONAL_EXAM_NOTE,
   HESSEN_CHAMBERS,
 } from "./util.js";
 
@@ -76,6 +77,8 @@ function availabilityBadge(a, small = false) {
  * Renders the exam-fee table cell with the appropriate info button.
  * Tooltip text selection (matching util.js constants):
  *   Stuttgart Part I → STUTTGART_PRACTICAL_EXAM_NOTE (additional practical fee)
+ *   Reutlingen Part I → REUTLINGEN_ADDITIONAL_EXAM_NOTE
+ *   Schwaben Parts I/II → SCHWABEN_ADDITIONAL_EXAM_NOTE (trade-specific surcharge)
  *   qualifier set    → TOOLTIP_QUALIFIER  (e.g. HWK Koblenz "bis zu")
  *   fee_max set      → TOOLTIP_RANGE      (e.g. HWK Rheinhessen range)
  *   Hessen chamber   → TOOLTIP_HESSEN     (HWK Rhein-Main / Wiesbaden / Kassel)
@@ -88,6 +91,8 @@ function examFeeCell(ef, chamberSlug = "", parts = []) {
     btn = `<button class="fee-info-btn" data-tooltip="${esc(STUTTGART_PRACTICAL_EXAM_NOTE)}" type="button">i</button>`;
   else if (chamberSlug === "hwk-reutlingen" && parts.includes(1))
     btn = `<button class="fee-info-btn" data-tooltip="${esc(REUTLINGEN_ADDITIONAL_EXAM_NOTE)}" type="button">i</button>`;
+  else if (chamberSlug === "hwk-schwaben" && parts.some((part) => part === 1 || part === 2))
+    btn = `<button class="fee-info-btn" data-tooltip="${esc(SCHWABEN_ADDITIONAL_EXAM_NOTE)}" type="button">i</button>`;
   else if (ef.qualifier === "ca.")
     btn = `<button class="fee-info-btn" data-tooltip="${esc(TOOLTIP_APPROXIMATE)}" type="button">i</button>`;
   else if (ef.qualifier)

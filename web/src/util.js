@@ -42,5 +42,9 @@ export const STUTTGART_PRACTICAL_EXAM_NOTE =
 export const REUTLINGEN_ADDITIONAL_EXAM_NOTE =
   "Bei Meisterprüfungen, für die von der HWK Reutlingen zusätzlich Personal-, Material-, Raum- und Sachkosten geleistet werden, ist die Gebühr entsprechend zu erhöhen. Je nach Gewerk liegt der Rahmen zwischen 300 € und 1.500 €";
 
+/** HWK Schwaben may charge trade-specific exam surcharges on top of the published base fees. */
+export const SCHWABEN_ADDITIONAL_EXAM_NOTE =
+  "Die Kammer erhebt möglicherweise zzgl. gewerkspezifische Prüfungsgebühren.";
+
 /** Slugs of the three Hessen chambers — used by render.js and afbg.js to select TOOLTIP_HESSEN. */
 export const HESSEN_CHAMBERS = new Set(["hwk-rhein-main", "hwk-wiesbaden", "hwk-kassel"]);
