@@ -270,8 +270,8 @@ def parse_exam_fee(text: str, parts: list[int]) -> tuple[float | None, str]:
 
     part_amounts: dict[int, float] = {}
     patterns = (
-        r"Prüfungsgebühr(?:\s+für)?\s+(?:den\s+)?Teil\s+(I{1,3}|IV)\s*[:：]?\s*(?:€\s*)?"
-        r"([\d.]+),(\d{2})",
+        r"Prüfungsgebühr(?:\s+für)?\s+(?:den\s+)?Teil\s+(I{1,3}|IV)\s*"
+        r"(?:[:：]\s*(?:€\s*)?|[-–—]\s*)([\d.]+),(\d{2})(?:\s*(?:€|Euro))?",
         r"Prüfungsgebühr\s+([\d.]+),(\d{2})\s*Euro\s+Teil\s+(I{1,3}|IV)",
         r"([\d.]+),(\d{2})\s*Euro\s+Teil\s+(I{1,3}|IV)\b",
     )
