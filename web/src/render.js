@@ -160,7 +160,7 @@ export function rowHtml(c) {
 // Derived from data/chambers.json so the HWK list never drifts from the data.
 // Rendered at build time (vite prerender) and re-rendered idempotently on the
 // client, mirroring rowHtml's SSG-then-hydrate pattern.
-const REGION_ORDER = ["Baden-Württemberg", "Hessen", "Rheinland-Pfalz", "Saarland"];
+const REGION_ORDER = ["Bayern", "Baden-Württemberg", "Hessen", "Rheinland-Pfalz", "Saarland"];
 
 function regionSortKey(region) {
   const idx = REGION_ORDER.indexOf(region);

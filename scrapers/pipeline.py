@@ -35,9 +35,15 @@ from .hwk_trier import HwkTrierScraper
 from .hwk_kassel import HwkKasselScraper
 from .hwk_karlsruhe import HwkKarlsruheScraper
 from .hwk_mannheim import HwkMannheimScraper
+from .hwk_mittelfranken import HwkMittelfrankenScraper
+from .hwk_muenchen_und_oberbayern import HwkMuenchenUndOberbayernScraper
+from .hwk_niederbayern_oberpfalz import HwkNiederbayernOberpfalzScraper
+from .hwk_oberfranken import HwkOberfrankenScraper
 from .hwk_rhein_main import HwkRheinMainScraper
+from .hwk_schwaben import HwkSchwabenScraper
 from .hwk_stuttgart import HwkStuttgartScraper
 from .hwk_ulm import HwkUlmScraper
+from .hwk_unterfranken import HwkUnterfrankenScraper
 from .hwk_wiesbaden import HwkWiesbadenScraper
 
 
@@ -60,6 +66,12 @@ SCRAPERS: dict[str, type] = {
     "hwk-konstanz":    HwkKonstanzScraper,
     "hwk-reutlingen":  HwkReutlingenScraper,
     "hwk-heilbronn-franken": HwkHeilbronnScraper,
+    "hwk-muenchen-und-oberbayern": HwkMuenchenUndOberbayernScraper,
+    "hwk-niederbayern-oberpfalz": HwkNiederbayernOberpfalzScraper,
+    "hwk-oberfranken": HwkOberfrankenScraper,
+    "hwk-mittelfranken": HwkMittelfrankenScraper,
+    "hwk-unterfranken": HwkUnterfrankenScraper,
+    "hwk-schwaben": HwkSchwabenScraper,
 }
 
 FORMAT_DISPLAY = {
