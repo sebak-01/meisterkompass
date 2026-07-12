@@ -40,6 +40,11 @@
     "region": "Baden-Württemberg"
   },
   {
+    "slug": "hwk-niederbayern-oberpfalz",
+    "name": "HWK Niederbayern-Oberpfalz",
+    "region": "Bayern"
+  },
+  {
     "slug": "hwk-stuttgart",
     "name": "HWK Region Stuttgart",
     "region": "Baden-Württemberg"
@@ -78,5 +83,30 @@
     "slug": "hwk-saarland",
     "name": "HWK des Saarlandes",
     "region": "Saarland"
+  },
+  {
+    "slug": "hwk-mittelfranken",
+    "name": "HWK für Mittelfranken",
+    "region": "Bayern"
+  },
+  {
+    "slug": "hwk-muenchen-und-oberbayern",
+    "name": "HWK für München und Oberbayern",
+    "region": "Bayern"
+  },
+  {
+    "slug": "hwk-oberfranken",
+    "name": "HWK für Oberfranken",
+    "region": "Bayern"
+  },
+  {
+    "slug": "hwk-schwaben",
+    "name": "HWK für Schwaben",
+    "region": "Bayern"
+  },
+  {
+    "slug": "hwk-unterfranken",
+    "name": "HWK für Unterfranken",
+    "region": "Bayern"
   }
 ]
