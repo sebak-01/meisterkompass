@@ -203,8 +203,12 @@ def canonical_detail_url(base_url: str, href: str) -> str:
         prefix = prefix_match.group(1)
     else:
         prefix = parse_qs(split.query).get("search-onr", ["0"])[0]
-    path = f"/kurse/-{prefix},0,coursedetail.html"
+    path = f"/{prefix},0,coursedetail.html"
     return urlunsplit((split.scheme, split.netloc, path, urlencode({"id": course_id}), ""))
+
+
+def course_id_from_url(url: str) -> str:
+    return parse_qs(urlsplit(url).query).get("id", [""])[0]
 
 
 def _section_text(text: str, heading: str, *, stop_headings: tuple[str, ...]) -> str:
@@ -353,7 +357,13 @@ class BavariaOdavScraper(BaseScraper):
                 continue
             cards.extend(self._parse_page(soup))
 
-        unique = {card["detail_url"]: card for card in cards}
+        unique: dict[str, dict] = {}
+        for card in cards:
+            course_id = course_id_from_url(card["detail_url"])
+            if course_id:
+                unique[course_id] = card
+            else:
+                unique[card["detail_url"]] = card
         offers = [self._enrich(card) for card in unique.values()]
         result = [offer for group in offers for offer in (group if isinstance(group, list) else [group]) if offer]
         logger.info("%s: parsed %d of %d catalogue entries.", self.chamber_name, len(result), total)
@@ -376,9 +386,10 @@ class BavariaOdavScraper(BaseScraper):
         seen: set[str] = set()
         for link in soup.select("a[href*='coursedetail']"):
             detail_url = canonical_detail_url(self.catalogue.base_url, link.get("href", ""))
-            if not detail_url or detail_url in seen:
+            course_id = course_id_from_url(detail_url) or detail_url
+            if not detail_url or course_id in seen:
                 continue
-            seen.add(detail_url)
+            seen.add(course_id)
             card = self._parse_card(link, detail_url)
             if card:
                 cards.append(card)

@@ -83,7 +83,7 @@ class BavariaParserTests(unittest.TestCase):
         )
         self.assertEqual(
             url,
-            "https://www.hwk-ufr.de/kurse/-78,0,coursedetail.html?id=458053",
+            "https://www.hwk-ufr.de/78,0,coursedetail.html?id=458053",
         )
 
     def test_exam_fee_prose_patterns(self):
