@@ -2,8 +2,31 @@
 
 from collections import Counter
 
+from bs4 import Tag
+
 from .base import RawCourseOffer
-from .hwk_bayern import BavariaCatalogue, BavariaOdavScraper
+from .hwk_bayern import DURATION_RE, BavariaCatalogue, BavariaOdavScraper
+
+
+LOCATIONS = {
+    "cham": ("Frühlingstraße 13", "93413", "Cham"),
+    "deggendorf": ("Graflinger Straße 105", "94469", "Deggendorf"),
+    "landshut": ("Am Lurzenhof 10 b", "84036", "Landshut"),
+    "landshut-schönbrunn": ("Am Lurzenhof 10 b", "84036", "Landshut"),
+    "neumarkt i. d. opf.": ("Kerschensteinerstraße 5", "92318", "Neumarkt i.d.OPf."),
+    "neumarkt i.d.opf.": ("Kerschensteinerstraße 5", "92318", "Neumarkt i.d.OPf."),
+    "passau": ("Simmerlingweg 4 und 15", "94036", "Passau"),
+    "pfarrkirchen": ("Christangerstraße 12", "84347", "Pfarrkirchen"),
+    "regensburg": ("Ditthornstraße 10", "93055", "Regensburg"),
+    "schwandorf": ("Charlottenhof 1", "92421", "Schwandorf"),
+    "straubing": ("Johannes-Kepler-Straße 14", "94315", "Straubing"),
+    "vilshofen an der donau": ("Kapuziner Straße 66 a", "94474", "Vilshofen an der Donau"),
+    "waldkirchen": ("Freyunger Straße 8", "94065", "Waldkirchen"),
+    "weiden": ("Bernhard-Suttner-Straße 5", "92637", "Weiden"),
+    "weiden i.d.opf.": ("Bernhard-Suttner-Straße 5", "92637", "Weiden"),
+    "wiesau": ("Pestalozzistraße 2", "95676", "Wiesau"),
+    "zwiesel": ("Fachschulstraße 15", "94227", "Zwiesel"),
+}
 
 
 class HwkNiederbayernOberpfalzScraper(BavariaOdavScraper):
@@ -20,7 +43,35 @@ class HwkNiederbayernOberpfalzScraper(BavariaOdavScraper):
         default_city="Regensburg",
         default_street="Ditthornstraße 10",
         default_zip="93055",
+        details_required=False,
     )
+
+    def _parse_card(self, link: Tag, detail_url: str | None = None) -> dict | None:
+        card = super()._parse_card(link, detail_url)
+        if card is None:
+            return None
+        row = link.find_parent("div", class_="row")
+        lines = [
+            line.strip()
+            for line in (row.get_text("\n", strip=True) if row else "").splitlines()
+            if line.strip()
+        ]
+        for index, line in enumerate(lines):
+            if DURATION_RE.fullmatch(line) and index + 1 < len(lines):
+                card["listing_city"] = lines[index + 1]
+                break
+        return card
+
+    def listing_location(self, card: dict, teaching_mode: str) -> tuple[str, str, str]:
+        raw_city = card.get("listing_city", "").strip()
+        if teaching_mode == "online" or raw_city.lower().startswith("online"):
+            return "", "", "Online"
+        location = LOCATIONS.get(raw_city.lower())
+        if location:
+            return location
+        if raw_city:
+            return "", "", raw_city
+        return super().listing_location(card, teaching_mode)
 
     def fetch_raw_courses(self) -> list[RawCourseOffer]:
         offers = super().fetch_raw_courses()

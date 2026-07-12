@@ -84,8 +84,9 @@ meisterkompass/
 
 All six Bavarian chambers publish Meister courses through the same server-rendered
 ODAV course CMS (paginated `courselist.html` + per-run `coursedetail.html?id=…`).
-`hwk_bayern.py` implements the shared two-pass flow; each chamber file only sets
-metadata, catalogue URL, and any chamber-specific hooks:
+`hwk_bayern.py` implements the shared catalogue parser and optional detail-page
+enrichment; each chamber file only sets metadata, catalogue URL, and any
+chamber-specific hooks:
 
 | Chamber | Slug | Source |
 |---|---|---|
@@ -100,6 +101,9 @@ Caveats worth knowing when scraping or interpreting the data:
 
 - **Unterfranken** lists combined prices on the catalogue page (`inkl. Prüfung`);
   the scraper always fetches detail pages to split `Kurs:` and `Prüfung:`.
+- **Niederbayern-Oberpfalz** is listing-only: its cards already contain every
+  required changing field, while a curated education-centre map supplies exact
+  addresses. This avoids roughly 265 redundant detail requests per run.
 - **Oberfranken** and **Unterfranken** publish per-run exam fees on detail pages;
   other Bavarian chambers rely on scraped `Prüfung:` where present, or curated
   schedules (Mittelfranken, Schwaben Parts III/IV in `exam_fees_manual.json`).

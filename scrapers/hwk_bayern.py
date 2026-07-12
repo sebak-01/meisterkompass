@@ -447,12 +447,8 @@ class BavariaOdavScraper(BaseScraper):
         address = parse_address(main_text)
         if address:
             street, zip_code, city = address
-        elif teaching_mode == "online":
-            street, zip_code, city = "", "", "Online"
         else:
-            street = self.catalogue.default_street
-            zip_code = self.catalogue.default_zip
-            city = self.catalogue.default_city
+            street, zip_code, city = self.listing_location(card, teaching_mode)
 
         course_fee = parse_euro(main_text, "Kurs") if soup else card["course_fee"]
         exam_fee, exam_fee_qualifier = (
@@ -501,6 +497,16 @@ class BavariaOdavScraper(BaseScraper):
     def postprocess_offer(self, offer: RawCourseOffer) -> RawCourseOffer:
         """Hook for chamber-specific offer normalization."""
         return offer
+
+    def listing_location(self, card: dict, teaching_mode: str) -> tuple[str, str, str]:
+        """Resolve a location when no detail-page address is available."""
+        if teaching_mode == "online":
+            return "", "", "Online"
+        return (
+            self.catalogue.default_street,
+            self.catalogue.default_zip,
+            self.catalogue.default_city,
+        )
 
     def transform_offer(
         self, offer: RawCourseOffer, detail_text: str

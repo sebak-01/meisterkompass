@@ -217,6 +217,35 @@ class BavariaRegistrationTests(unittest.TestCase):
         result = HwkNiederbayernOberpfalzScraper._disambiguate_parallel_runs(offers)
         self.assertTrue(all(" — " in offer.title for offer in result))
 
+    def test_niederbayern_uses_listing_location_without_detail_request(self):
+        soup = BeautifulSoup(
+            """
+            <div class="row">
+              <h3>20.08.2026 - 01.12.2026: Vollzeit
+                <a href="/kurse/example-76,0,coursedetail.html?id=42">
+                  Fahrzeuglackierermeister/in - Teile I und II
+                </a>
+              </h3>
+              <div>6.850,00 €</div>
+              <div>584 Std.</div>
+              <div>Regensburg</div>
+              <div>freie Plätze</div>
+            </div>
+            """,
+            "html.parser",
+        )
+        scraper = HwkNiederbayernOberpfalzScraper()
+        scraper.parse_html = lambda _url: self.fail("detail page must not be requested")
+        card = scraper._parse_card(soup.select_one("a"))
+        offer = scraper._enrich(card)
+
+        self.assertFalse(scraper.catalogue.details_required)
+        self.assertEqual(offer.city, "Regensburg")
+        self.assertEqual(offer.street, "Ditthornstraße 10")
+        self.assertEqual(offer.zip_code, "93055")
+        self.assertEqual(offer.course_fee, 6850.0)
+        self.assertEqual(offer.duration_hours, 584)
+
 
 if __name__ == "__main__":
     unittest.main()
