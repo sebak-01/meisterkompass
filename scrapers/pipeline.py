@@ -45,6 +45,9 @@ from .hwk_stuttgart import HwkStuttgartScraper
 from .hwk_ulm import HwkUlmScraper
 from .hwk_unterfranken import HwkUnterfrankenScraper
 from .hwk_wiesbaden import HwkWiesbadenScraper
+from .hwk_erfurt import HwkErfurtScraper
+from .hwk_ostthueringen_gera import HwkOstthueringenGeraScraper
+from .hwk_suedthueringen_suhl import HwkSuedthueringenSuhlScraper
 
 
 logger = logging.getLogger(__name__)
@@ -72,6 +75,9 @@ SCRAPERS: dict[str, type] = {
     "hwk-mittelfranken": HwkMittelfrankenScraper,
     "hwk-unterfranken": HwkUnterfrankenScraper,
     "hwk-schwaben": HwkSchwabenScraper,
+    "hwk-erfurt": HwkErfurtScraper,
+    "hwk-ostthueringen-gera": HwkOstthueringenGeraScraper,
+    "hwk-suedthueringen-suhl": HwkSuedthueringenSuhlScraper,
 }
 
 FORMAT_DISPLAY = {

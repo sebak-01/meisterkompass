@@ -39,6 +39,7 @@ TRADE_ALIASES = {
     "ofen- und luftheizungsbauer": "Ofen- und Luftheizungsbauer",
     "orthopädieschuhmacher": "Orthopädieschuhmacher",
     "orthopädietechniker": "Orthopädietechniker",
+    "augenoptiker": "Augenoptiker",
     "land- und baumaschinenmechatroniker": "Land- und Baumaschinenmechatroniker",
     "installateur- und heizungsbauer": "Installateur- und Heizungsbauer",
     "installateur und heizungsbauer": "Installateur- und Heizungsbauer",
@@ -47,6 +48,7 @@ TRADE_ALIASES = {
     "installateur-/": "Installateur- und Heizungsbauer",
     "karosserie- u. fahrzeugbauer": "Karosserie- und Fahrzeugbauer",
     "karosserie- und fahrzeugbauer": "Karosserie- und Fahrzeugbauer",
+    "zweiradmechaniker": "Zweiradmechaniker",
     "fliesen-, platten- und mosaikleger": "Fliesen-, Platten- und Mosaikleger",
     "maurer- und betonbauer": "Maurer und Betonbauer",
     "maurer und betonbauer": "Maurer und Betonbauer",
@@ -96,11 +98,6 @@ def parse_euro(text: str, label: str | None = None) -> float | None:
 
 def parse_parts(title: str, *, implicit_trade_parts: bool = False) -> list[int]:
     lower = title.lower()
-    if "ausbildereignung" in lower or re.search(r"\b(?:ada|aevo)\b", lower):
-        return [4]
-    if "kaufmännische betriebsführung" in lower or re.search(r"fach(?:mann|frau).+hwo", lower):
-        return [3]
-
     match = PARTS_RE.search(title)
     if match:
         tokens = re.findall(r"IV|III|II|I|[1-4]", match.group("parts").upper())
@@ -109,6 +106,11 @@ def parse_parts(title: str, *, implicit_trade_parts: bool = False) -> list[int]:
             lo, hi = sorted(values)
             return list(range(lo, hi + 1))
         return sorted(set(value for value in values if value))
+
+    if "ausbildereignung" in lower or re.search(r"\b(?:ada|aevo)\b", lower):
+        return [4]
+    if "kaufmännische betriebsführung" in lower or re.search(r"fach(?:mann|frau).+hwo", lower):
+        return [3]
 
     if implicit_trade_parts and "meister" in lower:
         return [1, 2]
