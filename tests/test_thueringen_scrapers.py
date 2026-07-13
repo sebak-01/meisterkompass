@@ -1,4 +1,6 @@
+import json
 import unittest
+from pathlib import Path
 from unittest.mock import patch
 
 from bs4 import BeautifulSoup
@@ -6,7 +8,10 @@ from bs4 import BeautifulSoup
 from scrapers.fees import build_exam_fee_lookup, resolve_exam_fee
 from scrapers.hwk_bayern import parse_parts
 from scrapers.hwk_erfurt import HwkErfurtScraper
-from scrapers.hwk_ostthueringen_gera import HwkOstthueringenGeraScraper
+from scrapers.hwk_ostthueringen_gera import (
+    HwkOstthueringenGeraScraper,
+    LEHESTEN_COURSES,
+)
 from scrapers.hwk_suedthueringen_suhl import (
     HwkSuedthueringenSuhlScraper,
     parse_suhl_title,
@@ -112,6 +117,41 @@ class ThueringenParserTests(unittest.TestCase):
         self.assertTrue(all(offer.street == "Kloster 1" for offer in offers))
         self.assertTrue(all(offer.city == "Rohr" for offer in offers))
 
+    def test_lehesten_provider_parses_partner_course(self):
+        scraper = HwkOstthueringenGeraScraper()
+        spec = next(item for item in LEHESTEN_COURSES if item["trade_name"] == "Dachdecker")
+        overview = BeautifulSoup(
+            """
+            <main>
+              <p>Lehrgangskosten 8.710,00€ (Stand für Kurs 2026/27)</p>
+              <p>Der Lehrgang umfasst ca. 1.140 Stunden.</p>
+            </main>
+            """,
+            "html.parser",
+        )
+        run_page = BeautifulSoup(
+            """
+            <main>
+              <h1>Meistervorbereitungslehrgang Dachdecker Teil 1 und Teil 2</h1>
+              <p>07.09.2026</p>
+              <p>25.03.2027</p>
+              <p>Dachdeckermeisterkurs in Vollzeit</p>
+            </main>
+            """,
+            "html.parser",
+        )
+        scraper.parse_html = lambda url: overview if "dachdeckermeister-teil-1-2" in url else run_page
+        offer = scraper._parse_lehesten_course(spec)
+
+        self.assertEqual(offer.trade_name, "Dachdecker")
+        self.assertEqual(offer.parts, [1, 2])
+        self.assertEqual(offer.start_date, "2026-09-07")
+        self.assertEqual(offer.end_date, "2027-03-25")
+        self.assertEqual(offer.course_fee, 8710.0)
+        self.assertEqual(offer.duration_hours, 1140)
+        self.assertEqual(offer.street, "Friedrichsbruch 3")
+        self.assertEqual(offer.city, "Lehesten")
+
 
 class ThueringenIntegrationTests(unittest.TestCase):
     def test_all_chambers_are_registered_with_issue_slugs(self):
@@ -140,6 +180,20 @@ class ThueringenIntegrationTests(unittest.TestCase):
                 scraper.chamber_slug, "any-trade", parts, None, lookup
             )
             self.assertEqual(resolved["fee"], expected)
+            self.assertEqual(resolved["qualifier"], "")
+
+    def test_erfurt_manual_exam_fee_schedule(self):
+        fee_path = Path(__file__).resolve().parents[1] / "data/manual/exam_fees_manual.json"
+        lookup = build_exam_fee_lookup([], json.loads(fee_path.read_text(encoding="utf-8")))
+        cases = (
+            ([1, 2], 760.0),
+            ([3], 340.0),
+            ([4], 340.0),
+        )
+        for parts, expected in cases:
+            resolved = resolve_exam_fee("hwk-erfurt", "any-trade", parts, None, lookup)
+            self.assertEqual(resolved["fee"], expected)
+            self.assertEqual(resolved["qualifier"], "")
 
 
 if __name__ == "__main__":

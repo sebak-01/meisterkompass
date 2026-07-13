@@ -1,12 +1,14 @@
 """Scraper for HWK Ostthüringen's ODAV Meister course catalogues."""
 
 import logging
+import re
 
-from .base import ScrapeResult
+from .base import RawCourseOffer, ScrapeResult, build_course_title
 from .hwk_bayern import (
     BavariaCatalogue,
     BavariaOdavScraper,
     course_id_from_url,
+    parse_format_and_mode,
 )
 
 logger = logging.getLogger(__name__)
@@ -14,6 +16,65 @@ logger = logging.getLogger(__name__)
 BASE_URL = "https://www.hwk-gera.de"
 INFO_URL = f"{BASE_URL}/artikel/wege-zum-meistertitel-5,19,211.html"
 TOPICS = (49, 46, 50, 71)  # I+II, III, III+IV, IV
+
+LEHESTEN_BASE = "https://dachdeckerschule-lehesten.de"
+LEHESTEN_OVERVIEW_URL = f"{LEHESTEN_BASE}/de-de/meisterlehrgaenge/"
+LEHESTEN_LOCATION = {
+    "street": "Friedrichsbruch 3",
+    "zip_code": "07349",
+    "city": "Lehesten",
+}
+DATE_RE = re.compile(r"(\d{2})\.(\d{2})\.(\d{4})")
+PRICE_RE = re.compile(r"([\d.]+),(\d{2})\s*€")
+DURATION_RE = re.compile(r"ca\.\s*([\d.]+)\s*Stunden", re.IGNORECASE)
+
+# HWK catalogue entries for these trades are partner pointers without fees.
+PARTNER_COURSE_IDS = {"112543", "119286", "112548"}
+LEHESTEN_COURSES = (
+    {
+        "trade_name": "Dachdecker",
+        "overview_url": f"{LEHESTEN_BASE}/de-de/meisterlehrgaenge/dachdeckermeister-teil-1-2/",
+        "run_url": (
+            f"{LEHESTEN_BASE}/de-de/meisterlehrgaenge/"
+            "meistervorbereitungslehrgang-dachdecker-teil-1-und-teil-2-3174697/"
+        ),
+    },
+    {
+        "trade_name": "Klempner",
+        "overview_url": f"{LEHESTEN_BASE}/de-de/meisterlehrgaenge/klempnermeister-teil-1-2/",
+        "run_url": (
+            f"{LEHESTEN_BASE}/de-de/meisterlehrgaenge/"
+            "meistervorbereitungslehrgang-klempner-teil-1-und-teil-2-6582935/"
+        ),
+    },
+    {
+        "trade_name": "Zimmerer",
+        "overview_url": f"{LEHESTEN_BASE}/de-de/meisterlehrgaenge/zimmerermeister-teil-1-2/",
+        "run_url": (
+            f"{LEHESTEN_BASE}/de-de/meisterlehrgaenge/"
+            "meistervorbereitungslehrgang-zimmerer-teil-1-und-teil-2-5100981/"
+        ),
+    },
+)
+
+
+def _iso_from_groups(groups: tuple[str, str, str]) -> str:
+    day, month, year = groups
+    return f"{year}-{month}-{day}"
+
+
+def _parse_lehesten_fee(text: str) -> float | None:
+    match = re.search(r"Lehrgangskosten\s+([\d.]+),(\d{2})\s*€", text, re.IGNORECASE)
+    if not match:
+        match = PRICE_RE.search(text)
+    if not match:
+        return None
+    return float(match.group(1).replace(".", "") + "." + match.group(2))
+
+
+def _parse_lehesten_duration(text: str) -> int | None:
+    match = DURATION_RE.search(text)
+    return int(match.group(1).replace(".", "")) if match else None
 
 
 class HwkOstthueringenGeraScraper(BavariaOdavScraper):
@@ -64,8 +125,71 @@ class HwkOstthueringenGeraScraper(BavariaOdavScraper):
                 continue
             if offer:
                 offers.extend(offer if isinstance(offer, list) else [offer])
+
+        offers = [
+            offer for offer in offers
+            if course_id_from_url(offer.source_url) not in PARTNER_COURSE_IDS
+        ]
+        try:
+            lehesten_offers = self._fetch_lehesten_courses()
+            logger.info("HWK Ostthüringen/Lehesten: %d course offers.", len(lehesten_offers))
+            offers.extend(lehesten_offers)
+        except Exception:
+            logger.exception("HWK Ostthüringen/Lehesten: provider failed — skipping.")
+
         logger.info("HWK Ostthüringen: parsed %d unique course offers.", len(offers))
         return offers
+
+    def _fetch_lehesten_courses(self) -> list[RawCourseOffer]:
+        offers: list[RawCourseOffer] = []
+        for spec in LEHESTEN_COURSES:
+            try:
+                offer = self._parse_lehesten_course(spec)
+            except Exception as exc:
+                logger.warning("Could not parse Lehesten course %s: %s", spec["run_url"], exc)
+                continue
+            if offer:
+                offers.append(offer)
+        return offers
+
+    def _parse_lehesten_course(self, spec: dict) -> RawCourseOffer | None:
+        overview = self.parse_html(spec["overview_url"])
+        run_page = self.parse_html(spec["run_url"])
+        if overview is None or run_page is None:
+            logger.warning("Could not fetch Lehesten pages for %s.", spec["trade_name"])
+            return None
+
+        overview_text = overview.get_text("\n", strip=True)
+        run_text = run_page.get_text("\n", strip=True)
+        dates = DATE_RE.findall(run_text)
+        if len(dates) < 2:
+            logger.warning("No scheduled run found for Lehesten %s.", spec["trade_name"])
+            return None
+
+        start_date = _iso_from_groups(dates[0])
+        end_date = _iso_from_groups(dates[1])
+        format_key, teaching_mode = parse_format_and_mode(run_text)
+        return RawCourseOffer(
+            title=build_course_title(spec["trade_name"], [1, 2]),
+            trade_name=spec["trade_name"],
+            parts=[1, 2],
+            format_key=format_key,
+            teaching_mode=teaching_mode,
+            start_date=start_date,
+            end_date=end_date,
+            duration_hours=_parse_lehesten_duration(overview_text),
+            course_fee=_parse_lehesten_fee(overview_text),
+            city=LEHESTEN_LOCATION["city"],
+            street=LEHESTEN_LOCATION["street"],
+            zip_code=LEHESTEN_LOCATION["zip_code"],
+            availability="available",
+            source_url=spec["run_url"],
+            scraped_raw={
+                "provider": "Dachdeckerschule Lehesten",
+                "provider_overview": LEHESTEN_OVERVIEW_URL,
+                "hwk_partner": True,
+            },
+        )
 
     def postprocess_offer(self, offer):
         # The detail's "Kurs" amount is a course fee. Exam fees are the
@@ -82,7 +206,7 @@ class HwkOstthueringenGeraScraper(BavariaOdavScraper):
                 "trade_slug": None,
                 "part": part,
                 "fee": fee,
-                "qualifier": "ab" if part == 1 else "",
+                "qualifier": "",
                 "source_url": INFO_URL,
             }
             for part, fee in self.EXAM_FEES.items()

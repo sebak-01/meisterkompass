@@ -44,5 +44,9 @@ export const REUTLINGEN_ADDITIONAL_EXAM_NOTE =
 /** HWK Schwaben may charge trade-specific exam surcharges on top of the published base fees. */
 export const SCHWABEN_ADDITIONAL_EXAM_NOTE = TRADE_SPECIFIC_EXAM_NOTE;
 
+/** HWK Erfurt: trade-specific surcharges plus higher fees for small exam groups. */
+export const ERFFURT_EXAM_NOTE =
+  "Die Kammer erhebt möglicherweise zzgl. gewerkspezifische Prüfungsgebühren. Die Prüfungsgebühren können bei einer Teilnehmerzahl von weniger als 10 Personen höher sein.";
+
 /** Slugs of the three Hessen chambers — used by render.js and afbg.js to select TOOLTIP_HESSEN. */
 export const HESSEN_CHAMBERS = new Set(["hwk-rhein-main", "hwk-wiesbaden", "hwk-kassel"]);

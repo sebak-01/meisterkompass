@@ -243,7 +243,7 @@ class HwkSuedthueringenSuhlScraper(BaseScraper):
                 "trade_slug": None,
                 "part": part,
                 "fee": fee,
-                "qualifier": "ab" if part == 1 else "",
+                "qualifier": "",
                 "source_url": EXAM_FEES_URL,
             }
             for part, fee in self.EXAM_FEES.items()

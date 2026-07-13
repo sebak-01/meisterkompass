@@ -470,5 +470,37 @@
     "fee": 175.0,
     "fee_max": null,
     "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-erfurt",
+    "trade_slug": null,
+    "part": 1,
+    "fee": 380.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-erfurt",
+    "trade_slug": null,
+    "part": 2,
+    "fee": 380.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-erfurt",
+    "trade_slug": null,
+    "part": 3,
+    "fee": 340.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-erfurt",
+    "trade_slug": null,
+    "part": 4,
+    "fee": 340.0,
+    "fee_max": null,
+    "qualifier": ""
   }
 ]
