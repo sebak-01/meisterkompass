@@ -1745,6 +1745,17 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-rheinhessen",
+    "trade_slug": "elektrotechniker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 7900.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-pfalz",
     "trade_slug": "informationstechniker",
     "parts": [
