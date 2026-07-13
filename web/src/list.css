@@ -176,6 +176,21 @@
   letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.78);
   white-space: nowrap;
 }
+.sort-btn {
+  display: inline-flex; align-items: center; gap: .35rem;
+  padding: 0; border: none; background: transparent;
+  font: inherit; color: inherit; letter-spacing: inherit;
+  text-transform: inherit; cursor: pointer; white-space: nowrap;
+}
+.sort-btn:hover { color: #fff; }
+.sort-btn:focus-visible { outline: 2px solid var(--brass-bright); outline-offset: 2px; border-radius: 2px; }
+.sort-btn[aria-sort="ascending"],
+.sort-btn[aria-sort="descending"] { color: #fff; }
+.sort-indicator {
+  font-size: .72rem; line-height: 1; opacity: .72;
+}
+.sort-btn[aria-sort="ascending"] .sort-indicator,
+.sort-btn[aria-sort="descending"] .sort-indicator { opacity: 1; }
 .course-table td { padding: .8rem 1rem; border-bottom: 1px solid var(--line-soft); vertical-align: top; }
 .chamber-cell {
   width: 185px;

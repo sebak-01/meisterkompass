@@ -3,7 +3,7 @@ import chambers from "@data/chambers.json";
 import trades from "@data/trades.json";
 import { initNav } from "./nav.js";
 import { ROMAN, partsLabel, esc } from "./util.js";
-import { applyFilters, rowHtml, emptyRow, pageItems, fmtDate, chamberFilterHtml } from "./render.js";
+import { applyFilters, rowHtml, emptyRow, pageItems, fmtDate, chamberFilterHtml, sortCourses, sortIndicator } from "./render.js";
 
 // Leaflet (~140 KB) + its CSS are loaded only when the map view is first opened,
 // keeping the default list view's bundle small.
@@ -56,6 +56,8 @@ function readState() {
     perPage: q.get("per_page") || "20",
     view: q.get("view") === "map" ? "map" : "list",
     page: Math.max(1, parseInt(q.get("page") || "1", 10) || 1),
+    sort: q.get("sort") || "",
+    sortDir: q.get("order") === "desc" ? "desc" : "asc",
   };
 }
 
@@ -78,6 +80,10 @@ function writeState(s, { resetPage = false } = {}) {
   if (s.perPage && s.perPage !== "20") q.set("per_page", s.perPage);
   if (s.view === "map") q.set("view", "map");
   if (s.page > 1) q.set("page", s.page);
+  if (s.sort) {
+    q.set("sort", s.sort);
+    if (s.sortDir === "desc") q.set("order", "desc");
+  }
   const qs = q.toString();
   history.replaceState(null, "", qs ? `?${qs}` : location.pathname);
 }
@@ -184,6 +190,16 @@ function syncControls(s) {
   document.getElementById("view-map").style.display = isMap ? "" : "none";
 }
 
+function syncSortHeaders(s) {
+  document.querySelectorAll(".sort-btn[data-sort]").forEach((btn) => {
+    const key = btn.dataset.sort;
+    const active = key === s.sort;
+    btn.setAttribute("aria-sort", active ? (s.sortDir === "desc" ? "descending" : "ascending") : "none");
+    const indicator = btn.querySelector("[data-sort-indicator]");
+    if (indicator) indicator.textContent = sortIndicator(key, s.sort, s.sortDir);
+  });
+}
+
 // ── Master render ─────────────────────────────────────────────────────
 let state = readState();
 
@@ -196,6 +212,7 @@ function render() {
     localStateCopy.chamber = ""; // reset fallback string so original applier avoids conflicts
   }
   filtered = applyFilters(filtered, localStateCopy, todayIso);
+  filtered = sortCourses(filtered, state.sort, state.sortDir);
 
   // Clamp the current page to the available range before slicing.
   if (state.perPage !== "all") {
@@ -215,6 +232,7 @@ function render() {
     items.length ? items.map(rowHtml).join("") : emptyRow();
   renderPagination(state, filtered.length);
   renderTags(state);
+  syncSortHeaders(state);
 
   if (state.view === "map") {
     const mapData = filtered
@@ -333,6 +351,14 @@ function wire() {
   pager.addEventListener("keydown", (e) => {
     const a = e.target.closest("a[data-page]");
     if (a && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); goPage(a); }
+  });
+
+  document.querySelectorAll(".sort-btn[data-sort]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const key = btn.dataset.sort;
+      const nextDir = state.sort === key && state.sortDir === "asc" ? "desc" : "asc";
+      update({ sort: key, sortDir: nextDir }, { resetPage: true });
+    });
   });
 
   // Mobile accordion (delegated)

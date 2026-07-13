@@ -117,6 +117,41 @@ class ThueringenParserTests(unittest.TestCase):
         self.assertTrue(all(offer.street == "Kloster 1" for offer in offers))
         self.assertTrue(all(offer.city == "Rohr" for offer in offers))
 
+    def test_ostthueringen_parses_meister_exam_fees_from_pdf_text(self):
+        text = """
+        5. Abnahme von Teilen der Meisterprüfung für alle Handwerke
+        5.1 Teil I 335,00 €
+        5.2 Teil II 220,00 €
+        5.3 Teil III / Geprüfte/r Fachmann/-frau für kaufmännische
+        Betriebsführung (HWO)
+        190,00 €
+        5.4 Teil IV / Ausbildereignungsprüfung 190,00 €
+        """
+        self.assertEqual(
+            HwkOstthueringenGeraScraper.parse_meister_exam_fees(text),
+            {1: 335.0, 2: 220.0, 3: 190.0, 4: 190.0},
+        )
+
+    def test_ostthueringen_collect_uses_scraped_exam_fees(self):
+        scraper = HwkOstthueringenGeraScraper()
+        scraped = {1: 335.0, 2: 220.0, 3: 190.0, 4: 190.0}
+        with patch.object(scraper, "fetch_raw_courses", return_value=[]):
+            with patch.object(scraper, "_fetch_exam_fees_from_pdf", return_value=scraped):
+                rows = scraper.collect().exam_fee_rows
+        self.assertEqual(
+            {(row["part"], row["fee"]) for row in rows},
+            {(1, 335.0), (2, 220.0), (3, 190.0), (4, 190.0)},
+        )
+        lookup = build_exam_fee_lookup(rows, [])
+        self.assertEqual(
+            resolve_exam_fee(scraper.chamber_slug, "any-trade", [1, 2], None, lookup)["fee"],
+            555.0,
+        )
+        self.assertEqual(
+            resolve_exam_fee(scraper.chamber_slug, "any-trade", [3, 4], None, lookup)["fee"],
+            380.0,
+        )
+
     def test_lehesten_provider_parses_partner_course(self):
         scraper = HwkOstthueringenGeraScraper()
         spec = next(item for item in LEHESTEN_COURSES if item["trade_name"] == "Dachdecker")

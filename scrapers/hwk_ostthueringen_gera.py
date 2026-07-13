@@ -2,6 +2,7 @@
 
 import logging
 import re
+from io import BytesIO
 
 from .base import RawCourseOffer, ScrapeResult, build_course_title
 from .hwk_bayern import (
@@ -15,6 +16,11 @@ logger = logging.getLogger(__name__)
 
 BASE_URL = "https://www.hwk-gera.de"
 INFO_URL = f"{BASE_URL}/artikel/wege-zum-meistertitel-5,19,211.html"
+FEES_PAGE_URL = f"{BASE_URL}/artikel/rechtsgrundlagen-5,0,116.html"
+FEES_PDF_URL = (
+    f"{BASE_URL}/downloads/gebuehren-und-entgeltverzeichnis-2026-der-handwerkskammer-"
+    "fuer-ostthueringen-5,1483.pdf"
+)
 TOPICS = (49, 46, 50, 71)  # I+II, III, III+IV, IV
 
 LEHESTEN_BASE = "https://dachdeckerschule-lehesten.de"
@@ -93,7 +99,14 @@ class HwkOstthueringenGeraScraper(BavariaOdavScraper):
         page_size=100,
         implicit_trade_parts=True,
     )
-    EXAM_FEES = {1: 335.0, 2: 220.0, 3: 190.0, 4: 190.0}
+    EXAM_FEES_FALLBACK = {1: 335.0, 2: 220.0, 3: 190.0, 4: 190.0}
+
+    PART_FEE_PATTERNS = {
+        1: re.compile(r"5\.1\s+Teil\s+I\s+([\d.]+),(\d{2})\s*€"),
+        2: re.compile(r"5\.2\s+Teil\s+II\s+([\d.]+),(\d{2})\s*€"),
+        3: re.compile(r"5\.3\s+Teil\s+III[\s\S]{0,160}?([\d.]+),(\d{2})\s*€"),
+        4: re.compile(r"5\.4\s+Teil\s+IV[\s\S]{0,120}?([\d.]+),(\d{2})\s*€"),
+    }
 
     def fetch_raw_courses(self):
         unique: dict[str, dict] = {}
@@ -192,14 +205,45 @@ class HwkOstthueringenGeraScraper(BavariaOdavScraper):
         )
 
     def postprocess_offer(self, offer):
-        # The detail's "Kurs" amount is a course fee. Exam fees are the
-        # chamber-wide values published on INFO_URL and injected by collect().
+        # The detail's "Kurs" amount is a course fee. Exam fees come from the
+        # chamber's Gebühren- und Entgeltverzeichnis PDF (see collect()).
         offer.exam_fee_scraped = None
         offer.exam_fee_qualifier = ""
         return offer
 
+    @staticmethod
+    def parse_meister_exam_fees(text: str) -> dict[int, float]:
+        fees: dict[int, float] = {}
+        for part, pattern in HwkOstthueringenGeraScraper.PART_FEE_PATTERNS.items():
+            match = pattern.search(text)
+            if not match:
+                continue
+            fees[part] = float(match.group(1).replace(".", "") + "." + match.group(2))
+        return fees if len(fees) == 4 else {}
+
+    def _fetch_exam_fees_from_pdf(self) -> dict[int, float]:
+        try:
+            from pypdf import PdfReader
+        except ImportError:
+            logger.warning("HWK Ostthüringen: pypdf not installed — using fallback exam fees.")
+            return {}
+
+        response = self.get(FEES_PDF_URL)
+        if response is None:
+            logger.warning("HWK Ostthüringen: could not fetch exam-fee PDF.")
+            return {}
+
+        text = ""
+        for page in PdfReader(BytesIO(response.content)).pages:
+            text += (page.extract_text() or "") + "\n"
+        fees = self.parse_meister_exam_fees(text)
+        if not fees:
+            logger.warning("HWK Ostthüringen: could not parse Meister exam fees from PDF.")
+        return fees
+
     def collect(self) -> ScrapeResult:
         result = super().collect()
+        fees = self._fetch_exam_fees_from_pdf() or self.EXAM_FEES_FALLBACK
         result.exam_fee_rows.extend(
             {
                 "chamber_slug": self.chamber_slug,
@@ -207,8 +251,8 @@ class HwkOstthueringenGeraScraper(BavariaOdavScraper):
                 "part": part,
                 "fee": fee,
                 "qualifier": "",
-                "source_url": INFO_URL,
+                "source_url": FEES_PAGE_URL,
             }
-            for part, fee in self.EXAM_FEES.items()
+            for part, fee in fees.items()
         )
         return result

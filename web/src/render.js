@@ -130,6 +130,67 @@ function partsBadges(parts) {
   return parts.map((p) => `<span class="badge" style="display:block;margin-bottom:2px">${ROMAN[p] || p}</span>`).join("");
 }
 
+/** Sortable course-list columns (issue #56). */
+export const SORTABLE_COLUMNS = {
+  chamber: "Kammer",
+  runtime: "Laufzeit",
+  duration: "Dauer",
+  course_fee: "Kursgebühr",
+  exam_fee: "Prüfungsgebühr",
+};
+
+function sortValue(course, key) {
+  switch (key) {
+    case "chamber":
+      return course.chamber_name || "";
+    case "runtime":
+      return course.start_date || "";
+    case "duration":
+      return course.duration_hours ?? null;
+    case "course_fee":
+      return course.course_fee ?? null;
+    case "exam_fee":
+      return course.exam_fee?.fee ?? null;
+    default:
+      return null;
+  }
+}
+
+function compareSortValues(left, right) {
+  const leftMissing = left === null || left === "";
+  const rightMissing = right === null || right === "";
+  if (leftMissing && rightMissing) return 0;
+  if (leftMissing) return 1;
+  if (rightMissing) return -1;
+  if (typeof left === "number" && typeof right === "number") {
+    return left - right;
+  }
+  return String(left).localeCompare(String(right), "de", { numeric: true });
+}
+
+export function sortCourses(courses, sortKey, sortDir = "asc") {
+  if (!sortKey || !SORTABLE_COLUMNS[sortKey]) return courses;
+  const direction = sortDir === "desc" ? -1 : 1;
+  return [...courses].sort((left, right) => {
+    const leftVal = sortValue(left, sortKey);
+    const rightVal = sortValue(right, sortKey);
+    const leftMissing = leftVal === null || leftVal === "";
+    const rightMissing = rightVal === null || rightVal === "";
+    if (leftMissing || rightMissing) {
+      if (leftMissing && rightMissing) return 0;
+      return leftMissing ? 1 : -1;
+    }
+    const cmp = compareSortValues(leftVal, rightVal);
+    if (cmp !== 0) return direction * cmp;
+    return compareSortValues(left.title || "", right.title || "");
+  });
+}
+
+export function sortIndicator(sortKey, activeKey, sortDir) {
+  if (sortKey !== activeKey) return "↕";
+  return sortDir === "desc" ? "↓" : "↑";
+}
+
 export function rowHtml(c) {
   const titleLink = c.source_url
     ? `<a class="course-title link-icon" href="${esc(c.source_url)}" target="_blank" rel="noopener">${esc(c.title)} ↗</a>`

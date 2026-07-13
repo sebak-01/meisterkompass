@@ -1,11 +1,18 @@
 """Courses from the Handwerkskammer Niederbayern-Oberpfalz."""
 
+import re
 from collections import Counter
 
 from bs4 import Tag
 
-from .base import RawCourseOffer
+from .base import RawCourseOffer, build_course_title
 from .hwk_bayern import DURATION_RE, BavariaCatalogue, BavariaOdavScraper
+
+# Issue #54: list Elektrotechniker/Feinwerkmechaniker without Fachrichtung suffix.
+_BASE_TRADE_RE = {
+    "Elektrotechniker": re.compile(r"^Elektrotechniker\b", re.IGNORECASE),
+    "Feinwerkmechaniker": re.compile(r"^Feinwerkmechaniker\b", re.IGNORECASE),
+}
 
 
 LOCATIONS = {
@@ -76,6 +83,15 @@ class HwkNiederbayernOberpfalzScraper(BavariaOdavScraper):
     def fetch_raw_courses(self) -> list[RawCourseOffer]:
         offers = super().fetch_raw_courses()
         return self._disambiguate_parallel_runs(offers)
+
+    def postprocess_offer(self, offer: RawCourseOffer) -> RawCourseOffer:
+        if offer.trade_name:
+            for base, pattern in _BASE_TRADE_RE.items():
+                if pattern.match(offer.trade_name):
+                    offer.trade_name = base
+                    offer.title = build_course_title(base, offer.parts)
+                    break
+        return offer
 
     @staticmethod
     def _disambiguate_parallel_runs(offers: list[RawCourseOffer]) -> list[RawCourseOffer]:
