@@ -237,7 +237,11 @@ class HwkSuedthueringenSuhlScraper(BaseScraper):
 
     def collect(self) -> ScrapeResult:
         result = super().collect()
-        result.exam_fee_rows.extend(
+        result.exam_fee_rows.extend(self.published_exam_fee_rows())
+        return result
+
+    def published_exam_fee_rows(self) -> list[dict]:
+        return [
             {
                 "chamber_slug": self.chamber_slug,
                 "trade_slug": None,
@@ -247,5 +251,4 @@ class HwkSuedthueringenSuhlScraper(BaseScraper):
                 "source_url": EXAM_FEES_URL,
             }
             for part, fee in self.EXAM_FEES.items()
-        )
-        return result
+        ]

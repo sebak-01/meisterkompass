@@ -307,8 +307,12 @@ class HwkOstthueringenGeraScraper(BavariaOdavScraper):
 
     def collect(self) -> ScrapeResult:
         result = super().collect()
+        result.exam_fee_rows.extend(self.published_exam_fee_rows())
+        return result
+
+    def published_exam_fee_rows(self) -> list[dict]:
         fees = self._fetch_exam_fees_from_pdf() or self.EXAM_FEES_FALLBACK
-        result.exam_fee_rows.extend(
+        return [
             {
                 "chamber_slug": self.chamber_slug,
                 "trade_slug": None,
@@ -318,5 +322,4 @@ class HwkOstthueringenGeraScraper(BavariaOdavScraper):
                 "source_url": FEES_PAGE_URL,
             }
             for part, fee in fees.items()
-        )
-        return result
+        ]

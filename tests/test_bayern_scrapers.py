@@ -59,6 +59,20 @@ class BavariaParserTests(unittest.TestCase):
             parse_trade(elektro, parse_parts(elektro)),
             "Elektrotechniker (Energie- und Gebäudetechnik)",
         )
+        self.assertEqual(
+            parse_trade(
+                "Meisterkurs Teil I und II Metallbauer (NEU: Vollzeit)",
+                [1, 2],
+            ),
+            "Metallbauer",
+        )
+        self.assertEqual(
+            parse_trade(
+                "Meisterkurs Teil I und II Tischler (Vollzeit)",
+                [1, 2],
+            ),
+            "Tischler",
+        )
         mk_title = "MK Installateur-/ Heizungsbauerhandwerk Teil I u. II"
         self.assertEqual(
             parse_trade(mk_title, parse_parts(mk_title)),

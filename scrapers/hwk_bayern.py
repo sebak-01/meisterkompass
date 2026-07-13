@@ -127,6 +127,13 @@ def parse_parts(title: str, *, implicit_trade_parts: bool = False) -> list[int]:
     return []
 
 
+# Parenthetical trade suffixes that are format labels, not Fachrichtungen.
+_FORMAT_ONLY_TRADE_SPEC_RE = re.compile(
+    r"^(?:neu\s*:\s*)?(?:vollzeit|teilzeit|abend|wochenende|blended(?:\s*learning)?|online(?:/hybrid)?|präsenz|praesenz)$",
+    re.IGNORECASE,
+)
+
+
 def _trade_specialization(title: str, canonical: str) -> str:
     match = re.search(
         rf"{re.escape(canonical)}(?:meister/in|meister|meisterschule)?\s*\(([^)]+)\)",
@@ -144,6 +151,8 @@ def _trade_specialization(title: str, canonical: str) -> str:
     spec = match.group(1).strip()
     if spec.lower().startswith("fachrichtung "):
         spec = spec.split(None, 1)[1]
+    if _FORMAT_ONLY_TRADE_SPEC_RE.fullmatch(spec):
+        return canonical
     return f"{canonical} ({spec})"
 
 

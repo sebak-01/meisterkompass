@@ -119,6 +119,19 @@ class ThueringenParserTests(unittest.TestCase):
         self.assertTrue(all(offer.street == "Kloster 1" for offer in offers))
         self.assertTrue(all(offer.city == "Rohr" for offer in offers))
 
+    def test_suhl_collect_publishes_exam_fee_rows(self):
+        scraper = HwkSuedthueringenSuhlScraper()
+        rows = scraper.published_exam_fee_rows()
+        self.assertEqual(len(rows), 4)
+        lookup = build_exam_fee_lookup(rows, [])
+        resolved = resolve_exam_fee(scraper.chamber_slug, "any-trade", [1, 2], None, lookup)
+        self.assertEqual(resolved["fee"], 555.0)
+
+    def test_ostthueringen_ignores_format_suffixes_in_trade_names(self):
+        offers = HwkOstthueringenGeraScraper().fetch_raw_courses()
+        weird = {o.trade_name for o in offers if o.trade_name and "(" in o.trade_name}
+        self.assertEqual(weird, set())
+
     def test_ostthueringen_parses_unterricht_schedule_without_alle_termine_bleed(self):
         soup = BeautifulSoup(
             """
