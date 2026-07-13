@@ -174,9 +174,14 @@
             <thead>
               <tr>
                 <th scope="col" class="mob-summary"><span class="visually-hidden">Übersicht</span></th>
-                <th scope="col">Kurs</th><th scope="col">Kammer</th><th scope="col">Teile</th><th scope="col">Zeitmodell</th>
-                <th scope="col">Laufzeit</th><th scope="col">Dauer</th>
-                <th scope="col">Kursgebühr</th><th scope="col">Prüfungsgebühr</th><th scope="col">Ort</th><th scope="col">Verfügbarkeit</th>
+                <th scope="col">Kurs</th>
+                <th scope="col"><button type="button" class="sort-btn" data-sort="chamber">Kammer <span class="sort-indicator" data-sort-indicator="chamber" aria-hidden="true">↕</span></button></th>
+                <th scope="col">Teile</th><th scope="col">Zeitmodell</th>
+                <th scope="col"><button type="button" class="sort-btn" data-sort="runtime">Laufzeit <span class="sort-indicator" data-sort-indicator="runtime" aria-hidden="true">↕</span></button></th>
+                <th scope="col"><button type="button" class="sort-btn" data-sort="duration">Dauer <span class="sort-indicator" data-sort-indicator="duration" aria-hidden="true">↕</span></button></th>
+                <th scope="col"><button type="button" class="sort-btn" data-sort="course_fee">Kursgebühr <span class="sort-indicator" data-sort-indicator="course_fee" aria-hidden="true">↕</span></button></th>
+                <th scope="col"><button type="button" class="sort-btn" data-sort="exam_fee">Prüfungsgebühr <span class="sort-indicator" data-sort-indicator="exam_fee" aria-hidden="true">↕</span></button></th>
+                <th scope="col">Ort</th><th scope="col">Verfügbarkeit</th>
               </tr>
             </thead>
             <tbody id="course-tbody"></tbody>

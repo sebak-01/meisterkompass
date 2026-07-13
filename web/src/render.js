@@ -14,6 +14,8 @@ import {
   TRADE_SPECIFIC_EXAM_NOTE,
   REUTLINGEN_ADDITIONAL_EXAM_NOTE,
   SCHWABEN_ADDITIONAL_EXAM_NOTE,
+  ERFFURT_EXAM_NOTE,
+  TENTATIVE_START_DATE_NOTE,
   HESSEN_CHAMBERS,
 } from "./util.js";
 
@@ -78,7 +80,8 @@ function availabilityBadge(a, small = false) {
  * Tooltip text selection (matching util.js constants):
  *   Stuttgart courses incl. Teil I → TRADE_SPECIFIC_EXAM_NOTE
  *   Reutlingen Part I → REUTLINGEN_ADDITIONAL_EXAM_NOTE
- *   Schwaben Parts I/II → SCHWABEN_ADDITIONAL_EXAM_NOTE (trade-specific surcharge)
+ *   Schwaben / Südthüringen / Ostthüringen Parts I/II → SCHWABEN_ADDITIONAL_EXAM_NOTE
+ *   Erfurt → ERFFURT_EXAM_NOTE
  *   qualifier set    → TOOLTIP_QUALIFIER  (e.g. HWK Koblenz "bis zu")
  *   fee_max set      → TOOLTIP_RANGE      (e.g. HWK Rheinhessen range)
  *   Hessen chamber   → TOOLTIP_HESSEN     (HWK Rhein-Main / Wiesbaden / Kassel)
@@ -91,8 +94,15 @@ function examFeeCell(ef, chamberSlug = "", parts = []) {
     btn = `<button class="fee-info-btn" data-tooltip="${esc(TRADE_SPECIFIC_EXAM_NOTE)}" type="button">i</button>`;
   else if (chamberSlug === "hwk-reutlingen" && parts.includes(1))
     btn = `<button class="fee-info-btn" data-tooltip="${esc(REUTLINGEN_ADDITIONAL_EXAM_NOTE)}" type="button">i</button>`;
-  else if (chamberSlug === "hwk-schwaben" && parts.some((part) => part === 1 || part === 2))
+  else if (
+    (chamberSlug === "hwk-schwaben"
+      || chamberSlug === "hwk-suedthueringen-suhl"
+      || chamberSlug === "hwk-ostthueringen-gera")
+    && parts.some((part) => part === 1 || part === 2)
+  )
     btn = `<button class="fee-info-btn" data-tooltip="${esc(SCHWABEN_ADDITIONAL_EXAM_NOTE)}" type="button">i</button>`;
+  else if (chamberSlug === "hwk-erfurt")
+    btn = `<button class="fee-info-btn" data-tooltip="${esc(ERFFURT_EXAM_NOTE)}" type="button">i</button>`;
   else if (ef.qualifier === "ca.")
     btn = `<button class="fee-info-btn" data-tooltip="${esc(TOOLTIP_APPROXIMATE)}" type="button">i</button>`;
   else if (ef.qualifier)
@@ -121,6 +131,81 @@ function partsBadges(parts) {
   return parts.map((p) => `<span class="badge" style="display:block;margin-bottom:2px">${ROMAN[p] || p}</span>`).join("");
 }
 
+/** Sortable course-list columns (issue #56). */
+export const SORTABLE_COLUMNS = {
+  chamber: "Kammer",
+  runtime: "Laufzeit",
+  duration: "Dauer",
+  course_fee: "Kursgebühr",
+  exam_fee: "Prüfungsgebühr",
+};
+
+function sortValue(course, key) {
+  switch (key) {
+    case "chamber":
+      return course.chamber_name || "";
+    case "runtime":
+      return course.start_date || "";
+    case "duration":
+      return course.duration_hours ?? null;
+    case "course_fee":
+      return course.course_fee ?? null;
+    case "exam_fee":
+      return course.exam_fee?.fee ?? null;
+    default:
+      return null;
+  }
+}
+
+function compareSortValues(left, right) {
+  const leftMissing = left === null || left === "";
+  const rightMissing = right === null || right === "";
+  if (leftMissing && rightMissing) return 0;
+  if (leftMissing) return 1;
+  if (rightMissing) return -1;
+  if (typeof left === "number" && typeof right === "number") {
+    return left - right;
+  }
+  return String(left).localeCompare(String(right), "de", { numeric: true });
+}
+
+export function sortCourses(courses, sortKey, sortDir = "asc") {
+  if (!sortKey || !SORTABLE_COLUMNS[sortKey]) return courses;
+  const direction = sortDir === "desc" ? -1 : 1;
+  return [...courses].sort((left, right) => {
+    const leftVal = sortValue(left, sortKey);
+    const rightVal = sortValue(right, sortKey);
+    const leftMissing = leftVal === null || leftVal === "";
+    const rightMissing = rightVal === null || rightVal === "";
+    if (leftMissing || rightMissing) {
+      if (leftMissing && rightMissing) return 0;
+      return leftMissing ? 1 : -1;
+    }
+    const cmp = compareSortValues(leftVal, rightVal);
+    if (cmp !== 0) return direction * cmp;
+    return compareSortValues(left.title || "", right.title || "");
+  });
+}
+
+export function sortIndicator(sortKey, activeKey, sortDir) {
+  if (sortKey !== activeKey) return "↕";
+  return sortDir === "desc" ? "↓" : "↑";
+}
+
+function runtimeCell(c) {
+  if (!c.start_date) {
+    return '<span style="color:var(--text-lt);font-style:italic">Termine n. v.</span>';
+  }
+  const dateBtn = c.start_date_note
+    ? `<button class="fee-info-btn" data-tooltip="${esc(c.start_date_note)}" type="button">i</button>`
+    : "";
+  const startLine = `<span class="fee-info-wrap" style="white-space:nowrap">${fmtDate(c.start_date)}${dateBtn}</span>`;
+  if (!c.end_date) return `<div>${startLine}</div>`;
+  return `<div>${startLine}</div>` +
+    `<div style="color:var(--text-lt);font-size:.72rem;line-height:1.2">bis</div>` +
+    `<div style="white-space:nowrap">${fmtDate(c.end_date)}</div>`;
+}
+
 export function rowHtml(c) {
   const titleLink = c.source_url
     ? `<a class="course-title link-icon" href="${esc(c.source_url)}" target="_blank" rel="noopener">${esc(c.title)} ↗</a>`
@@ -129,12 +214,7 @@ export function rowHtml(c) {
     ? `<a class="row-title" href="${esc(c.source_url)}" target="_blank" rel="noopener" style="color:var(--text);text-decoration:none" onclick="event.stopPropagation()">${esc(c.title)} ↗</a>`
     : `<div class="row-title">${esc(c.title)}</div>`;
 
-  const laufzeit = c.start_date
-    ? `<div style="white-space:nowrap">${fmtDate(c.start_date)}</div>` +
-      (c.end_date
-        ? `<div style="color:var(--text-lt);font-size:.72rem;line-height:1.2">bis</div><div style="white-space:nowrap">${fmtDate(c.end_date)}</div>`
-        : "")
-    : '<span style="color:var(--text-lt);font-style:italic">Termine n. v.</span>';
+  const laufzeit = runtimeCell(c);
 
   const tradeMeta = c.trade_name ? `<div class="course-meta">${esc(c.trade_name)}</div>` : "";
 

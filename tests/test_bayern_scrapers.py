@@ -59,6 +59,20 @@ class BavariaParserTests(unittest.TestCase):
             parse_trade(elektro, parse_parts(elektro)),
             "Elektrotechniker (Energie- und Gebäudetechnik)",
         )
+        self.assertEqual(
+            parse_trade(
+                "Meisterkurs Teil I und II Metallbauer (NEU: Vollzeit)",
+                [1, 2],
+            ),
+            "Metallbauer",
+        )
+        self.assertEqual(
+            parse_trade(
+                "Meisterkurs Teil I und II Tischler (Vollzeit)",
+                [1, 2],
+            ),
+            "Tischler",
+        )
         mk_title = "MK Installateur-/ Heizungsbauerhandwerk Teil I u. II"
         self.assertEqual(
             parse_trade(mk_title, parse_parts(mk_title)),
@@ -206,6 +220,39 @@ class BavariaRegistrationTests(unittest.TestCase):
             "hwk-schwaben", "any-trade", [3, 4], None, lookup
         )
         self.assertEqual(schwaben["fee"], 350.0)
+
+    def test_niederbayern_and_unterfranken_strip_elektrotechniker_and_feinwerkmechaniker_specializations(self):
+        cases = (
+            (
+                "Elektrotechniker (Energie- und Gebäudetechnik)",
+                "Elektrotechniker (Teile I + II)",
+            ),
+            (
+                "Feinwerkmechaniker (Feinmechanik)",
+                "Feinwerkmechaniker (Teile I + II)",
+            ),
+            (
+                "Feinwerkmechaniker (Maschinenbau)",
+                "Feinwerkmechaniker (Teile I + II)",
+            ),
+        )
+        for scraper in (HwkNiederbayernOberpfalzScraper(), HwkUnterfrankenScraper()):
+            for trade_name, expected_title in cases:
+                offer = RawCourseOffer(
+                    title=f"{trade_name} - Teile I und II",
+                    trade_name=trade_name,
+                    parts=[1, 2],
+                    format_key="full_time",
+                    teaching_mode="presence",
+                    start_date="2026-10-14",
+                    end_date="2027-06-18",
+                    duration_hours=1216,
+                    course_fee=8980.0,
+                    city="Regensburg",
+                )
+                result = scraper.postprocess_offer(offer)
+                self.assertEqual(result.trade_name, trade_name.split(" (")[0])
+                self.assertEqual(result.title, expected_title)
 
     def test_niederbayern_disambiguates_parallel_city_runs(self):
         offers = [

@@ -5,7 +5,7 @@ from collections import Counter
 from bs4 import Tag
 
 from .base import RawCourseOffer
-from .hwk_bayern import DURATION_RE, BavariaCatalogue, BavariaOdavScraper
+from .hwk_bayern import DURATION_RE, BavariaCatalogue, BavariaOdavScraper, normalize_base_trade_offer
 
 
 LOCATIONS = {
@@ -76,6 +76,9 @@ class HwkNiederbayernOberpfalzScraper(BavariaOdavScraper):
     def fetch_raw_courses(self) -> list[RawCourseOffer]:
         offers = super().fetch_raw_courses()
         return self._disambiguate_parallel_runs(offers)
+
+    def postprocess_offer(self, offer: RawCourseOffer) -> RawCourseOffer:
+        return normalize_base_trade_offer(offer)
 
     @staticmethod
     def _disambiguate_parallel_runs(offers: list[RawCourseOffer]) -> list[RawCourseOffer]:

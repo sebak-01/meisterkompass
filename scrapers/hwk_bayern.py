@@ -39,6 +39,9 @@ TRADE_ALIASES = {
     "ofen- und luftheizungsbauer": "Ofen- und Luftheizungsbauer",
     "orthopädieschuhmacher": "Orthopädieschuhmacher",
     "orthopädietechniker": "Orthopädietechniker",
+    "augenoptiker": "Augenoptiker",
+    "glasapparatebauer": "Glasapparatebauer",
+    "holzbildhauer": "Holzbildhauer",
     "land- und baumaschinenmechatroniker": "Land- und Baumaschinenmechatroniker",
     "installateur- und heizungsbauer": "Installateur- und Heizungsbauer",
     "installateur und heizungsbauer": "Installateur- und Heizungsbauer",
@@ -47,6 +50,7 @@ TRADE_ALIASES = {
     "installateur-/": "Installateur- und Heizungsbauer",
     "karosserie- u. fahrzeugbauer": "Karosserie- und Fahrzeugbauer",
     "karosserie- und fahrzeugbauer": "Karosserie- und Fahrzeugbauer",
+    "zweiradmechaniker": "Zweiradmechaniker",
     "fliesen-, platten- und mosaikleger": "Fliesen-, Platten- und Mosaikleger",
     "maurer- und betonbauer": "Maurer und Betonbauer",
     "maurer und betonbauer": "Maurer und Betonbauer",
@@ -96,11 +100,6 @@ def parse_euro(text: str, label: str | None = None) -> float | None:
 
 def parse_parts(title: str, *, implicit_trade_parts: bool = False) -> list[int]:
     lower = title.lower()
-    if "ausbildereignung" in lower or re.search(r"\b(?:ada|aevo)\b", lower):
-        return [4]
-    if "kaufmännische betriebsführung" in lower or re.search(r"fach(?:mann|frau).+hwo", lower):
-        return [3]
-
     match = PARTS_RE.search(title)
     if match:
         tokens = re.findall(r"IV|III|II|I|[1-4]", match.group("parts").upper())
@@ -108,11 +107,31 @@ def parse_parts(title: str, *, implicit_trade_parts: bool = False) -> list[int]:
         if len(values) == 2 and re.search(r"(?:bis|-|–)", match.group("parts")):
             lo, hi = sorted(values)
             return list(range(lo, hi + 1))
+        # Some catalogues repeat the marker ("Teil I / Teil II"). The main
+        # pattern stops before the second marker, so merge all explicit
+        # marker/token pairs found in the title.
+        repeated = re.findall(r"\bTeile?\s*(IV|III|II|I|[1-4])\b", title, re.IGNORECASE)
+        values.extend(
+            ROMAN.get(token.upper(), int(token) if token.isdigit() else 0)
+            for token in repeated
+        )
         return sorted(set(value for value in values if value))
+
+    if "ausbildereignung" in lower or re.search(r"\b(?:ada|aevo)\b", lower):
+        return [4]
+    if "kaufmännische betriebsführung" in lower or re.search(r"fach(?:mann|frau).+hwo", lower):
+        return [3]
 
     if implicit_trade_parts and "meister" in lower:
         return [1, 2]
     return []
+
+
+# Parenthetical trade suffixes that are format labels, not Fachrichtungen.
+_FORMAT_ONLY_TRADE_SPEC_RE = re.compile(
+    r"^(?:neu\s*:\s*)?(?:vollzeit|teilzeit|abend|wochenende|blended(?:\s*learning)?|online(?:/hybrid)?|präsenz|praesenz)$",
+    re.IGNORECASE,
+)
 
 
 def _trade_specialization(title: str, canonical: str) -> str:
@@ -132,7 +151,26 @@ def _trade_specialization(title: str, canonical: str) -> str:
     spec = match.group(1).strip()
     if spec.lower().startswith("fachrichtung "):
         spec = spec.split(None, 1)[1]
+    if _FORMAT_ONLY_TRADE_SPEC_RE.fullmatch(spec):
+        return canonical
     return f"{canonical} ({spec})"
+
+
+# Issue #54: some chambers list Elektrotechniker/Feinwerkmechaniker without Fachrichtung.
+_BASE_TRADE_RE = {
+    "Elektrotechniker": re.compile(r"^Elektrotechniker\b", re.IGNORECASE),
+    "Feinwerkmechaniker": re.compile(r"^Feinwerkmechaniker\b", re.IGNORECASE),
+}
+
+
+def normalize_base_trade_offer(offer: RawCourseOffer) -> RawCourseOffer:
+    if offer.trade_name:
+        for base, pattern in _BASE_TRADE_RE.items():
+            if pattern.match(offer.trade_name):
+                offer.trade_name = base
+                offer.title = build_course_title(base, offer.parts)
+                break
+    return offer
 
 
 def parse_trade(title: str, parts: list[int]) -> str | None:
@@ -437,7 +475,7 @@ class BavariaOdavScraper(BaseScraper):
         if not trade_name and not set(parts) <= {3, 4}:
             return None
 
-        start_date, end_date = parse_dates(main_text)
+        start_date, end_date, start_date_note = self.resolve_schedule_dates(soup, card, main_text)
         format_key, teaching_mode = parse_format_and_mode(
             f"{detail_title}\n{main_text[:3000]}"
         )
@@ -477,6 +515,7 @@ class BavariaOdavScraper(BaseScraper):
             course_fee=course_fee,
             exam_fee_scraped=exam_fee,
             exam_fee_qualifier=exam_fee_qualifier,
+            start_date_note=start_date_note,
             city=city,
             street=street,
             zip_code=zip_code,
@@ -497,6 +536,16 @@ class BavariaOdavScraper(BaseScraper):
     def postprocess_offer(self, offer: RawCourseOffer) -> RawCourseOffer:
         """Hook for chamber-specific offer normalization."""
         return offer
+
+    def resolve_schedule_dates(
+        self,
+        soup: BeautifulSoup | None,
+        card: dict,
+        main_text: str,
+    ) -> tuple[str | None, str | None, str]:
+        """Hook for chamber-specific schedule parsing."""
+        start_date, end_date = parse_dates(main_text)
+        return start_date, end_date, ""
 
     def listing_location(self, card: dict, teaching_mode: str) -> tuple[str, str, str]:
         """Resolve a location when no detail-page address is available."""

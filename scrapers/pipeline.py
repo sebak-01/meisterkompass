@@ -45,6 +45,9 @@ from .hwk_stuttgart import HwkStuttgartScraper
 from .hwk_ulm import HwkUlmScraper
 from .hwk_unterfranken import HwkUnterfrankenScraper
 from .hwk_wiesbaden import HwkWiesbadenScraper
+from .hwk_erfurt import HwkErfurtScraper
+from .hwk_ostthueringen_gera import HwkOstthueringenGeraScraper
+from .hwk_suedthueringen_suhl import HwkSuedthueringenSuhlScraper
 
 
 logger = logging.getLogger(__name__)
@@ -72,6 +75,9 @@ SCRAPERS: dict[str, type] = {
     "hwk-mittelfranken": HwkMittelfrankenScraper,
     "hwk-unterfranken": HwkUnterfrankenScraper,
     "hwk-schwaben": HwkSchwabenScraper,
+    "hwk-erfurt": HwkErfurtScraper,
+    "hwk-ostthueringen-gera": HwkOstthueringenGeraScraper,
+    "hwk-suedthueringen-suhl": HwkSuedthueringenSuhlScraper,
 }
 
 FORMAT_DISPLAY = {
@@ -137,6 +143,7 @@ def offer_to_record(result: ScrapeResult, offer) -> dict:
         "teaching_mode":    offer.teaching_mode,
         "start_date":       _to_iso(offer.start_date),
         "end_date":         _to_iso(offer.end_date),
+        "start_date_note":  offer.start_date_note or "",
         "duration_hours":   offer.duration_hours,
         "course_fee":       fee,
         "course_fee_display": _course_fee_display(fee),
@@ -413,6 +420,24 @@ def _scraped_rows_from_courses(records: list[dict]) -> list[dict]:
     return rows
 
 
+def _published_exam_fee_rows_from_scrapers() -> list[dict]:
+    """Chamber-wide exam fees injected at collect() time, not stored on offers."""
+    rows: list[dict] = []
+    for cls in SCRAPERS.values():
+        published = getattr(cls, "published_exam_fee_rows", None)
+        if not callable(published):
+            continue
+        try:
+            rows.extend(cls().published_exam_fee_rows())
+        except Exception:
+            logger.warning(
+                "Could not load published exam fees for %s",
+                getattr(cls, "chamber_slug", cls.__name__),
+                exc_info=True,
+            )
+    return rows
+
+
 def rebake() -> int:
     """
     Re-resolve exam fees and the derived datasets from the existing
@@ -425,6 +450,7 @@ def rebake() -> int:
 
     today_iso = date.today().isoformat()
     scraped_rows = _scraped_rows_from_courses(records)
+    scraped_rows.extend(_published_exam_fee_rows_from_scrapers())
     manual_rows = _load_manual_fee_rows()
     _resolve_and_write_derived(records, scraped_rows, manual_rows, today_iso)
     logger.info("Rebaked %d courses with %d manual fee row(s).", len(records), len(manual_rows))
