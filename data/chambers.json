@@ -1,5 +1,10 @@
 [
   {
+    "slug": "hwk-erfurt",
+    "name": "HWK Erfurt",
+    "region": "Thüringen"
+  },
+  {
     "slug": "hwk-rhein-main",
     "name": "HWK Frankfurt-Rhein-Main",
     "region": "Hessen"
@@ -60,6 +65,11 @@
     "region": "Rheinland-Pfalz"
   },
   {
+    "slug": "hwk-suedthueringen-suhl",
+    "name": "HWK Südthüringen",
+    "region": "Thüringen"
+  },
+  {
     "slug": "hwk-trier",
     "name": "HWK Trier",
     "region": "Rheinland-Pfalz"
@@ -98,6 +108,11 @@
     "slug": "hwk-oberfranken",
     "name": "HWK für Oberfranken",
     "region": "Bayern"
+  },
+  {
+    "slug": "hwk-ostthueringen-gera",
+    "name": "HWK für Ostthüringen",
+    "region": "Thüringen"
   },
   {
     "slug": "hwk-schwaben",

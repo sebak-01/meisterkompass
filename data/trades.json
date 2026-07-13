@@ -28,28 +28,12 @@
     "name": "Elektrotechniker"
   },
   {
-    "slug": "elektrotechniker-automatisierungs-und-systemtechnik",
-    "name": "Elektrotechniker (Automatisierungs- und Systemtechnik)"
-  },
-  {
-    "slug": "elektrotechniker-energie-und-gebaudetechnik",
-    "name": "Elektrotechniker (Energie- und Gebäudetechnik)"
-  },
-  {
-    "slug": "elektrotechniker-gebaudesystemintegration",
-    "name": "Elektrotechniker (Gebäudesystemintegration)"
-  },
-  {
     "slug": "fahrzeuglackierer",
     "name": "Fahrzeuglackierer"
   },
   {
     "slug": "feinwerkmechaniker",
     "name": "Feinwerkmechaniker"
-  },
-  {
-    "slug": "feinwerkmechaniker-maschinenbau",
-    "name": "Feinwerkmechaniker (Maschinenbau)"
   },
   {
     "slug": "fleischer",
@@ -68,12 +52,20 @@
     "name": "Gerüstbauer"
   },
   {
+    "slug": "glasapparatebauer",
+    "name": "Glasapparatebauer"
+  },
+  {
     "slug": "glaser",
     "name": "Glaser"
   },
   {
     "slug": "gold-und-silberschmiede",
     "name": "Gold- und Silberschmiede"
+  },
+  {
+    "slug": "holzbildhauer",
+    "name": "Holzbildhauer"
   },
   {
     "slug": "informationstechniker",
@@ -202,5 +194,9 @@
   {
     "slug": "zweirad",
     "name": "Zweirad"
+  },
+  {
+    "slug": "zweiradmechaniker",
+    "name": "Zweiradmechaniker"
   }
 ]
