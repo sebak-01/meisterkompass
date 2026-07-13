@@ -97,6 +97,7 @@ class RawCourseOffer:
     # Fields with defaults (must come after all non-default fields)
     exam_fee_scraped: float | None = None   # stated on course page (e.g. HWK Trier)
     exam_fee_qualifier: str = ""            # e.g. "ca." when a published component is approximate
+    start_date_note: str = ""               # e.g. when only month/year is published
     street:           str = ""
     zip_code:         str = ""
     availability:     str = "unknown"

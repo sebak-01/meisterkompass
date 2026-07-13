@@ -15,6 +15,7 @@ import {
   REUTLINGEN_ADDITIONAL_EXAM_NOTE,
   SCHWABEN_ADDITIONAL_EXAM_NOTE,
   ERFFURT_EXAM_NOTE,
+  TENTATIVE_START_DATE_NOTE,
   HESSEN_CHAMBERS,
 } from "./util.js";
 
@@ -191,6 +192,20 @@ export function sortIndicator(sortKey, activeKey, sortDir) {
   return sortDir === "desc" ? "↓" : "↑";
 }
 
+function runtimeCell(c) {
+  if (!c.start_date) {
+    return '<span style="color:var(--text-lt);font-style:italic">Termine n. v.</span>';
+  }
+  const dateBtn = c.start_date_note
+    ? `<button class="fee-info-btn" data-tooltip="${esc(c.start_date_note)}" type="button">i</button>`
+    : "";
+  const startLine = `<span class="fee-info-wrap" style="white-space:nowrap">${fmtDate(c.start_date)}${dateBtn}</span>`;
+  if (!c.end_date) return `<div>${startLine}</div>`;
+  return `<div>${startLine}</div>` +
+    `<div style="color:var(--text-lt);font-size:.72rem;line-height:1.2">bis</div>` +
+    `<div style="white-space:nowrap">${fmtDate(c.end_date)}</div>`;
+}
+
 export function rowHtml(c) {
   const titleLink = c.source_url
     ? `<a class="course-title link-icon" href="${esc(c.source_url)}" target="_blank" rel="noopener">${esc(c.title)} ↗</a>`
@@ -199,12 +214,7 @@ export function rowHtml(c) {
     ? `<a class="row-title" href="${esc(c.source_url)}" target="_blank" rel="noopener" style="color:var(--text);text-decoration:none" onclick="event.stopPropagation()">${esc(c.title)} ↗</a>`
     : `<div class="row-title">${esc(c.title)}</div>`;
 
-  const laufzeit = c.start_date
-    ? `<div style="white-space:nowrap">${fmtDate(c.start_date)}</div>` +
-      (c.end_date
-        ? `<div style="color:var(--text-lt);font-size:.72rem;line-height:1.2">bis</div><div style="white-space:nowrap">${fmtDate(c.end_date)}</div>`
-        : "")
-    : '<span style="color:var(--text-lt);font-style:italic">Termine n. v.</span>';
+  const laufzeit = runtimeCell(c);
 
   const tradeMeta = c.trade_name ? `<div class="course-meta">${esc(c.trade_name)}</div>` : "";
 

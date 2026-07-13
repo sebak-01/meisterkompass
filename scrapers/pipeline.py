@@ -143,6 +143,7 @@ def offer_to_record(result: ScrapeResult, offer) -> dict:
         "teaching_mode":    offer.teaching_mode,
         "start_date":       _to_iso(offer.start_date),
         "end_date":         _to_iso(offer.end_date),
+        "start_date_note":  offer.start_date_note or "",
         "duration_hours":   offer.duration_hours,
         "course_fee":       fee,
         "course_fee_display": _course_fee_display(fee),

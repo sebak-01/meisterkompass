@@ -466,7 +466,7 @@ class BavariaOdavScraper(BaseScraper):
         if not trade_name and not set(parts) <= {3, 4}:
             return None
 
-        start_date, end_date = parse_dates(main_text)
+        start_date, end_date, start_date_note = self.resolve_schedule_dates(soup, card, main_text)
         format_key, teaching_mode = parse_format_and_mode(
             f"{detail_title}\n{main_text[:3000]}"
         )
@@ -506,6 +506,7 @@ class BavariaOdavScraper(BaseScraper):
             course_fee=course_fee,
             exam_fee_scraped=exam_fee,
             exam_fee_qualifier=exam_fee_qualifier,
+            start_date_note=start_date_note,
             city=city,
             street=street,
             zip_code=zip_code,
@@ -526,6 +527,16 @@ class BavariaOdavScraper(BaseScraper):
     def postprocess_offer(self, offer: RawCourseOffer) -> RawCourseOffer:
         """Hook for chamber-specific offer normalization."""
         return offer
+
+    def resolve_schedule_dates(
+        self,
+        soup: BeautifulSoup | None,
+        card: dict,
+        main_text: str,
+    ) -> tuple[str | None, str | None, str]:
+        """Hook for chamber-specific schedule parsing."""
+        start_date, end_date = parse_dates(main_text)
+        return start_date, end_date, ""
 
     def listing_location(self, card: dict, teaching_mode: str) -> tuple[str, str, str]:
         """Resolve a location when no detail-page address is available."""

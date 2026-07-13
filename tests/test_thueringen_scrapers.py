@@ -11,6 +11,8 @@ from scrapers.hwk_erfurt import HwkErfurtScraper
 from scrapers.hwk_ostthueringen_gera import (
     HwkOstthueringenGeraScraper,
     LEHESTEN_COURSES,
+    TENTATIVE_DATE_NOTE,
+    _parse_ostthueringen_schedule,
 )
 from scrapers.hwk_suedthueringen_suhl import (
     HwkSuedthueringenSuhlScraper,
@@ -116,6 +118,48 @@ class ThueringenParserTests(unittest.TestCase):
         self.assertTrue(all(offer.duration_hours == 1224 for offer in offers))
         self.assertTrue(all(offer.street == "Kloster 1" for offer in offers))
         self.assertTrue(all(offer.city == "Rohr" for offer in offers))
+
+    def test_ostthueringen_parses_unterricht_schedule_without_alle_termine_bleed(self):
+        soup = BeautifulSoup(
+            """
+            <main>
+              <h3>Unterricht</h3>
+              <p>03.2027 - 04.2027</p>
+              <p>Mo. - Fr. 07:30- 14:30 Uhr</p>
+              <span class="trafficlight-orange">genauer Termin steht noch nicht fest</span>
+              <h3>Lehrgangsort</h3><p>Gera</p>
+              <h2>Alle Termine</h2>
+              <h3>18.08.2026 - 15.07.2027: Abend</h3>
+              <h3>März 2027 - April 2027: Vollzeit</h3>
+            </main>
+            """,
+            "html.parser",
+        )
+        card = {"card_text": "März 2027 - April 2027: Vollzeit\nMeister Teil III"}
+        start, end, note = _parse_ostthueringen_schedule(soup, card)
+        self.assertEqual(start, "2027-03-01")
+        self.assertEqual(end, "2027-04-01")
+        self.assertEqual(note, TENTATIVE_DATE_NOTE)
+
+    def test_ostthueringen_keeps_exact_unterricht_dates_without_note(self):
+        soup = BeautifulSoup(
+            """
+            <main>
+              <h3>Unterricht</h3>
+              <p>18.08.2026 - 15.07.2027</p>
+              <p>Di. und Do. 16:30-20:45 Uhr</p>
+              <h3>Lehrgangsort</h3><p>Gera</p>
+              <h2>Alle Termine</h2>
+              <h3>März 2027 - April 2027: Vollzeit</h3>
+            </main>
+            """,
+            "html.parser",
+        )
+        card = {"card_text": "18.08.2026 - 15.07.2027: Abend\nMeister Teil III"}
+        start, end, note = _parse_ostthueringen_schedule(soup, card)
+        self.assertEqual(start, "2026-08-18")
+        self.assertEqual(end, "2027-07-15")
+        self.assertEqual(note, "")
 
     def test_ostthueringen_parses_meister_exam_fees_from_pdf_text(self):
         text = """

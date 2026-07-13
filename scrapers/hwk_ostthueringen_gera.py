@@ -8,7 +8,11 @@ from .base import RawCourseOffer, ScrapeResult, build_course_title
 from .hwk_bayern import (
     BavariaCatalogue,
     BavariaOdavScraper,
+    DATE_RE,
+    MONTH_DATE_RE,
+    NUMERIC_MONTH_RE,
     course_id_from_url,
+    parse_dates,
     parse_format_and_mode,
 )
 
@@ -30,7 +34,11 @@ LEHESTEN_LOCATION = {
     "zip_code": "07349",
     "city": "Lehesten",
 }
-DATE_RE = re.compile(r"(\d{2})\.(\d{2})\.(\d{4})")
+TENTATIVE_DATE_NOTE = "Genauer Termin steht noch nicht fest."
+TENTATIVE_DATE_RE = re.compile(
+    r"genauer\s+termin\s+steht\s+noch\s+nicht\s+fest",
+    re.IGNORECASE,
+)
 PRICE_RE = re.compile(r"([\d.]+),(\d{2})\s*€")
 DURATION_RE = re.compile(r"ca\.\s*([\d.]+)\s*Stunden", re.IGNORECASE)
 
@@ -81,6 +89,59 @@ def _parse_lehesten_fee(text: str) -> float | None:
 def _parse_lehesten_duration(text: str) -> int | None:
     match = DURATION_RE.search(text)
     return int(match.group(1).replace(".", "")) if match else None
+
+
+def _text_until_next_heading(tag) -> str:
+    parts: list[str] = []
+    for sibling in tag.next_siblings:
+        if getattr(sibling, "name", None) in ("h2", "h3", "h4"):
+            break
+        if hasattr(sibling, "get_text"):
+            parts.append(sibling.get_text("\n", strip=True))
+    return "\n".join(parts).strip()
+
+
+def _schedule_is_month_only(text: str) -> bool:
+    if DATE_RE.search(text):
+        return False
+    return bool(
+        MONTH_DATE_RE.search(text)
+        or NUMERIC_MONTH_RE.search(text)
+    )
+
+
+def _parse_ostthueringen_schedule(
+    soup,
+    card: dict,
+) -> tuple[str | None, str | None, str]:
+    schedule_text = ""
+    tentative = False
+
+    if soup is not None:
+        main = soup.select_one("main") or soup
+        unterricht = main.find(
+            lambda tag: tag.name in ("h2", "h3", "h4")
+            and tag.get_text(" ", strip=True).lower() == "unterricht"
+        )
+        if unterricht is not None:
+            schedule_text = _text_until_next_heading(unterricht)
+            tentative = any(
+                TENTATIVE_DATE_RE.search(span.get_text(" ", strip=True) or "")
+                for span in main.select("span.trafficlight-orange")
+            )
+
+    if not schedule_text:
+        schedule_text = card.get("card_text", "").split("\n", 1)[0]
+
+    start_date, end_date = parse_dates(schedule_text)
+    if not start_date:
+        start_date, end_date = card.get("start_date"), card.get("end_date")
+
+    if schedule_text and _schedule_is_month_only(schedule_text.split("\n", 1)[0]):
+        tentative = True
+
+    note = TENTATIVE_DATE_NOTE if tentative else ""
+    return start_date, end_date, note
 
 
 class HwkOstthueringenGeraScraper(BavariaOdavScraper):
@@ -203,6 +264,9 @@ class HwkOstthueringenGeraScraper(BavariaOdavScraper):
                 "hwk_partner": True,
             },
         )
+
+    def resolve_schedule_dates(self, soup, card, main_text):
+        return _parse_ostthueringen_schedule(soup, card)
 
     def postprocess_offer(self, offer):
         # The detail's "Kurs" amount is a course fee. Exam fees come from the
