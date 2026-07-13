@@ -147,6 +147,23 @@ def _trade_specialization(title: str, canonical: str) -> str:
     return f"{canonical} ({spec})"
 
 
+# Issue #54: some chambers list Elektrotechniker/Feinwerkmechaniker without Fachrichtung.
+_BASE_TRADE_RE = {
+    "Elektrotechniker": re.compile(r"^Elektrotechniker\b", re.IGNORECASE),
+    "Feinwerkmechaniker": re.compile(r"^Feinwerkmechaniker\b", re.IGNORECASE),
+}
+
+
+def normalize_base_trade_offer(offer: RawCourseOffer) -> RawCourseOffer:
+    if offer.trade_name:
+        for base, pattern in _BASE_TRADE_RE.items():
+            if pattern.match(offer.trade_name):
+                offer.trade_name = base
+                offer.title = build_course_title(base, offer.parts)
+                break
+    return offer
+
+
 def parse_trade(title: str, parts: list[int]) -> str | None:
     if not parts or set(parts) <= {3, 4}:
         return None

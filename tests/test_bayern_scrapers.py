@@ -207,7 +207,7 @@ class BavariaRegistrationTests(unittest.TestCase):
         )
         self.assertEqual(schwaben["fee"], 350.0)
 
-    def test_niederbayern_strips_elektrotechniker_and_feinwerkmechaniker_specializations(self):
+    def test_niederbayern_and_unterfranken_strip_elektrotechniker_and_feinwerkmechaniker_specializations(self):
         cases = (
             (
                 "Elektrotechniker (Energie- und Gebäudetechnik)",
@@ -217,24 +217,28 @@ class BavariaRegistrationTests(unittest.TestCase):
                 "Feinwerkmechaniker (Feinmechanik)",
                 "Feinwerkmechaniker (Teile I + II)",
             ),
+            (
+                "Feinwerkmechaniker (Maschinenbau)",
+                "Feinwerkmechaniker (Teile I + II)",
+            ),
         )
-        scraper = HwkNiederbayernOberpfalzScraper()
-        for trade_name, expected_title in cases:
-            offer = RawCourseOffer(
-                title=f"{trade_name} - Teile I und II",
-                trade_name=trade_name,
-                parts=[1, 2],
-                format_key="full_time",
-                teaching_mode="presence",
-                start_date="2026-10-14",
-                end_date="2027-06-18",
-                duration_hours=1216,
-                course_fee=8980.0,
-                city="Regensburg",
-            )
-            result = scraper.postprocess_offer(offer)
-            self.assertEqual(result.trade_name, trade_name.split(" (")[0])
-            self.assertEqual(result.title, expected_title)
+        for scraper in (HwkNiederbayernOberpfalzScraper(), HwkUnterfrankenScraper()):
+            for trade_name, expected_title in cases:
+                offer = RawCourseOffer(
+                    title=f"{trade_name} - Teile I und II",
+                    trade_name=trade_name,
+                    parts=[1, 2],
+                    format_key="full_time",
+                    teaching_mode="presence",
+                    start_date="2026-10-14",
+                    end_date="2027-06-18",
+                    duration_hours=1216,
+                    course_fee=8980.0,
+                    city="Regensburg",
+                )
+                result = scraper.postprocess_offer(offer)
+                self.assertEqual(result.trade_name, trade_name.split(" (")[0])
+                self.assertEqual(result.title, expected_title)
 
     def test_niederbayern_disambiguates_parallel_city_runs(self):
         offers = [

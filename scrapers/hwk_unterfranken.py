@@ -1,6 +1,7 @@
 """Courses from the Handwerkskammer für Unterfranken."""
 
-from .hwk_bayern import BavariaCatalogue, BavariaOdavScraper
+from .base import RawCourseOffer
+from .hwk_bayern import BavariaCatalogue, BavariaOdavScraper, normalize_base_trade_offer
 
 
 class HwkUnterfrankenScraper(BavariaOdavScraper):
@@ -18,3 +19,6 @@ class HwkUnterfrankenScraper(BavariaOdavScraper):
         default_street="Dieselstraße 12",
         default_zip="97082",
     )
+
+    def postprocess_offer(self, offer: RawCourseOffer) -> RawCourseOffer:
+        return normalize_base_trade_offer(offer)
