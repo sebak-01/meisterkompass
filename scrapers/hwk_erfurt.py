@@ -56,12 +56,11 @@ class HwkErfurtScraper(BavariaOdavScraper):
         title = link.get_text(" ", strip=True)
         if "friseur-handwerk" not in title.lower():
             return None
-        original = link.string
-        link.string = f"Meisterkurs Friseur {title}"
-        try:
-            card = super()._parse_card(link, detail_url)
-        finally:
-            link.string = original
+        # Replace only the link's display content; its href and surrounding
+        # listing card remain intact for the shared parser.
+        link.clear()
+        link.append(f"Meisterkurs Friseur {title}")
+        card = super()._parse_card(link, detail_url)
         if card:
             card["raw_title"] = title
             card["trade_name"] = "Friseur"

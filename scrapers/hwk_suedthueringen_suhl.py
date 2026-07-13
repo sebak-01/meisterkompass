@@ -42,6 +42,11 @@ def parse_suhl_title(title: str) -> tuple[list[int], str | None]:
 
 def _is_meister_link(title: str) -> bool:
     lower = title.lower()
+    if any(value in lower for value in (
+        "mathematik für meister", "infoabend", "informationsveranstaltung",
+        "meisterbonus", "meisterprämie",
+    )):
+        return False
     return (
         ("meister" in lower and "industriemeister" not in lower)
         or "kaufmännische betriebsführung" in lower

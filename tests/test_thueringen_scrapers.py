@@ -22,6 +22,7 @@ class ThueringenParserTests(unittest.TestCase):
             ),
             [3, 4],
         )
+        self.assertEqual(parse_parts("Teil I / Teil II"), [1, 2])
 
     def test_erfurt_accepts_friseur_title_without_meister_word(self):
         soup = BeautifulSoup(

@@ -40,6 +40,8 @@ TRADE_ALIASES = {
     "orthopädieschuhmacher": "Orthopädieschuhmacher",
     "orthopädietechniker": "Orthopädietechniker",
     "augenoptiker": "Augenoptiker",
+    "glasapparatebauer": "Glasapparatebauer",
+    "holzbildhauer": "Holzbildhauer",
     "land- und baumaschinenmechatroniker": "Land- und Baumaschinenmechatroniker",
     "installateur- und heizungsbauer": "Installateur- und Heizungsbauer",
     "installateur und heizungsbauer": "Installateur- und Heizungsbauer",
@@ -105,6 +107,14 @@ def parse_parts(title: str, *, implicit_trade_parts: bool = False) -> list[int]:
         if len(values) == 2 and re.search(r"(?:bis|-|–)", match.group("parts")):
             lo, hi = sorted(values)
             return list(range(lo, hi + 1))
+        # Some catalogues repeat the marker ("Teil I / Teil II"). The main
+        # pattern stops before the second marker, so merge all explicit
+        # marker/token pairs found in the title.
+        repeated = re.findall(r"\bTeile?\s*(IV|III|II|I|[1-4])\b", title, re.IGNORECASE)
+        values.extend(
+            ROMAN.get(token.upper(), int(token) if token.isdigit() else 0)
+            for token in repeated
+        )
         return sorted(set(value for value in values if value))
 
     if "ausbildereignung" in lower or re.search(r"\b(?:ada|aevo)\b", lower):
