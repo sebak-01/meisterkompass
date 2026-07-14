@@ -169,6 +169,17 @@
     "is_generic": true
   },
   {
+    "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
+    "trade_slug": "maler-und-lackierer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 9850.0,
+    "exam_fee_scraped": 680.0,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-kassel",
     "trade_slug": "friseur",
     "parts": [
@@ -292,6 +303,27 @@
     ],
     "fee": 2290.0,
     "exam_fee_scraped": 175.0,
+    "is_generic": true
+  },
+  {
+    "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      4
+    ],
+    "fee": 768.0,
+    "exam_fee_scraped": 275.0,
+    "is_generic": true
+  },
+  {
+    "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      3,
+      4
+    ],
+    "fee": 3050.0,
+    "exam_fee_scraped": 625.0,
     "is_generic": true
   },
   {
@@ -450,6 +482,17 @@
     ],
     "fee": 4450.0,
     "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
+    "trade_slug": "kosmetiker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 5600.0,
+    "exam_fee_scraped": 680.0,
     "is_generic": false
   },
   {
@@ -832,6 +875,17 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
+    "trade_slug": "kfz-techniker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 9500.0,
+    "exam_fee_scraped": 680.0,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-heilbronn-franken",
     "trade_slug": "metallbauer",
     "parts": [
@@ -1043,6 +1097,16 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      3
+    ],
+    "fee": 2280.0,
+    "exam_fee_scraped": 350.0,
+    "is_generic": true
+  },
+  {
     "chamber_slug": "hwk-koblenz",
     "trade_slug": "friseur",
     "parts": [
@@ -1072,6 +1136,17 @@
     "fee": 850.0,
     "exam_fee_scraped": null,
     "is_generic": true
+  },
+  {
+    "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
+    "trade_slug": "zimmerer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 10900.0,
+    "exam_fee_scraped": 680.0,
+    "is_generic": false
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -1140,6 +1215,17 @@
   },
   {
     "chamber_slug": "hwk-cottbus",
+    "trade_slug": "stuckateur",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 6250.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
     "trade_slug": "stuckateur",
     "parts": [
       1,
@@ -1484,6 +1570,28 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
+    "trade_slug": "maurer-und-betonbauer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 11508.0,
+    "exam_fee_scraped": 680.0,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
+    "trade_slug": "strassenbauer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 11508.0,
+    "exam_fee_scraped": 680.0,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-kassel",
     "trade_slug": "dachdecker",
     "parts": [
@@ -1557,6 +1665,17 @@
     ],
     "fee": 7980.0,
     "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
+    "trade_slug": "elektrotechniker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 11200.0,
+    "exam_fee_scraped": 680.0,
     "is_generic": false
   },
   {
@@ -1634,6 +1753,17 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
+    "trade_slug": "dachdecker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 10200.0,
+    "exam_fee_scraped": 680.0,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-suedthueringen-suhl",
     "trade_slug": "feinwerkmechaniker",
     "parts": [
@@ -1652,6 +1782,17 @@
     ],
     "fee": 9450.0,
     "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
+    "trade_slug": "metallbauer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 9050.0,
+    "exam_fee_scraped": 680.0,
     "is_generic": false
   },
   {
@@ -1803,6 +1944,17 @@
     ],
     "fee": 9140.0,
     "exam_fee_scraped": 630.0,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
+    "trade_slug": "tischler",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 9600.0,
+    "exam_fee_scraped": 680.0,
     "is_generic": false
   },
   {
@@ -2304,6 +2456,17 @@
     ],
     "fee": 2640.0,
     "exam_fee_scraped": 990.0,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
+    "trade_slug": "friseur",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 5600.0,
+    "exam_fee_scraped": 680.0,
     "is_generic": false
   },
   {
@@ -2826,6 +2989,17 @@
     ],
     "fee": 3080.0,
     "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
+    "trade_slug": "installateur-und-heizungsbauer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 10200.0,
+    "exam_fee_scraped": 680.0,
     "is_generic": false
   },
   {
@@ -3999,6 +4173,39 @@
       2
     ],
     "fee": 7949.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
+    "trade_slug": "fleischer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 4600.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
+    "trade_slug": "gebaudereiniger",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 4840.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
+    "trade_slug": "land-und-baumaschinenmechatroniker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 8900.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
