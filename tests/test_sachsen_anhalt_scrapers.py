@@ -7,6 +7,7 @@ from scrapers.fees import build_exam_fee_lookup, resolve_exam_fee
 from scrapers.hwk_halle_saale import (
     HwkHalleSaaleScraper,
     parse_halle_title,
+    _location,
 )
 from scrapers.hwk_magdeburg import (
     HwkMagdeburgScraper,
@@ -60,10 +61,14 @@ class SachsenAnhaltParserTests(unittest.TestCase):
               <section>
                 <h4>28.09.2026 — 15.08.2027, MVL EL - 1/26 VZ</h4>
                 <p>Keine Plätze mehr frei</p>
-                <p>Veranstaltungsort Straße der Handwerker 2 06132 Halle (Saale)</p>
                 <h4>Kosten</h4><p>Entgelt Meisterausbildung: 10.660,00 €</p>
                 <h4>Kursnummer</h4><p>27702</p>
                 <h4>Kurstyp</h4><p>Vollzeit</p>
+                <h4>Veranstaltungsort</h4>
+                <p>BTZ der Handwerkskammer Halle (Saale), Standort Halle-Osendorf</p>
+                <p>HWK 02.G 04</p>
+                <p>Straße der Handwerker 2</p>
+                <p>06132 Halle (Saale)</p>
               </section>
             </main>
             """,
@@ -78,7 +83,26 @@ class SachsenAnhaltParserTests(unittest.TestCase):
         self.assertEqual(offers[0].trade_name, "Elektrotechniker")
         self.assertEqual(offers[0].course_fee, 10660.0)
         self.assertEqual(offers[0].availability, "full")
+        self.assertEqual(offers[0].street, "Straße der Handwerker 2")
+        self.assertEqual(offers[0].zip_code, "06132")
         self.assertEqual(offers[0].city, "Halle (Saale)")
+
+    def test_halle_location_ignores_kursnummer_as_zip_code(self):
+        text = """
+        Kursnummer
+        27703
+        Kurstyp
+        Vollzeit
+        Veranstaltungsort
+        BTZ der Handwerkskammer Halle (Saale), Standort Halle-Osendorf
+        HWK 02.G 04
+        Straße der Handwerker 2
+        06132 Halle (Saale)
+        """
+        self.assertEqual(
+            _location(text, "presence"),
+            ("Straße der Handwerker 2", "06132", "Halle (Saale)"),
+        )
 
     def test_halle_parses_trade_specific_part_i_exam_fees(self):
         text = """
@@ -87,6 +111,8 @@ class SachsenAnhaltParserTests(unittest.TestCase):
         Nr.2 Meisterprüfung: Kraftfahrzeugtechnik 370,00 €
         Nr.12 Meisterprüfung: Maler / Lackierer 489,00 €
         b) Teil II 323,00 €
+        c) Teil III 208,00 €
+        d) Teil IV 210,00 €
         """
         self.assertEqual(
             HwkHalleSaaleScraper.parse_part_i_exam_fees(text),
@@ -96,6 +122,10 @@ class SachsenAnhaltParserTests(unittest.TestCase):
                 "Maler und Lackierer": 489.0,
             },
         )
+        self.assertEqual(
+            HwkHalleSaaleScraper.parse_generic_exam_fees(text),
+            {2: 323.0, 3: 208.0, 4: 210.0},
+        )
 
     def test_halle_collect_resolves_trade_specific_exam_fees(self):
         scraper = HwkHalleSaaleScraper()
@@ -103,7 +133,7 @@ class SachsenAnhaltParserTests(unittest.TestCase):
             with patch.object(
                 scraper,
                 "_fetch_exam_fees_from_pdf",
-                return_value={"Elektrotechniker": 430.0},
+                return_value=({"Elektrotechniker": 430.0}, {2: 323.0}),
             ):
                 rows = scraper.collect().exam_fee_rows
         lookup = build_exam_fee_lookup(rows, [])

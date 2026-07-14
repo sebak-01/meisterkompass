@@ -101,26 +101,28 @@ def _availability(text: str) -> str:
 def _location(text: str, teaching_mode: str) -> tuple[str, str, str]:
     if teaching_mode == "online":
         return "", "", "Online"
-    street_match = re.search(
-        r"([A-ZÄÖÜ][A-Za-zÄÖÜäöüß .-]+(?:straße|str\.|weg|platz|gasse)\s+\d+[A-Za-z]?)"
-        r"\s+(\d{5})\s+([A-ZÄÖÜ][A-Za-zÄÖÜäöüß ()-]+?)"
-        r"(?=\s+(?:Kosten|Kursnummer|Kurstyp|Eine|Telefon|E-Mail|Seminardauer|Teilnehmer|Zeiten|Ihr)\b|$)",
-        text,
-        re.IGNORECASE,
-    )
-    if street_match:
-        return (
-            street_match.group(1).strip(),
-            street_match.group(2),
-            street_match.group(3).strip(),
-        )
-    zip_match = re.search(
-        r"\b(\d{5})\s+([A-ZÄÖÜ][A-Za-zÄÖÜäöüß ()-]+?)"
-        r"(?=\s+(?:Kosten|Kursnummer|Kurstyp|Eine|Telefon|E-Mail|Seminardauer|Teilnehmer|Zeiten|Ihr)\b|$)",
-        text,
-    )
-    if zip_match:
-        return "", zip_match.group(1), zip_match.group(2).strip()
+
+    lines = [line.strip() for line in text.splitlines() if line.strip()]
+    for index, line in enumerate(lines):
+        if line.lower() == "veranstaltungsort" or line.startswith("Veranstaltungsort "):
+            block = lines[index + 1:]
+            street = ""
+            zip_code = ""
+            city = ""
+            for block_index, block_line in enumerate(block):
+                zip_match = re.match(r"(\d{5})\s+(.+)", block_line)
+                if zip_match:
+                    zip_code = zip_match.group(1)
+                    city = zip_match.group(2).strip()
+                    if block_index > 0:
+                        candidate = block[block_index - 1]
+                        if re.search(r"\d", candidate):
+                            street = candidate
+                    break
+            if zip_code:
+                return street, zip_code, city
+            break
+
     return DEFAULT_LOCATION["street"], DEFAULT_LOCATION["zip_code"], DEFAULT_LOCATION["city"]
 
 
@@ -193,6 +195,7 @@ class HwkHalleSaaleScraper(BaseScraper):
             if container is None:
                 continue
             text = container.get_text(" ", strip=True)
+            location_text = container.get_text("\n", strip=True)
             number_match = COURSE_NO_RE.search(text)
             number = number_match.group(1) if number_match else ""
             start = f"{date_match.group(3)}-{date_match.group(2)}-{date_match.group(1)}"
@@ -209,7 +212,7 @@ class HwkHalleSaaleScraper(BaseScraper):
                 teaching_mode = "online"
             else:
                 teaching_mode = "presence"
-            street, zip_code, city = _location(text, teaching_mode)
+            street, zip_code, city = _location(location_text, teaching_mode)
             price_match = PRICE_RE.search(text)
             offers.append(RawCourseOffer(
                 title=build_course_title(trade, parts),
@@ -296,25 +299,41 @@ class HwkHalleSaaleScraper(BaseScraper):
                 fees["Tischler"] = amount
         return fees
 
-    def _fetch_exam_fees_from_pdf(self) -> dict[str, float]:
+    @staticmethod
+    def parse_generic_exam_fees(text: str) -> dict[int, float]:
+        fees: dict[int, float] = {}
+        for part, pattern in (
+            (2, r"b\)\s*Teil\s+II\s+([\d.]+),(\d{2})\s*€"),
+            (3, r"c\)\s*Teil\s+III\s+([\d.]+),(\d{2})\s*€"),
+            (4, r"d\)\s*Teil\s+IV\s+([\d.]+),(\d{2})\s*€"),
+        ):
+            match = re.search(pattern, text, re.IGNORECASE)
+            if match:
+                fees[part] = float(match.group(1).replace(".", "") + "." + match.group(2))
+        return fees
+
+    def _fetch_exam_fees_from_pdf(self) -> tuple[dict[str, float], dict[int, float]]:
         try:
             from pypdf import PdfReader
         except ImportError:
             logger.warning("HWK Halle: pypdf not installed — using fallback exam fees.")
-            return {}
+            return {}, {}
 
         response = self.get(EXAM_FEES_PDF_URL)
         if response is None:
             logger.warning("HWK Halle: could not fetch exam-fee PDF.")
-            return {}
+            return {}, {}
 
         text = ""
         for page in PdfReader(BytesIO(response.content)).pages:
             text += (page.extract_text() or "") + "\n"
-        fees = self.parse_part_i_exam_fees(text)
-        if not fees:
+        part_i_fees = self.parse_part_i_exam_fees(text)
+        generic_fees = self.parse_generic_exam_fees(text)
+        if not part_i_fees:
             logger.warning("HWK Halle: could not parse trade-specific Teil-I exam fees from PDF.")
-        return fees
+        if not generic_fees:
+            logger.warning("HWK Halle: could not parse generic Teil II–IV exam fees from PDF.")
+        return part_i_fees, generic_fees
 
     def collect(self) -> ScrapeResult:
         result = super().collect()
@@ -322,7 +341,11 @@ class HwkHalleSaaleScraper(BaseScraper):
         return result
 
     def published_exam_fee_rows(self) -> list[dict]:
-        part_i_fees = self._fetch_exam_fees_from_pdf() or HALLE_PART_I_FALLBACK
+        part_i_fees, generic_fees = self._fetch_exam_fees_from_pdf()
+        if not part_i_fees:
+            part_i_fees = HALLE_PART_I_FALLBACK
+        if not generic_fees:
+            generic_fees = GENERIC_EXAM_FEES
         rows: list[dict] = []
         for trade_name, fee in part_i_fees.items():
             rows.append({
@@ -333,7 +356,7 @@ class HwkHalleSaaleScraper(BaseScraper):
                 "qualifier": "",
                 "source_url": EXAM_FEES_PDF_URL,
             })
-        for part, fee in GENERIC_EXAM_FEES.items():
+        for part, fee in generic_fees.items():
             rows.append({
                 "chamber_slug": self.chamber_slug,
                 "trade_slug": None,
