@@ -106,7 +106,7 @@ function examFeeCell(ef, chamberSlug = "", parts = []) {
     btn = `<button class="fee-info-btn" data-tooltip="${esc(SCHWABEN_ADDITIONAL_EXAM_NOTE)}" type="button">i</button>`;
   else if (chamberSlug === "hwk-erfurt")
     btn = `<button class="fee-info-btn" data-tooltip="${esc(ERFFURT_EXAM_NOTE)}" type="button">i</button>`;
-  else if (chamberSlug === "hwk-cottbus" && ef.qualifier)
+  else if (chamberSlug === "hwk-cottbus")
     btn = `<button class="fee-info-btn" data-tooltip="${esc(COTTBUS_EXAM_NOTE)}" type="button">i</button>`;
   else if (chamberSlug === "hwk-potsdam" && ef.qualifier)
     btn = `<button class="fee-info-btn" data-tooltip="${esc(POTSDAM_EXAM_NOTE)}" type="button">i</button>`;

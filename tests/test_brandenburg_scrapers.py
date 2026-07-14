@@ -204,14 +204,14 @@ class BrandenburgParserTests(unittest.TestCase):
             825.0,
         )
 
-    def test_cottbus_exam_fee_display_omits_long_qualifier(self):
+    def test_cottbus_exam_fee_display_shows_fee_only(self):
         lookup = build_exam_fee_lookup([
             {
                 "chamber_slug": "hwk-cottbus",
                 "trade_slug": None,
                 "part": 1,
                 "fee": 510.0,
-                "qualifier": "Grundgebühr zzgl. gewerkebezogener Zusatzgebühr",
+                "qualifier": "",
             },
             {
                 "chamber_slug": "hwk-cottbus",
@@ -223,10 +223,7 @@ class BrandenburgParserTests(unittest.TestCase):
         ], [])
         resolved = resolve_exam_fee("hwk-cottbus", "any-trade", [1, 2], None, lookup)
         self.assertEqual(resolved["display"], "825 €")
-        self.assertEqual(
-            resolved["qualifier"],
-            "Grundgebühr zzgl. gewerkebezogener Zusatzgebühr",
-        )
+        self.assertEqual(resolved["qualifier"], "")
 
     def test_potsdam_exam_fee_display_omits_long_qualifier(self):
         lookup = build_exam_fee_lookup([

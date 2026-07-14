@@ -32,7 +32,6 @@ FEES_PDF_URL = (
     f"{BASE_URL}/downloads/gebuehrenverzeichnis-der-handwerkskammer-cottbus-2025-7,2978.pdf"
 )
 GENERIC_EXAM_FEES = {1: 510.0, 2: 315.0, 3: 200.0, 4: 255.0}
-PART_I_QUALIFIER = "Grundgebühr zzgl. gewerkebezogener Zusatzgebühr"
 
 COTTBUS_TRADE_ALIASES = {
     "installateur und heizungsbauer": "Installateur- und Heizungsbauer",
@@ -233,7 +232,7 @@ class HwkCottbusScraper(BavariaOdavScraper):
                 "trade_slug": None,
                 "part": part,
                 "fee": fee,
-                "qualifier": PART_I_QUALIFIER if part == 1 else "",
+                "qualifier": "",
                 "source_url": EXAM_FEES_PAGE_URL,
             })
         return rows
