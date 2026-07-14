@@ -195,7 +195,7 @@ Dresden-specific parsing notes:
 |---|---|---|
 | Cottbus | `hwk-cottbus` | hwk-cottbus.de (ODAV `search-type=6`; exam fees from the [Rechtsgrundlagen page](https://www.hwk-cottbus.de/artikel/rechtsgrundlagen-7,719,154.html); Teil I base fee with trade surcharge qualifier) |
 | Potsdam | `hwk-potsdam` | hwk-potsdam.de (ODAV `search-type=6`; exam fees from the [Gebühren page](https://www.hwk-potsdam.de/artikel/gebuehren-9,0,2654.html), `zzgl. Auslagen`) |
-| Frankfurt (Oder) / Ostbrandenburg | `hwk-frankfurt-oder-ostbrandenburg` | weiterbildung-ostbrandenburg.de (WordPress Meisterschule with `.hwk-course-app-wrapper` runs; exam fees from the [Meisterprüfungen page](https://www.weiterbildung-ostbrandenburg.de/pruefungen/meisterpruefungen/)) |
+| Frankfurt (Oder) / Ostbrandenburg | `hwk-frankfurt-oder-ostbrandenburg` | weiterbildung-ostbrandenburg.de (WordPress Meisterschule; `Prüfungskosten` scraped from course pages when published, otherwise per-part fees from the [Gebührenverzeichnis PDF](https://www.hwk-ff.de/wp-content/uploads/2025/08/Gebuehrenverzeichnis.pdf)) |
 
 Cottbus runs are spread across Gallinchen, Großräschen, and Wildau; the scraper
 maps known campus keywords to addresses and prefers detail-page `Lehrgangsort`

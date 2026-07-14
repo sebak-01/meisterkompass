@@ -10,8 +10,9 @@ from scrapers.hwk_cottbus import (
     parse_cottbus_title,
 )
 from scrapers.hwk_frankfurt_oder_ostbrandenburg import (
-    EXAM_FEES_PAGE_URL as OB_EXAM_FEES_PAGE_URL,
+    EXAM_FEES_PDF_URL as OB_EXAM_FEES_PDF_URL,
     HwkFrankfurtOderOstbrandenburgScraper,
+    _parse_exam_fee_from_page,
     parse_ostbrandenburg_title,
 )
 from scrapers.hwk_potsdam import EXAM_FEES_PAGE_URL as POTSDAM_EXAM_FEES_PAGE_URL, HwkPotsdamScraper
@@ -103,6 +104,7 @@ class BrandenburgParserTests(unittest.TestCase):
             <main>
               <h1>Meisterkurs im Elektrotechniker-Handwerk (Teile I und II)</h1>
               <p>Lehrgangskosten: 11200,00 EUR</p>
+              <p>Prüfungskosten: 680,00 EUR</p>
               <p>ca. 1.200 Unterrichtsstunden</p>
               <div class="hwk-course-app-wrapper">
                 06.11.2026 - 12.05.2028
@@ -130,15 +132,37 @@ class BrandenburgParserTests(unittest.TestCase):
         self.assertEqual(len(offers), 2)
         self.assertEqual(offers[0].trade_name, "Elektrotechniker")
         self.assertEqual(offers[0].course_fee, 11200.0)
+        self.assertEqual(offers[0].exam_fee_scraped, 680.0)
         self.assertEqual(offers[0].duration_hours, 1200)
         self.assertEqual(offers[0].availability, "available")
         self.assertEqual(offers[1].format_key, "full_time")
+
+    def test_ostbrandenburg_parses_pruefungskosten_from_course_page(self):
+        self.assertEqual(
+            _parse_exam_fee_from_page("Lehrgangskosten: 11200,00 EUR Prüfungskosten: 680,00 EUR"),
+            680.0,
+        )
+        self.assertIsNone(_parse_exam_fee_from_page("Lehrgangskosten: 11200,00 EUR"))
+
+    def test_ostbrandenburg_parses_exam_fees_from_pdf_text(self):
+        text = """
+        3.1 Abnahme von Teilen der Meisterprüfung
+        - Prüfung Teil I
+        - Prüfung Teil II
+        - Prüfung Teil III
+        - Prüfung Teil IV
+        340 Euro 340 Euro 200 Euro 275 Euro
+        """
+        self.assertEqual(
+            HwkFrankfurtOderOstbrandenburgScraper.parse_meister_exam_fees(text),
+            {1: 340.0, 2: 340.0, 3: 200.0, 4: 275.0},
+        )
 
     def test_exam_fee_rows_use_brandenburg_source_pages(self):
         for scraper, source_url in (
             (HwkPotsdamScraper(), POTSDAM_EXAM_FEES_PAGE_URL),
             (HwkCottbusScraper(), COTTBUS_EXAM_FEES_PAGE_URL),
-            (HwkFrankfurtOderOstbrandenburgScraper(), OB_EXAM_FEES_PAGE_URL),
+            (HwkFrankfurtOderOstbrandenburgScraper(), OB_EXAM_FEES_PDF_URL),
         ):
             with patch.object(scraper, "_fetch_exam_fees_from_pdf", return_value={1: 1.0, 2: 2.0, 3: 3.0, 4: 4.0}) if hasattr(scraper, "_fetch_exam_fees_from_pdf") else patch.object(scraper, "_fetch_exam_fees", return_value={1: 1.0, 2: 2.0, 3: 3.0, 4: 4.0}):
                 rows = scraper.published_exam_fee_rows()

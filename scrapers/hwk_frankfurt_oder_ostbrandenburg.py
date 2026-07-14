@@ -21,6 +21,10 @@ DATE_RE = re.compile(
     r"^(\d{2})\.(\d{2})\.(\d{4})\s*-\s*(\d{2})\.(\d{2})\.(\d{4})$"
 )
 PRICE_RE = re.compile(r"([\d.]+),(\d{2})\s*(?:€|EUR)", re.IGNORECASE)
+EXAM_FEE_RE = re.compile(
+    r"Prüfungskosten:\s*([\d.]+),(\d{2})\s*EUR",
+    re.IGNORECASE,
+)
 DURATION_RE = re.compile(
     r"(?:ca\.\s*)?([\d.]+)\s+Unterrichtsstunden", re.IGNORECASE
 )
@@ -104,6 +108,13 @@ def _run_city(text: str) -> str:
     return DEFAULT_LOCATION["city"]
 
 
+def _parse_exam_fee_from_page(page_text: str) -> float | None:
+    match = EXAM_FEE_RE.search(page_text)
+    if not match:
+        return None
+    return float(match.group(1).replace(".", "") + "." + match.group(2))
+
+
 class HwkFrankfurtOderOstbrandenburgScraper(BaseScraper):
     chamber_slug = "hwk-frankfurt-oder-ostbrandenburg"
     chamber_name = "Handwerkskammer Frankfurt (Oder) – Region Ostbrandenburg"
@@ -175,6 +186,7 @@ class HwkFrankfurtOderOstbrandenburgScraper(BaseScraper):
             if fee_match
             else None
         )
+        exam_fee_scraped = _parse_exam_fee_from_page(page_text)
 
         offers: list[RawCourseOffer] = []
         seen: set[tuple[str, str, str]] = set()
@@ -195,6 +207,7 @@ class HwkFrankfurtOderOstbrandenburgScraper(BaseScraper):
                 url,
                 duration,
                 course_fee,
+                exam_fee_scraped,
                 index,
             )
             if offer is None:
@@ -218,6 +231,7 @@ class HwkFrankfurtOderOstbrandenburgScraper(BaseScraper):
             end_date=None,
             duration_hours=duration,
             course_fee=course_fee,
+            exam_fee_scraped=exam_fee_scraped,
             city=DEFAULT_LOCATION["city"],
             street=DEFAULT_LOCATION["street"],
             zip_code=DEFAULT_LOCATION["zip_code"],
@@ -235,6 +249,7 @@ class HwkFrankfurtOderOstbrandenburgScraper(BaseScraper):
         url: str,
         duration: int | None,
         course_fee: float | None,
+        exam_fee_scraped: float | None,
         index: int,
     ) -> RawCourseOffer | None:
         lines = [line.strip() for line in wrapper.get_text("\n", strip=True).splitlines() if line.strip()]
@@ -263,6 +278,7 @@ class HwkFrankfurtOderOstbrandenburgScraper(BaseScraper):
             end_date=f"{date_match.group(6)}-{date_match.group(5)}-{date_match.group(4)}",
             duration_hours=duration,
             course_fee=course_fee,
+            exam_fee_scraped=exam_fee_scraped,
             city=city,
             street=street,
             zip_code=zip_code,
@@ -273,6 +289,15 @@ class HwkFrankfurtOderOstbrandenburgScraper(BaseScraper):
 
     @staticmethod
     def parse_meister_exam_fees(text: str) -> dict[int, float]:
+        block = re.search(
+            r"3\.1\s+Abnahme von Teilen der Meisterprüfung"
+            r".*?340\s+Euro\s+340\s+Euro\s+200\s+Euro\s+275\s+Euro",
+            text,
+            re.IGNORECASE | re.DOTALL,
+        )
+        if block:
+            return dict(GENERIC_EXAM_FEES)
+
         fees: dict[int, float] = {}
         html_patterns = (
             (1, r"Teil\s+I:\s*([\d.]+)\s*Euro"),
@@ -284,37 +309,9 @@ class HwkFrankfurtOderOstbrandenburgScraper(BaseScraper):
             match = re.search(pattern, text, re.IGNORECASE)
             if match:
                 fees[part] = float(match.group(1).replace(".", ""))
-
-        if len(fees) == 4:
-            return fees
-
-        pdf_match = re.search(
-            r"340\s+Euro\s+340\s+Euro\s+200\s+Euro\s+275\s+Euro",
-            text,
-            re.IGNORECASE,
-        )
-        if pdf_match:
-            return dict(GENERIC_EXAM_FEES)
-
-        pdf_patterns = (
-            (1, r"Prüfung\s+Teil\s+I.*?340\s+Euro"),
-            (2, r"Prüfung\s+Teil\s+II.*?340\s+Euro"),
-            (3, r"Prüfung\s+Teil\s+III.*?200\s+Euro"),
-            (4, r"Prüfung\s+Teil\s+IV.*?275\s+Euro"),
-        )
-        amounts = {1: 340.0, 2: 340.0, 3: 200.0, 4: 275.0}
-        for part, pattern in pdf_patterns:
-            if re.search(pattern, text, re.IGNORECASE | re.DOTALL):
-                fees[part] = amounts[part]
         return fees
 
-    def _fetch_exam_fees(self) -> dict[int, float]:
-        page = self.parse_html(EXAM_FEES_PAGE_URL)
-        if page is not None:
-            fees = self.parse_meister_exam_fees(page.get_text(" ", strip=True))
-            if len(fees) == 4:
-                return fees
-
+    def _fetch_exam_fees_from_pdf(self) -> dict[int, float]:
         try:
             from pypdf import PdfReader
         except ImportError:
@@ -331,8 +328,11 @@ class HwkFrankfurtOderOstbrandenburgScraper(BaseScraper):
             text += (page.extract_text() or "") + "\n"
         fees = self.parse_meister_exam_fees(text)
         if not fees:
-            logger.warning("HWK Ostbrandenburg: could not parse Meister exam fees.")
+            logger.warning("HWK Ostbrandenburg: could not parse Meister exam fees from PDF.")
         return fees
+
+    def _fetch_exam_fees(self) -> dict[int, float]:
+        return self._fetch_exam_fees_from_pdf()
 
     def collect(self) -> ScrapeResult:
         result = super().collect()
@@ -340,7 +340,7 @@ class HwkFrankfurtOderOstbrandenburgScraper(BaseScraper):
         return result
 
     def published_exam_fee_rows(self) -> list[dict]:
-        fees = self._fetch_exam_fees() or GENERIC_EXAM_FEES
+        fees = self._fetch_exam_fees_from_pdf() or GENERIC_EXAM_FEES
         return [
             {
                 "chamber_slug": self.chamber_slug,
@@ -348,7 +348,7 @@ class HwkFrankfurtOderOstbrandenburgScraper(BaseScraper):
                 "part": part,
                 "fee": fee,
                 "qualifier": EXAM_FEE_QUALIFIER,
-                "source_url": EXAM_FEES_PAGE_URL,
+                "source_url": EXAM_FEES_PDF_URL,
             }
             for part, fee in fees.items()
         ]
