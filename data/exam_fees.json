@@ -1,5 +1,53 @@
 {
   "nested": {
+    "hwk-chemnitz": {
+      "null": {
+        "1": {
+          "fee": 410.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 320.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "3": {
+          "fee": 215.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "4": {
+          "fee": 205.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      }
+    },
+    "hwk-dresden": {
+      "null": {
+        "1": {
+          "fee": 440.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 300.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "3": {
+          "fee": 240.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "4": {
+          "fee": 240.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      }
+    },
     "hwk-erfurt": {
       "null": {
         "1": {
@@ -419,6 +467,30 @@
       "zimmerer": {
         "1,2": {
           "fee": 1230.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      }
+    },
+    "hwk-leipzig": {
+      "null": {
+        "1": {
+          "fee": 450.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 380.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "3": {
+          "fee": 230.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "4": {
+          "fee": 190.0,
           "fee_max": null,
           "qualifier": ""
         }
