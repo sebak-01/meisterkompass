@@ -80,6 +80,88 @@
         }
       }
     },
+    "hwk-halle-saale": {
+      "null": {
+        "2": {
+          "fee": 323.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "3": {
+          "fee": 208.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "4": {
+          "fee": 210.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "elektrotechniker": {
+        "1": {
+          "fee": 430.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "friseur": {
+        "1": {
+          "fee": 346.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "installateur-und-heizungsbauer": {
+        "1": {
+          "fee": 421.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "kfz-techniker": {
+        "1": {
+          "fee": 370.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "maler-und-lackierer": {
+        "1": {
+          "fee": 489.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "maurer-und-betonbauer": {
+        "1": {
+          "fee": 398.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "metallbauer": {
+        "1": {
+          "fee": 428.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "tischler": {
+        "1": {
+          "fee": 432.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "zimmerer": {
+        "1": {
+          "fee": 406.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      }
+    },
     "hwk-heilbronn-franken": {
       "null": {
         "3,4": {
@@ -337,6 +419,116 @@
       "zimmerer": {
         "1,2": {
           "fee": 1230.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      }
+    },
+    "hwk-magdeburg": {
+      "null": {
+        "3": {
+          "fee": 250.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "4": {
+          "fee": 240.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "elektrotechniker": {
+        "1": {
+          "fee": 625.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 230.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "friseur": {
+        "1": {
+          "fee": 335.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 195.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "gerustbauer": {
+        "1": {
+          "fee": 350.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 235.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "installateur-und-heizungsbauer": {
+        "1": {
+          "fee": 650.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 240.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "maler-und-lackierer": {
+        "1": {
+          "fee": 690.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 235.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "maurer-und-betonbauer": {
+        "1": {
+          "fee": 505.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 270.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "metallbauer": {
+        "1": {
+          "fee": 380.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 210.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "tischler": {
+        "1": {
+          "fee": 570.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 295.0,
           "fee_max": null,
           "qualifier": ""
         }

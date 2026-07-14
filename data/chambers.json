@@ -15,6 +15,11 @@
     "region": "Baden-Württemberg"
   },
   {
+    "slug": "hwk-halle-saale",
+    "name": "HWK Halle (Saale)",
+    "region": "Sachsen-Anhalt"
+  },
+  {
     "slug": "hwk-heilbronn-franken",
     "name": "HWK Heilbronn-Franken",
     "region": "Baden-Württemberg"
@@ -38,6 +43,11 @@
     "slug": "hwk-konstanz",
     "name": "HWK Konstanz",
     "region": "Baden-Württemberg"
+  },
+  {
+    "slug": "hwk-magdeburg",
+    "name": "HWK Magdeburg",
+    "region": "Sachsen-Anhalt"
   },
   {
     "slug": "hwk-mannheim",
@@ -123,15 +133,5 @@
     "slug": "hwk-unterfranken",
     "name": "HWK für Unterfranken",
     "region": "Bayern"
-  },
-  {
-    "slug": "hwk-halle-saale",
-    "name": "HWK Halle (Saale)",
-    "region": "Sachsen-Anhalt"
-  },
-  {
-    "slug": "hwk-magdeburg",
-    "name": "HWK Magdeburg",
-    "region": "Sachsen-Anhalt"
   }
 ]
