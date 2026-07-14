@@ -19,6 +19,7 @@ Current scope: 33 chambers across nine Bundesländer —
 - **Sachsen:** Dresden, Chemnitz, Leipzig
 - **Brandenburg:** Cottbus, Frankfurt (Oder) / Ostbrandenburg, Potsdam
 
+
 ---
 
 ## Architecture

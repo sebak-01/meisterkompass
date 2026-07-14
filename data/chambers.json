@@ -1,5 +1,15 @@
 [
   {
+    "slug": "hwk-chemnitz",
+    "name": "HWK Chemnitz",
+    "region": "Sachsen"
+  },
+  {
+    "slug": "hwk-dresden",
+    "name": "HWK Dresden",
+    "region": "Sachsen"
+  },
+  {
     "slug": "hwk-erfurt",
     "name": "HWK Erfurt",
     "region": "Thüringen"
@@ -133,5 +143,10 @@
     "slug": "hwk-unterfranken",
     "name": "HWK für Unterfranken",
     "region": "Bayern"
+  },
+  {
+    "slug": "hwk-leipzig",
+    "name": "HWK zu Leipzig",
+    "region": "Sachsen"
   }
 ]
