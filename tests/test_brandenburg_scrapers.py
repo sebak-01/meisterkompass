@@ -204,6 +204,102 @@ class BrandenburgParserTests(unittest.TestCase):
             825.0,
         )
 
+    def test_cottbus_exam_fee_display_omits_long_qualifier(self):
+        lookup = build_exam_fee_lookup([
+            {
+                "chamber_slug": "hwk-cottbus",
+                "trade_slug": None,
+                "part": 1,
+                "fee": 510.0,
+                "qualifier": "Grundgebühr zzgl. gewerkebezogener Zusatzgebühr",
+            },
+            {
+                "chamber_slug": "hwk-cottbus",
+                "trade_slug": None,
+                "part": 2,
+                "fee": 315.0,
+                "qualifier": "",
+            },
+        ], [])
+        resolved = resolve_exam_fee("hwk-cottbus", "any-trade", [1, 2], None, lookup)
+        self.assertEqual(resolved["display"], "825 €")
+        self.assertEqual(
+            resolved["qualifier"],
+            "Grundgebühr zzgl. gewerkebezogener Zusatzgebühr",
+        )
+
+    def test_potsdam_exam_fee_display_omits_long_qualifier(self):
+        lookup = build_exam_fee_lookup([
+            {
+                "chamber_slug": "hwk-potsdam",
+                "trade_slug": None,
+                "part": 1,
+                "fee": 370.0,
+                "qualifier": "zzgl. Auslagen",
+            },
+            {
+                "chamber_slug": "hwk-potsdam",
+                "trade_slug": None,
+                "part": 2,
+                "fee": 370.0,
+                "qualifier": "zzgl. Auslagen",
+            },
+        ], [])
+        resolved = resolve_exam_fee("hwk-potsdam", "any-trade", [1, 2], None, lookup)
+        self.assertEqual(resolved["display"], "740 €")
+        self.assertEqual(resolved["qualifier"], "zzgl. Auslagen")
+
+    def test_partial_scrape_preserves_other_chamber_exam_fees(self):
+        from scrapers.pipeline import _resolve_and_write_derived
+
+        records = [
+            {
+                "chamber_slug": "hwk-potsdam",
+                "trade_slug": "baecker",
+                "trade_name": "Bäcker",
+                "parts": [1, 2],
+                "exam_fee_scraped": None,
+                "exam_fee_qualifier": "",
+                "exam_fee": {
+                    "fee": 740.0,
+                    "fee_max": None,
+                    "qualifier": "zzgl. Auslagen",
+                    "display": "740 €",
+                },
+                "start_date": "2026-09-01",
+                "source_url": "https://example.test/potsdam",
+            },
+            {
+                "chamber_slug": "hwk-erfurt",
+                "trade_slug": "elektrotechniker",
+                "trade_name": "Elektrotechniker",
+                "parts": [1, 2],
+                "exam_fee_scraped": None,
+                "exam_fee_qualifier": "",
+                "exam_fee": {"fee": None, "fee_max": None, "qualifier": "", "display": ""},
+                "start_date": "2026-09-01",
+                "source_url": "https://example.test/erfurt",
+            },
+        ]
+        with patch("scrapers.pipeline._write_json"):
+            _resolve_and_write_derived(
+                records,
+                scraped_rows=[{
+                    "chamber_slug": "hwk-erfurt",
+                    "trade_slug": None,
+                    "part": 1,
+                    "fee": 100.0,
+                    "qualifier": "",
+                }],
+                manual_rows=[],
+                today_iso="2026-07-14",
+                scraped_chambers={"hwk-erfurt"},
+            )
+        potsdam = next(rec for rec in records if rec["chamber_slug"] == "hwk-potsdam")
+        erfurt = next(rec for rec in records if rec["chamber_slug"] == "hwk-erfurt")
+        self.assertEqual(potsdam["exam_fee"]["fee"], 740.0)
+        self.assertEqual(erfurt["exam_fee"]["fee"], 100.0)
+
 
 class BrandenburgIntegrationTests(unittest.TestCase):
     def test_all_chambers_are_registered_with_issue_slugs(self):

@@ -48,6 +48,18 @@ export const SCHWABEN_ADDITIONAL_EXAM_NOTE = TRADE_SPECIFIC_EXAM_NOTE;
 export const ERFFURT_EXAM_NOTE =
   "Die Kammer erhebt möglicherweise zzgl. gewerkspezifische Prüfungsgebühren. Die Prüfungsgebühren können bei einer Teilnehmerzahl von weniger als 10 Personen höher sein.";
 
+/** HWK Cottbus: Part I is a base fee with trade-specific surcharges. */
+export const COTTBUS_EXAM_NOTE =
+  "Bei Teil I handelt es sich um eine Grundgebühr zzgl. gewerkebezogener Zusatzgebühr.";
+
+/** HWK Potsdam: published fees exclude reimbursable expenses. */
+export const POTSDAM_EXAM_NOTE =
+  "Die Prüfungsgebühr versteht sich zzgl. Auslagen.";
+
+/** HWK Frankfurt (Oder) / Ostbrandenburg: workshop and material costs billed separately. */
+export const OSTBRANDENBURG_EXAM_NOTE =
+  "Werkstatt- und Materialkosten werden gesondert berechnet.";
+
 /** Start date published as month/year only — exact day not yet fixed. */
 export const TENTATIVE_START_DATE_NOTE = "Genauer Termin steht noch nicht fest.";
 

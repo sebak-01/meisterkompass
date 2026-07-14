@@ -15,6 +15,9 @@ import {
   REUTLINGEN_ADDITIONAL_EXAM_NOTE,
   SCHWABEN_ADDITIONAL_EXAM_NOTE,
   ERFFURT_EXAM_NOTE,
+  COTTBUS_EXAM_NOTE,
+  POTSDAM_EXAM_NOTE,
+  OSTBRANDENBURG_EXAM_NOTE,
   TENTATIVE_START_DATE_NOTE,
   HESSEN_CHAMBERS,
 } from "./util.js";
@@ -103,6 +106,12 @@ function examFeeCell(ef, chamberSlug = "", parts = []) {
     btn = `<button class="fee-info-btn" data-tooltip="${esc(SCHWABEN_ADDITIONAL_EXAM_NOTE)}" type="button">i</button>`;
   else if (chamberSlug === "hwk-erfurt")
     btn = `<button class="fee-info-btn" data-tooltip="${esc(ERFFURT_EXAM_NOTE)}" type="button">i</button>`;
+  else if (chamberSlug === "hwk-cottbus" && ef.qualifier)
+    btn = `<button class="fee-info-btn" data-tooltip="${esc(COTTBUS_EXAM_NOTE)}" type="button">i</button>`;
+  else if (chamberSlug === "hwk-potsdam" && ef.qualifier)
+    btn = `<button class="fee-info-btn" data-tooltip="${esc(POTSDAM_EXAM_NOTE)}" type="button">i</button>`;
+  else if (chamberSlug === "hwk-frankfurt-oder-ostbrandenburg" && ef.qualifier)
+    btn = `<button class="fee-info-btn" data-tooltip="${esc(OSTBRANDENBURG_EXAM_NOTE)}" type="button">i</button>`;
   else if (ef.qualifier === "ca.")
     btn = `<button class="fee-info-btn" data-tooltip="${esc(TOOLTIP_APPROXIMATE)}" type="button">i</button>`;
   else if (ef.qualifier)
