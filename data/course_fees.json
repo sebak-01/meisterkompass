@@ -1,5 +1,15 @@
 [
   {
+    "chamber_slug": "hwk-cottbus",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      4
+    ],
+    "fee": 799.0,
+    "exam_fee_scraped": null,
+    "is_generic": true
+  },
+  {
     "chamber_slug": "hwk-kassel",
     "trade_slug": "installateur-und-heizungsbauer",
     "parts": [
@@ -32,6 +42,16 @@
     "is_generic": true
   },
   {
+    "chamber_slug": "hwk-cottbus",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      3
+    ],
+    "fee": 1950.0,
+    "exam_fee_scraped": null,
+    "is_generic": true
+  },
+  {
     "chamber_slug": "hwk-kassel",
     "trade_slug": "maler-und-lackierer",
     "parts": [
@@ -52,6 +72,17 @@
     "fee": 3900.0,
     "exam_fee_scraped": null,
     "is_generic": true
+  },
+  {
+    "chamber_slug": "hwk-potsdam",
+    "trade_slug": "friseur",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 5690.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
   },
   {
     "chamber_slug": "hwk-rhein-main",
@@ -155,6 +186,17 @@
       2
     ],
     "fee": 4548.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-potsdam",
+    "trade_slug": "backer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 3500.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
@@ -338,6 +380,17 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-cottbus",
+    "trade_slug": "fliesen-platten-und-mosaikleger",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 5300.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-erfurt",
     "trade_slug": "allgemein-teil-iii-iv",
     "parts": [
@@ -377,6 +430,17 @@
     "fee": 1590.0,
     "exam_fee_scraped": null,
     "is_generic": true
+  },
+  {
+    "chamber_slug": "hwk-cottbus",
+    "trade_slug": "kosmetiker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 5600.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -441,6 +505,28 @@
     "is_generic": true
   },
   {
+    "chamber_slug": "hwk-cottbus",
+    "trade_slug": "friseur",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 5470.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-cottbus",
+    "trade_slug": "metallbauer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 9200.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-wiesbaden",
     "trade_slug": "allgemein-teil-iii-iv",
     "parts": [
@@ -449,6 +535,17 @@
     "fee": 1800.0,
     "exam_fee_scraped": null,
     "is_generic": true
+  },
+  {
+    "chamber_slug": "hwk-cottbus",
+    "trade_slug": "installateur-und-heizungsbauer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 10690.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -481,6 +578,17 @@
     ],
     "fee": 2735.0,
     "exam_fee_scraped": 360.0,
+    "is_generic": true
+  },
+  {
+    "chamber_slug": "hwk-potsdam",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      3,
+      4
+    ],
+    "fee": 3000.0,
+    "exam_fee_scraped": null,
     "is_generic": true
   },
   {
@@ -669,6 +777,17 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-cottbus",
+    "trade_slug": "fleischer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 5200.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-ulm",
     "trade_slug": "feinwerkmechaniker",
     "parts": [
@@ -699,6 +818,17 @@
     ],
     "fee": 8750.0,
     "exam_fee_scraped": 630.0,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-cottbus",
+    "trade_slug": "gerustbauer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 7200.0,
+    "exam_fee_scraped": null,
     "is_generic": false
   },
   {
@@ -998,6 +1128,28 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-cottbus",
+    "trade_slug": "maurer-und-betonbauer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 8550.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-cottbus",
+    "trade_slug": "stuckateur",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 6250.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-konstanz",
     "trade_slug": "stuckateur",
     "parts": [
@@ -1150,6 +1302,17 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-cottbus",
+    "trade_slug": "tischler",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 9200.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-muenchen-und-oberbayern",
     "trade_slug": "friseur",
     "parts": [
@@ -1246,6 +1409,17 @@
     "is_generic": true
   },
   {
+    "chamber_slug": "hwk-cottbus",
+    "trade_slug": "maler-und-lackierer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 10000.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-kassel",
     "trade_slug": "metallbauer",
     "parts": [
@@ -1276,6 +1450,17 @@
     "fee": 1700.0,
     "exam_fee_scraped": null,
     "is_generic": true
+  },
+  {
+    "chamber_slug": "hwk-cottbus",
+    "trade_slug": "klempner",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 8995.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -1509,6 +1694,17 @@
       2
     ],
     "fee": 6850.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-cottbus",
+    "trade_slug": "kfz-techniker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 9200.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
@@ -1858,6 +2054,17 @@
     "is_generic": true
   },
   {
+    "chamber_slug": "hwk-cottbus",
+    "trade_slug": "gebaudereiniger",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 5190.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-dresden",
     "trade_slug": "dachdecker",
     "parts": [
@@ -1876,6 +2083,17 @@
     ],
     "fee": 6950.0,
     "exam_fee_scraped": 2120.0,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-potsdam",
+    "trade_slug": "tischler",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 8950.0,
+    "exam_fee_scraped": null,
     "is_generic": false
   },
   {
@@ -1908,19 +2126,6 @@
     "fee": 910.0,
     "exam_fee_scraped": 165.0,
     "is_generic": true
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "trade_slug": "zimmerer",
-    "parts": [
-      1,
-      2,
-      3,
-      4
-    ],
-    "fee": 11900.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
   },
   {
     "chamber_slug": "hwk-mannheim",
@@ -2102,6 +2307,17 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-potsdam",
+    "trade_slug": "metallbauer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 9900.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-saarland",
     "trade_slug": "elektrotechniker",
     "parts": [
@@ -2184,6 +2400,17 @@
       2
     ],
     "fee": 6585.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-potsdam",
+    "trade_slug": "maler-und-lackierer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 9900.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
@@ -2325,6 +2552,17 @@
     ],
     "fee": 16225.0,
     "exam_fee_scraped": 1350.0,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-potsdam",
+    "trade_slug": "konditor",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 4150.0,
+    "exam_fee_scraped": null,
     "is_generic": false
   },
   {
@@ -2678,6 +2916,17 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-potsdam",
+    "trade_slug": "land-und-baumaschinenmechatroniker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 9600.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-konstanz",
     "trade_slug": "maurer-und-betonbauer",
     "parts": [
@@ -2721,6 +2970,16 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-potsdam",
+    "trade_slug": "elektrotechniker",
+    "parts": [
+      1
+    ],
+    "fee": 3590.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-dresden",
     "trade_slug": "zahntechniker",
     "parts": [
@@ -2738,6 +2997,17 @@
       2
     ],
     "fee": 9086.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-potsdam",
+    "trade_slug": "maurer-und-betonbauer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 10900.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
@@ -2858,6 +3128,16 @@
       2
     ],
     "fee": 9500.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-potsdam",
+    "trade_slug": "elektrotechniker",
+    "parts": [
+      2
+    ],
+    "fee": 8310.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
@@ -3010,6 +3290,19 @@
     ],
     "fee": 3315.0,
     "exam_fee_scraped": 990.0,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "trade_slug": "zimmerer",
+    "parts": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "fee": 13370.0,
+    "exam_fee_scraped": null,
     "is_generic": false
   },
   {
@@ -3323,6 +3616,17 @@
       2
     ],
     "fee": 6350.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-potsdam",
+    "trade_slug": "installateur-und-heizungsbauer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 11750.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
@@ -3666,19 +3970,6 @@
     "is_generic": false
   },
   {
-    "chamber_slug": "hwk-stuttgart",
-    "trade_slug": "backer",
-    "parts": [
-      1,
-      2,
-      3,
-      4
-    ],
-    "fee": 4950.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
     "chamber_slug": "hwk-karlsruhe",
     "trade_slug": "kfz-techniker",
     "parts": [
@@ -3910,6 +4201,16 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-cottbus",
+    "trade_slug": "orthopadietechniker",
+    "parts": [
+      1
+    ],
+    "fee": 3660.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-dresden",
     "trade_slug": "installateur-und-heizungsbauer",
     "parts": [
@@ -4040,6 +4341,16 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-cottbus",
+    "trade_slug": "orthopadietechniker",
+    "parts": [
+      2
+    ],
+    "fee": 2400.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-halle-saale",
     "trade_slug": "elektrotechniker",
     "parts": [
@@ -4127,6 +4438,17 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-cottbus",
+    "trade_slug": "zimmerer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 9950.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-niederbayern-oberpfalz",
     "trade_slug": "konditor",
     "parts": [
@@ -4134,6 +4456,17 @@
       2
     ],
     "fee": 5140.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-cottbus",
+    "trade_slug": "elektrotechniker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 10950.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
@@ -4148,6 +4481,17 @@
     "is_generic": true
   },
   {
+    "chamber_slug": "hwk-cottbus",
+    "trade_slug": "strassenbauer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 9800.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-niederbayern-oberpfalz",
     "trade_slug": "tischler",
     "parts": [
@@ -4155,6 +4499,17 @@
       2
     ],
     "fee": 8400.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-cottbus",
+    "trade_slug": "dachdecker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 10200.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },

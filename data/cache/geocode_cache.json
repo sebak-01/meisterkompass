@@ -1,4 +1,5 @@
 {
+  "00000 keine Angabe, Brandenburg, Deutschland": null,
   "55129 Mainz, Deutschland": [
     49.9647693,
     8.2434157
@@ -15,6 +16,10 @@
     49.145351,
     9.2236557
   ],
+  "Altmarkt 17, 03046 Cottbus, Deutschland": [
+    51.7610067,
+    14.3352034
+  ],
   "Am Altenhof 15, 67655 Kaiserslautern, Deutschland": [
     49.4441065,
     7.7686373
@@ -27,6 +32,10 @@
     48.5594648,
     12.1999128
   ],
+  "Am Mühlenberg 15, 14550 Groß Kreutz (Havel), Deutschland": [
+    52.4063025,
+    12.7280699
+  ],
   "Am Stadtberg 19, 89407 Dillingen, Deutschland": [
     48.5753811,
     10.4972272
@@ -38,6 +47,10 @@
   "Ansbach, Bayern, Deutschland": [
     49.2888745,
     10.5597693
+  ],
+  "Artur-Scheunert-Allee 40-41, 14558 Nuthetal, Deutschland": [
+    52.3529105,
+    13.1031758
   ],
   "Auedamm 18, 34123 Kassel, Deutschland": [
     51.3021202,
@@ -216,6 +229,10 @@
   "Hertzstraße 24a, 96050 Bamberg, Deutschland": [
     49.8918568,
     10.926158
+  ],
+  "Hertzstraße 8, 03238 Massen-Niederlausitz, Deutschland": [
+    51.6344515,
+    13.7374906
   ],
   "Hindelanger Straße 39, 87527 Sonthofen, Deutschland": [
     47.5125094,
@@ -410,6 +427,18 @@
     49.7813929,
     7.3375888
   ],
+  "Schorbuser Weg 2, 03051 Cottbus, Deutschland": [
+    51.7021156,
+    14.3591764
+  ],
+  "Schwartzkopffstraße 1, 15745 Wildau, Deutschland": [
+    52.3198785,
+    13.6310976
+  ],
+  "Schwartzkopffstraße 9 (Haus 24), 15745 Wildau, Deutschland": [
+    52.3215577,
+    13.6316497
+  ],
   "Schweinfurt, Bayern, Deutschland": [
     50.0451485,
     10.2340647
@@ -497,6 +526,10 @@
   "Wasserstraße 19, 77652 Offenburg, Deutschland": [
     48.4713854,
     7.9361019
+  ],
+  "Werner-Seelenbinder-Straße 24, 01983 Großräschen, Deutschland": [
+    51.580024,
+    13.9997132
   ],
   "Wilhelmstr. 20, 53474 Bad Neuenahr-Ahrweiler, Deutschland": [
     50.5456433,

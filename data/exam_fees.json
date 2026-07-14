@@ -24,6 +24,30 @@
         }
       }
     },
+    "hwk-cottbus": {
+      "null": {
+        "1": {
+          "fee": 510.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 315.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "3": {
+          "fee": 200.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "4": {
+          "fee": 255.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      }
+    },
     "hwk-dresden": {
       "null": {
         "1": {
@@ -72,59 +96,27 @@
         }
       }
     },
-    "hwk-freiburg": {
+    "hwk-frankfurt-oder-ostbrandenburg": {
       "null": {
+        "1": {
+          "fee": 340.0,
+          "fee_max": null,
+          "qualifier": "Werkstatt- und Materialkosten gesondert"
+        },
+        "2": {
+          "fee": 340.0,
+          "fee_max": null,
+          "qualifier": "Werkstatt- und Materialkosten gesondert"
+        },
         "3": {
           "fee": 200.0,
           "fee_max": null,
-          "qualifier": ""
+          "qualifier": "Werkstatt- und Materialkosten gesondert"
         },
         "4": {
-          "fee": 200.0,
+          "fee": 275.0,
           "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "elektrotechniker": {
-        "1,2": {
-          "fee": 750.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "feinwerkmechaniker": {
-        "1,2": {
-          "fee": 750.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "installateur-und-heizungsbauer": {
-        "1,2": {
-          "fee": 750.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "metallbauer": {
-        "1,2": {
-          "fee": 750.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "tischler": {
-        "1,2": {
-          "fee": 750.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "zahntechniker": {
-        "1,2": {
-          "fee": 750.0,
-          "fee_max": null,
-          "qualifier": ""
+          "qualifier": "Werkstatt- und Materialkosten gesondert"
         }
       }
     },
@@ -1008,6 +1000,30 @@
           "fee": 1300.0,
           "fee_max": null,
           "qualifier": ""
+        }
+      }
+    },
+    "hwk-potsdam": {
+      "null": {
+        "1": {
+          "fee": 370.0,
+          "fee_max": null,
+          "qualifier": "zzgl. Auslagen"
+        },
+        "2": {
+          "fee": 370.0,
+          "fee_max": null,
+          "qualifier": "zzgl. Auslagen"
+        },
+        "3": {
+          "fee": 220.0,
+          "fee_max": null,
+          "qualifier": "zzgl. Auslagen"
+        },
+        "4": {
+          "fee": 215.0,
+          "fee_max": null,
+          "qualifier": "zzgl. Auslagen"
         }
       }
     },

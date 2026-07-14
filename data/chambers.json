@@ -5,6 +5,11 @@
     "region": "Sachsen"
   },
   {
+    "slug": "hwk-cottbus",
+    "name": "HWK Cottbus",
+    "region": "Brandenburg"
+  },
+  {
     "slug": "hwk-dresden",
     "name": "HWK Dresden",
     "region": "Sachsen"
@@ -13,6 +18,11 @@
     "slug": "hwk-erfurt",
     "name": "HWK Erfurt",
     "region": "Thüringen"
+  },
+  {
+    "slug": "hwk-frankfurt-oder-ostbrandenburg",
+    "name": "HWK Frankfurt (Oder) – Region Ostbrandenburg",
+    "region": "Brandenburg"
   },
   {
     "slug": "hwk-rhein-main",
@@ -68,6 +78,11 @@
     "slug": "hwk-niederbayern-oberpfalz",
     "name": "HWK Niederbayern-Oberpfalz",
     "region": "Bayern"
+  },
+  {
+    "slug": "hwk-potsdam",
+    "name": "HWK Potsdam",
+    "region": "Brandenburg"
   },
   {
     "slug": "hwk-stuttgart",
