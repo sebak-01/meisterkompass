@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { sortCourses, sortIndicator } from "../web/src/render.js";
+import { sortCourses, sortIndicator, chamberFilterHtml } from "../web/src/render.js";
 
 const sample = [
   {
@@ -40,5 +40,19 @@ assert.deepEqual(byFeeDesc, [7000, 5000, null]);
 assert.equal(sortIndicator("chamber", "chamber", "asc"), "↑");
 assert.equal(sortIndicator("chamber", "chamber", "desc"), "↓");
 assert.equal(sortIndicator("chamber", "runtime", "asc"), "↕");
+
+const filterHtml = chamberFilterHtml([
+  { slug: "hwk-potsdam", name: "HWK Potsdam", region: "Brandenburg" },
+  { slug: "hwk-cottbus", name: "HWK Cottbus", region: "Brandenburg" },
+  { slug: "hwk-muenchen", name: "HWK München", region: "Bayern" },
+  { slug: "hwk-freiburg", name: "HWK Freiburg", region: "Baden-Württemberg" },
+]);
+const regionSummaries = [...filterHtml.matchAll(/region-panel-summary">([^<]+)</g)].map((m) => m[1]);
+assert.deepEqual(regionSummaries, ["Baden-Württemberg", "Bayern", "Brandenburg"]);
+const brandenburgLabels = filterHtml
+  .split("Brandenburg")[1]
+  .match(/f-chamber" value="[^"]+"> ([^<]+)<\/label>/g)
+  .map((label) => label.replace(/^f-chamber" value="[^"]+"> ([^<]+)<\/label>$/, "$1"));
+assert.deepEqual(brandenburgLabels, ["HWK Cottbus", "HWK Potsdam"]);
 
 console.log("sortCourses tests passed");

@@ -15,6 +15,9 @@ import {
   REUTLINGEN_ADDITIONAL_EXAM_NOTE,
   SCHWABEN_ADDITIONAL_EXAM_NOTE,
   ERFFURT_EXAM_NOTE,
+  COTTBUS_EXAM_NOTE,
+  POTSDAM_EXAM_NOTE,
+  OSTBRANDENBURG_EXAM_NOTE,
   TENTATIVE_START_DATE_NOTE,
   HESSEN_CHAMBERS,
 } from "./util.js";
@@ -103,6 +106,12 @@ function examFeeCell(ef, chamberSlug = "", parts = []) {
     btn = `<button class="fee-info-btn" data-tooltip="${esc(SCHWABEN_ADDITIONAL_EXAM_NOTE)}" type="button">i</button>`;
   else if (chamberSlug === "hwk-erfurt")
     btn = `<button class="fee-info-btn" data-tooltip="${esc(ERFFURT_EXAM_NOTE)}" type="button">i</button>`;
+  else if (chamberSlug === "hwk-cottbus")
+    btn = `<button class="fee-info-btn" data-tooltip="${esc(COTTBUS_EXAM_NOTE)}" type="button">i</button>`;
+  else if (chamberSlug === "hwk-potsdam" && ef.qualifier)
+    btn = `<button class="fee-info-btn" data-tooltip="${esc(POTSDAM_EXAM_NOTE)}" type="button">i</button>`;
+  else if (chamberSlug === "hwk-frankfurt-oder-ostbrandenburg" && ef.qualifier)
+    btn = `<button class="fee-info-btn" data-tooltip="${esc(OSTBRANDENBURG_EXAM_NOTE)}" type="button">i</button>`;
   else if (ef.qualifier === "ca.")
     btn = `<button class="fee-info-btn" data-tooltip="${esc(TOOLTIP_APPROXIMATE)}" type="button">i</button>`;
   else if (ef.qualifier)
@@ -241,29 +250,33 @@ export function rowHtml(c) {
   </tr>`;
 }
 
+// ── Shared chamber grouping (German collation) ───────────────────────────
+
+const alphabetically = (a, b) => a.localeCompare(b, "de");
+
+const byRegion = (chambers) => {
+  const groups = new Map();
+  for (const c of chambers) {
+    const region = c.region || "";
+    if (!groups.has(region)) groups.set(region, []);
+    groups.get(region).push(c);
+  }
+  return groups;
+};
+
 // ── Chamber filter (region accordion) ──────────────────────────────────
 // Derived from data/chambers.json so the HWK list never drifts from the data.
 // Rendered at build time (vite prerender) and re-rendered idempotently on the
 // client, mirroring rowHtml's SSG-then-hydrate pattern.
-const REGION_ORDER = ["Bayern", "Baden-Württemberg", "Hessen", "Rheinland-Pfalz", "Saarland"];
-
-function regionSortKey(region) {
-  const idx = REGION_ORDER.indexOf(region);
-  return idx === -1 ? REGION_ORDER.length : idx;
-}
-
 export function chamberFilterHtml(chambers) {
-  const byRegion = new Map();
-  for (const c of chambers) {
-    const region = c.region || "";
-    if (!byRegion.has(region)) byRegion.set(region, []);
-    byRegion.get(region).push(c);
-  }
-  const regions = [...byRegion.keys()].sort((a, b) => regionSortKey(a) - regionSortKey(b));
+  const groups = byRegion(chambers);
+  const regions = [...groups.keys()].sort(alphabetically);
   return `<div class="region-accordion">${regions.map((region) => {
-    const labels = byRegion.get(region).map((c) =>
-      `<label><input type="checkbox" class="f-chamber" value="${esc(c.slug)}"> ${esc(c.name)}</label>`,
-    ).join("");
+    const labels = groups.get(region)
+      .sort((a, b) => alphabetically(a.name, b.name))
+      .map((c) =>
+        `<label><input type="checkbox" class="f-chamber" value="${esc(c.slug)}"> ${esc(c.name)}</label>`,
+      ).join("");
     const summary = region ? esc(region) : "Sonstige";
     return `<details class="region-panel">
       <summary class="region-panel-summary">${summary}</summary>
@@ -284,18 +297,6 @@ export function emptyRow() {
 // Rendered at build time (vite prerender) so the "Über"-page prose, its <ul>,
 // and the SEO meta descriptions never drift from the data as chambers are added.
 // Chambers are grouped by region (alphabetical, German collation) then by name.
-
-const alphabetically = (a, b) => a.localeCompare(b, "de");
-
-const byRegion = (chambers) => {
-  const groups = new Map();
-  for (const c of chambers) {
-    const region = c.region || "";
-    if (!groups.has(region)) groups.set(region, []);
-    groups.get(region).push(c);
-  }
-  return groups;
-};
 
 // Bundesländer that carry a definite article in the dative "in …" phrase.
 // German state names are otherwise article-less; only "das Saarland" needs one.

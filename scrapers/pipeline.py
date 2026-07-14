@@ -53,6 +53,9 @@ from .hwk_magdeburg import HwkMagdeburgScraper
 from .hwk_dresden import HwkDresdenScraper
 from .hwk_chemnitz import HwkChemnitzScraper
 from .hwk_leipzig import HwkLeipzigScraper
+from .hwk_cottbus import HwkCottbusScraper
+from .hwk_potsdam import HwkPotsdamScraper
+from .hwk_frankfurt_oder_ostbrandenburg import HwkFrankfurtOderOstbrandenburgScraper
 
 
 logger = logging.getLogger(__name__)
@@ -88,6 +91,9 @@ SCRAPERS: dict[str, type] = {
     "hwk-dresden": HwkDresdenScraper,
     "hwk-chemnitz": HwkChemnitzScraper,
     "hwk-leipzig": HwkLeipzigScraper,
+    "hwk-cottbus": HwkCottbusScraper,
+    "hwk-potsdam": HwkPotsdamScraper,
+    "hwk-frankfurt-oder-ostbrandenburg": HwkFrankfurtOderOstbrandenburgScraper,
 }
 
 FORMAT_DISPLAY = {
@@ -378,10 +384,33 @@ def _course_sort_key(r: dict) -> tuple:
     return (r["chamber_slug"], r["trade_name"] or "", r.get("start_date") or "9999", r.get("source_url", ""))
 
 
-def _resolve_and_write_derived(records: list[dict], scraped_rows: list[dict], manual_rows: list[dict], today_iso: str):
+def _load_previous_exam_fees_nested() -> dict:
+    path = DATA_DIR / "exam_fees.json"
+    if not path.exists():
+        return {}
+    return json.loads(path.read_text(encoding="utf-8")).get("nested", {})
+
+
+def _merge_exam_fees_nested(previous: dict, current: dict, scraped_chambers: set[str] | None) -> dict:
+    if scraped_chambers is None:
+        return current
+    merged = {slug: fees for slug, fees in previous.items() if slug not in scraped_chambers}
+    merged.update(current)
+    return merged
+
+
+def _resolve_and_write_derived(
+    records: list[dict],
+    scraped_rows: list[dict],
+    manual_rows: list[dict],
+    today_iso: str,
+    scraped_chambers: set[str] | None = None,
+):
     """Resolve each course's exam fee, then write courses/exam_fees/course_fees JSON."""
     lookup = build_exam_fee_lookup(scraped_rows, manual_rows)
     for rec in records:
+        if scraped_chambers is not None and rec["chamber_slug"] not in scraped_chambers:
+            continue
         rec["exam_fee"] = resolve_exam_fee(
             rec["chamber_slug"], rec["trade_slug"], rec["parts"], rec.get("exam_fee_scraped"), lookup,
             rec.get("exam_fee_qualifier", ""),
@@ -392,7 +421,9 @@ def _resolve_and_write_derived(records: list[dict], scraped_rows: list[dict], ma
     archived = [r for r in records if _is_past(r, today_iso)]
     _write_json(COURSES_JSON, upcoming)
     _write_json(ARCHIVE_JSON, archived)
-    _write_json(DATA_DIR / "exam_fees.json", {"nested": build_exam_fees_nested(lookup)})
+    nested = build_exam_fees_nested(lookup)
+    nested = _merge_exam_fees_nested(_load_previous_exam_fees_nested(), nested, scraped_chambers)
+    _write_json(DATA_DIR / "exam_fees.json", {"nested": nested})
     _write_json(DATA_DIR / "course_fees.json", build_course_fees(records, today_iso))
 
 
@@ -517,7 +548,9 @@ def run(chamber: str | None = None, dry_run: bool = False) -> RunReport:
     geocoder.save()
 
     manual_rows = _load_manual_fee_rows()
-    _resolve_and_write_derived(records, scraped_exam_rows, manual_rows, today_iso)
+    _resolve_and_write_derived(
+        records, scraped_exam_rows, manual_rows, today_iso, scraped_chambers=set(results.keys()),
+    )
 
     previous_chambers = json.loads((DATA_DIR / "chambers.json").read_text(encoding="utf-8")) if (DATA_DIR / "chambers.json").exists() else []
     chambers, trades = build_chambers_and_trades(records, results, previous_chambers)

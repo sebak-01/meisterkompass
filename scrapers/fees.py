@@ -23,6 +23,17 @@ def _fmt(amount: Decimal) -> str:
     return f"{amount:,.0f}".replace(",", ".") + " €"
 
 
+_INLINE_DISPLAY_QUALIFIERS = frozenset({"bis zu", "ca."})
+
+
+def _fee_display(fee_str: str, qualifier: str) -> str:
+    """Show short fee markers inline; keep longer notes for tooltips only."""
+    q = qualifier.strip()
+    if q in _INLINE_DISPLAY_QUALIFIERS:
+        return f"{q} {fee_str}"
+    return fee_str
+
+
 def build_exam_fee_lookup(scraped_rows: list[dict], manual_rows: list[dict]) -> ExamFeeLookup:
     """
     Merge scraped per-part exam fees with manual entries. Manual wins on
@@ -85,7 +96,7 @@ def resolve_exam_fee(
         fee = Decimal(str(exam_fee_scraped))
         qualifier = exam_fee_qualifier.strip()
         fee_str = _fmt(fee)
-        display = f"{qualifier} {fee_str}".strip() if qualifier else fee_str
+        display = _fee_display(fee_str, qualifier)
         return {"fee": float(fee), "fee_max": None, "qualifier": qualifier, "display": display}
 
     # Priority 2a: exact combo-bundle override for this exact set of parts.
@@ -101,7 +112,7 @@ def resolve_exam_fee(
             return {"fee": float(fee), "fee_max": float(fee_max), "qualifier": "", "display": display}
         qualifier = combo["qualifier"]
         fee_str = _fmt(fee)
-        display = f"{qualifier} {fee_str}".strip() if qualifier else fee_str
+        display = _fee_display(fee_str, qualifier)
         return {"fee": float(fee), "fee_max": None, "qualifier": qualifier, "display": display}
 
     # Priority 2b: per-part ExamFee lookup
@@ -133,5 +144,5 @@ def resolve_exam_fee(
         return {"fee": float(total_min), "fee_max": float(total_max), "qualifier": "", "display": display}
 
     fee_str = _fmt(total_min)
-    display = f"{qualifier} {fee_str}".strip() if qualifier else fee_str
+    display = _fee_display(fee_str, qualifier)
     return {"fee": float(total_min), "fee_max": None, "qualifier": qualifier, "display": display}
