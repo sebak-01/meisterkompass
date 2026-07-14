@@ -15,9 +15,16 @@ logger = logging.getLogger(__name__)
 BASE_URL = "https://www.njumii.de"
 LISTING_URL = f"{BASE_URL}/kurs-finden.html"
 CHAMBER_URL = "https://www.hwk-dresden.de"
+EXAM_FEES_PAGE_URL = (
+    f"{CHAMBER_URL}/ausbildung/pruefungen/meisterpruefungen.html#c20204"
+)
 FEES_PDF_URL = (
     f"{CHAMBER_URL}/fileadmin/user_upload/mb/Recht/Dokumente/"
     "Gebuehrenverzeichnis_Handwerkskammer-Dresden.pdf"
+)
+BOOKING_BUTTON_RE = re.compile(
+    r"jetzt kurs buchen|termin w(?:ä|ae)hlen|kurs buchen",
+    re.IGNORECASE,
 )
 DATE_RE = re.compile(
     r"(\d{2})\.(\d{2})\.(\d{4})\s*-\s*(\d{2})\.(\d{2})\.(\d{4})"
@@ -57,15 +64,38 @@ def parse_dresden_title(title: str) -> tuple[list[int], str | None]:
     return (parts, trade) if trade else ([], None)
 
 
-def _availability(text: str) -> str:
-    lower = text.lower()
+def _has_booking_button(text: str) -> bool:
+    return bool(BOOKING_BUTTON_RE.search(text))
+
+
+def _availability(text: str, element: Tag | None = None) -> str:
+    combined = text
+    if element is not None:
+        buttons = [element] if element.name in ("a", "button") else []
+        buttons.extend(element.select("a, button"))
+        for btn in buttons:
+            combined += " " + btn.get_text(" ", strip=True)
+    lower = combined.lower()
     if "ausgebucht" in lower or "keine plätze" in lower:
         return "full"
+    has_button = _has_booking_button(combined)
     if "warteliste" in lower:
-        return "waitlist"
+        return "available" if has_button else "waitlist"
     if "plätze verfügbar" in lower or "freie plätze" in lower:
         return "available"
+    if has_button:
+        return "available"
     return "unknown"
+
+
+def _fill_shared_duration(offers: list[RawCourseOffer]) -> None:
+    durations = [offer.duration_hours for offer in offers if offer.duration_hours]
+    if not durations:
+        return
+    shared = durations[0]
+    for offer in offers:
+        if offer.duration_hours is None:
+            offer.duration_hours = shared
 
 
 def _parse_address(text: str) -> tuple[str, str, str]:
@@ -166,6 +196,7 @@ class HwkDresdenScraper(BaseScraper):
             seen.add(key)
             offers.append(offer)
 
+        _fill_shared_duration(offers)
         return offers
 
     @staticmethod
@@ -217,7 +248,7 @@ class HwkDresdenScraper(BaseScraper):
             city=city,
             street=default_street,
             zip_code=default_zip,
-            availability=_availability(text),
+            availability=_availability(text, row),
             source_url=url,
             scraped_raw={"title": title, "run_text": text[:1000]},
         )
@@ -259,7 +290,7 @@ class HwkDresdenScraper(BaseScraper):
             city=city,
             street=default_street,
             zip_code=default_zip,
-            availability=_availability(text),
+            availability=_availability(text, item),
             source_url=url,
             scraped_raw={"title": title, "run_text": text[:1000]},
         )
@@ -289,6 +320,16 @@ class HwkDresdenScraper(BaseScraper):
                 fees[part] = float(block.group(index).replace(".", ""))
         return fees
 
+    def _resolve_exam_fees_pdf_url(self) -> str:
+        soup = self.parse_html(EXAM_FEES_PAGE_URL.split("#", 1)[0])
+        if soup is None:
+            return FEES_PDF_URL
+        for link in soup.select("a[href*='Gebuehrenverzeichnis']"):
+            href = link.get("href", "")
+            if href.lower().endswith(".pdf"):
+                return urljoin(CHAMBER_URL, href)
+        return FEES_PDF_URL
+
     def _fetch_exam_fees_from_pdf(self) -> dict[int, float]:
         try:
             from pypdf import PdfReader
@@ -296,7 +337,8 @@ class HwkDresdenScraper(BaseScraper):
             logger.warning("HWK Dresden: pypdf not installed — using fallback exam fees.")
             return {}
 
-        response = self.get(FEES_PDF_URL)
+        pdf_url = self._resolve_exam_fees_pdf_url()
+        response = self.get(pdf_url)
         if response is None:
             logger.warning("HWK Dresden: could not fetch exam-fee PDF.")
             return {}
@@ -323,7 +365,7 @@ class HwkDresdenScraper(BaseScraper):
                 "part": part,
                 "fee": fee,
                 "qualifier": "",
-                "source_url": FEES_PDF_URL,
+                "source_url": EXAM_FEES_PAGE_URL,
             }
             for part, fee in fees.items()
         ]

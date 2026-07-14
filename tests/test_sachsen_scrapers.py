@@ -5,7 +5,12 @@ from bs4 import BeautifulSoup
 
 from scrapers.fees import build_exam_fee_lookup, resolve_exam_fee
 from scrapers.hwk_chemnitz import HwkChemnitzScraper, parse_chemnitz_title
-from scrapers.hwk_dresden import HwkDresdenScraper, parse_dresden_title
+from scrapers.hwk_dresden import (
+    EXAM_FEES_PAGE_URL,
+    HwkDresdenScraper,
+    _availability,
+    parse_dresden_title,
+)
 from scrapers.hwk_leipzig import HwkLeipzigScraper
 from scrapers.pipeline import SCRAPERS
 
@@ -64,12 +69,13 @@ class SachsenParserTests(unittest.TestCase):
               <div class="col"><p>Dauer 718 Teilnehmerstunden</p></div>
               <div class="col"><p>7.500,00 €</p></div>
               <div class="col"><p>Kursort Dresden</p></div>
-              <div class="col"><p>Plätze verfügbar</p></div>
+              <div class="col"><button>Jetzt Kurs buchen</button></div>
             </div>
             <div class="accordion-item">
               <button class="accordion-button">12.03.2027 - 25.03.2028 berufsbegleitend Dresden Plätze verfügbar</button>
               <div>Kursort Dresden</div>
               <div>Kosten 7.150,00 €</div>
+              <button>Termin wählen</button>
             </div>
             """,
             "html.parser",
@@ -81,7 +87,37 @@ class SachsenParserTests(unittest.TestCase):
         )
         self.assertEqual(len(offers), 2)
         self.assertEqual(offers[0].course_fee, 7500.0)
+        self.assertEqual(offers[0].duration_hours, 718)
+        self.assertEqual(offers[0].availability, "available")
         self.assertEqual(offers[1].course_fee, 7150.0)
+        self.assertEqual(offers[1].duration_hours, 718)
+        self.assertEqual(offers[1].availability, "available")
+
+    def test_dresden_availability_defaults_to_available_with_booking_button(self):
+        self.assertEqual(
+            _availability("07.09.2026 - 25.01.2027", BeautifulSoup(
+                "<button>Jetzt Kurs buchen</button>", "html.parser"
+            ).button),
+            "available",
+        )
+        self.assertEqual(
+            _availability("12.03.2027 - 25.03.2028 Warteliste", BeautifulSoup(
+                "<button>Termin wählen</button>", "html.parser"
+            ).button),
+            "available",
+        )
+        self.assertEqual(_availability("Ausgebucht"), "full")
+        self.assertEqual(_availability("Warteliste"), "waitlist")
+
+    def test_dresden_exam_fee_rows_use_meisterpruefungen_page(self):
+        scraper = HwkDresdenScraper()
+        with patch.object(
+            scraper,
+            "_fetch_exam_fees_from_pdf",
+            return_value={1: 440.0, 2: 300.0, 3: 240.0, 4: 240.0},
+        ):
+            rows = scraper.published_exam_fee_rows()
+        self.assertTrue(all(row["source_url"] == EXAM_FEES_PAGE_URL for row in rows))
 
     def test_chemnitz_parses_termin_block(self):
         soup = BeautifulSoup(
