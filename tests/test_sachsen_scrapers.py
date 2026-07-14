@@ -6,12 +6,12 @@ from bs4 import BeautifulSoup
 from scrapers.fees import build_exam_fee_lookup, resolve_exam_fee
 from scrapers.hwk_chemnitz import HwkChemnitzScraper, parse_chemnitz_title
 from scrapers.hwk_dresden import (
-    EXAM_FEES_PAGE_URL,
+    EXAM_FEES_PAGE_URL as DRESDEN_EXAM_FEES_PAGE_URL,
     HwkDresdenScraper,
     _availability,
     parse_dresden_title,
 )
-from scrapers.hwk_leipzig import HwkLeipzigScraper
+from scrapers.hwk_leipzig import EXAM_FEES_PAGE_URL as LEIPZIG_EXAM_FEES_PAGE_URL, HwkLeipzigScraper
 from scrapers.pipeline import SCRAPERS
 
 
@@ -117,7 +117,7 @@ class SachsenParserTests(unittest.TestCase):
             return_value={1: 440.0, 2: 300.0, 3: 240.0, 4: 240.0},
         ):
             rows = scraper.published_exam_fee_rows()
-        self.assertTrue(all(row["source_url"] == EXAM_FEES_PAGE_URL for row in rows))
+        self.assertTrue(all(row["source_url"] == DRESDEN_EXAM_FEES_PAGE_URL for row in rows))
 
     def test_chemnitz_parses_termin_block(self):
         soup = BeautifulSoup(
@@ -166,6 +166,16 @@ class SachsenParserTests(unittest.TestCase):
             HwkLeipzigScraper.parse_meister_exam_fees(text),
             {1: 450.0, 2: 380.0, 3: 230.0, 4: 190.0},
         )
+
+    def test_leipzig_exam_fee_rows_use_gebuehrenordnung_page(self):
+        scraper = HwkLeipzigScraper()
+        with patch.object(
+            scraper,
+            "_fetch_exam_fees_from_pdf",
+            return_value={1: 450.0, 2: 380.0, 3: 230.0, 4: 190.0},
+        ):
+            rows = scraper.published_exam_fee_rows()
+        self.assertTrue(all(row["source_url"] == LEIPZIG_EXAM_FEES_PAGE_URL for row in rows))
 
     def test_dresden_collect_resolves_exam_fees(self):
         scraper = HwkDresdenScraper()

@@ -3,6 +3,7 @@
 import logging
 import re
 from io import BytesIO
+from urllib.parse import urljoin
 
 from .base import RawCourseOffer, ScrapeResult
 from .hwk_bayern import BavariaCatalogue, BavariaOdavScraper, course_id_from_url
@@ -12,6 +13,10 @@ logger = logging.getLogger(__name__)
 BASE_URL = "https://www.hwk-leipzig.de"
 INFO_URL = (
     f"{BASE_URL}/artikel/kurse-und-seminare-der-handwerkskammer-zu-leipzig-3,952,635.html"
+)
+EXAM_FEES_PAGE_URL = (
+    f"{BASE_URL}/artikel/gebuehrenordnung-die-rechtliche-basis-fuer-die-erhebung-von-"
+    "gebuehren-3,0,99.html"
 )
 FEES_PDF_URL = (
     f"{BASE_URL}/downloads/gebuehrenverzeichnis-der-handwerkskammer-zu-leipzig-"
@@ -94,6 +99,16 @@ class HwkLeipzigScraper(BavariaOdavScraper):
                 fees[part] = float(match.group(1).replace(".", "") + "." + match.group(2))
         return fees
 
+    def _resolve_exam_fees_pdf_url(self) -> str:
+        soup = self.parse_html(EXAM_FEES_PAGE_URL)
+        if soup is None:
+            return FEES_PDF_URL
+        for link in soup.select("a[href*='gebuehrenverzeichnis']"):
+            href = link.get("href", "")
+            if href.lower().endswith(".pdf"):
+                return urljoin(BASE_URL, href)
+        return FEES_PDF_URL
+
     def _fetch_exam_fees_from_pdf(self) -> dict[int, float]:
         try:
             from pypdf import PdfReader
@@ -101,7 +116,8 @@ class HwkLeipzigScraper(BavariaOdavScraper):
             logger.warning("HWK Leipzig: pypdf not installed — using fallback exam fees.")
             return {}
 
-        response = self.get(FEES_PDF_URL)
+        pdf_url = self._resolve_exam_fees_pdf_url()
+        response = self.get(pdf_url)
         if response is None:
             logger.warning("HWK Leipzig: could not fetch exam-fee PDF.")
             return {}
@@ -128,7 +144,7 @@ class HwkLeipzigScraper(BavariaOdavScraper):
                 "part": part,
                 "fee": fee,
                 "qualifier": "",
-                "source_url": FEES_PDF_URL,
+                "source_url": EXAM_FEES_PAGE_URL,
             }
             for part, fee in fees.items()
         ]
