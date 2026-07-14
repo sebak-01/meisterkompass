@@ -6,7 +6,7 @@ courses offered by Handwerkskammern (HWK) in Germany.
 Enables direct comparison of prices, duration, and exam fees across chambers,
 as well as calculation of AFBG (Aufstiegs-BAföG) funding.
 
-Current scope: 22 chambers across five Bundesländer —
+Current scope: 30 chambers across eight Bundesländer —
 
 - **Bayern:** München und Oberbayern, Niederbayern-Oberpfalz, Oberfranken,
   Mittelfranken, Unterfranken, Schwaben
@@ -14,6 +14,9 @@ Current scope: 22 chambers across five Bundesländer —
 - **Hessen:** Frankfurt-Rhein-Main, Kassel, Wiesbaden
 - **Rheinland-Pfalz:** Koblenz, der Pfalz, Rheinhessen, Trier
 - **Saarland:** HWK des Saarlandes
+- **Thüringen:** Erfurt, Ostthüringen (Gera), Südthüringen (Suhl)
+- **Sachsen-Anhalt:** Halle (Saale), Magdeburg
+- **Sachsen:** Dresden, Chemnitz, Leipzig
 
 ---
 
@@ -57,6 +60,9 @@ meisterkompass/
 │   ├── hwk_bayern.py          # shared ODAV catalogue/detail parser for Bavaria
 │   ├── hwk_{muenchen_und_oberbayern,niederbayern_oberpfalz,oberfranken}.py
 │   ├── hwk_{mittelfranken,unterfranken,schwaben}.py
+│   ├── hwk_{erfurt,ostthueringen_gera,suedthueringen_suhl}.py
+│   ├── hwk_{halle_saale,magdeburg}.py
+│   ├── hwk_{dresden,chemnitz,leipzig}.py
 │   ├── fees.py                # exam-fee resolution (scraped + manual overlay, combo-bundle keys)
 │   ├── geocode.py             # Photon geocoder + committed cache
 │   ├── pipeline.py            # scrape → merge → geocode → resolve → split → write JSON
@@ -75,7 +81,7 @@ meisterkompass/
 │   ├── public/                 # favicon.svg, og-image.png, fonts/, sitemap.xml, robots.txt
 │   └── src/                    # base/list/afbg.css + nav/list/map/afbg/render/util.js
 ├── scripts/import_manual_fees_from_live.py  # recover curated fees from old site
-├── tests/test_{bw,bayern}_scrapers.py       # offline parser + fee-resolution tests
+├── tests/test_{bw,bayern,thueringen,sachsen_anhalt,sachsen}_scrapers.py
 ├── mise.toml                    # pins python 3.12 + node 22
 └── .github/workflows/{scrape.yml, deploy.yml}
 ```
@@ -144,6 +150,43 @@ Exam fees for HWK Kassel are chamber-wide rather than per-offer, so they're
 injected via an overridden `collect()` rather than `exam_fee_scraped` on
 individual offers.
 
+#### Thüringen — three independent catalogues
+
+Each Thuringian chamber publishes Meister courses on its own CMS; exam fees are
+parsed from each chamber's Gebührenverzeichnis PDF and cited via the relevant
+legal/fees page:
+
+| Chamber | Slug | Source |
+|---|---|---|
+| Erfurt | `hwk-erfurt` | hwk-erfurt.de |
+| Ostthüringen (Gera) | `hwk-ostthueringen-gera` | hwk-gera.de |
+| Südthüringen (Suhl) | `hwk-suedthueringen-suhl` | hwk-suhl.de |
+
+#### Sachsen-Anhalt — WordPress + ODAV
+
+| Chamber | Slug | Source |
+|---|---|---|
+| Halle (Saale) | `hwk-halle-saale` | hwk-halle.de (WordPress seminar pages) |
+| Magdeburg | `hwk-magdeburg` | hwk-magdeburg.de (ODAV article catalogue) |
+
+Exam fees for both chambers are parsed from the published Gebührenverzeichnis PDF.
+
+#### Sachsen — ODAV, custom term blocks, and njumii
+
+| Chamber | Slug | Source |
+|---|---|---|
+| Leipzig | `hwk-leipzig` | hwk-leipzig.de (ODAV catalogue; exam fees from the [Gebührenordnung page](https://www.hwk-leipzig.de/artikel/gebuehrenordnung-die-rechtliche-basis-fuer-die-erhebung-von-gebuehren-3,0,99.html)) |
+| Chemnitz | `hwk-chemnitz` | hwk-chemnitz.de (Bildungsprogramm + Meisterschule `<details id="termin_*">` blocks) |
+| Dresden | `hwk-dresden` | njumii.de (HWK Dresden's Bildungszentrum; exam fees from the [Meisterprüfungen page](https://www.hwk-dresden.de/ausbildung/pruefungen/meisterpruefungen.html#c20204)) |
+
+Dresden-specific parsing notes:
+
+- Course pages expose a featured run plus additional accordion runs; duration
+  hours are shared across runs on the same page when only one run publishes
+  `Teilnehmerstunden`.
+- Availability defaults to `available` when a booking button is present and the
+  run is not marked as fully booked (including waitlist + booking button).
+
 ---
 
 ## Toolchain
@@ -174,6 +217,16 @@ python -m scrapers.run --chamber hwk-oberfranken && \
 python -m scrapers.run --chamber hwk-mittelfranken && \
 python -m scrapers.run --chamber hwk-unterfranken && \
 python -m scrapers.run --chamber hwk-schwaben
+
+# eastern chambers (Sachsen, Sachsen-Anhalt, Thüringen)
+python -m scrapers.run --chamber hwk-dresden && \
+python -m scrapers.run --chamber hwk-chemnitz && \
+python -m scrapers.run --chamber hwk-leipzig && \
+python -m scrapers.run --chamber hwk-halle-saale && \
+python -m scrapers.run --chamber hwk-magdeburg && \
+python -m scrapers.run --chamber hwk-erfurt && \
+python -m scrapers.run --chamber hwk-ostthueringen-gera && \
+python -m scrapers.run --chamber hwk-suedthueringen-suhl
 
 python -m unittest discover -s tests        # offline parser + fee tests
 ```
@@ -282,7 +335,13 @@ has since been removed entirely.
 - [x] Migrated from Django/Postgres to a static site (checked-in JSON + GitHub Pages)
 - [x] Four RLP chambers + HWK des Saarlandes scraped and live
 - [x] Hessen expansion: HWK Frankfurt-Rhein-Main, HWK Kassel (6 of 8 providers), HWK Wiesbaden
+- [x] HWK Frankfurt-Rhein-Main: reconciled module handling on tabbed detail pages
+      (`with-modul` selectors + per-run `<tbody>`), so each module yields its own
+      correctly-parted offer with its own fee
 - [x] All chambers in Baden-Württemberg and Bayern integrated
+- [x] Thüringen: HWK Erfurt, Ostthüringen (Gera), Südthüringen (Suhl)
+- [x] Sachsen-Anhalt: HWK Halle (Saale), Magdeburg
+- [x] Sachsen: HWK Dresden, Chemnitz, Leipzig
 - [x] Exam fees with "bis zu" qualifier, ranges, combo-bundle prices, and tooltips
       (scraped + manual overlay)
 - [x] Filterable course list (multi-select chambers) + interactive map;
@@ -293,11 +352,6 @@ has since been removed entirely.
 - [x] Custom domain (meisterkompass.eu)
 
 ### In progress
-- [x] HWK Frankfurt-Rhein-Main: reconciled module handling — the detail pages
-      use `with-modul` attributes (selector anchors + BAföG-Rechner price cards +
-      per-run `<tbody>`), not `div.tab-pane`; each module now yields its own
-      correctly-parted offer with its own fee instead of collapsing to the
-      h1's parts
 - [ ] HWK Kassel: 6 of 8 providers implemented (BZ Kassel, BBZ Marburg, Bubiza,
       BBZ Mitte, Holzfachschule Bad Wildungen, FTZ/Innung Kfz-Gewerbe Kassel —
       the last dateless/priceless, "auf Anfrage" only). Kreishandwerkerschaft
@@ -306,12 +360,13 @@ has since been removed entirely.
 
 ### Planned
 - [ ] Berufenet links per trade (field already in the model)
-- [ ] Nationwide expansion — add the remaining German Handwerkskammern (31 of 53)
+- [ ] Nationwide expansion — add the remaining German Handwerkskammern (23 of 53)
 
 #### Remaining Handwerkskammern by Bundesland
 
 > Covered: Bayern · Baden-Württemberg · Hessen (Frankfurt-Rhein-Main, Kassel,
-> Wiesbaden) · RLP (Koblenz, Trier, Pfalz, Rheinhessen) · Saarland.
+> Wiesbaden) · RLP (Koblenz, Trier, Pfalz, Rheinhessen) · Saarland ·
+> Thüringen · Sachsen-Anhalt · Sachsen.
 
 - **Berlin:** Berlin
 - **Brandenburg:** Cottbus · Frankfurt (Oder) / Ostbrandenburg · Potsdam
@@ -322,7 +377,4 @@ has since been removed entirely.
   Oldenburg · Osnabrück-Emsland-Grafschaft Bentheim · Ostfriesland
 - **Nordrhein-Westfalen:** Aachen · Dortmund · Düsseldorf · Köln · Münster ·
   Ostwestfalen-Lippe zu Bielefeld · Südwestfalen
-- **Sachsen:** Dresden · Chemnitz · Leipzig
-- **Sachsen-Anhalt:** Halle (Saale) · Magdeburg
 - **Schleswig-Holstein:** Flensburg · Lübeck
-- **Thüringen:** Erfurt · Ostthüringen (Gera) · Südthüringen (Suhl)
