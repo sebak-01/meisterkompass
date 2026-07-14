@@ -193,7 +193,7 @@ Dresden-specific parsing notes:
 
 | Chamber | Slug | Source |
 |---|---|---|
-| Cottbus | `hwk-cottbus` | hwk-cottbus.de (ODAV `search-type=6`; exam fees from the [Gebühren page](https://www.hwk-cottbus.de/artikel/gebuehren-die-rechtliche-basis-fuer-die-erhebung-von-gebuehren-7,0,7033.html); Teil I base fee with trade surcharge qualifier) |
+| Cottbus | `hwk-cottbus` | hwk-cottbus.de (ODAV `search-type=6`; exam fees from the [Rechtsgrundlagen page](https://www.hwk-cottbus.de/artikel/rechtsgrundlagen-7,719,154.html); Teil I base fee with trade surcharge qualifier) |
 | Potsdam | `hwk-potsdam` | hwk-potsdam.de (ODAV `search-type=6`; exam fees from the [Gebühren page](https://www.hwk-potsdam.de/artikel/gebuehren-9,0,2654.html), `zzgl. Auslagen`) |
 | Frankfurt (Oder) / Ostbrandenburg | `hwk-frankfurt-oder-ostbrandenburg` | weiterbildung-ostbrandenburg.de (WordPress Meisterschule with `.hwk-course-app-wrapper` runs; exam fees from the [Meisterprüfungen page](https://www.weiterbildung-ostbrandenburg.de/pruefungen/meisterpruefungen/)) |
 

@@ -4,7 +4,11 @@ from unittest.mock import patch
 from bs4 import BeautifulSoup
 
 from scrapers.fees import build_exam_fee_lookup, resolve_exam_fee
-from scrapers.hwk_cottbus import EXAM_FEES_PAGE_URL as COTTBUS_EXAM_FEES_PAGE_URL, HwkCottbusScraper
+from scrapers.hwk_cottbus import (
+    EXAM_FEES_PAGE_URL as COTTBUS_EXAM_FEES_PAGE_URL,
+    HwkCottbusScraper,
+    parse_cottbus_title,
+)
 from scrapers.hwk_frankfurt_oder_ostbrandenburg import (
     EXAM_FEES_PAGE_URL as OB_EXAM_FEES_PAGE_URL,
     HwkFrankfurtOderOstbrandenburgScraper,
@@ -48,6 +52,24 @@ class BrandenburgParserTests(unittest.TestCase):
             "Anmelden für die Warteliste\nausreichend freie Plätze",
         )
         self.assertEqual(offer.availability, "waitlist")
+
+    def test_cottbus_title_parsing(self):
+        self.assertEqual(
+            parse_cottbus_title(
+                "Installateur und Heizungsbauer - Meistervorbereitungslehrgang Teil I und II - Vollzeit Gallinchen"
+            ),
+            ([1, 2], "Installateur- und Heizungsbauer"),
+        )
+        self.assertEqual(
+            parse_cottbus_title("Kosmetiker/in Teil II und I - Vollzeit  Ausbildungsort Frankfurt (Oder)"),
+            ([1, 2], "Kosmetiker"),
+        )
+        self.assertEqual(
+            parse_cottbus_title(
+                "Straßenbauer - Meistervorbereitungslehrgang Teil I und II - Vollzeit Großräschen"
+            ),
+            ([1, 2], "Straßenbauer"),
+        )
 
     def test_cottbus_parses_exam_fees_from_pdf_text(self):
         text = """

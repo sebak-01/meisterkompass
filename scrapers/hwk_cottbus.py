@@ -5,8 +5,21 @@ import re
 from io import BytesIO
 from urllib.parse import urljoin
 
+from bs4 import Tag
+
 from .base import RawCourseOffer, ScrapeResult
-from .hwk_bayern import BavariaCatalogue, BavariaOdavScraper
+from .hwk_bayern import (
+    BavariaCatalogue,
+    BavariaOdavScraper,
+    canonical_detail_url,
+    parse_dates,
+    parse_euro,
+    parse_format_and_mode,
+    parse_parts,
+    parse_trade,
+    parse_availability,
+    DURATION_RE,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -14,15 +27,22 @@ BASE_URL = "https://www.hwk-cottbus.de"
 LIST_URL = (
     f"{BASE_URL}/7,0,courselist.html?search-filter-template=0&search-type=6"
 )
-EXAM_FEES_PAGE_URL = (
-    f"{BASE_URL}/artikel/gebuehren-die-rechtliche-basis-fuer-die-erhebung-von-"
-    "gebuehren-7,0,7033.html"
-)
+EXAM_FEES_PAGE_URL = f"{BASE_URL}/artikel/rechtsgrundlagen-7,719,154.html"
 FEES_PDF_URL = (
     f"{BASE_URL}/downloads/gebuehrenverzeichnis-der-handwerkskammer-cottbus-2025-7,2978.pdf"
 )
 GENERIC_EXAM_FEES = {1: 510.0, 2: 315.0, 3: 200.0, 4: 255.0}
 PART_I_QUALIFIER = "Grundgebühr zzgl. gewerkebezogener Zusatzgebühr"
+
+COTTBUS_TRADE_ALIASES = {
+    "installateur und heizungsbauer": "Installateur- und Heizungsbauer",
+    "kosmetiker": "Kosmetiker",
+    "straßenbauer": "Straßenbauer",
+    "strassenbauer": "Straßenbauer",
+    "gebäudereiniger": "Gebäudereiniger",
+    "gebaeudereiniger": "Gebäudereiniger",
+    "orthopädietechniker": "Orthopädietechniker",
+}
 
 LOCATIONS = {
     "gallinchen": ("Sorbuser Weg 2", "03051", "Cottbus"),
@@ -31,6 +51,44 @@ LOCATIONS = {
     "wildau": ("Hochschulring 1", "15745", "Wildau"),
     "cottbus": ("Sorbuser Weg 2", "03051", "Cottbus"),
 }
+
+
+def parse_cottbus_title(title: str) -> tuple[list[int], str | None]:
+    parts = parse_parts(title, implicit_trade_parts=True)
+    if not parts:
+        return [], None
+
+    contexts = (
+        title,
+        title.replace("Meistervorbereitungslehrgang", "Meister Meistervorbereitungslehrgang"),
+        f"Meister {title}",
+    )
+    trade = None
+    for context in contexts:
+        trade = parse_trade(context, parts)
+        if trade:
+            break
+
+    if not trade:
+        lower = title.lower()
+        for source, canonical in COTTBUS_TRADE_ALIASES.items():
+            if source in lower:
+                trade = canonical
+                break
+
+    if set(parts) <= {3, 4}:
+        return parts, None
+    return (parts, trade) if trade else ([], None)
+
+
+def _format_from_titles(*titles: str) -> str | None:
+    for title in titles:
+        lower = title.lower()
+        if "teilzeit" in lower or "kombi-lehrgang" in lower:
+            return "part_time"
+        if "vollzeit" in lower:
+            return "full_time"
+    return None
 
 
 class HwkCottbusScraper(BavariaOdavScraper):
@@ -52,9 +110,54 @@ class HwkCottbusScraper(BavariaOdavScraper):
         implicit_trade_parts=True,
     )
 
+    def _parse_card(self, link: Tag, detail_url: str | None = None) -> dict | None:
+        raw_title = link.get_text(" ", strip=True)
+        parts, trade_name = parse_cottbus_title(raw_title)
+        if not parts or (not trade_name and not set(parts) <= {3, 4}):
+            logger.debug("Skipping non-Meister or unknown title %r", raw_title)
+            return None
+
+        row = link.find_parent("div", class_="row")
+        heading = link.find_parent("h3")
+        text = row.get_text("\n", strip=True) if row else raw_title
+        heading_text = heading.get_text(" ", strip=True) if heading else text
+        start_date, end_date = parse_dates(heading_text)
+        format_key = _format_from_titles(raw_title, heading_text) or parse_format_and_mode(
+            f"{heading_text} {raw_title}"
+        )[0]
+        teaching_mode = parse_format_and_mode(f"{heading_text} {raw_title}")[1]
+        duration = DURATION_RE.search(text)
+        return {
+            "raw_title": raw_title,
+            "parts": parts,
+            "trade_name": trade_name,
+            "start_date": start_date,
+            "end_date": end_date,
+            "format_key": format_key,
+            "teaching_mode": teaching_mode,
+            "duration_hours": int(duration.group(1).replace(".", "")) if duration else None,
+            "course_fee": parse_euro(text),
+            "availability": parse_availability(text),
+            "detail_url": detail_url or canonical_detail_url(
+                self.catalogue.base_url, link.get("href", "")
+            ),
+            "card_text": text[:1000],
+        }
+
     def postprocess_offer(self, offer: RawCourseOffer) -> RawCourseOffer:
         offer.exam_fee_scraped = None
         offer.exam_fee_qualifier = ""
+        return offer
+
+    def transform_offer(
+        self, offer: RawCourseOffer, detail_text: str
+    ) -> RawCourseOffer | list[RawCourseOffer]:
+        format_key = _format_from_titles(
+            offer.scraped_raw.get("title", ""),
+            offer.scraped_raw.get("card_text", ""),
+        )
+        if format_key:
+            offer.format_key = format_key
         return offer
 
     def listing_location(self, card: dict, teaching_mode: str) -> tuple[str, str, str]:
