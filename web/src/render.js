@@ -250,29 +250,33 @@ export function rowHtml(c) {
   </tr>`;
 }
 
+// ── Shared chamber grouping (German collation) ───────────────────────────
+
+const alphabetically = (a, b) => a.localeCompare(b, "de");
+
+const byRegion = (chambers) => {
+  const groups = new Map();
+  for (const c of chambers) {
+    const region = c.region || "";
+    if (!groups.has(region)) groups.set(region, []);
+    groups.get(region).push(c);
+  }
+  return groups;
+};
+
 // ── Chamber filter (region accordion) ──────────────────────────────────
 // Derived from data/chambers.json so the HWK list never drifts from the data.
 // Rendered at build time (vite prerender) and re-rendered idempotently on the
 // client, mirroring rowHtml's SSG-then-hydrate pattern.
-const REGION_ORDER = ["Bayern", "Baden-Württemberg", "Hessen", "Rheinland-Pfalz", "Saarland"];
-
-function regionSortKey(region) {
-  const idx = REGION_ORDER.indexOf(region);
-  return idx === -1 ? REGION_ORDER.length : idx;
-}
-
 export function chamberFilterHtml(chambers) {
-  const byRegion = new Map();
-  for (const c of chambers) {
-    const region = c.region || "";
-    if (!byRegion.has(region)) byRegion.set(region, []);
-    byRegion.get(region).push(c);
-  }
-  const regions = [...byRegion.keys()].sort((a, b) => regionSortKey(a) - regionSortKey(b));
+  const groups = byRegion(chambers);
+  const regions = [...groups.keys()].sort(alphabetically);
   return `<div class="region-accordion">${regions.map((region) => {
-    const labels = byRegion.get(region).map((c) =>
-      `<label><input type="checkbox" class="f-chamber" value="${esc(c.slug)}"> ${esc(c.name)}</label>`,
-    ).join("");
+    const labels = groups.get(region)
+      .sort((a, b) => alphabetically(a.name, b.name))
+      .map((c) =>
+        `<label><input type="checkbox" class="f-chamber" value="${esc(c.slug)}"> ${esc(c.name)}</label>`,
+      ).join("");
     const summary = region ? esc(region) : "Sonstige";
     return `<details class="region-panel">
       <summary class="region-panel-summary">${summary}</summary>
@@ -293,18 +297,6 @@ export function emptyRow() {
 // Rendered at build time (vite prerender) so the "Über"-page prose, its <ul>,
 // and the SEO meta descriptions never drift from the data as chambers are added.
 // Chambers are grouped by region (alphabetical, German collation) then by name.
-
-const alphabetically = (a, b) => a.localeCompare(b, "de");
-
-const byRegion = (chambers) => {
-  const groups = new Map();
-  for (const c of chambers) {
-    const region = c.region || "";
-    if (!groups.has(region)) groups.set(region, []);
-    groups.get(region).push(c);
-  }
-  return groups;
-};
 
 // Bundesländer that carry a definite article in the dative "in …" phrase.
 // German state names are otherwise article-less; only "das Saarland" needs one.
