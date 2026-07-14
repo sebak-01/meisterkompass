@@ -14,12 +14,24 @@ BASE_URL = "https://www.hwk-potsdam.de"
 LIST_URL = (
     f"{BASE_URL}/9,0,courselist.html?search-filter-template=0&search-type=6"
 )
-EXAM_FEES_PAGE_URL = f"{BASE_URL}/artikel/gebuehren-9,0,2654.html"
+EXAM_FEES_PAGE_URL = f"{BASE_URL}/artikel/gebuehren-9,783,2654.html"
 FEES_PDF_URL = (
-    f"{BASE_URL}/downloads/anlage-gebuehrenordnung-gueltig-ab-25-01-2025-pdf-9,14460.pdf"
+    f"{BASE_URL}/downloads/anlage-gebuehrenordnung-gueltig-ab-13-september-2025-9,14516.pdf"
 )
 GENERIC_EXAM_FEES = {1: 370.0, 2: 370.0, 3: 220.0, 4: 215.0}
 EXAM_FEE_QUALIFIER = "zzgl. Auslagen"
+
+POTSDAM_CITY_ALIASES = {
+    "groß kreutz (havel) ortsteil götz": "Groß Kreutz (Havel)",
+    "gross kreutz (havel) ortsteil goetz": "Groß Kreutz (Havel)",
+    "nuthetal ortsteil bergholz-rehbrücke": "Nuthetal",
+    "nuthetal ortsteil bergholz-rehbruecke": "Nuthetal",
+}
+
+
+def _normalize_city(city: str) -> str:
+    cleaned = re.sub(r"\s+Ortsteil\s+.+$", "", city, flags=re.IGNORECASE).strip(" ,")
+    return POTSDAM_CITY_ALIASES.get(cleaned.lower(), cleaned or city)
 
 
 def _availability(text: str) -> str:
@@ -68,6 +80,7 @@ class HwkPotsdamScraper(BavariaOdavScraper):
         self, offer: RawCourseOffer, detail_text: str
     ) -> RawCourseOffer | list[RawCourseOffer]:
         offer.availability = _availability(detail_text)
+        offer.city = _normalize_city(offer.city)
         return offer
 
     @staticmethod
@@ -89,14 +102,21 @@ class HwkPotsdamScraper(BavariaOdavScraper):
         soup = self.parse_html(EXAM_FEES_PAGE_URL)
         if soup is None:
             return FEES_PDF_URL
-        for link in soup.select("a[href*='gebuehren']"):
-            href = link.get("href", "")
-            if href.lower().endswith(".pdf") and "anlage" in href.lower():
-                return urljoin(BASE_URL, href)
+
+        candidates: list[str] = []
         for link in soup.select("a[href*='.pdf']"):
             href = link.get("href", "")
-            if "gebuehren" in href.lower():
-                return urljoin(BASE_URL, href)
+            lower = href.lower()
+            if not lower.endswith(".pdf"):
+                continue
+            if "anlage-gebuehrenordnung-gueltig-ab" in lower:
+                candidates.append(urljoin(BASE_URL, href))
+                continue
+            if "gebuehrenverzeichnis" in lower and "aenderung" not in lower:
+                candidates.append(urljoin(BASE_URL, href))
+
+        if candidates:
+            return candidates[-1]
         return FEES_PDF_URL
 
     def _fetch_exam_fees_from_pdf(self) -> dict[int, float]:

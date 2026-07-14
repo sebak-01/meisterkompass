@@ -15,7 +15,11 @@ from scrapers.hwk_frankfurt_oder_ostbrandenburg import (
     _parse_exam_fee_from_page,
     parse_ostbrandenburg_title,
 )
-from scrapers.hwk_potsdam import EXAM_FEES_PAGE_URL as POTSDAM_EXAM_FEES_PAGE_URL, HwkPotsdamScraper
+from scrapers.hwk_potsdam import (
+    EXAM_FEES_PAGE_URL as POTSDAM_EXAM_FEES_PAGE_URL,
+    HwkPotsdamScraper,
+    _normalize_city,
+)
 from scrapers.pipeline import SCRAPERS
 
 
@@ -39,6 +43,21 @@ class BrandenburgParserTests(unittest.TestCase):
         self.assertEqual(card["parts"], [1])
         self.assertEqual(card["trade_name"], "Elektrotechniker")
 
+    def test_potsdam_normalizes_city_without_ortsteil(self):
+        self.assertEqual(
+            _normalize_city("Groß Kreutz (Havel) Ortsteil Götz"),
+            "Groß Kreutz (Havel)",
+        )
+        self.assertEqual(
+            _normalize_city("Nuthetal Ortsteil Bergholz-Rehbrücke"),
+            "Nuthetal",
+        )
+
+    def test_potsdam_resolves_latest_exam_fee_pdf(self):
+        scraper = HwkPotsdamScraper()
+        pdf_url = scraper._resolve_exam_fees_pdf_url()
+        self.assertIn("14516", pdf_url)
+
     def test_potsdam_availability_from_detail(self):
         scraper = HwkPotsdamScraper()
         offer = scraper.transform_offer(
@@ -47,12 +66,14 @@ class BrandenburgParserTests(unittest.TestCase):
                     "availability": "unknown",
                     "exam_fee_scraped": 100.0,
                     "exam_fee_qualifier": "x",
+                    "city": "Groß Kreutz (Havel) Ortsteil Götz",
                     "scraped_raw": {},
                 })()
             ),
             "Anmelden für die Warteliste\nausreichend freie Plätze",
         )
         self.assertEqual(offer.availability, "waitlist")
+        self.assertEqual(offer.city, "Groß Kreutz (Havel)")
 
     def test_cottbus_title_parsing(self):
         self.assertEqual(
