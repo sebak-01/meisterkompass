@@ -28,6 +28,13 @@ DEFAULT_LOCATION = {
     "zip_code": "06132",
     "city": "Halle (Saale)",
 }
+HALLE_CITY_ZIPS = frozenset({"06108", "06110", "06112", "06114", "06116", "06118", "06120", "06122", "06124", "06126", "06128", "06130", "06132"})
+
+
+def _normalize_city(city: str, zip_code: str) -> str:
+    if city == "Halle" and zip_code in HALLE_CITY_ZIPS:
+        return "Halle (Saale)"
+    return city
 
 # Titles use trade nouns without the usual "Meister im …-Handwerk" wording.
 HALLE_TRADE_ALIASES = {
@@ -120,7 +127,7 @@ def _location(text: str, teaching_mode: str) -> tuple[str, str, str]:
                             street = candidate
                     break
             if zip_code:
-                return street, zip_code, city
+                return street, zip_code, _normalize_city(city, zip_code)
             break
 
     return DEFAULT_LOCATION["street"], DEFAULT_LOCATION["zip_code"], DEFAULT_LOCATION["city"]

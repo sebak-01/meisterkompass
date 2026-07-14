@@ -104,6 +104,18 @@ class SachsenAnhaltParserTests(unittest.TestCase):
             ("Straße der Handwerker 2", "06132", "Halle (Saale)"),
         )
 
+    def test_halle_normalizes_bare_halle_city_name(self):
+        text = """
+        Veranstaltungsort
+        Handwerkskammer Halle (Saale)
+        Graefestr. 24
+        06110 Halle
+        """
+        self.assertEqual(
+            _location(text, "presence"),
+            ("Graefestr. 24", "06110", "Halle (Saale)"),
+        )
+
     def test_halle_parses_trade_specific_part_i_exam_fees(self):
         text = """
         a) Teil I
