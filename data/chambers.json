@@ -123,5 +123,15 @@
     "slug": "hwk-unterfranken",
     "name": "HWK für Unterfranken",
     "region": "Bayern"
+  },
+  {
+    "slug": "hwk-halle-saale",
+    "name": "HWK Halle (Saale)",
+    "region": "Sachsen-Anhalt"
+  },
+  {
+    "slug": "hwk-magdeburg",
+    "name": "HWK Magdeburg",
+    "region": "Sachsen-Anhalt"
   }
 ]
