@@ -3101,6 +3101,16 @@
   },
   {
     "chamber_slug": "hwk-potsdam",
+    "trade_slug": "elektrotechniker",
+    "parts": [
+      2
+    ],
+    "fee": 8310.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-potsdam",
     "trade_slug": "land-und-baumaschinenmechatroniker",
     "parts": [
       1,
@@ -3312,16 +3322,6 @@
       2
     ],
     "fee": 9500.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-potsdam",
-    "trade_slug": "elektrotechniker",
-    "parts": [
-      2
-    ],
-    "fee": 8310.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
