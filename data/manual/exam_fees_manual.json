@@ -566,5 +566,341 @@
     "fee": 165.0,
     "fee_max": null,
     "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-berlin",
+    "trade_slug": null,
+    "part": 1,
+    "fee": 315.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-berlin",
+    "trade_slug": null,
+    "part": 2,
+    "fee": 272.5,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-berlin",
+    "trade_slug": null,
+    "part": 3,
+    "fee": 168.75,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-berlin",
+    "trade_slug": null,
+    "part": 4,
+    "fee": 168.75,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-berlin",
+    "trade_slug": null,
+    "parts": [1, 2, 3, 4],
+    "fee": 462.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-hamburg",
+    "trade_slug": null,
+    "part": 1,
+    "fee": 430.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-hamburg",
+    "trade_slug": null,
+    "part": 2,
+    "fee": 430.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-hamburg",
+    "trade_slug": null,
+    "part": 3,
+    "fee": 350.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-hamburg",
+    "trade_slug": null,
+    "part": 4,
+    "fee": 350.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-hamburg",
+    "trade_slug": null,
+    "parts": [1, 2, 3, 4],
+    "fee": 1300.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-bremen",
+    "trade_slug": "kfz-techniker",
+    "part": 1,
+    "fee": 250.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-bremen",
+    "trade_slug": "kfz-techniker",
+    "part": 2,
+    "fee": 440.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-bremen",
+    "trade_slug": "tischler",
+    "part": 1,
+    "fee": 400.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-bremen",
+    "trade_slug": "tischler",
+    "part": 2,
+    "fee": 260.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-bremen",
+    "trade_slug": "zimmerer",
+    "part": 1,
+    "fee": 460.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-bremen",
+    "trade_slug": "zimmerer",
+    "part": 2,
+    "fee": 260.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-bremen",
+    "trade_slug": "fahrzeuglackierer",
+    "part": 1,
+    "fee": 470.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-bremen",
+    "trade_slug": "fahrzeuglackierer",
+    "part": 2,
+    "fee": 410.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-bremen",
+    "trade_slug": "maurer-und-betonbauer",
+    "part": 1,
+    "fee": 530.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-bremen",
+    "trade_slug": "maurer-und-betonbauer",
+    "part": 2,
+    "fee": 250.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-bremen",
+    "trade_slug": "friseur",
+    "part": 1,
+    "fee": 570.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-bremen",
+    "trade_slug": "friseur",
+    "part": 2,
+    "fee": 270.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-bremen",
+    "trade_slug": "maler-und-lackierer",
+    "part": 1,
+    "fee": 750.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-bremen",
+    "trade_slug": "maler-und-lackierer",
+    "part": 2,
+    "fee": 620.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-bremen",
+    "trade_slug": "backer",
+    "part": 1,
+    "fee": 750.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-bremen",
+    "trade_slug": "backer",
+    "part": 2,
+    "fee": 360.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-bremen",
+    "trade_slug": "installateur-und-heizungsbauer",
+    "part": 1,
+    "fee": 770.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-bremen",
+    "trade_slug": "installateur-und-heizungsbauer",
+    "part": 2,
+    "fee": 480.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-bremen",
+    "trade_slug": "fleischer",
+    "part": 1,
+    "fee": 830.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-bremen",
+    "trade_slug": "fleischer",
+    "part": 2,
+    "fee": 640.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-bremen",
+    "trade_slug": "elektrotechniker",
+    "part": 1,
+    "fee": 860.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-bremen",
+    "trade_slug": "elektrotechniker",
+    "part": 2,
+    "fee": 310.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-bremen",
+    "trade_slug": "dachdecker",
+    "part": 1,
+    "fee": 1400.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-bremen",
+    "trade_slug": "dachdecker",
+    "part": 2,
+    "fee": 340.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-bremen",
+    "trade_slug": "feinwerkmechaniker",
+    "part": 1,
+    "fee": 1400.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-bremen",
+    "trade_slug": "feinwerkmechaniker",
+    "part": 2,
+    "fee": 240.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-bremen",
+    "trade_slug": "metallbauer",
+    "part": 1,
+    "fee": 1400.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-bremen",
+    "trade_slug": "metallbauer",
+    "part": 2,
+    "fee": 510.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-bremen",
+    "trade_slug": "strassenbauer",
+    "part": 1,
+    "fee": 1400.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-bremen",
+    "trade_slug": "strassenbauer",
+    "part": 2,
+    "fee": 1400.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-bremen",
+    "trade_slug": null,
+    "part": 3,
+    "fee": 220.0,
+    "fee_max": null,
+    "qualifier": ""
+  },
+  {
+    "chamber_slug": "hwk-bremen",
+    "trade_slug": null,
+    "part": 4,
+    "fee": 290.0,
+    "fee_max": null,
+    "qualifier": ""
   }
 ]

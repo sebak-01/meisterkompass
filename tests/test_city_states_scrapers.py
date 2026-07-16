@@ -1,5 +1,8 @@
+import json
 import unittest
+from pathlib import Path
 
+from scrapers.fees import build_exam_fee_lookup, resolve_exam_fee
 from scrapers.hwk_berlin import parse_format_and_mode, parse_title
 from scrapers.hwk_bremen import HwkBremenScraper, parse_parts, parse_price
 from scrapers.hwk_hamburg import iso_date, parse_trade
@@ -72,6 +75,32 @@ class CityStateScraperIntegrationTests(unittest.TestCase):
         for slug, region in expected.items():
             self.assertIn(slug, SCRAPERS)
             self.assertEqual(SCRAPERS[slug].chamber_region, region)
+
+
+class CityStateExamFeeTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        fee_path = Path(__file__).resolve().parents[1] / "data" / "manual" / "exam_fees_manual.json"
+        cls.lookup = build_exam_fee_lookup([], json.loads(fee_path.read_text(encoding="utf-8")))
+
+    def test_berlin_full_master_exam_bundle(self):
+        resolved = resolve_exam_fee("hwk-berlin", "elektrotechniker", [1, 2, 3, 4], None, self.lookup)
+        self.assertEqual(resolved["fee"], 462.0)
+        self.assertEqual(resolved["display"], "462 €")
+
+    def test_hamburg_full_master_exam_bundle(self):
+        resolved = resolve_exam_fee("hwk-hamburg", "tischler", [1, 2, 3, 4], None, self.lookup)
+        self.assertEqual(resolved["fee"], 1300.0)
+        self.assertEqual(resolved["display"], "1.300 €")
+
+    def test_bremen_trade_specific_parts_sum(self):
+        resolved = resolve_exam_fee("hwk-bremen", "tischler", [1, 2, 3, 4], None, self.lookup)
+        self.assertEqual(resolved["fee"], 1170.0)
+        self.assertEqual(resolved["display"], "1.170 €")
+
+    def test_bremen_generic_parts_three_and_four(self):
+        resolved = resolve_exam_fee("hwk-bremen", "allgemein-teil-iii-iv", [3, 4], None, self.lookup)
+        self.assertEqual(resolved["fee"], 510.0)
 
 
 if __name__ == "__main__":
