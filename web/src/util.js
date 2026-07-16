@@ -16,7 +16,7 @@ export const esc = (s) =>
 
 /** Fee from Gebührenverzeichnis (manual entry or PDF scrape), not the course page. */
 export const TOOLTIP_TARIFF =
-  "Die Prüfungsgebühren wurden aus dem Gebührenverzeichnis der Kammer übernommen. Diese können sich ändern. Teilweise kommen gewerkspezifische oder andere Gebühren hinzu. Für genaue Informationen erkundige dich bei der Kammer.";
+  "Die Prüfungsgebühren wurden aus dem Gebührenverzeichnis der Kammer übernommen. Diese können sich ändern. Teilweise kommen gewerkspezifische oder andere Gebühren hinzu.";
 
 /** HWK Frankfurt-Rhein-Main charges an additional registration fee on top of the course fee. */
 export const ANMELDEGEBUEHR_NOTE =
