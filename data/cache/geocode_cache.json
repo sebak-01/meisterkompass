@@ -12,6 +12,10 @@
     51.7754374,
     7.9334753
   ],
+  "Albert-Schweitzer-Ring 8, 22045 Hamburg, Deutschland": [
+    53.5802004,
+    10.1200455
+  ],
   "Allee 76, 74072 Heilbronn, Deutschland": [
     49.145351,
     9.2236557
@@ -122,6 +126,10 @@
     49.0313222,
     8.3591262
   ],
+  "Deula Rendsburg, Schleswig-Holstein, Deutschland": [
+    54.288023,
+    9.6720667
+  ],
   "Deumentenstraße 1, 90489 Nürnberg, Deutschland": [
     49.4638359,
     11.0973984
@@ -158,9 +166,17 @@
     51.2841009,
     9.498614
   ],
+  "Flensburg, Schleswig-Holstein, Deutschland": [
+    54.5797194,
+    9.5331938
+  ],
   "Freyunger Straße 8, 94065 Waldkirchen, Deutschland": [
     48.7345043,
     13.6043761
+  ],
+  "Friedrich-Engels-Ring 11, 17033 Neubrandenburg, Deutschland": [
+    53.5612193,
+    13.2606667
   ],
   "Friedrichsbruch 3, 07349 Lehesten, Deutschland": [
     50.4796375,
@@ -254,6 +270,10 @@
     48.8229051,
     9.0972983
   ],
+  "Husum, Schleswig-Holstein, Deutschland": [
+    54.4854137,
+    9.0537941
+  ],
   "Im Grein 5, 76829 Landau in der Pfalz, Deutschland": [
     49.2117701,
     8.1271493
@@ -302,6 +322,10 @@
     50.5738004,
     10.5117378
   ],
+  "Konstinstraße 2a, 23568 Lübeck, Deutschland": [
+    53.8811608,
+    10.6946146
+  ],
   "Kotterner Straße 39, 87435 Kempten, Deutschland": [
     47.7174731,
     10.3185888
@@ -334,6 +358,10 @@
     49.7754619,
     6.6805129
   ],
+  "Lundener Straße 1, 24768 Rendsburg, Deutschland": [
+    54.3158358,
+    9.6282685
+  ],
   "Magdeburg, Sachsen-Anhalt, Deutschland": [
     52.1314783,
     11.6400789
@@ -341,6 +369,10 @@
   "Max-Eyth-Straße 23, 72202 Nagold, Deutschland": [
     48.5473835,
     8.7138169
+  ],
+  "Mehringdamm 14, 10961 Berlin, Deutschland": [
+    52.4966028,
+    13.388784
   ],
   "Memminger Straße 59, 89264 Weißenhorn, Deutschland": [
     48.3019927,
@@ -370,6 +402,10 @@
     47.8458688,
     11.1463017
   ],
+  "Neukruger Str. 1, 18273 Güstrow, Deutschland": [
+    53.8018541,
+    12.1839419
+  ],
   "Nürnberg, Bayern, Deutschland": [
     49.453872,
     11.077298
@@ -378,6 +414,14 @@
   "Online, Bayern, Deutschland": [
     49.1249172,
     10.7805332
+  ],
+  "Online, Bremen, Deutschland": [
+    53.0776272,
+    8.8453956
+  ],
+  "Online, Schleswig-Holstein, Deutschland": [
+    53.8305464,
+    10.6549788
   ],
   "Otto-Wels-Straße 11, 76189 Karlsruhe, Deutschland": [
     48.9878212,
@@ -391,6 +435,10 @@
     48.5004109,
     9.059163
   ],
+  "Ramskamp 6, 25337 Elmshorn, Deutschland": [
+    53.7419813,
+    9.6817039
+  ],
   "Rathausstr. 32, 57537 Wissen, Deutschland": [
     50.7821939,
     7.740086
@@ -398,6 +446,10 @@
   "Ravenéstr. 18-20, 56812 Cochem, Deutschland": [
     50.1524067,
     7.1673054
+  ],
+  "Rendsburg, Schleswig-Holstein, Deutschland": [
+    54.300292,
+    9.6650076
   ],
   "Rudolf-Diesel-Straße 30, 64331 Weiterstadt, Deutschland": [
     49.9011703,
@@ -410,6 +462,10 @@
   "Rudolstädter Straße 95, 07745 Jena, Deutschland": [
     50.883163,
     11.5910768
+  ],
+  "Russeer Weg 167, 24109 Kiel, Deutschland": [
+    54.319737,
+    10.06438
   ],
   "Rähnisstraße 19, 08523 Plauen, Deutschland": [
     50.4993901,
@@ -431,9 +487,17 @@
     49.7813929,
     7.3375888
   ],
+  "Schongauerstr. 2, 28219 Bremen, Deutschland": [
+    53.0979216,
+    8.7803106
+  ],
   "Schorbuser Weg 2, 03051 Cottbus, Deutschland": [
     51.7021156,
     14.3591764
+  ],
+  "Schwaaner Landstrasse 8, 18055 Rostock, Deutschland": [
+    54.0753091,
+    12.141125
   ],
   "Schwartzkopffstraße 1, 15745 Wildau, Deutschland": [
     52.3198785,
@@ -446,6 +510,10 @@
   "Schweinfurt, Bayern, Deutschland": [
     50.0451485,
     10.2340647
+  ],
+  "Schwerin, Mecklenburg-Vorpommern, Deutschland": [
+    53.6288297,
+    11.4148038
   ],
   "Schönstraße 21, 60327 Frankfurt am Main, Deutschland": [
     50.1013705,
@@ -507,6 +575,10 @@
     51.4232026,
     12.0122588
   ],
+  "Straße des Handwerks 1, 17235 Neustrelitz, Deutschland": [
+    53.3826667,
+    13.0470412
+  ],
   "Südstraße 4 a, 06179 Teutschenthal / OT Holleben, Deutschland": [
     51.431893,
     11.9056258
@@ -535,9 +607,21 @@
     48.4713854,
     7.9361019
   ],
+  "Werkstrasse 600, 19061 Schwerin, Deutschland": [
+    53.5721017,
+    11.3867432
+  ],
+  "Werkstraße 600, 19061 Schwerin, Deutschland": [
+    53.5721017,
+    11.3867432
+  ],
   "Werner-Seelenbinder-Straße 24, 01983 Großräschen, Deutschland": [
     51.580024,
     13.9997132
+  ],
+  "Wiekstraße 5, 23570 Lübeck, Deutschland": [
+    53.951985,
+    10.8845203
   ],
   "Wilhelmstr. 20, 53474 Bad Neuenahr-Ahrweiler, Deutschland": [
     50.5456433,
@@ -554,6 +638,10 @@
   "Zeulenroda-Triebes, Thüringen, Deutschland": [
     50.6562697,
     12.0058399
+  ],
+  "Zum Handwerkszentrum 1, 21079 Hamburg, Deutschland": [
+    53.4582352,
+    9.9959008
   ],
   "Äußere Badstraße 24, 95448 Bayreuth, Deutschland": [
     49.9421486,

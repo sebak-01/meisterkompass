@@ -4,6 +4,14 @@
     "name": "Augenoptiker"
   },
   {
+    "slug": "bau",
+    "name": "Bau"
+  },
+  {
+    "slug": "boots-und-schiffbauer",
+    "name": "Boots- und Schiffbauer"
+  },
+  {
     "slug": "brauer-und-malzer",
     "name": "Brauer und Mälzer"
   },
@@ -108,6 +116,10 @@
     "name": "Kosmetiker"
   },
   {
+    "slug": "kalteanlagenbauer",
+    "name": "Kälteanlagenbauer"
+  },
+  {
     "slug": "land-und-baumaschinenmechatroniker",
     "name": "Land- und Baumaschinenmechatroniker"
   },
@@ -160,6 +172,10 @@
     "name": "Schilder- und Lichtreklamehersteller"
   },
   {
+    "slug": "schilder-und-lichtreklamehersteller-handwerk",
+    "name": "Schilder- und Lichtreklamehersteller-Handwerk"
+  },
+  {
     "slug": "schornsteinfeger",
     "name": "Schornsteinfeger"
   },
@@ -190,6 +206,10 @@
   {
     "slug": "warme-kalte-schallschutzisolierer",
     "name": "Wärme-, Kälte-, Schallschutzisolierer"
+  },
+  {
+    "slug": "zahntechnik",
+    "name": "Zahntechnik"
   },
   {
     "slug": "zahntechniker",
