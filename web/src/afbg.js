@@ -60,10 +60,19 @@ function resetComboOptions() {
   if (el) el.checked = false;
 }
 
+function syncChamberBtnLabel() {
+  const btn = document.getElementById("auto-chamber-btn");
+  if (!btn) return;
+  const chamber = CHAMBERS.find((c) => c.id === currentCid);
+  btn.textContent = chamber ? chamber.name : "– Kammer wählen –";
+  btn.classList.toggle("placeholder", !chamber);
+}
+
 function onChamberChange() {
   resetComboOptions();
   const selected = document.querySelector(".f-chamber-select:checked");
   currentCid = selected ? selected.value : null;
+  syncChamberBtnLabel();
   currentTid = null;
   feeGroups = [];
   const sel = document.getElementById("auto-trade");
@@ -412,11 +421,37 @@ function calculate() {
 // ── Init + wiring ─────────────────────────────────────────────────────
 initNav();
 (function initChamberSelect() {
+  const wrap = document.getElementById("auto-chamber-wrap");
+  const btn = document.getElementById("auto-chamber-btn");
+  const drop = document.getElementById("auto-chamber-dropdown");
   const container = document.getElementById("auto-chamber-accordion");
   container.innerHTML = chamberSelectAccordionHtml(chambersData, currentCid || "");
+  syncChamberBtnLabel();
+
+  const syncAria = () => btn.setAttribute("aria-expanded", String(drop.classList.contains("open")));
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    drop.classList.toggle("open");
+    syncAria();
+  });
   container.addEventListener("change", (e) => {
     if (!e.target.classList.contains("f-chamber-select")) return;
     onChamberChange();
+    drop.classList.remove("open");
+    syncAria();
+  });
+  document.addEventListener("click", (e) => {
+    if (!wrap.contains(e.target)) {
+      drop.classList.remove("open");
+      syncAria();
+    }
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && drop.classList.contains("open")) {
+      drop.classList.remove("open");
+      syncAria();
+      btn.focus();
+    }
   });
 })();
 document.getElementById("auto-trade").addEventListener("change", onTradeChange);
