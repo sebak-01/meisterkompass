@@ -6,7 +6,7 @@ courses offered by Handwerkskammern (HWK) in Germany.
 Enables direct comparison of prices, duration, and exam fees across chambers,
 as well as calculation of AFBG (Aufstiegs-BAföG) funding.
 
-Current scope: 35 chambers across ten Bundesländer —
+Current scope: 37 chambers across eleven Bundesländer —
 
 - **Bayern:** München und Oberbayern, Niederbayern-Oberpfalz, Oberfranken,
   Mittelfranken, Unterfranken, Schwaben
@@ -19,6 +19,7 @@ Current scope: 35 chambers across ten Bundesländer —
 - **Sachsen:** Dresden, Chemnitz, Leipzig
 - **Brandenburg:** Cottbus, Frankfurt (Oder) / Ostbrandenburg, Potsdam
 - **Mecklenburg-Vorpommern:** Schwerin, Ostmecklenburg-Vorpommern
+- **Schleswig-Holstein:** Flensburg, Lübeck
 
 
 ---
@@ -215,6 +216,22 @@ Schwerin runs are mostly at the BTZ in Schwerin; some Teil IV courses run in Gü
 OMV courses are offered in Rostock, Neubrandenburg, and Neustrelitz — the scraper
 reads the city from the listing card (`| Neubrandenburg`) or detail-page address.
 
+#### Schleswig-Holstein — BUE universal-kdb REST
+
+Both chambers embed the same Angular `bueKursWebclient` widget (Neos CMS shell +
+`hwk-universal.de` REST API). Course listings are fetched from
+`https://www.hwk-universal.de/universal-kdb-rest/v1/bereiche/{mandant}`; each
+scheduled run comes from the vorlage detail endpoint.
+
+| Chamber | Slug | Mandant | Source |
+|---|---|---|---|
+| Flensburg | `hwk-flensburg` | `fl` | [Kurse & Seminare](https://www.hwk-flensburg.de/weiterbildung/kurse-seminare#/) |
+| Lübeck | `hwk-luebeck` | `hl` | [Fort- und Weiterbildungskurse](https://www.hwk-luebeck.de/weiterbildung/fort-und-weiterbildungskurse#/) |
+
+Exam fees are parsed from each chamber's Meisterprüfung fees page
+([Flensburg](https://www.hwk-flensburg.de/weiterbildung/weiterbildung/der-weg-zum-meister),
+[Lübeck](https://www.hwk-luebeck.de/weiterbildung/der-weg-zum-meister/pruefung-gebuehren)).
+
 ---
 
 ## Toolchain
@@ -264,6 +281,10 @@ python -m scrapers.run --chamber hwk-frankfurt-oder-ostbrandenburg
 # Mecklenburg-Vorpommern chambers
 python -m scrapers.run --chamber hwk-schwerin && \
 python -m scrapers.run --chamber hwk-ostmecklenburg-vorpommern
+
+# Schleswig-Holstein chambers
+python -m scrapers.run --chamber hwk-flensburg && \
+python -m scrapers.run --chamber hwk-luebeck
 
 python -m unittest discover -s tests        # offline parser + fee tests
 ```
