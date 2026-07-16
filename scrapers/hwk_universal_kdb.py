@@ -246,13 +246,8 @@ class UniversalKdbScraper(BaseScraper):
         return int(values[0])
 
     def _detail_url(self, modul: str, vorlageid: str, kursid: str | None = None) -> str:
-        base = self.kdb_catalogue.source_url.rstrip("/")
-        if not base.endswith("#/"):
-            if "#/" in base:
-                base = base.split("#/", 1)[0] + "#/"
-            else:
-                base = f"{base}#/"
-        url = f"{base}vorlage/{modul}/{vorlageid}"
+        page_url = self.kdb_catalogue.source_url.split("#", 1)[0].rstrip("/")
+        url = f"{page_url}#/vorlage/{modul}/{vorlageid}"
         if kursid:
             url = f"{url}?kurs={kursid}"
         return url

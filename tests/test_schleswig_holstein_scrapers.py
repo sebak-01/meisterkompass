@@ -58,7 +58,25 @@ class SchleswigHolsteinParserTests(unittest.TestCase):
             ([1, 2], "Kfz.-Techniker"),
         )
 
+    def test_detail_urls_point_at_kdb_vorlage_route(self):
+        fl = HwkFlensburgScraper()
+        self.assertEqual(
+            fl._detail_url("MVK", "468", "23824"),
+            "https://www.hwk-flensburg.de/weiterbildung/kurse-seminare#/vorlage/MVK/468?kurs=23824",
+        )
+        hl = HwkLuebeckScraper()
+        self.assertEqual(
+            hl._detail_url("MVK", "108228", "13225"),
+            "https://www.hwk-luebeck.de/weiterbildung/fort-und-weiterbildungskurse#/vorlage/MVK/108228?kurs=13225",
+        )
+
     def test_kdb_price_and_location(self):
+        self.assertEqual(parse_kdb_price("9.450,00 €"), 9450.0)
+        block = (
+            "<lehrgangsort><hausnummer>167</hausnummer><lehrgangsort>BBS Kiel</lehrgangsort>"
+            "<ort>Kiel</ort><plz>24109</plz><strasse>Russeer Weg</strasse></lehrgangsort>"
+        )
+        self.assertEqual(parse_kdb_location(block), ("Russeer Weg 167", "24109", "Kiel"))
         self.assertEqual(parse_kdb_price("9.450,00 €"), 9450.0)
         block = (
             "<lehrgangsort><hausnummer>167</hausnummer><lehrgangsort>BBS Kiel</lehrgangsort>"
