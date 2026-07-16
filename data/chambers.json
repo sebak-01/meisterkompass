@@ -1,5 +1,15 @@
 [
   {
+    "slug": "hwk-berlin",
+    "name": "HWK Berlin",
+    "region": "Berlin"
+  },
+  {
+    "slug": "hwk-bremen",
+    "name": "HWK Bremen",
+    "region": "Bremen"
+  },
+  {
     "slug": "hwk-chemnitz",
     "name": "HWK Chemnitz",
     "region": "Sachsen"
@@ -20,6 +30,11 @@
     "region": "Thüringen"
   },
   {
+    "slug": "hwk-flensburg",
+    "name": "HWK Flensburg",
+    "region": "Schleswig-Holstein"
+  },
+  {
     "slug": "hwk-frankfurt-oder-ostbrandenburg",
     "name": "HWK Frankfurt (Oder) – Region Ostbrandenburg",
     "region": "Brandenburg"
@@ -38,6 +53,11 @@
     "slug": "hwk-halle-saale",
     "name": "HWK Halle (Saale)",
     "region": "Sachsen-Anhalt"
+  },
+  {
+    "slug": "hwk-hamburg",
+    "name": "HWK Hamburg",
+    "region": "Hamburg"
   },
   {
     "slug": "hwk-heilbronn-franken",
@@ -65,6 +85,11 @@
     "region": "Baden-Württemberg"
   },
   {
+    "slug": "hwk-luebeck",
+    "name": "HWK Lübeck",
+    "region": "Schleswig-Holstein"
+  },
+  {
     "slug": "hwk-magdeburg",
     "name": "HWK Magdeburg",
     "region": "Sachsen-Anhalt"
@@ -78,6 +103,11 @@
     "slug": "hwk-niederbayern-oberpfalz",
     "name": "HWK Niederbayern-Oberpfalz",
     "region": "Bayern"
+  },
+  {
+    "slug": "hwk-ostmecklenburg-vorpommern",
+    "name": "HWK Ostmecklenburg-Vorpommern",
+    "region": "Mecklenburg-Vorpommern"
   },
   {
     "slug": "hwk-potsdam",
@@ -98,6 +128,11 @@
     "slug": "hwk-rheinhessen",
     "name": "HWK Rheinhessen",
     "region": "Rheinland-Pfalz"
+  },
+  {
+    "slug": "hwk-schwerin",
+    "name": "HWK Schwerin",
+    "region": "Mecklenburg-Vorpommern"
   },
   {
     "slug": "hwk-suedthueringen-suhl",
