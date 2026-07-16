@@ -167,17 +167,21 @@ def parse_kdb_location(block: str) -> tuple[str, str, str]:
     return street, zip_code, city
 
 
-def parse_kdb_availability(block: str) -> str:
-    participants = _xml_field(block, "teilnehmer")
-    maximum = _xml_field(block, "teilnehmermax")
-    if participants == "0":
+def parse_kdb_availability(enrolled: str | None, max_capacity: str | None) -> str:
+    """Derive seat availability from enrolled count vs. capacity.
+
+    In the KDB API ``teilnehmer`` is the number already enrolled, not free
+    spots. ``teilnehmermax`` is usually published on the vorlage, not inside
+    each ``<kurs>`` block.
+    """
+    if enrolled is None or max_capacity is None:
+        return "unknown"
+    try:
+        free_spots = int(max_capacity) - int(enrolled)
+    except ValueError:
+        return "unknown"
+    if free_spots <= 0:
         return "full"
-    if participants and maximum:
-        try:
-            if int(participants) >= int(maximum):
-                return "full"
-        except ValueError:
-            pass
     return "available"
 
 
@@ -267,6 +271,8 @@ class UniversalKdbScraper(BaseScraper):
         if not blocks:
             return runs
 
+        vorlage_max = _xml_field(detail_xml, "teilnehmermax")
+
         for block in blocks:
             kursid = _xml_field(block, "kursid")
             start_date = _xml_field(block, "beginn")
@@ -306,7 +312,10 @@ class UniversalKdbScraper(BaseScraper):
                     city=city,
                     street=street,
                     zip_code=zip_code,
-                    availability=parse_kdb_availability(block),
+                    availability=parse_kdb_availability(
+                        _xml_field(block, "teilnehmer"),
+                        _xml_field(block, "teilnehmermax") or vorlage_max,
+                    ),
                     source_url=self._detail_url(modul, vorlageid, kursid),
                     scraped_raw={
                         "title": title,

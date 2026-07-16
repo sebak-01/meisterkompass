@@ -11,6 +11,7 @@ from scrapers.hwk_luebeck import (
     HwkLuebeckScraper,
 )
 from scrapers.hwk_universal_kdb import (
+    parse_kdb_availability,
     parse_kdb_location,
     parse_kdb_price,
     parse_sh_title,
@@ -77,6 +78,17 @@ class SchleswigHolsteinParserTests(unittest.TestCase):
             "<ort>Kiel</ort><plz>24109</plz><strasse>Russeer Weg</strasse></lehrgangsort>"
         )
         self.assertEqual(parse_kdb_location(block), ("Russeer Weg 167", "24109", "Kiel"))
+
+    def test_kdb_availability_uses_enrolled_vs_capacity(self):
+        # Flensburg Tischler: 18 enrolled of 18 max → full (0 Plätze frei)
+        self.assertEqual(parse_kdb_availability("18", "18"), "full")
+        # Flensburg Metallbauer: 2 enrolled of 18 max → available
+        self.assertEqual(parse_kdb_availability("2", "18"), "available")
+        # Lübeck run with nobody enrolled yet → available, not full
+        self.assertEqual(parse_kdb_availability("0", "20"), "available")
+        # Over-capacity enrolment → full
+        self.assertEqual(parse_kdb_availability("21", "20"), "full")
+        self.assertEqual(parse_kdb_availability("18", None), "unknown")
         self.assertEqual(parse_kdb_price("9.450,00 €"), 9450.0)
         block = (
             "<lehrgangsort><hausnummer>167</hausnummer><lehrgangsort>BBS Kiel</lehrgangsort>"
