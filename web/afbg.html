@@ -88,8 +88,13 @@
       <div id="mode-auto">
         <div class="info-box">Wähle eine <strong>Kammer</strong> und einen <strong>Beruf/Fachrichtung</strong> – die Gebühren werden automatisch aus dem nächsten verfügbaren Kurs befüllt.</div>
         <div class="field">
-          <label for="auto-chamber">Handwerkskammer</label>
-          <select id="auto-chamber"><option value="">– Kammer wählen –</option></select>
+          <label for="auto-chamber-btn" id="auto-chamber-label">Handwerkskammer</label>
+          <div class="chamber-select-wrap" id="auto-chamber-wrap">
+            <button type="button" id="auto-chamber-btn" class="chamber-select-btn" aria-haspopup="listbox" aria-expanded="false" aria-controls="auto-chamber-dropdown">– Kammer wählen –</button>
+            <div id="auto-chamber-dropdown" class="chamber-select-dropdown">
+              <div id="auto-chamber-accordion" role="radiogroup" aria-labelledby="auto-chamber-label"></div>
+            </div>
+          </div>
         </div>
         <div class="field">
           <label for="auto-trade">Beruf/Fachrichtung</label>

@@ -308,6 +308,35 @@ a:hover { text-decoration: underline; text-decoration-color: var(--brass); }
   .container { padding: 0 1.1rem; }
 }
 
+/* Region accordion (Kursfinder, Map legend, AFBG chamber picker) */
+.region-accordion { display: flex; flex-direction: column; gap: .25rem; }
+.region-panel {
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--paper);
+}
+.region-panel-summary {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .45rem .55rem; cursor: pointer; list-style: none;
+  font-family: var(--mono); font-size: .72rem; font-weight: 600;
+  letter-spacing: .06em; text-transform: uppercase; color: var(--brass);
+  user-select: none;
+}
+.region-panel-summary::-webkit-details-marker { display: none; }
+.region-panel-summary::after {
+  content: "▾"; font-size: .65rem; color: var(--text-lt); transition: transform .15s;
+}
+.region-panel[open] > .region-panel-summary::after { transform: rotate(180deg); }
+.region-panel-summary:hover { background: var(--card-2); }
+.region-panel-body { padding: .15rem .35rem .4rem; }
+.region-panel-body label {
+  display: flex; align-items: center; gap: .55rem;
+  padding: .35rem .45rem; border-radius: var(--radius); cursor: pointer; font-size: .82rem;
+}
+.region-panel-body label:hover { background: var(--card-2); }
+.region-panel-body input { accent-color: var(--brass); width: 15px; height: 15px; flex-shrink: 0; }
+
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }

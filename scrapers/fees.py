@@ -86,18 +86,21 @@ def resolve_exam_fee(
       2b. ExamFee lookup — summed across the offer's parts; trade-specific
           first, then all-trades (trade=None) fallback.
 
-    Returns {fee, fee_max, qualifier, display}.
-    The frontend uses chamber_slug on the course record to decide which
-    tooltip text to show (TOOLTIP_QUALIFIER, TOOLTIP_RANGE, TOOLTIP_HESSEN)
-    — tooltip texts live in web/src/util.js, not in the data pipeline.
+    Returns {fee, fee_max, qualifier, display, from_tariff}.
+    ``from_tariff`` is True when the fee comes from the Gebührenverzeichnis
+    lookup (scraped PDF rows or manual exam_fees_manual.json), False when
+    stated on the course page.
     """
-    # Priority 1: scraped fee on the page
+    # Priority 1: scraped fee on the course page
     if exam_fee_scraped is not None:
         fee = Decimal(str(exam_fee_scraped))
         qualifier = exam_fee_qualifier.strip()
         fee_str = _fmt(fee)
         display = _fee_display(fee_str, qualifier)
-        return {"fee": float(fee), "fee_max": None, "qualifier": qualifier, "display": display}
+        return {
+            "fee": float(fee), "fee_max": None, "qualifier": qualifier,
+            "display": display, "from_tariff": False,
+        }
 
     # Priority 2a: exact combo-bundle override for this exact set of parts.
     # Checked trade-specific first, then the all-trades (trade=None) fallback
@@ -109,11 +112,17 @@ def resolve_exam_fee(
         fee_max = Decimal(str(combo["fee_max"])) if combo["fee_max"] is not None else None
         if fee_max is not None:
             display = f"{_fmt(fee)} bis {_fmt(fee_max)}"
-            return {"fee": float(fee), "fee_max": float(fee_max), "qualifier": "", "display": display}
+            return {
+                "fee": float(fee), "fee_max": float(fee_max), "qualifier": "",
+                "display": display, "from_tariff": True,
+            }
         qualifier = combo["qualifier"]
         fee_str = _fmt(fee)
         display = _fee_display(fee_str, qualifier)
-        return {"fee": float(fee), "fee_max": None, "qualifier": qualifier, "display": display}
+        return {
+            "fee": float(fee), "fee_max": None, "qualifier": qualifier,
+            "display": display, "from_tariff": True,
+        }
 
     # Priority 2b: per-part ExamFee lookup
     total_min = Decimal("0")
@@ -137,12 +146,18 @@ def resolve_exam_fee(
         found = True
 
     if not found:
-        return {"fee": None, "fee_max": None, "qualifier": "", "display": ""}
+        return {"fee": None, "fee_max": None, "qualifier": "", "display": "", "from_tariff": False}
 
     if has_range:
         display = f"{_fmt(total_min)} bis {_fmt(total_max)}"
-        return {"fee": float(total_min), "fee_max": float(total_max), "qualifier": "", "display": display}
+        return {
+            "fee": float(total_min), "fee_max": float(total_max), "qualifier": "",
+            "display": display, "from_tariff": True,
+        }
 
     fee_str = _fmt(total_min)
     display = _fee_display(fee_str, qualifier)
-    return {"fee": float(total_min), "fee_max": None, "qualifier": qualifier, "display": display}
+    return {
+        "fee": float(total_min), "fee_max": None, "qualifier": qualifier,
+        "display": display, "from_tariff": True,
+    }

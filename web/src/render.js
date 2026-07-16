@@ -6,20 +6,9 @@ import {
   ROMAN,
   partsLabel,
   esc,
-  TOOLTIP_QUALIFIER,
-  TOOLTIP_APPROXIMATE,
-  TOOLTIP_RANGE,
-  TOOLTIP_HESSEN,
+  TOOLTIP_TARIFF,
   ANMELDEGEBUEHR_NOTE,
-  TRADE_SPECIFIC_EXAM_NOTE,
-  REUTLINGEN_ADDITIONAL_EXAM_NOTE,
-  SCHWABEN_ADDITIONAL_EXAM_NOTE,
-  ERFFURT_EXAM_NOTE,
-  COTTBUS_EXAM_NOTE,
-  POTSDAM_EXAM_NOTE,
-  OSTBRANDENBURG_EXAM_NOTE,
   TENTATIVE_START_DATE_NOTE,
-  HESSEN_CHAMBERS,
 } from "./util.js";
 
 export const fmtDate = (iso) => (iso ? iso.split("-").reverse().join(".") : "");
@@ -79,47 +68,14 @@ function availabilityBadge(a, small = false) {
 }
 
 /**
- * Renders the exam-fee table cell with the appropriate info button.
- * Tooltip text selection (matching util.js constants):
- *   Stuttgart courses incl. Teil I → TRADE_SPECIFIC_EXAM_NOTE
- *   Reutlingen Part I → REUTLINGEN_ADDITIONAL_EXAM_NOTE
- *   Schwaben / Südthüringen / Ostthüringen Parts I/II → SCHWABEN_ADDITIONAL_EXAM_NOTE
- *   Erfurt → ERFFURT_EXAM_NOTE
- *   qualifier set    → TOOLTIP_QUALIFIER  (e.g. HWK Koblenz "bis zu")
- *   fee_max set      → TOOLTIP_RANGE      (e.g. HWK Rheinhessen range)
- *   Hessen chamber   → TOOLTIP_HESSEN     (HWK Rhein-Main / Wiesbaden / Kassel)
- *   scraped fee      → no button (exact value stated on the course page)
+ * Renders the exam-fee table cell with an info button when the fee comes
+ * from the chamber's Gebührenverzeichnis (not the course page).
  */
 function examFeeCell(ef, chamberSlug = "", parts = []) {
   if (!ef || !ef.fee) return '<span class="price-na">—</span>';
-  let btn = "";
-  if (chamberSlug === "hwk-stuttgart" && parts.includes(1))
-    btn = `<button class="fee-info-btn" data-tooltip="${esc(TRADE_SPECIFIC_EXAM_NOTE)}" type="button">i</button>`;
-  else if (chamberSlug === "hwk-reutlingen" && parts.includes(1))
-    btn = `<button class="fee-info-btn" data-tooltip="${esc(REUTLINGEN_ADDITIONAL_EXAM_NOTE)}" type="button">i</button>`;
-  else if (
-    (chamberSlug === "hwk-schwaben"
-      || chamberSlug === "hwk-suedthueringen-suhl"
-      || chamberSlug === "hwk-ostthueringen-gera")
-    && parts.some((part) => part === 1 || part === 2)
-  )
-    btn = `<button class="fee-info-btn" data-tooltip="${esc(SCHWABEN_ADDITIONAL_EXAM_NOTE)}" type="button">i</button>`;
-  else if (chamberSlug === "hwk-erfurt")
-    btn = `<button class="fee-info-btn" data-tooltip="${esc(ERFFURT_EXAM_NOTE)}" type="button">i</button>`;
-  else if (chamberSlug === "hwk-cottbus")
-    btn = `<button class="fee-info-btn" data-tooltip="${esc(COTTBUS_EXAM_NOTE)}" type="button">i</button>`;
-  else if (chamberSlug === "hwk-potsdam" && ef.qualifier)
-    btn = `<button class="fee-info-btn" data-tooltip="${esc(POTSDAM_EXAM_NOTE)}" type="button">i</button>`;
-  else if (chamberSlug === "hwk-frankfurt-oder-ostbrandenburg" && ef.qualifier)
-    btn = `<button class="fee-info-btn" data-tooltip="${esc(OSTBRANDENBURG_EXAM_NOTE)}" type="button">i</button>`;
-  else if (ef.qualifier === "ca.")
-    btn = `<button class="fee-info-btn" data-tooltip="${esc(TOOLTIP_APPROXIMATE)}" type="button">i</button>`;
-  else if (ef.qualifier)
-    btn = `<button class="fee-info-btn" data-tooltip="${esc(TOOLTIP_QUALIFIER)}" type="button">i</button>`;
-  else if (ef.fee_max)
-    btn = `<button class="fee-info-btn" data-tooltip="${esc(TOOLTIP_RANGE)}" type="button">i</button>`;
-  else if (HESSEN_CHAMBERS.has(chamberSlug))
-    btn = `<button class="fee-info-btn" data-tooltip="${esc(TOOLTIP_HESSEN)}" type="button">i</button>`;
+  const btn = ef.from_tariff
+    ? `<button class="fee-info-btn" data-tooltip="${esc(TOOLTIP_TARIFF)}" type="button">i</button>`
+    : "";
   return `<span class="fee-info-wrap"><span class="price">${esc(ef.display)}</span>${btn}</span>`;
 }
 
@@ -264,25 +220,54 @@ const byRegion = (chambers) => {
   return groups;
 };
 
-// ── Chamber filter (region accordion) ──────────────────────────────────
-// Derived from data/chambers.json so the HWK list never drifts from the data.
-// Rendered at build time (vite prerender) and re-rendered idempotently on the
-// client, mirroring rowHtml's SSG-then-hydrate pattern.
-export function chamberFilterHtml(chambers) {
+/**
+ * Region accordion for chamber lists. Supports checkbox (Kursfinder/Map filter)
+ * or radio (AFBG single-select) inputs.
+ */
+export function chamberAccordionHtml(
+  chambers,
+  {
+    inputType = "checkbox",
+    inputClass = "f-chamber",
+    name = "",
+    selected = [],
+  } = {},
+) {
   const groups = byRegion(chambers);
   const regions = [...groups.keys()].sort(alphabetically);
+  const selectedSet = new Set(selected);
   return `<div class="region-accordion">${regions.map((region) => {
     const labels = groups.get(region)
       .sort((a, b) => alphabetically(a.name, b.name))
-      .map((c) =>
-        `<label><input type="checkbox" class="f-chamber" value="${esc(c.slug)}"> ${esc(c.name)}</label>`,
-      ).join("");
+      .map((c) => {
+        const checked = selectedSet.has(c.slug) ? " checked" : "";
+        const nameAttr = name ? ` name="${esc(name)}"` : "";
+        return `<label><input type="${inputType}" class="${esc(inputClass)}" value="${esc(c.slug)}"${nameAttr}${checked}> ${esc(c.name)}</label>`;
+      }).join("");
     const summary = region ? esc(region) : "Sonstige";
     return `<details class="region-panel">
       <summary class="region-panel-summary">${summary}</summary>
       <div class="region-panel-body">${labels}</div>
     </details>`;
   }).join("")}</div>`;
+}
+
+// ── Chamber filter (region accordion) ──────────────────────────────────
+// Derived from data/chambers.json so the HWK list never drifts from the data.
+// Rendered at build time (vite prerender) and re-rendered idempotently on the
+// client, mirroring rowHtml's SSG-then-hydrate pattern.
+export function chamberFilterHtml(chambers) {
+  return chamberAccordionHtml(chambers, { inputType: "checkbox", inputClass: "f-chamber" });
+}
+
+/** Single-select chamber picker for the AFBG Rechner. */
+export function chamberSelectAccordionHtml(chambers, selected = "") {
+  return chamberAccordionHtml(chambers, {
+    inputType: "radio",
+    inputClass: "f-chamber-select",
+    name: "auto-chamber",
+    selected: selected ? [selected] : [],
+  });
 }
 
 export function emptyRow() {
