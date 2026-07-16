@@ -56,6 +56,8 @@ from .hwk_leipzig import HwkLeipzigScraper
 from .hwk_cottbus import HwkCottbusScraper
 from .hwk_potsdam import HwkPotsdamScraper
 from .hwk_frankfurt_oder_ostbrandenburg import HwkFrankfurtOderOstbrandenburgScraper
+from .hwk_schwerin import HwkSchwerinScraper
+from .hwk_ostmecklenburg_vorpommern import HwkOstmecklenburgVorpommernScraper
 
 
 logger = logging.getLogger(__name__)
@@ -94,6 +96,8 @@ SCRAPERS: dict[str, type] = {
     "hwk-cottbus": HwkCottbusScraper,
     "hwk-potsdam": HwkPotsdamScraper,
     "hwk-frankfurt-oder-ostbrandenburg": HwkFrankfurtOderOstbrandenburgScraper,
+    "hwk-schwerin": HwkSchwerinScraper,
+    "hwk-ostmecklenburg-vorpommern": HwkOstmecklenburgVorpommernScraper,
 }
 
 FORMAT_DISPLAY = {

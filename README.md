@@ -6,7 +6,7 @@ courses offered by Handwerkskammern (HWK) in Germany.
 Enables direct comparison of prices, duration, and exam fees across chambers,
 as well as calculation of AFBG (Aufstiegs-BAföG) funding.
 
-Current scope: 33 chambers across nine Bundesländer —
+Current scope: 35 chambers across ten Bundesländer —
 
 - **Bayern:** München und Oberbayern, Niederbayern-Oberpfalz, Oberfranken,
   Mittelfranken, Unterfranken, Schwaben
@@ -18,6 +18,7 @@ Current scope: 33 chambers across nine Bundesländer —
 - **Sachsen-Anhalt:** Halle (Saale), Magdeburg
 - **Sachsen:** Dresden, Chemnitz, Leipzig
 - **Brandenburg:** Cottbus, Frankfurt (Oder) / Ostbrandenburg, Potsdam
+- **Mecklenburg-Vorpommern:** Schwerin, Ostmecklenburg-Vorpommern
 
 
 ---
@@ -66,6 +67,7 @@ meisterkompass/
 │   ├── hwk_{halle_saale,magdeburg}.py
 │   ├── hwk_{dresden,chemnitz,leipzig}.py
 │   ├── hwk_{cottbus,potsdam,frankfurt_oder_ostbrandenburg}.py
+│   ├── hwk_{schwerin,ostmecklenburg_vorpommern}.py
 │   ├── fees.py                # exam-fee resolution (scraped + manual overlay, combo-bundle keys)
 │   ├── geocode.py             # Photon geocoder + committed cache
 │   ├── pipeline.py            # scrape → merge → geocode → resolve → split → write JSON
@@ -84,7 +86,7 @@ meisterkompass/
 │   ├── public/                 # favicon.svg, og-image.png, fonts/, sitemap.xml, robots.txt
 │   └── src/                    # base/list/afbg.css + nav/list/map/afbg/render/util.js
 ├── scripts/import_manual_fees_from_live.py  # recover curated fees from old site
-├── tests/test_{bw,bayern,thueringen,sachsen_anhalt,sachsen,brandenburg}_scrapers.py
+├── tests/test_{bw,bayern,thueringen,sachsen_anhalt,sachsen,brandenburg,mecklenburg_vorpommern}_scrapers.py
 ├── mise.toml                    # pins python 3.12 + node 22
 └── .github/workflows/{scrape.yml, deploy.yml}
 ```
@@ -202,6 +204,17 @@ Cottbus runs are spread across Gallinchen, Großräschen, and Wildau; the scrape
 maps known campus keywords to addresses and prefers detail-page `Lehrgangsort`
 when available.
 
+#### Mecklenburg-Vorpommern — ODAV
+
+| Chamber | Slug | Source |
+|---|---|---|
+| Schwerin | `hwk-schwerin` | hwk-schwerin.de (ODAV `search-type=6`; exam fees from [Gebührenverzeichnis PDF](https://www.hwk-schwerin.de/downloads/gebuehrenverzeichnis-19,8.pdf)) |
+| Ostmecklenburg-Vorpommern | `hwk-ostmecklenburg-vorpommern` | hwk-omv.de (ODAV `search-type=6`; course fees from detail pages; exam fees from [Gebühren page](https://www.hwk-omv.de/artikel/gebuehren-und-beitraege-18,945,2052.html)) |
+
+Schwerin runs are mostly at the BTZ in Schwerin; some Teil IV courses run in Güstrow.
+OMV courses are offered in Rostock, Neubrandenburg, and Neustrelitz — the scraper
+reads the city from the listing card (`| Neubrandenburg`) or detail-page address.
+
 ---
 
 ## Toolchain
@@ -247,6 +260,10 @@ python -m scrapers.run --chamber hwk-suedthueringen-suhl
 python -m scrapers.run --chamber hwk-cottbus && \
 python -m scrapers.run --chamber hwk-potsdam && \
 python -m scrapers.run --chamber hwk-frankfurt-oder-ostbrandenburg
+
+# Mecklenburg-Vorpommern chambers
+python -m scrapers.run --chamber hwk-schwerin && \
+python -m scrapers.run --chamber hwk-ostmecklenburg-vorpommern
 
 python -m unittest discover -s tests        # offline parser + fee tests
 ```
@@ -363,6 +380,7 @@ has since been removed entirely.
 - [x] Sachsen-Anhalt: HWK Halle (Saale), Magdeburg
 - [x] Sachsen: HWK Dresden, Chemnitz, Leipzig
 - [x] Brandenburg: HWK Cottbus, Frankfurt (Oder) / Ostbrandenburg, Potsdam
+- [x] Mecklenburg-Vorpommern: HWK Schwerin, Ostmecklenburg-Vorpommern
 - [x] Exam fees with "bis zu" qualifier, ranges, combo-bundle prices, and tooltips
       (scraped + manual overlay)
 - [x] Filterable course list (multi-select chambers) + interactive map;
@@ -381,18 +399,17 @@ has since been removed entirely.
 
 ### Planned
 - [ ] Berufenet links per trade (field already in the model)
-- [ ] Nationwide expansion — add the remaining German Handwerkskammern (20 of 53)
+- [ ] Nationwide expansion — add the remaining German Handwerkskammern (18 of 53)
 
 #### Remaining Handwerkskammern by Bundesland
 
 > Covered: Bayern · Baden-Württemberg · Hessen (Frankfurt-Rhein-Main, Kassel,
 > Wiesbaden) · RLP (Koblenz, Trier, Pfalz, Rheinhessen) · Saarland ·
-> Thüringen · Sachsen-Anhalt · Sachsen · Brandenburg.
+> Thüringen · Sachsen-Anhalt · Sachsen · Brandenburg · Mecklenburg-Vorpommern.
 
 - **Berlin:** Berlin
 - **Bremen:** Bremen
 - **Hamburg:** Hamburg
-- **Mecklenburg-Vorpommern:** Schwerin · Ostmecklenburg-Vorpommern
 - **Niedersachsen:** Braunschweig-Lüneburg-Stade · Hannover · Hildesheim-Südniedersachsen ·
   Oldenburg · Osnabrück-Emsland-Grafschaft Bentheim · Ostfriesland
 - **Nordrhein-Westfalen:** Aachen · Dortmund · Düsseldorf · Köln · Münster ·
