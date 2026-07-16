@@ -6,7 +6,7 @@ courses offered by Handwerkskammern (HWK) in Germany.
 Enables direct comparison of prices, duration, and exam fees across chambers,
 as well as calculation of AFBG (Aufstiegs-BAföG) funding.
 
-Current scope: 37 chambers across eleven Bundesländer —
+Current scope: 40 chambers across fourteen Bundesländer —
 
 - **Bayern:** München und Oberbayern, Niederbayern-Oberpfalz, Oberfranken,
   Mittelfranken, Unterfranken, Schwaben
@@ -20,6 +20,9 @@ Current scope: 37 chambers across eleven Bundesländer —
 - **Brandenburg:** Cottbus, Frankfurt (Oder) / Ostbrandenburg, Potsdam
 - **Mecklenburg-Vorpommern:** Schwerin, Ostmecklenburg-Vorpommern
 - **Schleswig-Holstein:** Flensburg, Lübeck
+- **Berlin:** HWK Berlin
+- **Hamburg:** HWK Hamburg
+- **Bremen:** HWK Bremen
 
 
 ---

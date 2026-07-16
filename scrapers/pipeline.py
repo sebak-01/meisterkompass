@@ -20,6 +20,9 @@ from .base import GENERIC_TRADE_SLUG, ScrapeResult, normalize_trade
 from .fees import _fmt, build_exam_fee_lookup, resolve_exam_fee
 from .geocode import Geocoder, build_query
 from .hwk_koblenz import HwkKoblenzScraper
+from .hwk_berlin import HwkBerlinScraper
+from .hwk_hamburg import HwkHamburgScraper
+from .hwk_bremen import HwkBremenScraper
 from .hwk_freiburg import HwkFreiburgScraper
 from .hwk_heilbronn import HwkHeilbronnScraper
 from .hwk_konstanz import HwkKonstanzScraper
@@ -102,6 +105,9 @@ SCRAPERS: dict[str, type] = {
     "hwk-ostmecklenburg-vorpommern": HwkOstmecklenburgVorpommernScraper,
     "hwk-flensburg": HwkFlensburgScraper,
     "hwk-luebeck": HwkLuebeckScraper,
+    "hwk-berlin": HwkBerlinScraper,
+    "hwk-hamburg": HwkHamburgScraper,
+    "hwk-bremen": HwkBremenScraper,
 }
 
 FORMAT_DISPLAY = {
@@ -142,7 +148,12 @@ def _course_fee_display(fee: float | None) -> str:
 
 
 def _course_key(rec: dict) -> tuple:
-    return (rec["chamber_slug"], rec.get("source_url", ""), rec.get("start_date") or "null")
+    return (
+        rec["chamber_slug"],
+        rec.get("source_url", ""),
+        rec.get("start_date") or "null",
+        rec.get("end_date") or "null",
+    )
 
 
 def _is_past(rec: dict, today_iso: str) -> bool:
