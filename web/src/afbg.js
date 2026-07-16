@@ -5,19 +5,14 @@ import examFeesData from "@data/exam_fees.json";
 import { initNav } from "./nav.js";
 import {
   partsLabel,
-  REUTLINGEN_ADDITIONAL_EXAM_NOTE,
-  TRADE_SPECIFIC_EXAM_NOTE,
-  SCHWABEN_ADDITIONAL_EXAM_NOTE,
-  ERFFURT_EXAM_NOTE,
-  TOOLTIP_APPROXIMATE,
-  TOOLTIP_HESSEN,
-  HESSEN_CHAMBERS,
+  TOOLTIP_TARIFF,
 } from "./util.js";
+import { chamberSelectAccordionHtml } from "./render.js";
 
 const partsKey = (parts) => parts.slice().sort((a, b) => a - b).join(",");
 const makeGroup = (parts, opts = {}) => ({
   parts, courseFee: null, examFee: null, examFeeMin: null, examFeeMax: null,
-  qualifier: "", isAuto: false, isCombo: false, ...opts,
+  qualifier: "", isAuto: false, isCombo: false, fromTariff: false, ...opts,
 });
 
 // Slugs are the stable ids now (no integer DB ids).
@@ -67,7 +62,8 @@ function resetComboOptions() {
 
 function onChamberChange() {
   resetComboOptions();
-  currentCid = document.getElementById("auto-chamber").value || null;
+  const selected = document.querySelector(".f-chamber-select:checked");
+  currentCid = selected ? selected.value : null;
   currentTid = null;
   feeGroups = [];
   const sel = document.getElementById("auto-trade");
@@ -133,6 +129,7 @@ function fillExamFees() {
   feeGroups.forEach((g) => {
     let totalFee = 0, totalMin = 0, totalMax = 0;
     let hasMax = false, qualifier = "", hasAny = false;
+    g.fromTariff = false;
 
     // Priority 2a: exact combo-bundle key (e.g. "1,2" for Teile I+II).
     // Mirrors fees.py's resolve_exam_fee priority 2a.
@@ -147,12 +144,14 @@ function fillExamFees() {
       if (comboEf.fee_max) { totalMax = comboEf.fee_max; hasMax = true; }
       else { totalMax = comboEf.fee; }
       if (comboEf.qualifier) qualifier = comboEf.qualifier;
+      g.fromTariff = true;
     } else {
       // Priority 2b: sum per-part fees.
       g.parts.forEach((p) => {
         const ef = efByPart[String(p)];
         if (ef) {
           hasAny = true;
+          g.fromTariff = true;
           const fee = ef.fee_max ? Math.round((ef.fee + ef.fee_max) / 2) : ef.fee;
           totalFee += fee;
           totalMin += ef.fee;
@@ -176,6 +175,7 @@ function fillExamFees() {
         hasAny = true;
         totalFee = matchingOffers[0].exam_fee_scraped;
         totalMin = totalFee;
+        g.fromTariff = false;
       }
     }
 
@@ -293,31 +293,22 @@ function renderFeeInputs() {
 
 function buildExamLabel(g) {
   let label = "Prüfungsgebühr (€)";
-  if (currentCid === "hwk-reutlingen" && g.parts.includes(1)) {
-    label += ' <button class="fee-info-btn-calc" type="button" data-tooltip="' + REUTLINGEN_ADDITIONAL_EXAM_NOTE + '">i</button>';
-  } else if (currentCid === "hwk-stuttgart" && g.parts.includes(1)) {
-    label += ' <button class="fee-info-btn-calc" type="button" data-tooltip="' + TRADE_SPECIFIC_EXAM_NOTE + '">i</button>';
-  } else if (
-    (currentCid === "hwk-schwaben"
-      || currentCid === "hwk-suedthueringen-suhl"
-      || currentCid === "hwk-ostthueringen-gera")
-    && g.parts.some((part) => part === 1 || part === 2)
-  ) {
-    label += ' <button class="fee-info-btn-calc" type="button" data-tooltip="' + SCHWABEN_ADDITIONAL_EXAM_NOTE + '">i</button>';
-  } else if (currentCid === "hwk-erfurt") {
-    label += ' <button class="fee-info-btn-calc" type="button" data-tooltip="' + ERFFURT_EXAM_NOTE + '">i</button>';
-  } else if (g.examFeeMax) {
-    const tt = "Die Spanne der Prüfungsgebühr je Teil entstammt dem offiziellen Gebührenverzeichnis. Die genaue Gebühr innerhalb dieser Spanne wird von der Kammer festgelegt. Erkundige dich gerne bei der Kammer.";
+  if (g.examFeeMax) {
     const span = Math.round(g.examFeeMin).toLocaleString("de-DE") + " bis " + Math.round(g.examFeeMax).toLocaleString("de-DE") + " €";
-    label += ' <span class="fee-info-wrap-calc"><small style="color:var(--text-lt)">' + span + '</small><button class="fee-info-btn-calc" type="button" data-tooltip="' + tt + '">i</button></span>';
+    label += ' <span class="fee-info-wrap-calc"><small style="color:var(--text-lt)">' + span + "</small>";
+    if (g.fromTariff) {
+      label += ' <button class="fee-info-btn-calc" type="button" data-tooltip="' + TOOLTIP_TARIFF + '">i</button>';
+    }
+    label += "</span>";
   } else if (g.qualifier) {
-    const tt2 = g.qualifier === "ca."
-      ? TOOLTIP_APPROXIMATE
-      : "Die Prüfungsgebühr je Teil entstammt dem offiziellen Gebührenverzeichnis. Dies ist die Gebühr, die maximal erhoben werden kann. Häufig ist die Prüfungsgebühr tatsächlich niedriger. Erkundige dich bitte bei der Kammer.";
     const qualifierAmount = Math.round(g.examFeeMin).toLocaleString("de-DE") + " €";
-    label += ' <span class="fee-info-wrap-calc"><small style="color:var(--text-lt)">' + g.qualifier + " " + qualifierAmount + '</small><button class="fee-info-btn-calc" type="button" data-tooltip="' + tt2 + '">i</button></span>';
-  } else if (g.examFee && currentCid && HESSEN_CHAMBERS.has(currentCid)) {
-    label += ' <button class="fee-info-btn-calc" type="button" data-tooltip="' + TOOLTIP_HESSEN + '">i</button>';
+    label += ' <span class="fee-info-wrap-calc"><small style="color:var(--text-lt)">' + g.qualifier + " " + qualifierAmount + "</small>";
+    if (g.fromTariff) {
+      label += ' <button class="fee-info-btn-calc" type="button" data-tooltip="' + TOOLTIP_TARIFF + '">i</button>';
+    }
+    label += "</span>";
+  } else if (g.fromTariff) {
+    label += ' <button class="fee-info-btn-calc" type="button" data-tooltip="' + TOOLTIP_TARIFF + '">i</button>';
   }
   return label;
 }
@@ -421,13 +412,13 @@ function calculate() {
 // ── Init + wiring ─────────────────────────────────────────────────────
 initNav();
 (function initChamberSelect() {
-  const sel = document.getElementById("auto-chamber");
-  CHAMBERS.forEach((c) => { const opt = document.createElement("option"); opt.value = c.id; opt.text = c.name; sel.add(opt); });
+  const container = document.getElementById("auto-chamber-accordion");
+  container.innerHTML = chamberSelectAccordionHtml(chambersData, currentCid || "");
+  container.addEventListener("change", (e) => {
+    if (!e.target.classList.contains("f-chamber-select")) return;
+    onChamberChange();
+  });
 })();
-
-document.getElementById("btn-mode-auto").addEventListener("click", () => setMode("auto"));
-document.getElementById("btn-mode-manual").addEventListener("click", () => setMode("manual"));
-document.getElementById("auto-chamber").addEventListener("change", onChamberChange);
 document.getElementById("auto-trade").addEventListener("change", onTradeChange);
 document.getElementById("prefer-singles").addEventListener("change", renderFeeInputs);
 [1, 2, 3, 4].forEach((p) => document.getElementById("chk" + p).addEventListener("change", () => onPartCheck(p)));

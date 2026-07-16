@@ -45,7 +45,12 @@
 .mode-toggle button.active { background: var(--ink); color: #fff; }
 
 .field { margin-bottom: .9rem; }
-.field label { display: block; font-size: .82rem; font-weight: 500; color: var(--text-mid); margin-bottom: .35rem; }
+.field label, .field-label { display: block; font-size: .82rem; font-weight: 500; color: var(--text-mid); margin-bottom: .35rem; }
+.chamber-select-accordion {
+  max-height: min(50vh, 360px); overflow-y: auto;
+  border: 1px solid var(--line-strong); border-radius: var(--radius); padding: .45rem;
+  background: var(--paper);
+}
 .field select, .field input[type="number"] {
   width: 100%; height: 40px; padding: 0 .7rem;
   border: 1px solid var(--line-strong); border-radius: var(--radius);

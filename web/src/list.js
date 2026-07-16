@@ -246,6 +246,7 @@ function render() {
         lng: +c.longitude,
         fee: c.course_fee,
         exam_fee_display: c.exam_fee ? c.exam_fee.display : "",
+        exam_fee_from_tariff: !!(c.exam_fee && c.exam_fee.from_tariff),
         format: c.format_display,
         parts: partsLabel(c.parts),
         start: fmtDate(c.start_date),

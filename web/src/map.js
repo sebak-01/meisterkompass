@@ -1,8 +1,42 @@
 // Leaflet map rendering, ported from the original list.html initMap().
 import L from "leaflet";
-import { esc, eur } from "./util.js";
+import chambersData from "@data/chambers.json";
+import { esc, eur, TOOLTIP_TARIFF } from "./util.js";
 
 let map = null;
+
+function buildMapLegendHtml(chamberColors) {
+  const entries = Object.entries(chamberColors).map(([name, color]) => {
+    const meta = chambersData.find((c) => c.name === name);
+    return { name, region: meta?.region || "", color };
+  });
+  const groups = new Map();
+  for (const entry of entries) {
+    const region = entry.region || "Sonstige";
+    if (!groups.has(region)) groups.set(region, []);
+    groups.get(region).push(entry);
+  }
+  const regions = [...groups.keys()].sort((a, b) => a.localeCompare(b, "de"));
+  return `<div class="region-accordion map-legend-accordion">${regions.map((region) => {
+    const items = groups.get(region)
+      .sort((a, b) => a.name.localeCompare(b.name, "de"))
+      .map((entry) =>
+        `<div class="map-legend-item"><span class="map-legend-dot" style="background:${entry.color}"></span>${esc(entry.name)}</div>`,
+      ).join("");
+    return `<details class="region-panel map-legend-panel">
+      <summary class="region-panel-summary">${esc(region)}</summary>
+      <div class="region-panel-body map-legend-body">${items}</div>
+    </details>`;
+  }).join("")}</div>`;
+}
+
+function examFeePopupLine(examFeeDisplay, fromTariff) {
+  if (!examFeeDisplay) return "";
+  const btn = fromTariff
+    ? ` <button class="fee-info-btn" type="button" data-tooltip="${esc(TOOLTIP_TARIFF)}">i</button>`
+    : "";
+  return `<div class="meta fee-info-wrap">Prüfungsgebühr: ${esc(examFeeDisplay)}${btn}</div>`;
+}
 
 export function renderMap(mapData, listHref) {
   const notice = document.getElementById("map-notice");
@@ -48,7 +82,6 @@ export function renderMap(mapData, listHref) {
 
     visible.forEach((o) => {
       const fee = o.fee ? eur(o.fee) : "k.A.";
-      const examFeeDisplay = o.exam_fee_display || null;
       const titleEl = o.url
         ? `<a href="${esc(o.url)}" target="_blank" rel="noopener" style="color:#1B3A5C;font-weight:500;font-size:.85rem;display:block;line-height:1.3;text-decoration:none">${esc(o.title)} ↗</a>`
         : `<strong style="font-size:.85rem;color:#1B3A5C;display:block;line-height:1.3">${esc(o.title)}</strong>`;
@@ -57,7 +90,7 @@ export function renderMap(mapData, listHref) {
         <div class="meta">${esc(o.parts)} · ${esc(o.format)}</div>
         <div class="meta">Startdatum: ${esc(o.start) || "–"}</div>
         <div class="meta">Kursgebühr: ${fee}</div>
-        ${examFeeDisplay ? `<div class="meta">Prüfungsgebühr: ${esc(examFeeDisplay)}</div>` : ""}
+        ${examFeePopupLine(o.exam_fee_display, o.exam_fee_from_tariff)}
       </div>`;
     });
 
@@ -71,12 +104,8 @@ export function renderMap(mapData, listHref) {
 
   const legend = L.control({ position: "bottomright" });
   legend.onAdd = function () {
-    const div = L.DomUtil.create("div");
-    div.style.cssText = "background:#fff;padding:8px 12px;border-radius:6px;font-size:.8rem;box-shadow:0 1px 4px rgba(0,0,0,.15)";
-    div.innerHTML = "<strong>Kammer</strong><br>" +
-      Object.entries(chamberColors).map(([n, c]) =>
-        `<span style="display:inline-block;width:10px;height:10px;background:${c};border-radius:50%;margin-right:5px"></span>${esc(n)}`,
-      ).join("<br>");
+    const div = L.DomUtil.create("div", "map-legend-control");
+    div.innerHTML = "<strong>Kammern</strong>" + buildMapLegendHtml(chamberColors);
     return div;
   };
   legend.addTo(map);
