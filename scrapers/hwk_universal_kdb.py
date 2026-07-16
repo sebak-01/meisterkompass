@@ -167,6 +167,16 @@ def parse_kdb_location(block: str) -> tuple[str, str, str]:
     return street, zip_code, city
 
 
+def build_kdb_detail_url(
+    page_source_url: str, modul: str, vorlageid: str, kursid: str | None = None
+) -> str:
+    page_url = page_source_url.split("#", 1)[0].rstrip("/")
+    url = f"{page_url}#/vorlage/{modul}/{vorlageid}"
+    if kursid:
+        url = f"{url}?kurs={kursid}"
+    return url
+
+
 def parse_kdb_availability(enrolled: str | None, max_capacity: str | None) -> str:
     """Derive seat availability from enrolled count vs. capacity.
 
@@ -250,11 +260,9 @@ class UniversalKdbScraper(BaseScraper):
         return int(values[0])
 
     def _detail_url(self, modul: str, vorlageid: str, kursid: str | None = None) -> str:
-        page_url = self.kdb_catalogue.source_url.split("#", 1)[0].rstrip("/")
-        url = f"{page_url}#/vorlage/{modul}/{vorlageid}"
-        if kursid:
-            url = f"{url}?kurs={kursid}"
-        return url
+        return build_kdb_detail_url(
+            self.kdb_catalogue.source_url, modul, vorlageid, kursid
+        )
 
     def _parse_kurse(
         self,
