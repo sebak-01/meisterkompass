@@ -4,8 +4,16 @@ from pathlib import Path
 
 from scrapers.fees import build_exam_fee_lookup, resolve_exam_fee
 from scrapers.hwk_berlin import parse_format_and_mode, parse_title
-from scrapers.hwk_bremen import HwkBremenScraper, parse_parts, parse_price
-from scrapers.hwk_hamburg import iso_date, parse_trade
+from scrapers.hwk_bremen import (
+    HwkBremenScraper,
+    parse_parts,
+    parse_price,
+    parse_trade,
+    resolve_trade_name,
+    _merge_offers,
+)
+from scrapers.base import RawCourseOffer, normalize_trade
+from scrapers.hwk_hamburg import iso_date, parse_trade as parse_hamburg_trade
 from scrapers.hwk_universal_kdb import build_kdb_detail_url, parse_kdb_availability
 from scrapers.pipeline import SCRAPERS
 
@@ -34,7 +42,7 @@ class CityStateScraperParserTests(unittest.TestCase):
 
     def test_hamburg_trade_parsing(self):
         self.assertEqual(
-            parse_trade("Meistervorbereitung im Tischlerhandwerk"),
+            parse_hamburg_trade("Meistervorbereitung im Tischlerhandwerk"),
             "Tischler",
         )
 
@@ -49,8 +57,79 @@ class CityStateScraperParserTests(unittest.TestCase):
             ),
             [1, 2],
         )
+        self.assertEqual(
+            parse_parts(
+                "Meistervorbereitung Elektrotechnik Fachrichtung Gebäudetechnik Teil I und II - Teilzeit",
+                "Meisterprüfung Teil I + II vor der HWK Bremen",
+            ),
+            [1, 2],
+        )
         self.assertEqual(parse_price("8.100 €"), 8100.0)
         self.assertEqual(parse_price("850,00 €"), 850.0)
+
+    def test_bremen_trade_aliases(self):
+        self.assertEqual(parse_trade("22426 - Meistervorbereitung im Bauhandwerk Teil I+II  Teilzeit"), "Maurer und Betonbauer")
+        self.assertEqual(parse_trade("22472 - Meistervorbereitung im Malerhandwerk Teil I + II"), "Maler und Lackierer")
+        self.assertEqual(resolve_trade_name("Elektrotechnik"), "Elektrotechniker")
+        self.assertEqual(normalize_trade(parse_trade("22472 - Meistervorbereitung im Malerhandwerk Teil I + II"))[0], "maler-und-lackierer")
+        self.assertEqual(normalize_trade(parse_trade("22426 - Meistervorbereitung im Bauhandwerk Teil I+II  Teilzeit"))[0], "maurer-und-betonbauer")
+
+    def test_bremen_merge_prefers_kdb_runs(self):
+        kdb = [
+            RawCourseOffer(
+                title="Tischler (Teile I + II)",
+                trade_name="Tischler",
+                parts=[1, 2],
+                format_key="part_time",
+                teaching_mode="presence",
+                start_date="2026-09-01",
+                end_date=None,
+                duration_hours=800,
+                course_fee=8100.0,
+                city="Bremen",
+                street="Schongauerstr. 2",
+                zip_code="28219",
+                availability="available",
+                source_url="https://example.test/kdb",
+            )
+        ]
+        web = [
+            RawCourseOffer(
+                title="Tischler (Teile I + II)",
+                trade_name="Tischler",
+                parts=[1, 2],
+                format_key="part_time",
+                teaching_mode="presence",
+                start_date=None,
+                end_date=None,
+                duration_hours=850,
+                course_fee=None,
+                city="Bremen",
+                street="Schongauerstr. 2",
+                zip_code="28219",
+                availability="unknown",
+                source_url="https://example.test/web",
+            ),
+            RawCourseOffer(
+                title="Elektrotechniker (Teile I + II)",
+                trade_name="Elektrotechniker",
+                parts=[1, 2],
+                format_key="part_time",
+                teaching_mode="presence",
+                start_date=None,
+                end_date=None,
+                duration_hours=850,
+                course_fee=None,
+                city="Bremen",
+                street="Schongauerstr. 2",
+                zip_code="28219",
+                availability="unknown",
+                source_url="https://example.test/elektro",
+            ),
+        ]
+        merged = _merge_offers(kdb, web)
+        self.assertEqual(len(merged), 2)
+        self.assertEqual({o.source_url for o in merged}, {"https://example.test/kdb", "https://example.test/elektro"})
 
     def test_bremen_availability_and_urls(self):
         self.assertEqual(parse_kdb_availability("18", "18"), "full")
@@ -97,6 +176,15 @@ class CityStateExamFeeTests(unittest.TestCase):
         resolved = resolve_exam_fee("hwk-bremen", "tischler", [1, 2, 3, 4], None, self.lookup)
         self.assertEqual(resolved["fee"], 1170.0)
         self.assertEqual(resolved["display"], "1.170 €")
+
+    def test_bremen_maler_exam_fees(self):
+        resolved = resolve_exam_fee("hwk-bremen", "maler-und-lackierer", [1, 2, 3, 4], None, self.lookup)
+        self.assertEqual(resolved["fee"], 1880.0)
+        self.assertEqual(resolved["display"], "1.880 €")
+
+    def test_bremen_maurer_exam_fees(self):
+        resolved = resolve_exam_fee("hwk-bremen", "maurer-und-betonbauer", [1, 2, 3, 4], None, self.lookup)
+        self.assertEqual(resolved["fee"], 1290.0)
 
     def test_bremen_generic_parts_three_and_four(self):
         resolved = resolve_exam_fee("hwk-bremen", "allgemein-teil-iii-iv", [3, 4], None, self.lookup)
