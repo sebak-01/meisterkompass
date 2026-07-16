@@ -108,6 +108,17 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-suedthueringen-suhl",
+    "trade_slug": "zweiradmechaniker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 9945.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-wiesbaden",
     "trade_slug": "kosmetiker",
     "parts": [
@@ -1066,16 +1077,6 @@
     "is_generic": false
   },
   {
-    "chamber_slug": "hwk-oberfranken",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      3
-    ],
-    "fee": 2490.0,
-    "exam_fee_scraped": 250.0,
-    "is_generic": true
-  },
-  {
     "chamber_slug": "hwk-chemnitz",
     "trade_slug": "allgemein-teil-iii-iv",
     "parts": [
@@ -1473,6 +1474,16 @@
     "fee": 2950.0,
     "exam_fee_scraped": null,
     "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-oberfranken",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      3
+    ],
+    "fee": 2490.0,
+    "exam_fee_scraped": 250.0,
+    "is_generic": true
   },
   {
     "chamber_slug": "hwk-saarland",
@@ -2490,6 +2501,17 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-magdeburg",
+    "trade_slug": "installateur-und-heizungsbauer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 7923.8,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-potsdam",
     "trade_slug": "metallbauer",
     "parts": [
@@ -2554,6 +2576,16 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-reutlingen",
+    "trade_slug": "kfz-techniker",
+    "parts": [
+      2
+    ],
+    "fee": 4850.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-karlsruhe",
     "trade_slug": "allgemein-teil-iii-iv",
     "parts": [
@@ -2594,16 +2626,6 @@
       2
     ],
     "fee": 9900.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-reutlingen",
-    "trade_slug": "kfz-techniker",
-    "parts": [
-      2
-    ],
-    "fee": 4850.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
@@ -3101,16 +3123,6 @@
   },
   {
     "chamber_slug": "hwk-potsdam",
-    "trade_slug": "elektrotechniker",
-    "parts": [
-      2
-    ],
-    "fee": 8310.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-potsdam",
     "trade_slug": "land-und-baumaschinenmechatroniker",
     "parts": [
       1,
@@ -3322,6 +3334,16 @@
       2
     ],
     "fee": 9500.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-potsdam",
+    "trade_slug": "elektrotechniker",
+    "parts": [
+      2
+    ],
+    "fee": 8310.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
@@ -4419,17 +4441,6 @@
     "is_generic": false
   },
   {
-    "chamber_slug": "hwk-suedthueringen-suhl",
-    "trade_slug": "zweiradmechaniker",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 9945.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
     "chamber_slug": "hwk-ulm",
     "trade_slug": "tischler",
     "parts": [
@@ -4472,17 +4483,6 @@
     "is_generic": false
   },
   {
-    "chamber_slug": "hwk-magdeburg",
-    "trade_slug": "installateur-und-heizungsbauer",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 7923.8,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
     "chamber_slug": "hwk-rheinhessen",
     "trade_slug": "metallbauer",
     "parts": [
@@ -4512,6 +4512,17 @@
       2
     ],
     "fee": 8500.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-halle-saale",
+    "trade_slug": "installateur-und-heizungsbauer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 10660.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
@@ -4969,17 +4980,6 @@
       2
     ],
     "fee": 5700.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-halle-saale",
-    "trade_slug": "installateur-und-heizungsbauer",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 10660.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
