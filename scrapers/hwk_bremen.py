@@ -30,6 +30,10 @@ DEFAULT_CITY = "Bremen"
 
 ROMAN = {"I": 1, "II": 2, "III": 3, "IV": 4}
 MEISTER_PATTERN = re.compile(r"(?:Meisterprüfung|Handwerksmeister)\s+Teile?\b", re.IGNORECASE)
+BERUFSSPEZIALIST_PATTERN = re.compile(
+    r"berufsspezialist|servicetechnik",
+    re.IGNORECASE,
+)
 PARTS_PATTERN = re.compile(
     r"(?:Teile?|Meisterprüfung)\s+((?:IV|III|II|I)(?:\s*(?:\+|und|,)\s*(?:IV|III|II|I))*)",
     re.IGNORECASE,
@@ -63,10 +67,31 @@ URL_TRADE_ALIASES = {
 }
 
 
+KFZ_TRADE_NAME = "Kfz.-Techniker"
+
+
 def resolve_trade_name(trade_name: str | None) -> str | None:
     if not trade_name:
         return None
     return TRADE_ALIASES.get(trade_name, trade_name)
+
+
+def is_berufsspezialist_course(*texts: str | None) -> bool:
+    combined = " ".join(text for text in texts if text)
+    return bool(BERUFSSPEZIALIST_PATTERN.search(combined))
+
+
+def normalize_course_metadata(
+    titel: str,
+    abschluss: str,
+    url: str,
+    trade_name: str | None,
+    parts: list[int],
+) -> tuple[str | None, list[int]]:
+    """Present Berufsspezialist Kfz-Servicetechnik as Kfz.-Techniker (Teil I)."""
+    if is_berufsspezialist_course(titel, abschluss, url):
+        return KFZ_TRADE_NAME, [1]
+    return trade_name, parts
 
 
 def parse_parts(titel: str, abschluss: str) -> list[int]:
@@ -167,7 +192,13 @@ class HwkBremenScraper(BaseScraper):
         offers: list[RawCourseOffer] = []
         meister = 0
         for vorlage in templates:
-            if not MEISTER_PATTERN.search(vorlage.findtext("abschluss") or ""):
+            titel = vorlage.findtext("titel") or ""
+            abschluss = vorlage.findtext("abschluss") or ""
+            if is_berufsspezialist_course(titel, abschluss):
+                meister += 1
+                offers.extend(self._parse_vorlage(vorlage))
+                continue
+            if not MEISTER_PATTERN.search(abschluss):
                 continue
             meister += 1
             offers.extend(self._parse_vorlage(vorlage))
@@ -212,12 +243,15 @@ class HwkBremenScraper(BaseScraper):
         title_text = heading.get_text(" ", strip=True) if heading else ""
         abschluss = self._table_value(soup, "abschluss")
         parts = parse_parts(title_text, abschluss)
+        if not parts and is_berufsspezialist_course(title_text, abschluss, url):
+            parts = [1]
         if not parts:
             logger.warning("HWK Bremen: no parts parsed from Meisterkurs page %s", url)
             return None
 
         generic = set(parts) <= {3, 4}
         trade_name = None if generic else self._trade_from_meisterkurs_page(title_text, url)
+        trade_name, parts = normalize_course_metadata(title_text, abschluss, url, trade_name, parts)
         format_key = self._format_from_meisterkurs_page(title_text, url, soup)
         _, teaching_mode = parse_format_and_mode(title_text)
         duration_hours = self._duration_from_page(soup)
@@ -305,12 +339,12 @@ class HwkBremenScraper(BaseScraper):
         titel = (vorlage.findtext("titel") or "").strip()
         abschluss = (vorlage.findtext("abschluss") or "").strip()
         parts = parse_parts(titel, abschluss)
+        generic = bool(parts) and set(parts) <= {3, 4}
+        trade_name = None if generic else parse_trade(titel)
+        trade_name, parts = normalize_course_metadata(titel, abschluss, "", trade_name, parts)
         if not parts:
             logger.warning("HWK Bremen: no parts parsed from %r", titel)
             return []
-
-        generic = set(parts) <= {3, 4}
-        trade_name = None if generic else parse_trade(titel)
         title = build_course_title(trade_name, parts)
         format_key = parse_format(vorlage.findtext("zeitablauf"))
         duration_hours = self._parse_int(vorlage.findtext("stundenzahl"))

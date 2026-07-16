@@ -6,6 +6,8 @@ from scrapers.fees import build_exam_fee_lookup, resolve_exam_fee
 from scrapers.hwk_berlin import parse_format_and_mode, parse_title
 from scrapers.hwk_bremen import (
     HwkBremenScraper,
+    is_berufsspezialist_course,
+    normalize_course_metadata,
     parse_parts,
     parse_price,
     parse_trade,
@@ -73,6 +75,25 @@ class CityStateScraperParserTests(unittest.TestCase):
         self.assertEqual(resolve_trade_name("Elektrotechnik"), "Elektrotechniker")
         self.assertEqual(normalize_trade(parse_trade("22472 - Meistervorbereitung im Malerhandwerk Teil I + II"))[0], "maler-und-lackierer")
         self.assertEqual(normalize_trade(parse_trade("22426 - Meistervorbereitung im Bauhandwerk Teil I+II  Teilzeit"))[0], "maurer-und-betonbauer")
+
+    def test_bremen_berufsspezialist_maps_to_kfz_teil_i(self):
+        self.assertTrue(is_berufsspezialist_course(
+            "22212 - Gep./r Berufsspezialist/in für Kraftfahrzeug-Servicetechnik - Teilzeit",
+            'Fortbildungsprüfung zum/zur "Geprüfter Berufsspeziallist für Kraftfahrzeug-Servicetechnik"',
+        ))
+        trade, parts = normalize_course_metadata(
+            "Meistervorbereitung Geprüfte:r Berufsspezialist:in für Kraftfahrzeug-Servicetechnik Teil I - Teilzeit",
+            "Meisterprüfung Teil I vor der HWK Bremen",
+            "https://www.handwerkbremen.de/meister-in/meisterkurse/meisterkurs-gepruefte-r-berufsspezialist-in-fuer-kraftfahrzeug-servicetechnikteil-i-teilzeit",
+            "Geprüfte:r Berufsspezialist:in für Kraftfahrzeug-Servicetechnik",
+            [1],
+        )
+        self.assertEqual(trade, "Kfz.-Techniker")
+        self.assertEqual(parts, [1])
+        self.assertFalse(is_berufsspezialist_course(
+            "Meistervorbereitung Kraftfahrzeugtechnik Teil II - Teilzeit",
+            "Meisterprüfung Teil II vor der HWK Bremen",
+        ))
 
     def test_bremen_merge_prefers_kdb_runs(self):
         kdb = [
