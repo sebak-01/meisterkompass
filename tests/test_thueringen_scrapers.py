@@ -119,6 +119,28 @@ class ThueringenParserTests(unittest.TestCase):
         self.assertTrue(all(offer.street == "Kloster 1" for offer in offers))
         self.assertTrue(all(offer.city == "Rohr" for offer in offers))
 
+    def test_suhl_parses_page_level_kosten_without_dated_runs(self):
+        soup = BeautifulSoup(
+            """
+            <main>
+              <h1>Meister im Holzbildhauerhandwerk Teile I/II - Vollzeit</h1>
+              <h4>Seminardauer</h4><p>1.200 Unterrichtseinheiten à 45 Minuten</p>
+              <h4>Kosten</h4><p>MVL Teil I/II Holzbildhauer: 8560,00 €</p>
+              <h4>Termine auf Anfrage.</h4>
+            </main>
+            """,
+            "html.parser",
+        )
+        offers = HwkSuedthueringenSuhlScraper()._parse_course(
+            soup,
+            "Meister im Holzbildhauerhandwerk Teile I/II",
+            "https://www.hwk-suedthueringen.de/seminar/hobi-teil-i-ii/",
+        )
+        self.assertEqual(len(offers), 1)
+        self.assertEqual(offers[0].course_fee, 8560.0)
+        self.assertIsNone(offers[0].start_date)
+        self.assertEqual(offers[0].trade_name, "Holzbildhauer")
+
     def test_suhl_collect_publishes_exam_fee_rows(self):
         scraper = HwkSuedthueringenSuhlScraper()
         rows = scraper.published_exam_fee_rows()
