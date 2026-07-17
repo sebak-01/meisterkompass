@@ -1,7 +1,11 @@
 """Scraper for BTZ Osnabrück Meister courses (HWK Osnabrück-Emsland-Grafschaft Bentheim)."""
 
+from __future__ import annotations
+
 import logging
 import re
+from datetime import date
+from io import BytesIO
 from urllib.parse import urljoin, urlsplit, urlunsplit
 
 from bs4 import BeautifulSoup, Tag
@@ -12,16 +16,18 @@ from .hwk_bayern import parse_parts, parse_trade
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://www.btz-osnabrueck.de"
+HWK_BASE_URL = "https://www.hwk-osnabrueck.de"
 OVERVIEW_URL = f"{BASE_URL}/meisterkurse/"
-EXAM_FEES_PAGE_URL = "https://www.hwk-osnabrueck.de/der-weg-zum-meister/"
-GENERIC_EXAM_FEES = {1: 450.0, 2: 380.0, 3: 260.0, 4: 300.0}
+EXAM_FEES_PAGE_URL = f"{HWK_BASE_URL}/rechtsgrundlagen/"
+FEES_PDF_URL = f"{HWK_BASE_URL}/wp-content/uploads/2026-01-Gebuehrenordnung.pdf"
+GENERIC_EXAM_FEES = {2: 406.0, 3: 290.0, 4: 221.0}
 
 DATE_RE = re.compile(
     r"^(\d{2})\.(\d{2})\.(\d{4})\s*[—–-]\s*(\d{2})\.(\d{2})\.(\d{4})"
 )
-PRICE_RE = re.compile(
-    r"\(ohne Aufstiegs-BAföG:\s*([\d.]+),(\d{2})\s*€\)",
-    re.IGNORECASE,
+COURSE_FEE_RE = re.compile(
+    r"\(ohne Aufstiegs-BAföG:\s*([\d.]+),(\d{2})\s*€?\)?",
+    re.IGNORECASE | re.DOTALL,
 )
 COURSE_NO_RE = re.compile(r"Kursnummer\s+(\d+)", re.IGNORECASE)
 DEFAULT_LOCATION = {
@@ -82,6 +88,14 @@ def parse_osn_title(title: str) -> tuple[list[int], str | None]:
     if set(parts) <= {3, 4}:
         return parts, None
     return (parts, trade) if trade else ([], None)
+
+
+def parse_course_fee(text: str) -> float | None:
+    """Return the full course fee before Aufstiegs-BAföG subsidies."""
+    match = COURSE_FEE_RE.search(text)
+    if not match:
+        return None
+    return float(match.group(1).replace(".", "") + "." + match.group(2))
 
 
 def _is_meister_link(title: str) -> bool:
@@ -242,7 +256,6 @@ class HwkOsnabrueckEmslandGrafschaftBentheimScraper(BaseScraper):
                 teaching_mode = default_teaching
 
             street, zip_code, city = _location(text, teaching_mode)
-            price_match = PRICE_RE.search(text)
             offers.append(RawCourseOffer(
                 title=build_course_title(trade, parts),
                 trade_name=trade,
@@ -252,10 +265,7 @@ class HwkOsnabrueckEmslandGrafschaftBentheimScraper(BaseScraper):
                 start_date=start,
                 end_date=f"{date_match.group(6)}-{date_match.group(5)}-{date_match.group(4)}",
                 duration_hours=None,
-                course_fee=(
-                    float(price_match.group(1).replace(".", "") + "." + price_match.group(2))
-                    if price_match else None
-                ),
+                course_fee=parse_course_fee(text),
                 city=city,
                 street=street,
                 zip_code=zip_code,
@@ -287,13 +297,40 @@ class HwkOsnabrueckEmslandGrafschaftBentheimScraper(BaseScraper):
         )]
 
     @staticmethod
-    def parse_meister_exam_fees(text: str) -> dict[int, float]:
+    def _trade_from_pdf_label(label: str) -> str:
+        trade = label.split("/")[0].strip()
+        trade = re.sub(r"\s+", " ", trade)
+        return parse_trade(f"Meister {trade}", [1]) or trade
+
+    @staticmethod
+    def parse_part_i_exam_fees(text: str) -> dict[str, float]:
+        fees: dict[str, float] = {}
+        block_match = re.search(
+            r"3\.1\.\s+Abnahme der Meisterprüfung, Teil I(.*?)3\.2\.",
+            text,
+            re.IGNORECASE | re.DOTALL,
+        )
+        if not block_match:
+            return fees
+        chunk = re.sub(r"\s+", " ", block_match.group(1))
+        for match in re.finditer(
+            r"3\.1\.\d+\.\s+(.+?)\s+€\s*([\d.]+),(\d{2})",
+            chunk,
+            re.IGNORECASE,
+        ):
+            trade = HwkOsnabrueckEmslandGrafschaftBentheimScraper._trade_from_pdf_label(
+                match.group(1)
+            )
+            fees[trade] = float(match.group(2).replace(".", "") + "." + match.group(3))
+        return fees
+
+    @staticmethod
+    def parse_generic_exam_fees(text: str) -> dict[int, float]:
         fees: dict[int, float] = {}
         patterns = (
-            (1, r"Teil\s+I\b[^0-9€]*([\d.]+),(\d{2})\s*(?:Euro|€)"),
-            (2, r"Teil\s+II\b[^0-9€]*([\d.]+),(\d{2})\s*(?:Euro|€)"),
-            (3, r"Teil\s+III\b[^0-9€]*([\d.]+),(\d{2})\s*(?:Euro|€)"),
-            (4, r"Teil\s+IV\b[^0-9€]*([\d.]+),(\d{2})\s*(?:Euro|€)"),
+            (2, r"3\.2\.\s+Abnahme der Meisterprüfung, Teil II\s+€\s*([\d.]+),(\d{2})"),
+            (3, r"3\.3\.\s+Abnahme der Meisterprüfung, Teil III\s+€\s*([\d.]+),(\d{2})"),
+            (4, r"3\.4\.\s+Abnahme der Meisterprüfung, Teil IV\s+€\s*([\d.]+),(\d{2})"),
         )
         for part, pattern in patterns:
             match = re.search(pattern, text, re.IGNORECASE | re.DOTALL)
@@ -301,25 +338,75 @@ class HwkOsnabrueckEmslandGrafschaftBentheimScraper(BaseScraper):
                 fees[part] = float(match.group(1).replace(".", "") + "." + match.group(2))
         return fees
 
+    def _resolve_exam_fees_pdf_url(self) -> str:
+        soup = self.parse_html(EXAM_FEES_PAGE_URL)
+        if soup is None:
+            return FEES_PDF_URL
+
+        candidates: list[tuple[date, str]] = []
+        for link in soup.select("a[href*='.pdf']"):
+            href = link.get("href", "")
+            if "gebuehrenordnung" not in href.lower():
+                continue
+            parent = link.find_parent(["tr", "li", "p", "div"])
+            context = parent.get_text(" ", strip=True) if parent else link.get_text(" ", strip=True)
+            if not re.search(r"gebührenordnung|gebuehrenordnung", context, re.IGNORECASE):
+                continue
+            date_match = re.search(r"(\d{2})-(\d{2})-(\d{4})", context)
+            if not date_match:
+                continue
+            day, month, year = map(int, date_match.groups())
+            candidates.append((date(year, month, day), urljoin(HWK_BASE_URL, href)))
+
+        if candidates:
+            candidates.sort(key=lambda item: item[0], reverse=True)
+            return candidates[0][1]
+        return FEES_PDF_URL
+
+    def _fetch_exam_fees_from_pdf(self) -> tuple[dict[str, float], dict[int, float]]:
+        try:
+            from pypdf import PdfReader
+        except ImportError:
+            logger.warning("HWK Osnabrück: pypdf not installed — using fallback exam fees.")
+            return {}, {}
+
+        pdf_url = self._resolve_exam_fees_pdf_url()
+        response = self.get(pdf_url)
+        if response is None:
+            logger.warning("HWK Osnabrück: could not fetch exam-fee PDF.")
+            return {}, {}
+
+        text = ""
+        for page in PdfReader(BytesIO(response.content)).pages:
+            text += (page.extract_text() or "") + "\n"
+        part_i_fees = self.parse_part_i_exam_fees(text)
+        generic_fees = self.parse_generic_exam_fees(text) or GENERIC_EXAM_FEES
+        if not part_i_fees:
+            logger.warning("HWK Osnabrück: could not parse trade-specific Teil I exam fees.")
+        return part_i_fees, generic_fees
+
     def published_exam_fee_rows(self) -> list[dict]:
-        response = self.get(EXAM_FEES_PAGE_URL)
-        fees: dict[int, float] = {}
-        if response is not None:
-            text = BeautifulSoup(response.text, "html.parser").get_text("\n", strip=True)
-            fees = self.parse_meister_exam_fees(text)
-        if not fees:
-            fees = GENERIC_EXAM_FEES
-        return [
-            {
+        part_i_fees, generic_fees = self._fetch_exam_fees_from_pdf()
+        rows: list[dict] = []
+        for trade_name, fee in part_i_fees.items():
+            rows.append({
+                "chamber_slug": self.chamber_slug,
+                "trade_slug": normalize_trade(trade_name)[0],
+                "part": 1,
+                "fee": fee,
+                "qualifier": "",
+                "source_url": EXAM_FEES_PAGE_URL,
+            })
+        for part, fee in generic_fees.items():
+            rows.append({
                 "chamber_slug": self.chamber_slug,
                 "trade_slug": None,
                 "part": part,
                 "fee": fee,
                 "qualifier": "",
                 "source_url": EXAM_FEES_PAGE_URL,
-            }
-            for part, fee in fees.items()
-        ]
+            })
+        return rows
 
     def collect(self) -> ScrapeResult:
         result = super().collect()

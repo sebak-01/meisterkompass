@@ -16,6 +16,7 @@ from scrapers.hwk_hildesheim_suedniedersachsen import (
 from scrapers.hwk_oldenburg import HwkOldenburgScraper
 from scrapers.hwk_osnabrueck_emsland_grafschaft_bentheim import (
     HwkOsnabrueckEmslandGrafschaftBentheimScraper,
+    parse_course_fee,
     parse_osn_title,
 )
 from scrapers.hwk_ostfriesland import HwkOstfrieslandScraper
@@ -238,6 +239,74 @@ class NiedersachsenExamFeeTests(unittest.TestCase):
         self.assertEqual(
             resolve_exam_fee("hwk-oldenburg", "tischler", [3], None, lookup)["fee"],
             300.0,
+        )
+
+    def test_osn_course_fee_parsing_without_bafog(self):
+        sample = """
+        Investition
+        Kursentgelt/-gebühr mit Aufstiegs-BAföG:
+        nur 422,50 €*
+        (ohne Aufstiegs-BAföG:
+        1.690,00 €
+        zzgl. Lernmittel, zzgl. Prüfungsgebühr gem. der dann geltenden Gebührenordnung
+        """
+        self.assertEqual(parse_course_fee(sample), 1690.0)
+
+        sample_with_paren = sample.replace(
+            "1.690,00 €\n        zzgl.",
+            "1.690,00 €)\n        zzgl.",
+        )
+        self.assertEqual(parse_course_fee(sample_with_paren), 1690.0)
+
+        sample_without_euro = """
+        (ohne Aufstiegs-BAföG:
+        685,00
+        zzgl. Lernmittel
+        """
+        self.assertEqual(parse_course_fee(sample_without_euro), 685.0)
+
+    def test_osn_pdf_exam_fee_parsing(self):
+        sample = """
+        3.1. Abnahme der Meisterprüfung, Teil I
+        3.1.1. Dachdecker/ Dachdeckerin € 937,00
+        3.1.8. Kraftfahrzeugtechniker/ Kraftfahrzeugtechnikerin € 962,00
+        3.2. Abnahme der Meisterprüfung, Teil II € 406,00
+        3.3. Abnahme der Meisterprüfung, Teil III € 290,00
+        3.4. Abnahme der Meisterprüfung, Teil IV € 221,00
+        """
+        part_i = HwkOsnabrueckEmslandGrafschaftBentheimScraper.parse_part_i_exam_fees(sample)
+        generic = HwkOsnabrueckEmslandGrafschaftBentheimScraper.parse_generic_exam_fees(sample)
+        self.assertEqual(part_i["Dachdecker"], 937.0)
+        self.assertEqual(part_i["Kfz.-Techniker"], 962.0)
+        self.assertEqual(generic, {2: 406.0, 3: 290.0, 4: 221.0})
+
+    def test_osn_resolves_current_gebuehrenordnung_pdf(self):
+        pdf_url = HwkOsnabrueckEmslandGrafschaftBentheimScraper()._resolve_exam_fees_pdf_url()
+        self.assertIn("2026-01-gebuehrenordnung", pdf_url.lower())
+
+    @patch.object(HwkOsnabrueckEmslandGrafschaftBentheimScraper, "_fetch_exam_fees_from_pdf")
+    def test_osn_exam_fee_resolution(self, mock_fetch):
+        mock_fetch.return_value = (
+            {"Elektrotechniker": 716.0, "Kfz.-Techniker": 962.0},
+            {2: 406.0, 3: 290.0, 4: 221.0},
+        )
+        rows = HwkOsnabrueckEmslandGrafschaftBentheimScraper().published_exam_fee_rows()
+        lookup = build_exam_fee_lookup(rows, [])
+        self.assertEqual(
+            resolve_exam_fee("hwk-osnabrueck-emsland-grafschaft-bentheim", "kfz-techniker", [1], None, lookup)["fee"],
+            962.0,
+        )
+        self.assertEqual(
+            resolve_exam_fee(
+                "hwk-osnabrueck-emsland-grafschaft-bentheim", "elektrotechniker", [1, 2], None, lookup
+            )["fee"],
+            1122.0,
+        )
+        self.assertEqual(
+            resolve_exam_fee(
+                "hwk-osnabrueck-emsland-grafschaft-bentheim", "tischler", [3], None, lookup
+            )["fee"],
+            290.0,
         )
 
     @patch.object(HwkOstfrieslandScraper, "_fetch_exam_fees_from_pdf")
