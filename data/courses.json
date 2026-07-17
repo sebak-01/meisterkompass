@@ -225,9 +225,9 @@
     "chamber_slug": "hwk-berlin",
     "chamber_name": "HWK Berlin",
     "chamber_region": "Berlin",
-    "trade_slug": "schilder-und-lichtreklamehersteller-handwerk",
-    "trade_name": "Schilder- und Lichtreklamehersteller-Handwerk",
-    "title": "Schilder- und Lichtreklamehersteller-Handwerk (Teile I + II)",
+    "trade_slug": "schilder-und-lichtreklamehersteller",
+    "trade_name": "Schilder- und Lichtreklamehersteller",
+    "title": "Schilder- und Lichtreklamehersteller (Teile I + II)",
     "parts": [
       1,
       2
@@ -1527,9 +1527,9 @@
     "chamber_slug": "hwk-berlin",
     "chamber_name": "HWK Berlin",
     "chamber_region": "Berlin",
-    "trade_slug": "zahntechnik",
-    "trade_name": "Zahntechnik",
-    "title": "Zahntechnik (Teile I + II)",
+    "trade_slug": "zahntechniker",
+    "trade_name": "Zahntechniker",
+    "title": "Zahntechniker (Teile I + II)",
     "parts": [
       1,
       2
@@ -68007,9 +68007,9 @@
     "chamber_slug": "hwk-rhein-main",
     "chamber_name": "HWK Frankfurt-Rhein-Main",
     "chamber_region": "Hessen",
-    "trade_slug": "maler",
-    "trade_name": "Maler",
-    "title": "Maler (Teile I + II)",
+    "trade_slug": "maler-und-lackierer",
+    "trade_name": "Maler und Lackierer",
+    "title": "Maler und Lackierer (Teile I + II)",
     "parts": [
       1,
       2

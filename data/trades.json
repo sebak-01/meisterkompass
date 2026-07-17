@@ -116,10 +116,6 @@
     "name": "Land- und Baumaschinenmechatroniker"
   },
   {
-    "slug": "maler",
-    "name": "Maler"
-  },
-  {
     "slug": "maler-und-lackierer",
     "name": "Maler und Lackierer"
   },
@@ -164,10 +160,6 @@
     "name": "Schilder- und Lichtreklamehersteller"
   },
   {
-    "slug": "schilder-und-lichtreklamehersteller-handwerk",
-    "name": "Schilder- und Lichtreklamehersteller-Handwerk"
-  },
-  {
     "slug": "schornsteinfeger",
     "name": "Schornsteinfeger"
   },
@@ -194,10 +186,6 @@
   {
     "slug": "warme-kalte-schallschutzisolierer",
     "name": "Wärme-, Kälte-, Schallschutzisolierer"
-  },
-  {
-    "slug": "zahntechnik",
-    "name": "Zahntechnik"
   },
   {
     "slug": "zahntechniker",

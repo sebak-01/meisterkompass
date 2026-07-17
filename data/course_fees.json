@@ -530,7 +530,7 @@
   },
   {
     "chamber_slug": "hwk-berlin",
-    "trade_slug": "zahntechnik",
+    "trade_slug": "zahntechniker",
     "parts": [
       1,
       2
@@ -1144,7 +1144,7 @@
   },
   {
     "chamber_slug": "hwk-berlin",
-    "trade_slug": "schilder-und-lichtreklamehersteller-handwerk",
+    "trade_slug": "schilder-und-lichtreklamehersteller",
     "parts": [
       1,
       2
@@ -2249,7 +2249,7 @@
   },
   {
     "chamber_slug": "hwk-rhein-main",
-    "trade_slug": "maler",
+    "trade_slug": "maler-und-lackierer",
     "parts": [
       1,
       2

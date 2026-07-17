@@ -1,17 +1,30 @@
 import unittest
 
-from scrapers.base import harmonize_course_record, normalize_trade, singularize_trade_name
+from scrapers.base import canonicalize_trade_name, harmonize_course_record, normalize_trade
 
 
 class TradeNormalizationTests(unittest.TestCase):
     def test_plural_trade_names_map_to_singular(self):
-        self.assertEqual(singularize_trade_name("Konditoren"), "Konditor")
-        self.assertEqual(singularize_trade_name("Stuckateure"), "Stuckateur")
-        self.assertEqual(singularize_trade_name("Friseure"), "Friseur")
+        self.assertEqual(canonicalize_trade_name("Konditoren"), "Konditor")
+        self.assertEqual(canonicalize_trade_name("Stuckateure"), "Stuckateur")
+        self.assertEqual(canonicalize_trade_name("Friseure"), "Friseur")
 
-    def test_normalize_trade_uses_singular_slug(self):
+    def test_handwerk_suffix_and_partial_trade_names(self):
+        self.assertEqual(
+            canonicalize_trade_name("Schilder- und Lichtreklamehersteller-Handwerk"),
+            "Schilder- und Lichtreklamehersteller",
+        )
+        self.assertEqual(canonicalize_trade_name("Maler"), "Maler und Lackierer")
+        self.assertEqual(canonicalize_trade_name("Zahntechnik"), "Zahntechniker")
+
+    def test_normalize_trade_uses_canonical_slug(self):
         self.assertEqual(normalize_trade("Konditoren"), ("konditor", "Konditor"))
-        self.assertEqual(normalize_trade("Stuckateure"), ("stuckateur", "Stuckateur"))
+        self.assertEqual(
+            normalize_trade("Schilder- und Lichtreklamehersteller-Handwerk"),
+            ("schilder-und-lichtreklamehersteller", "Schilder- und Lichtreklamehersteller"),
+        )
+        self.assertEqual(normalize_trade("Maler"), ("maler-und-lackierer", "Maler und Lackierer"))
+        self.assertEqual(normalize_trade("Zahntechnik"), ("zahntechniker", "Zahntechniker"))
 
     def test_harmonize_course_record_rebuilds_title(self):
         rec = {

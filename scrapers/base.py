@@ -27,14 +27,17 @@ _GENERIC_PART_NAMES: dict[tuple[int, ...], str] = {
 
 _ROMAN = {1: "I", 2: "II", 3: "III", 4: "IV"}
 
-# Plural trade labels some chambers publish → canonical singular display name.
-TRADE_SINGULAR_ALIASES: dict[str, str] = {
+# Alternate chamber trade labels → canonical display name for filters and titles.
+TRADE_CANONICAL_ALIASES: dict[str, str] = {
     "konditoren": "Konditor",
     "stuckateure": "Stuckateur",
     "friseure": "Friseur",
     "friseurinnen": "Friseur",
     "steinmetze und steinbildhauer": "Steinmetz und Steinbildhauer",
     "edelsteinschleifer- und graveure": "Edelsteinschleifer und Graveur",
+    "schilder- und lichtreklamehersteller-handwerk": "Schilder- und Lichtreklamehersteller",
+    "maler": "Maler und Lackierer",
+    "zahntechnik": "Zahntechniker",
 }
 
 
@@ -54,9 +57,9 @@ def slugify(value: str) -> str:
     return re.sub(r"[-\s]+", "-", value).strip("-_")
 
 
-def singularize_trade_name(trade_name: str) -> str:
-    """Map plural chamber trade labels to the canonical singular form."""
-    return TRADE_SINGULAR_ALIASES.get(trade_name.lower(), trade_name)
+def canonicalize_trade_name(trade_name: str) -> str:
+    """Map alternate chamber trade labels to the canonical display name."""
+    return TRADE_CANONICAL_ALIASES.get(trade_name.lower(), trade_name)
 
 
 def normalize_trade(trade_name: str | None) -> tuple[str, str]:
@@ -68,7 +71,7 @@ def normalize_trade(trade_name: str | None) -> tuple[str, str]:
     """
     if trade_name is None:
         return GENERIC_TRADE_SLUG, GENERIC_TRADE_NAME
-    trade_name = singularize_trade_name(trade_name)
+    trade_name = canonicalize_trade_name(trade_name)
     return slugify(trade_name), trade_name
 
 
