@@ -178,6 +178,26 @@ class NiedersachsenExamFeeTests(unittest.TestCase):
         fees = HwkOstfrieslandScraper.parse_meister_exam_fees(sample)
         self.assertEqual(fees, {1: 390.0, 2: 360.0, 3: 250.0, 4: 200.0})
 
+    def test_hildesheim_generic_exam_fees_from_2025_pdf_layout(self):
+        sample = """
+        3.1 Abnahme der Meisterprüfung
+        a) Teil III
+        b) Teil IV
+           330,00 €
+           349,00 €
+        3.1.1 im Maurer und Betonbauer-Handwerk
+        """
+        self.assertEqual(
+            HwkHildesheimSuedniedersachsenScraper.parse_generic_exam_fees(sample),
+            {3: 330.0, 4: 349.0},
+        )
+
+    def test_hildesheim_resolves_current_gebuehrentarif_pdf(self):
+        pdf_url = HwkHildesheimSuedniedersachsenScraper()._resolve_exam_fees_pdf_url()
+        self.assertIn("gebuehrenordnung-und-gebuehrentarife", pdf_url.lower())
+        self.assertIn("2025", pdf_url)
+        self.assertNotIn("24,1918", pdf_url)
+
     @patch.object(HwkOstfrieslandScraper, "_fetch_exam_fees_from_pdf")
     def test_ostfriesland_exam_fee_resolution(self, mock_fetch):
         mock_fetch.return_value = {1: 390.0, 2: 360.0, 3: 250.0, 4: 200.0}

@@ -28,12 +28,12 @@ SOURCE_URL = (
     f"{BASE_URL}/artikel/ihr-weg-zum-meistertitel-alles-was-sie-wissen-muessen-24,862,1617.html"
 )
 LIST_URL = f"{BASE_URL}/24,0,courselist.html?search-filter-template=0&search-type=6"
-EXAM_FEES_PAGE_URL = f"{BASE_URL}/artikel/informationen-zur-meisterpruefung-24,922,3190.html"
+EXAM_FEES_PAGE_URL = f"{BASE_URL}/artikel/oeffentliche-bekanntmachungen-24,657,1283.html"
 FEES_PDF_URL = (
-    f"{BASE_URL}/downloads/gebuehrenordnung-und-gebuehrentarife-der-hwk-hildesheim-"
-    "suedniedersachsen-24,1918.pdf"
+    f"{BASE_URL}/downloads/gebuehrenordnung-und-gebuehrentarife-der-handwerkskammer-"
+    "hildesheim-suedniedersachsen-vom-09-12-2025-24,2741.pdf"
 )
-GENERIC_EXAM_FEES = {3: 250.0, 4: 349.0}
+GENERIC_EXAM_FEES = {3: 330.0, 4: 349.0}
 
 HID_TRADE_ALIASES = {
     "maurer und betonbauer": "Maurer und Betonbauer",
@@ -196,6 +196,19 @@ class HwkHildesheimSuedniedersachsenScraper(BavariaOdavScraper):
     @staticmethod
     def parse_generic_exam_fees(text: str) -> dict[int, float]:
         fees: dict[int, float] = {}
+        block_match = re.search(
+            r"3\.1 Abnahme der Meisterprüfung(.*?)(?:3\.1\.1|$)",
+            text,
+            re.IGNORECASE | re.DOTALL,
+        )
+        if block_match:
+            amounts = re.findall(r"([\d.]+),(\d{2})\s*€", block_match.group(1))
+            if len(amounts) >= 2:
+                return {
+                    3: float(amounts[0][0].replace(".", "") + "." + amounts[0][1]),
+                    4: float(amounts[1][0].replace(".", "") + "." + amounts[1][1]),
+                }
+
         for part, label in ((3, "a) Teil III"), (4, "b) Teil IV")):
             match = re.search(
                 rf"{re.escape(label)}\s+([\d.]+),(\d{{2}})\s*€",
@@ -210,10 +223,21 @@ class HwkHildesheimSuedniedersachsenScraper(BavariaOdavScraper):
         soup = self.parse_html(EXAM_FEES_PAGE_URL)
         if soup is None:
             return FEES_PDF_URL
-        for link in soup.select("a[href*='gebuehrenordnung-und-gebuehrentarife']"):
+        candidates: list[tuple[str, str]] = []
+        for link in soup.select("a[href*='.pdf']"):
             href = link.get("href", "")
-            if href.lower().endswith(".pdf"):
-                return urljoin(BASE_URL, href)
+            label = link.get_text(" ", strip=True)
+            href_lower = href.lower()
+            if (
+                "gebuehrenordnung-und-gebuehrentarife" in href_lower
+                or label.lower() == "gebührenordnung und gebührentarife"
+            ):
+                candidates.append((label, urljoin(BASE_URL, href)))
+        for label, pdf_url in candidates:
+            if label.lower() == "gebührenordnung und gebührentarife":
+                return pdf_url
+        if candidates:
+            return candidates[0][1]
         return FEES_PDF_URL
 
     def _fetch_exam_fees_from_pdf(self) -> tuple[dict[str, dict[int, float]], dict[int, float]]:
