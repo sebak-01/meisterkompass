@@ -96,6 +96,18 @@
     49.6703429,
     12.1626407
   ],
+  "Bramscher Straße 134 - 136, 49088 Osnabrück, Deutschland": [
+    52.290842,
+    8.0401607
+  ],
+  "Bramscher Straße 134-136, 49088 Osnabrück, Deutschland": [
+    52.290842,
+    8.0401607
+  ],
+  "Braunschweig, Niedersachsen, Deutschland": [
+    52.2646577,
+    10.5236066
+  ],
   "Brunhildenstraße 110, 65189 Wiesbaden, Deutschland": [
     50.0652806,
     8.2590004
@@ -122,6 +134,10 @@
   ],
   "Dachplatten und Dachziegeln Außenwandbekleidung Holz- und Metallarbeiten Dachabdichtungen Projektarbeit Ihr Kurs im Detail als Download Kursinformationen downloaden Zielgruppe Voraussetzung Kursort Gästehaus Hinweis Gesellen des Dachdeckerhandwerks Gesellenabschluss im Dachdeckerhandwerk oder anderer Gewerke mit mehrjähriger Berufserfahrung im Dachdeckerhandwerk LBZ - Landesbildungszentrum des Sächsischen Dachdeckerhandwerks e.V. Lößnitzer Str. 50, 08301 Bad Schlema, Deutschland": null,
   "Dachplatten und Dachziegeln Außenwandbekleidung Holz- und Metallarbeiten Dachabdichtungen Projektarbeit Ihr Kurs im Detail als Download Kursinformationen downloaden Zielgruppe Voraussetzung Kursort Gästehaus Hinweis Gesellen des Dachdeckerhandwerks Gesellenabschluss im Dachdeckerhandwerk oder anderer Gewerke mit mehrjähriger Berufserfahrung im Dachdeckerhandwerk LBZ - Landesbildungszentrum des Sächsischen Dachdeckerhandwerks e.V. Lößnitzer Str. 50, 08301 Dresden, Deutschland": null,
+  "Dahlenburger Landstraße 62, 21337 Lüneburg, Deutschland": [
+    53.2481679,
+    10.4264587
+  ],
   "Daimlerstraße 46, 76185 Karlsruhe, Deutschland": [
     49.0313222,
     8.3591262
@@ -198,6 +214,10 @@
     50.0538491,
     10.2229162
   ],
+  "Garbsen, Niedersachsen, Deutschland": [
+    52.4276606,
+    9.6005102
+  ],
   "Gera, Thüringen, Deutschland": [
     50.9526146,
     12.1220551
@@ -221,6 +241,10 @@
   "Gutenbergstraße 49, 68167 Mannheim, Deutschland": [
     49.4936232,
     8.5038439
+  ],
+  "Hamburger Straße 234, 38114 Braunschweig, Deutschland": [
+    52.2850901,
+    10.5199812
   ],
   "Hasenhägweg 67, 63741 Aschaffenburg, Deutschland": [
     49.9881654,
@@ -330,6 +354,10 @@
     47.7174731,
     10.3185888
   ],
+  "Kruppstraße 18, 31135 Hildesheim, Deutschland": [
+    52.1681541,
+    9.9705455
+  ],
   "Kulmbach, Bayern, Deutschland": [
     50.1071246,
     11.4581813
@@ -361,6 +389,10 @@
   "Lundener Straße 1, 24768 Rendsburg, Deutschland": [
     54.3158358,
     9.6282685
+  ],
+  "Lüneburg, Niedersachsen, Deutschland": [
+    53.248706,
+    10.407855
   ],
   "Magdeburg, Sachsen-Anhalt, Deutschland": [
     52.1314783,
@@ -419,6 +451,10 @@
     53.0776272,
     8.8453956
   ],
+  "Online, Niedersachsen, Deutschland": [
+    52.3765457,
+    9.7345615
+  ],
   "Online, Schleswig-Holstein, Deutschland": [
     53.8305464,
     10.6549788
@@ -451,9 +487,17 @@
     54.300292,
     9.6650076
   ],
+  "Rudolf-Diesel-Straße 10a, 21684 Stade, Deutschland": [
+    53.5793341,
+    9.4923003
+  ],
   "Rudolf-Diesel-Straße 30, 64331 Weiterstadt, Deutschland": [
     49.9011703,
     8.6137976
+  ],
+  "Rudolf-Diesel-Straße 9, 21684 Stade, Deutschland": [
+    53.5783325,
+    9.4910483
   ],
   "Rudolstadt, Thüringen, Deutschland": [
     50.7206063,
@@ -519,6 +563,14 @@
     50.1013705,
     8.65682
   ],
+  "Schütte-Lanz-Straße 8-10/15, 26135 Oldenburg/Tweelbäke, Deutschland": [
+    53.1144351,
+    8.2605231
+  ],
+  "Seeweg 4, 30827 Garbsen, Deutschland": [
+    52.4347317,
+    9.5920065
+  ],
   "Siebentischstraße 52 - 58, 86161 Augsburg, Deutschland": [
     48.3486219,
     10.9175439
@@ -579,9 +631,17 @@
     53.3826667,
     13.0470412
   ],
+  "Straße des Handwerks 2, 26603 Aurich, Deutschland": [
+    53.4780195,
+    7.4858939
+  ],
   "Südstraße 4 a, 06179 Teutschenthal / OT Holleben, Deutschland": [
     51.431893,
     11.9056258
+  ],
+  "Tannenstraße 9-11, 26122 Oldenburg, Deutschland": [
+    53.1392361,
+    8.1943948
   ],
   "Theodor-Heuss-Anlage 12, 68165 Mannheim, Deutschland": [
     49.4775101,
@@ -631,6 +691,10 @@
     48.770631,
     9.1801632
   ],
+  "Willerssstraße 9, 26123 Oldenburg/Fachschule, Deutschland": [
+    53.1481773,
+    8.2215208
+  ],
   "Wirthstraße 28, 79110 Freiburg, Deutschland": [
     48.0251899,
     7.8137345
@@ -642,6 +706,10 @@
   "Zum Handwerkszentrum 1, 21079 Hamburg, Deutschland": [
     53.4582352,
     9.9959008
+  ],
+  "x x, Niedersachsen, Deutschland": [
+    52.7798987,
+    9.2984612
   ],
   "Äußere Badstraße 24, 95448 Bayreuth, Deutschland": [
     49.9421486,

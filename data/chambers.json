@@ -5,6 +5,11 @@
     "region": "Berlin"
   },
   {
+    "slug": "hwk-braunschweig-lueneburg-stade",
+    "name": "HWK Braunschweig-Lüneburg-Stade",
+    "region": "Niedersachsen"
+  },
+  {
     "slug": "hwk-bremen",
     "name": "HWK Bremen",
     "region": "Bremen"
@@ -60,9 +65,19 @@
     "region": "Hamburg"
   },
   {
+    "slug": "hwk-hannover",
+    "name": "HWK Hannover",
+    "region": "Niedersachsen"
+  },
+  {
     "slug": "hwk-heilbronn-franken",
     "name": "HWK Heilbronn-Franken",
     "region": "Baden-Württemberg"
+  },
+  {
+    "slug": "hwk-hildesheim-suedniedersachsen",
+    "name": "HWK Hildesheim-Südniedersachsen",
+    "region": "Niedersachsen"
   },
   {
     "slug": "hwk-karlsruhe",
@@ -103,6 +118,21 @@
     "slug": "hwk-niederbayern-oberpfalz",
     "name": "HWK Niederbayern-Oberpfalz",
     "region": "Bayern"
+  },
+  {
+    "slug": "hwk-oldenburg",
+    "name": "HWK Oldenburg",
+    "region": "Niedersachsen"
+  },
+  {
+    "slug": "hwk-osnabrueck-emsland-grafschaft-bentheim",
+    "name": "HWK Osnabrück-Emsland-Grafschaft Bentheim",
+    "region": "Niedersachsen"
+  },
+  {
+    "slug": "hwk-ostfriesland",
+    "name": "HWK Ostfriesland",
+    "region": "Niedersachsen"
   },
   {
     "slug": "hwk-ostmecklenburg-vorpommern",
