@@ -28,8 +28,8 @@
     "name": "Drechsler"
   },
   {
-    "slug": "edelsteinschleifer-und-graveure",
-    "name": "Edelsteinschleifer- und Graveure"
+    "slug": "edelsteinschleifer-und-graveur",
+    "name": "Edelsteinschleifer und Graveur"
   },
   {
     "slug": "elektrotechniker",
@@ -104,10 +104,6 @@
     "name": "Konditor"
   },
   {
-    "slug": "konditoren",
-    "name": "Konditoren"
-  },
-  {
     "slug": "kosmetiker",
     "name": "Kosmetiker"
   },
@@ -176,8 +172,8 @@
     "name": "Schornsteinfeger"
   },
   {
-    "slug": "steinmetze-und-steinbildhauer",
-    "name": "Steinmetze und Steinbildhauer"
+    "slug": "steinmetz-und-steinbildhauer",
+    "name": "Steinmetz und Steinbildhauer"
   },
   {
     "slug": "strassenbauer",
@@ -186,10 +182,6 @@
   {
     "slug": "stuckateur",
     "name": "Stuckateur"
-  },
-  {
-    "slug": "stuckateure",
-    "name": "Stuckateure"
   },
   {
     "slug": "tischler",

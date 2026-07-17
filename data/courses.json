@@ -28754,9 +28754,9 @@
     "chamber_slug": "hwk-koblenz",
     "chamber_name": "HWK Koblenz",
     "chamber_region": "Rheinland-Pfalz",
-    "trade_slug": "edelsteinschleifer-und-graveure",
-    "trade_name": "Edelsteinschleifer- und Graveure",
-    "title": "Edelsteinschleifer- und Graveure (Teile I + II)",
+    "trade_slug": "edelsteinschleifer-und-graveur",
+    "trade_name": "Edelsteinschleifer und Graveur",
+    "title": "Edelsteinschleifer und Graveur (Teile I + II)",
     "parts": [
       1,
       2
@@ -30308,9 +30308,9 @@
     "chamber_slug": "hwk-koblenz",
     "chamber_name": "HWK Koblenz",
     "chamber_region": "Rheinland-Pfalz",
-    "trade_slug": "konditoren",
-    "trade_name": "Konditoren",
-    "title": "Konditoren (Teile I + II)",
+    "trade_slug": "konditor",
+    "trade_name": "Konditor",
+    "title": "Konditor (Teile I + II)",
     "parts": [
       1,
       2
@@ -30345,9 +30345,9 @@
     "chamber_slug": "hwk-koblenz",
     "chamber_name": "HWK Koblenz",
     "chamber_region": "Rheinland-Pfalz",
-    "trade_slug": "konditoren",
-    "trade_name": "Konditoren",
-    "title": "Konditoren (Teile I + II)",
+    "trade_slug": "konditor",
+    "trade_name": "Konditor",
+    "title": "Konditor (Teile I + II)",
     "parts": [
       1,
       2
@@ -30382,9 +30382,9 @@
     "chamber_slug": "hwk-koblenz",
     "chamber_name": "HWK Koblenz",
     "chamber_region": "Rheinland-Pfalz",
-    "trade_slug": "konditoren",
-    "trade_name": "Konditoren",
-    "title": "Konditoren (Teile I + II)",
+    "trade_slug": "konditor",
+    "trade_name": "Konditor",
+    "title": "Konditor (Teile I + II)",
     "parts": [
       1,
       2
@@ -30789,9 +30789,9 @@
     "chamber_slug": "hwk-koblenz",
     "chamber_name": "HWK Koblenz",
     "chamber_region": "Rheinland-Pfalz",
-    "trade_slug": "steinmetze-und-steinbildhauer",
-    "trade_name": "Steinmetze und Steinbildhauer",
-    "title": "Steinmetze und Steinbildhauer (Teil II)",
+    "trade_slug": "steinmetz-und-steinbildhauer",
+    "trade_name": "Steinmetz und Steinbildhauer",
+    "title": "Steinmetz und Steinbildhauer (Teil II)",
     "parts": [
       2
     ],
@@ -46611,7 +46611,7 @@
     "chamber_region": "Bayern",
     "trade_slug": "elektrotechniker",
     "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teile I + II) — Straubing",
+    "title": "Elektrotechniker (Teile I + II)",
     "parts": [
       1,
       2
@@ -46648,7 +46648,7 @@
     "chamber_region": "Bayern",
     "trade_slug": "elektrotechniker",
     "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teile I + II) — Regensburg",
+    "title": "Elektrotechniker (Teile I + II)",
     "parts": [
       1,
       2
@@ -46685,7 +46685,7 @@
     "chamber_region": "Bayern",
     "trade_slug": "elektrotechniker",
     "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teile I + II) — Landshut",
+    "title": "Elektrotechniker (Teile I + II)",
     "parts": [
       1,
       2
@@ -46722,7 +46722,7 @@
     "chamber_region": "Bayern",
     "trade_slug": "elektrotechniker",
     "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teile I + II) — Schwandorf",
+    "title": "Elektrotechniker (Teile I + II)",
     "parts": [
       1,
       2
@@ -46759,7 +46759,7 @@
     "chamber_region": "Bayern",
     "trade_slug": "elektrotechniker",
     "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teile I + II) — Schwandorf",
+    "title": "Elektrotechniker (Teile I + II)",
     "parts": [
       1,
       2
@@ -46796,7 +46796,7 @@
     "chamber_region": "Bayern",
     "trade_slug": "elektrotechniker",
     "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teile I + II) — Straubing",
+    "title": "Elektrotechniker (Teile I + II)",
     "parts": [
       1,
       2
@@ -46833,7 +46833,7 @@
     "chamber_region": "Bayern",
     "trade_slug": "elektrotechniker",
     "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teile I + II) — Regensburg",
+    "title": "Elektrotechniker (Teile I + II)",
     "parts": [
       1,
       2
@@ -46870,7 +46870,7 @@
     "chamber_region": "Bayern",
     "trade_slug": "elektrotechniker",
     "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teile I + II) — Landshut",
+    "title": "Elektrotechniker (Teile I + II)",
     "parts": [
       1,
       2
@@ -46907,7 +46907,7 @@
     "chamber_region": "Bayern",
     "trade_slug": "elektrotechniker",
     "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teile I + II) — Schwandorf",
+    "title": "Elektrotechniker (Teile I + II)",
     "parts": [
       1,
       2
@@ -46944,7 +46944,7 @@
     "chamber_region": "Bayern",
     "trade_slug": "elektrotechniker",
     "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teile I + II) — Schwandorf",
+    "title": "Elektrotechniker (Teile I + II)",
     "parts": [
       1,
       2
@@ -47018,7 +47018,7 @@
     "chamber_region": "Bayern",
     "trade_slug": "elektrotechniker",
     "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teile I + II) — Straubing",
+    "title": "Elektrotechniker (Teile I + II)",
     "parts": [
       1,
       2
@@ -47055,7 +47055,7 @@
     "chamber_region": "Bayern",
     "trade_slug": "elektrotechniker",
     "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teile I + II) — Regensburg",
+    "title": "Elektrotechniker (Teile I + II)",
     "parts": [
       1,
       2
@@ -47092,7 +47092,7 @@
     "chamber_region": "Bayern",
     "trade_slug": "elektrotechniker",
     "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teile I + II) — Landshut",
+    "title": "Elektrotechniker (Teile I + II)",
     "parts": [
       1,
       2
@@ -47129,7 +47129,7 @@
     "chamber_region": "Bayern",
     "trade_slug": "elektrotechniker",
     "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teile I + II) — Schwandorf",
+    "title": "Elektrotechniker (Teile I + II)",
     "parts": [
       1,
       2
@@ -47166,7 +47166,7 @@
     "chamber_region": "Bayern",
     "trade_slug": "elektrotechniker",
     "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teile I + II) — Schwandorf",
+    "title": "Elektrotechniker (Teile I + II)",
     "parts": [
       1,
       2
@@ -47203,7 +47203,7 @@
     "chamber_region": "Bayern",
     "trade_slug": "elektrotechniker",
     "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teile I + II) — Regensburg",
+    "title": "Elektrotechniker (Teile I + II)",
     "parts": [
       1,
       2
@@ -47240,7 +47240,7 @@
     "chamber_region": "Bayern",
     "trade_slug": "elektrotechniker",
     "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teile I + II) — Straubing",
+    "title": "Elektrotechniker (Teile I + II)",
     "parts": [
       1,
       2
@@ -47277,7 +47277,7 @@
     "chamber_region": "Bayern",
     "trade_slug": "elektrotechniker",
     "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teile I + II) — Landshut",
+    "title": "Elektrotechniker (Teile I + II)",
     "parts": [
       1,
       2
@@ -48790,7 +48790,7 @@
     "chamber_region": "Bayern",
     "trade_slug": "kfz-techniker",
     "trade_name": "Kfz.-Techniker",
-    "title": "Kfz.-Techniker (Teile I + II) — Landshut",
+    "title": "Kfz.-Techniker (Teile I + II)",
     "parts": [
       1,
       2
@@ -48827,7 +48827,7 @@
     "chamber_region": "Bayern",
     "trade_slug": "kfz-techniker",
     "trade_name": "Kfz.-Techniker",
-    "title": "Kfz.-Techniker (Teile I + II) — Regensburg",
+    "title": "Kfz.-Techniker (Teile I + II)",
     "parts": [
       1,
       2
@@ -48937,7 +48937,7 @@
     "chamber_region": "Bayern",
     "trade_slug": "kfz-techniker",
     "trade_name": "Kfz.-Techniker",
-    "title": "Kfz.-Techniker (Teile I + II) — Regensburg",
+    "title": "Kfz.-Techniker (Teile I + II)",
     "parts": [
       1,
       2
@@ -49010,7 +49010,7 @@
     "chamber_region": "Bayern",
     "trade_slug": "kfz-techniker",
     "trade_name": "Kfz.-Techniker",
-    "title": "Kfz.-Techniker (Teile I + II) — Landshut",
+    "title": "Kfz.-Techniker (Teile I + II)",
     "parts": [
       1,
       2
@@ -49786,7 +49786,7 @@
     "chamber_region": "Bayern",
     "trade_slug": "metallbauer",
     "trade_name": "Metallbauer",
-    "title": "Metallbauer (Teile I + II) — Regensburg",
+    "title": "Metallbauer (Teile I + II)",
     "parts": [
       1,
       2
@@ -49823,7 +49823,7 @@
     "chamber_region": "Bayern",
     "trade_slug": "metallbauer",
     "trade_name": "Metallbauer",
-    "title": "Metallbauer (Teile I + II) — Regensburg",
+    "title": "Metallbauer (Teile I + II)",
     "parts": [
       1,
       2
@@ -71294,9 +71294,9 @@
     "chamber_slug": "hwk-saarland",
     "chamber_name": "HWK des Saarlandes",
     "chamber_region": "Saarland",
-    "trade_slug": "stuckateure",
-    "trade_name": "Stuckateure",
-    "title": "Stuckateure (Teil I)",
+    "trade_slug": "stuckateur",
+    "trade_name": "Stuckateur",
+    "title": "Stuckateur (Teil I)",
     "parts": [
       1
     ],
@@ -71330,9 +71330,9 @@
     "chamber_slug": "hwk-saarland",
     "chamber_name": "HWK des Saarlandes",
     "chamber_region": "Saarland",
-    "trade_slug": "stuckateure",
-    "trade_name": "Stuckateure",
-    "title": "Stuckateure (Teil II)",
+    "trade_slug": "stuckateur",
+    "trade_name": "Stuckateur",
+    "title": "Stuckateur (Teil II)",
     "parts": [
       2
     ],

@@ -31,7 +31,6 @@ function prerenderList() {
         defaultState,
         chamberFilterHtml,
         regionsPhrase,
-        regionsEyebrow,
       } = await import("./src/render.js");
       const { esc } = await import("./src/util.js");
       const today = new Date().toISOString().slice(0, 10);
@@ -49,8 +48,7 @@ function prerenderList() {
         .replace('id="count-chambers">0<', `id="count-chambers">${chambers}<`)
         .replace('id="count-trades">0<', `id="count-trades">${trades}<`)
         .replace('id="results-count">0<', `id="results-count">${filtered.length}<`)
-        .replaceAll("{{REGIONS}}", esc(regionsPhrase(chamberData)))
-        .replaceAll("{{REGIONS_EYEBROW}}", esc(regionsEyebrow(chamberData)));
+        .replaceAll("{{REGIONS}}", esc(regionsPhrase(chamberData)));
     },
   };
 }

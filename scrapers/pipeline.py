@@ -16,7 +16,13 @@ from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
 
-from .base import GENERIC_TRADE_SLUG, ScrapeResult, normalize_trade
+from .base import (
+    GENERIC_TRADE_SLUG,
+    ScrapeResult,
+    build_course_title,
+    harmonize_course_record,
+    normalize_trade,
+)
 from .fees import _fmt, build_exam_fee_lookup, resolve_exam_fee
 from .geocode import Geocoder, build_query
 from .hwk_koblenz import HwkKoblenzScraper
@@ -175,7 +181,12 @@ def _is_past(rec: dict, today_iso: str) -> bool:
 
 def offer_to_record(result: ScrapeResult, offer) -> dict:
     """Convert a RawCourseOffer (+ chamber metadata) into a JSON course record."""
-    trade_slug, trade_name = normalize_trade(offer.trade_name)
+    if offer.trade_name is None:
+        trade_slug, trade_name = normalize_trade(None)
+        title = build_course_title(None, offer.parts)
+    else:
+        trade_slug, trade_name = normalize_trade(offer.trade_name)
+        title = build_course_title(trade_name, offer.parts)
     fee = _to_float(offer.course_fee)
     return {
         "chamber_slug":     result.chamber_slug,
@@ -183,7 +194,7 @@ def offer_to_record(result: ScrapeResult, offer) -> dict:
         "chamber_region":   result.chamber_region,
         "trade_slug":       trade_slug,
         "trade_name":       trade_name,
-        "title":            offer.title,
+        "title":            title,
         "parts":            sorted(offer.parts),
         "format":           offer.format_key,
         "format_display":   FORMAT_DISPLAY.get(offer.format_key, offer.format_key),
@@ -367,6 +378,13 @@ def build_course_fees(records: list[dict], today_iso: str) -> list[dict]:
     return list(seen.values())
 
 
+def build_trades_from_records(records: list[dict]) -> list[dict]:
+    trades: dict[str, dict] = {}
+    for rec in records:
+        trades[rec["trade_slug"]] = {"slug": rec["trade_slug"], "name": rec["trade_name"]}
+    return sorted(trades.values(), key=lambda t: t["name"])
+
+
 def build_chambers_and_trades(records: list[dict], results: dict[str, ScrapeResult], previous_chambers: list[dict]) -> tuple[list[dict], list[dict]]:
     # Chambers: union of those seen this run + any retained from previous data.
     chambers: dict[str, dict] = {c["slug"]: c for c in previous_chambers}
@@ -376,13 +394,9 @@ def build_chambers_and_trades(records: list[dict], results: dict[str, ScrapeResu
             "name":   _short_name(res.chamber_name),
             "region": res.chamber_region,
         }
-    # Trades: every trade present in the merged course set.
-    trades: dict[str, dict] = {}
-    for r in records:
-        trades[r["trade_slug"]] = {"slug": r["trade_slug"], "name": r["trade_name"]}
     return (
         sorted(chambers.values(), key=lambda c: c["name"]),
-        sorted(trades.values(), key=lambda t: t["name"]),
+        build_trades_from_records(records),
     )
 
 
@@ -438,6 +452,8 @@ def _resolve_and_write_derived(
     scraped_chambers: set[str] | None = None,
 ):
     """Resolve each course's exam fee, then write courses/exam_fees/course_fees JSON."""
+    for rec in records:
+        harmonize_course_record(rec)
     lookup = build_exam_fee_lookup(scraped_rows, manual_rows)
     for rec in records:
         if scraped_chambers is not None and rec["chamber_slug"] not in scraped_chambers:
@@ -525,6 +541,7 @@ def rebake() -> int:
     scraped_rows.extend(_published_exam_fee_rows_from_scrapers())
     manual_rows = _load_manual_fee_rows()
     _resolve_and_write_derived(records, scraped_rows, manual_rows, today_iso)
+    _write_json(DATA_DIR / "trades.json", build_trades_from_records(records))
     logger.info("Rebaked %d courses with %d manual fee row(s).", len(records), len(manual_rows))
     return len(records)
 

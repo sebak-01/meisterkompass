@@ -2065,7 +2065,7 @@
   },
   {
     "chamber_slug": "hwk-koblenz",
-    "trade_slug": "edelsteinschleifer-und-graveure",
+    "trade_slug": "edelsteinschleifer-und-graveur",
     "parts": [
       1,
       2
@@ -2141,7 +2141,7 @@
   },
   {
     "chamber_slug": "hwk-koblenz",
-    "trade_slug": "steinmetze-und-steinbildhauer",
+    "trade_slug": "steinmetz-und-steinbildhauer",
     "parts": [
       2
     ],
@@ -3115,7 +3115,7 @@
   },
   {
     "chamber_slug": "hwk-koblenz",
-    "trade_slug": "konditoren",
+    "trade_slug": "konditor",
     "parts": [
       1,
       2
@@ -3832,7 +3832,7 @@
   },
   {
     "chamber_slug": "hwk-saarland",
-    "trade_slug": "stuckateure",
+    "trade_slug": "stuckateur",
     "parts": [
       1
     ],
@@ -5141,7 +5141,7 @@
   },
   {
     "chamber_slug": "hwk-saarland",
-    "trade_slug": "stuckateure",
+    "trade_slug": "stuckateur",
     "parts": [
       2
     ],
