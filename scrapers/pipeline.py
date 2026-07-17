@@ -63,6 +63,12 @@ from .hwk_schwerin import HwkSchwerinScraper
 from .hwk_ostmecklenburg_vorpommern import HwkOstmecklenburgVorpommernScraper
 from .hwk_flensburg import HwkFlensburgScraper
 from .hwk_luebeck import HwkLuebeckScraper
+from .hwk_braunschweig_lueneburg_stade import HwkBraunschweigLueneburgStadeScraper
+from .hwk_hannover import HwkHannoverScraper
+from .hwk_hildesheim_suedniedersachsen import HwkHildesheimSuedniedersachsenScraper
+from .hwk_oldenburg import HwkOldenburgScraper
+from .hwk_osnabrueck_emsland_grafschaft_bentheim import HwkOsnabrueckEmslandGrafschaftBentheimScraper
+from .hwk_ostfriesland import HwkOstfrieslandScraper
 
 
 logger = logging.getLogger(__name__)
@@ -108,6 +114,12 @@ SCRAPERS: dict[str, type] = {
     "hwk-berlin": HwkBerlinScraper,
     "hwk-hamburg": HwkHamburgScraper,
     "hwk-bremen": HwkBremenScraper,
+    "hwk-braunschweig-lueneburg-stade": HwkBraunschweigLueneburgStadeScraper,
+    "hwk-hannover": HwkHannoverScraper,
+    "hwk-hildesheim-suedniedersachsen": HwkHildesheimSuedniedersachsenScraper,
+    "hwk-oldenburg": HwkOldenburgScraper,
+    "hwk-osnabrueck-emsland-grafschaft-bentheim": HwkOsnabrueckEmslandGrafschaftBentheimScraper,
+    "hwk-ostfriesland": HwkOstfrieslandScraper,
 }
 
 FORMAT_DISPLAY = {
