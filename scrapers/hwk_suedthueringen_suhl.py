@@ -70,6 +70,20 @@ def _availability(text: str) -> str:
     return "unknown"
 
 
+def _parse_page_fee(main: Tag) -> float | None:
+    """Parse the seminar-level Kosten block when no dated runs are published."""
+    for heading in main.find_all("h4"):
+        if heading.get_text(strip=True) != "Kosten":
+            continue
+        block = heading.find_parent("div") or heading.parent
+        if block is None:
+            continue
+        match = PRICE_RE.search(block.get_text(" ", strip=True))
+        if match:
+            return float(match.group(1).replace(".", "") + "." + match.group(2))
+    return None
+
+
 def _location(text: str, teaching_mode: str) -> tuple[str, str, str]:
     if teaching_mode == "online":
         return "", "", "Online"
@@ -151,6 +165,7 @@ class HwkSuedthueringenSuhlScraper(BaseScraper):
         page_text = main.get_text(" ", strip=True)
         duration_match = DURATION_RE.search(page_text)
         duration = int(duration_match.group(1).replace(".", "")) if duration_match else None
+        page_fee = _parse_page_fee(main)
         offers: list[RawCourseOffer] = []
         seen: set[tuple[str, str]] = set()
 
@@ -192,7 +207,7 @@ class HwkSuedthueringenSuhlScraper(BaseScraper):
                 duration_hours=duration,
                 course_fee=(
                     float(price_match.group(1).replace(".", "") + "." + price_match.group(2))
-                    if price_match else None
+                    if price_match else page_fee
                 ),
                 city=city,
                 street=street,
@@ -214,7 +229,7 @@ class HwkSuedthueringenSuhlScraper(BaseScraper):
             start_date=None,
             end_date=None,
             duration_hours=duration,
-            course_fee=None,
+            course_fee=page_fee,
             city=city,
             street=street,
             zip_code=zip_code,
