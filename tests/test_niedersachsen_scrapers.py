@@ -1,7 +1,9 @@
+import re
 import unittest
 from unittest.mock import patch
 
 from scrapers.fees import build_exam_fee_lookup, resolve_exam_fee
+from scrapers.hwk_bayern import DURATION_RE, DURATION_UNIT
 from scrapers.hwk_braunschweig_lueneburg_stade import (
     HwkBraunschweigLueneburgStadeScraper,
     parse_bls_title,
@@ -45,6 +47,14 @@ class NiedersachsenParserTests(unittest.TestCase):
             parse_hannover_title("Meistervorbereitung Teil III und Teil IV"),
             ([3, 4], None),
         )
+
+    def test_hannover_duration_parses_u_std(self):
+        text = "Lehrgangsdauer 1150 U-Std. (à 45 Minuten)"
+        self.assertEqual(DURATION_RE.search(text).group(1), "1150")
+        detail_match = re.search(
+            rf"Lehrgangsdauer\s+([\d.]+)\s*{DURATION_UNIT}", text, re.IGNORECASE
+        )
+        self.assertEqual(detail_match.group(1), "1150")
 
     def test_hildesheim_title_parsing(self):
         self.assertEqual(
