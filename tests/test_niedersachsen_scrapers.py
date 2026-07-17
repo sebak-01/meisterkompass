@@ -87,6 +87,12 @@ class NiedersachsenParserTests(unittest.TestCase):
             ),
             ([1, 2], "Tischler"),
         )
+        self.assertEqual(
+            parse_sh_title(
+                "Kraftfahrzeutechniker - Vorbereitungskurs auf die Meisterprüfung (Teil I) in Teilzeit"
+            ),
+            ([1], "Kfz.-Techniker"),
+        )
 
     def test_ostfriesland_kdb_title_parsing(self):
         self.assertEqual(
@@ -197,6 +203,42 @@ class NiedersachsenExamFeeTests(unittest.TestCase):
         self.assertIn("gebuehrenordnung-und-gebuehrentarife", pdf_url.lower())
         self.assertIn("2025", pdf_url)
         self.assertNotIn("24,1918", pdf_url)
+
+    def test_oldenburg_exam_fee_table_parsing(self):
+        sample = """
+        <table>
+          <tr><th></th><th>Teil I</th><th>Teil II</th><th>Teil III</th><th>Teil IV /AdA</th></tr>
+          <tr><td>Elektrotechniker</td><td>1.440,00 €</td><td>350,00 €</td><td>300,00 €</td><td>300,00 €</td></tr>
+          <tr><td>Kraftfahrzeugtechniker</td><td>750,00 €</td><td>350,00 €</td><td>300,00 €</td><td>300,00 €</td></tr>
+        </table>
+        """
+        from bs4 import BeautifulSoup
+
+        part_i, generic = HwkOldenburgScraper.parse_exam_fee_table(BeautifulSoup(sample, "html.parser"))
+        self.assertEqual(part_i["Elektrotechniker"], 1440.0)
+        self.assertEqual(part_i["Kraftfahrzeugtechniker"], 750.0)
+        self.assertEqual(generic, {2: 350.0, 3: 300.0, 4: 300.0})
+
+    @patch.object(HwkOldenburgScraper, "_fetch_exam_fees_from_page")
+    def test_oldenburg_exam_fee_resolution(self, mock_fetch):
+        mock_fetch.return_value = (
+            {"Elektrotechniker": 1440.0, "Kraftfahrzeugtechniker": 750.0},
+            {2: 350.0, 3: 300.0, 4: 300.0},
+        )
+        rows = HwkOldenburgScraper().published_exam_fee_rows()
+        lookup = build_exam_fee_lookup(rows, [])
+        self.assertEqual(
+            resolve_exam_fee("hwk-oldenburg", "kfz-techniker", [1], None, lookup)["fee"],
+            750.0,
+        )
+        self.assertEqual(
+            resolve_exam_fee("hwk-oldenburg", "elektrotechniker", [1, 2], None, lookup)["fee"],
+            1790.0,
+        )
+        self.assertEqual(
+            resolve_exam_fee("hwk-oldenburg", "tischler", [3], None, lookup)["fee"],
+            300.0,
+        )
 
     @patch.object(HwkOstfrieslandScraper, "_fetch_exam_fees_from_pdf")
     def test_ostfriesland_exam_fee_resolution(self, mock_fetch):
