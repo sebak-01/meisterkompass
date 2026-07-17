@@ -26,7 +26,8 @@ MONTH_DATE_RE = re.compile(
 )
 NUMERIC_MONTH_RE = re.compile(r"\b(0[1-9]|1[0-2])\.(\d{4})\b")
 PRICE_RE = re.compile(r"([\d.]+),(\d{2})[\s\xa0]*€")
-DURATION_RE = re.compile(r"([\d.]+)[\s\xa0]*(?:UE|UStd\.?|Std\.?)", re.IGNORECASE)
+DURATION_UNIT = r"(?:UE|U-?Std\.?|Std\.?)"
+DURATION_RE = re.compile(rf"([\d.]+)[\s\xa0]*{DURATION_UNIT}", re.IGNORECASE)
 PARTS_RE = re.compile(
     r"Teile?\s*(?P<parts>(?:IV|III|II|I|[1-4])"
     r"(?:\s*(?:\+|und|u\.?|/|bis|-|–)\s*(?:IV|III|II|I|[1-4]))*)",
@@ -480,7 +481,7 @@ class BavariaOdavScraper(BaseScraper):
             f"{detail_title}\n{main_text[:3000]}"
         )
         duration = re.search(
-            r"Lehrgangsdauer\s+([\d.]+)\s*(?:UE|UStd\.?|Std\.?)", main_text, re.IGNORECASE
+            rf"Lehrgangsdauer\s+([\d.]+)\s*{DURATION_UNIT}", main_text, re.IGNORECASE
         )
         address = parse_address(main_text)
         if address:

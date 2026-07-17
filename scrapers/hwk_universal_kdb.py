@@ -24,6 +24,7 @@ KURS_RE = re.compile(r"<kurs>(.*?)</kurs>", re.S)
 SH_TRADE_ALIASES = {
     "kraftfahrzeugtechniker-handwerk": "Kfz.-Techniker",
     "kraftfahrzeugtechniker": "Kfz.-Techniker",
+    "kraftfahrzeutechniker": "Kfz.-Techniker",
     "metallbauerhandwerk": "Metallbauer",
     "zimmererhandwerk": "Zimmerer",
     "straßenbauerhandwerk": "Straßenbauer",

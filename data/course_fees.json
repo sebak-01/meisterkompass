@@ -519,7 +519,7 @@
   },
   {
     "chamber_slug": "hwk-berlin",
-    "trade_slug": "zahntechnik",
+    "trade_slug": "zahntechniker",
     "parts": [
       1,
       2
@@ -1123,7 +1123,7 @@
   },
   {
     "chamber_slug": "hwk-berlin",
-    "trade_slug": "schilder-und-lichtreklamehersteller-handwerk",
+    "trade_slug": "schilder-und-lichtreklamehersteller",
     "parts": [
       1,
       2
@@ -2033,7 +2033,7 @@
   },
   {
     "chamber_slug": "hwk-koblenz",
-    "trade_slug": "edelsteinschleifer-und-graveure",
+    "trade_slug": "edelsteinschleifer-und-graveur",
     "parts": [
       1,
       2
@@ -2119,7 +2119,7 @@
   },
   {
     "chamber_slug": "hwk-koblenz",
-    "trade_slug": "steinmetze-und-steinbildhauer",
+    "trade_slug": "steinmetz-und-steinbildhauer",
     "parts": [
       2
     ],
@@ -2227,7 +2227,7 @@
   },
   {
     "chamber_slug": "hwk-rhein-main",
-    "trade_slug": "maler",
+    "trade_slug": "maler-und-lackierer",
     "parts": [
       1,
       2
@@ -3104,7 +3104,7 @@
   },
   {
     "chamber_slug": "hwk-koblenz",
-    "trade_slug": "konditoren",
+    "trade_slug": "konditor",
     "parts": [
       1,
       2
@@ -3810,7 +3810,7 @@
   },
   {
     "chamber_slug": "hwk-saarland",
-    "trade_slug": "stuckateure",
+    "trade_slug": "stuckateur",
     "parts": [
       1
     ],
@@ -5106,7 +5106,7 @@
   },
   {
     "chamber_slug": "hwk-saarland",
-    "trade_slug": "stuckateure",
+    "trade_slug": "stuckateur",
     "parts": [
       2
     ],

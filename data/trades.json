@@ -28,8 +28,8 @@
     "name": "Drechsler"
   },
   {
-    "slug": "edelsteinschleifer-und-graveure",
-    "name": "Edelsteinschleifer- und Graveure"
+    "slug": "edelsteinschleifer-und-graveur",
+    "name": "Edelsteinschleifer und Graveur"
   },
   {
     "slug": "elektrotechniker",
@@ -104,10 +104,6 @@
     "name": "Konditor"
   },
   {
-    "slug": "konditoren",
-    "name": "Konditoren"
-  },
-  {
     "slug": "kosmetiker",
     "name": "Kosmetiker"
   },
@@ -118,10 +114,6 @@
   {
     "slug": "land-und-baumaschinenmechatroniker",
     "name": "Land- und Baumaschinenmechatroniker"
-  },
-  {
-    "slug": "maler",
-    "name": "Maler"
   },
   {
     "slug": "maler-und-lackierer",
@@ -168,16 +160,12 @@
     "name": "Schilder- und Lichtreklamehersteller"
   },
   {
-    "slug": "schilder-und-lichtreklamehersteller-handwerk",
-    "name": "Schilder- und Lichtreklamehersteller-Handwerk"
-  },
-  {
     "slug": "schornsteinfeger",
     "name": "Schornsteinfeger"
   },
   {
-    "slug": "steinmetze-und-steinbildhauer",
-    "name": "Steinmetze und Steinbildhauer"
+    "slug": "steinmetz-und-steinbildhauer",
+    "name": "Steinmetz und Steinbildhauer"
   },
   {
     "slug": "strassenbauer",
@@ -186,10 +174,6 @@
   {
     "slug": "stuckateur",
     "name": "Stuckateur"
-  },
-  {
-    "slug": "stuckateure",
-    "name": "Stuckateure"
   },
   {
     "slug": "tischler",
@@ -202,10 +186,6 @@
   {
     "slug": "warme-kalte-schallschutzisolierer",
     "name": "Wärme-, Kälte-, Schallschutzisolierer"
-  },
-  {
-    "slug": "zahntechnik",
-    "name": "Zahntechnik"
   },
   {
     "slug": "zahntechniker",

@@ -27,6 +27,19 @@ _GENERIC_PART_NAMES: dict[tuple[int, ...], str] = {
 
 _ROMAN = {1: "I", 2: "II", 3: "III", 4: "IV"}
 
+# Alternate chamber trade labels → canonical display name for filters and titles.
+TRADE_CANONICAL_ALIASES: dict[str, str] = {
+    "konditoren": "Konditor",
+    "stuckateure": "Stuckateur",
+    "friseure": "Friseur",
+    "friseurinnen": "Friseur",
+    "steinmetze und steinbildhauer": "Steinmetz und Steinbildhauer",
+    "edelsteinschleifer- und graveure": "Edelsteinschleifer und Graveur",
+    "schilder- und lichtreklamehersteller-handwerk": "Schilder- und Lichtreklamehersteller",
+    "maler": "Maler und Lackierer",
+    "zahntechnik": "Zahntechniker",
+}
+
 
 def slugify(value: str) -> str:
     """
@@ -44,6 +57,11 @@ def slugify(value: str) -> str:
     return re.sub(r"[-\s]+", "-", value).strip("-_")
 
 
+def canonicalize_trade_name(trade_name: str) -> str:
+    """Map alternate chamber trade labels to the canonical display name."""
+    return TRADE_CANONICAL_ALIASES.get(trade_name.lower(), trade_name)
+
+
 def normalize_trade(trade_name: str | None) -> tuple[str, str]:
     """
     Pure replacement for the old DB-backed ``_resolve_trade``.
@@ -53,7 +71,19 @@ def normalize_trade(trade_name: str | None) -> tuple[str, str]:
     """
     if trade_name is None:
         return GENERIC_TRADE_SLUG, GENERIC_TRADE_NAME
+    trade_name = canonicalize_trade_name(trade_name)
     return slugify(trade_name), trade_name
+
+
+def harmonize_course_record(rec: dict) -> None:
+    """Re-apply trade normalization and rebuild the display title."""
+    raw = rec.get("trade_name")
+    if raw is None or raw == GENERIC_TRADE_NAME:
+        return
+    trade_slug, trade_name = normalize_trade(raw)
+    rec["trade_slug"] = trade_slug
+    rec["trade_name"] = trade_name
+    rec["title"] = build_course_title(trade_name, rec["parts"])
 
 
 def build_course_title(trade_name: str | None, parts: list[int]) -> str:
