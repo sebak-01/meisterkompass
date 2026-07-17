@@ -36,6 +36,30 @@ class SachsenParserTests(unittest.TestCase):
             ([1, 2], "Informationstechniker"),
         )
 
+    def test_chemnitz_termin_parses_exam_fee_from_course_page(self):
+        soup = BeautifulSoup(
+            """
+            <details id="termin_976">
+              <summary>16. August 2027 bis 23. Juni 2028 in Seiffen</summary>
+              <p>Termin 16. August 2027 bis 23. Juni 2028</p>
+              <p>Hauptstraße 112<br>09548 Seiffen</p>
+              <p>Gebühr 9.490,00 €</p>
+              <p>Prüfungsgebühr 730,00 €</p>
+              <p>Kursnummer 12345</p>
+            </details>
+            """,
+            "html.parser",
+        )
+        offer = HwkChemnitzScraper()._parse_termin(
+            soup.select_one("#termin_976"),
+            "Vorbereitungskurs Drechsler- und Holzspielzeugmachermeister Teile I/II",
+            [1, 2],
+            "Drechsler",
+            "https://example.test/kurs/",
+        )
+        self.assertEqual(offer.course_fee, 9490.0)
+        self.assertEqual(offer.exam_fee_scraped, 730.0)
+
     def test_dresden_discover_excludes_non_meister_courses(self):
         soup = BeautifulSoup(
             """

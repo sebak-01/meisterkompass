@@ -16,8 +16,11 @@ from scrapers.hwk_ostthueringen_gera import (
 )
 from scrapers.hwk_suedthueringen_suhl import (
     HwkSuedthueringenSuhlScraper,
+    ROHR_CAMPUS,
+    _location,
     parse_suhl_title,
 )
+from scrapers.geocode import build_query
 from scrapers.pipeline import SCRAPERS
 
 
@@ -118,6 +121,19 @@ class ThueringenParserTests(unittest.TestCase):
         self.assertTrue(all(offer.duration_hours == 1224 for offer in offers))
         self.assertTrue(all(offer.street == "Kloster 1" for offer in offers))
         self.assertTrue(all(offer.city == "Rohr" for offer in offers))
+
+    def test_suhl_location_strips_warenkorb_suffix_and_uses_rohr_campus(self):
+        street, zip_code, city = _location(
+            "Kloster 1 98530 Rohr In den Warenkorb Kosten 11.890,00 € Kursnummer 1",
+            "presence",
+        )
+        self.assertEqual((street, zip_code, city), ("Kloster 1", "98530", "Rohr"))
+        self.assertEqual(
+            build_query(street, zip_code, city, "Thüringen"),
+            "Kloster 1, 98530 Rohr, Thüringen, Deutschland",
+        )
+        self.assertAlmostEqual(ROHR_CAMPUS["latitude"], 50.707055)
+        self.assertAlmostEqual(ROHR_CAMPUS["longitude"], 10.891878)
 
     def test_suhl_parses_page_level_kosten_without_dated_runs(self):
         soup = BeautifulSoup(

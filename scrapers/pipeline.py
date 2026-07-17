@@ -56,7 +56,7 @@ from .hwk_unterfranken import HwkUnterfrankenScraper
 from .hwk_wiesbaden import HwkWiesbadenScraper
 from .hwk_erfurt import HwkErfurtScraper
 from .hwk_ostthueringen_gera import HwkOstthueringenGeraScraper
-from .hwk_suedthueringen_suhl import HwkSuedthueringenSuhlScraper
+from .hwk_suedthueringen_suhl import HwkSuedthueringenSuhlScraper, ROHR_CAMPUS
 from .hwk_halle_saale import HwkHalleSaaleScraper
 from .hwk_magdeburg import HwkMagdeburgScraper
 from .hwk_dresden import HwkDresdenScraper
@@ -291,6 +291,16 @@ def apply_coordinates(records: list[dict], geocoder: Geocoder):
             continue
         if cs == "hwk-rheinhessen":
             rec["latitude"], rec["longitude"] = rh_resolve_coords(rec.get("street", "")) or RH_DEFAULT_COORDS
+            continue
+        if (
+            cs == "hwk-suedthueringen-suhl"
+            and rec.get("zip_code") == "98530"
+            and (rec.get("city") or "").startswith("Rohr")
+        ):
+            rec["latitude"] = ROHR_CAMPUS["latitude"]
+            rec["longitude"] = ROHR_CAMPUS["longitude"]
+            rec["street"] = ROHR_CAMPUS["street"]
+            rec["city"] = ROHR_CAMPUS["city"]
             continue
         if not rec.get("city"):
             continue
