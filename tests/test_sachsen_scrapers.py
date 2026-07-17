@@ -177,6 +177,39 @@ class SachsenParserTests(unittest.TestCase):
             rows = scraper.published_exam_fee_rows()
         self.assertTrue(all(row["source_url"] == LEIPZIG_EXAM_FEES_PAGE_URL for row in rows))
 
+    def test_leipzig_course_page_exam_fees_take_priority(self):
+        from scrapers.hwk_bayern import parse_exam_fee
+
+        sample = """
+        Prüfungsgebühr für Teil I:
+        395 Euro
+        Prüfungsgebühr für Teil II:
+        320 Euro
+        """
+        fee, _ = parse_exam_fee(sample, [1, 2])
+        self.assertEqual(fee, 715.0)
+
+        scraper = HwkLeipzigScraper()
+        soup = scraper.parse_html(
+            "https://www.hwk-leipzig.de/3,0,coursedetail.html?id=74457"
+        )
+        card = {
+            "raw_title": "Elektrotechniker-Meister Teile I und II, Vollzeit",
+            "parts": [1, 2],
+            "trade_name": "Elektrotechniker",
+            "format_key": "full_time",
+            "teaching_mode": "presence",
+            "start_date": None,
+            "end_date": None,
+            "duration_hours": None,
+            "course_fee": None,
+            "detail_url": "https://www.hwk-leipzig.de/3,0,coursedetail.html?id=74457",
+            "availability": "available",
+            "card_text": "",
+        }
+        offer = scraper._enrich({**card, "detail_url": card["detail_url"]})
+        self.assertEqual(offer.exam_fee_scraped, 715.0)
+
     def test_dresden_collect_resolves_exam_fees(self):
         scraper = HwkDresdenScraper()
         with patch.object(scraper, "fetch_raw_courses", return_value=[]):

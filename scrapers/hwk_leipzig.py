@@ -79,11 +79,6 @@ class HwkLeipzigScraper(BavariaOdavScraper):
         logger.info("HWK Leipzig: parsed %d unique course offers.", len(offers))
         return offers
 
-    def postprocess_offer(self, offer: RawCourseOffer) -> RawCourseOffer:
-        offer.exam_fee_scraped = None
-        offer.exam_fee_qualifier = ""
-        return offer
-
     @staticmethod
     def parse_meister_exam_fees(text: str) -> dict[int, float]:
         fees: dict[int, float] = {}

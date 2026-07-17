@@ -327,6 +327,19 @@ def parse_exam_fee(text: str, parts: list[int]) -> tuple[float | None, str]:
                 amount = _amount_from_match(match, 1, 2)
             part_amounts[part] = amount
 
+    # Leipzig-style whole-euro amounts on the next line, e.g. "Teil I:\n395 Euro".
+    for match in re.finditer(
+        r"Prüfungsgebühr(?:\s+für)?\s+(?:den\s+)?Teil\s+(I{1,3}|IV)\s*[:：]?\s*"
+        r"(?:\n|\s)*(?:€\s*)?([\d.]+)\s*(?:€|Euro)\b",
+        text,
+        re.IGNORECASE,
+    ):
+        part = ROMAN[match.group(1).upper()]
+        part_amounts.setdefault(
+            part,
+            float(match.group(2).replace(".", "")),
+        )
+
     if not part_amounts:
         combo = re.search(
             r"Prüfungsgebühr\s+Teile?\s+(?:I\s+und\s+II|III\s+und\s+IV|I{1,3}\s+und\s+II)"
