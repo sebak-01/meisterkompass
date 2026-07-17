@@ -3287,14 +3287,14 @@
     "duration_hours": 242,
     "course_fee": 3080.0,
     "course_fee_display": "3.080 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 730.0,
       "fee_max": null,
       "qualifier": "",
       "display": "730 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Annaberg-Buchholz",
     "street": "Bärensteiner Straße 2",
@@ -3324,14 +3324,14 @@
     "duration_hours": 435,
     "course_fee": 9490.0,
     "course_fee_display": "9.490 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 730.0,
       "fee_max": null,
       "qualifier": "",
       "display": "730 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Seiffen",
     "street": "Hauptstraße 112",
@@ -3361,14 +3361,14 @@
     "duration_hours": 1150,
     "course_fee": 10860.0,
     "course_fee_display": "10.860 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 730.0,
       "fee_max": null,
       "qualifier": "",
       "display": "730 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -3398,14 +3398,14 @@
     "duration_hours": 1150,
     "course_fee": 10860.0,
     "course_fee_display": "10.860 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 730.0,
       "fee_max": null,
       "qualifier": "",
       "display": "730 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -3435,14 +3435,14 @@
     "duration_hours": 1150,
     "course_fee": 11510.0,
     "course_fee_display": "11.510 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 730.0,
       "fee_max": null,
       "qualifier": "",
       "display": "730 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -3472,14 +3472,14 @@
     "duration_hours": 1150,
     "course_fee": 11510.0,
     "course_fee_display": "11.510 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 730.0,
       "fee_max": null,
       "qualifier": "",
       "display": "730 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -3509,14 +3509,14 @@
     "duration_hours": 570,
     "course_fee": 6850.0,
     "course_fee_display": "6.850 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 730.0,
       "fee_max": null,
       "qualifier": "",
       "display": "730 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -3546,14 +3546,14 @@
     "duration_hours": 600,
     "course_fee": 8420.0,
     "course_fee_display": "8.420 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 730.0,
       "fee_max": null,
       "qualifier": "",
       "display": "730 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -3583,14 +3583,14 @@
     "duration_hours": 656,
     "course_fee": 10890.0,
     "course_fee_display": "10.890 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 730.0,
       "fee_max": null,
       "qualifier": "",
       "display": "730 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -3620,14 +3620,14 @@
     "duration_hours": 1084,
     "course_fee": 11480.0,
     "course_fee_display": "11.480 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 730.0,
       "fee_max": null,
       "qualifier": "",
       "display": "730 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -3657,14 +3657,14 @@
     "duration_hours": 1084,
     "course_fee": 12170.0,
     "course_fee_display": "12.170 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 730.0,
       "fee_max": null,
       "qualifier": "",
       "display": "730 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -3694,14 +3694,14 @@
     "duration_hours": 1160,
     "course_fee": 10300.0,
     "course_fee_display": "10.300 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 730.0,
       "fee_max": null,
       "qualifier": "",
       "display": "730 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -3731,14 +3731,14 @@
     "duration_hours": 1160,
     "course_fee": 10300.0,
     "course_fee_display": "10.300 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 730.0,
       "fee_max": null,
       "qualifier": "",
       "display": "730 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -3768,14 +3768,14 @@
     "duration_hours": 1160,
     "course_fee": 10920.0,
     "course_fee_display": "10.920 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 730.0,
       "fee_max": null,
       "qualifier": "",
       "display": "730 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -3805,14 +3805,14 @@
     "duration_hours": 812,
     "course_fee": 9210.0,
     "course_fee_display": "9.210 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 730.0,
       "fee_max": null,
       "qualifier": "",
       "display": "730 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -3842,14 +3842,14 @@
     "duration_hours": 812,
     "course_fee": 9210.0,
     "course_fee_display": "9.210 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 730.0,
       "fee_max": null,
       "qualifier": "",
       "display": "730 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -3879,14 +3879,14 @@
     "duration_hours": 812,
     "course_fee": 9600.0,
     "course_fee_display": "9.600 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 730.0,
       "fee_max": null,
       "qualifier": "",
       "display": "730 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -3916,14 +3916,14 @@
     "duration_hours": 812,
     "course_fee": 9600.0,
     "course_fee_display": "9.600 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 730.0,
       "fee_max": null,
       "qualifier": "",
       "display": "730 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -3953,14 +3953,14 @@
     "duration_hours": 812,
     "course_fee": 9890.0,
     "course_fee_display": "9.890 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 730.0,
       "fee_max": null,
       "qualifier": "",
       "display": "730 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -3990,14 +3990,14 @@
     "duration_hours": 812,
     "course_fee": 9890.0,
     "course_fee_display": "9.890 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 730.0,
       "fee_max": null,
       "qualifier": "",
       "display": "730 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -4027,14 +4027,14 @@
     "duration_hours": 812,
     "course_fee": 10190.0,
     "course_fee_display": "10.190 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 730.0,
       "fee_max": null,
       "qualifier": "",
       "display": "730 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -4064,14 +4064,14 @@
     "duration_hours": 308,
     "course_fee": 4550.0,
     "course_fee_display": "4.550 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 730.0,
       "fee_max": null,
       "qualifier": "",
       "display": "730 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -4101,14 +4101,14 @@
     "duration_hours": 872,
     "course_fee": 9490.0,
     "course_fee_display": "9.490 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 730.0,
       "fee_max": null,
       "qualifier": "",
       "display": "730 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Plauen",
     "street": "Rähnisstraße 19",
@@ -4138,14 +4138,14 @@
     "duration_hours": 872,
     "course_fee": 10290.0,
     "course_fee_display": "10.290 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 730.0,
       "fee_max": null,
       "qualifier": "",
       "display": "730 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Plauen",
     "street": "Rähnisstraße 19",
@@ -4175,14 +4175,14 @@
     "duration_hours": 1000,
     "course_fee": 11530.0,
     "course_fee_display": "11.530 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 730.0,
       "fee_max": null,
       "qualifier": "",
       "display": "730 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -4212,14 +4212,14 @@
     "duration_hours": 808,
     "course_fee": 8230.0,
     "course_fee_display": "8.230 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 730.0,
       "fee_max": null,
       "qualifier": "",
       "display": "730 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -4249,14 +4249,14 @@
     "duration_hours": 655,
     "course_fee": 7990.0,
     "course_fee_display": "7.990 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 730.0,
       "fee_max": null,
       "qualifier": "",
       "display": "730 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -4286,21 +4286,21 @@
     "duration_hours": 655,
     "course_fee": 8230.0,
     "course_fee_display": "8.230 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 730.0,
       "fee_max": null,
       "qualifier": "",
       "display": "730 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
     "zip_code": "09116",
     "latitude": 50.8307235,
     "longitude": 12.8727524,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/vorbereitungskurs-metallbauermeister-teile-i-ii/#termin_726"
   },
   {
@@ -4323,14 +4323,14 @@
     "duration_hours": 655,
     "course_fee": 8460.0,
     "course_fee_display": "8.460 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 730.0,
       "fee_max": null,
       "qualifier": "",
       "display": "730 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -4360,14 +4360,14 @@
     "duration_hours": 655,
     "course_fee": 9110.0,
     "course_fee_display": "9.110 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 730.0,
       "fee_max": null,
       "qualifier": "",
       "display": "730 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -4397,14 +4397,14 @@
     "duration_hours": 882,
     "course_fee": 7850.0,
     "course_fee_display": "7.850 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 730.0,
       "fee_max": null,
       "qualifier": "",
       "display": "730 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -4434,14 +4434,14 @@
     "duration_hours": 882,
     "course_fee": 8680.0,
     "course_fee_display": "8.680 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 730.0,
       "fee_max": null,
       "qualifier": "",
       "display": "730 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -4471,14 +4471,14 @@
     "duration_hours": 714,
     "course_fee": 7980.0,
     "course_fee_display": "7.980 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 730.0,
       "fee_max": null,
       "qualifier": "",
       "display": "730 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -4508,14 +4508,14 @@
     "duration_hours": 714,
     "course_fee": 8600.0,
     "course_fee_display": "8.600 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 730.0,
       "fee_max": null,
       "qualifier": "",
       "display": "730 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -4544,14 +4544,14 @@
     "duration_hours": 100,
     "course_fee": 790.0,
     "course_fee_display": "790 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -4580,14 +4580,14 @@
     "duration_hours": 390,
     "course_fee": 3170.0,
     "course_fee_display": "3.170 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -4616,14 +4616,14 @@
     "duration_hours": 100,
     "course_fee": 790.0,
     "course_fee_display": "790 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Plauen",
     "street": "Rähnisstraße 19",
@@ -4652,14 +4652,14 @@
     "duration_hours": 390,
     "course_fee": 3170.0,
     "course_fee_display": "3.170 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Plauen",
     "street": "Rähnisstraße 19",
@@ -4688,14 +4688,14 @@
     "duration_hours": 390,
     "course_fee": 3170.0,
     "course_fee_display": "3.170 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -4724,14 +4724,14 @@
     "duration_hours": 290,
     "course_fee": 2380.0,
     "course_fee_display": "2.380 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -4760,14 +4760,14 @@
     "duration_hours": 100,
     "course_fee": 790.0,
     "course_fee_display": "790 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -4796,14 +4796,14 @@
     "duration_hours": 100,
     "course_fee": 790.0,
     "course_fee_display": "790 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -4832,14 +4832,14 @@
     "duration_hours": 390,
     "course_fee": 3170.0,
     "course_fee_display": "3.170 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Plauen",
     "street": "Rähnisstraße 19",
@@ -4868,14 +4868,14 @@
     "duration_hours": 390,
     "course_fee": 3170.0,
     "course_fee_display": "3.170 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -4904,14 +4904,14 @@
     "duration_hours": 390,
     "course_fee": 3170.0,
     "course_fee_display": "3.170 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -4940,14 +4940,14 @@
     "duration_hours": 390,
     "course_fee": 3170.0,
     "course_fee_display": "3.170 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Zwickau",
     "street": "Scheffelstraße 39",
@@ -4976,14 +4976,14 @@
     "duration_hours": 290,
     "course_fee": 2380.0,
     "course_fee_display": "2.380 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Zwickau",
     "street": "Scheffelstraße 39",
@@ -5012,14 +5012,14 @@
     "duration_hours": 100,
     "course_fee": 790.0,
     "course_fee_display": "790 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Annaberg-Buchholz",
     "street": "Bahnhofstraße 1",
@@ -5048,14 +5048,14 @@
     "duration_hours": 390,
     "course_fee": 3170.0,
     "course_fee_display": "3.170 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Annaberg-Buchholz",
     "street": "Bahnhofstraße 1",
@@ -5084,14 +5084,14 @@
     "duration_hours": 290,
     "course_fee": 2380.0,
     "course_fee_display": "2.380 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -5120,14 +5120,14 @@
     "duration_hours": 290,
     "course_fee": 2380.0,
     "course_fee_display": "2.380 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -5156,14 +5156,14 @@
     "duration_hours": 100,
     "course_fee": 790.0,
     "course_fee_display": "790 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -5192,14 +5192,14 @@
     "duration_hours": 390,
     "course_fee": 3170.0,
     "course_fee_display": "3.170 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -5228,14 +5228,14 @@
     "duration_hours": 100,
     "course_fee": 790.0,
     "course_fee_display": "790 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Plauen",
     "street": "Rähnisstraße 19",
@@ -5264,14 +5264,14 @@
     "duration_hours": 100,
     "course_fee": 790.0,
     "course_fee_display": "790 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Zwickau",
     "street": "Scheffelstraße 39",
@@ -5300,14 +5300,14 @@
     "duration_hours": 390,
     "course_fee": 3170.0,
     "course_fee_display": "3.170 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Zwickau",
     "street": "Scheffelstraße 39",
@@ -5336,14 +5336,14 @@
     "duration_hours": 290,
     "course_fee": 2380.0,
     "course_fee_display": "2.380 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -5372,14 +5372,14 @@
     "duration_hours": 290,
     "course_fee": 2380.0,
     "course_fee_display": "2.380 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Plauen",
     "street": "Rähnisstraße 19",
@@ -5408,14 +5408,14 @@
     "duration_hours": 290,
     "course_fee": 2380.0,
     "course_fee_display": "2.380 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Annaberg-Buchholz",
     "street": "Bahnhofstraße 1",
@@ -5444,14 +5444,14 @@
     "duration_hours": 100,
     "course_fee": 820.0,
     "course_fee_display": "820 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Plauen",
     "street": "Rähnisstraße 19",
@@ -5480,14 +5480,14 @@
     "duration_hours": 100,
     "course_fee": 820.0,
     "course_fee_display": "820 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -5516,14 +5516,14 @@
     "duration_hours": 100,
     "course_fee": 820.0,
     "course_fee_display": "820 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -5552,14 +5552,14 @@
     "duration_hours": 390,
     "course_fee": 3270.0,
     "course_fee_display": "3.270 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Plauen",
     "street": "Rähnisstraße 19",
@@ -5588,14 +5588,14 @@
     "duration_hours": 390,
     "course_fee": 3270.0,
     "course_fee_display": "3.270 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -5624,14 +5624,14 @@
     "duration_hours": 390,
     "course_fee": 3270.0,
     "course_fee_display": "3.270 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -5660,14 +5660,14 @@
     "duration_hours": 290,
     "course_fee": 2380.0,
     "course_fee_display": "2.380 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -5696,14 +5696,14 @@
     "duration_hours": 290,
     "course_fee": 2380.0,
     "course_fee_display": "2.380 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Zwickau",
     "street": "Scheffelstraße 39",
@@ -5732,14 +5732,14 @@
     "duration_hours": 290,
     "course_fee": 2450.0,
     "course_fee_display": "2.450 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Plauen",
     "street": "Rähnisstraße 19",
@@ -5768,14 +5768,14 @@
     "duration_hours": 290,
     "course_fee": 2450.0,
     "course_fee_display": "2.450 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -5804,14 +5804,14 @@
     "duration_hours": 290,
     "course_fee": 2450.0,
     "course_fee_display": "2.450 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -5840,14 +5840,14 @@
     "duration_hours": 100,
     "course_fee": 820.0,
     "course_fee_display": "820 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -5876,14 +5876,14 @@
     "duration_hours": 390,
     "course_fee": 3270.0,
     "course_fee_display": "3.270 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -5912,14 +5912,14 @@
     "duration_hours": 100,
     "course_fee": 790.0,
     "course_fee_display": "790 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Zwickau",
     "street": "Scheffelstraße 39",
@@ -5948,14 +5948,14 @@
     "duration_hours": 100,
     "course_fee": 790.0,
     "course_fee_display": "790 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -5984,14 +5984,14 @@
     "duration_hours": 290,
     "course_fee": 2450.0,
     "course_fee_display": "2.450 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -6020,14 +6020,14 @@
     "duration_hours": 100,
     "course_fee": 820.0,
     "course_fee_display": "820 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Plauen",
     "street": "Rähnisstraße 19",
@@ -6056,14 +6056,14 @@
     "duration_hours": 100,
     "course_fee": 820.0,
     "course_fee_display": "820 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -6092,14 +6092,14 @@
     "duration_hours": 100,
     "course_fee": 820.0,
     "course_fee_display": "820 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -6128,14 +6128,14 @@
     "duration_hours": 100,
     "course_fee": 820.0,
     "course_fee_display": "820 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -6164,14 +6164,14 @@
     "duration_hours": 390,
     "course_fee": 3270.0,
     "course_fee_display": "3.270 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Plauen",
     "street": "Rähnisstraße 19",
@@ -6200,14 +6200,14 @@
     "duration_hours": 390,
     "course_fee": 3270.0,
     "course_fee_display": "3.270 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -6236,14 +6236,14 @@
     "duration_hours": 390,
     "course_fee": 3270.0,
     "course_fee_display": "3.270 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -6272,14 +6272,14 @@
     "duration_hours": 390,
     "course_fee": 3270.0,
     "course_fee_display": "3.270 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -6308,14 +6308,14 @@
     "duration_hours": 100,
     "course_fee": 820.0,
     "course_fee_display": "820 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Plauen",
     "street": "Rähnisstraße 19",
@@ -6344,14 +6344,14 @@
     "duration_hours": 390,
     "course_fee": 3270.0,
     "course_fee_display": "3.270 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Plauen",
     "street": "Rähnisstraße 19",
@@ -6380,14 +6380,14 @@
     "duration_hours": 100,
     "course_fee": 820.0,
     "course_fee_display": "820 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Annaberg-Buchholz",
     "street": "Bahnhofstraße 1",
@@ -6416,14 +6416,14 @@
     "duration_hours": 390,
     "course_fee": 3270.0,
     "course_fee_display": "3.270 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Annaberg-Buchholz",
     "street": "Bahnhofstraße 1",
@@ -6452,14 +6452,14 @@
     "duration_hours": 390,
     "course_fee": 3270.0,
     "course_fee_display": "3.270 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -6488,14 +6488,14 @@
     "duration_hours": 290,
     "course_fee": 2450.0,
     "course_fee_display": "2.450 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -6524,14 +6524,14 @@
     "duration_hours": 390,
     "course_fee": 3270.0,
     "course_fee_display": "3.270 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Zwickau",
     "street": "Scheffelstraße 39",
@@ -6560,14 +6560,14 @@
     "duration_hours": 290,
     "course_fee": 2450.0,
     "course_fee_display": "2.450 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Zwickau",
     "street": "Scheffelstraße 39",
@@ -6596,14 +6596,14 @@
     "duration_hours": 290,
     "course_fee": 2450.0,
     "course_fee_display": "2.450 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Plauen",
     "street": "Rähnisstraße 19",
@@ -6632,14 +6632,14 @@
     "duration_hours": 290,
     "course_fee": 2450.0,
     "course_fee_display": "2.450 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -6668,14 +6668,14 @@
     "duration_hours": 290,
     "course_fee": 2450.0,
     "course_fee_display": "2.450 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -6704,14 +6704,14 @@
     "duration_hours": 100,
     "course_fee": 820.0,
     "course_fee_display": "820 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -6740,14 +6740,14 @@
     "duration_hours": 390,
     "course_fee": 3270.0,
     "course_fee_display": "3.270 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -6776,14 +6776,14 @@
     "duration_hours": 100,
     "course_fee": 820.0,
     "course_fee_display": "820 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Zwickau",
     "street": "Scheffelstraße 39",
@@ -6812,14 +6812,14 @@
     "duration_hours": 390,
     "course_fee": 3270.0,
     "course_fee_display": "3.270 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Zwickau",
     "street": "Scheffelstraße 39",
@@ -6848,14 +6848,14 @@
     "duration_hours": 290,
     "course_fee": 2450.0,
     "course_fee_display": "2.450 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -6884,14 +6884,14 @@
     "duration_hours": 290,
     "course_fee": 2450.0,
     "course_fee_display": "2.450 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Plauen",
     "street": "Rähnisstraße 19",
@@ -6920,14 +6920,14 @@
     "duration_hours": 290,
     "course_fee": 2450.0,
     "course_fee_display": "2.450 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Annaberg-Buchholz",
     "street": "Bahnhofstraße 1",
@@ -6956,14 +6956,14 @@
     "duration_hours": 290,
     "course_fee": 2450.0,
     "course_fee_display": "2.450 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -6992,14 +6992,14 @@
     "duration_hours": 100,
     "course_fee": 900.0,
     "course_fee_display": "900 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Plauen",
     "street": "Rähnisstraße 19",
@@ -7028,14 +7028,14 @@
     "duration_hours": 100,
     "course_fee": 900.0,
     "course_fee_display": "900 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -7064,14 +7064,14 @@
     "duration_hours": 100,
     "course_fee": 900.0,
     "course_fee_display": "900 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -7100,14 +7100,14 @@
     "duration_hours": 390,
     "course_fee": 3570.0,
     "course_fee_display": "3.570 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Plauen",
     "street": "Rähnisstraße 19",
@@ -7136,14 +7136,14 @@
     "duration_hours": 390,
     "course_fee": 3570.0,
     "course_fee_display": "3.570 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -7172,14 +7172,14 @@
     "duration_hours": 390,
     "course_fee": 3570.0,
     "course_fee_display": "3.570 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -7208,14 +7208,14 @@
     "duration_hours": 290,
     "course_fee": 2450.0,
     "course_fee_display": "2.450 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Zwickau",
     "street": "Scheffelstraße 39",
@@ -7244,14 +7244,14 @@
     "duration_hours": 290,
     "course_fee": 2670.0,
     "course_fee_display": "2.670 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Plauen",
     "street": "Rähnisstraße 19",
@@ -7280,14 +7280,14 @@
     "duration_hours": 290,
     "course_fee": 2670.0,
     "course_fee_display": "2.670 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -7316,14 +7316,14 @@
     "duration_hours": 290,
     "course_fee": 2670.0,
     "course_fee_display": "2.670 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -7352,14 +7352,14 @@
     "duration_hours": 100,
     "course_fee": 820.0,
     "course_fee_display": "820 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -7388,14 +7388,14 @@
     "duration_hours": 100,
     "course_fee": 900.0,
     "course_fee_display": "900 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -7424,14 +7424,14 @@
     "duration_hours": 390,
     "course_fee": 3570.0,
     "course_fee_display": "3.570 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -7460,14 +7460,14 @@
     "duration_hours": 100,
     "course_fee": 820.0,
     "course_fee_display": "820 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Zwickau",
     "street": "Scheffelstraße 39",
@@ -7496,14 +7496,14 @@
     "duration_hours": 290,
     "course_fee": 2670.0,
     "course_fee_display": "2.670 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -7532,14 +7532,14 @@
     "duration_hours": 100,
     "course_fee": 850.0,
     "course_fee_display": "850 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Plauen",
     "street": "Rähnisstraße 19",
@@ -7568,14 +7568,14 @@
     "duration_hours": 390,
     "course_fee": 3370.0,
     "course_fee_display": "3.370 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Plauen",
     "street": "Rähnisstraße 19",
@@ -7604,14 +7604,14 @@
     "duration_hours": 100,
     "course_fee": 900.0,
     "course_fee_display": "900 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -7640,14 +7640,14 @@
     "duration_hours": 100,
     "course_fee": 900.0,
     "course_fee_display": "900 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -7676,14 +7676,14 @@
     "duration_hours": 100,
     "course_fee": 900.0,
     "course_fee_display": "900 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -7712,14 +7712,14 @@
     "duration_hours": 100,
     "course_fee": 900.0,
     "course_fee_display": "900 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Plauen",
     "street": "Rähnisstraße 19",
@@ -7748,14 +7748,14 @@
     "duration_hours": 390,
     "course_fee": 3570.0,
     "course_fee_display": "3.570 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -7784,14 +7784,14 @@
     "duration_hours": 390,
     "course_fee": 3570.0,
     "course_fee_display": "3.570 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -7820,14 +7820,14 @@
     "duration_hours": 390,
     "course_fee": 3570.0,
     "course_fee_display": "3.570 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -7856,14 +7856,14 @@
     "duration_hours": 390,
     "course_fee": 3570.0,
     "course_fee_display": "3.570 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Plauen",
     "street": "Rähnisstraße 19",
@@ -7892,14 +7892,14 @@
     "duration_hours": 100,
     "course_fee": 900.0,
     "course_fee_display": "900 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Annaberg-Buchholz",
     "street": "Bahnhofstraße 1",
@@ -7928,14 +7928,14 @@
     "duration_hours": 390,
     "course_fee": 3570.0,
     "course_fee_display": "3.570 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Annaberg-Buchholz",
     "street": "Bahnhofstraße 1",
@@ -7964,14 +7964,14 @@
     "duration_hours": 390,
     "course_fee": 3570.0,
     "course_fee_display": "3.570 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -8000,14 +8000,14 @@
     "duration_hours": 290,
     "course_fee": 2670.0,
     "course_fee_display": "2.670 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -8036,14 +8036,14 @@
     "duration_hours": 390,
     "course_fee": 3570.0,
     "course_fee_display": "3.570 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Zwickau",
     "street": "Scheffelstraße 39",
@@ -8072,14 +8072,14 @@
     "duration_hours": 290,
     "course_fee": 2670.0,
     "course_fee_display": "2.670 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Zwickau",
     "street": "Scheffelstraße 39",
@@ -8108,14 +8108,14 @@
     "duration_hours": 390,
     "course_fee": 3570.0,
     "course_fee_display": "3.570 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Freiberg",
     "street": "Mühlweg 5",
@@ -8144,14 +8144,14 @@
     "duration_hours": 290,
     "course_fee": 2670.0,
     "course_fee_display": "2.670 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Freiberg",
     "street": "Mühlweg 5",
@@ -8180,14 +8180,14 @@
     "duration_hours": 290,
     "course_fee": 2670.0,
     "course_fee_display": "2.670 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -8216,14 +8216,14 @@
     "duration_hours": 290,
     "course_fee": 2670.0,
     "course_fee_display": "2.670 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -8252,14 +8252,14 @@
     "duration_hours": 290,
     "course_fee": 2670.0,
     "course_fee_display": "2.670 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Plauen",
     "street": "Rähnisstraße 19",
@@ -8288,14 +8288,14 @@
     "duration_hours": 100,
     "course_fee": 900.0,
     "course_fee_display": "900 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Zwickau",
     "street": "Scheffelstraße 39",
@@ -8324,14 +8324,14 @@
     "duration_hours": 390,
     "course_fee": 3570.0,
     "course_fee_display": "3.570 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Zwickau",
     "street": "Scheffelstraße 39",
@@ -8360,14 +8360,14 @@
     "duration_hours": 290,
     "course_fee": 2670.0,
     "course_fee_display": "2.670 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Annaberg-Buchholz",
     "street": "Bahnhofstraße 1",
@@ -8396,14 +8396,14 @@
     "duration_hours": 100,
     "course_fee": 900.0,
     "course_fee_display": "900 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -8432,14 +8432,14 @@
     "duration_hours": 390,
     "course_fee": 3570.0,
     "course_fee_display": "3.570 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -8468,14 +8468,14 @@
     "duration_hours": 290,
     "course_fee": 2670.0,
     "course_fee_display": "2.670 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -8504,14 +8504,14 @@
     "duration_hours": 290,
     "course_fee": 2520.0,
     "course_fee_display": "2.520 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Plauen",
     "street": "Rähnisstraße 19",
@@ -8540,14 +8540,14 @@
     "duration_hours": 100,
     "course_fee": 930.0,
     "course_fee_display": "930 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -8576,14 +8576,14 @@
     "duration_hours": 100,
     "course_fee": 930.0,
     "course_fee_display": "930 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -8612,14 +8612,14 @@
     "duration_hours": 100,
     "course_fee": 930.0,
     "course_fee_display": "930 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Plauen",
     "street": "Rähnisstraße 19",
@@ -8648,14 +8648,14 @@
     "duration_hours": 390,
     "course_fee": 3680.0,
     "course_fee_display": "3.680 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -8684,14 +8684,14 @@
     "duration_hours": 390,
     "course_fee": 3680.0,
     "course_fee_display": "3.680 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -8720,14 +8720,14 @@
     "duration_hours": 390,
     "course_fee": 3680.0,
     "course_fee_display": "3.680 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Plauen",
     "street": "Rähnisstraße 19",
@@ -8756,14 +8756,14 @@
     "duration_hours": 290,
     "course_fee": 2750.0,
     "course_fee_display": "2.750 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -8792,14 +8792,14 @@
     "duration_hours": 290,
     "course_fee": 2750.0,
     "course_fee_display": "2.750 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -8828,14 +8828,14 @@
     "duration_hours": 290,
     "course_fee": 2750.0,
     "course_fee_display": "2.750 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Plauen",
     "street": "Rähnisstraße 19",
@@ -8864,14 +8864,14 @@
     "duration_hours": 290,
     "course_fee": 2670.0,
     "course_fee_display": "2.670 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Zwickau",
     "street": "Scheffelstraße 39",
@@ -8900,14 +8900,14 @@
     "duration_hours": 290,
     "course_fee": 2670.0,
     "course_fee_display": "2.670 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -8936,14 +8936,14 @@
     "duration_hours": 100,
     "course_fee": 930.0,
     "course_fee_display": "930 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -8972,14 +8972,14 @@
     "duration_hours": 390,
     "course_fee": 3680.0,
     "course_fee_display": "3.680 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -9008,14 +9008,14 @@
     "duration_hours": 100,
     "course_fee": 900.0,
     "course_fee_display": "900 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Zwickau",
     "street": "Scheffelstraße 39",
@@ -9044,14 +9044,14 @@
     "duration_hours": 100,
     "course_fee": 900.0,
     "course_fee_display": "900 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Freiberg",
     "street": "Mühlweg 5",
@@ -9080,14 +9080,14 @@
     "duration_hours": 100,
     "course_fee": 900.0,
     "course_fee_display": "900 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -9116,14 +9116,14 @@
     "duration_hours": 290,
     "course_fee": 2750.0,
     "course_fee_display": "2.750 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -9152,14 +9152,14 @@
     "duration_hours": 100,
     "course_fee": 870.0,
     "course_fee_display": "870 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Plauen",
     "street": "Rähnisstraße 19",
@@ -9188,14 +9188,14 @@
     "duration_hours": 390,
     "course_fee": 3470.0,
     "course_fee_display": "3.470 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Plauen",
     "street": "Rähnisstraße 19",
@@ -9224,14 +9224,14 @@
     "duration_hours": 390,
     "course_fee": 3680.0,
     "course_fee_display": "3.680 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -9260,14 +9260,14 @@
     "duration_hours": 390,
     "course_fee": 2750.0,
     "course_fee_display": "2.750 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -9296,14 +9296,14 @@
     "duration_hours": 100,
     "course_fee": 930.0,
     "course_fee_display": "930 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -9332,14 +9332,14 @@
     "duration_hours": 100,
     "course_fee": 930.0,
     "course_fee_display": "930 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -9368,14 +9368,14 @@
     "duration_hours": 100,
     "course_fee": 930.0,
     "course_fee_display": "930 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Plauen",
     "street": "Rähnisstraße 19",
@@ -9404,14 +9404,14 @@
     "duration_hours": 390,
     "course_fee": 930.0,
     "course_fee_display": "930 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -9440,14 +9440,14 @@
     "duration_hours": 390,
     "course_fee": 3680.0,
     "course_fee_display": "3.680 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -9476,14 +9476,14 @@
     "duration_hours": 390,
     "course_fee": 3680.0,
     "course_fee_display": "3.680 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -9512,14 +9512,14 @@
     "duration_hours": 390,
     "course_fee": 3680.0,
     "course_fee_display": "3.680 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Plauen",
     "street": "Rähnisstraße 19",
@@ -9548,14 +9548,14 @@
     "duration_hours": 390,
     "course_fee": 3680.0,
     "course_fee_display": "3.680 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -9584,14 +9584,14 @@
     "duration_hours": 390,
     "course_fee": 3680.0,
     "course_fee_display": "3.680 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Zwickau",
     "street": "Scheffelstraße 39",
@@ -9620,14 +9620,14 @@
     "duration_hours": 390,
     "course_fee": 2750.0,
     "course_fee_display": "2.750 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Zwickau",
     "street": "Scheffelstraße 39",
@@ -9656,14 +9656,14 @@
     "duration_hours": 390,
     "course_fee": 930.0,
     "course_fee_display": "930 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Annaberg-Buchholz",
     "street": "Bahnhofstraße 1",
@@ -9692,14 +9692,14 @@
     "duration_hours": 390,
     "course_fee": 3680.0,
     "course_fee_display": "3.680 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Annaberg-Buchholz",
     "street": "Bahnhofstraße 1",
@@ -9728,14 +9728,14 @@
     "duration_hours": 290,
     "course_fee": 2750.0,
     "course_fee_display": "2.750 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -9764,14 +9764,14 @@
     "duration_hours": 290,
     "course_fee": 2750.0,
     "course_fee_display": "2.750 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -9800,14 +9800,14 @@
     "duration_hours": 290,
     "course_fee": 2750.0,
     "course_fee_display": "2.750 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Plauen",
     "street": "Rähnisstraße 19",
@@ -9836,14 +9836,14 @@
     "duration_hours": 390,
     "course_fee": 930.0,
     "course_fee_display": "930 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -9872,14 +9872,14 @@
     "duration_hours": 390,
     "course_fee": 3680.0,
     "course_fee_display": "3.680 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -9908,14 +9908,14 @@
     "duration_hours": 390,
     "course_fee": 930.0,
     "course_fee_display": "930 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Zwickau",
     "street": "Scheffelstraße 39",
@@ -9944,14 +9944,14 @@
     "duration_hours": 390,
     "course_fee": 3680.0,
     "course_fee_display": "3.680 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 420.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 205.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "205 €",
-      "from_tariff": true
+      "display": "420 €",
+      "from_tariff": false
     },
     "city": "Zwickau",
     "street": "Scheffelstraße 39",
@@ -9980,14 +9980,14 @@
     "duration_hours": 290,
     "course_fee": 2600.0,
     "course_fee_display": "2.600 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Plauen",
     "street": "Rähnisstraße 19",
@@ -10016,14 +10016,14 @@
     "duration_hours": 390,
     "course_fee": 2750.0,
     "course_fee_display": "2.750 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -10052,14 +10052,14 @@
     "duration_hours": 390,
     "course_fee": 2750.0,
     "course_fee_display": "2.750 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Annaberg-Buchholz",
     "street": "Bahnhofstraße 1",
@@ -10088,14 +10088,14 @@
     "duration_hours": 390,
     "course_fee": 2750.0,
     "course_fee_display": "2.750 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Zwickau",
     "street": "Scheffelstraße 39",
@@ -10124,14 +10124,14 @@
     "duration_hours": 390,
     "course_fee": 2750.0,
     "course_fee_display": "2.750 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 215.0,
       "fee_max": null,
       "qualifier": "",
       "display": "215 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -10160,14 +10160,14 @@
     "duration_hours": 390,
     "course_fee": 930.0,
     "course_fee_display": "930 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Zwickau",
     "street": "Scheffelstraße 39",
@@ -10196,14 +10196,14 @@
     "duration_hours": 390,
     "course_fee": 930.0,
     "course_fee_display": "930 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 205.0,
       "fee_max": null,
       "qualifier": "",
       "display": "205 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -10233,14 +10233,14 @@
     "duration_hours": 1076,
     "course_fee": 10360.0,
     "course_fee_display": "10.360 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 730.0,
       "fee_max": null,
       "qualifier": "",
       "display": "730 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -10270,14 +10270,14 @@
     "duration_hours": 1076,
     "course_fee": 10670.0,
     "course_fee_display": "10.670 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 730.0,
       "fee_max": null,
       "qualifier": "",
       "display": "730 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Chemnitz",
     "street": "Limbacher Straße 195",
@@ -11059,8 +11059,8 @@
     "city": "Cottbus",
     "street": "Altmarkt 17",
     "zip_code": "03046",
-    "latitude": 51.7610067,
-    "longitude": 14.3352034,
+    "latitude": 51.7609759,
+    "longitude": 14.3351984,
     "availability": "available",
     "source_url": "https://www.hwk-cottbus.de/7,0,coursedetail.html?id=66917"
   },
@@ -11096,8 +11096,8 @@
     "city": "Cottbus",
     "street": "Altmarkt 17",
     "zip_code": "03046",
-    "latitude": 51.7610067,
-    "longitude": 14.3352034,
+    "latitude": 51.7609759,
+    "longitude": 14.3351984,
     "availability": "available",
     "source_url": "https://www.hwk-cottbus.de/7,0,coursedetail.html?id=65648"
   },
@@ -43036,8 +43036,8 @@
     "city": "Traunstein",
     "street": "Mühlwiesen 4",
     "zip_code": "83278",
-    "latitude": 47.8554324,
-    "longitude": 12.6342171,
+    "latitude": 47.855512,
+    "longitude": 12.6341286,
     "availability": "unknown",
     "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1229052"
   },
@@ -43147,8 +43147,8 @@
     "city": "Traunstein",
     "street": "Mühlwiesen 4",
     "zip_code": "83278",
-    "latitude": 47.8554324,
-    "longitude": 12.6342171,
+    "latitude": 47.855512,
+    "longitude": 12.6341286,
     "availability": "unknown",
     "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1229614"
   },
@@ -43184,8 +43184,8 @@
     "city": "Traunstein",
     "street": "Mühlwiesen 4",
     "zip_code": "83278",
-    "latitude": 47.8554324,
-    "longitude": 12.6342171,
+    "latitude": 47.855512,
+    "longitude": 12.6341286,
     "availability": "full",
     "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1220049"
   },
@@ -43221,8 +43221,8 @@
     "city": "Traunstein",
     "street": "Mühlwiesen 4",
     "zip_code": "83278",
-    "latitude": 47.8554324,
-    "longitude": 12.6342171,
+    "latitude": 47.855512,
+    "longitude": 12.6341286,
     "availability": "unknown",
     "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1229014"
   },
@@ -43258,8 +43258,8 @@
     "city": "Traunstein",
     "street": "Mühlwiesen 4",
     "zip_code": "83278",
-    "latitude": 47.8554324,
-    "longitude": 12.6342171,
+    "latitude": 47.855512,
+    "longitude": 12.6341286,
     "availability": "unknown",
     "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1229619"
   },
@@ -43552,8 +43552,8 @@
     "city": "Traunstein",
     "street": "Mühlwiesen 4",
     "zip_code": "83278",
-    "latitude": 47.8554324,
-    "longitude": 12.6342171,
+    "latitude": 47.855512,
+    "longitude": 12.6341286,
     "availability": "available",
     "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1228874"
   },
@@ -43774,8 +43774,8 @@
     "city": "Traunstein",
     "street": "Mühlwiesen 4",
     "zip_code": "83278",
-    "latitude": 47.8554324,
-    "longitude": 12.6342171,
+    "latitude": 47.855512,
+    "longitude": 12.6341286,
     "availability": "available",
     "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1228859"
   },
@@ -43994,8 +43994,8 @@
     "city": "Traunstein",
     "street": "Mühlwiesen 4",
     "zip_code": "83278",
-    "latitude": 47.8554324,
-    "longitude": 12.6342171,
+    "latitude": 47.855512,
+    "longitude": 12.6341286,
     "availability": "available",
     "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1228864"
   },
@@ -44030,8 +44030,8 @@
     "city": "Traunstein",
     "street": "Mühlwiesen 4",
     "zip_code": "83278",
-    "latitude": 47.8554324,
-    "longitude": 12.6342171,
+    "latitude": 47.855512,
+    "longitude": 12.6341286,
     "availability": "available",
     "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1228878"
   },
@@ -44362,8 +44362,8 @@
     "city": "Traunstein",
     "street": "Mühlwiesen 4",
     "zip_code": "83278",
-    "latitude": 47.8554324,
-    "longitude": 12.6342171,
+    "latitude": 47.855512,
+    "longitude": 12.6341286,
     "availability": "available",
     "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1228869"
   },
@@ -45397,8 +45397,8 @@
     "city": "Traunstein",
     "street": "Mühlwiesen 4",
     "zip_code": "83278",
-    "latitude": 47.8554324,
-    "longitude": 12.6342171,
+    "latitude": 47.855512,
+    "longitude": 12.6341286,
     "availability": "unknown",
     "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1229063"
   },
@@ -49238,8 +49238,8 @@
     "city": "Cham",
     "street": "Frühlingstraße 13",
     "zip_code": "93413",
-    "latitude": 49.224435,
-    "longitude": 12.6796411,
+    "latitude": 49.2086425,
+    "longitude": 12.4925217,
     "availability": "full",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1011175"
   },
@@ -49349,8 +49349,8 @@
     "city": "Cham",
     "street": "Frühlingstraße 13",
     "zip_code": "93413",
-    "latitude": 49.224435,
-    "longitude": 12.6796411,
+    "latitude": 49.2086425,
+    "longitude": 12.4925217,
     "availability": "unknown",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1019039"
   },
@@ -49386,8 +49386,8 @@
     "city": "Cham",
     "street": "Frühlingstraße 13",
     "zip_code": "93413",
-    "latitude": 49.224435,
-    "longitude": 12.6796411,
+    "latitude": 49.2086425,
+    "longitude": 12.4925217,
     "availability": "unknown",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1023633"
   },
@@ -49458,8 +49458,8 @@
     "city": "Cham",
     "street": "Frühlingstraße 13",
     "zip_code": "93413",
-    "latitude": 49.224435,
-    "longitude": 12.6796411,
+    "latitude": 49.2086425,
+    "longitude": 12.4925217,
     "availability": "full",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1008645"
   },
@@ -49674,8 +49674,8 @@
     "city": "Cham",
     "street": "Frühlingstraße 13",
     "zip_code": "93413",
-    "latitude": 49.224435,
-    "longitude": 12.6796411,
+    "latitude": 49.2086425,
+    "longitude": 12.4925217,
     "availability": "full",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1008639"
   },
@@ -50970,8 +50970,8 @@
     "city": "Cham",
     "street": "Frühlingstraße 13",
     "zip_code": "93413",
-    "latitude": 49.224435,
-    "longitude": 12.6796411,
+    "latitude": 49.2086425,
+    "longitude": 12.4925217,
     "availability": "unknown",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1012256"
   },
@@ -51186,8 +51186,8 @@
     "city": "Cham",
     "street": "Frühlingstraße 13",
     "zip_code": "93413",
-    "latitude": 49.224435,
-    "longitude": 12.6796411,
+    "latitude": 49.2086425,
+    "longitude": 12.4925217,
     "availability": "full",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1012250"
   },
@@ -51474,8 +51474,8 @@
     "city": "Cham",
     "street": "Frühlingstraße 13",
     "zip_code": "93413",
-    "latitude": 49.224435,
-    "longitude": 12.6796411,
+    "latitude": 49.2086425,
+    "longitude": 12.4925217,
     "availability": "full",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1018843"
   },
@@ -51726,8 +51726,8 @@
     "city": "Cham",
     "street": "Frühlingstraße 13",
     "zip_code": "93413",
-    "latitude": 49.224435,
-    "longitude": 12.6796411,
+    "latitude": 49.2086425,
+    "longitude": 12.4925217,
     "availability": "unknown",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1018847"
   },
@@ -53058,8 +53058,8 @@
     "city": "Cham",
     "street": "Frühlingstraße 13",
     "zip_code": "93413",
-    "latitude": 49.224435,
-    "longitude": 12.6796411,
+    "latitude": 49.2086425,
+    "longitude": 12.4925217,
     "availability": "unknown",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1018932"
   },
@@ -53202,8 +53202,8 @@
     "city": "Cham",
     "street": "Frühlingstraße 13",
     "zip_code": "93413",
-    "latitude": 49.224435,
-    "longitude": 12.6796411,
+    "latitude": 49.2086425,
+    "longitude": 12.4925217,
     "availability": "unknown",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1018929"
   },
@@ -53562,8 +53562,8 @@
     "city": "Cham",
     "street": "Frühlingstraße 13",
     "zip_code": "93413",
-    "latitude": 49.224435,
-    "longitude": 12.6796411,
+    "latitude": 49.2086425,
+    "longitude": 12.4925217,
     "availability": "unknown",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1021178"
   },
@@ -53706,8 +53706,8 @@
     "city": "Cham",
     "street": "Frühlingstraße 13",
     "zip_code": "93413",
-    "latitude": 49.224435,
-    "longitude": 12.6796411,
+    "latitude": 49.2086425,
+    "longitude": 12.4925217,
     "availability": "unknown",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1019708"
   },
@@ -62882,8 +62882,8 @@
     "city": "Kaiserslautern",
     "street": "Am Altenhof 15",
     "zip_code": "67655",
-    "latitude": 49.4441065,
-    "longitude": 7.7686373,
+    "latitude": 49.444007,
+    "longitude": 7.7687411,
     "availability": "available",
     "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-fliesen-platten-und-mosaikleger-teil-ii-51,0,coursedetail.html?id=103642&search-onr=51&img=3"
   },
@@ -62918,8 +62918,8 @@
     "city": "Kaiserslautern",
     "street": "Am Altenhof 15",
     "zip_code": "67655",
-    "latitude": 49.4441065,
-    "longitude": 7.7686373,
+    "latitude": 49.444007,
+    "longitude": 7.7687411,
     "availability": "unknown",
     "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-fliesen-platten-und-mosaikleger-teil-ii-51,0,coursedetail.html?id=109085&search-onr=51&img=5"
   },
@@ -63137,8 +63137,8 @@
     "city": "Kaiserslautern",
     "street": "Am Altenhof 15",
     "zip_code": "67655",
-    "latitude": 49.4441065,
-    "longitude": 7.7686373,
+    "latitude": 49.444007,
+    "longitude": 7.7687411,
     "availability": "unknown",
     "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-kraftfahrzeugtechniker-teil-ii-51,0,coursedetail.html?id=107662&search-onr=51&img=3"
   },
@@ -63209,8 +63209,8 @@
     "city": "Kaiserslautern",
     "street": "Am Altenhof 15",
     "zip_code": "67655",
-    "latitude": 49.4441065,
-    "longitude": 7.7686373,
+    "latitude": 49.444007,
+    "longitude": 7.7687411,
     "availability": "unknown",
     "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-metallbauer-teil-ii-51,0,coursedetail.html?id=92252&search-onr=51&img=12"
   },
@@ -63283,8 +63283,8 @@
     "city": "Kaiserslautern",
     "street": "Am Altenhof 15",
     "zip_code": "67655",
-    "latitude": 49.4441065,
-    "longitude": 7.7686373,
+    "latitude": 49.444007,
+    "longitude": 7.7687411,
     "availability": "available",
     "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=100794&search-onr=51&img=2"
   },
@@ -63320,8 +63320,8 @@
     "city": "Kaiserslautern",
     "street": "Am Altenhof 15",
     "zip_code": "67655",
-    "latitude": 49.4441065,
-    "longitude": 7.7686373,
+    "latitude": 49.444007,
+    "longitude": 7.7687411,
     "availability": "available",
     "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=102615&search-onr=51&img=5"
   },
@@ -63357,8 +63357,8 @@
     "city": "Kaiserslautern",
     "street": "Am Altenhof 15",
     "zip_code": "67655",
-    "latitude": 49.4441065,
-    "longitude": 7.7686373,
+    "latitude": 49.444007,
+    "longitude": 7.7687411,
     "availability": "available",
     "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105678&search-onr=51&img=6"
   },
@@ -63394,8 +63394,8 @@
     "city": "Kaiserslautern",
     "street": "Am Altenhof 15",
     "zip_code": "67655",
-    "latitude": 49.4441065,
-    "longitude": 7.7686373,
+    "latitude": 49.444007,
+    "longitude": 7.7687411,
     "availability": "full",
     "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105652&search-onr=51&img=7"
   },
@@ -63468,8 +63468,8 @@
     "city": "Kaiserslautern",
     "street": "Am Altenhof 15",
     "zip_code": "67655",
-    "latitude": 49.4441065,
-    "longitude": 7.7686373,
+    "latitude": 49.444007,
+    "longitude": 7.7687411,
     "availability": "available",
     "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105601&search-onr=51&img=10"
   },
@@ -63542,8 +63542,8 @@
     "city": "Kaiserslautern",
     "street": "Am Altenhof 15",
     "zip_code": "67655",
-    "latitude": 49.4441065,
-    "longitude": 7.7686373,
+    "latitude": 49.444007,
+    "longitude": 7.7687411,
     "availability": "available",
     "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=104043&search-onr=51&img=15"
   },
@@ -63579,8 +63579,8 @@
     "city": "Kaiserslautern",
     "street": "Am Altenhof 15",
     "zip_code": "67655",
-    "latitude": 49.4441065,
-    "longitude": 7.7686373,
+    "latitude": 49.444007,
+    "longitude": 7.7687411,
     "availability": "unknown",
     "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105629&search-onr=51&img=17"
   },
@@ -63616,8 +63616,8 @@
     "city": "Kaiserslautern",
     "street": "Am Altenhof 15",
     "zip_code": "67655",
-    "latitude": 49.4441065,
-    "longitude": 7.7686373,
+    "latitude": 49.444007,
+    "longitude": 7.7687411,
     "availability": "unknown",
     "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105647&search-onr=51&img=18"
   },
@@ -63653,8 +63653,8 @@
     "city": "Kaiserslautern",
     "street": "Am Altenhof 15",
     "zip_code": "67655",
-    "latitude": 49.4441065,
-    "longitude": 7.7686373,
+    "latitude": 49.444007,
+    "longitude": 7.7687411,
     "availability": "unknown",
     "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105606&search-onr=51&img=2"
   },
@@ -63690,8 +63690,8 @@
     "city": "Kaiserslautern",
     "street": "Am Altenhof 15",
     "zip_code": "67655",
-    "latitude": 49.4441065,
-    "longitude": 7.7686373,
+    "latitude": 49.444007,
+    "longitude": 7.7687411,
     "availability": "unknown",
     "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105616&search-onr=51&img=20"
   },
@@ -63727,8 +63727,8 @@
     "city": "Kaiserslautern",
     "street": "Am Altenhof 15",
     "zip_code": "67655",
-    "latitude": 49.4441065,
-    "longitude": 7.7686373,
+    "latitude": 49.444007,
+    "longitude": 7.7687411,
     "availability": "unknown",
     "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105621&search-onr=51&img=1"
   },
@@ -63764,8 +63764,8 @@
     "city": "Kaiserslautern",
     "street": "Am Altenhof 15",
     "zip_code": "67655",
-    "latitude": 49.4441065,
-    "longitude": 7.7686373,
+    "latitude": 49.444007,
+    "longitude": 7.7687411,
     "availability": "unknown",
     "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=109016&search-onr=51&img=6"
   },
@@ -70884,8 +70884,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "full",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=372991"
   },
@@ -70958,8 +70958,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "full",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=378222"
   },
@@ -71032,8 +71032,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "full",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=383646"
   },
@@ -71106,8 +71106,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "full",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=389542"
   },
@@ -71180,8 +71180,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "available",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=396962"
   },
@@ -71291,8 +71291,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "full",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=387542"
   },
@@ -71328,8 +71328,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "available",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=400333"
   },
@@ -71402,8 +71402,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "full",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=380202"
   },
@@ -71476,8 +71476,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "full",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=386522"
   },
@@ -71550,8 +71550,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "full",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=391122"
   },
@@ -71624,8 +71624,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "available",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=397845"
   },
@@ -71698,8 +71698,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "available",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=393248"
   },
@@ -71735,8 +71735,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "full",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=362562"
   },
@@ -71772,8 +71772,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "full",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=375150"
   },
@@ -71809,8 +71809,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "full",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=383482"
   },
@@ -71846,8 +71846,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "full",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=389422"
   },
@@ -71883,8 +71883,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "full",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=395382"
   },
@@ -71920,8 +71920,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "available",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=401192"
   },
@@ -72031,8 +72031,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "full",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=374602"
   },
@@ -72068,8 +72068,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "full",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=386022"
   },
@@ -72105,8 +72105,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "available",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=397772"
   },
@@ -72142,8 +72142,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "available",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=393045"
   },
@@ -72179,8 +72179,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "available",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=398992"
   },
@@ -72216,8 +72216,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "full",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=381502"
   },
@@ -72253,8 +72253,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "full",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=387201"
   },
@@ -72290,8 +72290,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "available",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=396602"
   },
@@ -72363,8 +72363,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "available",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=389082"
   },
@@ -72400,8 +72400,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "full",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=382151"
   },
@@ -72585,8 +72585,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "available",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=382156"
   },
@@ -72659,8 +72659,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "available",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=381362"
   },
@@ -72844,8 +72844,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "available",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=373902"
   },
@@ -72991,8 +72991,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "available",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=382161"
   },
@@ -73065,8 +73065,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "available",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=380422"
   },
@@ -73212,8 +73212,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "available",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=382166"
   },
@@ -73434,8 +73434,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "available",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=382171"
   },
@@ -73471,8 +73471,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "available",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=397658"
   },
@@ -73582,8 +73582,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "available",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=397663"
   },
@@ -73656,8 +73656,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "available",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=397668"
   },
@@ -73803,8 +73803,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "available",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=388422"
   },
@@ -73876,8 +73876,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "available",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=397673"
   },
@@ -73987,8 +73987,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "available",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=397678"
   },
@@ -74061,8 +74061,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "full",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=374902"
   },
@@ -74098,8 +74098,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "full",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=381415"
   },
@@ -74135,8 +74135,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "full",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=389343"
   },
@@ -74172,8 +74172,8 @@
     "city": "Augsburg",
     "street": "Siebentischstraße 54",
     "zip_code": "86161",
-    "latitude": 48.3558357,
-    "longitude": 10.9155787,
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
     "availability": "available",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=397698"
   },
@@ -77506,8 +77506,8 @@
     "city": "Rohr",
     "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 50.5738004,
-    "longitude": 10.5117378,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "full",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/elektro_vz/#kurs-207748"
   },
@@ -77540,11 +77540,11 @@
       "display": "555 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/m_elektro_we/#kurs-207747"
   },
@@ -77580,8 +77580,8 @@
     "city": "Rohr",
     "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 50.5738004,
-    "longitude": 10.5117378,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "full",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/elektro_vz/#kurs-208401"
   },
@@ -77651,11 +77651,11 @@
       "display": "555 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/m_fwm_we/#kurs-207965"
   },
@@ -77688,11 +77688,11 @@
       "display": "555 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/m_fleischer_vz/#kurs-208248"
   },
@@ -77725,11 +77725,11 @@
       "display": "555 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/mo_friko_mo/#kurs-208149"
   },
@@ -77764,8 +77764,8 @@
     "city": "Rohr",
     "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 50.5738004,
-    "longitude": 10.5117378,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "unknown",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/glas-ilmenau-bl/"
   },
@@ -77801,8 +77801,8 @@
     "city": "Rohr",
     "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 50.5738004,
-    "longitude": 10.5117378,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "unknown",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/hobi-teil-i-ii/"
   },
@@ -77835,11 +77835,11 @@
       "display": "555 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/m_ihb_we/#kurs-207956"
   },
@@ -77875,8 +77875,8 @@
     "city": "Rohr",
     "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 50.5738004,
-    "longitude": 10.5117378,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "unknown",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/m_ihb_vz/"
   },
@@ -77909,11 +77909,11 @@
       "display": "555 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/m_kfz_karo_we/#kurs-208150"
   },
@@ -77945,11 +77945,11 @@
       "display": "220 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/m_kfz-ii_vz/#kurs-208186"
   },
@@ -77981,11 +77981,11 @@
       "display": "335 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/m_kfz-i_tz/#kurs-206047"
   },
@@ -78017,11 +78017,11 @@
       "display": "335 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/m_kfz-i_vz/#kurs-208187"
   },
@@ -78053,11 +78053,11 @@
       "display": "220 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/m_kfz-ii_we/#kurs-208516"
   },
@@ -78089,11 +78089,11 @@
       "display": "335 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/m_kfz-i_tz/#kurs-208517"
   },
@@ -78126,11 +78126,11 @@
       "display": "555 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/m_kfz_lbm/#kurs-208794"
   },
@@ -78166,8 +78166,8 @@
     "city": "Rohr",
     "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 50.5738004,
-    "longitude": 10.5117378,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "unknown",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/m_mala_we/"
   },
@@ -78200,11 +78200,11 @@
       "display": "555 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/m_maurer-u-betonbauer/#kurs-207510"
   },
@@ -78236,11 +78236,11 @@
       "display": "335 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/mb_we/#kurs-207368"
   },
@@ -78273,11 +78273,11 @@
       "display": "555 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/m_tischler_we/#kurs-207638"
   },
@@ -78309,11 +78309,11 @@
       "display": "205 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/gefa_we/#kurs-3005005"
   },
@@ -78345,11 +78345,11 @@
       "display": "205 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/gefa_vz/#kurs-3005003"
   },
@@ -78381,11 +78381,11 @@
       "display": "165 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/aevo-montag/#kurs-205689"
   },
@@ -78417,11 +78417,11 @@
       "display": "165 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/aevo_hybrid/#kurs-207937"
   },
@@ -78456,8 +78456,8 @@
     "city": "Rohr",
     "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 50.5738004,
-    "longitude": 10.5117378,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "full",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/aevo-vz/#kurs-3005019"
   },
@@ -78489,11 +78489,11 @@
       "display": "165 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/aevo-vz/#kurs-3005020"
   },
@@ -78525,11 +78525,11 @@
       "display": "205 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/gefa_vz/#kurs-205939"
   },
@@ -78561,11 +78561,11 @@
       "display": "205 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/gefa_we/#kurs-205942"
   },
@@ -78597,11 +78597,11 @@
       "display": "165 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/aevo_we/#kurs-205973"
   },
@@ -78633,11 +78633,11 @@
       "display": "205 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/gefa_mo/#kurs-205920"
   },
@@ -78669,11 +78669,11 @@
       "display": "165 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/aevo-vz/#kurs-205975"
   },
@@ -78705,11 +78705,11 @@
       "display": "205 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/gefa_vz/#kurs-205940"
   },
@@ -78741,11 +78741,11 @@
       "display": "165 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/aevo_we/#kurs-205974"
   },
@@ -78777,11 +78777,11 @@
       "display": "165 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/aevo-vz/#kurs-205976"
   },
@@ -78813,11 +78813,11 @@
       "display": "205 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/gefa_we/#kurs-205943"
   },
@@ -78849,11 +78849,11 @@
       "display": "165 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/aevo-montag/#kurs-205690"
   },
@@ -78885,11 +78885,11 @@
       "display": "205 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/gefa_vz/#kurs-205941"
   },
@@ -78921,11 +78921,11 @@
       "display": "165 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/aevo_hybrid/#kurs-207940"
   },
@@ -78957,11 +78957,11 @@
       "display": "165 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/aevo-vz/#kurs-205977"
   },
@@ -78993,11 +78993,11 @@
       "display": "165 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/aevo-vz/#kurs-205978"
   },
@@ -79029,11 +79029,11 @@
       "display": "205 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/gefa_vz/#kurs-207136"
   },
@@ -79065,11 +79065,11 @@
       "display": "165 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/aevo_we/#kurs-207392"
   },
@@ -79101,11 +79101,11 @@
       "display": "205 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/gefa_we/#kurs-207139"
   },
@@ -79137,11 +79137,11 @@
       "display": "205 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/gefa_mo/#kurs-207396"
   },
@@ -79173,11 +79173,11 @@
       "display": "165 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/aevo-vz/#kurs-207388"
   },
@@ -79209,11 +79209,11 @@
       "display": "205 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/gefa_vz/#kurs-207137"
   },
@@ -79245,11 +79245,11 @@
       "display": "165 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/aevo_we/#kurs-207393"
   },
@@ -79281,11 +79281,11 @@
       "display": "165 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/aevo-vz/#kurs-207389"
   },
@@ -79317,11 +79317,11 @@
       "display": "205 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/gefa_vz/#kurs-207138"
   },
@@ -79353,11 +79353,11 @@
       "display": "205 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/gefa_we/#kurs-207395"
   },
@@ -79389,11 +79389,11 @@
       "display": "165 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/aevo-montag/#kurs-207394"
   },
@@ -79425,11 +79425,11 @@
       "display": "165 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/aevo-vz/#kurs-207390"
   },
@@ -79461,11 +79461,11 @@
       "display": "165 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/aevo-vz/#kurs-207391"
   },
@@ -79497,11 +79497,11 @@
       "display": "205 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/gefa_mo/#kurs-208430"
   },
@@ -79533,11 +79533,11 @@
       "display": "205 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/gefa_vz/#kurs-208425"
   },
@@ -79569,11 +79569,11 @@
       "display": "205 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/gefa_we/#kurs-208428"
   },
@@ -79605,11 +79605,11 @@
       "display": "165 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/aevo_we/#kurs-208435"
   },
@@ -79641,11 +79641,11 @@
       "display": "165 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/aevo-vz/#kurs-208431"
   },
@@ -79677,11 +79677,11 @@
       "display": "165 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/aevo-vz/#kurs-208432"
   },
@@ -79713,11 +79713,11 @@
       "display": "205 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/gefa_vz/#kurs-208426"
   },
@@ -79749,11 +79749,11 @@
       "display": "165 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/aevo_we/#kurs-208436"
   },
@@ -79785,11 +79785,11 @@
       "display": "165 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/aevo-vz/#kurs-208433"
   },
@@ -79821,11 +79821,11 @@
       "display": "205 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/gefa_we/#kurs-208429"
   },
@@ -79857,11 +79857,11 @@
       "display": "165 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/aevo-montag/#kurs-208437"
   },
@@ -79893,11 +79893,11 @@
       "display": "205 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/gefa_vz/#kurs-208427"
   },
@@ -79929,11 +79929,11 @@
       "display": "165 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/aevo_hybrid/#kurs-208438"
   },
@@ -79965,11 +79965,11 @@
       "display": "165 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/aevo-vz/#kurs-208434"
   },
@@ -80002,11 +80002,11 @@
       "display": "555 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/zimm_-we/#kurs-207509"
   },
@@ -80039,11 +80039,11 @@
       "display": "555 €",
       "from_tariff": true
     },
-    "city": "Rohr In den Warenkorb",
-    "street": "",
+    "city": "Rohr",
+    "street": "Kloster 1",
     "zip_code": "98530",
-    "latitude": 51.7754374,
-    "longitude": 7.9334753,
+    "latitude": 50.707055,
+    "longitude": 10.891878,
     "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/kfz_-zrm-teil-i-ii/#kurs-208151"
   },

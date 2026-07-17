@@ -27,19 +27,29 @@ def build_query(street: str, zip_code: str, city: str, region: str) -> str:
     """
     Full address (street + ZIP + city) when available gives pin-level accuracy;
     falls back to city + region for city-centre coordinates.
+
+    When a Bundesland is known, include it in full-address queries so common
+    place names (e.g. Rohr) resolve to the correct state.
     """
     street = (street or "").strip()
     zip_code = (zip_code or "").strip()
     city = (city or "").strip()
-    region = region or "Deutschland"
+    region = (region or "").strip()
+    state = region if region and region != "Deutschland" else ""
 
     if street and zip_code:
+        if state:
+            return f"{street}, {zip_code} {city}, {state}, Deutschland"
         return f"{street}, {zip_code} {city}, Deutschland"
     if street:
+        if state:
+            return f"{street}, {city}, {state}, Deutschland"
         return f"{street}, {city}, Deutschland"
     if zip_code:
+        if state:
+            return f"{zip_code} {city}, {state}, Deutschland"
         return f"{zip_code} {city}, Deutschland"
-    return f"{city}, {region}, Deutschland"
+    return f"{city}, {region or 'Deutschland'}, Deutschland"
 
 
 class Geocoder:

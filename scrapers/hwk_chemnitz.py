@@ -216,6 +216,9 @@ class HwkChemnitzScraper(BaseScraper):
 
         duration_match = DURATION_RE.search(info_text)
         fee_match = re.search(r"Gebühr\s+([\d.]+),(\d{2})\s*€", info_text, re.IGNORECASE)
+        exam_fee_match = re.search(
+            r"Prüfungsgebühr\s+([\d.]+),(\d{2})\s*€", info_text, re.IGNORECASE
+        )
         number_match = COURSE_NO_RE.search(info_text)
         termin_id = block.get("id", "").replace("termin_", "")
 
@@ -233,6 +236,10 @@ class HwkChemnitzScraper(BaseScraper):
             course_fee=(
                 float(fee_match.group(1).replace(".", "") + "." + fee_match.group(2))
                 if fee_match else None
+            ),
+            exam_fee_scraped=(
+                float(exam_fee_match.group(1).replace(".", "") + "." + exam_fee_match.group(2))
+                if exam_fee_match else None
             ),
             city=city,
             street=street,

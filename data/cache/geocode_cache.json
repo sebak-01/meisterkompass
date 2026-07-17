@@ -8,6 +8,10 @@
     50.6102323,
     10.6894679
   ],
+  "98527 Suhl, Thüringen, Deutschland": [
+    50.6102323,
+    10.6894679
+  ],
   "98530 Rohr In den Warenkorb, Deutschland": [
     51.7754374,
     7.9334753
@@ -16,9 +20,21 @@
     53.5802004,
     10.1200455
   ],
+  "Albert-Schweitzer-Ring 8, 22045 Hamburg, Hamburg, Deutschland": [
+    53.5802004,
+    10.1200455
+  ],
+  "Allee 76, 74072 Heilbronn, Baden-Württemberg, Deutschland": [
+    49.145351,
+    9.2236557
+  ],
   "Allee 76, 74072 Heilbronn, Deutschland": [
     49.145351,
     9.2236557
+  ],
+  "Altmarkt 17, 03046 Cottbus, Brandenburg, Deutschland": [
+    51.7609759,
+    14.3351984
   ],
   "Altmarkt 17, 03046 Cottbus, Deutschland": [
     51.7610067,
@@ -28,17 +44,37 @@
     49.4441065,
     7.7686373
   ],
+  "Am Altenhof 15, 67655 Kaiserslautern, Rheinland-Pfalz, Deutschland": [
+    49.444007,
+    7.7687411
+  ],
   "Am Lagerplatz 8, 01099 Dresden, Deutschland": [
     51.0833678,
     13.7677525
+  ],
+  "Am Lagerplatz 8, 01099 Dresden, Sachsen, Deutschland": [
+    51.0833678,
+    13.7677525
+  ],
+  "Am Lurzenhof 10 b, 84036 Landshut, Bayern, Deutschland": [
+    48.5594648,
+    12.1999128
   ],
   "Am Lurzenhof 10 b, 84036 Landshut, Deutschland": [
     48.5594648,
     12.1999128
   ],
+  "Am Mühlenberg 15, 14550 Groß Kreutz (Havel), Brandenburg, Deutschland": [
+    52.4063025,
+    12.7280699
+  ],
   "Am Mühlenberg 15, 14550 Groß Kreutz (Havel), Deutschland": [
     52.4063025,
     12.7280699
+  ],
+  "Am Stadtberg 19, 89407 Dillingen, Bayern, Deutschland": [
+    48.5753811,
+    10.4972272
   ],
   "Am Stadtberg 19, 89407 Dillingen, Deutschland": [
     48.5753811,
@@ -48,9 +84,17 @@
     49.4495183,
     7.7678746
   ],
+  "Am Turnerheim 1, 67657 Kaiserslautern, Rheinland-Pfalz, Deutschland": [
+    49.4495183,
+    7.7678746
+  ],
   "Ansbach, Bayern, Deutschland": [
     49.2888745,
     10.5597693
+  ],
+  "Artur-Scheunert-Allee 40-41, 14558 Nuthetal, Brandenburg, Deutschland": [
+    52.3529105,
+    13.1031758
   ],
   "Artur-Scheunert-Allee 40-41, 14558 Nuthetal, Deutschland": [
     52.3529105,
@@ -60,7 +104,15 @@
     51.3021202,
     9.4991416
   ],
+  "Auedamm 18, 34123 Kassel, Hessen, Deutschland": [
+    51.3021202,
+    9.4991416
+  ],
   "Auf der Roten Erde 9, 34537 Bad Wildungen, Deutschland": [
+    51.1300434,
+    9.1225344
+  ],
+  "Auf der Roten Erde 9, 34537 Bad Wildungen, Hessen, Deutschland": [
     51.1300434,
     9.1225344
   ],
@@ -68,7 +120,15 @@
     50.3895583,
     7.5708933
   ],
+  "August-Horch-Str. 6, 56070 Koblenz, Rheinland-Pfalz, Deutschland": [
+    50.3895583,
+    7.5708933
+  ],
   "August-Horch-Str. 6-8, 56070 Koblenz, Deutschland": [
+    50.3894351,
+    7.5720768
+  ],
+  "August-Horch-Str. 6-8, 56070 Koblenz, Rheinland-Pfalz, Deutschland": [
     50.3894351,
     7.5720768
   ],
@@ -76,7 +136,15 @@
     50.3894351,
     7.5720768
   ],
+  "August-Horch-Str. 8, 56070 Koblenz, Rheinland-Pfalz, Deutschland": [
+    50.3894351,
+    7.5720768
+  ],
   "August-Horch-Straße 8, 56070 Koblenz, Deutschland": [
+    50.3894351,
+    7.5720768
+  ],
+  "August-Horch-Straße 8, 56070 Koblenz, Rheinland-Pfalz, Deutschland": [
     50.3894351,
     7.5720768
   ],
@@ -84,13 +152,29 @@
     50.3835106,
     7.5590697
   ],
+  "August-Horch-Straße 9, 56070 Koblenz, Rheinland-Pfalz, Deutschland": [
+    50.3835106,
+    7.5590697
+  ],
   "BTZ Pirna Feistenbergstraße 40, 01796 Dresden, Deutschland": [
+    50.9566332,
+    13.9211076
+  ],
+  "BTZ Pirna Feistenbergstraße 40, 01796 Dresden, Sachsen, Deutschland": [
     50.9566332,
     13.9211076
   ],
   "Bahnhofstraße 1, 09456 Annaberg-Buchholz, Deutschland": [
     50.5739084,
     13.0021358
+  ],
+  "Bahnhofstraße 1, 09456 Annaberg-Buchholz, Sachsen, Deutschland": [
+    50.5739084,
+    13.0021358
+  ],
+  "Bernhard-Suttner-Straße 5, 92637 Weiden, Bayern, Deutschland": [
+    49.6703429,
+    12.1626407
   ],
   "Bernhard-Suttner-Straße 5, 92637 Weiden, Deutschland": [
     49.6703429,
@@ -100,9 +184,21 @@
     50.0652806,
     8.2590004
   ],
+  "Brunhildenstraße 110, 65189 Wiesbaden, Hessen, Deutschland": [
+    50.0652806,
+    8.2590004
+  ],
+  "Brückenkopf 3, 85051 Ingolstadt, Bayern, Deutschland": [
+    48.7587386,
+    11.4306481
+  ],
   "Brückenkopf 3, 85051 Ingolstadt, Deutschland": [
     48.7587386,
     11.4306481
+  ],
+  "Brückenkopf 5, 85051 Ingolstadt, Bayern, Deutschland": [
+    48.7589347,
+    11.4306089
   ],
   "Brückenkopf 5, 85051 Ingolstadt, Deutschland": [
     48.7589347,
@@ -112,16 +208,34 @@
     50.5726466,
     13.0021155
   ],
+  "Bärensteiner Straße 2, 09456 Annaberg-Buchholz, Sachsen, Deutschland": [
+    50.5726466,
+    13.0021155
+  ],
+  "Charlottenhof 1, 92421 Schwandorf, Bayern, Deutschland": [
+    49.3456906,
+    12.1756219
+  ],
   "Charlottenhof 1, 92421 Schwandorf, Deutschland": [
     49.3456906,
     12.1756219
+  ],
+  "Christangerstraße 12, 84347 Pfarrkirchen, Bayern, Deutschland": [
+    48.4287108,
+    12.9312606
   ],
   "Christangerstraße 12, 84347 Pfarrkirchen, Deutschland": [
     48.4287108,
     12.9312606
   ],
   "Dachplatten und Dachziegeln Außenwandbekleidung Holz- und Metallarbeiten Dachabdichtungen Projektarbeit Ihr Kurs im Detail als Download Kursinformationen downloaden Zielgruppe Voraussetzung Kursort Gästehaus Hinweis Gesellen des Dachdeckerhandwerks Gesellenabschluss im Dachdeckerhandwerk oder anderer Gewerke mit mehrjähriger Berufserfahrung im Dachdeckerhandwerk LBZ - Landesbildungszentrum des Sächsischen Dachdeckerhandwerks e.V. Lößnitzer Str. 50, 08301 Bad Schlema, Deutschland": null,
+  "Dachplatten und Dachziegeln Außenwandbekleidung Holz- und Metallarbeiten Dachabdichtungen Projektarbeit Ihr Kurs im Detail als Download Kursinformationen downloaden Zielgruppe Voraussetzung Kursort Gästehaus Hinweis Gesellen des Dachdeckerhandwerks Gesellenabschluss im Dachdeckerhandwerk oder anderer Gewerke mit mehrjähriger Berufserfahrung im Dachdeckerhandwerk LBZ - Landesbildungszentrum des Sächsischen Dachdeckerhandwerks e.V. Lößnitzer Str. 50, 08301 Bad Schlema, Sachsen, Deutschland": null,
   "Dachplatten und Dachziegeln Außenwandbekleidung Holz- und Metallarbeiten Dachabdichtungen Projektarbeit Ihr Kurs im Detail als Download Kursinformationen downloaden Zielgruppe Voraussetzung Kursort Gästehaus Hinweis Gesellen des Dachdeckerhandwerks Gesellenabschluss im Dachdeckerhandwerk oder anderer Gewerke mit mehrjähriger Berufserfahrung im Dachdeckerhandwerk LBZ - Landesbildungszentrum des Sächsischen Dachdeckerhandwerks e.V. Lößnitzer Str. 50, 08301 Dresden, Deutschland": null,
+  "Dachplatten und Dachziegeln Außenwandbekleidung Holz- und Metallarbeiten Dachabdichtungen Projektarbeit Ihr Kurs im Detail als Download Kursinformationen downloaden Zielgruppe Voraussetzung Kursort Gästehaus Hinweis Gesellen des Dachdeckerhandwerks Gesellenabschluss im Dachdeckerhandwerk oder anderer Gewerke mit mehrjähriger Berufserfahrung im Dachdeckerhandwerk LBZ - Landesbildungszentrum des Sächsischen Dachdeckerhandwerks e.V. Lößnitzer Str. 50, 08301 Dresden, Sachsen, Deutschland": null,
+  "Daimlerstraße 46, 76185 Karlsruhe, Baden-Württemberg, Deutschland": [
+    49.0313222,
+    8.3591262
+  ],
   "Daimlerstraße 46, 76185 Karlsruhe, Deutschland": [
     49.0313222,
     8.3591262
@@ -130,9 +244,17 @@
     54.288023,
     9.6720667
   ],
+  "Deumentenstraße 1, 90489 Nürnberg, Bayern, Deutschland": [
+    49.4638359,
+    11.0973984
+  ],
   "Deumentenstraße 1, 90489 Nürnberg, Deutschland": [
     49.4638359,
     11.0973984
+  ],
+  "Dieselstr. 12, 97082 Würzburg, Bayern, Deutschland": [
+    49.7990834,
+    9.9071335
   ],
   "Dieselstr. 12, 97082 Würzburg, Deutschland": [
     49.7990834,
@@ -142,6 +264,14 @@
     50.5548159,
     8.4921662
   ],
+  "Dillufer 40, 35576 Wetzlar, Hessen, Deutschland": [
+    50.5548159,
+    8.4921662
+  ],
+  "Ditthornstraße 10, 93055 Regensburg, Bayern, Deutschland": [
+    49.0144753,
+    12.1382992
+  ],
   "Ditthornstraße 10, 93055 Regensburg, Deutschland": [
     49.0144753,
     12.1382992
@@ -150,9 +280,17 @@
     51.3390316,
     12.3918037
   ],
+  "Dresdner Straße 11/13, 04103 Leipzig, Sachsen, Deutschland": [
+    51.3390316,
+    12.3918037
+  ],
   "Erfurt, Thüringen, Deutschland": [
     50.9777974,
     11.0287364
+  ],
+  "Fachschulstraße 15, 94227 Zwiesel, Bayern, Deutschland": [
+    49.0199272,
+    13.2286631
   ],
   "Fachschulstraße 15, 94227 Zwiesel, Deutschland": [
     49.0199272,
@@ -162,13 +300,25 @@
     51.2841009,
     9.498614
   ],
+  "Falderbaumstraße 18-20, 34123 Kassel, Hessen, Deutschland": [
+    51.2841009,
+    9.498614
+  ],
   "Falderbaumstraße 20, 34123 Kassel, Deutschland": [
+    51.2841009,
+    9.498614
+  ],
+  "Falderbaumstraße 20, 34123 Kassel, Hessen, Deutschland": [
     51.2841009,
     9.498614
   ],
   "Flensburg, Schleswig-Holstein, Deutschland": [
     54.5797194,
     9.5331938
+  ],
+  "Freyunger Straße 8, 94065 Waldkirchen, Bayern, Deutschland": [
+    48.7345043,
+    13.6043761
   ],
   "Freyunger Straße 8, 94065 Waldkirchen, Deutschland": [
     48.7345043,
@@ -178,21 +328,45 @@
     53.5612193,
     13.2606667
   ],
+  "Friedrich-Engels-Ring 11, 17033 Neubrandenburg, Mecklenburg-Vorpommern, Deutschland": [
+    53.5612193,
+    13.2606667
+  ],
   "Friedrichsbruch 3, 07349 Lehesten, Deutschland": [
     50.4796375,
     11.4489243
+  ],
+  "Friedrichsbruch 3, 07349 Lehesten, Thüringen, Deutschland": [
+    50.4796375,
+    11.4489243
+  ],
+  "Friedrichstraße 3, 79761 Waldshut-Tiengen, Baden-Württemberg, Deutschland": [
+    47.6246072,
+    8.2170138
   ],
   "Friedrichstraße 3, 79761 Waldshut-Tiengen, Deutschland": [
     47.6246072,
     8.2170138
   ],
+  "Fritz-Hoffmann-Straße 3, 91301 Forchheim, Bayern, Deutschland": [
+    49.7353293,
+    11.0593688
+  ],
   "Fritz-Hoffmann-Straße 3, 91301 Forchheim, Deutschland": [
     49.7353293,
     11.0593688
   ],
+  "Frühlingstraße 13, 93413 Cham, Bayern, Deutschland": [
+    49.2086425,
+    12.4925217
+  ],
   "Frühlingstraße 13, 93413 Cham, Deutschland": [
     49.224435,
     12.6796411
+  ],
+  "Galgenleite 3, 97424 Schweinfurt, Bayern, Deutschland": [
+    50.0538491,
+    10.2229162
   ],
   "Galgenleite 3, 97424 Schweinfurt, Deutschland": [
     50.0538491,
@@ -206,21 +380,45 @@
     50.5673891,
     9.699491
   ],
+  "Goerdelerstraße 139, 36100 Petersberg, Hessen, Deutschland": [
+    50.5673891,
+    9.699491
+  ],
   "Graefestr. 24, 06110 Halle (Saale), Deutschland": [
     51.4733282,
     11.9712752
+  ],
+  "Graefestr. 24, 06110 Halle (Saale), Sachsen-Anhalt, Deutschland": [
+    51.4733282,
+    11.9712752
+  ],
+  "Graflinger Straße 105, 94469 Deggendorf, Bayern, Deutschland": [
+    48.84793,
+    12.9572569
   ],
   "Graflinger Straße 105, 94469 Deggendorf, Deutschland": [
     48.84793,
     12.9572569
   ],
+  "Gute Änger 11, 85356 Freising, Bayern, Deutschland": [
+    48.3888054,
+    11.7586366
+  ],
   "Gute Änger 11, 85356 Freising, Deutschland": [
     48.3888054,
     11.7586366
   ],
+  "Gutenbergstraße 49, 68167 Mannheim, Baden-Württemberg, Deutschland": [
+    49.4936232,
+    8.5038439
+  ],
   "Gutenbergstraße 49, 68167 Mannheim, Deutschland": [
     49.4936232,
     8.5038439
+  ],
+  "Hasenhägweg 67, 63741 Aschaffenburg, Bayern, Deutschland": [
+    49.9881654,
+    9.1079515
   ],
   "Hasenhägweg 67, 63741 Aschaffenburg, Deutschland": [
     49.9881654,
@@ -230,7 +428,15 @@
     50.6475587,
     13.4559016
   ],
+  "Hauptstraße 112, 09548 Seiffen, Sachsen, Deutschland": [
+    50.6475587,
+    13.4559016
+  ],
   "Heinrich-Heine-Straße 45, 07937 Zeulenroda-Triebes, Deutschland": [
+    50.6531977,
+    11.9958817
+  ],
+  "Heinrich-Heine-Straße 45, 07937 Zeulenroda-Triebes, Thüringen, Deutschland": [
     50.6531977,
     11.9958817
   ],
@@ -238,7 +444,15 @@
     52.1667755,
     13.1045766
   ],
+  "Hertzstr. 177, 76187 Karlsruhe, Baden-Württemberg, Deutschland": [
+    49.039484,
+    8.36939
+  ],
   "Hertzstr. 177, 76187 Karlsruhe, Deutschland": [
+    49.039484,
+    8.36939
+  ],
+  "Hertzstraße 177, 76187 Karlsruhe, Baden-Württemberg, Deutschland": [
     49.039484,
     8.36939
   ],
@@ -246,25 +460,49 @@
     49.039484,
     8.36939
   ],
+  "Hertzstraße 24a, 96050 Bamberg, Bayern, Deutschland": [
+    49.8918568,
+    10.926158
+  ],
   "Hertzstraße 24a, 96050 Bamberg, Deutschland": [
     49.8918568,
     10.926158
+  ],
+  "Hertzstraße 8, 03238 Massen-Niederlausitz, Brandenburg, Deutschland": [
+    51.6344515,
+    13.7374906
   ],
   "Hertzstraße 8, 03238 Massen-Niederlausitz, Deutschland": [
     51.6344515,
     13.7374906
   ],
+  "Hindelanger Straße 39, 87527 Sonthofen, Bayern, Deutschland": [
+    47.5125094,
+    10.291493
+  ],
   "Hindelanger Straße 39, 87527 Sonthofen, Deutschland": [
     47.5125094,
     10.291493
+  ],
+  "Hindenburgstraße 58, 72762 Reutlingen, Baden-Württemberg, Deutschland": [
+    48.4857514,
+    9.2063686
   ],
   "Hindenburgstraße 58, 72762 Reutlingen, Deutschland": [
     48.4857514,
     9.2063686
   ],
+  "Hinterer Floßanger 1, 96450 Coburg, Bayern, Deutschland": [
+    50.2713886,
+    10.9718498
+  ],
   "Hinterer Floßanger 1, 96450 Coburg, Deutschland": [
     50.2713886,
     10.9718498
+  ],
+  "Holderäckerstraße 37, 70499 Stuttgart, Baden-Württemberg, Deutschland": [
+    48.8229051,
+    9.0972983
   ],
   "Holderäckerstraße 37, 70499 Stuttgart, Deutschland": [
     48.8229051,
@@ -278,7 +516,15 @@
     49.2117701,
     8.1271493
   ],
+  "Im Grein 5, 76829 Landau in der Pfalz, Rheinland-Pfalz, Deutschland": [
+    49.2117701,
+    8.1271493
+  ],
   "Im Stadtwald 15, 67663 Kaiserslautern, Deutschland": [
+    49.4261268,
+    7.7748284
+  ],
+  "Im Stadtwald 15, 67663 Kaiserslautern, Rheinland-Pfalz, Deutschland": [
     49.4261268,
     7.7748284
   ],
@@ -286,13 +532,29 @@
     50.6964904,
     11.3182985
   ],
+  "In der Schremsche 3, 07407 Rudolstadt, Thüringen, Deutschland": [
+    50.6964904,
+    11.3182985
+  ],
+  "Johannes-Kepler-Straße 14, 94315 Straubing, Bayern, Deutschland": [
+    48.8708639,
+    12.5760232
+  ],
   "Johannes-Kepler-Straße 14, 94315 Straubing, Deutschland": [
     48.8708639,
     12.5760232
   ],
+  "Kaiser-Max-Straße 39-41, 87600 Kaufbeuren, Bayern, Deutschland": [
+    47.8789751,
+    10.6193068
+  ],
   "Kaiser-Max-Straße 39-41, 87600 Kaufbeuren, Deutschland": [
     47.8789751,
     10.6193068
+  ],
+  "Kapuziner Straße 66 a, 94474 Vilshofen an der Donau, Bayern, Deutschland": [
+    48.6384463,
+    13.1775956
   ],
   "Kapuziner Straße 66 a, 94474 Vilshofen an der Donau, Deutschland": [
     48.6384463,
@@ -302,17 +564,37 @@
     49.4760852,
     8.4080881
   ],
+  "Karlsbader Str. 2, 67065 Ludwigshafen am Rhein, Rheinland-Pfalz, Deutschland": [
+    49.4760852,
+    8.4080881
+  ],
+  "Kerschensteinerstraße 3, 82362 Weilheim, Bayern, Deutschland": [
+    47.8455509,
+    11.146713
+  ],
   "Kerschensteinerstraße 3, 82362 Weilheim, Deutschland": [
     47.8455509,
     11.146713
+  ],
+  "Kerschensteinerstraße 5, 92318 Neumarkt i.d.OPf., Bayern, Deutschland": [
+    49.2637832,
+    11.4680476
   ],
   "Kerschensteinerstraße 5, 92318 Neumarkt i.d.OPf., Deutschland": [
     49.2637832,
     11.4680476
   ],
+  "Kerschensteinerstraße 8-10, 95448 Bayreuth, Bayern, Deutschland": [
+    49.9423427,
+    11.599074
+  ],
   "Kerschensteinerstraße 8-10, 95448 Bayreuth, Deutschland": [
     49.9423427,
     11.599074
+  ],
+  "Klepperstraße 22, 83026 Rosenheim, Bayern, Deutschland": [
+    47.8472914,
+    12.1201462
   ],
   "Klepperstraße 22, 83026 Rosenheim, Deutschland": [
     47.8472914,
@@ -322,9 +604,21 @@
     50.5738004,
     10.5117378
   ],
+  "Kloster 1, 98530 Rohr, Thüringen, Deutschland": [
+    50.707055,
+    10.891878
+  ],
   "Konstinstraße 2a, 23568 Lübeck, Deutschland": [
     53.8811608,
     10.6946146
+  ],
+  "Konstinstraße 2a, 23568 Lübeck, Schleswig-Holstein, Deutschland": [
+    53.8811608,
+    10.6946146
+  ],
+  "Kotterner Straße 39, 87435 Kempten, Bayern, Deutschland": [
+    47.7174731,
+    10.3185888
   ],
   "Kotterner Straße 39, 87435 Kempten, Deutschland": [
     47.7174731,
@@ -334,13 +628,25 @@
     50.1071246,
     11.4581813
   ],
+  "Köllestraße 55, 89077 Ulm, Baden-Württemberg, Deutschland": [
+    48.3856229,
+    9.9563226
+  ],
   "Köllestraße 55, 89077 Ulm, Deutschland": [
     48.3856229,
     9.9563226
   ],
+  "Lange Straße 20, 78224 Singen, Baden-Württemberg, Deutschland": [
+    47.7546664,
+    8.8426339
+  ],
   "Lange Straße 20, 78224 Singen, Deutschland": [
     47.7546664,
     8.8426339
+  ],
+  "Lenbachstraße 8, 90489 Nürnberg, Bayern, Deutschland": [
+    49.458562,
+    11.0909732
   ],
   "Lenbachstraße 8, 90489 Nürnberg, Deutschland": [
     49.458562,
@@ -350,7 +656,15 @@
     50.8307235,
     12.8727524
   ],
+  "Limbacher Straße 195, 09116 Chemnitz, Sachsen, Deutschland": [
+    50.8307235,
+    12.8727524
+  ],
   "Loebstr.  18, 54292 Trier, Deutschland": [
+    49.775426,
+    6.6804464
+  ],
+  "Loebstr.  18, 54292 Trier, Rheinland-Pfalz, Deutschland": [
     49.775426,
     6.6804464
   ],
@@ -358,7 +672,15 @@
     49.7754619,
     6.6805129
   ],
+  "Loebstraße 18, 54292 Trier, Rheinland-Pfalz, Deutschland": [
+    49.7754619,
+    6.6805129
+  ],
   "Lundener Straße 1, 24768 Rendsburg, Deutschland": [
+    54.3158358,
+    9.6282685
+  ],
+  "Lundener Straße 1, 24768 Rendsburg, Schleswig-Holstein, Deutschland": [
     54.3158358,
     9.6282685
   ],
@@ -366,25 +688,49 @@
     52.1314783,
     11.6400789
   ],
+  "Max-Eyth-Straße 23, 72202 Nagold, Baden-Württemberg, Deutschland": [
+    48.5473835,
+    8.7138169
+  ],
   "Max-Eyth-Straße 23, 72202 Nagold, Deutschland": [
     48.5473835,
     8.7138169
+  ],
+  "Mehringdamm 14, 10961 Berlin, Berlin, Deutschland": [
+    52.4966028,
+    13.388784
   ],
   "Mehringdamm 14, 10961 Berlin, Deutschland": [
     52.4966028,
     13.388784
   ],
+  "Memminger Straße 59, 89264 Weißenhorn, Bayern, Deutschland": [
+    48.3019927,
+    10.1603345
+  ],
   "Memminger Straße 59, 89264 Weißenhorn, Deutschland": [
     48.3019927,
     10.1603345
   ],
+  "Mühldorfstraße  6, 81671 München, Bayern, Deutschland": [
+    48.1282296,
+    11.6098462
+  ],
   "Mühldorfstraße  6, 81671 München, Deutschland": [
+    48.1282296,
+    11.6098462
+  ],
+  "Mühldorfstraße 6, 81671 München, Bayern, Deutschland": [
     48.1282296,
     11.6098462
   ],
   "Mühldorfstraße 6, 81671 München, Deutschland": [
     48.1282296,
     11.6098462
+  ],
+  "Mühlstraße 19, 95028 Hof, Bayern, Deutschland": [
+    50.3151869,
+    11.9193794
   ],
   "Mühlstraße 19, 95028 Hof, Deutschland": [
     50.3151869,
@@ -394,15 +740,31 @@
     50.9102617,
     13.3229558
   ],
+  "Mühlweg 5, 09599 Freiberg, Sachsen, Deutschland": [
+    50.9102617,
+    13.3229558
+  ],
+  "Mühlwiesen 4, 83278 Traunstein, Bayern, Deutschland": [
+    47.855512,
+    12.6341286
+  ],
   "Mühlwiesen 4, 83278 Traunstein, Deutschland": [
     47.8554324,
     12.6342171
+  ],
+  "Münchner Straße 40, 82362 Weilheim, Bayern, Deutschland": [
+    47.8458688,
+    11.1463017
   ],
   "Münchner Straße 40, 82362 Weilheim, Deutschland": [
     47.8458688,
     11.1463017
   ],
   "Neukruger Str. 1, 18273 Güstrow, Deutschland": [
+    53.8018541,
+    12.1839419
+  ],
+  "Neukruger Str. 1, 18273 Güstrow, Mecklenburg-Vorpommern, Deutschland": [
     53.8018541,
     12.1839419
   ],
@@ -423,13 +785,25 @@
     53.8305464,
     10.6549788
   ],
+  "Otto-Wels-Straße 11, 76189 Karlsruhe, Baden-Württemberg, Deutschland": [
+    48.9878212,
+    8.3629187
+  ],
   "Otto-Wels-Straße 11, 76189 Karlsruhe, Deutschland": [
     48.9878212,
     8.3629187
   ],
+  "Pestalozzistraße 2, 95676 Wiesau, Bayern, Deutschland": [
+    49.9123388,
+    12.1901088
+  ],
   "Pestalozzistraße 2, 95676 Wiesau, Deutschland": [
     49.9123388,
     12.1901088
+  ],
+  "Raichbergstraße 87, 72072 Tübingen, Baden-Württemberg, Deutschland": [
+    48.5004109,
+    9.059163
   ],
   "Raichbergstraße 87, 72072 Tübingen, Deutschland": [
     48.5004109,
@@ -439,11 +813,23 @@
     53.7419813,
     9.6817039
   ],
+  "Ramskamp 6, 25337 Elmshorn, Schleswig-Holstein, Deutschland": [
+    53.7419813,
+    9.6817039
+  ],
   "Rathausstr. 32, 57537 Wissen, Deutschland": [
     50.7821939,
     7.740086
   ],
+  "Rathausstr. 32, 57537 Wissen, Rheinland-Pfalz, Deutschland": [
+    50.7821939,
+    7.740086
+  ],
   "Ravenéstr. 18-20, 56812 Cochem, Deutschland": [
+    50.1524067,
+    7.1673054
+  ],
+  "Ravenéstr. 18-20, 56812 Cochem, Rheinland-Pfalz, Deutschland": [
     50.1524067,
     7.1673054
   ],
@@ -455,6 +841,10 @@
     49.9011703,
     8.6137976
   ],
+  "Rudolf-Diesel-Straße 30, 64331 Weiterstadt, Hessen, Deutschland": [
+    49.9011703,
+    8.6137976
+  ],
   "Rudolstadt, Thüringen, Deutschland": [
     50.7206063,
     11.3401985
@@ -463,13 +853,29 @@
     50.883163,
     11.5910768
   ],
+  "Rudolstädter Straße 95, 07745 Jena, Thüringen, Deutschland": [
+    50.883163,
+    11.5910768
+  ],
   "Russeer Weg 167, 24109 Kiel, Deutschland": [
+    54.319737,
+    10.06438
+  ],
+  "Russeer Weg 167, 24109 Kiel, Schleswig-Holstein, Deutschland": [
     54.319737,
     10.06438
   ],
   "Rähnisstraße 19, 08523 Plauen, Deutschland": [
     50.4993901,
     12.1453036
+  ],
+  "Rähnisstraße 19, 08523 Plauen, Sachsen, Deutschland": [
+    50.4993901,
+    12.1453036
+  ],
+  "Römerstraße 22, 72488 Sigmaringen, Baden-Württemberg, Deutschland": [
+    48.0822981,
+    9.193541
   ],
   "Römerstraße 22, 72488 Sigmaringen, Deutschland": [
     48.0822981,
@@ -483,13 +889,29 @@
     50.7334417,
     12.5051553
   ],
+  "Scheffelstraße 39, 08066 Zwickau, Sachsen, Deutschland": [
+    50.7334417,
+    12.5051553
+  ],
   "Schlossweg 6, 55756 Herrstein, Deutschland": [
     49.7813929,
     7.3375888
   ],
+  "Schlossweg 6, 55756 Herrstein, Rheinland-Pfalz, Deutschland": [
+    49.7813929,
+    7.3375888
+  ],
+  "Schongauerstr. 2, 28219 Bremen, Bremen, Deutschland": [
+    53.0979216,
+    8.7803106
+  ],
   "Schongauerstr. 2, 28219 Bremen, Deutschland": [
     53.0979216,
     8.7803106
+  ],
+  "Schorbuser Weg 2, 03051 Cottbus, Brandenburg, Deutschland": [
+    51.7021156,
+    14.3591764
   ],
   "Schorbuser Weg 2, 03051 Cottbus, Deutschland": [
     51.7021156,
@@ -499,9 +921,21 @@
     54.0753091,
     12.141125
   ],
+  "Schwaaner Landstrasse 8, 18055 Rostock, Mecklenburg-Vorpommern, Deutschland": [
+    54.0753091,
+    12.141125
+  ],
+  "Schwartzkopffstraße 1, 15745 Wildau, Brandenburg, Deutschland": [
+    52.3198785,
+    13.6310976
+  ],
   "Schwartzkopffstraße 1, 15745 Wildau, Deutschland": [
     52.3198785,
     13.6310976
+  ],
+  "Schwartzkopffstraße 9 (Haus 24), 15745 Wildau, Brandenburg, Deutschland": [
+    52.3215577,
+    13.6316497
   ],
   "Schwartzkopffstraße 9 (Haus 24), 15745 Wildau, Deutschland": [
     52.3215577,
@@ -519,13 +953,29 @@
     50.1013705,
     8.65682
   ],
+  "Schönstraße 21, 60327 Frankfurt am Main, Hessen, Deutschland": [
+    50.1013705,
+    8.65682
+  ],
+  "Siebentischstraße 52 - 58, 86161 Augsburg, Bayern, Deutschland": [
+    48.3486219,
+    10.9175439
+  ],
   "Siebentischstraße 52 - 58, 86161 Augsburg, Deutschland": [
     48.3486219,
     10.9175439
   ],
+  "Siebentischstraße 54, 86161 Augsburg, Bayern, Deutschland": [
+    48.3522511,
+    10.9173148
+  ],
   "Siebentischstraße 54, 86161 Augsburg, Deutschland": [
     48.3558357,
     10.9155787
+  ],
+  "Sieboldstraße 9, 90411 Nürnberg, Bayern, Deutschland": [
+    49.4815534,
+    11.1248482
   ],
   "Sieboldstraße 9, 90411 Nürnberg, Deutschland": [
     49.4815534,
@@ -535,13 +985,29 @@
     49.850123,
     7.8827044
   ],
+  "Siemensstr. 8, 55543 Bad Kreuznach, Rheinland-Pfalz, Deutschland": [
+    49.850123,
+    7.8827044
+  ],
+  "Simmerlingweg 4 und 15, 94036 Passau, Bayern, Deutschland": [
+    48.5626047,
+    13.4060264
+  ],
   "Simmerlingweg 4 und 15, 94036 Passau, Deutschland": [
     48.5626047,
     13.4060264
   ],
+  "Sonntagshornstraße 14, 83278 Traunstein, Bayern, Deutschland": [
+    47.8548488,
+    12.6246309
+  ],
   "Sonntagshornstraße 14, 83278 Traunstein, Deutschland": [
     47.8548488,
     12.6246309
+  ],
+  "Spiekerstraße 11, 15230 Frankfurt (Oder), Brandenburg, Deutschland": [
+    52.3388204,
+    14.5470716
   ],
   "Spiekerstraße 11, 15230 Frankfurt (Oder), Deutschland": [
     52.3388204,
@@ -551,9 +1017,21 @@
     50.3603382,
     7.5844202
   ],
+  "St. Elisabeth Str. 2, 56073 Koblenz, Rheinland-Pfalz, Deutschland": [
+    50.3603382,
+    7.5844202
+  ],
+  "Steinbeisstraße 38, 88046 Friedrichshafen, Baden-Württemberg, Deutschland": [
+    47.6497715,
+    9.5015606
+  ],
   "Steinbeisstraße 38, 88046 Friedrichshafen, Deutschland": [
     47.6497715,
     9.5015606
+  ],
+  "Steinhauserstraße 18, 78628 Rottweil, Baden-Württemberg, Deutschland": [
+    48.1699796,
+    8.622332
   ],
   "Steinhauserstraße 18, 78628 Rottweil, Deutschland": [
     48.1699796,
@@ -563,7 +1041,15 @@
     51.348242,
     12.5485819
   ],
+  "Steinweg 3, 04451 Borsdorf, Sachsen, Deutschland": [
+    51.348242,
+    12.5485819
+  ],
   "Straße der Freundschaft  27, 07554 Gera, Deutschland": [
+    50.9625096,
+    12.1033789
+  ],
+  "Straße der Freundschaft  27, 07554 Gera, Thüringen, Deutschland": [
     50.9625096,
     12.1033789
   ],
@@ -571,7 +1057,15 @@
     50.9625096,
     12.1033789
   ],
+  "Straße der Freundschaft 27, 07554 Gera, Thüringen, Deutschland": [
+    50.9625096,
+    12.1033789
+  ],
   "Straße der Handwerker 2, 06132 Halle (Saale), Deutschland": [
+    51.4232026,
+    12.0122588
+  ],
+  "Straße der Handwerker 2, 06132 Halle (Saale), Sachsen-Anhalt, Deutschland": [
     51.4232026,
     12.0122588
   ],
@@ -579,13 +1073,29 @@
     53.3826667,
     13.0470412
   ],
+  "Straße des Handwerks 1, 17235 Neustrelitz, Mecklenburg-Vorpommern, Deutschland": [
+    53.3826667,
+    13.0470412
+  ],
   "Südstraße 4 a, 06179 Teutschenthal / OT Holleben, Deutschland": [
     51.431893,
     11.9056258
   ],
+  "Südstraße 4 a, 06179 Teutschenthal / OT Holleben, Sachsen-Anhalt, Deutschland": [
+    51.431893,
+    11.9056258
+  ],
+  "Theodor-Heuss-Anlage 12, 68165 Mannheim, Baden-Württemberg, Deutschland": [
+    49.4775101,
+    8.503477
+  ],
   "Theodor-Heuss-Anlage 12, 68165 Mannheim, Deutschland": [
     49.4775101,
     8.503477
+  ],
+  "Töginger Straße 49, 84453 Mühldorf, Bayern, Deutschland": [
+    48.2462844,
+    12.5306834
   ],
   "Töginger Straße 49, 84453 Mühldorf, Deutschland": [
     48.2462844,
@@ -595,13 +1105,29 @@
     50.7872688,
     8.7666044
   ],
+  "Umgehungsstraße 1-3, 35043 Marburg, Hessen, Deutschland": [
+    50.7872688,
+    8.7666044
+  ],
   "Vor dem Tor 2, 55469 Simmern, Deutschland": [
     49.9837081,
     7.5250674
   ],
+  "Vor dem Tor 2, 55469 Simmern, Rheinland-Pfalz, Deutschland": [
+    49.9837081,
+    7.5250674
+  ],
+  "Wannenäckerstraße 62, 74078 Heilbronn, Baden-Württemberg, Deutschland": [
+    49.1847456,
+    9.169312
+  ],
   "Wannenäckerstraße 62, 74078 Heilbronn, Deutschland": [
     49.1847456,
     9.169312
+  ],
+  "Wasserstraße 19, 77652 Offenburg, Baden-Württemberg, Deutschland": [
+    48.4713854,
+    7.9361019
   ],
   "Wasserstraße 19, 77652 Offenburg, Deutschland": [
     48.4713854,
@@ -611,9 +1137,21 @@
     53.5721017,
     11.3867432
   ],
+  "Werkstrasse 600, 19061 Schwerin, Mecklenburg-Vorpommern, Deutschland": [
+    53.5721017,
+    11.3867432
+  ],
   "Werkstraße 600, 19061 Schwerin, Deutschland": [
     53.5721017,
     11.3867432
+  ],
+  "Werkstraße 600, 19061 Schwerin, Mecklenburg-Vorpommern, Deutschland": [
+    53.5721017,
+    11.3867432
+  ],
+  "Werner-Seelenbinder-Straße 24, 01983 Großräschen, Brandenburg, Deutschland": [
+    51.580024,
+    13.9997132
   ],
   "Werner-Seelenbinder-Straße 24, 01983 Großräschen, Deutschland": [
     51.580024,
@@ -623,13 +1161,25 @@
     53.951985,
     10.8845203
   ],
+  "Wiekstraße 5, 23570 Lübeck, Schleswig-Holstein, Deutschland": [
+    53.951985,
+    10.8845203
+  ],
   "Wilhelmstr. 20, 53474 Bad Neuenahr-Ahrweiler, Deutschland": [
+    50.5456433,
+    7.1017081
+  ],
+  "Wilhelmstr. 20, 53474 Bad Neuenahr-Ahrweiler, Rheinland-Pfalz, Deutschland": [
     50.5456433,
     7.1017081
   ],
   "Wilhelmstraße 7, 70182 Stuttgart, Deutschland": [
     48.770631,
     9.1801632
+  ],
+  "Wirthstraße 28, 79110 Freiburg, Baden-Württemberg, Deutschland": [
+    48.0251899,
+    7.8137345
   ],
   "Wirthstraße 28, 79110 Freiburg, Deutschland": [
     48.0251899,
@@ -642,6 +1192,14 @@
   "Zum Handwerkszentrum 1, 21079 Hamburg, Deutschland": [
     53.4582352,
     9.9959008
+  ],
+  "Zum Handwerkszentrum 1, 21079 Hamburg, Hamburg, Deutschland": [
+    53.4582352,
+    9.9959008
+  ],
+  "Äußere Badstraße 24, 95448 Bayreuth, Bayern, Deutschland": [
+    49.9421486,
+    11.6001204
   ],
   "Äußere Badstraße 24, 95448 Bayreuth, Deutschland": [
     49.9421486,

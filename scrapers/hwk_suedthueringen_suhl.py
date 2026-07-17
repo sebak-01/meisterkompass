@@ -23,6 +23,23 @@ DURATION_RE = re.compile(
 )
 COURSE_NO_RE = re.compile(r"Kursnummer\s+([A-Za-z0-9_-]+)", re.IGNORECASE)
 
+ROHR_CAMPUS = {
+    "street": "Kloster 1",
+    "zip_code": "98530",
+    "city": "Rohr",
+    "latitude": 50.707055,
+    "longitude": 10.891878,
+}
+
+
+def _clean_city(city: str) -> str:
+    return re.sub(
+        r"\s+In den Warenkorb.*$",
+        "",
+        city,
+        flags=re.IGNORECASE,
+    ).strip()
+
 
 def _canonical_seminar_url(href: str) -> str:
     split = urlsplit(urljoin(BASE_URL, href))
@@ -94,9 +111,9 @@ def _location(text: str, teaching_mode: str) -> tuple[str, str, str]:
     )
     if matches:
         zip_code, city = matches[0]
-        city = city.strip()
-        if city == "Rohr":
-            return "Kloster 1", zip_code, city
+        city = _clean_city(city.strip())
+        if zip_code == ROHR_CAMPUS["zip_code"] and city == ROHR_CAMPUS["city"]:
+            return ROHR_CAMPUS["street"], zip_code, city
         street_match = re.search(
             rf"([A-ZÄÖÜ][A-Za-zÄÖÜäöüß .-]+(?:straße|str\.|weg|platz|gasse)\s+\d+[A-Za-z]?)"
             rf"\s+{zip_code}\s+{re.escape(city)}",
@@ -104,7 +121,7 @@ def _location(text: str, teaching_mode: str) -> tuple[str, str, str]:
             re.IGNORECASE,
         )
         return (street_match.group(1).strip() if street_match else "", zip_code, city)
-    return "Kloster 1", "98530", "Rohr"
+    return ROHR_CAMPUS["street"], ROHR_CAMPUS["zip_code"], ROHR_CAMPUS["city"]
 
 
 class HwkSuedthueringenSuhlScraper(BaseScraper):

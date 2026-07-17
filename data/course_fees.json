@@ -305,7 +305,7 @@
       2
     ],
     "fee": 7990.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "is_generic": false
   },
   {
@@ -441,7 +441,7 @@
       4
     ],
     "fee": 790.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 205.0,
     "is_generic": true
   },
   {
@@ -1212,7 +1212,7 @@
       3
     ],
     "fee": 2380.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 215.0,
     "is_generic": true
   },
   {
@@ -1878,7 +1878,7 @@
       2
     ],
     "fee": 10890.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "is_generic": false
   },
   {
@@ -1889,7 +1889,7 @@
       2
     ],
     "fee": 7980.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "is_generic": false
   },
   {
@@ -2071,7 +2071,7 @@
       2
     ],
     "fee": 6850.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "is_generic": false
   },
   {
@@ -2146,7 +2146,7 @@
       2
     ],
     "fee": 8230.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "is_generic": false
   },
   {
@@ -3021,7 +3021,7 @@
       2
     ],
     "fee": 4550.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "is_generic": false
   },
   {
@@ -3151,7 +3151,7 @@
       2
     ],
     "fee": 9490.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "is_generic": false
   },
   {
@@ -3173,7 +3173,7 @@
       2
     ],
     "fee": 10300.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "is_generic": false
   },
   {
@@ -3227,7 +3227,7 @@
       2
     ],
     "fee": 9600.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "is_generic": false
   },
   {
@@ -3295,7 +3295,7 @@
       2
     ],
     "fee": 8420.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "is_generic": false
   },
   {
@@ -3306,7 +3306,7 @@
       2
     ],
     "fee": 11530.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "is_generic": false
   },
   {
@@ -3449,7 +3449,7 @@
       2
     ],
     "fee": 3080.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "is_generic": false
   },
   {
@@ -4325,7 +4325,7 @@
       2
     ],
     "fee": 10290.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "is_generic": false
   },
   {
@@ -4336,7 +4336,7 @@
       2
     ],
     "fee": 8680.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "is_generic": false
   },
   {
@@ -4467,7 +4467,7 @@
       2
     ],
     "fee": 12170.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "is_generic": false
   },
   {
@@ -5594,7 +5594,7 @@
       2
     ],
     "fee": 10360.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "is_generic": false
   },
   {
@@ -5715,7 +5715,7 @@
       2
     ],
     "fee": 10860.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 730.0,
     "is_generic": false
   },
   {
