@@ -7,7 +7,7 @@ from urllib.parse import urljoin
 
 from bs4 import Tag
 
-from .base import RawCourseOffer, ScrapeResult, normalize_trade
+from .base import RawCourseOffer, ScrapeResult
 from .hwk_bayern import (
     BavariaCatalogue,
     BavariaOdavScraper,
@@ -27,9 +27,18 @@ logger = logging.getLogger(__name__)
 BASE_URL = "https://bbz.handwerk-owl.de"
 CHAMBER_URL = "https://www.handwerk-owl.de"
 LANDING_URL = f"{BASE_URL}/artikel/meisterin-werden-3351,0,59.html"
-EXAM_FEES_PAGE_URL = f"{CHAMBER_URL}/artikel/rechtsgrundlagen-3351,0,100.html"
-FEES_PDF_URL = f"{CHAMBER_URL}/downloads/gebuehrenordnung-handwerkskammer-ostwestfalen-lippe-3351,4332.pdf"
-GENERIC_EXAM_FEES = {2: 380.0, 3: 290.0, 4: 220.0}
+EXAM_FEES_PAGE_URL = f"{CHAMBER_URL}/artikel/beitraege-gebuehren-35,0,67.html"
+FEES_PDF_URL = f"{CHAMBER_URL}/downloads/gebuehrentarif-2026-35,715.pdf"
+GENERIC_EXAM_FEES = {
+    1: {"fee": 380.0, "fee_max": 2450.0},
+    2: {"fee": 250.0, "fee_max": 980.0},
+    3: {"fee": 250.0, "fee_max": 980.0},
+    4: {"fee": 250.0, "fee_max": 980.0},
+}
+
+OWL_HUB_ARTICLES = (
+    "teile-iii-und-iv-3351,180,52.html",
+)
 
 OWL_TRADE_ARTICLES = (
     "elektrotechnik",
@@ -79,7 +88,16 @@ def _is_meister_card(title: str) -> bool:
         "aevo", "ausbildereignung",
     )):
         return False
-    return "meistervorbereitung" in lower or "meisterschule" in lower
+    if "meistervorbereitung" in lower or "meisterschule" in lower:
+        return True
+    if "fachmann" in lower and "betriebsführung" in lower:
+        return True
+    if "betriebsfuehrung" in lower:
+        return True
+    if "ada" in lower and "ausbilder" in lower:
+        return True
+    parts = parse_parts(title, implicit_trade_parts=True)
+    return bool(parts and set(parts) <= {3, 4})
 
 
 class HwkOstwestfalenLippeZuBielefeldScraper(BavariaOdavScraper):
@@ -150,6 +168,12 @@ class HwkOstwestfalenLippeZuBielefeldScraper(BavariaOdavScraper):
                 href = urljoin(BASE_URL, link.get("href", ""))
                 found[href] = slug
 
+        for link in landing.select("a[href*='artikel/']"):
+            href = link.get("href", "")
+            title = link.get_text(" ", strip=True).lower()
+            if "teile iii" in title or "teile-iii" in href.lower():
+                found[urljoin(BASE_URL, href)] = "teile-iii-iv"
+
         weiterbildung = self.parse_html(f"{BASE_URL}/artikel/weiterbildung-im-handwerk-3351,0,53.html")
         if weiterbildung is not None:
             for link in weiterbildung.select("a[href*='artikel/']"):
@@ -158,6 +182,11 @@ class HwkOstwestfalenLippeZuBielefeldScraper(BavariaOdavScraper):
                 for slug in OWL_TRADE_ARTICLES:
                     if slug in href.lower() or slug in title.replace(" ", ""):
                         found[urljoin(BASE_URL, href)] = slug
+                if "teile iii" in title or "teile-iii" in href.lower():
+                    found[urljoin(BASE_URL, href)] = "teile-iii-iv"
+
+        for article_path in OWL_HUB_ARTICLES:
+            found[urljoin(BASE_URL, f"/artikel/{article_path}")] = "teile-iii-iv"
         return [(url, trade) for url, trade in found.items()]
 
     def _parse_owl_card(
@@ -206,64 +235,76 @@ class HwkOstwestfalenLippeZuBielefeldScraper(BavariaOdavScraper):
         return super()._enrich(card)
 
     @staticmethod
-    def parse_part_i_exam_fees(text: str) -> dict[str, float]:
-        fees: dict[str, float] = {}
-        for match in re.finditer(
-            r"([A-Za-zÄÖÜäöüß\-,/ ]+?)\s+([\d.]+),(\d{2})\s*€",
-            text,
-            re.IGNORECASE,
-        ):
-            label = match.group(1).strip()
-            if "teil" in label.lower():
-                continue
-            amount = float(match.group(2).replace(".", "") + "." + match.group(3))
-            trade = parse_trade(f"Meister {label}", [1])
-            if trade:
-                fees[trade] = amount
-        return fees
+    def _amount_pair(match: re.Match, low_group: int = 1) -> dict[str, float]:
+        return {
+            "fee": float(
+                match.group(low_group).replace(".", "") + "." + match.group(low_group + 1)
+            ),
+            "fee_max": float(
+                match.group(low_group + 2).replace(".", "") + "." + match.group(low_group + 3)
+            ),
+        }
 
-    @staticmethod
-    def parse_generic_exam_fees(text: str) -> dict[int, float]:
-        fees: dict[int, float] = {}
-        for part, roman in ((2, "II"), (3, "III"), (4, "IV")):
-            match = re.search(
-                rf"Teil\s+{roman}.*?([\d.]+),(\d{{2}})\s*€",
-                text,
-                re.IGNORECASE | re.DOTALL,
-            )
-            if match:
-                fees[part] = float(match.group(1).replace(".", "") + "." + match.group(2))
+    @classmethod
+    def parse_meister_exam_fees(cls, text: str) -> dict[int, dict[str, float]]:
+        fees: dict[int, dict[str, float]] = {}
+        section = re.search(
+            r"5\.\s*Meisterprüfung(.*?)6\.\s*Fortbildungsprüfung",
+            text,
+            re.IGNORECASE | re.DOTALL,
+        )
+        chunk = section.group(1) if section else text
+
+        part_i = re.search(
+            r"Teil I \(praktischer Teil\)\s+([\d.]+),(\d{2})\s+bis\s+([\d.]+),(\d{2})\s+Euro",
+            chunk,
+            re.IGNORECASE,
+        )
+        if part_i:
+            fees[1] = cls._amount_pair(part_i)
+
+        generic = re.search(
+            r"Teil II, III oder IV \(theoretische Teile\)\s+"
+            r"([\d.]+),(\d{2})\s+bis\s+([\d.]+),(\d{2})\s+Euro",
+            chunk,
+            re.IGNORECASE,
+        )
+        if generic:
+            values = cls._amount_pair(generic)
+            for part in (2, 3, 4):
+                fees[part] = dict(values)
         return fees
 
     def _resolve_exam_fees_pdf_url(self) -> str:
         soup = self.parse_html(EXAM_FEES_PAGE_URL)
         if soup is None:
             return FEES_PDF_URL
-        for link in soup.select("a[href*='gebuehrenordnung'], a[href*='gebuehr']"):
+        for link in soup.select("a[href*='gebuehrentarif'], a[href*='gebuehr']"):
             href = link.get("href", "")
-            if href.lower().endswith(".pdf"):
+            if href.lower().endswith(".pdf") and "gebuehrentarif" in href.lower():
                 return urljoin(CHAMBER_URL, href)
         return FEES_PDF_URL
 
-    def _fetch_exam_fees_from_pdf(self) -> tuple[dict[str, float], dict[int, float]]:
+    def _fetch_exam_fees_from_pdf(self) -> dict[int, dict[str, float]]:
         try:
             from pypdf import PdfReader
         except ImportError:
             logger.warning("HWK OWL: pypdf not installed — using fallback exam fees.")
-            return {}, {}
+            return {}
 
         pdf_url = self._resolve_exam_fees_pdf_url()
         response = self.get(pdf_url)
         if response is None:
             logger.warning("HWK OWL: could not fetch exam-fee PDF.")
-            return {}, {}
+            return {}
 
         text = ""
         for page in PdfReader(BytesIO(response.content)).pages:
             text += (page.extract_text() or "") + "\n"
-        part_i_fees = self.parse_part_i_exam_fees(text)
-        generic_fees = self.parse_generic_exam_fees(text) or GENERIC_EXAM_FEES
-        return part_i_fees, generic_fees
+        fees = self.parse_meister_exam_fees(text)
+        if not fees:
+            logger.warning("HWK OWL: could not parse Meister exam fee ranges from PDF.")
+        return fees
 
     def collect(self) -> ScrapeResult:
         result = super().collect()
@@ -271,23 +312,15 @@ class HwkOstwestfalenLippeZuBielefeldScraper(BavariaOdavScraper):
         return result
 
     def published_exam_fee_rows(self) -> list[dict]:
-        part_i_fees, generic_fees = self._fetch_exam_fees_from_pdf()
+        fees = self._fetch_exam_fees_from_pdf() or GENERIC_EXAM_FEES
         rows: list[dict] = []
-        for trade_name, fee in part_i_fees.items():
-            rows.append({
-                "chamber_slug": self.chamber_slug,
-                "trade_slug": normalize_trade(trade_name)[0],
-                "part": 1,
-                "fee": fee,
-                "qualifier": "",
-                "source_url": EXAM_FEES_PAGE_URL,
-            })
-        for part, fee in generic_fees.items():
+        for part, values in fees.items():
             rows.append({
                 "chamber_slug": self.chamber_slug,
                 "trade_slug": None,
                 "part": part,
-                "fee": fee,
+                "fee": values["fee"],
+                "fee_max": values.get("fee_max"),
                 "qualifier": "",
                 "source_url": EXAM_FEES_PAGE_URL,
             })

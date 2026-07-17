@@ -12,6 +12,7 @@ from scrapers.hwk_muenster import HwkMuensterScraper, parse_muenster_title
 from scrapers.hwk_ostwestfalen_lippe_zu_bielefeld import (
     HwkOstwestfalenLippeZuBielefeldScraper,
     parse_owl_title,
+    _is_meister_card,
 )
 from scrapers.hwk_suedwestfalen import HwkSuedwestfalenScraper, parse_suedwestfalen_title
 from scrapers.pipeline import SCRAPERS
@@ -73,6 +74,58 @@ class NrwParserTests(unittest.TestCase):
             parse_suedwestfalen_title("Ausbildung der Ausbilder (AEVO) (Teil IV)"),
             ([4], None),
         )
+        self.assertEqual(
+            parse_suedwestfalen_title(
+                "Geprüfte/r Fachfrau/Fachmann für kaufmännische Betriebsführung (HWO)"
+            ),
+            ([3], None),
+        )
+
+    def test_owl_teil_iii_iv_card_detection(self):
+        self.assertTrue(
+            _is_meister_card(
+                "27.07.2026 - 18.09.2026: Vollzeit Fachmann/-frau kaufmännische Betriebsführung"
+            )
+        )
+        self.assertTrue(
+            _is_meister_card("31.08.2026 - 19.09.2026: Vollzeit AdA - Ausbildung der Ausbilder (Teil IV)")
+        )
+
+    def test_owl_exam_fee_range_parsing(self):
+        sample = """
+        5. Meisterprüfung
+        b) Teil I (praktischer Teil)         380,00 bis 2.450,00 Euro
+        c) Teil II, III oder IV (theoretische Teile)          250,00 bis 980,00 Euro
+        6. Fortbildungsprüfung
+        """
+        fees = HwkOstwestfalenLippeZuBielefeldScraper.parse_meister_exam_fees(sample)
+        self.assertEqual(fees[1]["fee"], 380.0)
+        self.assertEqual(fees[1]["fee_max"], 2450.0)
+        self.assertEqual(fees[2]["fee"], 250.0)
+        self.assertEqual(fees[2]["fee_max"], 980.0)
+
+    def test_suedwestfalen_course_page_parsing(self):
+        from bs4 import BeautifulSoup
+
+        html = """
+        <h1>Meisterkurs Elektrotechnik Vollzeit</h1>
+        <p>Lehrgangsdauer: 1250 Unterrichtsstunden</p>
+        <p>10.880,00 € (zzgl. Prüfungsgebühr 1.000,00 € )</p>
+        <h4>12.10.2026 — 11.06.2027</h4><a href="/buchung/...">ausgebucht</a>
+        <h4>11.10.2027 — 09.06.2028</h4><a href="/buchung/.../new-waitlist">Warteliste</a>
+        <p>Prüfungsgebühr: 1.000 EUR</p>
+        """
+        soup = BeautifulSoup(html, "html.parser")
+        offers = HwkSuedwestfalenScraper()._parse_course_page(
+            soup, "https://www.bbz-arnsberg.de/kurse/meisterkurs-elektrotechnik-vollzeit"
+        )
+        self.assertEqual(len(offers), 2)
+        self.assertEqual(offers[0].duration_hours, 1250)
+        self.assertEqual(offers[0].course_fee, 10880.0)
+        self.assertEqual(offers[0].exam_fee_scraped, 1000.0)
+        self.assertEqual(offers[0].availability, "full")
+        self.assertEqual(offers[1].availability, "waitlist")
+        self.assertEqual(offers[0].start_date, "2026-10-12")
 
     def test_dortmund_title_parsing(self):
         self.assertEqual(
@@ -246,16 +299,21 @@ class NrwExamFeeTests(unittest.TestCase):
             280.0,
         )
 
-    def test_suedwestfalen_card_fee_parsing(self):
-        card = {
-            "title": "Meisterkurs Elektrotechnik Vollzeit",
-            "text": "1250 Unterrichtsstunden 10.880,00 €",
-            "url": "https://www.bbz-arnsberg.de/meisterkurse/elektrotechnik",
-        }
-        offers = HwkSuedwestfalenScraper()._parse_card(card)
-        self.assertEqual(len(offers), 1)
-        self.assertEqual(offers[0].course_fee, 10880.0)
-        self.assertEqual(offers[0].trade_name, "Elektrotechniker")
+    def test_suedwestfalen_fee_and_run_parsing(self):
+        from bs4 import BeautifulSoup
+
+        course_fee, exam_fee = HwkSuedwestfalenScraper._parse_fees(
+            "10.880,00 € (zzgl. Prüfungsgebühr 1.000,00 € )"
+        )
+        self.assertEqual(course_fee, 10880.0)
+        self.assertEqual(exam_fee, 1000.0)
+
+        runs = HwkSuedwestfalenScraper._parse_runs(
+            BeautifulSoup("", "html.parser"),
+            "#### 12.10.2026 — 16.04.2027\nWarteliste\n#### 18.10.2027 — 26.04.2028\nWarteliste",
+        )
+        self.assertEqual(len(runs), 2)
+        self.assertEqual(runs[0][2], "waitlist")
 
 
 if __name__ == "__main__":
