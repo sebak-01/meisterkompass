@@ -7,7 +7,7 @@ import re
 from io import BytesIO
 from urllib.parse import urljoin
 
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
 
 from .base import BaseScraper, RawCourseOffer, ScrapeResult, build_course_title, normalize_trade
 from .hwk_bayern import parse_parts, parse_trade
@@ -24,8 +24,20 @@ GENERIC_EXAM_FEES = {2: 380.0, 3: 290.0, 4: 220.0}
 
 PRICE_RE = re.compile(r"([\d.]+),(\d{2})\s*€")
 DURATION_RE = re.compile(r"([\d.]+)\s+Unterrichtsstunden", re.IGNORECASE)
-DATE_RE = re.compile(
-    r"(\d{2})\.(\d{2})\.(\d{4})\s*[-–]\s*(\d{2})\.(\d{2})\.(\d{4})"
+DATE_RANGE_RE = re.compile(
+    r"(\d{2})\.(\d{2})\.(\d{4})\s*[—–\-]+\s*(\d{2})\.(\d{2})\.(\d{4})"
+)
+EXAM_FEE_BRACKET_RE = re.compile(
+    r"\(zzgl\.\s*Prüfungsgebühr\s*([\d.]+),(\d{2})\s*€\s*\)",
+    re.IGNORECASE,
+)
+EXAM_FEE_OVERVIEW_RE = re.compile(
+    r"Prüfungsgebühr:\s*([\d.]+)\s*EUR",
+    re.IGNORECASE,
+)
+COURSE_LINK_RE = re.compile(
+    r"/kurse/(meisterkurs-|gepruefte-|ausbildung-der-ausbilder)[^\"'\s#]+",
+    re.IGNORECASE,
 )
 
 DEFAULT_LOCATION = {
@@ -54,14 +66,40 @@ SWF_TRADE_ALIASES = {
     "friseur": "Friseur",
 }
 
+KNOWN_MEISTER_COURSE_PATHS = (
+    "meisterkurs-elektrotechnik-vollzeit",
+    "meisterkurs-elektrotechnik-teilzeit",
+    "meisterkurs-maurer-und-betonbauer",
+    "meisterkurs-maler-und-lackierer",
+    "meisterkurs-maler-und-lackierer-fahrzeuglackierer",
+    "meisterkurs-metallbauer",
+    "meisterkurs-feinwerkmechaniker",
+    "meisterkurs-tischler",
+    "meisterkurs-zimmerer",
+    "meisterkurs-stuckateur",
+    "meisterkurs-fliesen-platten-und-mosaikleger",
+    "meisterkurs-friseur",
+    "meisterkurs-fahrzeuglackierer",
+    "meisterkurs-installateure-und-heizungsbauer-vollzeit",
+    "meisterkurs-installateure-und-heizungsbauer-teilzeit",
+    "meisterkurs-kraftfahrzeugtechniker-vollzeit",
+    "meisterkurs-kraftfahrzeugtechniker-teilzeit",
+    "meisterkurs-kraftfahrzeugtechniker-nfz-vollzeit",
+    "gepruefte-r-fachfrau-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo",
+    "ausbildung-der-ausbilder-nach-aevo",
+)
+
 
 def parse_suedwestfalen_title(title: str) -> tuple[list[int], str | None]:
     cleaned = re.sub(r"\*+", "", title).strip()
     parts = parse_parts(cleaned, implicit_trade_parts=True)
     if not parts:
-        if "teil iii" in cleaned.lower():
+        lower = cleaned.lower()
+        if "betriebsführung" in lower or "betriebsfuehrung" in lower:
             parts = [3]
-        elif "teil iv" in cleaned.lower() or "aevo" in cleaned.lower():
+        elif "teil iii" in lower:
+            parts = [3]
+        elif "teil iv" in lower or "aevo" in lower or "ausbilder" in lower:
             parts = [4]
 
     if not parts:
@@ -79,11 +117,17 @@ def parse_suedwestfalen_title(title: str) -> tuple[list[int], str | None]:
     return (parts, trade) if trade else ([], None)
 
 
-def _is_meister_course(title: str) -> bool:
-    lower = title.lower()
+def _is_meister_course(title: str, url: str = "") -> bool:
+    lower = f"{title} {url}".lower()
     if any(value in lower for value in ("industriemeister", "infoabend", "infoveranstaltung")):
         return False
-    return "meisterkurs" in lower or "meisterschule" in lower or "aevo" in lower or "betriebsführung" in lower
+    if "meisterkurs" in lower or "meisterschule" in lower:
+        return True
+    if "betriebsführung" in lower or "betriebsfuehrung" in lower:
+        return True
+    if "ausbilder" in lower and ("aevo" in lower or "teil iv" in lower):
+        return True
+    return False
 
 
 class HwkSuedwestfalenScraper(BaseScraper):
@@ -95,39 +139,53 @@ class HwkSuedwestfalenScraper(BaseScraper):
     request_delay = 0.3
 
     def fetch_raw_courses(self) -> list[RawCourseOffer]:
-        cards = self._discover_course_cards()
+        course_urls = self._discover_course_urls()
         offers: list[RawCourseOffer] = []
-        for card in cards:
-            try:
-                parsed = self._parse_card(card)
-            except Exception as exc:
-                logger.warning("Could not parse Südwestfalen card %s: %s", card.get("url"), exc)
-                continue
-            if parsed:
-                offers.extend(parsed)
-        logger.info("HWK Südwestfalen: parsed %d offers from %d cards.", len(offers), len(cards))
-        return offers
-
-    def _discover_course_cards(self) -> list[dict]:
-        cards: dict[str, dict] = {}
-        for url in (LISTING_URL, MEISTER_HUB_URL):
+        for url in sorted(course_urls):
             soup = self.parse_html(url)
             if soup is None:
-                logger.warning("Could not fetch Südwestfalen listing %s.", url)
+                logger.warning("Could not fetch Südwestfalen course %s.", url)
                 continue
-            cards.update(self._cards_from_listing(soup, url))
+            try:
+                offers.extend(self._parse_course_page(soup, url))
+            except Exception as exc:
+                logger.warning("Could not parse Südwestfalen course %s: %s", url, exc)
+        logger.info(
+            "HWK Südwestfalen: parsed %d offers from %d course pages.",
+            len(offers),
+            len(course_urls),
+        )
+        return offers
 
-        for link in self._discover_trade_pages():
-            soup = self.parse_html(link)
+    def _discover_course_urls(self) -> set[str]:
+        urls: set[str] = {f"{BBZ_BASE}/kurse/{slug}" for slug in KNOWN_MEISTER_COURSE_PATHS}
+        for page_url in (LISTING_URL, MEISTER_HUB_URL):
+            soup = self.parse_html(page_url)
             if soup is None:
                 continue
-            cards.update(self._cards_from_listing(soup, link))
-        return list(cards.values())
+            urls.update(self._course_urls_from_soup(soup))
+            for link in self._discover_trade_pages(soup):
+                trade_soup = self.parse_html(link)
+                if trade_soup is not None:
+                    urls.update(self._course_urls_from_soup(trade_soup))
+        return urls
 
-    def _discover_trade_pages(self) -> list[str]:
-        soup = self.parse_html(MEISTER_HUB_URL)
-        if soup is None:
-            return []
+    @staticmethod
+    def _course_urls_from_soup(soup: BeautifulSoup) -> set[str]:
+        urls: set[str] = set()
+        for link in soup.select("a[href*='/kurse/']"):
+            href = urljoin(BBZ_BASE, link.get("href", ""))
+            path = href.split("?", 1)[0].rstrip("/")
+            slug = path.rsplit("/", 1)[-1]
+            title = link.get_text(" ", strip=True)
+            if not _is_meister_course(title, slug):
+                continue
+            if slug.startswith(("meisterkurs-", "gepruefte-", "ausbildung-der-ausbilder")):
+                urls.add(path)
+        return urls
+
+    @staticmethod
+    def _discover_trade_pages(soup: BeautifulSoup) -> list[str]:
         pages: list[str] = []
         for link in soup.select("a[href*='/meisterkurse/']"):
             href = urljoin(BBZ_BASE, link.get("href", ""))
@@ -135,82 +193,147 @@ class HwkSuedwestfalenScraper(BaseScraper):
                 pages.append(href)
         return pages
 
-    def _cards_from_listing(self, soup: BeautifulSoup, page_url: str) -> dict[str, dict]:
-        cards: dict[str, dict] = {}
-        for heading in soup.find_all(["h2", "h3", "h4", "h5"]):
-            title = heading.get_text(" ", strip=True)
-            if not _is_meister_course(title):
-                continue
-            block = self._card_block(heading)
-            if block is None:
-                continue
-            text = block.get_text("\n", strip=True)
-            detail_url = page_url
-            for link in block.select("a[href]"):
-                href = urljoin(BBZ_BASE, link.get("href", ""))
-                if BBZ_BASE in href:
-                    detail_url = href
-                    break
-            key = f"{title}|{detail_url}"
-            cards[key] = {"title": title, "text": text, "url": detail_url}
-        return cards
+    def _parse_course_page(self, soup: BeautifulSoup, url: str) -> list[RawCourseOffer]:
+        h1 = soup.select_one("h1")
+        title = h1.get_text(" ", strip=True) if h1 else ""
+        if not title:
+            og = soup.select_one("meta[property='og:title']")
+            title = og.get("content", "").strip() if og else ""
+        if not title or not _is_meister_course(title, url):
+            return []
 
-    @staticmethod
-    def _card_block(heading: Tag) -> Tag | None:
-        node: Tag | None = heading
-        for _ in range(4):
-            node = node.parent if node is not None else None
-            if node is None:
-                return None
-            text = node.get_text(" ", strip=True)
-            if PRICE_RE.search(text) or DURATION_RE.search(text) or DATE_RE.search(text):
-                return node
-        return heading.parent
-
-    def _parse_card(self, card: dict) -> list[RawCourseOffer]:
-        title = card["title"]
-        text = card["text"]
-        url = card["url"]
         parts, trade = parse_suedwestfalen_title(title)
         if not parts:
             return []
 
-        duration_match = DURATION_RE.search(text)
+        page_text = soup.get_text("\n", strip=True)
+        duration_match = DURATION_RE.search(page_text)
         duration = int(duration_match.group(1).replace(".", "")) if duration_match else None
-        price_match = PRICE_RE.search(text)
-        course_fee = (
-            float(price_match.group(1).replace(".", "") + "." + price_match.group(2))
-            if price_match else None
-        )
-        lower = title.lower()
+        course_fee, exam_fee = self._parse_fees(page_text)
+        lower = f"{title} {url}".lower()
         format_key = "full_time" if "vollzeit" in lower else "part_time"
         teaching_mode = "presence"
 
-        date_match = DATE_RE.search(text)
-        if date_match:
-            start = f"{date_match.group(3)}-{date_match.group(2)}-{date_match.group(1)}"
-            end = f"{date_match.group(6)}-{date_match.group(5)}-{date_match.group(4)}"
-            start_date, end_date = start, end
-        else:
-            start_date = end_date = None
+        runs = self._parse_runs(soup, page_text)
+        if not runs:
+            return [RawCourseOffer(
+                title=build_course_title(trade, parts),
+                trade_name=trade,
+                parts=parts,
+                format_key=format_key,
+                teaching_mode=teaching_mode,
+                start_date=None,
+                end_date=None,
+                duration_hours=duration,
+                course_fee=course_fee,
+                exam_fee_scraped=exam_fee,
+                city=DEFAULT_LOCATION["city"],
+                street=DEFAULT_LOCATION["street"],
+                zip_code=DEFAULT_LOCATION["zip_code"],
+                availability="unknown",
+                source_url=url,
+                scraped_raw={"title": title, "note": "Keine Termine auf der Kursseite"},
+            )]
 
-        return [RawCourseOffer(
-            title=build_course_title(trade, parts),
-            trade_name=trade,
-            parts=parts,
-            format_key=format_key,
-            teaching_mode=teaching_mode,
-            start_date=start_date,
-            end_date=end_date,
-            duration_hours=duration,
-            course_fee=course_fee,
-            city=DEFAULT_LOCATION["city"],
-            street=DEFAULT_LOCATION["street"],
-            zip_code=DEFAULT_LOCATION["zip_code"],
-            availability="unknown",
-            source_url=url,
-            scraped_raw={"title": title, "card_text": text[:1000]},
-        )]
+        offers: list[RawCourseOffer] = []
+        seen: set[tuple[str, str]] = set()
+        for index, (start_date, end_date, availability) in enumerate(runs):
+            key = (start_date, end_date)
+            if key in seen:
+                continue
+            seen.add(key)
+            offers.append(RawCourseOffer(
+                title=build_course_title(trade, parts),
+                trade_name=trade,
+                parts=parts,
+                format_key=format_key,
+                teaching_mode=teaching_mode,
+                start_date=start_date,
+                end_date=end_date,
+                duration_hours=duration,
+                course_fee=course_fee,
+                exam_fee_scraped=exam_fee,
+                city=DEFAULT_LOCATION["city"],
+                street=DEFAULT_LOCATION["street"],
+                zip_code=DEFAULT_LOCATION["zip_code"],
+                availability=availability,
+                source_url=f"{url}#termin-{index + 1}",
+                scraped_raw={"title": title, "run_label": f"{start_date} - {end_date}"},
+            ))
+        return offers
+
+    @staticmethod
+    def _parse_fees(text: str) -> tuple[float | None, float | None]:
+        course_fee = None
+        exam_fee = None
+
+        bracket = EXAM_FEE_BRACKET_RE.search(text)
+        if bracket:
+            exam_fee = float(bracket.group(1).replace(".", "") + "." + bracket.group(2))
+
+        overview = EXAM_FEE_OVERVIEW_RE.search(text)
+        if overview:
+            exam_fee = float(overview.group(1).replace(".", ""))
+
+        price_match = PRICE_RE.search(text)
+        if price_match:
+            course_fee = float(
+                price_match.group(1).replace(".", "") + "." + price_match.group(2)
+            )
+        return course_fee, exam_fee
+
+    @staticmethod
+    def _availability_from_block(block: str) -> str:
+        lower = block.lower()
+        if "warteliste" in lower:
+            return "waitlist"
+        if "ausgebucht" in lower or "keine plätze" in lower:
+            return "full"
+        if any(word in lower for word in ("freie plätze", "anmelden", "buchbar", "verfügbar")):
+            return "available"
+        return "unknown"
+
+    @classmethod
+    def _parse_runs(cls, soup: BeautifulSoup, page_text: str) -> list[tuple[str, str, str]]:
+        runs: list[tuple[str, str, str]] = []
+        seen: set[tuple[str, str]] = set()
+
+        for heading in soup.select("h4"):
+            text = heading.get_text(" ", strip=True)
+            match = DATE_RANGE_RE.search(text)
+            if not match:
+                continue
+            start = f"{match.group(3)}-{match.group(2)}-{match.group(1)}"
+            end = f"{match.group(6)}-{match.group(5)}-{match.group(4)}"
+            if int(start[:4]) < 2020 or int(start[:4]) > 2035:
+                continue
+            block = text
+            sibling = heading.find_next_sibling()
+            if sibling is not None:
+                block = f"{text}\n{sibling.get_text(' ', strip=True)}"
+            availability = cls._availability_from_block(block)
+            key = (start, end)
+            if key not in seen:
+                seen.add(key)
+                runs.append((start, end, availability))
+
+        if runs:
+            return runs
+
+        matches = list(DATE_RANGE_RE.finditer(page_text))
+        for index, match in enumerate(matches):
+            start = f"{match.group(3)}-{match.group(2)}-{match.group(1)}"
+            end = f"{match.group(6)}-{match.group(5)}-{match.group(4)}"
+            if int(start[:4]) < 2020 or int(start[:4]) > 2035:
+                continue
+            block_end = matches[index + 1].start() if index + 1 < len(matches) else match.end() + 120
+            block = page_text[match.start():block_end]
+            availability = cls._availability_from_block(block)
+            key = (start, end)
+            if key not in seen:
+                seen.add(key)
+                runs.append((start, end, availability))
+        return runs
 
     @staticmethod
     def parse_generic_exam_fees(text: str) -> dict[int, float]:

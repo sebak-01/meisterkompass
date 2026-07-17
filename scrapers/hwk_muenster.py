@@ -120,7 +120,7 @@ class HwkMuensterScraper(BaseScraper):
         page_text = soup.get_text("\n", strip=True)
         duration_match = DURATION_RE.search(page_text)
         duration = int(duration_match.group(1).replace(".", "")) if duration_match else None
-        course_fee, exam_fee = self._parse_fees(page_text)
+        course_fee, exam_fee = self._parse_fees(soup)
         lower = title.lower()
         default_format = "full_time" if "vollzeit" in lower else "part_time"
         if "online" in lower:
@@ -152,7 +152,7 @@ class HwkMuensterScraper(BaseScraper):
             )]
 
         offers: list[RawCourseOffer] = []
-        for index, (start_date, end_date) in enumerate(runs):
+        for index, (start_date, end_date, availability) in enumerate(runs):
             offers.append(RawCourseOffer(
                 title=build_course_title(trade, parts),
                 trade_name=trade,
@@ -167,36 +167,65 @@ class HwkMuensterScraper(BaseScraper):
                 city=DEFAULT_LOCATION["city"],
                 street=DEFAULT_LOCATION["street"],
                 zip_code=DEFAULT_LOCATION["zip_code"],
-                availability="unknown",
+                availability=availability,
                 source_url=f"{url}#termin-{index + 1}",
                 scraped_raw={"title": title, "run_label": f"{start_date} - {end_date}"},
             ))
         return offers
 
     @staticmethod
-    def _parse_fees(text: str) -> tuple[float | None, float | None]:
+    def _parse_fees(soup: BeautifulSoup) -> tuple[float | None, float | None]:
         course_fee = None
         exam_fee = None
-        lower = text.lower()
-        if "kursgebühr" in lower:
-            block = text[lower.index("kursgebühr"):]
-            match = PRICE_RE.search(block)
-            if match:
-                course_fee = float(match.group(1).replace(".", "") + "." + match.group(2))
-        if "prüfungsgebühr" in lower:
-            block = text[lower.index("prüfungsgebühr"):]
-            amounts = [
-                float(match.group(1).replace(".", "") + "." + match.group(2))
-                for match in PRICE_RE.finditer(block[:500])
-            ]
-            if amounts:
-                exam_fee = max(amounts)
+        for item in soup.select(".course-detail__fee-list-item"):
+            label_el = item.select_one(".course-detail__fee-label")
+            value_el = item.select_one(".course-detail__fee-value")
+            if not label_el or not value_el:
+                continue
+            label = label_el.get_text(" ", strip=True).lower()
+            match = PRICE_RE.search(value_el.get_text(" ", strip=True))
+            if not match:
+                continue
+            amount = float(match.group(1).replace(".", "") + "." + match.group(2))
+            if "kursgebühr" in label:
+                course_fee = amount
+            elif "prüfungsgebühr" in label:
+                exam_fee = amount
         return course_fee, exam_fee
 
     @staticmethod
-    def _parse_runs(soup: BeautifulSoup) -> list[tuple[str, str]]:
-        runs: list[tuple[str, str]] = []
-        for item in soup.select(".course-detail__dates-list-item .date, .course-detail__date-choice-label .date"):
+    def _availability_from_item(item: Tag) -> str:
+        state = item.select_one(".icon--course-state")
+        if state is None:
+            return "unknown"
+        classes = " ".join(state.get("class", []))
+        if "icon--course-open" in classes:
+            return "available"
+        if "icon--course-fully-booked" in classes:
+            return "waitlist"
+        return "unknown"
+
+    @staticmethod
+    def _parse_runs(soup: BeautifulSoup) -> list[tuple[str, str, str]]:
+        runs: list[tuple[str, str, str]] = []
+        for item in soup.select(".course-detail__dates-list-item"):
+            date_el = item.select_one(".date")
+            if date_el is None:
+                continue
+            match = SHORT_DATE_RE.search(date_el.get_text(" ", strip=True))
+            if not match:
+                continue
+            start = (
+                f"{_expand_year(match.group(3))}-{match.group(2)}-{match.group(1)}"
+            )
+            end = (
+                f"{_expand_year(match.group(6))}-{match.group(5)}-{match.group(4)}"
+            )
+            runs.append((start, end, HwkMuensterScraper._availability_from_item(item)))
+        if runs:
+            return runs
+
+        for item in soup.select(".course-detail__date-choice-label .date"):
             match = SHORT_DATE_RE.search(item.get_text(" ", strip=True))
             if not match:
                 continue
@@ -206,7 +235,7 @@ class HwkMuensterScraper(BaseScraper):
             end = (
                 f"{_expand_year(match.group(6))}-{match.group(5)}-{match.group(4)}"
             )
-            runs.append((start, end))
+            runs.append((start, end, "unknown"))
         return runs
 
     @staticmethod

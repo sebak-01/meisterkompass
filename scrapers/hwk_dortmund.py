@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import logging
 import re
+import json
 from io import BytesIO
 from urllib.parse import urljoin
 
@@ -24,7 +25,15 @@ GENERIC_EXAM_FEES = {1: 400.0, 2: 320.0, 3: 240.0, 4: 220.0}
 
 DISPLAY_PRICE_RE = re.compile(r'"display_price":(\d+)')
 DATE_RE = re.compile(r"(\d{2})\.(\d{2})\.(\d{4})")
-DURATION_RE = re.compile(r"([\d.]+)\s+(?:Unterrichtsstunden|UE|Std\.)", re.IGNORECASE)
+DURATION_RE = re.compile(
+    r"([\d.]+)\s+(?:Unterrichtseinheiten|Unterrichtsstunden|UE|Std\.)",
+    re.IGNORECASE,
+)
+BUE_PRICES_RE = re.compile(r'"bue_additional_prices"\s*:\s*(\[[^\]]+\])')
+EXAM_FEE_TABLE_RE = re.compile(
+    r"Pr[üu]fungsgeb[üu]hr\s*:\s*<\/strong><\/td>\s*<td>\s*([\d.]+),(\d{2})",
+    re.IGNORECASE,
+)
 
 DEFAULT_LOCATION = {
     "street": "Schützenstraße 32-34",
@@ -133,12 +142,13 @@ class HwkDortmundScraper(BaseScraper):
             return None
 
         page_text = soup.get_text("\n", strip=True)
-        duration_match = DURATION_RE.search(page_text)
+        duration_match = DURATION_RE.search(page_text) or DURATION_RE.search(html)
         duration = int(duration_match.group(1).replace(".", "")) if duration_match else None
         price_match = DISPLAY_PRICE_RE.search(html)
         course_fee = float(price_match.group(1)) if price_match else None
         if course_fee == 0:
             course_fee = None
+        exam_fee = self._parse_exam_fee(html)
 
         dates = DATE_RE.findall(page_text)
         start_date = end_date = None
@@ -163,7 +173,7 @@ class HwkDortmundScraper(BaseScraper):
         availability = "unknown"
         if "ausgebucht" in lower or "keine plätze" in lower:
             availability = "full"
-        elif "warteliste" in lower:
+        elif "interessentenliste" in lower or "warteliste" in lower:
             availability = "waitlist"
         elif "freie plätze" in lower:
             availability = "available"
@@ -178,14 +188,33 @@ class HwkDortmundScraper(BaseScraper):
             end_date=end_date,
             duration_hours=duration,
             course_fee=course_fee,
-            exam_fee_scraped=None,
+            exam_fee_scraped=exam_fee,
             city=DEFAULT_LOCATION["city"],
             street=DEFAULT_LOCATION["street"],
             zip_code=DEFAULT_LOCATION["zip_code"],
             availability=availability,
             source_url=url,
-            scraped_raw={"title": title, "note": "Prüfungsgebühr nicht auf der Veranstaltungsseite"},
+            scraped_raw={"title": title, "exam_fee_source": "course_page" if exam_fee else "tariff"},
         )
+
+    @staticmethod
+    def _parse_exam_fee(html: str) -> float | None:
+        prices_match = BUE_PRICES_RE.search(html)
+        if prices_match:
+            try:
+                for row in json.loads(prices_match.group(1)):
+                    label = row.get("bezeichnung", "")
+                    if "prüfungsgebühr" in label.lower():
+                        return float(row["gebuehr"])
+            except (json.JSONDecodeError, KeyError, TypeError):
+                pass
+
+        table_match = EXAM_FEE_TABLE_RE.search(html)
+        if table_match:
+            return float(
+                table_match.group(1).replace(".", "") + "." + table_match.group(2)
+            )
+        return None
 
     @staticmethod
     def parse_generic_exam_fees(text: str) -> dict[int, float]:
