@@ -304,7 +304,9 @@ def parse_exam_fee(text: str, parts: list[int]) -> tuple[float | None, str]:
 
     lower = text.lower()
     qualifier = ""
-    if any(word in lower for word in ("zirka", "ca.", "circa", "zzgl.")):
+    if any(word in lower for word in ("zirka", "ca.", "circa")):
+        qualifier = "ca."
+    elif re.search(r"zzgl\.\s+gewerkspezif", lower):
         qualifier = "ca."
 
     part_amounts: dict[int, float] = {}

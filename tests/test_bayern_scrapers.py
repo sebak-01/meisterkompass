@@ -140,6 +140,15 @@ class BavariaParserTests(unittest.TestCase):
         self.assertEqual(fee, 715.0)
         self.assertEqual(qualifier, "")
 
+        leipzig_zzgl = (
+            "Prüfungsgebühr für Teil I:\n395 Euro\n"
+            "Prüfungsgebühr für Teil II:\n320 Euro\n"
+            "zzgl. berufsbezogener Mehraufwendungen"
+        )
+        fee, qualifier = parse_exam_fee(leipzig_zzgl, [1, 2])
+        self.assertEqual(fee, 715.0)
+        self.assertEqual(qualifier, "")
+
         oberfranken_addr = parse_address(
             "Lehrgangsort\nKulmbach\nKontakt\nMarco Pollog\nTel. 0921 910127"
         )

@@ -75,6 +75,13 @@ from .hwk_hildesheim_suedniedersachsen import HwkHildesheimSuedniedersachsenScra
 from .hwk_oldenburg import HwkOldenburgScraper
 from .hwk_osnabrueck_emsland_grafschaft_bentheim import HwkOsnabrueckEmslandGrafschaftBentheimScraper
 from .hwk_ostfriesland import HwkOstfrieslandScraper
+from .hwk_koeln import HwkKoelnScraper
+from .hwk_duesseldorf import HwkDuesseldorfScraper
+from .hwk_aachen import HwkAachenScraper
+from .hwk_ostwestfalen_lippe_zu_bielefeld import HwkOstwestfalenLippeZuBielefeldScraper
+from .hwk_muenster import HwkMuensterScraper
+from .hwk_suedwestfalen import HwkSuedwestfalenScraper
+from .hwk_dortmund import HwkDortmundScraper
 
 
 logger = logging.getLogger(__name__)
@@ -126,6 +133,13 @@ SCRAPERS: dict[str, type] = {
     "hwk-oldenburg": HwkOldenburgScraper,
     "hwk-osnabrueck-emsland-grafschaft-bentheim": HwkOsnabrueckEmslandGrafschaftBentheimScraper,
     "hwk-ostfriesland": HwkOstfrieslandScraper,
+    "hwk-koeln": HwkKoelnScraper,
+    "hwk-duesseldorf": HwkDuesseldorfScraper,
+    "hwk-aachen": HwkAachenScraper,
+    "hwk-ostwestfalen-lippe-zu-bielefeld": HwkOstwestfalenLippeZuBielefeldScraper,
+    "hwk-muenster": HwkMuensterScraper,
+    "hwk-suedwestfalen": HwkSuedwestfalenScraper,
+    "hwk-dortmund": HwkDortmundScraper,
 }
 
 FORMAT_DISPLAY = {
