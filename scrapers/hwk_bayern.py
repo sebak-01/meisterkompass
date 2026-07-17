@@ -373,6 +373,28 @@ def parse_exam_fee(text: str, parts: list[int]) -> tuple[float | None, str]:
     )
     if prose_total:
         return _amount_from_match(prose_total, 1, 2), qualifier
+
+    # HWK Aachen ODAV: "Prüfungsgebühr: 610 Euro" (whole euros, no cents).
+    whole_euro = re.search(
+        r"Prüfungsgebühr\s*:\s*([\d.]+)\s*Euro\b",
+        text,
+        re.IGNORECASE,
+    )
+    if whole_euro:
+        line = whole_euro.group(0)
+        line_qual = "ca." if re.search(r"zirka|ca\.|circa", line, re.I) else ""
+        return float(whole_euro.group(1).replace(".", "")), line_qual
+
+    # HWK Düsseldorf ODAV: "zurzeit 1.470,00 Euro Prüfungsgebühren".
+    plural_total = re.search(
+        r"(?:zurzeit\s+)?([\d.]+),(\d{2})\s*Euro\s+Prüfungsgebühren",
+        text,
+        re.IGNORECASE,
+    )
+    if plural_total:
+        q = "ca." if "zurzeit" in plural_total.group(0).lower() else qualifier
+        return _amount_from_match(plural_total, 1, 2), q
+
     return None, ""
 
 

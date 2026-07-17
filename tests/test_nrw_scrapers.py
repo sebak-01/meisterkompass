@@ -103,13 +103,78 @@ class NrwParserTests(unittest.TestCase):
         <div class="course-detail__dates-list">
           <li class="course-detail__dates-list-item">
             <label class="course-detail__date-choice-label">
+              <svg class="icon icon--course-state icon--course-fully-booked">
+                <use xlink:href="#triangle-sharp-solid"></use>
+              </svg>
               <span class="date">22.10.27 - 19.01.30</span>
+            </label>
+          </li>
+          <li class="course-detail__dates-list-item">
+            <label class="course-detail__date-choice-label">
+              <svg class="icon icon--course-state icon--course-open">
+                <use xlink:href="#circle-solid"></use>
+              </svg>
+              <span class="date">06.05.30 - 30.11.30</span>
             </label>
           </li>
         </div>
         """
         runs = HwkMuensterScraper._parse_runs(BeautifulSoup(html, "html.parser"))
-        self.assertEqual(runs, [("2027-10-22", "2030-01-19")])
+        self.assertEqual(runs[0][:2], ("2027-10-22", "2030-01-19"))
+        self.assertEqual(runs[0][2], "waitlist")
+        self.assertEqual(runs[1][2], "available")
+
+    def test_muenster_structured_fee_parsing(self):
+        from bs4 import BeautifulSoup
+
+        html = """
+        <ul class="course-detail__fee-list">
+          <li class="course-detail__fee-list-item">
+            <span class="course-detail__fee-label">Kursgebühr</span>
+            <span class="course-detail__fee-value">13.312,69&nbsp;€</span>
+          </li>
+          <li class="course-detail__fee-list-item">
+            <span class="course-detail__fee-label">Prüfungsgebühr</span>
+            <span class="course-detail__fee-value">1.850,00&nbsp;€</span>
+          </li>
+        </ul>
+        <p>Durch das Aufstiegs-BAföG erhältst du eine Förderung von bis zu 11.250,00 €</p>
+        """
+        soup = BeautifulSoup(html, "html.parser")
+        course_fee, exam_fee = HwkMuensterScraper._parse_fees(soup)
+        self.assertEqual(course_fee, 13312.69)
+        self.assertEqual(exam_fee, 1850.0)
+
+    def test_aachen_course_page_exam_fee(self):
+        sample = "Hinweis\nPrüfungsgebühr: 610 Euro\nMaterial-/Bücherkosten: ca. 2.200 EUR"
+        fee, qualifier = parse_exam_fee(sample, [1, 2])
+        self.assertEqual(fee, 610.0)
+        self.assertEqual(qualifier, "")
+
+    def test_duesseldorf_course_page_exam_fee(self):
+        sample = (
+            "zurzeit 1.470,00 Euro Prüfungsgebühren und\n"
+            "ca.1.950,00 Euro Lernmittel"
+        )
+        fee, qualifier = parse_exam_fee(sample, [1, 2])
+        self.assertEqual(fee, 1470.0)
+        self.assertEqual(qualifier, "ca.")
+
+    def test_dortmund_exam_fee_from_bue_prices(self):
+        html = (
+            '"bue_additional_prices":[{"bezeichnung":"Kurskosten","gebuehr":10950},'
+            '{"bezeichnung":"Prüfungsgebühr","gebuehr":1224}]'
+        )
+        self.assertEqual(HwkDortmundScraper._parse_exam_fee(html), 1224.0)
+
+    def test_dortmund_duration_unterrichtseinheiten(self):
+        sample = "Umfang: 1264 Unterrichtseinheiten"
+        match = re.search(
+            r"([\d.]+)\s+(?:Unterrichtseinheiten|Unterrichtsstunden|UE|Std\.)",
+            sample,
+            re.IGNORECASE,
+        )
+        self.assertEqual(int(match.group(1)), 1264)
 
     def test_dortmund_display_price_parsing(self):
         html = '<script>"display_price":10260,"display_regular_price":10260</script>'
