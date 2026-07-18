@@ -15,7 +15,39 @@ concurrency:
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        group: [west, south, east, north]
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Scrape regional batch
+        run: python -m scrapers.run --group ${{ matrix.group }} --partial-out partial-${{ matrix.group }}.json
+
+      - name: Upload scrape partial
+        uses: actions/upload-artifact@v4
+        with:
+          name: partial-${{ matrix.group }}
+          path: partial-${{ matrix.group }}.json
+          retention-days: 1
+
+  merge:
+    needs: scrape
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
 
     steps:
       - name: Create GitHub App token
@@ -41,10 +73,15 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run scrapers → data/*.json
-        env:
-          SCRAPE_MAX_WORKERS: "10"
-        run: python -m scrapers.run
+      - name: Download scrape partials
+        uses: actions/download-artifact@v4
+        with:
+          path: partials
+          pattern: partial-*
+          merge-multiple: true
+
+      - name: Merge partials → data/*.json
+        run: python -m scrapers.run --merge-partials partials/partial-*.json
 
       - name: Commit data changes
         env:

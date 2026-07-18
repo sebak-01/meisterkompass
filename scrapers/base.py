@@ -12,6 +12,7 @@ from dataclasses import dataclass, field
 
 import requests
 from bs4 import BeautifulSoup
+from requests.exceptions import ConnectTimeout
 
 logger = logging.getLogger(__name__)
 
@@ -185,6 +186,8 @@ class BaseScraper(ABC):
                 return r
             except requests.RequestException as exc:
                 last_exc = exc
+                if isinstance(exc, ConnectTimeout):
+                    break
                 if attempt + 1 < self.max_retries:
                     time.sleep(1.5 * (attempt + 1))   # back off before retrying transient errors
         logger.warning("GET %s failed after %d attempts: %s", url, self.max_retries, last_exc)

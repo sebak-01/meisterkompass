@@ -87,9 +87,11 @@ from .hwk_dortmund import HwkDortmundScraper
 
 logger = logging.getLogger(__name__)
 
-# Cap parallel chamber scrapes so CI does not open dozens of outbound connections
-# at once (GitHub Actions egress limits → ConnectTimeout storms). Tunable via env.
-SCRAPE_MAX_WORKERS = max(1, int(os.environ.get("SCRAPE_MAX_WORKERS", "10")))
+# Cap parallel chamber scrapes when running the full dataset on one runner (GitHub
+# Actions egress limits → ConnectTimeout storms at ~50+ simultaneous connections).
+# CI matrix jobs scrape ~13 chambers each and run them fully in parallel.
+SCRAPE_MAX_WORKERS = max(1, int(os.environ.get("SCRAPE_MAX_WORKERS", "15")))
+SCRAPE_PARALLEL_CAP_THRESHOLD = max(1, int(os.environ.get("SCRAPE_PARALLEL_CAP_THRESHOLD", "15")))
 
 SCRAPERS: dict[str, type] = {
     "hwk-koblenz":     HwkKoblenzScraper,
@@ -146,6 +148,47 @@ SCRAPERS: dict[str, type] = {
     "hwk-suedwestfalen": HwkSuedwestfalenScraper,
     "hwk-dortmund": HwkDortmundScraper,
 }
+
+# Regional batches for parallel CI matrix jobs — each runner gets its own egress IP.
+# Heavy scrapers are spread across groups so wall time stays balanced (~5–8 min).
+SCRAPE_GROUPS: dict[str, tuple[str, ...]] = {
+    "west": (
+        "hwk-koblenz", "hwk-kassel", "hwk-rhein-main", "hwk-wiesbaden", "hwk-trier",
+        "hwk-pfalz", "hwk-rheinhessen", "hwk-saarland", "hwk-karlsruhe", "hwk-mannheim",
+        "hwk-koeln", "hwk-duesseldorf", "hwk-aachen",
+    ),
+    "south": (
+        "hwk-niederbayern-oberpfalz", "hwk-oberfranken", "hwk-chemnitz",
+        "hwk-muenchen-und-oberbayern", "hwk-mittelfranken", "hwk-unterfranken",
+        "hwk-schwaben", "hwk-stuttgart", "hwk-ulm", "hwk-freiburg", "hwk-konstanz",
+        "hwk-reutlingen", "hwk-heilbronn-franken",
+    ),
+    "east": (
+        "hwk-hannover", "hwk-osnabrueck-emsland-grafschaft-bentheim", "hwk-erfurt",
+        "hwk-ostthueringen-gera", "hwk-suedthueringen-suhl", "hwk-halle-saale",
+        "hwk-magdeburg", "hwk-dresden", "hwk-leipzig", "hwk-cottbus", "hwk-potsdam",
+        "hwk-frankfurt-oder-ostbrandenburg", "hwk-berlin",
+    ),
+    "north": (
+        "hwk-ostwestfalen-lippe-zu-bielefeld", "hwk-muenster", "hwk-suedwestfalen",
+        "hwk-dortmund", "hwk-schwerin", "hwk-ostmecklenburg-vorpommern", "hwk-flensburg",
+        "hwk-luebeck", "hwk-hamburg", "hwk-bremen", "hwk-braunschweig-lueneburg-stade",
+        "hwk-oldenburg", "hwk-hildesheim-suedniedersachsen", "hwk-ostfriesland",
+    ),
+}
+
+
+def _validate_scrape_groups() -> None:
+    grouped = [slug for slugs in SCRAPE_GROUPS.values() for slug in slugs]
+    if len(grouped) != len(set(grouped)):
+        raise ValueError("SCRAPE_GROUPS contains duplicate chamber slugs")
+    missing = set(SCRAPERS) - set(grouped)
+    extra = set(grouped) - set(SCRAPERS)
+    if missing or extra:
+        raise ValueError(f"SCRAPE_GROUPS mismatch: missing={sorted(missing)}, extra={sorted(extra)}")
+
+
+_validate_scrape_groups()
 
 FORMAT_DISPLAY = {
     "full_time":    "Vollzeit",
@@ -439,6 +482,14 @@ class RunReport:
     total_courses: int
 
 
+@dataclass
+class ScrapeBatch:
+    fresh_by_chamber: dict[str, list[dict]]
+    scraped_exam_rows: list[dict]
+    results: dict[str, ScrapeResult]
+    per_chamber: dict[str, int]
+
+
 def _write_json(path: Path, data):
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -575,6 +626,12 @@ def rebake() -> int:
     return len(records)
 
 
+def _scrape_workers(chamber_count: int) -> int:
+    if chamber_count <= SCRAPE_PARALLEL_CAP_THRESHOLD:
+        return chamber_count
+    return min(SCRAPE_MAX_WORKERS, chamber_count)
+
+
 def _collect_chamber(slug: str, cls: type) -> ScrapeResult | None:
     """Run one chamber's scraper; on failure log and return None (run continues)."""
     logger.info("▶ %s", slug)
@@ -587,13 +644,11 @@ def _collect_chamber(slug: str, cls: type) -> ScrapeResult | None:
         return None
 
 
-def run(chamber: str | None = None, dry_run: bool = False) -> RunReport:
-    today_iso = date.today().isoformat()
-    selected = {chamber: SCRAPERS[chamber]} if chamber else dict(SCRAPERS)
+        return None
 
-    # Scrape chambers concurrently, but cap workers — each scraper's request_delay
-    # still rate-limits its host; unbounded parallelism caused CI connect timeouts.
-    workers = min(SCRAPE_MAX_WORKERS, len(selected))
+
+def _scrape_selected(selected: dict[str, type]) -> ScrapeBatch:
+    workers = _scrape_workers(len(selected))
     logger.info("Scraping %d chamber(s) with max_workers=%d", len(selected), workers)
     with ThreadPoolExecutor(max_workers=workers) as pool:
         futures = {slug: pool.submit(_collect_chamber, slug, cls) for slug, cls in selected.items()}
@@ -607,7 +662,6 @@ def run(chamber: str | None = None, dry_run: bool = False) -> RunReport:
     for slug in selected:
         result = results.get(slug)
         if result is None:
-            # Failed/empty scrape → empty set; merge_courses keeps previous data.
             fresh_by_chamber[slug] = []
             per_chamber[slug] = 0
             continue
@@ -615,12 +669,57 @@ def run(chamber: str | None = None, dry_run: bool = False) -> RunReport:
         scraped_exam_rows.extend(result.exam_fee_rows)
         per_chamber[slug] = len(result.offers)
 
-    if dry_run:
-        logger.info("Dry run — nothing written.")
-        return RunReport(per_chamber=per_chamber, total_courses=sum(per_chamber.values()))
+    return ScrapeBatch(fresh_by_chamber, scraped_exam_rows, results, per_chamber)
 
+
+def _chamber_meta(result: ScrapeResult) -> dict:
+    return {
+        "chamber_slug": result.chamber_slug,
+        "chamber_name": result.chamber_name,
+        "chamber_region": result.chamber_region,
+        "chamber_website": result.chamber_website,
+    }
+
+
+def _result_from_meta(meta: dict) -> ScrapeResult:
+    return ScrapeResult(
+        chamber_slug=meta["chamber_slug"],
+        chamber_name=meta["chamber_name"],
+        chamber_region=meta["chamber_region"],
+        chamber_website=meta["chamber_website"],
+    )
+
+
+def write_scrape_partial(batch: ScrapeBatch, path: Path, chambers: list[str]) -> None:
+    payload = {
+        "chambers": chambers,
+        "fresh_by_chamber": batch.fresh_by_chamber,
+        "scraped_exam_rows": batch.scraped_exam_rows,
+        "per_chamber": batch.per_chamber,
+        "chamber_meta": {
+            slug: _chamber_meta(batch.results[slug])
+            for slug in chambers
+            if slug in batch.results
+        },
+    }
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def _load_scrape_partial(path: Path) -> ScrapeBatch:
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    results = {slug: _result_from_meta(meta) for slug, meta in payload["chamber_meta"].items()}
+    return ScrapeBatch(
+        fresh_by_chamber=payload["fresh_by_chamber"],
+        scraped_exam_rows=payload["scraped_exam_rows"],
+        results=results,
+        per_chamber=payload["per_chamber"],
+    )
+
+
+def _finalize_batch(batch: ScrapeBatch, today_iso: str) -> RunReport:
     previous = _load_previous_courses()
-    records = merge_courses(previous, fresh_by_chamber, today_iso)
+    records = merge_courses(previous, batch.fresh_by_chamber, today_iso)
 
     geocoder = Geocoder(GEOCODE_CACHE)
     apply_coordinates(records, geocoder)
@@ -628,13 +727,84 @@ def run(chamber: str | None = None, dry_run: bool = False) -> RunReport:
 
     manual_rows = _load_manual_fee_rows()
     _resolve_and_write_derived(
-        records, scraped_exam_rows, manual_rows, today_iso, scraped_chambers=set(results.keys()),
+        records,
+        batch.scraped_exam_rows,
+        manual_rows,
+        today_iso,
+        scraped_chambers=set(batch.results.keys()),
     )
 
-    previous_chambers = json.loads((DATA_DIR / "chambers.json").read_text(encoding="utf-8")) if (DATA_DIR / "chambers.json").exists() else []
-    chambers, trades = build_chambers_and_trades(records, results, previous_chambers)
+    previous_chambers = (
+        json.loads((DATA_DIR / "chambers.json").read_text(encoding="utf-8"))
+        if (DATA_DIR / "chambers.json").exists()
+        else []
+    )
+    chambers, trades = build_chambers_and_trades(records, batch.results, previous_chambers)
     _write_json(DATA_DIR / "chambers.json", chambers)
     _write_json(DATA_DIR / "trades.json", trades)
 
     logger.info("Wrote %d courses, %d chambers, %d trades.", len(records), len(chambers), len(trades))
-    return RunReport(per_chamber=per_chamber, total_courses=len(records))
+    return RunReport(per_chamber=batch.per_chamber, total_courses=len(records))
+
+
+def merge_scrape_partials(partial_paths: list[Path], dry_run: bool = False) -> RunReport:
+    if not partial_paths:
+        raise ValueError("No scrape partial files provided")
+
+    combined = ScrapeBatch({}, [], {}, {})
+    per_chamber: dict[str, int] = {}
+
+    for path in partial_paths:
+        batch = _load_scrape_partial(path)
+        combined.fresh_by_chamber.update(batch.fresh_by_chamber)
+        combined.scraped_exam_rows.extend(batch.scraped_exam_rows)
+        combined.results.update(batch.results)
+        per_chamber.update(batch.per_chamber)
+
+    combined.per_chamber = per_chamber
+    logger.info(
+        "Merging %d partial scrape(s) covering %d chamber(s).",
+        len(partial_paths),
+        len(combined.fresh_by_chamber),
+    )
+
+    if dry_run:
+        logger.info("Dry run — nothing written.")
+        return RunReport(per_chamber=per_chamber, total_courses=sum(per_chamber.values()))
+
+    return _finalize_batch(combined, date.today().isoformat())
+
+
+def run(
+    chamber: str | None = None,
+    chambers: list[str] | None = None,
+    group: str | None = None,
+    dry_run: bool = False,
+    partial_out: Path | None = None,
+) -> RunReport:
+    if group is not None:
+        if group not in SCRAPE_GROUPS:
+            raise ValueError(f"Unknown scrape group {group!r}; choices: {', '.join(SCRAPE_GROUPS)}")
+        chambers = list(SCRAPE_GROUPS[group])
+    elif chamber is not None:
+        chambers = [chamber]
+    elif chambers is None:
+        chambers = list(SCRAPERS)
+
+    unknown = [slug for slug in chambers if slug not in SCRAPERS]
+    if unknown:
+        raise ValueError(f"Unknown chamber slug(s): {', '.join(unknown)}")
+
+    selected = {slug: SCRAPERS[slug] for slug in chambers}
+    batch = _scrape_selected(selected)
+
+    if partial_out is not None:
+        write_scrape_partial(batch, partial_out, chambers)
+        logger.info("Wrote scrape partial to %s", partial_out)
+        return RunReport(per_chamber=batch.per_chamber, total_courses=sum(batch.per_chamber.values()))
+
+    if dry_run:
+        logger.info("Dry run — nothing written.")
+        return RunReport(per_chamber=batch.per_chamber, total_courses=sum(batch.per_chamber.values()))
+
+    return _finalize_batch(batch, date.today().isoformat())
