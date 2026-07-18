@@ -393,14 +393,57 @@ class HwkSuedwestfalenScraper(BaseScraper):
             return "waitlist"
         if "ausgebucht" in lower or "keine plätze" in lower:
             return "full"
-        if any(word in lower for word in ("freie plätze", "anmelden", "buchbar", "verfügbar")):
+        if "jetzt buchen" in lower or any(
+            word in lower for word in ("freie plätze", "anmelden", "buchbar", "verfügbar")
+        ):
             return "available"
         return "unknown"
+
+    @classmethod
+    def _availability_from_course_row(cls, row) -> str:
+        block = row.get_text(" ", strip=True)
+        lower = block.lower()
+        if "warteliste" in lower:
+            return "waitlist"
+        if "jetzt buchen" in lower:
+            return "available"
+        classes = row.get("class") or []
+        if "tx-wisumcourses-course-unavailable" in classes or "ausgebucht" in lower:
+            return "full"
+        return cls._availability_from_block(block)
 
     @classmethod
     def _parse_runs(cls, soup: BeautifulSoup, page_text: str) -> list[tuple[str, str, str]]:
         runs: list[tuple[str, str, str]] = []
         seen: set[tuple[str, str]] = set()
+        seen_ids: set[str] = set()
+
+        for row in soup.select("div.tx-wisumcourses-course"):
+            kurs_id = row.get("data-kurs-id")
+            if kurs_id:
+                if kurs_id in seen_ids:
+                    continue
+                seen_ids.add(kurs_id)
+
+            heading = row.select_one("h4")
+            if heading is None:
+                continue
+            text = heading.get_text(" ", strip=True)
+            match = DATE_RANGE_RE.search(text)
+            if not match:
+                continue
+            start = f"{match.group(3)}-{match.group(2)}-{match.group(1)}"
+            end = f"{match.group(6)}-{match.group(5)}-{match.group(4)}"
+            if int(start[:4]) < 2020 or int(start[:4]) > 2035:
+                continue
+            key = (start, end)
+            if key in seen:
+                continue
+            seen.add(key)
+            runs.append((start, end, cls._availability_from_course_row(row)))
+
+        if runs:
+            return runs
 
         for heading in soup.select("h4"):
             text = heading.get_text(" ", strip=True)

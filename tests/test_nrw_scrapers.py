@@ -198,9 +198,38 @@ class NrwParserTests(unittest.TestCase):
         self.assertEqual(offers[0].trade_name, "Elektrotechniker")
         self.assertEqual(offers[0].format_key, "full_time")
         self.assertEqual(offers[0].course_fee, 10880.0)
+        self.assertEqual(offers[0].availability, "full")
         self.assertEqual(
             [o.start_date for o in offers],
             ["2026-10-12", "2027-10-11", "2028-10-16"],
+        )
+
+    def test_suedwestfalen_availability_from_course_rows(self):
+        from bs4 import BeautifulSoup
+
+        html = """
+        <div class="row tx-wisumcourses-course tx-wisumcourses-course-unavailable" data-kurs-id="51143">
+          <div class="col-xs-6"><h4>12.10.2026 — 11.06.2027</h4></div>
+          <div class="col-xs-6"><button>ausgebucht</button></div>
+        </div>
+        <div class="row tx-wisumcourses-course" data-kurs-id="56551">
+          <div class="col-xs-6"><h4>11.10.2027 — 09.06.2028</h4></div>
+          <div class="col-xs-6"><a class="btn btn-secondary">Jetzt Buchen</a></div>
+        </div>
+        <div class="row tx-wisumcourses-course tx-wisumcourses-course-unavailable" data-kurs-id="57032">
+          <div class="col-xs-6"><h4>16.10.2028 — 08.06.2029</h4></div>
+          <div class="col-xs-6"><button>Warteliste</button></div>
+        </div>
+        """
+        soup = BeautifulSoup(html, "html.parser")
+        runs = HwkSuedwestfalenScraper._parse_runs(soup, "")
+        self.assertEqual(
+            runs,
+            [
+                ("2026-10-12", "2027-06-11", "full"),
+                ("2027-10-11", "2028-06-09", "available"),
+                ("2028-10-16", "2029-06-08", "waitlist"),
+            ],
         )
 
     def test_suedwestfalen_title_from_url_slug_fallback(self):
