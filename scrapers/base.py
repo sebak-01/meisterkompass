@@ -12,6 +12,7 @@ from dataclasses import dataclass, field
 
 import requests
 from bs4 import BeautifulSoup
+from requests.exceptions import ConnectTimeout
 
 logger = logging.getLogger(__name__)
 
@@ -170,17 +171,23 @@ class BaseScraper(ABC):
     def fetch_raw_courses(self) -> list[RawCourseOffer]: ...
 
     max_retries: int = 3
+    connect_timeout: float = 10.0
+    read_timeout: float = 30.0
 
     def get(self, url: str, **kwargs) -> requests.Response | None:
         last_exc: Exception | None = None
         for attempt in range(self.max_retries):
             try:
                 time.sleep(self.request_delay)
-                r = self.session.get(url, timeout=20, **kwargs)
+                r = self.session.get(
+                    url, timeout=(self.connect_timeout, self.read_timeout), **kwargs,
+                )
                 r.raise_for_status()
                 return r
             except requests.RequestException as exc:
                 last_exc = exc
+                if isinstance(exc, ConnectTimeout):
+                    break
                 if attempt + 1 < self.max_retries:
                     time.sleep(1.5 * (attempt + 1))   # back off before retrying transient errors
         logger.warning("GET %s failed after %d attempts: %s", url, self.max_retries, last_exc)
