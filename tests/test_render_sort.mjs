@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
-import { sortCourses, sortIndicator, chamberFilterHtml } from "../web/src/render.js";
+import { sortCourses, sortIndicator, chamberFilterHtml, rowHtml } from "../web/src/render.js";
+import { ANMELDEGEBUEHR_NOTE } from "../web/src/util.js";
 
 const sample = [
   {
@@ -54,5 +55,50 @@ const brandenburgLabels = filterHtml
   .match(/f-chamber" value="[^"]+"> ([^<]+)<\/label>/g)
   .map((label) => label.replace(/^f-chamber" value="[^"]+"> ([^<]+)<\/label>$/, "$1"));
 assert.deepEqual(brandenburgLabels, ["HWK Cottbus", "HWK Potsdam"]);
+
+const baseCourse = {
+  title: "Test Course",
+  chamber_name: "HWK Test",
+  chamber_slug: "hwk-test",
+  trade_name: "",
+  parts: [1],
+  format_display: "Vollzeit",
+  duration_hours: 900,
+  course_fee: 5000,
+  course_fee_display: "5.000 €",
+  exam_fee: null,
+  city: "Berlin",
+  availability: "available",
+  source_url: "",
+};
+
+const monthOnlyHtml = rowHtml({
+  ...baseCourse,
+  start_date: "2027-09-01",
+  end_date: "2029-01-01",
+  start_date_note: "Genauer Termin steht noch nicht fest.",
+});
+assert.match(monthOnlyHtml, /09\.2027 - 01\.2029/);
+assert.match(monthOnlyHtml, /Genauer Termin steht noch nicht fest\./);
+
+const exactHtml = rowHtml({
+  ...baseCourse,
+  start_date: "2027-09-15",
+  end_date: "2029-01-20",
+  start_date_note: "",
+});
+assert.match(exactHtml, /15\.09\.2027/);
+assert.doesNotMatch(exactHtml, /09\.2027 - 01\.2029/);
+
+const frankfurtHtml = rowHtml({
+  ...baseCourse,
+  chamber_slug: "hwk-rhein-main",
+  start_date: "2027-09-15",
+  end_date: null,
+  start_date_note: "",
+});
+const courseFeeCell = frankfurtHtml.split('data-label="Kursgebühr"')[1].split("</td>")[0];
+assert.doesNotMatch(courseFeeCell, /fee-info-btn/);
+assert.doesNotMatch(courseFeeCell, new RegExp(ANMELDEGEBUEHR_NOTE.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
 
 console.log("sortCourses tests passed");

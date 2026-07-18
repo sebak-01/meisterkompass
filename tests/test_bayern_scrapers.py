@@ -90,6 +90,18 @@ class BavariaParserTests(unittest.TestCase):
             ("2027-09-01", "2029-02-01"),
         )
 
+    def test_approximate_dates_set_tentative_note(self):
+        from scrapers.hwk_bayern import parse_dates_with_note, TENTATIVE_DATE_NOTE
+
+        self.assertEqual(
+            parse_dates_with_note("September 2027 - Februar 2029"),
+            ("2027-09-01", "2029-02-01", TENTATIVE_DATE_NOTE),
+        )
+        self.assertEqual(
+            parse_dates_with_note("31.08.2026 - 30.10.2026"),
+            ("2026-08-31", "2026-10-30", ""),
+        )
+
     def test_detail_url_drops_volatile_listing_parameters(self):
         url = canonical_detail_url(
             "https://www.hwk-ufr.de",

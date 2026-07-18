@@ -25,6 +25,7 @@ MONTH_DATE_RE = re.compile(
     rf"\b({'|'.join(MONTHS)})\s+(\d{{4}})\b", re.IGNORECASE
 )
 NUMERIC_MONTH_RE = re.compile(r"\b(0[1-9]|1[0-2])\.(\d{4})\b")
+TENTATIVE_DATE_NOTE = "Genauer Termin steht noch nicht fest."
 PRICE_RE = re.compile(r"([\d.]+),(\d{2})[\s\xa0]*€")
 DURATION_UNIT = r"(?:UE|U-?Std\.?|Std\.?)"
 DURATION_RE = re.compile(rf"([\d.]+)[\s\xa0]*{DURATION_UNIT}", re.IGNORECASE)
@@ -189,21 +190,26 @@ def parse_trade(title: str, parts: list[int]) -> str | None:
     return None
 
 
-def parse_dates(text: str) -> tuple[str | None, str | None]:
+def parse_dates_with_note(text: str) -> tuple[str | None, str | None, str]:
     exact = DATE_RE.findall(text)
     if exact:
         values = [f"{year}-{month}-{day}" for day, month, year in exact[:2]]
-        return values[0], values[1] if len(values) > 1 else None
+        return values[0], values[1] if len(values) > 1 else None, ""
 
     months = MONTH_DATE_RE.findall(text)
     if months:
         values = [f"{year}-{MONTHS[name.lower()]:02d}-01" for name, year in months[:2]]
-        return values[0], values[1] if len(values) > 1 else None
+        return values[0], values[1] if len(values) > 1 else None, TENTATIVE_DATE_NOTE
     numeric = NUMERIC_MONTH_RE.findall(text)
     if numeric:
         values = [f"{year}-{month}-01" for month, year in numeric[:2]]
-        return values[0], values[1] if len(values) > 1 else None
-    return None, None
+        return values[0], values[1] if len(values) > 1 else None, TENTATIVE_DATE_NOTE
+    return None, None, ""
+
+
+def parse_dates(text: str) -> tuple[str | None, str | None]:
+    start, end, _ = parse_dates_with_note(text)
+    return start, end
 
 
 def parse_format_and_mode(text: str) -> tuple[str, str]:
@@ -582,8 +588,7 @@ class BavariaOdavScraper(BaseScraper):
         main_text: str,
     ) -> tuple[str | None, str | None, str]:
         """Hook for chamber-specific schedule parsing."""
-        start_date, end_date = parse_dates(main_text)
-        return start_date, end_date, ""
+        return parse_dates_with_note(main_text)
 
     def listing_location(self, card: dict, teaching_mode: str) -> tuple[str, str, str]:
         """Resolve a location when no detail-page address is available."""
