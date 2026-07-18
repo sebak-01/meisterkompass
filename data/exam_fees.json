@@ -1290,6 +1290,69 @@
           "fee_max": null,
           "qualifier": ""
         }
+      },
+      "dachdecker": {
+        "1,2": {
+          "fee": 830.0,
+          "fee_max": null,
+          "qualifier": "ca."
+        }
+      },
+      "elektrotechniker": {
+        "1,2": {
+          "fee": 715.0,
+          "fee_max": null,
+          "qualifier": "ca."
+        }
+      },
+      "fleischer": {
+        "1,2": {
+          "fee": 830.0,
+          "fee_max": null,
+          "qualifier": "ca."
+        }
+      },
+      "fliesen-platten-und-mosaikleger": {
+        "1,2": {
+          "fee": 770.0,
+          "fee_max": null,
+          "qualifier": "ca."
+        }
+      },
+      "installateur-und-heizungsbauer": {
+        "1,2": {
+          "fee": 715.0,
+          "fee_max": null,
+          "qualifier": "ca."
+        }
+      },
+      "maler-und-lackierer": {
+        "1,2": {
+          "fee": 830.0,
+          "fee_max": null,
+          "qualifier": "ca."
+        }
+      },
+      "maurer-und-betonbauer": {
+        "1,2": {
+          "fee": 770.0,
+          "fee_max": null,
+          "qualifier": "ca."
+        }
+      },
+      "tischler": {
+        "1,2": {
+          "fee": 770.0,
+          "fee_max": null,
+          "qualifier": "ca."
+        }
+      },
+      "zimmerer": {
+        "1,2": {
+          "fee": 770.0,
+          "fee_max": null,
+          "qualifier": "ca."
+        }
       }
     },
     "hwk-luebeck": {
