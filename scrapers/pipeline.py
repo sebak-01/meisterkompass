@@ -11,6 +11,7 @@ DB-based cleanup and coordinate fixes.
 
 import json
 import logging
+import os
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 from datetime import date
@@ -85,6 +86,10 @@ from .hwk_dortmund import HwkDortmundScraper
 
 
 logger = logging.getLogger(__name__)
+
+# Cap parallel chamber scrapes so CI does not open dozens of outbound connections
+# at once (GitHub Actions egress limits → ConnectTimeout storms). Tunable via env.
+SCRAPE_MAX_WORKERS = max(1, int(os.environ.get("SCRAPE_MAX_WORKERS", "10")))
 
 SCRAPERS: dict[str, type] = {
     "hwk-koblenz":     HwkKoblenzScraper,
@@ -586,9 +591,11 @@ def run(chamber: str | None = None, dry_run: bool = False) -> RunReport:
     today_iso = date.today().isoformat()
     selected = {chamber: SCRAPERS[chamber]} if chamber else dict(SCRAPERS)
 
-    # Scrape chambers concurrently — they're independent and each scraper's own
-    # request_delay still rate-limits its (distinct) host politely.
-    with ThreadPoolExecutor(max_workers=len(selected)) as pool:
+    # Scrape chambers concurrently, but cap workers — each scraper's request_delay
+    # still rate-limits its host; unbounded parallelism caused CI connect timeouts.
+    workers = min(SCRAPE_MAX_WORKERS, len(selected))
+    logger.info("Scraping %d chamber(s) with max_workers=%d", len(selected), workers)
+    with ThreadPoolExecutor(max_workers=workers) as pool:
         futures = {slug: pool.submit(_collect_chamber, slug, cls) for slug, cls in selected.items()}
         raw = {slug: fut.result() for slug, fut in futures.items()}
 

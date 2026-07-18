@@ -15,7 +15,7 @@ concurrency:
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 90
 
     steps:
       - name: Create GitHub App token
@@ -42,6 +42,8 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run scrapers → data/*.json
+        env:
+          SCRAPE_MAX_WORKERS: "10"
         run: python -m scrapers.run
 
       - name: Commit data changes
