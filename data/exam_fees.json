@@ -3515,6 +3515,95 @@
           "fee_max": 400.0,
           "qualifier": ""
         }
+      },
+      "elektrotechniker": {
+        "1,2": {
+          "fee": 1000.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "feinwerkmechaniker": {
+        "1,2": {
+          "fee": 1000.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "fliesen-platten-und-mosaikleger": {
+        "1,2": {
+          "fee": 1000.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "friseur": {
+        "1,2": {
+          "fee": 1000.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "installateur-und-heizungsbauer": {
+        "1,2": {
+          "fee": 1000.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "kfz-techniker": {
+        "1,2": {
+          "fee": 1000.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 275.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "maler-und-lackierer": {
+        "1,2": {
+          "fee": 1000.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "maler-und-lackierer-fahrzeuglackierer": {
+        "1,2": {
+          "fee": 1000.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "maurer-und-betonbauer": {
+        "1,2": {
+          "fee": 1000.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "stuckateur": {
+        "1,2": {
+          "fee": 1000.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "tischler": {
+        "1,2": {
+          "fee": 1000.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "zimmerer": {
+        "1,2": {
+          "fee": 1000.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
       }
     },
     "hwk-trier": {
