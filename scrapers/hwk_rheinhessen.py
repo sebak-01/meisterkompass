@@ -118,12 +118,29 @@ def parse_duration(text: str) -> int | None:
 
 
 def parse_availability(text: str) -> str:
-    lower = text.lower()
-    if any(w in lower for w in ("ausgebucht", "keine freien", "nicht buchbar", "voll")):
+    """
+    Read availability from the short badge under each date range.
+
+    Only the head of the block is considered: later AFBG boilerplate often
+    contains "Vollzeit", which previously matched a bare ``"voll"`` and
+    incorrectly marked bookable runs as fully booked.
+    """
+    head = text[:500].lower()
+    if any(w in head for w in ("ausgebucht", "keine freien", "nicht buchbar")):
         return "full"
-    if any(w in lower for w in ("wenige", "letzte")):
-        return "available"
-    if any(w in lower for w in ("freie", "verfügbar", "plätze frei")):
+    if "warteliste" in head:
+        return "waitlist"
+    if any(
+        w in head
+        for w in (
+            "freie plätze",
+            "plätze frei",
+            "kurs buchen",
+            "wenige plätze",
+            "letzte plätze",
+            "verfügbar",
+        )
+    ):
         return "available"
     return "unknown"
 
@@ -304,6 +321,9 @@ class HwkRheinhessenScraper(BaseScraper):
         Split page text on date-range patterns to isolate each course run.
         Each block between two date-ranges (or between date-range and end of text)
         is parsed as one course run.
+
+        Fee and duration are usually listed once after all date badges, so we
+        fall back to page-level values when a per-run block omits them.
         """
         offers = []
 
@@ -313,6 +333,9 @@ class HwkRheinhessenScraper(BaseScraper):
             logger.debug("No date ranges found at %s", source_url)
             return []
 
+        page_fee = parse_price(text)
+        page_duration = parse_duration(text)
+
         # Build blocks: from each match start to the next match start (or end)
         for i, match in enumerate(matches):
             block_start = match.start()
@@ -320,7 +343,15 @@ class HwkRheinhessenScraper(BaseScraper):
             block       = text[block_start:block_end]
 
             offer = self._parse_run_block(
-                block, match, source_url, trade_name, parts, default_format
+                block,
+                match,
+                source_url,
+                trade_name,
+                parts,
+                default_format,
+                title_override=title_override,
+                page_fee=page_fee,
+                page_duration=page_duration,
             )
             if offer:
                 offers.append(offer)
@@ -336,6 +367,8 @@ class HwkRheinhessenScraper(BaseScraper):
         parts: list[int],
         default_format: str = "part_time",
         title_override: str | None = None,
+        page_fee: float | None = None,
+        page_duration: int | None = None,
     ) -> RawCourseOffer | None:
         # Dates from the matched date range
         start_raw, end_raw = date_match.group(1), date_match.group(2)
@@ -347,15 +380,13 @@ class HwkRheinhessenScraper(BaseScraper):
         start_date = fmt(start_raw)
         end_date   = fmt(end_raw)
 
-        # Price
-        course_fee = parse_price(block)
-
-        # Duration
-        duration_hours = parse_duration(block)
+        # Price / duration: prefer the run block, else shared page-level values
+        course_fee = parse_price(block) or page_fee
+        duration_hours = parse_duration(block) or page_duration
         if duration_hours is None:
             logger.debug("No duration found in block starting %s", start_date)
 
-        # Availability
+        # Availability from the badge under this date (not AFBG prose below)
         availability = parse_availability(block)
 
         # Location: look for ZIP+city pattern
