@@ -7,11 +7,16 @@ import {
   partsLabel,
   esc,
   TOOLTIP_TARIFF,
-  ANMELDEGEBUEHR_NOTE,
-  TENTATIVE_START_DATE_NOTE,
 } from "./util.js";
 
 export const fmtDate = (iso) => (iso ? iso.split("-").reverse().join(".") : "");
+
+/** Month/year-only dates (ISO stored as YYYY-MM-01): display as MM.YYYY. */
+export const fmtMonthYear = (iso) => {
+  if (!iso) return "";
+  const [year, month] = iso.split("-");
+  return `${month}.${year}`;
+};
 
 /** The initial, unfiltered view: future-only courses, page 1, 20 per page. */
 export const defaultState = () => ({
@@ -79,17 +84,9 @@ function examFeeCell(ef, chamberSlug = "", parts = []) {
   return `<span class="fee-info-wrap"><span class="price">${esc(ef.display)}</span>${btn}</span>`;
 }
 
-/**
- * Renders the course-fee table cell.
- * HWK Frankfurt-Rhein-Main may charge an additional Anmeldegebühr on top of
- * the listed Kursgebühr, so we add an info button for that chamber only.
- */
+/** Renders the course-fee table cell. */
 function courseFeeCell(c) {
-  const priceSpan = `<span class="${c.course_fee ? "price" : "price-na"}">${esc(c.course_fee_display)}</span>`;
-  if (c.chamber_slug === "hwk-rhein-main" && c.course_fee) {
-    return `<span class="fee-info-wrap">${priceSpan}<button class="fee-info-btn" data-tooltip="${esc(ANMELDEGEBUEHR_NOTE)}" type="button">i</button></span>`;
-  }
-  return priceSpan;
+  return `<span class="${c.course_fee ? "price" : "price-na"}">${esc(c.course_fee_display)}</span>`;
 }
 
 function partsBadges(parts) {
@@ -161,14 +158,19 @@ function runtimeCell(c) {
   if (!c.start_date) {
     return '<span style="color:var(--text-lt);font-style:italic">Termine n. v.</span>';
   }
-  const dateBtn = c.start_date_note
+  const monthOnly = Boolean(c.start_date_note);
+  const fmt = monthOnly ? fmtMonthYear : fmtDate;
+  const dateBtn = monthOnly
     ? `<button class="fee-info-btn" data-tooltip="${esc(c.start_date_note)}" type="button">i</button>`
     : "";
-  const startLine = `<span class="fee-info-wrap" style="white-space:nowrap">${fmtDate(c.start_date)}${dateBtn}</span>`;
+  const startLine = `<span class="fee-info-wrap" style="white-space:nowrap">${fmt(c.start_date)}${dateBtn}</span>`;
   if (!c.end_date) return `<div>${startLine}</div>`;
+  if (monthOnly) {
+    return `<div><span class="fee-info-wrap" style="white-space:nowrap">${fmt(c.start_date)} - ${fmt(c.end_date)}${dateBtn}</span></div>`;
+  }
   return `<div>${startLine}</div>` +
     `<div style="color:var(--text-lt);font-size:.72rem;line-height:1.2">bis</div>` +
-    `<div style="white-space:nowrap">${fmtDate(c.end_date)}</div>`;
+    `<div style="white-space:nowrap">${fmt(c.end_date)}</div>`;
 }
 
 export function rowHtml(c) {
