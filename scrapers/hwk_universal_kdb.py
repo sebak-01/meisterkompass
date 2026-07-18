@@ -201,7 +201,6 @@ class UniversalKdbScraper(BaseScraper):
 
     kdb_mandant: str
     kdb_catalogue: KdbCatalogue
-    request_delay = 0.15
 
     def fetch_raw_courses(self) -> list[RawCourseOffer]:
         offers: list[RawCourseOffer] = []

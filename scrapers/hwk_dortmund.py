@@ -74,7 +74,6 @@ class HwkDortmundScraper(BaseScraper):
     chamber_region = "Nordrhein-Westfalen"
     chamber_website = BASE_URL
     source_url = SOURCE_URL
-    request_delay = 0.3
 
     def fetch_raw_courses(self) -> list[RawCourseOffer]:
         product_links = self._discover_product_links()

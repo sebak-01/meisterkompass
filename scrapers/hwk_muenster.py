@@ -73,7 +73,6 @@ class HwkMuensterScraper(BaseScraper):
     chamber_region = "Nordrhein-Westfalen"
     chamber_website = CHAMBER_URL
     source_url = LISTING_URL
-    request_delay = 0.3
 
     def fetch_raw_courses(self) -> list[RawCourseOffer]:
         listing = self.parse_html(LISTING_URL)
