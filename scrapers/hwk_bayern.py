@@ -386,14 +386,14 @@ def parse_exam_fee(text: str, parts: list[int]) -> tuple[float | None, str]:
         return float(whole_euro.group(1).replace(".", "")), line_qual
 
     # HWK Düsseldorf ODAV: "zurzeit 1.470,00 Euro Prüfungsgebühren".
+    # Do not treat "zurzeit" or nearby Lernmittel "ca." as a fee qualifier.
     plural_total = re.search(
         r"(?:zurzeit\s+)?([\d.]+),(\d{2})\s*Euro\s+Prüfungsgebühren",
         text,
         re.IGNORECASE,
     )
     if plural_total:
-        q = "ca." if "zurzeit" in plural_total.group(0).lower() else qualifier
-        return _amount_from_match(plural_total, 1, 2), q
+        return _amount_from_match(plural_total, 1, 2), ""
 
     return None, ""
 
