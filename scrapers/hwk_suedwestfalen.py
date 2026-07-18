@@ -141,6 +141,40 @@ def _is_meister_course(title: str, url: str = "") -> bool:
     return False
 
 
+def title_from_course_url(url: str) -> str:
+    """Turn ``.../kurse/meisterkurs-elektrotechnik-vollzeit`` into a parseable title."""
+    slug = url.rstrip("/").rsplit("/", 1)[-1]
+    return slug.replace("-", " ").strip()
+
+
+def resolve_course_title(soup: BeautifulSoup, url: str) -> str:
+    """
+    BBZ course pages use a generic ``<h1>Kursangebot</h1>``; the real course
+    name lives in an ``h2``/``h3``, ``og:title``, or the document title.
+    """
+    candidates: list[str] = []
+    for selector in ("h1", "h2", "h3", "h4"):
+        for tag in soup.select(selector):
+            text = tag.get_text(" ", strip=True)
+            if text:
+                candidates.append(text)
+    og = soup.select_one("meta[property='og:title']")
+    if og and og.get("content"):
+        candidates.append(og["content"].strip())
+    if soup.title:
+        candidates.append(soup.title.get_text(" ", strip=True))
+    candidates.append(title_from_course_url(url))
+
+    for candidate in candidates:
+        if not _is_meister_course(candidate, ""):
+            continue
+        parts, _trade = parse_suedwestfalen_title(candidate)
+        if parts:
+            return candidate
+    # Last resort: slug text (even if parts cannot be resolved yet).
+    return title_from_course_url(url)
+
+
 class HwkSuedwestfalenScraper(BaseScraper):
     chamber_slug = "hwk-suedwestfalen"
     chamber_name = "Handwerkskammer Südwestfalen"
@@ -217,15 +251,14 @@ class HwkSuedwestfalenScraper(BaseScraper):
         return pages
 
     def _parse_course_page(self, soup: BeautifulSoup, url: str) -> list[RawCourseOffer]:
-        h1 = soup.select_one("h1")
-        title = h1.get_text(" ", strip=True) if h1 else ""
-        if not title:
-            og = soup.select_one("meta[property='og:title']")
-            title = og.get("content", "").strip() if og else ""
+        title = resolve_course_title(soup, url)
         if not title or not _is_meister_course(title, url):
             return []
 
         parts, trade = parse_suedwestfalen_title(title)
+        if not parts:
+            # Slug-derived titles usually still parse; keep a defensive fallback.
+            parts, trade = parse_suedwestfalen_title(title_from_course_url(url))
         if not parts:
             return []
 
