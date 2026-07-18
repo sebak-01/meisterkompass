@@ -19,8 +19,16 @@ CHAMBER_URL = "https://www.hwk-swf.de"
 LISTING_URL = f"{BBZ_BASE}/kurse"
 MEISTER_HUB_URL = f"{BBZ_BASE}/meisterkurse"
 EXAM_FEES_PAGE_URL = f"{CHAMBER_URL}/artikel/rechtsgrundlagen-38,0,100.html"
-FEES_PDF_URL = f"{CHAMBER_URL}/downloads/gebuehrenordnung-handwerkskammer-suedwestfalen-38,4332.pdf"
-GENERIC_EXAM_FEES = {2: 380.0, 3: 290.0, 4: 220.0}
+FEES_PDF_URL = (
+    f"{CHAMBER_URL}/downloads/gebuehrentarif-der-handwerkskammer-suedwestfalen-38,1087.pdf"
+)
+GENERIC_EXAM_FEES = {
+    1: {"fee": 380.0, "fee_max": 2300.0},
+    2: {"fee": 250.0, "fee_max": 400.0},
+    3: {"fee": 250.0, "fee_max": 400.0},
+    4: {"fee": 250.0, "fee_max": 400.0},
+}
+GENERIC_COMBO_EXAM_FEE = {"fee": 580.0, "fee_max": 2500.0}
 
 PRICE_RE = re.compile(r"([\d.]+),(\d{2})\s*€")
 DURATION_RE = re.compile(r"([\d.]+)\s+Unterrichtsstunden", re.IGNORECASE)
@@ -57,12 +65,14 @@ SWF_TRADE_ALIASES = {
     "fahrzeuglackierer": "Fahrzeuglackierer",
     "maurer": "Maurer und Betonbauer",
     "betonbauer": "Maurer und Betonbauer",
-    "metallbauer": "Metallbauer",
+    "feinwerkmechaniker/metallbauer": "Metallbauer",
     "feinwerkmechaniker": "Feinwerkmechaniker",
+    "metallbauer": "Metallbauer",
     "tischler": "Tischler",
     "zimmerer": "Zimmerer",
     "stuckateur": "Stuckateur",
     "fliesenleger": "Fliesen-, Platten- und Mosaikleger",
+    "fliesen-": "Fliesen-, Platten- und Mosaikleger",
     "friseur": "Friseur",
 }
 
@@ -72,19 +82,20 @@ KNOWN_MEISTER_COURSE_PATHS = (
     "meisterkurs-maurer-und-betonbauer",
     "meisterkurs-maler-und-lackierer",
     "meisterkurs-maler-und-lackierer-fahrzeuglackierer",
-    "meisterkurs-metallbauer",
-    "meisterkurs-feinwerkmechaniker",
+    "meisterkurs-feinwerkmechaniker-metallbauer",
+    "meisterkurs-feinwerkmechaniker-metallbauer-2",
     "meisterkurs-tischler",
     "meisterkurs-zimmerer",
-    "meisterkurs-stuckateur",
+    "meisterkurs-stuckateure",
     "meisterkurs-fliesen-platten-und-mosaikleger",
-    "meisterkurs-friseur",
-    "meisterkurs-fahrzeuglackierer",
+    "meisterkurs-friseure",
     "meisterkurs-installateure-und-heizungsbauer-vollzeit",
     "meisterkurs-installateure-und-heizungsbauer-teilzeit",
     "meisterkurs-kraftfahrzeugtechniker-vollzeit",
     "meisterkurs-kraftfahrzeugtechniker-teilzeit",
     "meisterkurs-kraftfahrzeugtechniker-nfz-vollzeit",
+    "meisterkurs-kraftfahrzeugtechniker-blockunterricht",
+    "meisterkurs-kraftfahrzeugtechniker-teil-ii-blockunterricht",
     "gepruefte-r-fachfrau-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo",
     "ausbildung-der-ausbilder-nach-aevo",
 )
@@ -140,24 +151,29 @@ class HwkSuedwestfalenScraper(BaseScraper):
     def fetch_raw_courses(self) -> list[RawCourseOffer]:
         course_urls = self._discover_course_urls()
         offers: list[RawCourseOffer] = []
+        fetched = 0
         for url in sorted(course_urls):
             soup = self.parse_html(url)
             if soup is None:
-                logger.warning("Could not fetch Südwestfalen course %s.", url)
+                # Stale seed slugs 404; discovery from the listing usually heals this.
+                logger.debug("Could not fetch Südwestfalen course %s.", url)
                 continue
+            fetched += 1
             try:
                 offers.extend(self._parse_course_page(soup, url))
             except Exception as exc:
                 logger.warning("Could not parse Südwestfalen course %s: %s", url, exc)
         logger.info(
-            "HWK Südwestfalen: parsed %d offers from %d course pages.",
+            "HWK Südwestfalen: parsed %d offers from %d/%d course pages.",
             len(offers),
+            fetched,
             len(course_urls),
         )
         return offers
 
     def _discover_course_urls(self) -> set[str]:
-        urls: set[str] = {f"{BBZ_BASE}/kurse/{slug}" for slug in KNOWN_MEISTER_COURSE_PATHS}
+        """Prefer live listing links; fall back to known slugs if blocked."""
+        urls: set[str] = set()
         for page_url in (LISTING_URL, MEISTER_HUB_URL):
             soup = self.parse_html(page_url)
             if soup is None:
@@ -167,6 +183,14 @@ class HwkSuedwestfalenScraper(BaseScraper):
                 trade_soup = self.parse_html(link)
                 if trade_soup is not None:
                     urls.update(self._course_urls_from_soup(trade_soup))
+        if not urls:
+            logger.warning(
+                "HWK Südwestfalen: listing discovery failed — using known course paths."
+            )
+            urls = {f"{BBZ_BASE}/kurse/{slug}" for slug in KNOWN_MEISTER_COURSE_PATHS}
+        else:
+            # Keep known paths as soft extras so renamed hubs still catch new courses.
+            urls.update(f"{BBZ_BASE}/kurse/{slug}" for slug in KNOWN_MEISTER_COURSE_PATHS)
         return urls
 
     @staticmethod
@@ -335,48 +359,90 @@ class HwkSuedwestfalenScraper(BaseScraper):
         return runs
 
     @staticmethod
-    def parse_generic_exam_fees(text: str) -> dict[int, float]:
-        fees: dict[int, float] = {}
-        for part, roman in ((1, "I"), (2, "II"), (3, "III"), (4, "IV")):
-            match = re.search(
-                rf"Teil\s+{roman}.*?([\d.]+),(\d{{2}})\s*€",
-                text,
-                re.IGNORECASE | re.DOTALL,
-            )
-            if match:
-                fees[part] = float(match.group(1).replace(".", "") + "." + match.group(2))
-        return fees
+    def _amount_pair(match: re.Match) -> dict[str, float]:
+        return {
+            "fee": float(match.group(1).replace(".", "") + "." + match.group(2)),
+            "fee_max": float(match.group(3).replace(".", "") + "." + match.group(4)),
+        }
+
+    @classmethod
+    def parse_meister_exam_fees(
+        cls, text: str
+    ) -> tuple[dict[int, dict[str, float]], dict[str, float] | None]:
+        """Parse Gebührentarif Meisterprüfung ranges (Teil I / I+II / theoretical)."""
+        fees: dict[int, dict[str, float]] = {}
+        combo: dict[str, float] | None = None
+        section = re.search(
+            r"4\.\s*Meisterprüfung(.*?)(?:Für Wiederholungsprüfungen|V\.\s*Sonstige)",
+            text,
+            re.IGNORECASE | re.DOTALL,
+        )
+        chunk = section.group(1) if section else text
+
+        part_i = re.search(
+            r"Teil I\s+([\d.]+),(\d{2})\s*[–\-]\s*([\d.]+),(\d{2})",
+            chunk,
+            re.IGNORECASE,
+        )
+        if part_i:
+            fees[1] = cls._amount_pair(part_i)
+
+        combo_match = re.search(
+            r"Teile I und II\s+([\d.]+),(\d{2})\s*[–\-]\s*([\d.]+),(\d{2})",
+            chunk,
+            re.IGNORECASE,
+        )
+        if combo_match:
+            combo = cls._amount_pair(combo_match)
+
+        theoretical = re.search(
+            r"ein theoretischer Teil\s+([\d.]+),(\d{2})\s*[–\-]\s*([\d.]+),(\d{2})",
+            chunk,
+            re.IGNORECASE,
+        )
+        if theoretical:
+            values = cls._amount_pair(theoretical)
+            for part in (2, 3, 4):
+                fees[part] = dict(values)
+        return fees, combo
 
     def _resolve_exam_fees_pdf_url(self) -> str:
         soup = self.parse_html(EXAM_FEES_PAGE_URL)
         if soup is None:
             return FEES_PDF_URL
+        for link in soup.select("a[href*='gebuehrentarif'], a[href*='gebuehr']"):
+            href = link.get("href", "")
+            if href.lower().endswith(".pdf") and "gebuehrentarif" in href.lower():
+                return urljoin(CHAMBER_URL, href)
         for link in soup.select("a[href*='gebuehr'], a[href*='Gebuehr']"):
             href = link.get("href", "")
             if href.lower().endswith(".pdf"):
                 return urljoin(CHAMBER_URL, href)
         return FEES_PDF_URL
 
-    def _fetch_exam_fees_from_pdf(self) -> dict[int, float]:
+    def _fetch_exam_fees_from_pdf(
+        self,
+    ) -> tuple[dict[int, dict[str, float]], dict[str, float] | None] | None:
         try:
             from pypdf import PdfReader
         except ImportError:
             logger.warning("HWK Südwestfalen: pypdf not installed — using fallback exam fees.")
-            return {}
+            return None
 
         pdf_url = self._resolve_exam_fees_pdf_url()
         response = self.get(pdf_url)
         if response is None:
             logger.warning("HWK Südwestfalen: could not fetch exam-fee PDF.")
-            return {}
+            return None
 
         text = ""
         for page in PdfReader(BytesIO(response.content)).pages:
             text += (page.extract_text() or "") + "\n"
-        fees = self.parse_generic_exam_fees(text)
+        fees, combo = self.parse_meister_exam_fees(text)
         if not fees:
             logger.warning("HWK Südwestfalen: could not parse exam fees from PDF.")
-        return fees
+            return None
+        return fees, combo
 
     def collect(self) -> ScrapeResult:
         result = super().collect()
@@ -384,15 +450,33 @@ class HwkSuedwestfalenScraper(BaseScraper):
         return result
 
     def published_exam_fee_rows(self) -> list[dict]:
-        fees = self._fetch_exam_fees_from_pdf() or GENERIC_EXAM_FEES
-        return [
+        fetched = self._fetch_exam_fees_from_pdf()
+        if fetched:
+            fees, combo = fetched
+        else:
+            fees, combo = GENERIC_EXAM_FEES, GENERIC_COMBO_EXAM_FEE
+        if combo is None:
+            combo = GENERIC_COMBO_EXAM_FEE
+
+        rows: list[dict] = [
             {
                 "chamber_slug": self.chamber_slug,
                 "trade_slug": None,
                 "part": part,
-                "fee": fee,
+                "fee": values["fee"],
+                "fee_max": values.get("fee_max"),
                 "qualifier": "",
                 "source_url": EXAM_FEES_PAGE_URL,
             }
-            for part, fee in fees.items()
+            for part, values in fees.items()
         ]
+        rows.append({
+            "chamber_slug": self.chamber_slug,
+            "trade_slug": None,
+            "parts": [1, 2],
+            "fee": combo["fee"],
+            "fee_max": combo.get("fee_max"),
+            "qualifier": "",
+            "source_url": EXAM_FEES_PAGE_URL,
+        })
+        return rows

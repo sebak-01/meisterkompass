@@ -94,15 +94,51 @@ class NrwParserTests(unittest.TestCase):
     def test_owl_exam_fee_range_parsing(self):
         sample = """
         5. Meisterprüfung
+        a) Teil I (praktischer Teil) und Teil II, III oder IV
+         (theoretische Teile)            580,00 bis 3.200,00 Euro
         b) Teil I (praktischer Teil)         380,00 bis 2.450,00 Euro
         c) Teil II, III oder IV (theoretische Teile)          250,00 bis 980,00 Euro
         6. Fortbildungsprüfung
         """
-        fees = HwkOstwestfalenLippeZuBielefeldScraper.parse_meister_exam_fees(sample)
+        fees, combo = HwkOstwestfalenLippeZuBielefeldScraper.parse_meister_exam_fees(sample)
         self.assertEqual(fees[1]["fee"], 380.0)
         self.assertEqual(fees[1]["fee_max"], 2450.0)
         self.assertEqual(fees[2]["fee"], 250.0)
         self.assertEqual(fees[2]["fee_max"], 980.0)
+        self.assertEqual(combo["fee"], 580.0)
+        self.assertEqual(combo["fee_max"], 3200.0)
+
+    def test_owl_teile_i_ii_uses_package_fee_not_sum(self):
+        rows = [
+            {
+                "chamber_slug": "hwk-ostwestfalen-lippe-zu-bielefeld",
+                "trade_slug": None,
+                "part": 1,
+                "fee": 380.0,
+                "fee_max": 2450.0,
+            },
+            {
+                "chamber_slug": "hwk-ostwestfalen-lippe-zu-bielefeld",
+                "trade_slug": None,
+                "part": 2,
+                "fee": 250.0,
+                "fee_max": 980.0,
+            },
+            {
+                "chamber_slug": "hwk-ostwestfalen-lippe-zu-bielefeld",
+                "trade_slug": None,
+                "parts": [1, 2],
+                "fee": 580.0,
+                "fee_max": 3200.0,
+            },
+        ]
+        lookup = build_exam_fee_lookup(rows, [])
+        resolved = resolve_exam_fee(
+            "hwk-ostwestfalen-lippe-zu-bielefeld", "metallbauer", [1, 2], None, lookup
+        )
+        self.assertEqual(resolved["fee"], 580.0)
+        self.assertEqual(resolved["fee_max"], 3200.0)
+        self.assertNotEqual(resolved["fee"], 630.0)
 
     def test_suedwestfalen_course_page_parsing(self):
         from bs4 import BeautifulSoup
@@ -211,7 +247,7 @@ class NrwParserTests(unittest.TestCase):
         )
         fee, qualifier = parse_exam_fee(sample, [1, 2])
         self.assertEqual(fee, 1470.0)
-        self.assertEqual(qualifier, "ca.")
+        self.assertEqual(qualifier, "")
 
     def test_dortmund_exam_fee_from_bue_prices(self):
         html = (
@@ -219,6 +255,26 @@ class NrwParserTests(unittest.TestCase):
             '{"bezeichnung":"Prüfungsgebühr","gebuehr":1224}]'
         )
         self.assertEqual(HwkDortmundScraper._parse_exam_fee(html), 1224.0)
+
+    def test_dortmund_fees_prefer_bue_kurskosten_over_zero_display_price(self):
+        html = (
+            '"display_price":0,"display_regular_price":0,'
+            '"display_price":8210,"display_regular_price":8210,'
+            '"bue_additional_prices":[{"bezeichnung":"Prüfungsgebühr","gebuehr":1514},'
+            '{"bezeichnung":"Kurskosten","gebuehr":6696}]'
+        )
+        course_fee, exam_fee = HwkDortmundScraper._parse_fees(html)
+        self.assertEqual(course_fee, 6696.0)
+        self.assertEqual(exam_fee, 1514.0)
+
+    def test_dortmund_format_prefers_title_teilzeit(self):
+        self.assertEqual(
+            HwkDortmundScraper._parse_format(
+                "Dachdecker/in Teilzeitlehrgang(Meistervorbereitung Teile I und II)",
+                "AFBG fördert Vollzeit-Lehrgang und Teilzeit-Lehrgang",
+            ),
+            "part_time",
+        )
 
     def test_dortmund_duration_unterrichtseinheiten(self):
         sample = "Umfang: 1264 Unterrichtseinheiten"
@@ -231,8 +287,38 @@ class NrwParserTests(unittest.TestCase):
 
     def test_dortmund_display_price_parsing(self):
         html = '<script>"display_price":10260,"display_regular_price":10260</script>'
-        match = re.search(r'"display_price":(\d+)', html)
-        self.assertEqual(float(match.group(1)), 10260.0)
+        course_fee, exam_fee = HwkDortmundScraper._parse_fees(html)
+        self.assertEqual(course_fee, 10260.0)
+        self.assertIsNone(exam_fee)
+
+    def test_suedwestfalen_exam_fee_tariff_parsing(self):
+        sample = """
+        4.  Meisterprüfung
+        a)  Teil I 380,00 – 2.300,00
+        b)  Teile I und II 580,00 - 2500,00
+        c)  ein theoretischer Teil  250,00 -   400,00
+        Für Wiederholungsprüfungen gelten die Gebühren entsprechend,
+        """
+        fees, combo = HwkSuedwestfalenScraper.parse_meister_exam_fees(sample)
+        self.assertEqual(fees[1]["fee"], 380.0)
+        self.assertEqual(fees[1]["fee_max"], 2300.0)
+        self.assertEqual(fees[2]["fee"], 250.0)
+        self.assertEqual(combo["fee"], 580.0)
+        self.assertEqual(combo["fee_max"], 2500.0)
+
+    def test_suedwestfalen_title_friseure_and_combined_metal(self):
+        self.assertEqual(
+            parse_suedwestfalen_title("Meisterkurs Friseure"),
+            ([1, 2], "Friseur"),
+        )
+        self.assertEqual(
+            parse_suedwestfalen_title("Meisterkurs Feinwerkmechaniker/Metallbauer"),
+            ([1, 2], "Feinwerkmechaniker"),
+        )
+        self.assertEqual(
+            parse_suedwestfalen_title("Meisterkurs Stuckateure"),
+            ([1, 2], "Stuckateur"),
+        )
 
 
 class NrwRegistrationTests(unittest.TestCase):

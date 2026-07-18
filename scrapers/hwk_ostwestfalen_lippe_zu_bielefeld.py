@@ -35,6 +35,8 @@ GENERIC_EXAM_FEES = {
     3: {"fee": 250.0, "fee_max": 980.0},
     4: {"fee": 250.0, "fee_max": 980.0},
 }
+# Tariff line (a): Teil I + Teile II/III/IV as one package — lower than summing I+II.
+GENERIC_COMBO_EXAM_FEE = {"fee": 580.0, "fee_max": 3200.0}
 
 OWL_HUB_ARTICLES = (
     "teile-iii-und-iv-3351,180,52.html",
@@ -246,14 +248,35 @@ class HwkOstwestfalenLippeZuBielefeldScraper(BavariaOdavScraper):
         }
 
     @classmethod
-    def parse_meister_exam_fees(cls, text: str) -> dict[int, dict[str, float]]:
+    def parse_meister_exam_fees(
+        cls, text: str
+    ) -> tuple[dict[int, dict[str, float]], dict[str, float] | None]:
+        """
+        Parse OWL Gebührentarif §5 Meisterprüfung.
+
+        Returns ``(per_part_fees, combo_i_plus_theoretical)``.
+
+        Line (a) covers Teil I together with Teile II/III/IV as one package and
+        is preferred for Teile I+II courses over summing the individual lines.
+        """
         fees: dict[int, dict[str, float]] = {}
+        combo: dict[str, float] | None = None
         section = re.search(
             r"5\.\s*Meisterprüfung(.*?)6\.\s*Fortbildungsprüfung",
             text,
             re.IGNORECASE | re.DOTALL,
         )
         chunk = section.group(1) if section else text
+
+        package = re.search(
+            r"Teil I \(praktischer Teil\) und Teil II, III oder IV\s*"
+            r"\(theoretische Teile\)\s+"
+            r"([\d.]+),(\d{2})\s+bis\s+([\d.]+),(\d{2})\s+Euro",
+            chunk,
+            re.IGNORECASE,
+        )
+        if package:
+            combo = cls._amount_pair(package)
 
         part_i = re.search(
             r"Teil I \(praktischer Teil\)\s+([\d.]+),(\d{2})\s+bis\s+([\d.]+),(\d{2})\s+Euro",
@@ -273,7 +296,7 @@ class HwkOstwestfalenLippeZuBielefeldScraper(BavariaOdavScraper):
             values = cls._amount_pair(generic)
             for part in (2, 3, 4):
                 fees[part] = dict(values)
-        return fees
+        return fees, combo
 
     def _resolve_exam_fees_pdf_url(self) -> str:
         soup = self.parse_html(EXAM_FEES_PAGE_URL)
@@ -285,26 +308,29 @@ class HwkOstwestfalenLippeZuBielefeldScraper(BavariaOdavScraper):
                 return urljoin(CHAMBER_URL, href)
         return FEES_PDF_URL
 
-    def _fetch_exam_fees_from_pdf(self) -> dict[int, dict[str, float]]:
+    def _fetch_exam_fees_from_pdf(
+        self,
+    ) -> tuple[dict[int, dict[str, float]], dict[str, float] | None] | None:
         try:
             from pypdf import PdfReader
         except ImportError:
             logger.warning("HWK OWL: pypdf not installed — using fallback exam fees.")
-            return {}
+            return None
 
         pdf_url = self._resolve_exam_fees_pdf_url()
         response = self.get(pdf_url)
         if response is None:
             logger.warning("HWK OWL: could not fetch exam-fee PDF.")
-            return {}
+            return None
 
         text = ""
         for page in PdfReader(BytesIO(response.content)).pages:
             text += (page.extract_text() or "") + "\n"
-        fees = self.parse_meister_exam_fees(text)
+        fees, combo = self.parse_meister_exam_fees(text)
         if not fees:
             logger.warning("HWK OWL: could not parse Meister exam fee ranges from PDF.")
-        return fees
+            return None
+        return fees, combo
 
     def collect(self) -> ScrapeResult:
         result = super().collect()
@@ -312,7 +338,16 @@ class HwkOstwestfalenLippeZuBielefeldScraper(BavariaOdavScraper):
         return result
 
     def published_exam_fee_rows(self) -> list[dict]:
-        fees = self._fetch_exam_fees_from_pdf() or GENERIC_EXAM_FEES
+        fetched = self._fetch_exam_fees_from_pdf()
+        if fetched:
+            fees, combo = fetched
+        else:
+            fees, combo = GENERIC_EXAM_FEES, GENERIC_COMBO_EXAM_FEE
+        if not fees:
+            fees, combo = GENERIC_EXAM_FEES, GENERIC_COMBO_EXAM_FEE
+        if combo is None:
+            combo = GENERIC_COMBO_EXAM_FEE
+
         rows: list[dict] = []
         for part, values in fees.items():
             rows.append({
@@ -321,6 +356,17 @@ class HwkOstwestfalenLippeZuBielefeldScraper(BavariaOdavScraper):
                 "part": part,
                 "fee": values["fee"],
                 "fee_max": values.get("fee_max"),
+                "qualifier": "",
+                "source_url": EXAM_FEES_PAGE_URL,
+            })
+        # Prefer the package fee for Teile I+II (and full I–IV) over summing parts.
+        for parts in ([1, 2], [1, 2, 3, 4]):
+            rows.append({
+                "chamber_slug": self.chamber_slug,
+                "trade_slug": None,
+                "parts": parts,
+                "fee": combo["fee"],
+                "fee_max": combo.get("fee_max"),
                 "qualifier": "",
                 "source_url": EXAM_FEES_PAGE_URL,
             })

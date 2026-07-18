@@ -143,11 +143,7 @@ class HwkDortmundScraper(BaseScraper):
         page_text = soup.get_text("\n", strip=True)
         duration_match = DURATION_RE.search(page_text) or DURATION_RE.search(html)
         duration = int(duration_match.group(1).replace(".", "")) if duration_match else None
-        price_match = DISPLAY_PRICE_RE.search(html)
-        course_fee = float(price_match.group(1)) if price_match else None
-        if course_fee == 0:
-            course_fee = None
-        exam_fee = self._parse_exam_fee(html)
+        course_fee, exam_fee = self._parse_fees(html)
 
         dates = DATE_RE.findall(page_text)
         start_date = end_date = None
@@ -160,8 +156,8 @@ class HwkDortmundScraper(BaseScraper):
             start = dates[0]
             start_date = f"{start[2]}-{start[1]}-{start[0]}"
 
+        format_key = self._parse_format(title, page_text)
         lower = f"{title} {page_text}".lower()
-        format_key = "full_time" if "vollzeit" in lower else "part_time"
         if "online" in lower and "präsenz" not in lower:
             teaching_mode = "online"
         elif "hybrid" in lower:
@@ -197,23 +193,63 @@ class HwkDortmundScraper(BaseScraper):
         )
 
     @staticmethod
-    def _parse_exam_fee(html: str) -> float | None:
+    def _parse_format(title: str, page_text: str) -> str:
+        """Prefer the course title over AFBG boilerplate that mentions Vollzeit."""
+        title_l = title.lower()
+        if "teilzeit" in title_l:
+            return "part_time"
+        if "vollzeit" in title_l:
+            return "full_time"
+        return "full_time" if "vollzeit" in page_text.lower() else "part_time"
+
+    @classmethod
+    def _parse_fees(cls, html: str) -> tuple[float | None, float | None]:
+        """
+        Prefer structured bue_additional_prices (Kurskosten / Prüfungsgebühr).
+
+        WooCommerce often emits ``display_price:0`` before the real price, or a
+        total that already includes the exam fee — both mislead a naïve parse.
+        """
+        course_fee = None
+        exam_fee = None
         prices_match = BUE_PRICES_RE.search(html)
         if prices_match:
             try:
                 for row in json.loads(prices_match.group(1)):
-                    label = row.get("bezeichnung", "")
-                    if "prüfungsgebühr" in label.lower():
-                        return float(row["gebuehr"])
-            except (json.JSONDecodeError, KeyError, TypeError):
+                    label = (row.get("bezeichnung") or "").lower()
+                    amount = float(row["gebuehr"])
+                    if "prüfungsgebühr" in label:
+                        exam_fee = amount
+                    elif "kurskosten" in label or "kursgebühr" in label:
+                        course_fee = amount
+            except (json.JSONDecodeError, KeyError, TypeError, ValueError):
                 pass
 
-        table_match = EXAM_FEE_TABLE_RE.search(html)
-        if table_match:
-            return float(
-                table_match.group(1).replace(".", "") + "." + table_match.group(2)
-            )
-        return None
+        if exam_fee is None:
+            table_match = EXAM_FEE_TABLE_RE.search(html)
+            if table_match:
+                exam_fee = float(
+                    table_match.group(1).replace(".", "") + "." + table_match.group(2)
+                )
+
+        if course_fee is None:
+            for match in DISPLAY_PRICE_RE.finditer(html):
+                value = float(match.group(1))
+                if value <= 0:
+                    continue
+                # display_price is often Kurskosten + Prüfungsgebühr.
+                if exam_fee and value > exam_fee * 1.05:
+                    course_fee = value - exam_fee
+                else:
+                    course_fee = value
+                break
+        return course_fee, exam_fee
+
+    @staticmethod
+    def _parse_exam_fee(html: str) -> float | None:
+        """Backward-compatible helper used by tests."""
+        _, exam_fee = HwkDortmundScraper._parse_fees(html)
+        return exam_fee
 
     @staticmethod
     def parse_generic_exam_fees(text: str) -> dict[int, float]:
