@@ -1,5 +1,41 @@
 [
   {
+    "chamber_slug": "hwk-dortmund",
+    "chamber_name": "HWK Dortmund",
+    "chamber_region": "Nordrhein-Westfalen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
+    "parts": [
+      4
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "online",
+    "start_date": "2025-01-06",
+    "end_date": "2025-01-24",
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": null,
+    "course_fee_display": "—",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 220.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "220 €",
+      "from_tariff": true
+    },
+    "city": "Dortmund",
+    "street": "Schützenstraße 32-34",
+    "zip_code": "44147",
+    "latitude": 51.5206367,
+    "longitude": 7.4529522,
+    "availability": "unknown",
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-geruestbauer/ausbildung-der-ausbilder-nach-der-aevo-der-sozialkasse/"
+  },
+  {
     "chamber_slug": "hwk-karlsruhe",
     "chamber_name": "HWK Karlsruhe",
     "chamber_region": "Baden-Württemberg",

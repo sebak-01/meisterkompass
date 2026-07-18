@@ -1,5 +1,10 @@
 [
   {
+    "slug": "hwk-aachen",
+    "name": "HWK Aachen",
+    "region": "Nordrhein-Westfalen"
+  },
+  {
     "slug": "hwk-berlin",
     "name": "HWK Berlin",
     "region": "Berlin"
@@ -25,9 +30,19 @@
     "region": "Brandenburg"
   },
   {
+    "slug": "hwk-dortmund",
+    "name": "HWK Dortmund",
+    "region": "Nordrhein-Westfalen"
+  },
+  {
     "slug": "hwk-dresden",
     "name": "HWK Dresden",
     "region": "Sachsen"
+  },
+  {
+    "slug": "hwk-duesseldorf",
+    "name": "HWK Düsseldorf",
+    "region": "Nordrhein-Westfalen"
   },
   {
     "slug": "hwk-erfurt",
@@ -115,6 +130,11 @@
     "region": "Baden-Württemberg"
   },
   {
+    "slug": "hwk-muenster",
+    "name": "HWK Münster",
+    "region": "Nordrhein-Westfalen"
+  },
+  {
     "slug": "hwk-niederbayern-oberpfalz",
     "name": "HWK Niederbayern-Oberpfalz",
     "region": "Bayern"
@@ -138,6 +158,11 @@
     "slug": "hwk-ostmecklenburg-vorpommern",
     "name": "HWK Ostmecklenburg-Vorpommern",
     "region": "Mecklenburg-Vorpommern"
+  },
+  {
+    "slug": "hwk-ostwestfalen-lippe-zu-bielefeld",
+    "name": "HWK Ostwestfalen-Lippe zu Bielefeld",
+    "region": "Nordrhein-Westfalen"
   },
   {
     "slug": "hwk-potsdam",
@@ -168,6 +193,11 @@
     "slug": "hwk-suedthueringen-suhl",
     "name": "HWK Südthüringen",
     "region": "Thüringen"
+  },
+  {
+    "slug": "hwk-suedwestfalen",
+    "name": "HWK Südwestfalen",
+    "region": "Nordrhein-Westfalen"
   },
   {
     "slug": "hwk-trier",
@@ -223,6 +253,11 @@
     "slug": "hwk-unterfranken",
     "name": "HWK für Unterfranken",
     "region": "Bayern"
+  },
+  {
+    "slug": "hwk-koeln",
+    "name": "HWK zu Köln",
+    "region": "Nordrhein-Westfalen"
   },
   {
     "slug": "hwk-leipzig",
