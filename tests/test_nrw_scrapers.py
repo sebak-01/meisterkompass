@@ -518,6 +518,18 @@ class NrwExamFeeTests(unittest.TestCase):
         self.assertEqual(len(runs), 2)
         self.assertEqual(runs[0][2], "waitlist")
 
+    def test_suedwestfalen_routes_bbz_requests_through_cloudscraper(self):
+        from unittest.mock import Mock, patch
+
+        scraper = HwkSuedwestfalenScraper()
+        scraper._bbz_session = Mock()
+        fake_response = Mock()
+        fake_response.raise_for_status = Mock()
+        with patch.object(scraper, "_get_with_session", return_value=fake_response) as mocked:
+            result = scraper.get("https://www.bbz-arnsberg.de/kurse")
+        mocked.assert_called_once_with(scraper._bbz_session, "https://www.bbz-arnsberg.de/kurse")
+        self.assertIs(result, fake_response)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -4,10 +4,18 @@ from __future__ import annotations
 
 import logging
 import re
+import time
 from io import BytesIO
 from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
+import requests
+from requests.exceptions import ConnectTimeout
+
+try:
+    import cloudscraper
+except ImportError:  # pragma: no cover - exercised via fallback in tests
+    cloudscraper = None
 
 from .base import BaseScraper, RawCourseOffer, ScrapeResult, build_course_title, normalize_trade
 from .hwk_bayern import parse_parts, parse_trade
@@ -181,6 +189,46 @@ class HwkSuedwestfalenScraper(BaseScraper):
     chamber_region = "Nordrhein-Westfalen"
     chamber_website = CHAMBER_URL
     source_url = MEISTER_HUB_URL
+
+    def __init__(self):
+        super().__init__()
+        self._bbz_session = None
+        if cloudscraper is not None:
+            self._bbz_session = cloudscraper.create_scraper(
+                browser={"browser": "chrome", "platform": "linux", "desktop": True},
+            )
+            self._bbz_session.headers.update(self.session.headers)
+        else:
+            logger.warning(
+                "HWK Südwestfalen: cloudscraper not installed — BBZ requests may be blocked."
+            )
+
+    def get(self, url: str, **kwargs) -> requests.Response | None:
+        """BBZ Arnsberg sits behind Cloudflare; plain requests get 403 from CI."""
+        if self._bbz_session is not None and url.startswith(BBZ_BASE):
+            return self._get_with_session(self._bbz_session, url, **kwargs)
+        return super().get(url, **kwargs)
+
+    def _get_with_session(
+        self, session: requests.Session, url: str, **kwargs,
+    ) -> requests.Response | None:
+        last_exc: Exception | None = None
+        for attempt in range(self.max_retries):
+            try:
+                time.sleep(self.request_delay)
+                response = session.get(
+                    url, timeout=(self.connect_timeout, self.read_timeout), **kwargs,
+                )
+                response.raise_for_status()
+                return response
+            except requests.RequestException as exc:
+                last_exc = exc
+                if isinstance(exc, ConnectTimeout):
+                    break
+                if attempt + 1 < self.max_retries:
+                    time.sleep(1.5 * (attempt + 1))
+        logger.warning("GET %s failed after %d attempts: %s", url, self.max_retries, last_exc)
+        return None
 
     def fetch_raw_courses(self) -> list[RawCourseOffer]:
         course_urls = self._discover_course_urls()
