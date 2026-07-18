@@ -5,7 +5,12 @@ from unittest.mock import patch
 from scrapers.fees import build_exam_fee_lookup, resolve_exam_fee
 from scrapers.hwk_aachen import HwkAachenScraper, parse_aachen_title
 from scrapers.hwk_bayern import parse_exam_fee
-from scrapers.hwk_dortmund import HwkDortmundScraper, parse_dortmund_title
+from scrapers.hwk_dortmund import (
+    HwkDortmundScraper,
+    parse_availability_from_stock_html,
+    parse_availability_from_variations,
+    parse_dortmund_title,
+)
 from scrapers.hwk_duesseldorf import HwkDuesseldorfScraper, parse_duesseldorf_title
 from scrapers.hwk_koeln import HwkKoelnScraper, parse_koeln_title
 from scrapers.hwk_muenster import HwkMuensterScraper, parse_muenster_title
@@ -338,6 +343,70 @@ class NrwParserTests(unittest.TestCase):
         course_fee, exam_fee = HwkDortmundScraper._parse_fees(html)
         self.assertEqual(course_fee, 10260.0)
         self.assertIsNone(exam_fee)
+
+    def test_dortmund_availability_from_stock_html(self):
+        self.assertEqual(
+            parse_availability_from_stock_html(
+                '<p class="stock in-stock">22 Plätze verfügbar</p>'
+            ),
+            "available",
+        )
+        self.assertEqual(
+            parse_availability_from_stock_html(
+                '<p class="stock in-stock">1 Platz verfügbar</p>'
+            ),
+            "available",
+        )
+        self.assertEqual(
+            parse_availability_from_stock_html(
+                '<p class="stock available-on-backorder">Ausgebucht. Auf Warteliste setzen.</p>'
+            ),
+            "waitlist",
+        )
+
+    def test_dortmund_availability_from_variations_matches_selected_termin(self):
+        from bs4 import BeautifulSoup
+
+        html = """
+        <form class="variations_form" data-product_variations='[
+          {
+            "attributes": {"attribute_termin": "18.01.2027 - 08.07.2028 (Bildungszentrum)"},
+            "availability_html": "<p class=\\"stock in-stock\\">22 Plätze verfügbar</p>"
+          }
+        ]'>
+          <p>18.01.2027 - 08.07.2028</p>
+        </form>
+        <footer>Interessentenliste und Ausgebucht in anderen Kursen</footer>
+        """
+        soup = BeautifulSoup(html, "html.parser")
+        self.assertEqual(
+            parse_availability_from_variations(soup, "2027-01-18", "2028-07-08"),
+            "available",
+        )
+
+    def test_dortmund_page_availability_ignores_footer_boilerplate(self):
+        from bs4 import BeautifulSoup
+
+        html = """
+        <form class="variations_form" data-product_variations='[
+          {
+            "attributes": {"attribute_termin": "20.07.2026 - 15.09.2026 (Bildungszentrum)"},
+            "availability_html": "<p class=\\"stock in-stock\\">1 Platz verfügbar</p>"
+          },
+          {
+            "attributes": {"attribute_termin": "14.09.2026 - 10.11.2026 (Bildungszentrum)"},
+            "availability_html": "<p class=\\"stock available-on-backorder\\">Ausgebucht. Auf Warteliste setzen.</p>"
+          }
+        ]'>
+          <p>20.07.2026 - 15.09.2026</p>
+        </form>
+        <footer>Ausgebucht Interessentenliste Ausgebucht</footer>
+        """
+        soup = BeautifulSoup(html, "html.parser")
+        self.assertEqual(
+            parse_availability_from_variations(soup, "2026-07-20", "2026-09-15"),
+            "available",
+        )
 
     def test_suedwestfalen_exam_fee_tariff_parsing(self):
         sample = """

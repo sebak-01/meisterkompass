@@ -5,6 +5,7 @@ from __future__ import annotations
 import logging
 import re
 import json
+import html
 from io import BytesIO
 from urllib.parse import urljoin
 
@@ -45,6 +46,73 @@ EXCLUDE_TITLE_RE = re.compile(
     r"infoveranstaltung|industriemeister|vorkurs zum augenoptikermeister",
     re.IGNORECASE,
 )
+
+
+def parse_availability_from_stock_html(stock_html: str) -> str:
+    """Parse WooCommerce ``availability_html`` from a product variation."""
+    if not stock_html:
+        return "unknown"
+    text = BeautifulSoup(stock_html, "html.parser").get_text(" ", strip=True).lower()
+    if "ausgebucht" in text and "warteliste" in text:
+        return "waitlist"
+    if "ausgebucht" in text or "keine plätze" in text:
+        return "full"
+    if "platz verfügbar" in text or "plätze verfügbar" in text:
+        return "available"
+    if "platz verfuegbar" in text or "plaetze verfuegbar" in text:
+        return "available"
+    if "freie plätze" in text or "wenige plätze" in text:
+        return "available"
+    if "warteliste" in text or "interessentenliste" in text:
+        return "waitlist"
+    if "in-stock" in stock_html.lower():
+        return "available"
+    if "out-of-stock" in stock_html.lower():
+        return "full"
+    if "available-on-backorder" in stock_html.lower():
+        return "waitlist"
+    return "unknown"
+
+
+def parse_availability_from_variations(
+    soup: BeautifulSoup,
+    start_date: str | None,
+    end_date: str | None,
+) -> str:
+    """
+    Read availability from WooCommerce ``data-product_variations``.
+
+    Whole-page keyword scans pick up unrelated menu/footer text and other
+    course variations listed on the same product page.
+    """
+    form = soup.select_one("form.variations_form")
+    if form is None:
+        return "unknown"
+    raw = form.get("data-product_variations")
+    if not raw:
+        return "unknown"
+    try:
+        variations = json.loads(html.unescape(raw))
+    except json.JSONDecodeError:
+        return "unknown"
+    if not variations:
+        return "unknown"
+
+    if start_date and end_date:
+        start_dmy = f"{start_date[8:10]}.{start_date[5:7]}.{start_date[:4]}"
+        end_dmy = f"{end_date[8:10]}.{end_date[5:7]}.{end_date[:4]}"
+        for variation in variations:
+            termin = variation.get("attributes", {}).get("attribute_termin", "")
+            if start_dmy in termin and end_dmy in termin:
+                return parse_availability_from_stock_html(
+                    variation.get("availability_html", "")
+                )
+
+    if len(variations) == 1:
+        return parse_availability_from_stock_html(
+            variations[0].get("availability_html", "")
+        )
+    return "unknown"
 
 
 def parse_dortmund_title(title: str) -> tuple[list[int], str | None]:
@@ -157,21 +225,14 @@ class HwkDortmundScraper(BaseScraper):
             start_date = f"{start[2]}-{start[1]}-{start[0]}"
 
         format_key = self._parse_format(title, page_text)
-        lower = f"{title} {page_text}".lower()
-        if "online" in lower and "präsenz" not in lower:
+        if "online" in page_text.lower() and "präsenz" not in page_text.lower():
             teaching_mode = "online"
-        elif "hybrid" in lower:
+        elif "hybrid" in page_text.lower():
             teaching_mode = "hybrid"
         else:
             teaching_mode = "presence"
 
-        availability = "unknown"
-        if "ausgebucht" in lower or "keine plätze" in lower:
-            availability = "full"
-        elif "interessentenliste" in lower or "warteliste" in lower:
-            availability = "waitlist"
-        elif "freie plätze" in lower:
-            availability = "available"
+        availability = parse_availability_from_variations(soup, start_date, end_date)
 
         return RawCourseOffer(
             title=build_course_title(trade, parts),
