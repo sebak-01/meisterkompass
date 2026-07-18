@@ -163,6 +163,54 @@ class NrwParserTests(unittest.TestCase):
         self.assertEqual(offers[1].availability, "waitlist")
         self.assertEqual(offers[0].start_date, "2026-10-12")
 
+    def test_suedwestfalen_parses_when_h1_is_generic_kursangebot(self):
+        """Live BBZ pages use <h1>Kursangebot</h1>; the real title is an h3."""
+        from bs4 import BeautifulSoup
+        from scrapers.hwk_suedwestfalen import resolve_course_title
+
+        html = """
+        <html><head>
+          <title>Meisterkurs Elektrotechnik Vollzeit</title>
+          <meta property="og:title" content="Meisterkurs Elektrotechnik Vollzeit">
+        </head><body>
+          <h1>Kursangebot</h1>
+          <h3>Meisterkurs Elektrotechnik Vollzeit</h3>
+          <p>Lehrgangsdauer: 1250 Unterrichtsstunden</p>
+          <p>10.880,00 € (zzgl. Prüfungsgebühr 1.000,00 € )</p>
+          <h4>12.10.2026 — 11.06.2027</h4><span>ausgebucht</span>
+          <h4>11.10.2027 — 09.06.2028</h4><span>ausgebucht</span>
+          <h4>16.10.2028 — 08.06.2029</h4><span>ausgebucht</span>
+        </body></html>
+        """
+        soup = BeautifulSoup(html, "html.parser")
+        url = "https://www.bbz-arnsberg.de/kurse/meisterkurs-elektrotechnik-vollzeit"
+        self.assertEqual(
+            resolve_course_title(soup, url),
+            "Meisterkurs Elektrotechnik Vollzeit",
+        )
+        offers = HwkSuedwestfalenScraper()._parse_course_page(soup, url)
+        self.assertEqual(len(offers), 3)
+        self.assertEqual(offers[0].trade_name, "Elektrotechniker")
+        self.assertEqual(offers[0].format_key, "full_time")
+        self.assertEqual(offers[0].course_fee, 10880.0)
+        self.assertEqual(
+            [o.start_date for o in offers],
+            ["2026-10-12", "2027-10-11", "2028-10-16"],
+        )
+
+    def test_suedwestfalen_title_from_url_slug_fallback(self):
+        from bs4 import BeautifulSoup
+        from scrapers.hwk_suedwestfalen import resolve_course_title
+
+        soup = BeautifulSoup("<html><body><h1>Kursangebot</h1></body></html>", "html.parser")
+        url = "https://www.bbz-arnsberg.de/kurse/meisterkurs-friseure"
+        self.assertEqual(resolve_course_title(soup, url), "meisterkurs friseure")
+        offers = HwkSuedwestfalenScraper()._parse_course_page(soup, url)
+        self.assertEqual(len(offers), 1)
+        self.assertEqual(offers[0].trade_name, "Friseur")
+        self.assertEqual(offers[0].parts, [1, 2])
+        self.assertIsNone(offers[0].start_date)
+
     def test_dortmund_title_parsing(self):
         self.assertEqual(
             parse_dortmund_title(
