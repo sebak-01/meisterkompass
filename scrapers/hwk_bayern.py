@@ -421,7 +421,6 @@ class BavariaOdavScraper(BaseScraper):
 
     catalogue: BavariaCatalogue
     chamber_region = "Bayern"
-    request_delay = 0.2
 
     def fetch_raw_courses(self) -> list[RawCourseOffer]:
         first_url = self._list_url(0)

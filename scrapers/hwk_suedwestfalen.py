@@ -136,7 +136,6 @@ class HwkSuedwestfalenScraper(BaseScraper):
     chamber_region = "Nordrhein-Westfalen"
     chamber_website = CHAMBER_URL
     source_url = MEISTER_HUB_URL
-    request_delay = 0.3
 
     def fetch_raw_courses(self) -> list[RawCourseOffer]:
         course_urls = self._discover_course_urls()
