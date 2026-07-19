@@ -50,6 +50,9 @@ GENERIC_PAGES: dict[str, int] = {
 
 WORKLOAD_PATTERN = re.compile(r"PT([\d.]+)H", re.IGNORECASE)
 TRADE_PATTERN    = re.compile(r"Meistervorbereitung\s+im\s+(.+?)handwerk\b", re.IGNORECASE)
+APPOINTMENT_DATE_RE = re.compile(
+    r"(\d{2})\.(\d{2})\.(\d{4})\s*[-–—]\s*(\d{2})\.(\d{2})\.(\d{4})"
+)
 
 # Delivery mode (schema.org courseMode) → the project's teaching_mode.
 MODE_MAP = {
@@ -125,6 +128,91 @@ def iso_date(value: str | None) -> str | None:
     return value[:10] if value else None
 
 
+def parse_availability_label(text: str, light_class: str = "") -> str:
+    """Map ELBCAMPUS traffic-light labels to the project's availability enum."""
+    lower = f"{text} {light_class}".lower()
+    if "warteliste" in lower or "traffic-light--red" in lower:
+        return "waitlist"
+    if any(
+        token in lower
+        for token in (
+            "keine buchbaren",
+            "ausgebucht",
+            "traffic-light--gray",
+            "traffic-light--grey",
+        )
+    ):
+        return "full"
+    if any(
+        token in lower
+        for token in (
+            "freie plätze",
+            "wenige plätze",
+            "traffic-light--green",
+            "traffic-light--yellow",
+        )
+    ):
+        return "available"
+    return "unknown"
+
+
+def parse_appointments(soup: BeautifulSoup) -> list[tuple[str, str, str]]:
+    """
+    Parse Termine cards: ``(start_iso, end_iso, availability)``.
+
+    ELBCAMPUS shows availability in ``li.wyn-appointment`` traffic lights
+    (``Freie Plätze`` / ``Wenige Plätze`` / ``Warteliste`` /
+    ``Keine buchbaren Plätze``). JSON-LD has no availability field.
+    """
+    appointments: list[tuple[str, str, str]] = []
+    seen: set[tuple[str, str]] = set()
+    for item in soup.select("li.wyn-appointment"):
+        time_el = item.select_one(".wyn-appointment__time")
+        if time_el is None:
+            continue
+        match = APPOINTMENT_DATE_RE.search(time_el.get_text(" ", strip=True))
+        if not match:
+            continue
+        start = f"{match.group(3)}-{match.group(2)}-{match.group(1)}"
+        end = f"{match.group(6)}-{match.group(5)}-{match.group(4)}"
+        key = (start, end)
+        if key in seen:
+            continue
+        seen.add(key)
+        label_el = item.select_one(".traffic-light-text")
+        light_el = item.select_one("[class*='traffic-light--']")
+        label = label_el.get_text(" ", strip=True) if label_el else ""
+        light_class = " ".join(light_el.get("class") or []) if light_el else ""
+        appointments.append((start, end, parse_availability_label(label, light_class)))
+    return appointments
+
+
+def match_appointment_availability(
+    appointments: list[tuple[str, str, str]],
+    start_date: str | None,
+    end_date: str | None,
+) -> str:
+    """
+    Match a JSON-LD course instance to a Termine card.
+
+    Display dates on the page often differ from schema.org ``startDate``
+    (entry window vs first teaching day), but ``endDate`` usually aligns.
+    """
+    if not appointments:
+        return "unknown"
+    if end_date:
+        for _start, end, availability in appointments:
+            if end == end_date:
+                return availability
+    if start_date:
+        for start, _end, availability in appointments:
+            if start == start_date:
+                return availability
+    if len(appointments) == 1:
+        return appointments[0][2]
+    return "unknown"
+
+
 class HwkHamburgScraper(BaseScraper):
     chamber_slug    = "hwk-hamburg"
     chamber_name    = "Handwerkskammer Hamburg"
@@ -174,6 +262,7 @@ class HwkHamburgScraper(BaseScraper):
 
         trade_name = None if generic else parse_trade(course.get("name", ""))
         title = build_course_title(trade_name, parts)
+        appointments = parse_appointments(soup)
 
         instances = course.get("hasCourseInstance") or []
         if isinstance(instances, dict):        # single instance serialized as one object
@@ -187,7 +276,7 @@ class HwkHamburgScraper(BaseScraper):
         for idx, inst in enumerate(instances):
             try:
                 offer = self._build_offer(
-                    inst, prices[idx], trade_name, parts, title, url,
+                    inst, prices[idx], trade_name, parts, title, url, appointments,
                 )
             except Exception as exc:
                 logger.warning("HWK Hamburg: error parsing instance %d of %s: %s",
@@ -272,8 +361,16 @@ class HwkHamburgScraper(BaseScraper):
                 prices.append(None)
         return prices
 
-    def _build_offer(self, inst: dict, price: float | None, trade_name: str | None,
-                     parts: list[int], title: str, source_url: str) -> RawCourseOffer:
+    def _build_offer(
+        self,
+        inst: dict,
+        price: float | None,
+        trade_name: str | None,
+        parts: list[int],
+        title: str,
+        source_url: str,
+        appointments: list[tuple[str, str, str]] | None = None,
+    ) -> RawCourseOffer:
         course_mode = inst.get("courseMode")
         workload = parse_workload_hours(inst.get("courseWorkload"))
 
@@ -284,6 +381,11 @@ class HwkHamburgScraper(BaseScraper):
         street   = (address.get("streetAddress") or "").strip()
         zip_code = (address.get("postalCode") or "").strip()
         city     = (address.get("addressLocality") or "Hamburg").strip()
+        start_date = iso_date(inst.get("startDate"))
+        end_date = iso_date(inst.get("endDate"))
+        availability = match_appointment_availability(
+            appointments or [], start_date, end_date,
+        )
 
         return RawCourseOffer(
             title=title,
@@ -291,18 +393,19 @@ class HwkHamburgScraper(BaseScraper):
             parts=parts,
             format_key=parse_format(course_mode),
             teaching_mode=parse_mode(course_mode),
-            start_date=iso_date(inst.get("startDate")),
-            end_date=iso_date(inst.get("endDate")),
+            start_date=start_date,
+            end_date=end_date,
             duration_hours=workload,
             course_fee=price,
             city=city,
             street=street,
             zip_code=zip_code,
-            availability="unknown",
+            availability=availability,
             source_url=source_url,
             scraped_raw={
                 "course_name":  title,
                 "courseMode":   inst.get("courseMode"),
                 "workload":     inst.get("courseWorkload"),
+                "availability_label": availability,
             },
         )
