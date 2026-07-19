@@ -178,6 +178,8 @@ function syncControls(s) {
   av.setAttribute("aria-pressed", String(s.available));
 
   document.getElementById("btn-reset").style.display = hasActiveFilters(s) ? "" : "none";
+  const filterBadge = document.getElementById("filter-badge");
+  if (filterBadge) filterBadge.style.display = hasActiveFilters(s) ? "" : "none";
 
   const isMap = s.view === "map";
   const btnList = document.getElementById("btn-list");
@@ -368,30 +370,48 @@ function wire() {
     if (summary && !e.target.closest("a")) summary.closest("tr").classList.toggle("open");
   });
 
-  // Mobile filter toggle
+  // Mobile filter toggle — keep open/closed under user control only.
+  // Do NOT auto-open on active filters or resize: mobile browsers fire resize
+  // while scrolling (URL bar show/hide), which previously reopened the panel.
   const ftb = document.getElementById("filter-toggle-btn");
   const panel = document.getElementById("filter-panel-mobile");
+  const mobileFilterMq = window.matchMedia("(max-width: 660px)");
+  const syncFilterChrome = () => {
+    const mobile = mobileFilterMq.matches;
+    const active = hasActiveFilters(state);
+    document.getElementById("filter-badge").style.display = active ? "" : "none";
+    ftb.style.display = mobile ? "flex" : "none";
+    if (!mobile) {
+      // Desktop shows filters via CSS; clear mobile open state so returning to
+      // a narrow viewport starts closed instead of inheriting a desktop "open".
+      panel.classList.remove("open");
+      ftb.querySelector(".ftb-chevron").style.transform = "";
+      ftb.setAttribute("aria-expanded", "false");
+    } else {
+      const open = panel.classList.contains("open");
+      ftb.querySelector(".ftb-chevron").style.transform = open ? "rotate(180deg)" : "";
+      ftb.setAttribute("aria-expanded", String(open));
+    }
+  };
   ftb.addEventListener("click", () => {
     const open = panel.classList.toggle("open");
     ftb.querySelector(".ftb-chevron").style.transform = open ? "rotate(180deg)" : "";
     ftb.setAttribute("aria-expanded", String(open));
   });
-  function initMobileFilter() {
-    const active = hasActiveFilters(state);
-    document.getElementById("filter-badge").style.display = active ? "" : "none";
-    if (window.innerWidth <= 640) {
-      ftb.style.display = "flex";
-      if (active) { panel.classList.add("open"); ftb.querySelector(".ftb-chevron").style.transform = "rotate(180deg)"; }
-    } else {
-      ftb.style.display = "none";
-      panel.classList.add("open");
+  const onViewportChange = () => {
+    syncFilterChrome();
+    if (!mobileFilterMq.matches) {
+      document.querySelectorAll(".course-table tr.open").forEach((tr) => tr.classList.remove("open"));
     }
+  };
+  if (typeof mobileFilterMq.addEventListener === "function") {
+    mobileFilterMq.addEventListener("change", onViewportChange);
+  } else {
+    // Safari < 14
+    mobileFilterMq.addListener(onViewportChange);
   }
-  window.addEventListener("resize", () => {
-    initMobileFilter();
-    if (window.innerWidth > 640) document.querySelectorAll(".course-table tr.open").forEach((tr) => tr.classList.remove("open"));
-  });
-  initMobileFilter();
+  window.addEventListener("resize", onViewportChange);
+  syncFilterChrome();
 
   // Back to top
   const btt = document.getElementById("back-to-top");
