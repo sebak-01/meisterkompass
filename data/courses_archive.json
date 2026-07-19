@@ -217,5 +217,41 @@
     "longitude": 12.1999128,
     "availability": "full",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1011422"
+  },
+  {
+    "chamber_slug": "hwk-unterfranken",
+    "chamber_name": "HWK für Unterfranken",
+    "chamber_region": "Bayern",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
+    "parts": [
+      4
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "online",
+    "start_date": "2026-07-18",
+    "end_date": "2026-10-13",
+    "start_date_note": "",
+    "duration_hours": 115,
+    "course_fee": 990.0,
+    "course_fee_display": "990 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 165.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "165 €",
+      "from_tariff": true
+    },
+    "city": "Online",
+    "street": "",
+    "zip_code": "",
+    "latitude": 49.1249172,
+    "longitude": 10.7805332,
+    "availability": "waitlist",
+    "source_url": "https://www.hwk-ufr.de/78,0,coursedetail.html?id=449041"
   }
 ]

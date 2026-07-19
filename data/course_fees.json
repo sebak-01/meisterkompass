@@ -3604,16 +3604,6 @@
     "is_generic": false
   },
   {
-    "chamber_slug": "hwk-dortmund",
-    "trade_slug": "kfz-techniker",
-    "parts": [
-      1
-    ],
-    "fee": 3730.0,
-    "exam_fee_scraped": 854.0,
-    "is_generic": false
-  },
-  {
     "chamber_slug": "hwk-heilbronn-franken",
     "trade_slug": "friseur",
     "parts": [
@@ -6339,6 +6329,16 @@
     ],
     "fee": 9650.0,
     "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-dortmund",
+    "trade_slug": "kfz-techniker",
+    "parts": [
+      1
+    ],
+    "fee": 3530.0,
+    "exam_fee_scraped": 854.0,
     "is_generic": false
   },
   {

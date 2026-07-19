@@ -16708,7 +16708,7 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/"
   },
   {
@@ -17219,42 +17219,6 @@
     "longitude": 13.7677525,
     "availability": "available",
     "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/dachdeckerhandwerk-teil-ii-176423.html"
-  },
-  {
-    "chamber_slug": "hwk-dresden",
-    "chamber_name": "HWK Dresden",
-    "chamber_region": "Sachsen",
-    "trade_slug": "dachdecker",
-    "trade_name": "Dachdecker",
-    "title": "Dachdecker (Teil I)",
-    "parts": [
-      1
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2028-02-07",
-    "end_date": "2028-04-07",
-    "start_date_note": "",
-    "duration_hours": 370,
-    "course_fee": 6150.0,
-    "course_fee_display": "6.150 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 440.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "440 €",
-      "from_tariff": true
-    },
-    "city": "Bad Schlema",
-    "street": "Dachplatten und Dachziegeln Außenwandbekleidung Holz- und Metallarbeiten Dachabdichtungen Projektarbeit Ihr Kurs im Detail als Download Kursinformationen downloaden Zielgruppe Voraussetzung Kursort Gästehaus Hinweis Gesellen des Dachdeckerhandwerks Gesellenabschluss im Dachdeckerhandwerk oder anderer Gewerke mit mehrjähriger Berufserfahrung im Dachdeckerhandwerk LBZ - Landesbildungszentrum des Sächsischen Dachdeckerhandwerks e.V. Lößnitzer Str. 50",
-    "zip_code": "08301",
-    "latitude": null,
-    "longitude": null,
-    "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/dachdeckerhandwerk-teil-i-176424.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -116123,42 +116087,6 @@
     "longitude": 10.2229162,
     "availability": "available",
     "source_url": "https://www.hwk-ufr.de/78,0,coursedetail.html?id=458058"
-  },
-  {
-    "chamber_slug": "hwk-unterfranken",
-    "chamber_name": "HWK für Unterfranken",
-    "chamber_region": "Bayern",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "online",
-    "start_date": "2026-07-18",
-    "end_date": "2026-10-13",
-    "start_date_note": "",
-    "duration_hours": 115,
-    "course_fee": 825.0,
-    "course_fee_display": "825 €",
-    "exam_fee_scraped": 165.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 165.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "165 €",
-      "from_tariff": false
-    },
-    "city": "Würzburg",
-    "street": "Dieselstr. 12",
-    "zip_code": "97082",
-    "latitude": 49.7990834,
-    "longitude": 9.9071335,
-    "availability": "waitlist",
-    "source_url": "https://www.hwk-ufr.de/78,0,coursedetail.html?id=449041"
   },
   {
     "chamber_slug": "hwk-unterfranken",
