@@ -15,7 +15,13 @@ from scrapers.hwk_bremen import (
     _merge_offers,
 )
 from scrapers.base import RawCourseOffer, normalize_trade
-from scrapers.hwk_hamburg import iso_date, parse_trade as parse_hamburg_trade
+from scrapers.hwk_hamburg import (
+    iso_date,
+    match_appointment_availability,
+    parse_appointments,
+    parse_availability_label,
+    parse_trade as parse_hamburg_trade,
+)
 from scrapers.hwk_universal_kdb import build_kdb_detail_url, parse_kdb_availability
 from scrapers.pipeline import SCRAPERS
 
@@ -50,6 +56,61 @@ class CityStateScraperParserTests(unittest.TestCase):
 
     def test_hamburg_iso_date(self):
         self.assertEqual(iso_date("2026-10-12T00:00:00+00:00"), "2026-10-12")
+
+    def test_hamburg_availability_labels(self):
+        self.assertEqual(parse_availability_label("Freie Plätze", "traffic-light--green"), "available")
+        self.assertEqual(parse_availability_label("Wenige Plätze", "traffic-light--yellow"), "available")
+        self.assertEqual(parse_availability_label("Warteliste", "traffic-light--red"), "waitlist")
+        self.assertEqual(
+            parse_availability_label("Keine buchbaren Plätze", "traffic-light--gray"),
+            "full",
+        )
+
+    def test_hamburg_appointments_match_json_ld_by_end_date(self):
+        from bs4 import BeautifulSoup
+
+        html = """
+        <ul>
+          <li class="wyn-appointment">
+            <div class="wyn-appointment__time">21.09.2026 - 06.04.2027</div>
+            <div class="traffic-light traffic-light--green"></div>
+            <div class="traffic-light-text">Freie Plätze</div>
+          </li>
+          <li class="wyn-appointment">
+            <div class="wyn-appointment__time">17.08.2026 - 20.01.2027</div>
+            <div class="traffic-light traffic-light--red"></div>
+            <div class="traffic-light-text">Warteliste</div>
+          </li>
+          <li class="wyn-appointment">
+            <div class="wyn-appointment__time">01.12.2026 - 23.09.2027</div>
+            <div class="traffic-light traffic-light--gray"></div>
+            <div class="traffic-light-text">Keine buchbaren Plätze</div>
+          </li>
+        </ul>
+        """
+        appointments = parse_appointments(BeautifulSoup(html, "html.parser"))
+        self.assertEqual(
+            appointments,
+            [
+                ("2026-09-21", "2027-04-06", "available"),
+                ("2026-08-17", "2027-01-20", "waitlist"),
+                ("2026-12-01", "2027-09-23", "full"),
+            ],
+        )
+        # JSON-LD start dates often differ from the displayed Termin dates;
+        # matching by end date recovers the traffic-light status.
+        self.assertEqual(
+            match_appointment_availability(appointments, "2026-10-05", "2027-04-06"),
+            "available",
+        )
+        self.assertEqual(
+            match_appointment_availability(appointments, "2026-08-24", "2027-01-20"),
+            "waitlist",
+        )
+        self.assertEqual(
+            match_appointment_availability(appointments, "2026-12-01", "2027-09-23"),
+            "full",
+        )
 
     def test_bremen_parts_and_price(self):
         self.assertEqual(
