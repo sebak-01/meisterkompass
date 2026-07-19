@@ -6,7 +6,7 @@ courses offered by Handwerkskammern (HWK) in Germany.
 Enables direct comparison of prices, duration, and exam fees across chambers,
 as well as calculation of AFBG (Aufstiegs-BAföG) funding.
 
-Current scope: 40 chambers across fourteen Bundesländer —
+Current scope: **53 chambers** across **sixteen Bundesländer** —
 
 - **Bayern:** München und Oberbayern, Niederbayern-Oberpfalz, Oberfranken,
   Mittelfranken, Unterfranken, Schwaben
@@ -23,6 +23,11 @@ Current scope: 40 chambers across fourteen Bundesländer —
 - **Berlin:** HWK Berlin
 - **Hamburg:** HWK Hamburg
 - **Bremen:** HWK Bremen
+- **Niedersachsen:** Braunschweig-Lüneburg-Stade, Hannover,
+  Hildesheim-Südniedersachsen, Oldenburg, Osnabrück-Emsland-Grafschaft Bentheim,
+  Ostfriesland
+- **Nordrhein-Westfalen:** Aachen, Dortmund, Düsseldorf, Köln, Münster,
+  Ostwestfalen-Lippe zu Bielefeld, Südwestfalen
 
 
 ---
@@ -38,7 +43,8 @@ Python scrapers ──▶ data/*.json (committed) ──▶ Vite static site ─
 ```
 
 1. **Scrapers** (`scrapers/`, Python) fetch each chamber's course pages and write
-   the dataset to `data/*.json`. A daily GitHub Action runs them and commits the
+   the dataset to `data/*.json`. A daily GitHub Action scrapes four regional
+   batches in parallel, merges the partial results, geocodes once, and commits
    changed JSON.
 2. **Static site** (`web/`, Vite multi-page app) imports the JSON at build time,
    prerenders the default course table into the HTML, and renders the Kursfinder,
@@ -72,10 +78,16 @@ meisterkompass/
 │   ├── hwk_{dresden,chemnitz,leipzig}.py
 │   ├── hwk_{cottbus,potsdam,frankfurt_oder_ostbrandenburg}.py
 │   ├── hwk_{schwerin,ostmecklenburg_vorpommern}.py
+│   ├── hwk_{berlin,hamburg,bremen}.py
+│   ├── hwk_{braunschweig_lueneburg_stade,hannover,hildesheim_suedniedersachsen,
+│   │         oldenburg,osnabrueck_emsland_grafschaft_bentheim,ostfriesland}.py
+│   ├── hwk_{koeln,duesseldorf,aachen,ostwestfalen_lippe_zu_bielefeld,muenster,
+│   │         suedwestfalen,dortmund}.py
+│   ├── hwk_universal_kdb.py    # shared BUE universal-kdb REST client (SH + NI)
 │   ├── fees.py                # exam-fee resolution (scraped + manual overlay, combo-bundle keys)
 │   ├── geocode.py             # Photon geocoder + committed cache
 │   ├── pipeline.py            # scrape → merge → geocode → resolve → split → write JSON
-│   └── run.py                 # CLI: python -m scrapers.run [--chamber X|--dry-run|--rebake]
+│   └── run.py                 # CLI: python -m scrapers.run [--chamber|--group|--rebake|…]
 ├── data/                       # checked-in dataset (consumed by web, written by CI)
 │   ├── courses.json            # UPCOMING + undated offers (resolved exam_fee baked in)
 │   ├── courses_archive.json    # PAST offers (lazy-loaded by the site on demand)
@@ -90,7 +102,10 @@ meisterkompass/
 │   ├── public/                 # favicon.svg, og-image.png, fonts/, sitemap.xml, robots.txt
 │   └── src/                    # base/list/afbg.css + nav/list/map/afbg/render/util.js
 ├── scripts/import_manual_fees_from_live.py  # recover curated fees from old site
-├── tests/test_{bw,bayern,thueringen,sachsen_anhalt,sachsen,brandenburg,mecklenburg_vorpommern}_scrapers.py
+├── tests/test_{base,fees,scrape_pipeline,bw,bayern,thueringen,sachsen_anhalt,sachsen,
+│              brandenburg,mecklenburg_vorpommern,schleswig_holstein,city_states,
+│              niedersachsen,nrw,rheinhessen}_scrapers.py
+├── requirements.txt             # requests, beautifulsoup4, pypdf, cloudscraper
 ├── mise.toml                    # pins python 3.12 + node 22
 └── .github/workflows/{scrape.yml, deploy.yml}
 ```
@@ -235,6 +250,58 @@ Exam fees are parsed from each chamber's Meisterprüfung fees page
 ([Flensburg](https://www.hwk-flensburg.de/weiterbildung/weiterbildung/der-weg-zum-meister),
 [Lübeck](https://www.hwk-luebeck.de/weiterbildung/der-weg-zum-meister/pruefung-gebuehren)).
 
+#### Niedersachsen — ODAV and universal-kdb
+
+| Chamber | Slug | Source |
+|---|---|---|
+| Braunschweig-Lüneburg-Stade | `hwk-braunschweig-lueneburg-stade` | weiterbildung.hwk-bls.de (ODAV) |
+| Hannover | `hwk-hannover` | hwk-hannover.de (ODAV) |
+| Hildesheim-Südniedersachsen | `hwk-hildesheim-suedniedersachsen` | hwk-hildesheim.de (ODAV) |
+| Oldenburg | `hwk-oldenburg` | hwk-oldenburg.de (universal-kdb, mandant `ol`) |
+| Osnabrück-Emsland-Grafschaft Bentheim | `hwk-osnabrueck-emsland-grafschaft-bentheim` | btz-osnabrueck.de (BTZ overview + detail pages) |
+| Ostfriesland | `hwk-ostfriesland` | hwk-aurich.de (universal-kdb, mandant `of`) |
+
+Oldenburg and Ostfriesland share the same BUE REST API as Schleswig-Holstein
+(`hwk_universal_kdb.py`). Osnabrück courses are published by the BTZ on its own
+site; exam fees come from the chamber's Gebührenordnung PDF.
+
+#### Nordrhein-Westfalen — ODAV, WooCommerce, and BBZ Arnsberg
+
+| Chamber | Slug | Source |
+|---|---|---|
+| Aachen | `hwk-aachen` | hwk-aachen.de (ODAV) |
+| Köln | `hwk-koeln` | hwk-koeln.de (ODAV) |
+| Düsseldorf | `hwk-duesseldorf` | hwk-duesseldorf.de (ODAV) |
+| Münster | `hwk-muenster` | hwk-muenster.de (Meisterschule overview + detail pages) |
+| Ostwestfalen-Lippe zu Bielefeld | `hwk-ostwestfalen-lippe-zu-bielefeld` | bbz.handwerk-owl.de (ODAV) |
+| Dortmund | `hwk-dortmund` | hwk-do.de (WooCommerce Events; per-variation availability) |
+| Südwestfalen | `hwk-suedwestfalen` | bbz-arnsberg.de (Meister courses via BBZ Arnsberg) |
+
+NRW-specific notes:
+
+- **OWL** exam fees for Teile I+II use the published all-four-parts package range,
+  not the sum of separate Part I and Part II rows.
+- **Dortmund** reads WooCommerce `data-product_variations` to match each Termin
+  to its variation and parse `availability_html` (`Plätze verfügbar`, `ausgebucht`,
+  `Warteliste`).
+- **Südwestfalen** course pages sit behind Cloudflare; the scraper uses
+  `cloudscraper` for `bbz-arnsberg.de` and reads availability from each
+  `div.tx-wisumcourses-course` row (`ausgebucht`, `Jetzt Buchen`, `Warteliste`).
+  Exam fees are parsed from the chamber's Gebührentarif PDF on hwk-swf.de.
+
+#### City states — Berlin, Hamburg, Bremen
+
+| Chamber | Slug | Source |
+|---|---|---|
+| Berlin | `hwk-berlin` | bildung4u.de (same ODAV-style CMS as Koblenz) |
+| Hamburg | `hwk-hamburg` | elbcampus.de (schema.org `Course` JSON-LD per trade page) |
+| Bremen | `hwk-bremen` | universal-kdb bulk feed + handwerkbremen.de Meisterkurs pages |
+
+Berlin exam fees are curated manually (not on course pages). Hamburg reads
+structured `hasCourseInstance` / `offers` arrays from JSON-LD. Bremen merges
+scheduled KDB runs with dateless overview placeholders when no Termin is published
+yet.
+
 ---
 
 ## Toolchain
@@ -255,42 +322,22 @@ uv venv && uv pip install -r requirements.txt
 
 python -m scrapers.run                      # all chambers → write data/*.json
 python -m scrapers.run --chamber hwk-pfalz  # one chamber
+python -m scrapers.run --group west         # regional batch (see pipeline.SCRAPE_GROUPS)
+python -m scrapers.run --group west --partial-out partial-west.json   # CI partial
+python -m scrapers.run --merge-partials partials/partial-*.json       # merge + write
 python -m scrapers.run --dry-run            # scrape + log counts, write nothing
 python -m scrapers.run --rebake             # re-apply manual fees, no scraping
 
-# all six Bavarian chambers (stops on first failure)
-python -m scrapers.run --chamber hwk-muenchen-und-oberbayern && \
-python -m scrapers.run --chamber hwk-niederbayern-oberpfalz && \
-python -m scrapers.run --chamber hwk-oberfranken && \
-python -m scrapers.run --chamber hwk-mittelfranken && \
-python -m scrapers.run --chamber hwk-unterfranken && \
-python -m scrapers.run --chamber hwk-schwaben
-
-# eastern chambers (Sachsen, Sachsen-Anhalt, Thüringen)
-python -m scrapers.run --chamber hwk-dresden && \
-python -m scrapers.run --chamber hwk-chemnitz && \
-python -m scrapers.run --chamber hwk-leipzig && \
-python -m scrapers.run --chamber hwk-halle-saale && \
-python -m scrapers.run --chamber hwk-magdeburg && \
-python -m scrapers.run --chamber hwk-erfurt && \
-python -m scrapers.run --chamber hwk-ostthueringen-gera && \
-python -m scrapers.run --chamber hwk-suedthueringen-suhl
-
-# Brandenburg chambers
-python -m scrapers.run --chamber hwk-cottbus && \
-python -m scrapers.run --chamber hwk-potsdam && \
-python -m scrapers.run --chamber hwk-frankfurt-oder-ostbrandenburg
-
-# Mecklenburg-Vorpommern chambers
-python -m scrapers.run --chamber hwk-schwerin && \
-python -m scrapers.run --chamber hwk-ostmecklenburg-vorpommern
-
-# Schleswig-Holstein chambers
-python -m scrapers.run --chamber hwk-flensburg && \
-python -m scrapers.run --chamber hwk-luebeck
+# examples — run chambers individually (stops on first failure)
+python -m scrapers.run --chamber hwk-suedwestfalen
+python -m scrapers.run --chamber hwk-dortmund
 
 python -m unittest discover -s tests        # offline parser + fee tests
 ```
+
+Local full runs cap parallel chamber scrapes at 15 workers to avoid egress
+connection limits. CI uses four matrix jobs (`west`, `south`, `east`, `north`)
+with ~13 chambers each on separate runners (~7–10 min wall time).
 
 The pipeline:
 - **merges** the fresh scrape with the existing dataset, retaining past courses as
@@ -372,8 +419,10 @@ is intentionally `noindex` (legal page). Highlights:
 
 ## CI
 
-- `.github/workflows/scrape.yml` — **daily** (03:00 UTC) + manual; runs the scrapers
-  and commits changed `data/`.
+- `.github/workflows/scrape.yml` — **daily** (03:00 UTC) + manual. Four parallel
+  matrix jobs scrape regional batches (`west` / `south` / `east` / `north`),
+  upload JSON partials, then a merge job geocodes, resolves fees, writes
+  `data/*.json`, and commits. Typical wall time ~7–10 minutes.
 - `.github/workflows/deploy.yml` — on push to `data/**` or `web/**`, or chained off a
   successful scrape run; builds `web/` and deploys to GitHub Pages
   (meisterkompass.eu).
@@ -387,55 +436,3 @@ the only data the scrapers can't regenerate; they were recovered from the old li
 site's AFBG page (which embedded the full per-part fee table as JSON) via
 `scripts/import_manual_fees_from_live.py` + `python -m scrapers.run --rebake`. Django
 has since been removed entirely.
-
----
-
-## Roadmap
-
-### Done
-- [x] Migrated from Django/Postgres to a static site (checked-in JSON + GitHub Pages)
-- [x] Four RLP chambers + HWK des Saarlandes scraped and live
-- [x] Hessen expansion: HWK Frankfurt-Rhein-Main, HWK Kassel (6 of 8 providers), HWK Wiesbaden
-- [x] HWK Frankfurt-Rhein-Main: reconciled module handling on tabbed detail pages
-      (`with-modul` selectors + per-run `<tbody>`), so each module yields its own
-      correctly-parted offer with its own fee
-- [x] All chambers in Baden-Württemberg and Bayern integrated
-- [x] Thüringen: HWK Erfurt, Ostthüringen (Gera), Südthüringen (Suhl)
-- [x] Sachsen-Anhalt: HWK Halle (Saale), Magdeburg
-- [x] Sachsen: HWK Dresden, Chemnitz, Leipzig
-- [x] Brandenburg: HWK Cottbus, Frankfurt (Oder) / Ostbrandenburg, Potsdam
-- [x] Mecklenburg-Vorpommern: HWK Schwerin, Ostmecklenburg-Vorpommern
-- [x] Exam fees with "bis zu" qualifier, ranges, combo-bundle prices, and tooltips
-      (scraped + manual overlay)
-- [x] Filterable course list (multi-select chambers) + interactive map;
-      AFBG-Rechner with per-part/combo-bundle fees and Meisterprojekt funding
-- [x] Daily automated scrape; upcoming/archived split for a scalable payload
-- [x] Distinctive design language, full accessibility pass, perfect Lighthouse (indexed pages)
-- [x] SEO: structured data, Open Graph image, sitemap; self-hosted fonts; build-time prerender
-- [x] Custom domain (meisterkompass.eu)
-
-### In progress
-- [ ] HWK Kassel: 6 of 8 providers implemented (BZ Kassel, BBZ Marburg, Bubiza,
-      BBZ Mitte, Holzfachschule Bad Wildungen, FTZ/Innung Kfz-Gewerbe Kassel —
-      the last dateless/priceless, "auf Anfrage" only). Kreishandwerkerschaft
-      Waldeck-Frankenberg remains blocked (Meisterlehrgänge published only as
-      a PDF); Beratungsstelle Denkmalpflege offers none
-
-### Planned
-- [ ] Berufenet links per trade (field already in the model)
-- [ ] Nationwide expansion — add the remaining German Handwerkskammern (18 of 53)
-
-#### Remaining Handwerkskammern by Bundesland
-
-> Covered: Bayern · Baden-Württemberg · Hessen (Frankfurt-Rhein-Main, Kassel,
-> Wiesbaden) · RLP (Koblenz, Trier, Pfalz, Rheinhessen) · Saarland ·
-> Thüringen · Sachsen-Anhalt · Sachsen · Brandenburg · Mecklenburg-Vorpommern.
-
-- **Berlin:** Berlin
-- **Bremen:** Bremen
-- **Hamburg:** Hamburg
-- **Niedersachsen:** Braunschweig-Lüneburg-Stade · Hannover · Hildesheim-Südniedersachsen ·
-  Oldenburg · Osnabrück-Emsland-Grafschaft Bentheim · Ostfriesland
-- **Nordrhein-Westfalen:** Aachen · Dortmund · Düsseldorf · Köln · Münster ·
-  Ostwestfalen-Lippe zu Bielefeld · Südwestfalen
-- **Schleswig-Holstein:** Flensburg · Lübeck
