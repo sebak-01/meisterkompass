@@ -1615,6 +1615,13 @@
           "qualifier": ""
         }
       },
+      "backer": {
+        "1,2": {
+          "fee": 1750.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
       "elektrotechniker": {
         "1,2": {
           "fee": 1650.0,
@@ -1918,13 +1925,6 @@
       "installateur-und-heizungsbauer": {
         "1,2": {
           "fee": 715.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "maler-und-lackierer": {
-        "1,2": {
-          "fee": 830.0,
           "fee_max": null,
           "qualifier": ""
         }
@@ -3631,6 +3631,18 @@
       "installateur-und-heizungsbauer": {
         "1,2": {
           "fee": 1130.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "kfz-techniker": {
+        "1": {
+          "fee": 615.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 515.0,
           "fee_max": null,
           "qualifier": ""
         }

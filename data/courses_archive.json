@@ -36,6 +36,42 @@
     "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-geruestbauer/ausbildung-der-ausbilder-nach-der-aevo-der-sozialkasse/"
   },
   {
+    "chamber_slug": "hwk-dortmund",
+    "chamber_name": "HWK Dortmund",
+    "chamber_region": "Nordrhein-Westfalen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-07-20",
+    "end_date": "2026-09-15",
+    "start_date_note": "",
+    "duration_hours": 300,
+    "course_fee": 1985.0,
+    "course_fee_display": "1.985 €",
+    "exam_fee_scraped": 260.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 260.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "260 €",
+      "from_tariff": false
+    },
+    "city": "Dortmund",
+    "street": "Schützenstraße 32-34",
+    "zip_code": "44147",
+    "latitude": 51.5206367,
+    "longitude": 7.4529522,
+    "availability": "available",
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/"
+  },
+  {
     "chamber_slug": "hwk-karlsruhe",
     "chamber_name": "HWK Karlsruhe",
     "chamber_region": "Baden-Württemberg",
@@ -108,6 +144,44 @@
     "longitude": 9.498614,
     "availability": "available",
     "source_url": "https://www.bz-kassel.de/bildungsangebot/fleischerhandwerk/kursdetail/kurs-1236"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "installateur-und-heizungsbauer",
+    "trade_name": "Installateur- und Heizungsbauer",
+    "title": "Installateur- und Heizungsbauer (Teile I + II + IV)",
+    "parts": [
+      1,
+      2,
+      4
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-07-20",
+    "end_date": "2027-03-02",
+    "start_date_note": "",
+    "duration_hours": 1245,
+    "course_fee": 9930.0,
+    "course_fee_display": "9.930 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 1075.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "1.075 €",
+      "from_tariff": true
+    },
+    "city": "Marburg",
+    "street": "Umgehungsstraße 1-3",
+    "zip_code": "35043",
+    "latitude": 50.7872688,
+    "longitude": 8.7666044,
+    "availability": "available",
+    "source_url": "https://www.bbz-marburg.de/kurs/mv-shk-vz/"
   },
   {
     "chamber_slug": "hwk-konstanz",
@@ -217,6 +291,42 @@
     "longitude": 12.1999128,
     "availability": "full",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1011422"
+  },
+  {
+    "chamber_slug": "hwk-suedwestfalen",
+    "chamber_name": "HWK Südwestfalen",
+    "chamber_region": "Nordrhein-Westfalen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
+    "parts": [
+      4
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-07-20",
+    "end_date": "2026-08-07",
+    "start_date_note": "",
+    "duration_hours": 120,
+    "course_fee": 650.0,
+    "course_fee_display": "650 €",
+    "exam_fee_scraped": 275.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 275.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "275 €",
+      "from_tariff": false
+    },
+    "city": "Arnsberg",
+    "street": "Im Hülsenfeld 42",
+    "zip_code": "59755",
+    "latitude": 51.4470454,
+    "longitude": 7.9631509,
+    "availability": "available",
+    "source_url": "https://www.bbz-arnsberg.de/kurse/ausbildung-der-ausbilder-nach-aevo#termin-1"
   },
   {
     "chamber_slug": "hwk-unterfranken",
