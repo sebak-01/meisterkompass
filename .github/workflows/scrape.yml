@@ -74,7 +74,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Download scrape partials
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v8
         with:
           path: partials
           pattern: partial-*
