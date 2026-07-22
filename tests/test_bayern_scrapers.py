@@ -144,6 +144,45 @@ class BavariaParserTests(unittest.TestCase):
         self.assertEqual(fee, 680.0)
         self.assertEqual(qualifier, "ca.")
 
+        # Schwaben Maler/Maurer/…: no colon before € on Teil I (and often Teil II).
+        schwaben_no_colon = (
+            "Prüfungsgebühr Teil I € 270,00 "
+            "Prüfungsgebühr Teil II € 230,00 zzgl. gewerkspezifischer Prüfungsgebühr"
+        )
+        fee, qualifier = parse_exam_fee(schwaben_no_colon, [1, 2])
+        self.assertEqual(fee, 500.0)
+        self.assertEqual(qualifier, "ca.")
+
+        # Mittelfranken Friseur: currency symbol before the amount.
+        mittelfranken_euro_first = "Prüfungsgebühr € 630,00 Lernmittel € 400,00"
+        fee, qualifier = parse_exam_fee(mittelfranken_euro_first, [1, 2])
+        self.assertEqual(fee, 630.0)
+        self.assertEqual(qualifier, "")
+
+        # Mittelfranken Bäcker/Konditor: combo fee with "Euro" instead of "€".
+        mittelfranken_euro_word = (
+            "Prüfungsgebühr Teile I und II (zirka 630,00 Euro) Lernmittel (zirka 100,00 Euro)"
+        )
+        fee, qualifier = parse_exam_fee(mittelfranken_euro_word, [1, 2])
+        self.assertEqual(fee, 630.0)
+        self.assertEqual(qualifier, "ca.")
+
+        # Mittelfranken Maler: combo fee without parentheses / estimate word.
+        mittelfranken_plain_combo = (
+            "Prüfungsgebühr Teile I und II 630,00 Euro Lern- und Arbeitsmittel 1.000,00 Euro"
+        )
+        fee, qualifier = parse_exam_fee(mittelfranken_plain_combo, [1, 2])
+        self.assertEqual(fee, 630.0)
+        self.assertEqual(qualifier, "")
+
+        # Mittelfranken Zahntechniker: "zirka €" before the amount.
+        mittelfranken_zirka_euro = (
+            "Prüfungsgebühr Teile I und II (zirka € 680,00) Lernmittel zirka € 1.100,00"
+        )
+        fee, qualifier = parse_exam_fee(mittelfranken_zirka_euro, [1, 2])
+        self.assertEqual(fee, 680.0)
+        self.assertEqual(qualifier, "ca.")
+
         leipzig = (
             "Prüfungsgebühr für Teil I:\n395 Euro\n"
             "Prüfungsgebühr für Teil II:\n320 Euro"

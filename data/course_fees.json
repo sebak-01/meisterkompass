@@ -1,37 +1,5 @@
 [
   {
-    "chamber_slug": "hwk-cottbus",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      4
-    ],
-    "fee": 799.0,
-    "exam_fee_scraped": null,
-    "is_generic": true
-  },
-  {
-    "chamber_slug": "hwk-dortmund",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      3
-    ],
-    "fee": 1985.0,
-    "exam_fee_scraped": 260.0,
-    "is_generic": true
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "trade_slug": "installateur-und-heizungsbauer",
-    "parts": [
-      1,
-      2,
-      4
-    ],
-    "fee": 9930.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
     "chamber_slug": "hwk-oldenburg",
     "trade_slug": "metallbauer",
     "parts": [
@@ -89,6 +57,16 @@
       3
     ],
     "fee": 1950.0,
+    "exam_fee_scraped": null,
+    "is_generic": true
+  },
+  {
+    "chamber_slug": "hwk-cottbus",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      4
+    ],
+    "fee": 799.0,
     "exam_fee_scraped": null,
     "is_generic": true
   },
@@ -993,7 +971,7 @@
       2
     ],
     "fee": 7750.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 500.0,
     "is_generic": false
   },
   {
@@ -2237,7 +2215,7 @@
       2
     ],
     "fee": 11350.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 630.0,
     "is_generic": false
   },
   {
@@ -2820,7 +2798,7 @@
       2
     ],
     "fee": 5700.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 630.0,
     "is_generic": false
   },
   {
@@ -3551,6 +3529,18 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-kassel",
+    "trade_slug": "installateur-und-heizungsbauer",
+    "parts": [
+      1,
+      2,
+      4
+    ],
+    "fee": 9930.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-ostfriesland",
     "trade_slug": "friseur",
     "parts": [
@@ -3739,7 +3729,7 @@
       2
     ],
     "fee": 5750.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 630.0,
     "is_generic": false
   },
   {
@@ -4688,7 +4678,7 @@
       2
     ],
     "fee": 10550.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 630.0,
     "is_generic": false
   },
   {
@@ -4980,7 +4970,7 @@
       2
     ],
     "fee": 12250.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 630.0,
     "is_generic": false
   },
   {
@@ -4991,7 +4981,7 @@
       2
     ],
     "fee": 12250.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 630.0,
     "is_generic": false
   },
   {
@@ -5002,7 +4992,7 @@
       2
     ],
     "fee": 7950.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 500.0,
     "is_generic": false
   },
   {
@@ -5328,7 +5318,7 @@
       2
     ],
     "fee": 6850.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 630.0,
     "is_generic": false
   },
   {
@@ -5817,7 +5807,7 @@
       2
     ],
     "fee": 15800.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 680.0,
     "is_generic": false
   },
   {
@@ -5893,7 +5883,7 @@
       2
     ],
     "fee": 8250.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 500.0,
     "is_generic": false
   },
   {
@@ -6078,7 +6068,7 @@
       2
     ],
     "fee": 8000.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 500.0,
     "is_generic": false
   },
   {
@@ -6168,6 +6158,16 @@
     "fee": 13700.0,
     "exam_fee_scraped": null,
     "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-dortmund",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      3
+    ],
+    "fee": 2015.0,
+    "exam_fee_scraped": 260.0,
+    "is_generic": true
   },
   {
     "chamber_slug": "hwk-aachen",

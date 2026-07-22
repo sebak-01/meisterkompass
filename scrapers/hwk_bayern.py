@@ -316,9 +316,11 @@ def parse_exam_fee(text: str, parts: list[int]) -> tuple[float | None, str]:
         qualifier = "ca."
 
     part_amounts: dict[int, float] = {}
+    # Schwaben variants include "Teil I: € 270,00", "Teil I - 270,00 €",
+    # and "Teil I € 270,00" (no colon before the currency symbol).
     patterns = (
         r"Prüfungsgebühr(?:\s+für)?\s+(?:den\s+)?Teil\s+(I{1,3}|IV)\s*"
-        r"(?:[:：]\s*(?:€\s*)?|[-–—]\s*)([\d.]+),(\d{2})(?:\s*(?:€|Euro))?",
+        r"(?:[:：]|[-–—])?\s*(?:€\s*)?([\d.]+),(\d{2})(?:\s*(?:€|Euro))?",
         r"Prüfungsgebühr\s+([\d.]+),(\d{2})\s*Euro\s+Teil\s+(I{1,3}|IV)",
         r"([\d.]+),(\d{2})\s*Euro\s+Teil\s+(I{1,3}|IV)\b",
     )
@@ -349,14 +351,18 @@ def parse_exam_fee(text: str, parts: list[int]) -> tuple[float | None, str]:
         )
 
     if not part_amounts:
+        # Mittelfranken variants: "(zirka 680,00 €)", "(zirka 630,00 Euro)",
+        # "(zirka € 680,00)", "630,00 Euro", "(ca. 630,00 €)".
         combo = re.search(
-            r"Prüfungsgebühr\s+Teile?\s+(?:I\s+und\s+II|III\s+und\s+IV|I{1,3}\s+und\s+II)"
-            r".*?\(?\s*(?:zirka|ca\.|circa)?\s*([\d.]+),(\d{2})\s*€",
+            r"Prüfungsgebühr\s+Teile?\s+(?:I\s+und\s+II|III\s+und\s+IV|I{1,3}\s+und\s+II)\s*"
+            r"\(?\s*(?:zirka|ca\.|circa)?\s*(?:€\s*)?([\d.]+),(\d{2})\s*(?:€|Euro)?\s*\)?",
             text,
-            re.IGNORECASE | re.DOTALL,
+            re.IGNORECASE,
         )
         if combo and set(parts) <= {1, 2, 3, 4}:
-            return _amount_from_match(combo, 1, 2), "ca." if combo.group(0).lower().find("zirka") >= 0 or "ca." in combo.group(0).lower() else qualifier
+            line = combo.group(0).lower()
+            line_qual = "ca." if re.search(r"zirka|ca\.|circa", line) else qualifier
+            return _amount_from_match(combo, 1, 2), line_qual
 
     if set(parts) == {3, 4}:
         generic = re.search(
@@ -372,8 +378,9 @@ def parse_exam_fee(text: str, parts: list[int]) -> tuple[float | None, str]:
     if len(values) == len(parts) and values:
         return sum(values), qualifier
 
+    # Includes "Prüfungsgebühr 630,00 €" and "Prüfungsgebühr € 630,00".
     prose_total = re.search(
-        r"Prüfungsgebühr(?:\s*:\s*|\s+)([\d.]+),(\d{2})\s*(?:Euro|€)",
+        r"Prüfungsgebühr\s*:?\s*(?:€\s*)?([\d.]+),(\d{2})(?:\s*(?:Euro|€))?",
         text,
         re.IGNORECASE,
     )
