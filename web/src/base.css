@@ -341,8 +341,8 @@ a:hover { text-decoration: underline; text-decoration-color: var(--brass); }
 .site-footer {
   margin-top: 3rem;
   padding: 1.25rem 0;
-  border-top: 1px solid var(--line);
-  background: var(--card);
+  border-top: 1px solid rgba(255,255,255,.10);
+  background: var(--ink);
 }
 .site-footer nav {
   display: flex;
@@ -350,18 +350,20 @@ a:hover { text-decoration: underline; text-decoration-color: var(--brass); }
   gap: .35rem 1.25rem;
   justify-content: center;
   font-size: .82rem;
+  font-weight: 500;
+  letter-spacing: .01em;
 }
 .site-footer a {
-  color: var(--text-mid);
+  color: rgba(255,255,255,.62);
   text-decoration: none;
+  transition: color .15s;
 }
 .site-footer a:hover {
-  color: var(--ink);
-  text-decoration: underline;
-  text-decoration-color: var(--brass);
+  color: #fff;
+  text-decoration: none;
 }
 .site-footer a[aria-current="page"] {
-  color: var(--ink);
+  color: #fff;
   font-weight: 600;
 }
 
