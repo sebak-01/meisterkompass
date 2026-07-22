@@ -337,6 +337,36 @@ a:hover { text-decoration: underline; text-decoration-color: var(--brass); }
 .region-panel-body label:hover { background: var(--card-2); }
 .region-panel-body input { accent-color: var(--brass); width: 15px; height: 15px; flex-shrink: 0; }
 
+/* ── Site footer ───────────────────────────────────────────────── */
+.site-footer {
+  margin-top: 3rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid rgba(255,255,255,.10);
+  background: var(--ink);
+}
+.site-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem 1.25rem;
+  justify-content: center;
+  font-size: .82rem;
+  font-weight: 500;
+  letter-spacing: .01em;
+}
+.site-footer a {
+  color: rgba(255,255,255,.62);
+  text-decoration: none;
+  transition: color .15s;
+}
+.site-footer a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+.site-footer a[aria-current="page"] {
+  color: #fff;
+  font-weight: 600;
+}
+
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }

@@ -120,6 +120,7 @@ export default defineConfig({
         afbg: resolve(__dirname, "afbg.html"),
         about: resolve(__dirname, "about.html"),
         imprint: resolve(__dirname, "imprint.html"),
+        privacy: resolve(__dirname, "privacy.html"),
       },
     },
   },

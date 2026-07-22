@@ -381,14 +381,16 @@ function calculate() {
 
   let pFoerderbar = 0, pZuschuss = 0, pDarlehen = 0, pEigenanteil = 0;
   if (projektKosten > 0) {
-    pFoerderbar = Math.min(projektKosten, 2000);
+    // AFBG supports half of material costs, capped at 2.000 € total funding.
+    // Of that funding: 50 % Zuschuss, 50 % KfW-Darlehen (no Darlehenserlass).
+    pFoerderbar = Math.min(projektKosten * 0.5, 2000);
     pZuschuss = pFoerderbar * 0.5;
     pDarlehen = pFoerderbar * 0.5;
     pEigenanteil = projektKosten - pZuschuss;
 
     const pHtml =
       '<div class="result-row"><span class="label"><span class="icon">🔧</span>Materialkosten Projekt</span><span class="value">' + fmt(projektKosten) + "</span></div>" +
-      '<div class="result-row deduct"><span class="label"><span class="icon">✦</span>Davon förderbar (max. 2.000 €)</span><span class="value">' + fmt(pFoerderbar) + "</span></div>" +
+      '<div class="result-row deduct"><span class="label"><span class="icon">✦</span>Davon förderbar (50 %, max. 2.000 €)</span><span class="value">' + fmt(pFoerderbar) + "</span></div>" +
       '<div class="result-row positive"><span class="label"><span class="icon">✅</span>Zuschuss (50 % der Förderung)</span><span class="value">+ ' + fmt(pZuschuss) + "</span></div>" +
       '<div class="result-row loan"><span class="label"><span class="icon">🏦</span>KfW-Darlehen (50 % der Förderung)</span><span class="value">' + fmt(pDarlehen) + "</span></div>" +
       '<hr class="result-divider">' +

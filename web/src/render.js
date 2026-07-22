@@ -165,9 +165,6 @@ function runtimeCell(c) {
     : "";
   const startLine = `<span class="fee-info-wrap" style="white-space:nowrap">${fmt(c.start_date)}${dateBtn}</span>`;
   if (!c.end_date) return `<div>${startLine}</div>`;
-  if (monthOnly) {
-    return `<div><span class="fee-info-wrap" style="white-space:nowrap">${fmt(c.start_date)} - ${fmt(c.end_date)}${dateBtn}</span></div>`;
-  }
   return `<div>${startLine}</div>` +
     `<div style="color:var(--text-lt);font-size:.72rem;line-height:1.2">bis</div>` +
     `<div style="white-space:nowrap">${fmt(c.end_date)}</div>`;

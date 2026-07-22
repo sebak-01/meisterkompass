@@ -55,7 +55,6 @@
       <a href="./index.html">Kursfinder</a>
       <a href="./afbg.html" aria-current="page" class="active">AFBG-Rechner</a>
       <a href="./about.html">Über MeisterKompass</a>
-      <a href="./imprint.html">Impressum</a>
     </nav>
     <button class="hamburger" id="hamburger-btn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">☰</button>
   </div>
@@ -63,7 +62,6 @@
     <a href="./index.html">Kursfinder</a>
     <a href="./afbg.html" aria-current="page" class="active">AFBG-Rechner</a>
     <a href="./about.html">Über MeisterKompass</a>
-    <a href="./imprint.html">Impressum</a>
   </div>
 </header>
 
@@ -128,17 +126,12 @@
         </div>
         <div class="field-row">
           <div class="field">
-            <label for="fee-projekt">Materialkosten Projekt (€)
-              <span class="fee-info-wrap-calc">
-                <button class="fee-info-btn-calc" type="button"
-                  data-tooltip="Materialkosten für das praktische Meisterprojekt (Teil I). Diese Kosten können als Teil der Prüfungsgebühren AFBG-förderfähig sein. Erkundige dich bei deiner Kammer, ob und in welcher Höhe diese Kosten offiziell angesetzt werden." aria-label="Hinweis zu Materialkosten">i</button>
-              </span>
-            </label>
+            <label for="fee-projekt">Materialkosten Projekt (€)</label>
             <input type="number" id="fee-projekt" value="" min="0" step="50" placeholder="z. B. 2.800">
           </div>
           <div class="field">
             <span style="color:var(--text-lt);font-size:.75rem;margin-top:.4rem;display:block">
-              Separat gefördert: bis zu 2.000 € der tatsächlichen Kosten. Davon 50 % Zuschuss, 50 % KfW-Darlehen (kein Darlehenserlass).
+              Separat gefördert: bis zur Hälfte der notwendigen Kosten (max. 2.000 €). Davon 50 % Zuschuss, 50 % KfW-Darlehen (kein Darlehenserlass).
             </span>
           </div>
         </div>
@@ -173,7 +166,7 @@
       <li><strong>50 % Darlehenserlass</strong> bei bestandener Prüfung</li>
       <li>Effektiver Eigenanteil bei Bestehen: ca. <strong>25 %</strong> der geförderten Kosten</li>
     </ul>
-    <p style="margin-top:1rem;margin-bottom:.5rem">Das AFBG fördert Materialkosten des Meisterprüfungsprojekts (und vergleichbaren Arbeiten) bis zu <strong>2.000 €</strong>:</p>
+    <p style="margin-top:1rem;margin-bottom:.5rem">Das AFBG fördert bis zur Hälfte der notwendigen Materialkosten des Meisterprüfungsprojekts (max. <strong>2.000 €</strong>):</p>
     <ul style="margin-bottom:.75rem">
       <li><strong>50 % Zuschuss</strong> – wird nicht zurückgezahlt</li>
       <li><strong>50 % zinsgünstiges KfW-Darlehen</strong> – kein Darlehenserlass</li>
@@ -191,6 +184,15 @@
   </div>
 </div>
 </main>
+
+<footer class="site-footer">
+  <div class="container">
+    <nav aria-label="Rechtliches">
+      <a href="./privacy.html">Datenschutz</a>
+      <a href="./imprint.html">Impressum</a>
+    </nav>
+  </div>
+</footer>
 
 <script type="module" src="./src/afbg.js"></script>
 </body>

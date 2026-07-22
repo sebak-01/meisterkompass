@@ -16,6 +16,7 @@ from urllib.parse import urljoin
 from bs4 import BeautifulSoup, Tag
 
 from .base import BaseScraper, RawCourseOffer, build_course_title
+from .biv_suedwest import BAKER_COURSE_URL, parse_baker_offers
 
 logger = logging.getLogger(__name__)
 
@@ -143,7 +144,7 @@ def parse_availability(text: str) -> str:
         return "waitlist"
     if "freie plätze" in lower or "wenige plätze" in lower:
         return "available"
-    return "unknown"
+    return "available"
 
 
 def _iso_date(groups: tuple[str, str, str]) -> str:
@@ -181,6 +182,18 @@ class HwkKarlsruheScraper(BaseScraper):
             )
             offers.extend(section_offers)
         offers.extend(self._fetch_external_provider_courses())
+        baker_soup = self.parse_html(BAKER_COURSE_URL)
+        if baker_soup is None:
+            logger.warning("Could not fetch Karlsruhe Bäcker course: %s", BAKER_COURSE_URL)
+        else:
+            baker_text = baker_soup.get_text(" ", strip=True)
+            baker_offers = parse_baker_offers(
+                baker_text,
+                location="karlsruhe",
+                source_url=BAKER_COURSE_URL,
+            )
+            logger.info("  Karlsruhe Bäcker external provider → %d offer(s)", len(baker_offers))
+            offers.extend(baker_offers)
         logger.info("HWK Karlsruhe: parsed %d course offers total.", len(offers))
         return offers
 

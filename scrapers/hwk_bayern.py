@@ -26,6 +26,7 @@ MONTH_DATE_RE = re.compile(
 )
 NUMERIC_MONTH_RE = re.compile(r"\b(0[1-9]|1[0-2])\.(\d{4})\b")
 TENTATIVE_DATE_NOTE = "Genauer Termin steht noch nicht fest."
+GEWERKSPEZIF_EXAM_FEE_QUALIFIER = "zzgl. gewerkspezifischer Prüfungsgebühr"
 PRICE_RE = re.compile(r"([\d.]+),(\d{2})[\s\xa0]*€")
 DURATION_UNIT = r"(?:UE|U-?Std\.?|Std\.?)"
 DURATION_RE = re.compile(rf"([\d.]+)[\s\xa0]*{DURATION_UNIT}", re.IGNORECASE)
@@ -309,16 +310,18 @@ def parse_exam_fee(text: str, parts: list[int]) -> tuple[float | None, str]:
         return structured, ""
 
     lower = text.lower()
-    qualifier = ""
-    if any(word in lower for word in ("zirka", "ca.", "circa")):
-        qualifier = "ca."
-    elif re.search(r"zzgl\.\s+gewerkspezif", lower):
-        qualifier = "ca."
+    gewerkspezif = (
+        GEWERKSPEZIF_EXAM_FEE_QUALIFIER
+        if re.search(r"zzgl\.\s+gewerkspezif", lower)
+        else ""
+    )
 
     part_amounts: dict[int, float] = {}
+    # Schwaben variants include "Teil I: € 270,00", "Teil I - 270,00 €",
+    # "Teil I EUR 270,00", and "Teil I € 270,00" (no colon before currency).
     patterns = (
         r"Prüfungsgebühr(?:\s+für)?\s+(?:den\s+)?Teil\s+(I{1,3}|IV)\s*"
-        r"(?:[:：]\s*(?:€\s*)?|[-–—]\s*)([\d.]+),(\d{2})(?:\s*(?:€|Euro))?",
+        r"(?:[:：]|[-–—])?\s*(?:(?:€\s*)|(?:EUR\s*))?([\d.]+),(\d{2})(?:\s*(?:€|Euro|EUR))?",
         r"Prüfungsgebühr\s+([\d.]+),(\d{2})\s*Euro\s+Teil\s+(I{1,3}|IV)",
         r"([\d.]+),(\d{2})\s*Euro\s+Teil\s+(I{1,3}|IV)\b",
     )
@@ -349,14 +352,22 @@ def parse_exam_fee(text: str, parts: list[int]) -> tuple[float | None, str]:
         )
 
     if not part_amounts:
+        # Mittelfranken variants: "(zirka 680,00 €)", "(zirka 630,00 Euro)",
+        # "(zirka € 680,00)", "630,00 Euro", "(ca. 630,00 €)".
         combo = re.search(
-            r"Prüfungsgebühr\s+Teile?\s+(?:I\s+und\s+II|III\s+und\s+IV|I{1,3}\s+und\s+II)"
-            r".*?\(?\s*(?:zirka|ca\.|circa)?\s*([\d.]+),(\d{2})\s*€",
+            r"Prüfungsgebühr\s+Teile?\s+(?:I\s+und\s+II|III\s+und\s+IV|I{1,3}\s+und\s+II)\s*"
+            r"\(?\s*(?:zirka|ca\.|circa)?\s*(?:€\s*)?([\d.]+),(\d{2})\s*(?:€|Euro)?\s*\)?",
             text,
-            re.IGNORECASE | re.DOTALL,
+            re.IGNORECASE,
         )
         if combo and set(parts) <= {1, 2, 3, 4}:
-            return _amount_from_match(combo, 1, 2), "ca." if combo.group(0).lower().find("zirka") >= 0 or "ca." in combo.group(0).lower() else qualifier
+            line = combo.group(0).lower()
+            line_qual = (
+                "ca."
+                if re.search(r"zirka|ca\.|circa", line)
+                else gewerkspezif
+            )
+            return _amount_from_match(combo, 1, 2), line_qual
 
     if set(parts) == {3, 4}:
         generic = re.search(
@@ -366,19 +377,26 @@ def parse_exam_fee(text: str, parts: list[int]) -> tuple[float | None, str]:
             re.IGNORECASE | re.DOTALL,
         )
         if generic:
-            return _amount_from_match(generic, 1, 2) * 2, qualifier
+            return _amount_from_match(generic, 1, 2) * 2, gewerkspezif
 
     values = [part_amounts[part] for part in parts if part in part_amounts]
     if len(values) == len(parts) and values:
-        return sum(values), qualifier
+        # Explicit per-part Prüfungsgebühr lines are authoritative; ignore
+        # unrelated "ca." elsewhere on the page (e.g. material costs).
+        return sum(values), gewerkspezif
 
+    # Includes "Prüfungsgebühr 630,00 €" and "Prüfungsgebühr € 630,00".
     prose_total = re.search(
-        r"Prüfungsgebühr(?:\s*:\s*|\s+)([\d.]+),(\d{2})\s*(?:Euro|€)",
+        r"Prüfungsgebühr\s*:?\s*(?:€\s*)?([\d.]+),(\d{2})(?:\s*(?:Euro|€))?",
         text,
         re.IGNORECASE,
     )
     if prose_total:
-        return _amount_from_match(prose_total, 1, 2), qualifier
+        line = prose_total.group(0)
+        line_qual = gewerkspezif or (
+            "ca." if re.search(r"zirka|ca\.|circa", line, re.I) else ""
+        )
+        return _amount_from_match(prose_total, 1, 2), line_qual
 
     # HWK Aachen ODAV: "Prüfungsgebühr: 610 Euro" (whole euros, no cents).
     whole_euro = re.search(
@@ -487,7 +505,7 @@ class BavariaOdavScraper(BaseScraper):
         heading = link.find_parent("h3")
         text = row.get_text("\n", strip=True) if row else raw_title
         heading_text = heading.get_text(" ", strip=True) if heading else text
-        start_date, end_date = parse_dates(heading_text)
+        start_date, end_date, start_date_note = parse_dates_with_note(heading_text)
         format_key, teaching_mode = parse_format_and_mode(f"{heading_text} {raw_title}")
         duration = DURATION_RE.search(text)
         return {
@@ -496,6 +514,7 @@ class BavariaOdavScraper(BaseScraper):
             "trade_name": trade_name,
             "start_date": start_date,
             "end_date": end_date,
+            "start_date_note": start_date_note,
             "format_key": format_key,
             "teaching_mode": teaching_mode,
             "duration_hours": int(duration.group(1).replace(".", "")) if duration else None,
@@ -558,7 +577,7 @@ class BavariaOdavScraper(BaseScraper):
             course_fee=course_fee,
             exam_fee_scraped=exam_fee,
             exam_fee_qualifier=exam_fee_qualifier,
-            start_date_note=start_date_note,
+            start_date_note=start_date_note or card.get("start_date_note", ""),
             city=city,
             street=street,
             zip_code=zip_code,
@@ -587,6 +606,12 @@ class BavariaOdavScraper(BaseScraper):
         main_text: str,
     ) -> tuple[str | None, str | None, str]:
         """Hook for chamber-specific schedule parsing."""
+        if not (main_text or "").strip():
+            return (
+                card.get("start_date"),
+                card.get("end_date"),
+                card.get("start_date_note", ""),
+            )
         return parse_dates_with_note(main_text)
 
     def listing_location(self, card: dict, teaching_mode: str) -> tuple[str, str, str]:

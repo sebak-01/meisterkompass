@@ -128,7 +128,7 @@ class BavariaParserTests(unittest.TestCase):
         )
         fee, qualifier = parse_exam_fee(schwaben, [1, 2])
         self.assertEqual(fee, 500.0)
-        self.assertEqual(qualifier, "ca.")
+        self.assertEqual(qualifier, "zzgl. gewerkspezifischer Prüfungsgebühr")
 
         schwaben_hinweis = (
             "Zusätzliche Kosten Fachbücher - 100,00 €, Lehrmaterial 580,00 €, "
@@ -137,10 +137,68 @@ class BavariaParserTests(unittest.TestCase):
         )
         fee, qualifier = parse_exam_fee(schwaben_hinweis, [1, 2])
         self.assertEqual(fee, 500.0)
-        self.assertEqual(qualifier, "ca.")
+        self.assertEqual(qualifier, "zzgl. gewerkspezifischer Prüfungsgebühr")
+
+        feinwerk_hinweis = (
+            "Zusätzliche Kosten Fachliche Lehrmittel ca. € 225,00, "
+            "Zusatzkosten für praktische Prüfung ca. € 1.200,00, "
+            "Prüfungsgebühr Teil I: € 270,00, Prüfungsgebühr Teil II: € 230,00, "
+            "Laptop + Software, nur für zu Hause, ca. € 900,00"
+        )
+        fee, qualifier = parse_exam_fee(feinwerk_hinweis, [1, 2])
+        self.assertEqual(fee, 500.0)
+        self.assertEqual(qualifier, "")
+
+        feinwerk_details = (
+            "Prüfungsgebühr Teil I EUR 270,00\n"
+            "Prüfungsgebühr Teil II EUR 230,00\n"
+            "Fachliche Lehrmittel ca. EUR 225,00"
+        )
+        fee, qualifier = parse_exam_fee(feinwerk_details, [1, 2])
+        self.assertEqual(fee, 500.0)
+        self.assertEqual(qualifier, "")
 
         mittelfranken = "Prüfungsgebühr Teile I und II (zirka 680,00 €)"
         fee, qualifier = parse_exam_fee(mittelfranken, [1, 2])
+        self.assertEqual(fee, 680.0)
+        self.assertEqual(qualifier, "ca.")
+
+        # Schwaben Maler/Maurer/…: no colon before € on Teil I (and often Teil II).
+        schwaben_no_colon = (
+            "Prüfungsgebühr Teil I € 270,00 "
+            "Prüfungsgebühr Teil II € 230,00 zzgl. gewerkspezifischer Prüfungsgebühr"
+        )
+        fee, qualifier = parse_exam_fee(schwaben_no_colon, [1, 2])
+        self.assertEqual(fee, 500.0)
+        self.assertEqual(qualifier, "zzgl. gewerkspezifischer Prüfungsgebühr")
+
+        # Mittelfranken Friseur: currency symbol before the amount.
+        mittelfranken_euro_first = "Prüfungsgebühr € 630,00 Lernmittel € 400,00"
+        fee, qualifier = parse_exam_fee(mittelfranken_euro_first, [1, 2])
+        self.assertEqual(fee, 630.0)
+        self.assertEqual(qualifier, "")
+
+        # Mittelfranken Bäcker/Konditor: combo fee with "Euro" instead of "€".
+        mittelfranken_euro_word = (
+            "Prüfungsgebühr Teile I und II (zirka 630,00 Euro) Lernmittel (zirka 100,00 Euro)"
+        )
+        fee, qualifier = parse_exam_fee(mittelfranken_euro_word, [1, 2])
+        self.assertEqual(fee, 630.0)
+        self.assertEqual(qualifier, "ca.")
+
+        # Mittelfranken Maler: combo fee without parentheses / estimate word.
+        mittelfranken_plain_combo = (
+            "Prüfungsgebühr Teile I und II 630,00 Euro Lern- und Arbeitsmittel 1.000,00 Euro"
+        )
+        fee, qualifier = parse_exam_fee(mittelfranken_plain_combo, [1, 2])
+        self.assertEqual(fee, 630.0)
+        self.assertEqual(qualifier, "")
+
+        # Mittelfranken Zahntechniker: "zirka €" before the amount.
+        mittelfranken_zirka_euro = (
+            "Prüfungsgebühr Teile I und II (zirka € 680,00) Lernmittel zirka € 1.100,00"
+        )
+        fee, qualifier = parse_exam_fee(mittelfranken_zirka_euro, [1, 2])
         self.assertEqual(fee, 680.0)
         self.assertEqual(qualifier, "ca.")
 
@@ -330,6 +388,33 @@ class BavariaRegistrationTests(unittest.TestCase):
         self.assertEqual(offer.zip_code, "93055")
         self.assertEqual(offer.course_fee, 6850.0)
         self.assertEqual(offer.duration_hours, 584)
+        self.assertEqual(offer.start_date_note, "")
+
+    def test_niederbayern_preserves_month_year_date_note_from_listing(self):
+        soup = BeautifulSoup(
+            """
+            <div class="row">
+              <h3>03.2029 - 06.2029: Vollzeit
+                <a href="/76,0,coursedetail.html?id=1023420">
+                  Bäckermeister/in - Teile I und II
+                </a>
+              </h3>
+              <div>5.500,00 €</div>
+              <div>480 Std.</div>
+              <div>Regensburg</div>
+              <div>freie Plätze</div>
+            </div>
+            """,
+            "html.parser",
+        )
+        scraper = HwkNiederbayernOberpfalzScraper()
+        scraper.parse_html = lambda _url: self.fail("detail page must not be requested")
+        card = scraper._parse_card(soup.select_one("a"))
+        offer = scraper._enrich(card)
+
+        self.assertEqual(offer.start_date, "2029-03-01")
+        self.assertEqual(offer.end_date, "2029-06-01")
+        self.assertEqual(offer.start_date_note, "Genauer Termin steht noch nicht fest.")
 
     def test_schwaben_removes_exam_fee_qualifier(self):
         offer = RawCourseOffer(
@@ -343,7 +428,7 @@ class BavariaRegistrationTests(unittest.TestCase):
             duration_hours=1360,
             course_fee=8150.0,
             exam_fee_scraped=500.0,
-            exam_fee_qualifier="ca.",
+            exam_fee_qualifier="zzgl. gewerkspezifischer Prüfungsgebühr",
             city="Kempten",
         )
 

@@ -3,6 +3,7 @@ from unittest.mock import patch
 
 from bs4 import BeautifulSoup
 
+from scrapers.base import RawCourseOffer
 from scrapers.fees import build_exam_fee_lookup, resolve_exam_fee
 from scrapers.hwk_halle_saale import (
     HwkHalleSaaleScraper,
@@ -153,6 +154,68 @@ class SachsenAnhaltParserTests(unittest.TestCase):
             scraper.chamber_slug, "elektrotechniker", [1, 2], None, lookup
         )
         self.assertEqual(resolved["fee"], 753.0)
+
+    def test_magdeburg_keeps_course_page_exam_fee(self):
+        offer = RawCourseOffer(
+            title="Elektrotechniker (Teile I + II)",
+            trade_name="Elektrotechniker",
+            parts=[1, 2],
+            format_key="full_time",
+            teaching_mode="presence",
+            start_date="2026-08-24",
+            end_date="2027-05-15",
+            duration_hours=978,
+            course_fee=9000.0,
+            exam_fee_scraped=855.0,
+            city="Magdeburg",
+        )
+        result = HwkMagdeburgScraper().postprocess_offer(offer)
+        self.assertEqual(result.exam_fee_scraped, 855.0)
+
+        lookup = build_exam_fee_lookup(
+            [
+                {
+                    "chamber_slug": "hwk-magdeburg",
+                    "trade_slug": "elektrotechniker",
+                    "part": 1,
+                    "fee": 625.0,
+                    "qualifier": "",
+                },
+                {
+                    "chamber_slug": "hwk-magdeburg",
+                    "trade_slug": "elektrotechniker",
+                    "part": 2,
+                    "fee": 230.0,
+                    "qualifier": "",
+                },
+            ],
+            [],
+        )
+        from_page = resolve_exam_fee(
+            "hwk-magdeburg", "elektrotechniker", [1, 2], 855.0, lookup
+        )
+        self.assertEqual(from_page["fee"], 855.0)
+        self.assertFalse(from_page["from_tariff"])
+        from_tariff = resolve_exam_fee(
+            "hwk-magdeburg", "elektrotechniker", [1, 2], None, lookup
+        )
+        self.assertEqual(from_tariff["fee"], 855.0)
+        self.assertTrue(from_tariff["from_tariff"])
+
+    def test_magdeburg_prefers_month_year_course_window_over_anmeldeschluss(self):
+        main_text = """
+        genauer Termin steht noch nicht fest
+        09.2028 - 05.2029
+        Lehrgangsdauer 978 Std.
+        Anmeldeschluss
+        07.08.2028
+        Alle Termine
+        22.02.2027 - 03.07.2027: Vollzeit
+        """
+        start, end, note = HwkMagdeburgScraper().resolve_schedule_dates(None, {}, main_text)
+        self.assertEqual(start, "2028-09-01")
+        self.assertEqual(end, "2029-05-01")
+        self.assertEqual(note, "Genauer Termin steht noch nicht fest.")
 
     def test_magdeburg_strips_stock_image_prefix_from_card_title(self):
         raw = (

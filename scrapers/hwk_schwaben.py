@@ -22,5 +22,7 @@ class HwkSchwabenScraper(BavariaOdavScraper):
     )
 
     def postprocess_offer(self, offer: RawCourseOffer) -> RawCourseOffer:
+        # Base Prüfungsgebühr (e.g. Teil I+II = 500 €) is authoritative.
+        # Do not surface "zzgl. gewerkspezifischer Prüfungsgebühr" as a note.
         offer.exam_fee_qualifier = ""
         return offer

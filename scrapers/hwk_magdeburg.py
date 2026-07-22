@@ -14,9 +14,10 @@ from .hwk_bayern import (
     DATE_RE,
     MONTH_DATE_RE,
     NUMERIC_MONTH_RE,
+    TENTATIVE_DATE_NOTE,
     canonical_detail_url,
     course_id_from_url,
-    parse_dates,
+    parse_dates_with_note,
     parse_euro,
     parse_format_and_mode,
     parse_parts,
@@ -141,7 +142,7 @@ class HwkMagdeburgScraper(BavariaOdavScraper):
 
         row = link.find_parent("div", class_="row")
         text = row.get_text("\n", strip=True) if row else raw_title
-        start_date, end_date = parse_dates(text)
+        start_date, end_date, start_date_note = parse_dates_with_note(text)
         format_key, teaching_mode = parse_format_and_mode(f"{text} {raw_title}")
         duration = DURATION_RE.search(text)
         return {
@@ -150,6 +151,7 @@ class HwkMagdeburgScraper(BavariaOdavScraper):
             "trade_name": trade_name,
             "start_date": start_date,
             "end_date": end_date,
+            "start_date_note": start_date_note,
             "format_key": format_key,
             "teaching_mode": teaching_mode,
             "duration_hours": int(duration.group(1).replace(".", "")) if duration else None,
@@ -160,11 +162,38 @@ class HwkMagdeburgScraper(BavariaOdavScraper):
         }
 
     def postprocess_offer(self, offer: RawCourseOffer) -> RawCourseOffer:
-        # Detail pages list a course "Prüfung" amount; official fees come from the
-        # chamber's Gebühren- und Entgeltordnung PDF (see collect()).
-        offer.exam_fee_scraped = None
-        offer.exam_fee_qualifier = ""
         return offer
+
+    def resolve_schedule_dates(
+        self,
+        soup,
+        card: dict,
+        main_text: str,
+    ) -> tuple[str | None, str | None, str]:
+        """Prefer MM.YYYY course windows over Anmeldeschluss or other exact dates."""
+        month_range = re.search(
+            r"(\d{2})\.(\d{4})\s*[-–]\s*(\d{2})\.(\d{4})",
+            main_text,
+        )
+        if month_range:
+            start_month, start_year, end_month, end_year = month_range.groups()
+            return (
+                f"{start_year}-{start_month}-01",
+                f"{end_year}-{end_month}-01",
+                TENTATIVE_DATE_NOTE,
+            )
+
+        schedule_text = re.sub(
+            r"Anmeldeschluss\s*\n?\s*\d{2}\.\d{2}\.\d{4}",
+            "",
+            main_text,
+            count=1,
+            flags=re.IGNORECASE,
+        )
+        alle_termine = re.search(r"\nAlle Termine\b", schedule_text, re.IGNORECASE)
+        if alle_termine:
+            schedule_text = schedule_text[:alle_termine.start()]
+        return parse_dates_with_note(schedule_text)
 
     @staticmethod
     def parse_trade_exam_fees(text: str) -> dict[str, dict[int, float]]:
