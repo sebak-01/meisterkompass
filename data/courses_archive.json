@@ -329,6 +329,42 @@
     "source_url": "https://www.bbz-arnsberg.de/kurse/ausbildung-der-ausbilder-nach-aevo#termin-1"
   },
   {
+    "chamber_slug": "hwk-suedwestfalen",
+    "chamber_name": "HWK Südwestfalen",
+    "chamber_region": "Nordrhein-Westfalen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-07-21",
+    "end_date": "2026-09-04",
+    "start_date_note": "",
+    "duration_hours": 300,
+    "course_fee": 1810.0,
+    "course_fee_display": "1.810 €",
+    "exam_fee_scraped": 275.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 275.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "275 €",
+      "from_tariff": false
+    },
+    "city": "Arnsberg",
+    "street": "Im Hülsenfeld 42",
+    "zip_code": "59755",
+    "latitude": 51.4470454,
+    "longitude": 7.9631509,
+    "availability": "available",
+    "source_url": "https://www.bbz-arnsberg.de/kurse/gepruefte-r-fachfrau-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo#termin-1"
+  },
+  {
     "chamber_slug": "hwk-unterfranken",
     "chamber_name": "HWK für Unterfranken",
     "chamber_region": "Bayern",
