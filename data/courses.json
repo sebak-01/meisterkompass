@@ -100808,14 +100808,14 @@
     "duration_hours": 900,
     "course_fee": 8000.0,
     "course_fee_display": "8.000 €",
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 500.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
       "qualifier": "",
       "display": "500 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Augsburg",
     "street": "Siebentischstraße 54",

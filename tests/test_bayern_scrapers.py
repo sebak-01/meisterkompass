@@ -139,6 +139,25 @@ class BavariaParserTests(unittest.TestCase):
         self.assertEqual(fee, 500.0)
         self.assertEqual(qualifier, "zzgl. gewerkspezifischer Prüfungsgebühr")
 
+        feinwerk_hinweis = (
+            "Zusätzliche Kosten Fachliche Lehrmittel ca. € 225,00, "
+            "Zusatzkosten für praktische Prüfung ca. € 1.200,00, "
+            "Prüfungsgebühr Teil I: € 270,00, Prüfungsgebühr Teil II: € 230,00, "
+            "Laptop + Software, nur für zu Hause, ca. € 900,00"
+        )
+        fee, qualifier = parse_exam_fee(feinwerk_hinweis, [1, 2])
+        self.assertEqual(fee, 500.0)
+        self.assertEqual(qualifier, "")
+
+        feinwerk_details = (
+            "Prüfungsgebühr Teil I EUR 270,00\n"
+            "Prüfungsgebühr Teil II EUR 230,00\n"
+            "Fachliche Lehrmittel ca. EUR 225,00"
+        )
+        fee, qualifier = parse_exam_fee(feinwerk_details, [1, 2])
+        self.assertEqual(fee, 500.0)
+        self.assertEqual(qualifier, "")
+
         mittelfranken = "Prüfungsgebühr Teile I und II (zirka 680,00 €)"
         fee, qualifier = parse_exam_fee(mittelfranken, [1, 2])
         self.assertEqual(fee, 680.0)
