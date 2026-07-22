@@ -26,6 +26,7 @@ MONTH_DATE_RE = re.compile(
 )
 NUMERIC_MONTH_RE = re.compile(r"\b(0[1-9]|1[0-2])\.(\d{4})\b")
 TENTATIVE_DATE_NOTE = "Genauer Termin steht noch nicht fest."
+GEWERKSPEZIF_EXAM_FEE_QUALIFIER = "zzgl. gewerkspezifischer Prüfungsgebühr"
 PRICE_RE = re.compile(r"([\d.]+),(\d{2})[\s\xa0]*€")
 DURATION_UNIT = r"(?:UE|U-?Std\.?|Std\.?)"
 DURATION_RE = re.compile(rf"([\d.]+)[\s\xa0]*{DURATION_UNIT}", re.IGNORECASE)
@@ -310,9 +311,9 @@ def parse_exam_fee(text: str, parts: list[int]) -> tuple[float | None, str]:
 
     lower = text.lower()
     qualifier = ""
-    if any(word in lower for word in ("zirka", "ca.", "circa")):
-        qualifier = "ca."
-    elif re.search(r"zzgl\.\s+gewerkspezif", lower):
+    if re.search(r"zzgl\.\s+gewerkspezif", lower):
+        qualifier = GEWERKSPEZIF_EXAM_FEE_QUALIFIER
+    elif any(word in lower for word in ("zirka", "ca.", "circa")):
         qualifier = "ca."
 
     part_amounts: dict[int, float] = {}

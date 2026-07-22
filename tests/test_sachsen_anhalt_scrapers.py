@@ -154,6 +154,21 @@ class SachsenAnhaltParserTests(unittest.TestCase):
         )
         self.assertEqual(resolved["fee"], 753.0)
 
+    def test_magdeburg_prefers_month_year_course_window_over_anmeldeschluss(self):
+        main_text = """
+        genauer Termin steht noch nicht fest
+        09.2028 - 05.2029
+        Lehrgangsdauer 978 Std.
+        Anmeldeschluss
+        07.08.2028
+        Alle Termine
+        22.02.2027 - 03.07.2027: Vollzeit
+        """
+        start, end, note = HwkMagdeburgScraper().resolve_schedule_dates(None, {}, main_text)
+        self.assertEqual(start, "2028-09-01")
+        self.assertEqual(end, "2029-05-01")
+        self.assertEqual(note, "Genauer Termin steht noch nicht fest.")
+
     def test_magdeburg_strips_stock_image_prefix_from_card_title(self):
         raw = (
             "Gorodenkoff - stock.adobe.com 24.08.2026 - 04.12.2026:\xa0Vollzeit "
