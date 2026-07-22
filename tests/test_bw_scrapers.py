@@ -27,6 +27,7 @@ from scrapers.hwk_mannheim import (
     parse_parts,
     parse_trade,
 )
+from scrapers.biv_suedwest import BAKER_COURSE_URL, parse_baker_offers
 from scrapers.hwk_stuttgart import COURSES as STUTTGART_COURSES, HwkStuttgartScraper
 from scrapers.hwk_ulm import HwkUlmScraper, parse_title as parse_ulm_title
 
@@ -142,7 +143,7 @@ class KarlsruheParserTests(unittest.TestCase):
     def test_availability_vocabulary(self):
         self.assertEqual(parse_karlsruhe_availability("wenige Plätze"), "available")
         self.assertEqual(parse_karlsruhe_availability("Warteliste"), "waitlist")
-        self.assertEqual(parse_karlsruhe_availability("Termin folgt"), "unknown")
+        self.assertEqual(parse_karlsruhe_availability("Termin folgt"), "available")
 
     def test_ifb_courses_parse_each_dated_run(self):
         soup = BeautifulSoup(
@@ -165,7 +166,7 @@ class KarlsruheParserTests(unittest.TestCase):
 
         self.assertEqual([offer.start_date for offer in offers], ["2026-09-21", "2027-03-22"])
         self.assertTrue(all(offer.course_fee == 9950.0 for offer in offers))
-        self.assertEqual([offer.availability for offer in offers], ["full", "unknown"])
+        self.assertEqual([offer.availability for offer in offers], ["full", "available"])
         self.assertTrue(all(offer.city == "Mannheim" for offer in offers))
 
     def test_bfw_course_parses_hybrid_weekend_offer(self):
@@ -307,9 +308,10 @@ class StuttgartParserTests(unittest.TestCase):
             """,
             "html.parser",
         )
-        offers = HwkStuttgartScraper._parse_baker_course(
-            soup,
-            "https://bivsuedwest.de/meistervorbereitungskurse/",
+        offers = parse_baker_offers(
+            soup.get_text(" ", strip=True),
+            location="stuttgart",
+            source_url="https://bivsuedwest.de/meistervorbereitungskurse/",
         )
 
         self.assertEqual(len(offers), 1)
@@ -319,6 +321,33 @@ class StuttgartParserTests(unittest.TestCase):
         self.assertEqual(offers[0].end_date, "2027-06-25")
         self.assertEqual(offers[0].course_fee, 4950.0)
         self.assertEqual(offers[0].city, "Stuttgart")
+
+    def test_baker_course_lists_karlsruhe_only_when_dates_are_published(self):
+        stuttgart_only = """
+            Standort Stuttgart (Vollzeitkurs):
+            Teile 1-4: 11.01. bis 25.06.2027
+            Die gesamte Kursgebühr beträgt 4.950,00 Euro
+            Standort Karlsruhe (Teilzeitkurs):
+            Die gesamte Kursgebühr beträgt 3.150,00 Euro
+        """
+        karlsruhe_with_dates = """
+            Standort Karlsruhe (Teilzeitkurs):
+            Teile 1-2: 01.05. bis 30.11.2026
+            Die gesamte Kursgebühr beträgt 3.150,00 Euro
+        """
+        self.assertEqual(
+            parse_baker_offers(stuttgart_only, location="karlsruhe", source_url=BAKER_COURSE_URL),
+            [],
+        )
+        offers = parse_baker_offers(
+            karlsruhe_with_dates,
+            location="karlsruhe",
+            source_url=BAKER_COURSE_URL,
+        )
+        self.assertEqual(len(offers), 1)
+        self.assertEqual(offers[0].parts, [1, 2])
+        self.assertEqual(offers[0].start_date, "2026-05-01")
+        self.assertEqual(offers[0].city, "Karlsruhe")
 
 
 class UlmParserTests(unittest.TestCase):

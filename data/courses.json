@@ -35960,7 +35960,7 @@
     "zip_code": "76185",
     "latitude": 49.0313222,
     "longitude": 8.3591262,
-    "availability": "unknown",
+    "availability": "available",
     "source_url": "https://www.bfw.de/angebot/aufstiegsfortbildung/karlsruhe/augenoptikmeister-in-teil-1-und-2-wochenendunterricht/"
   },
   {
@@ -35997,7 +35997,7 @@
     "zip_code": "68165",
     "latitude": 49.4775101,
     "longitude": 8.503477,
-    "availability": "unknown",
+    "availability": "available",
     "source_url": "https://ifb-karlsruhe.de/meisterkurs-augenoptik-teilzeit-internet/"
   },
   {
@@ -36034,7 +36034,7 @@
     "zip_code": "68165",
     "latitude": 49.4775101,
     "longitude": 8.503477,
-    "availability": "unknown",
+    "availability": "available",
     "source_url": "https://ifb-karlsruhe.de/meisterkurs-augenoptik-teilzeit-block/"
   },
   {
@@ -36071,7 +36071,7 @@
     "zip_code": "68165",
     "latitude": 49.4775101,
     "longitude": 8.503477,
-    "availability": "unknown",
+    "availability": "available",
     "source_url": "https://ifb-karlsruhe.de/meisterkurs-augenoptik-vollzeit/"
   },
   {
@@ -36188,7 +36188,7 @@
     "zip_code": "76189",
     "latitude": 48.9878212,
     "longitude": 8.3629187,
-    "availability": "unknown",
+    "availability": "available",
     "source_url": "https://www.fenster-fachschule.de/"
   },
   {
@@ -36262,7 +36262,7 @@
     "zip_code": "72202",
     "latitude": 48.5473835,
     "longitude": 8.7138169,
-    "availability": "unknown",
+    "availability": "available",
     "source_url": "https://www.handwerk-calw.de/seminare/termindetails/meistervorbereitungskurs-im-kfz-handwerk-teile-1-2"
   },
   {
@@ -36351,7 +36351,7 @@
     "format_display": "Teilzeit",
     "teaching_mode": "online",
     "start_date": "2026-09-15",
-    "end_date": "2027-05-13",
+    "end_date": "2027-04-13",
     "start_date_note": "",
     "duration_hours": 240,
     "course_fee": 1820.0,
@@ -52262,9 +52262,9 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
-    "start_date": "2027-07-19",
-    "end_date": "2027-02-22",
-    "start_date_note": "",
+    "start_date": "2027-08-01",
+    "end_date": "2028-05-01",
+    "start_date_note": "Genauer Termin steht noch nicht fest.",
     "duration_hours": 978,
     "course_fee": 7949.0,
     "course_fee_display": "7.949 €",
@@ -52299,9 +52299,9 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
-    "start_date": "2027-11-29",
-    "end_date": "2027-01-14",
-    "start_date_note": "",
+    "start_date": "2028-01-01",
+    "end_date": "2030-06-01",
+    "start_date_note": "Genauer Termin steht noch nicht fest.",
     "duration_hours": 978,
     "course_fee": 7949.0,
     "course_fee_display": "7.949 €",
@@ -52336,9 +52336,9 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
-    "start_date": "2028-08-07",
-    "end_date": "2027-02-22",
-    "start_date_note": "",
+    "start_date": "2028-09-01",
+    "end_date": "2029-05-01",
+    "start_date_note": "Genauer Termin steht noch nicht fest.",
     "duration_hours": 978,
     "course_fee": 7949.0,
     "course_fee_display": "7.949 €",
@@ -100258,11 +100258,11 @@
     "course_fee": 4400.0,
     "course_fee_display": "4.400 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -100295,11 +100295,11 @@
     "course_fee": 8150.0,
     "course_fee_display": "8.150 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -100332,11 +100332,11 @@
     "course_fee": 8150.0,
     "course_fee_display": "8.150 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -100369,11 +100369,11 @@
     "course_fee": 8150.0,
     "course_fee_display": "8.150 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -100406,11 +100406,11 @@
     "course_fee": 8150.0,
     "course_fee_display": "8.150 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -100443,11 +100443,11 @@
     "course_fee": 8150.0,
     "course_fee_display": "8.150 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -100480,11 +100480,11 @@
     "course_fee": 8150.0,
     "course_fee_display": "8.150 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -100517,11 +100517,11 @@
     "course_fee": 8150.0,
     "course_fee_display": "8.150 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -100554,11 +100554,11 @@
     "course_fee": 8150.0,
     "course_fee_display": "8.150 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -100591,11 +100591,11 @@
     "course_fee": 8150.0,
     "course_fee_display": "8.150 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -100628,11 +100628,11 @@
     "course_fee": 8150.0,
     "course_fee_display": "8.150 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -100665,11 +100665,11 @@
     "course_fee": 8150.0,
     "course_fee_display": "8.150 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -100706,8 +100706,8 @@
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": "500 €",
+      "qualifier": "ca.",
+      "display": "ca. 500 €",
       "from_tariff": true
     },
     "city": "Augsburg",
@@ -100739,12 +100739,12 @@
     "course_fee": 8000.0,
     "course_fee_display": "8.000 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "ca.",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
-      "display": "500 €",
+      "qualifier": "ca.",
+      "display": "ca. 500 €",
       "from_tariff": false
     },
     "city": "Augsburg",
@@ -100776,11 +100776,11 @@
     "course_fee": 8800.0,
     "course_fee_display": "8.800 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -100813,11 +100813,11 @@
     "course_fee": 8800.0,
     "course_fee_display": "8.800 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -100850,11 +100850,11 @@
     "course_fee": 8800.0,
     "course_fee_display": "8.800 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -100887,11 +100887,11 @@
     "course_fee": 8800.0,
     "course_fee_display": "8.800 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -100924,11 +100924,11 @@
     "course_fee": 8800.0,
     "course_fee_display": "8.800 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -100961,11 +100961,11 @@
     "course_fee": 8800.0,
     "course_fee_display": "8.800 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -100998,11 +100998,11 @@
     "course_fee": 8800.0,
     "course_fee_display": "8.800 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -101035,11 +101035,11 @@
     "course_fee": 8800.0,
     "course_fee_display": "8.800 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -101072,11 +101072,11 @@
     "course_fee": 8800.0,
     "course_fee_display": "8.800 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -101109,11 +101109,11 @@
     "course_fee": 6750.0,
     "course_fee_display": "6.750 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -101146,11 +101146,11 @@
     "course_fee": 8600.0,
     "course_fee_display": "8.600 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -101183,11 +101183,11 @@
     "course_fee": 8400.0,
     "course_fee_display": "8.400 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -101220,11 +101220,11 @@
     "course_fee": 8400.0,
     "course_fee_display": "8.400 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -101257,11 +101257,11 @@
     "course_fee": 8400.0,
     "course_fee_display": "8.400 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -101294,11 +101294,11 @@
     "course_fee": 8400.0,
     "course_fee_display": "8.400 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -101331,11 +101331,11 @@
     "course_fee": 8600.0,
     "course_fee_display": "8.600 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -101368,11 +101368,11 @@
     "course_fee": 7950.0,
     "course_fee_display": "7.950 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -101405,11 +101405,11 @@
     "course_fee": 7950.0,
     "course_fee_display": "7.950 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -101442,11 +101442,11 @@
     "course_fee": 8250.0,
     "course_fee_display": "8.250 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -101479,11 +101479,11 @@
     "course_fee": 8250.0,
     "course_fee_display": "8.250 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -101516,11 +101516,11 @@
     "course_fee": 8250.0,
     "course_fee_display": "8.250 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -101553,11 +101553,11 @@
     "course_fee": 7750.0,
     "course_fee_display": "7.750 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -101590,11 +101590,11 @@
     "course_fee": 7750.0,
     "course_fee_display": "7.750 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -101627,11 +101627,11 @@
     "course_fee": 7750.0,
     "course_fee_display": "7.750 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -101664,11 +101664,11 @@
     "course_fee": 7750.0,
     "course_fee_display": "7.750 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -101701,11 +101701,11 @@
     "course_fee": 7750.0,
     "course_fee_display": "7.750 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -103472,11 +103472,11 @@
     "course_fee": 8250.0,
     "course_fee_display": "8.250 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -103509,11 +103509,11 @@
     "course_fee": 8000.0,
     "course_fee_display": "8.000 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -103546,11 +103546,11 @@
     "course_fee": 8000.0,
     "course_fee_display": "8.000 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -103583,11 +103583,11 @@
     "course_fee": 8000.0,
     "course_fee_display": "8.000 €",
     "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
+    "exam_fee_qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
     "exam_fee": {
       "fee": 500.0,
       "fee_max": null,
-      "qualifier": "",
+      "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr",
       "display": "500 €",
       "from_tariff": false
     },
@@ -105810,6 +105810,45 @@
     "longitude": 9.0972983,
     "availability": "unknown",
     "source_url": "https://www.bia-stuttgart.de/kurse/buchbindermeister/"
+  },
+  {
+    "chamber_slug": "hwk-stuttgart",
+    "chamber_name": "HWK Region Stuttgart",
+    "chamber_region": "Baden-Württemberg",
+    "trade_slug": "backer",
+    "trade_name": "Bäcker",
+    "title": "Bäcker (Teile I + II + III + IV)",
+    "parts": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-01-11",
+    "end_date": "2027-06-25",
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": 4950.0,
+    "course_fee_display": "4.950 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 1050.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "1.050 €",
+      "from_tariff": true
+    },
+    "city": "Stuttgart",
+    "street": "Wilhelmstraße 7",
+    "zip_code": "70182",
+    "latitude": 48.7706662,
+    "longitude": 9.1800889,
+    "availability": "unknown",
+    "source_url": "https://bivsuedwest.de/meistervorbereitungskurse/"
   },
   {
     "chamber_slug": "hwk-stuttgart",

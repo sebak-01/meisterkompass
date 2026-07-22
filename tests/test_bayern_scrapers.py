@@ -128,7 +128,7 @@ class BavariaParserTests(unittest.TestCase):
         )
         fee, qualifier = parse_exam_fee(schwaben, [1, 2])
         self.assertEqual(fee, 500.0)
-        self.assertEqual(qualifier, "ca.")
+        self.assertEqual(qualifier, "zzgl. gewerkspezifischer Prüfungsgebühr")
 
         schwaben_hinweis = (
             "Zusätzliche Kosten Fachbücher - 100,00 €, Lehrmaterial 580,00 €, "
@@ -137,7 +137,7 @@ class BavariaParserTests(unittest.TestCase):
         )
         fee, qualifier = parse_exam_fee(schwaben_hinweis, [1, 2])
         self.assertEqual(fee, 500.0)
-        self.assertEqual(qualifier, "ca.")
+        self.assertEqual(qualifier, "zzgl. gewerkspezifischer Prüfungsgebühr")
 
         mittelfranken = "Prüfungsgebühr Teile I und II (zirka 680,00 €)"
         fee, qualifier = parse_exam_fee(mittelfranken, [1, 2])
@@ -151,7 +151,7 @@ class BavariaParserTests(unittest.TestCase):
         )
         fee, qualifier = parse_exam_fee(schwaben_no_colon, [1, 2])
         self.assertEqual(fee, 500.0)
-        self.assertEqual(qualifier, "ca.")
+        self.assertEqual(qualifier, "zzgl. gewerkspezifischer Prüfungsgebühr")
 
         # Mittelfranken Friseur: currency symbol before the amount.
         mittelfranken_euro_first = "Prüfungsgebühr € 630,00 Lernmittel € 400,00"
@@ -370,7 +370,7 @@ class BavariaRegistrationTests(unittest.TestCase):
         self.assertEqual(offer.course_fee, 6850.0)
         self.assertEqual(offer.duration_hours, 584)
 
-    def test_schwaben_removes_exam_fee_qualifier(self):
+    def test_schwaben_keeps_gewerkspezif_exam_fee_qualifier(self):
         offer = RawCourseOffer(
             title="Elektrotechniker (Teile I + II)",
             trade_name="Elektrotechniker",
@@ -382,13 +382,13 @@ class BavariaRegistrationTests(unittest.TestCase):
             duration_hours=1360,
             course_fee=8150.0,
             exam_fee_scraped=500.0,
-            exam_fee_qualifier="ca.",
+            exam_fee_qualifier="zzgl. gewerkspezifischer Prüfungsgebühr",
             city="Kempten",
         )
 
         result = HwkSchwabenScraper().postprocess_offer(offer)
         self.assertEqual(result.exam_fee_scraped, 500.0)
-        self.assertEqual(result.exam_fee_qualifier, "")
+        self.assertEqual(result.exam_fee_qualifier, "zzgl. gewerkspezifischer Prüfungsgebühr")
 
 
 if __name__ == "__main__":

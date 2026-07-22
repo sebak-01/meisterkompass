@@ -15,21 +15,16 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 
 from .base import BaseScraper, RawCourseOffer, build_course_title
+from .biv_suedwest import BAKER_COURSE_URL, parse_baker_offers
 
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://www.bia-stuttgart.de"
 LIST_URL = f"{BASE_URL}/kurse/?filter=meisterkurse"
-BAKER_COURSE_URL = "https://bivsuedwest.de/meistervorbereitungskurse/"
 
 DEFAULT_LOCATION = {
     "street": "Holderäckerstraße 37",
     "zip_code": "70499",
-    "city": "Stuttgart",
-}
-BAKER_LOCATION = {
-    "street": "Wilhelmstraße 7",
-    "zip_code": "70182",
     "city": "Stuttgart",
 }
 
@@ -109,58 +104,16 @@ class HwkStuttgartScraper(BaseScraper):
         if baker_soup is None:
             logger.warning("Could not fetch Stuttgart Bäcker course: %s", BAKER_COURSE_URL)
         else:
-            baker_offers = self._parse_baker_course(baker_soup, BAKER_COURSE_URL)
+            baker_text = baker_soup.get_text(" ", strip=True)
+            baker_offers = parse_baker_offers(
+                baker_text,
+                location="stuttgart",
+                source_url=BAKER_COURSE_URL,
+            )
             logger.info("  Stuttgart Bäcker external provider → %d offer(s)", len(baker_offers))
             offers.extend(baker_offers)
         logger.info("HWK Stuttgart: parsed %d course offers total.", len(offers))
         return offers
-
-    @staticmethod
-    def _parse_baker_course(soup: BeautifulSoup, source_url: str) -> list[RawCourseOffer]:
-        text = soup.get_text(" ", strip=True)
-        section_match = re.search(
-            r"Standort Stuttgart\s+\(Vollzeitkurs\)\s*:(.*?)(?:Standort Karlsruhe|$)",
-            text,
-            re.IGNORECASE | re.DOTALL,
-        )
-        if section_match is None:
-            return []
-        section = section_match.group(1)
-        dates = re.search(
-            r"Teile\s*1\s*-\s*4\s*:\s*(\d{2})\.(\d{2})\.\s*bis\s*"
-            r"(\d{2})\.(\d{2})\.(\d{4})",
-            section,
-            re.IGNORECASE,
-        )
-        if dates is None:
-            return []
-        fee_match = re.search(
-            r"gesamte Kursgebühr.*?beträgt\s*([\d.]+,\d{2})\s*Euro",
-            section,
-            re.IGNORECASE | re.DOTALL,
-        )
-        year = dates.group(5)
-        fee = float(fee_match.group(1).replace(".", "").replace(",", ".")) if fee_match else None
-        return [RawCourseOffer(
-            title=build_course_title("Bäcker", [1, 2, 3, 4]),
-            trade_name="Bäcker",
-            parts=[1, 2, 3, 4],
-            format_key="full_time",
-            teaching_mode="presence",
-            start_date=f"{year}-{dates.group(2)}-{dates.group(1)}",
-            end_date=f"{year}-{dates.group(4)}-{dates.group(3)}",
-            duration_hours=None,
-            course_fee=fee,
-            city=BAKER_LOCATION["city"],
-            street=BAKER_LOCATION["street"],
-            zip_code=BAKER_LOCATION["zip_code"],
-            availability="unknown",
-            source_url=source_url,
-            scraped_raw={
-                "provider": "ADB Südwest e.V. Standort Stuttgart",
-                "course_text": section[:700],
-            },
-        )]
 
     def _parse_course(self, soup: BeautifulSoup, spec: CourseSpec) -> list[RawCourseOffer]:
         offers = []

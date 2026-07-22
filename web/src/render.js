@@ -78,8 +78,11 @@ function availabilityBadge(a, small = false) {
  */
 function examFeeCell(ef, chamberSlug = "", parts = []) {
   if (!ef || !ef.fee) return '<span class="price-na">—</span>';
-  const btn = ef.from_tariff
-    ? `<button class="fee-info-btn" data-tooltip="${esc(TOOLTIP_TARIFF)}" type="button">i</button>`
+  const tooltip = ef.from_tariff
+    ? TOOLTIP_TARIFF
+    : (ef.qualifier || "");
+  const btn = tooltip
+    ? `<button class="fee-info-btn" data-tooltip="${esc(tooltip)}" type="button">i</button>`
     : "";
   return `<span class="fee-info-wrap"><span class="price">${esc(ef.display)}</span>${btn}</span>`;
 }

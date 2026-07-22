@@ -1374,6 +1374,19 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-karlsruhe",
+    "trade_slug": "glaser",
+    "parts": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "fee": 8100.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-luebeck",
     "trade_slug": "allgemein-teil-iii-iv",
     "parts": [
@@ -2001,6 +2014,17 @@
     ],
     "fee": 9300.0,
     "exam_fee_scraped": 750.0,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-karlsruhe",
+    "trade_slug": "augenoptiker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 6599.0,
+    "exam_fee_scraped": null,
     "is_generic": false
   },
   {
@@ -3401,6 +3425,17 @@
     "fee": 3000.0,
     "exam_fee_scraped": null,
     "is_generic": true
+  },
+  {
+    "chamber_slug": "hwk-karlsruhe",
+    "trade_slug": "kfz-techniker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 4200.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
   },
   {
     "chamber_slug": "hwk-mannheim",
@@ -6426,30 +6461,6 @@
     "is_generic": false
   },
   {
-    "chamber_slug": "hwk-karlsruhe",
-    "trade_slug": "glaser",
-    "parts": [
-      1,
-      2,
-      3,
-      4
-    ],
-    "fee": 8100.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-karlsruhe",
-    "trade_slug": "augenoptiker",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 6599.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
     "chamber_slug": "hwk-hamburg",
     "trade_slug": "tischler",
     "parts": [
@@ -6527,6 +6538,19 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-stuttgart",
+    "trade_slug": "backer",
+    "parts": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "fee": 4950.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-hamburg",
     "trade_slug": "zahntechniker",
     "parts": [
@@ -6534,17 +6558,6 @@
       2
     ],
     "fee": 11800.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-karlsruhe",
-    "trade_slug": "kfz-techniker",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 4200.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
