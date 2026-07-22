@@ -2061,6 +2061,16 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-niederbayern-oberpfalz",
+    "trade_slug": "feinwerkmechaniker",
+    "parts": [
+      2
+    ],
+    "fee": 4300.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-ostmecklenburg-vorpommern",
     "trade_slug": "friseur",
     "parts": [
@@ -3528,6 +3538,16 @@
       1
     ],
     "fee": 3045.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-niederbayern-oberpfalz",
+    "trade_slug": "feinwerkmechaniker",
+    "parts": [
+      1
+    ],
+    "fee": 2150.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
@@ -7178,7 +7198,6 @@
     "chamber_slug": "hwk-niederbayern-oberpfalz",
     "trade_slug": "klempner",
     "parts": [
-      1,
       2
     ],
     "fee": 8490.0,

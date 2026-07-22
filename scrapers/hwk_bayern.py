@@ -495,7 +495,7 @@ class BavariaOdavScraper(BaseScraper):
         heading = link.find_parent("h3")
         text = row.get_text("\n", strip=True) if row else raw_title
         heading_text = heading.get_text(" ", strip=True) if heading else text
-        start_date, end_date = parse_dates(heading_text)
+        start_date, end_date, start_date_note = parse_dates_with_note(heading_text)
         format_key, teaching_mode = parse_format_and_mode(f"{heading_text} {raw_title}")
         duration = DURATION_RE.search(text)
         return {
@@ -504,6 +504,7 @@ class BavariaOdavScraper(BaseScraper):
             "trade_name": trade_name,
             "start_date": start_date,
             "end_date": end_date,
+            "start_date_note": start_date_note,
             "format_key": format_key,
             "teaching_mode": teaching_mode,
             "duration_hours": int(duration.group(1).replace(".", "")) if duration else None,
@@ -566,7 +567,7 @@ class BavariaOdavScraper(BaseScraper):
             course_fee=course_fee,
             exam_fee_scraped=exam_fee,
             exam_fee_qualifier=exam_fee_qualifier,
-            start_date_note=start_date_note,
+            start_date_note=start_date_note or card.get("start_date_note", ""),
             city=city,
             street=street,
             zip_code=zip_code,
@@ -595,6 +596,12 @@ class BavariaOdavScraper(BaseScraper):
         main_text: str,
     ) -> tuple[str | None, str | None, str]:
         """Hook for chamber-specific schedule parsing."""
+        if not (main_text or "").strip():
+            return (
+                card.get("start_date"),
+                card.get("end_date"),
+                card.get("start_date_note", ""),
+            )
         return parse_dates_with_note(main_text)
 
     def listing_location(self, card: dict, teaching_mode: str) -> tuple[str, str, str]:

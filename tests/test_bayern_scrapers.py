@@ -369,6 +369,33 @@ class BavariaRegistrationTests(unittest.TestCase):
         self.assertEqual(offer.zip_code, "93055")
         self.assertEqual(offer.course_fee, 6850.0)
         self.assertEqual(offer.duration_hours, 584)
+        self.assertEqual(offer.start_date_note, "")
+
+    def test_niederbayern_preserves_month_year_date_note_from_listing(self):
+        soup = BeautifulSoup(
+            """
+            <div class="row">
+              <h3>03.2029 - 06.2029: Vollzeit
+                <a href="/76,0,coursedetail.html?id=1023420">
+                  Bäckermeister/in - Teile I und II
+                </a>
+              </h3>
+              <div>5.500,00 €</div>
+              <div>480 Std.</div>
+              <div>Regensburg</div>
+              <div>freie Plätze</div>
+            </div>
+            """,
+            "html.parser",
+        )
+        scraper = HwkNiederbayernOberpfalzScraper()
+        scraper.parse_html = lambda _url: self.fail("detail page must not be requested")
+        card = scraper._parse_card(soup.select_one("a"))
+        offer = scraper._enrich(card)
+
+        self.assertEqual(offer.start_date, "2029-03-01")
+        self.assertEqual(offer.end_date, "2029-06-01")
+        self.assertEqual(offer.start_date_note, "Genauer Termin steht noch nicht fest.")
 
     def test_schwaben_removes_exam_fee_qualifier(self):
         offer = RawCourseOffer(
