@@ -162,10 +162,6 @@ class HwkMagdeburgScraper(BavariaOdavScraper):
         }
 
     def postprocess_offer(self, offer: RawCourseOffer) -> RawCourseOffer:
-        # Detail pages list a course "Prüfung" amount; official fees come from the
-        # chamber's Gebühren- und Entgeltordnung PDF (see collect()).
-        offer.exam_fee_scraped = None
-        offer.exam_fee_qualifier = ""
         return offer
 
     def resolve_schedule_dates(

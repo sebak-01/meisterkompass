@@ -78,11 +78,8 @@ function availabilityBadge(a, small = false) {
  */
 function examFeeCell(ef, chamberSlug = "", parts = []) {
   if (!ef || !ef.fee) return '<span class="price-na">—</span>';
-  const tooltip = ef.from_tariff
-    ? TOOLTIP_TARIFF
-    : (ef.qualifier || "");
-  const btn = tooltip
-    ? `<button class="fee-info-btn" data-tooltip="${esc(tooltip)}" type="button">i</button>`
+  const btn = ef.from_tariff
+    ? `<button class="fee-info-btn" data-tooltip="${esc(TOOLTIP_TARIFF)}" type="button">i</button>`
     : "";
   return `<span class="fee-info-wrap"><span class="price">${esc(ef.display)}</span>${btn}</span>`;
 }
@@ -168,9 +165,6 @@ function runtimeCell(c) {
     : "";
   const startLine = `<span class="fee-info-wrap" style="white-space:nowrap">${fmt(c.start_date)}${dateBtn}</span>`;
   if (!c.end_date) return `<div>${startLine}</div>`;
-  if (monthOnly) {
-    return `<div><span class="fee-info-wrap" style="white-space:nowrap">${fmt(c.start_date)} - ${fmt(c.end_date)}${dateBtn}</span></div>`;
-  }
   return `<div>${startLine}</div>` +
     `<div style="color:var(--text-lt);font-size:.72rem;line-height:1.2">bis</div>` +
     `<div style="white-space:nowrap">${fmt(c.end_date)}</div>`;
