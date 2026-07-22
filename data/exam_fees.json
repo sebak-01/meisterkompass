@@ -3480,116 +3480,6 @@
         }
       }
     },
-    "hwk-magdeburg": {
-      "null": {
-        "3": {
-          "fee": 250.0,
-          "fee_max": null,
-          "qualifier": ""
-        },
-        "4": {
-          "fee": 240.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "elektrotechniker": {
-        "1": {
-          "fee": 625.0,
-          "fee_max": null,
-          "qualifier": ""
-        },
-        "2": {
-          "fee": 230.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "friseur": {
-        "1": {
-          "fee": 335.0,
-          "fee_max": null,
-          "qualifier": ""
-        },
-        "2": {
-          "fee": 195.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "gerustbauer": {
-        "1": {
-          "fee": 350.0,
-          "fee_max": null,
-          "qualifier": ""
-        },
-        "2": {
-          "fee": 235.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "installateur-und-heizungsbauer": {
-        "1": {
-          "fee": 650.0,
-          "fee_max": null,
-          "qualifier": ""
-        },
-        "2": {
-          "fee": 240.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "maler-und-lackierer": {
-        "1": {
-          "fee": 690.0,
-          "fee_max": null,
-          "qualifier": ""
-        },
-        "2": {
-          "fee": 235.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "maurer-und-betonbauer": {
-        "1": {
-          "fee": 505.0,
-          "fee_max": null,
-          "qualifier": ""
-        },
-        "2": {
-          "fee": 270.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "metallbauer": {
-        "1": {
-          "fee": 380.0,
-          "fee_max": null,
-          "qualifier": ""
-        },
-        "2": {
-          "fee": 210.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "tischler": {
-        "1": {
-          "fee": 570.0,
-          "fee_max": null,
-          "qualifier": ""
-        },
-        "2": {
-          "fee": 295.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      }
-    },
     "hwk-karlsruhe": {
       "null": {
         "1": {
@@ -3650,92 +3540,160 @@
           "fee_max": null,
           "qualifier": ""
         },
-        "3,4": {
-          "fee": 350.0,
-          "fee_max": null,
-          "qualifier": ""
-        },
         "4": {
           "fee": 175.0,
           "fee_max": null,
           "qualifier": ""
         }
-      },
-      "backer": {
-        "1,2": {
-          "fee": 500.0,
+      }
+    },
+    "hwk-magdeburg": {
+      "null": {
+        "3": {
+          "fee": 250.0,
           "fee_max": null,
-          "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr"
+          "qualifier": ""
+        },
+        "3,4": {
+          "fee": 490.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "4": {
+          "fee": 240.0,
+          "fee_max": null,
+          "qualifier": ""
         }
       },
       "elektrotechniker": {
-        "1,2": {
-          "fee": 500.0,
+        "1": {
+          "fee": 625.0,
           "fee_max": null,
-          "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr"
+          "qualifier": ""
+        },
+        "1,2": {
+          "fee": 855.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 230.0,
+          "fee_max": null,
+          "qualifier": ""
         }
       },
-      "feinwerkmechaniker": {
-        "1,2": {
-          "fee": 500.0,
+      "friseur": {
+        "1": {
+          "fee": 335.0,
           "fee_max": null,
-          "qualifier": "ca."
+          "qualifier": ""
+        },
+        "1,2": {
+          "fee": 530.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 195.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "gerustbauer": {
+        "1": {
+          "fee": 350.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 235.0,
+          "fee_max": null,
+          "qualifier": ""
         }
       },
       "installateur-und-heizungsbauer": {
-        "1,2": {
-          "fee": 500.0,
+        "1": {
+          "fee": 650.0,
           "fee_max": null,
-          "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr"
-        }
-      },
-      "klempner": {
+          "qualifier": ""
+        },
         "1,2": {
-          "fee": 500.0,
+          "fee": 890.0,
           "fee_max": null,
-          "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr"
-        }
-      },
-      "land-und-baumaschinenmechatroniker": {
-        "1,2": {
-          "fee": 500.0,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 240.0,
           "fee_max": null,
-          "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr"
+          "qualifier": ""
         }
       },
       "maler-und-lackierer": {
-        "1,2": {
-          "fee": 500.0,
+        "1": {
+          "fee": 690.0,
           "fee_max": null,
-          "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr"
+          "qualifier": ""
+        },
+        "1,2": {
+          "fee": 925.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 235.0,
+          "fee_max": null,
+          "qualifier": ""
         }
       },
       "maurer-und-betonbauer": {
-        "1,2": {
-          "fee": 500.0,
+        "1": {
+          "fee": 505.0,
           "fee_max": null,
-          "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr"
+          "qualifier": ""
+        },
+        "1,2": {
+          "fee": 775.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 270.0,
+          "fee_max": null,
+          "qualifier": ""
         }
       },
       "metallbauer": {
-        "1,2": {
-          "fee": 500.0,
+        "1": {
+          "fee": 380.0,
           "fee_max": null,
-          "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr"
+          "qualifier": ""
+        },
+        "1,2": {
+          "fee": 590.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 210.0,
+          "fee_max": null,
+          "qualifier": ""
         }
       },
       "tischler": {
-        "1,2": {
-          "fee": 500.0,
+        "1": {
+          "fee": 570.0,
           "fee_max": null,
-          "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr"
-        }
-      },
-      "zimmerer": {
+          "qualifier": ""
+        },
         "1,2": {
-          "fee": 500.0,
+          "fee": 865.0,
           "fee_max": null,
-          "qualifier": "zzgl. gewerkspezifischer Prüfungsgebühr"
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 295.0,
+          "fee_max": null,
+          "qualifier": ""
         }
       }
     }

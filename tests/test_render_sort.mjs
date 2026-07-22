@@ -78,8 +78,11 @@ const monthOnlyHtml = rowHtml({
   end_date: "2029-01-01",
   start_date_note: "Genauer Termin steht noch nicht fest.",
 });
-assert.match(monthOnlyHtml, /09\.2027 - 01\.2029/);
+assert.match(monthOnlyHtml, /09\.2027/);
+assert.match(monthOnlyHtml, />bis</);
+assert.match(monthOnlyHtml, /01\.2029/);
 assert.match(monthOnlyHtml, /Genauer Termin steht noch nicht fest\./);
+assert.doesNotMatch(monthOnlyHtml, /09\.2027 - 01\.2029/);
 
 const exactHtml = rowHtml({
   ...baseCourse,
