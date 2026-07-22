@@ -17,7 +17,6 @@ from .hwk_bayern import (
     TENTATIVE_DATE_NOTE,
     canonical_detail_url,
     course_id_from_url,
-    parse_dates,
     parse_dates_with_note,
     parse_euro,
     parse_format_and_mode,
@@ -143,7 +142,7 @@ class HwkMagdeburgScraper(BavariaOdavScraper):
 
         row = link.find_parent("div", class_="row")
         text = row.get_text("\n", strip=True) if row else raw_title
-        start_date, end_date = parse_dates(text)
+        start_date, end_date, start_date_note = parse_dates_with_note(text)
         format_key, teaching_mode = parse_format_and_mode(f"{text} {raw_title}")
         duration = DURATION_RE.search(text)
         return {
@@ -152,6 +151,7 @@ class HwkMagdeburgScraper(BavariaOdavScraper):
             "trade_name": trade_name,
             "start_date": start_date,
             "end_date": end_date,
+            "start_date_note": start_date_note,
             "format_key": format_key,
             "teaching_mode": teaching_mode,
             "duration_hours": int(duration.group(1).replace(".", "")) if duration else None,
