@@ -98,7 +98,7 @@ meisterkompass/
 │   │                                    ranges, Hessen chambers incl. combo-bundle keys)
 │   └── cache/geocode_cache.json       # CI-maintained address → [lat,lng]
 ├── web/                        # Vite static MPA
-│   ├── index.html afbg.html about.html imprint.html
+│   ├── index.html afbg.html about.html imprint.html privacy.html
 │   ├── public/                 # favicon.svg, og-image.png, fonts/, sitemap.xml, robots.txt
 │   └── src/                    # base/list/afbg.css + nav/list/map/afbg/render/util.js
 ├── scripts/import_manual_fees_from_live.py  # recover curated fees from old site
@@ -372,7 +372,7 @@ npm run build    # → web/dist (deployed to GitHub Pages)
 Pages: **Kursfinder** (filterable list + Leaflet/CartoDB map, multi-select
 chamber filter), **AFBG-Rechner** (auto-fill from Kursfinder data or manual
 entry, per-part and combo-bundle fee handling, Meisterprojekt funding),
-**Über MeisterKompass**, **Impressum**.
+**Über MeisterKompass**. Footer links: **Datenschutz**, **Impressum**.
 
 Key build behaviour:
 - **`base` path:** `VITE_BASE=/` for the custom domain (meisterkompass.eu).

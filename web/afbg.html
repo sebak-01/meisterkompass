@@ -55,7 +55,6 @@
       <a href="./index.html">Kursfinder</a>
       <a href="./afbg.html" aria-current="page" class="active">AFBG-Rechner</a>
       <a href="./about.html">Über MeisterKompass</a>
-      <a href="./imprint.html">Impressum</a>
     </nav>
     <button class="hamburger" id="hamburger-btn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">☰</button>
   </div>
@@ -63,7 +62,6 @@
     <a href="./index.html">Kursfinder</a>
     <a href="./afbg.html" aria-current="page" class="active">AFBG-Rechner</a>
     <a href="./about.html">Über MeisterKompass</a>
-    <a href="./imprint.html">Impressum</a>
   </div>
 </header>
 
@@ -128,12 +126,7 @@
         </div>
         <div class="field-row">
           <div class="field">
-            <label for="fee-projekt">Materialkosten Projekt (€)
-              <span class="fee-info-wrap-calc">
-                <button class="fee-info-btn-calc" type="button"
-                  data-tooltip="Materialkosten für das praktische Meisterprojekt (Teil I). Diese Kosten können als Teil der Prüfungsgebühren AFBG-förderfähig sein. Erkundige dich bei deiner Kammer, ob und in welcher Höhe diese Kosten offiziell angesetzt werden." aria-label="Hinweis zu Materialkosten">i</button>
-              </span>
-            </label>
+            <label for="fee-projekt">Materialkosten Projekt (€)</label>
             <input type="number" id="fee-projekt" value="" min="0" step="50" placeholder="z. B. 2.800">
           </div>
           <div class="field">
@@ -191,6 +184,15 @@
   </div>
 </div>
 </main>
+
+<footer class="site-footer">
+  <div class="container">
+    <nav aria-label="Rechtliches">
+      <a href="./privacy.html">Datenschutz</a>
+      <a href="./imprint.html">Impressum</a>
+    </nav>
+  </div>
+</footer>
 
 <script type="module" src="./src/afbg.js"></script>
 </body>

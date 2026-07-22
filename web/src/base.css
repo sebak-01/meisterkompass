@@ -337,6 +337,34 @@ a:hover { text-decoration: underline; text-decoration-color: var(--brass); }
 .region-panel-body label:hover { background: var(--card-2); }
 .region-panel-body input { accent-color: var(--brass); width: 15px; height: 15px; flex-shrink: 0; }
 
+/* ── Site footer ───────────────────────────────────────────────── */
+.site-footer {
+  margin-top: 3rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--line);
+  background: var(--card);
+}
+.site-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem 1.25rem;
+  justify-content: center;
+  font-size: .82rem;
+}
+.site-footer a {
+  color: var(--text-mid);
+  text-decoration: none;
+}
+.site-footer a:hover {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--brass);
+}
+.site-footer a[aria-current="page"] {
+  color: var(--ink);
+  font-weight: 600;
+}
+
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
