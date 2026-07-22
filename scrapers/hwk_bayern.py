@@ -310,18 +310,18 @@ def parse_exam_fee(text: str, parts: list[int]) -> tuple[float | None, str]:
         return structured, ""
 
     lower = text.lower()
-    qualifier = ""
-    if re.search(r"zzgl\.\s+gewerkspezif", lower):
-        qualifier = GEWERKSPEZIF_EXAM_FEE_QUALIFIER
-    elif any(word in lower for word in ("zirka", "ca.", "circa")):
-        qualifier = "ca."
+    gewerkspezif = (
+        GEWERKSPEZIF_EXAM_FEE_QUALIFIER
+        if re.search(r"zzgl\.\s+gewerkspezif", lower)
+        else ""
+    )
 
     part_amounts: dict[int, float] = {}
     # Schwaben variants include "Teil I: € 270,00", "Teil I - 270,00 €",
-    # and "Teil I € 270,00" (no colon before the currency symbol).
+    # "Teil I EUR 270,00", and "Teil I € 270,00" (no colon before currency).
     patterns = (
         r"Prüfungsgebühr(?:\s+für)?\s+(?:den\s+)?Teil\s+(I{1,3}|IV)\s*"
-        r"(?:[:：]|[-–—])?\s*(?:€\s*)?([\d.]+),(\d{2})(?:\s*(?:€|Euro))?",
+        r"(?:[:：]|[-–—])?\s*(?:(?:€\s*)|(?:EUR\s*))?([\d.]+),(\d{2})(?:\s*(?:€|Euro|EUR))?",
         r"Prüfungsgebühr\s+([\d.]+),(\d{2})\s*Euro\s+Teil\s+(I{1,3}|IV)",
         r"([\d.]+),(\d{2})\s*Euro\s+Teil\s+(I{1,3}|IV)\b",
     )
@@ -362,7 +362,11 @@ def parse_exam_fee(text: str, parts: list[int]) -> tuple[float | None, str]:
         )
         if combo and set(parts) <= {1, 2, 3, 4}:
             line = combo.group(0).lower()
-            line_qual = "ca." if re.search(r"zirka|ca\.|circa", line) else qualifier
+            line_qual = (
+                "ca."
+                if re.search(r"zirka|ca\.|circa", line)
+                else gewerkspezif
+            )
             return _amount_from_match(combo, 1, 2), line_qual
 
     if set(parts) == {3, 4}:
@@ -373,11 +377,13 @@ def parse_exam_fee(text: str, parts: list[int]) -> tuple[float | None, str]:
             re.IGNORECASE | re.DOTALL,
         )
         if generic:
-            return _amount_from_match(generic, 1, 2) * 2, qualifier
+            return _amount_from_match(generic, 1, 2) * 2, gewerkspezif
 
     values = [part_amounts[part] for part in parts if part in part_amounts]
     if len(values) == len(parts) and values:
-        return sum(values), qualifier
+        # Explicit per-part Prüfungsgebühr lines are authoritative; ignore
+        # unrelated "ca." elsewhere on the page (e.g. material costs).
+        return sum(values), gewerkspezif
 
     # Includes "Prüfungsgebühr 630,00 €" and "Prüfungsgebühr € 630,00".
     prose_total = re.search(
@@ -386,7 +392,11 @@ def parse_exam_fee(text: str, parts: list[int]) -> tuple[float | None, str]:
         re.IGNORECASE,
     )
     if prose_total:
-        return _amount_from_match(prose_total, 1, 2), qualifier
+        line = prose_total.group(0)
+        line_qual = gewerkspezif or (
+            "ca." if re.search(r"zirka|ca\.|circa", line, re.I) else ""
+        )
+        return _amount_from_match(prose_total, 1, 2), line_qual
 
     # HWK Aachen ODAV: "Prüfungsgebühr: 610 Euro" (whole euros, no cents).
     whole_euro = re.search(
