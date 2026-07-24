@@ -355,11 +355,7 @@ function buildExamLabel(g) {
 }
 
 function resultDisclaimerHtml() {
-  return (
-    '<p class="result-note" style="font-size:.72rem;color:var(--text-lt);margin-top:.75rem;line-height:1.5">' +
-    DISCLAIMER +
-    "</p>"
-  );
+  return '<p class="result-note">' + DISCLAIMER + "</p>";
 }
 
 function fmt(v) {
