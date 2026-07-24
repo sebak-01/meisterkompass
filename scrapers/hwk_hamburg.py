@@ -23,9 +23,9 @@ Three kinds of Meistervorbereitung page are collected:
   Betriebsführung (HwO)``) and Teil IV (``AdA – Ausbildung der Ausbilder``),
   which every gewerk shares.
 
-Exam fees are not part of the structured data (only the Kursentgelt), so — like
-HWK Koblenz — they're left for manual curation in
-``data/manual/exam_fees_manual.json``.
+Exam fees are parsed from the course-page prose when stated (e.g. ELBCAMPUS
+``Für Ihren Lehrgang betragen diese z. Zt. … €``); otherwise they fall back to
+manual curation in ``data/manual/exam_fees_manual.json``.
 """
 
 import json
@@ -33,9 +33,10 @@ import logging
 import re
 from urllib.parse import urljoin
 
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Tag
 
 from .base import BaseScraper, RawCourseOffer, build_course_title
+from .format_keys import parse_format_key
 
 logger = logging.getLogger(__name__)
 
@@ -52,6 +53,10 @@ WORKLOAD_PATTERN = re.compile(r"PT([\d.]+)H", re.IGNORECASE)
 TRADE_PATTERN    = re.compile(r"Meistervorbereitung\s+im\s+(.+?)handwerk\b", re.IGNORECASE)
 APPOINTMENT_DATE_RE = re.compile(
     r"(\d{2})\.(\d{2})\.(\d{4})\s*[-–—]\s*(\d{2})\.(\d{2})\.(\d{4})"
+)
+EXAM_FEE_PAGE_RE = re.compile(
+    r"Für Ihren Lehrgang betragen diese z\.\s*Zt\.\s*([\d.]+),(\d{2})\s*€",
+    re.IGNORECASE,
 )
 
 # Delivery mode (schema.org courseMode) → the project's teaching_mode.
@@ -156,15 +161,35 @@ def parse_availability_label(text: str, light_class: str = "") -> str:
     return "unknown"
 
 
-def parse_appointments(soup: BeautifulSoup) -> list[tuple[str, str, str]]:
+def parse_exam_fee_from_page(text: str) -> float | None:
+    """Parse ELBCAMPUS course-page exam-fee prose."""
+    match = EXAM_FEE_PAGE_RE.search(text)
+    if not match:
+        return None
+    return float(match.group(1).replace(".", "") + "." + match.group(2))
+
+
+def _section_format_from_item(item: Tag) -> str | None:
+    """Map Termine section headings (Tageskurs / Teilzeitkurs / Abendkurs) to format."""
+    heading = item.find_previous("h3")
+    if heading is None:
+        return None
+    return parse_format_key(heading.get_text(" ", strip=True), default="")
+
+
+def parse_appointments(soup: BeautifulSoup) -> list[tuple[str, str, str, str | None]]:
     """
-    Parse Termine cards: ``(start_iso, end_iso, availability)``.
+    Parse Termine cards: ``(start_iso, end_iso, availability, format_key)``.
 
     ELBCAMPUS shows availability in ``li.wyn-appointment`` traffic lights
     (``Freie Plätze`` / ``Wenige Plätze`` / ``Warteliste`` /
     ``Keine buchbaren Plätze``). JSON-LD has no availability field.
+
+    Displayed run dates under ``Tageskurs`` / ``Teilzeitkurs`` / ``Abendkurs``
+    headings are authoritative; JSON-LD ``startDate`` is often the late-entry
+    deadline rather than the first teaching day.
     """
-    appointments: list[tuple[str, str, str]] = []
+    appointments: list[tuple[str, str, str, str | None]] = []
     seen: set[tuple[str, str]] = set()
     for item in soup.select("li.wyn-appointment"):
         time_el = item.select_one(".wyn-appointment__time")
@@ -183,8 +208,33 @@ def parse_appointments(soup: BeautifulSoup) -> list[tuple[str, str, str]]:
         light_el = item.select_one("[class*='traffic-light--']")
         label = label_el.get_text(" ", strip=True) if label_el else ""
         light_class = " ".join(light_el.get("class") or []) if light_el else ""
-        appointments.append((start, end, parse_availability_label(label, light_class)))
+        section_format = _section_format_from_item(item)
+        appointments.append((
+            start,
+            end,
+            parse_availability_label(label, light_class),
+            section_format or None,
+        ))
     return appointments
+
+
+def match_appointment(
+    appointments: list[tuple[str, str, str, str | None]],
+    start_date: str | None,
+    end_date: str | None,
+) -> tuple[str, str, str, str | None] | None:
+    """Match a JSON-LD course instance to a Termine card by end date, then start."""
+    if end_date:
+        for appointment in appointments:
+            if appointment[1] == end_date:
+                return appointment
+    if start_date:
+        for appointment in appointments:
+            if appointment[0] == start_date:
+                return appointment
+    if len(appointments) == 1:
+        return appointments[0]
+    return None
 
 
 def match_appointment_availability(
@@ -201,11 +251,11 @@ def match_appointment_availability(
     if not appointments:
         return "unknown"
     if end_date:
-        for _start, end, availability in appointments:
+        for _start, end, availability, _format in appointments:
             if end == end_date:
                 return availability
     if start_date:
-        for start, _end, availability in appointments:
+        for start, _end, availability, _format in appointments:
             if start == start_date:
                 return availability
     if len(appointments) == 1:
@@ -263,6 +313,7 @@ class HwkHamburgScraper(BaseScraper):
         trade_name = None if generic else parse_trade(course.get("name", ""))
         title = build_course_title(trade_name, parts)
         appointments = parse_appointments(soup)
+        exam_fee_scraped = parse_exam_fee_from_page(soup.get_text(" ", strip=True))
 
         instances = course.get("hasCourseInstance") or []
         if isinstance(instances, dict):        # single instance serialized as one object
@@ -277,6 +328,7 @@ class HwkHamburgScraper(BaseScraper):
             try:
                 offer = self._build_offer(
                     inst, prices[idx], trade_name, parts, title, url, appointments,
+                    exam_fee_scraped,
                 )
             except Exception as exc:
                 logger.warning("HWK Hamburg: error parsing instance %d of %s: %s",
@@ -369,7 +421,8 @@ class HwkHamburgScraper(BaseScraper):
         parts: list[int],
         title: str,
         source_url: str,
-        appointments: list[tuple[str, str, str]] | None = None,
+        appointments: list[tuple[str, str, str, str | None]] | None = None,
+        exam_fee_scraped: float | None = None,
     ) -> RawCourseOffer:
         course_mode = inst.get("courseMode")
         workload = parse_workload_hours(inst.get("courseWorkload"))
@@ -383,20 +436,27 @@ class HwkHamburgScraper(BaseScraper):
         city     = (address.get("addressLocality") or "Hamburg").strip()
         start_date = iso_date(inst.get("startDate"))
         end_date = iso_date(inst.get("endDate"))
-        availability = match_appointment_availability(
-            appointments or [], start_date, end_date,
-        )
+        matched = match_appointment(appointments or [], start_date, end_date)
+        if matched:
+            start_date, end_date, availability, section_format = matched
+            format_key = section_format or parse_format(course_mode)
+        else:
+            availability = match_appointment_availability(
+                appointments or [], start_date, end_date,
+            )
+            format_key = parse_format(course_mode)
 
         return RawCourseOffer(
             title=title,
             trade_name=trade_name,
             parts=parts,
-            format_key=parse_format(course_mode),
+            format_key=format_key,
             teaching_mode=parse_mode(course_mode),
             start_date=start_date,
             end_date=end_date,
             duration_hours=workload,
             course_fee=price,
+            exam_fee_scraped=exam_fee_scraped,
             city=city,
             street=street,
             zip_code=zip_code,

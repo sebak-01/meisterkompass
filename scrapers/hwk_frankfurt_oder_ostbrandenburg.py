@@ -8,6 +8,7 @@ from urllib.parse import urljoin, urlsplit, urlunsplit
 from bs4 import BeautifulSoup, Tag
 
 from .base import BaseScraper, RawCourseOffer, ScrapeResult, build_course_title
+from .format_keys import parse_format_key
 from .hwk_bayern import parse_parts, parse_trade
 
 logger = logging.getLogger(__name__)
@@ -260,8 +261,7 @@ class HwkFrankfurtOderOstbrandenburgScraper(BaseScraper):
             return None
 
         text = wrapper.get_text(" ", strip=True)
-        lower = text.lower()
-        format_key = "full_time" if "vollzeit" in lower else "part_time"
+        format_key = parse_format_key(text)
         city = _run_city(text)
         street = DEFAULT_LOCATION["street"]
         zip_code = DEFAULT_LOCATION["zip_code"]

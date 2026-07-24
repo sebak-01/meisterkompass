@@ -17,9 +17,11 @@ from scrapers.hwk_bremen import (
 from scrapers.base import RawCourseOffer, normalize_trade
 from scrapers.hwk_hamburg import (
     iso_date,
+    match_appointment,
     match_appointment_availability,
     parse_appointments,
     parse_availability_label,
+    parse_exam_fee_from_page,
     parse_trade as parse_hamburg_trade,
 )
 from scrapers.hwk_universal_kdb import build_kdb_detail_url, parse_kdb_availability
@@ -66,10 +68,19 @@ class CityStateScraperParserTests(unittest.TestCase):
             "full",
         )
 
+    def test_hamburg_exam_fee_from_page(self):
+        text = (
+            "Für die Prüfung erheben die prüfenden Stellen Gebühren. "
+            "Für Ihren Lehrgang betragen diese z. Zt. 1.300,00 €. "
+            "Die Prüfungsgebühren sind nicht Bestandteil der Lehrgangskosten."
+        )
+        self.assertEqual(parse_exam_fee_from_page(text), 1300.0)
+
     def test_hamburg_appointments_match_json_ld_by_end_date(self):
         from bs4 import BeautifulSoup
 
         html = """
+        <h3>Tageskurs</h3>
         <ul>
           <li class="wyn-appointment">
             <div class="wyn-appointment__time">21.09.2026 - 06.04.2027</div>
@@ -81,6 +92,9 @@ class CityStateScraperParserTests(unittest.TestCase):
             <div class="traffic-light traffic-light--red"></div>
             <div class="traffic-light-text">Warteliste</div>
           </li>
+        </ul>
+        <h3>Teilzeitkurs</h3>
+        <ul>
           <li class="wyn-appointment">
             <div class="wyn-appointment__time">01.12.2026 - 23.09.2027</div>
             <div class="traffic-light traffic-light--gray"></div>
@@ -92,11 +106,15 @@ class CityStateScraperParserTests(unittest.TestCase):
         self.assertEqual(
             appointments,
             [
-                ("2026-09-21", "2027-04-06", "available"),
-                ("2026-08-17", "2027-01-20", "waitlist"),
-                ("2026-12-01", "2027-09-23", "full"),
+                ("2026-09-21", "2027-04-06", "available", "full_time"),
+                ("2026-08-17", "2027-01-20", "waitlist", "full_time"),
+                ("2026-12-01", "2027-09-23", "full", "part_time"),
             ],
         )
+        matched = match_appointment(appointments, "2026-08-24", "2027-01-20")
+        self.assertEqual(matched[0], "2026-08-17")
+        self.assertEqual(matched[2], "waitlist")
+        self.assertEqual(matched[3], "full_time")
         # JSON-LD start dates often differ from the displayed Termin dates;
         # matching by end date recovers the traffic-light status.
         self.assertEqual(

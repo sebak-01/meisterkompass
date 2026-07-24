@@ -1,5 +1,16 @@
 [
   {
+    "chamber_slug": "hwk-hamburg",
+    "trade_slug": "metallbauer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 9445.0,
+    "exam_fee_scraped": 860.0,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-oldenburg",
     "trade_slug": "metallbauer",
     "parts": [
@@ -27,7 +38,7 @@
       4
     ],
     "fee": 835.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 225.0,
     "is_generic": true
   },
   {
@@ -240,7 +251,7 @@
       3
     ],
     "fee": 1650.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 330.0,
     "is_generic": true
   },
   {
@@ -502,17 +513,6 @@
     "fee": 3050.0,
     "exam_fee_scraped": 625.0,
     "is_generic": true
-  },
-  {
-    "chamber_slug": "hwk-hamburg",
-    "trade_slug": "metallbauer",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 9445.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
   },
   {
     "chamber_slug": "hwk-kassel",
@@ -1416,6 +1416,17 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-hamburg",
+    "trade_slug": "tischler",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 9720.0,
+    "exam_fee_scraped": 1010.0,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-karlsruhe",
     "trade_slug": "glaser",
     "parts": [
@@ -1702,6 +1713,17 @@
     "is_generic": true
   },
   {
+    "chamber_slug": "hwk-hamburg",
+    "trade_slug": "feinwerkmechaniker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 9445.0,
+    "exam_fee_scraped": 860.0,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-koblenz",
     "trade_slug": "friseur",
     "parts": [
@@ -1892,17 +1914,6 @@
       2
     ],
     "fee": 6250.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-hamburg",
-    "trade_slug": "feinwerkmechaniker",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 9445.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
@@ -2120,17 +2131,6 @@
       2
     ],
     "fee": 9200.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-hamburg",
-    "trade_slug": "tischler",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 9720.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
@@ -3222,6 +3222,17 @@
     "is_generic": true
   },
   {
+    "chamber_slug": "hwk-hamburg",
+    "trade_slug": "friseur",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 7650.0,
+    "exam_fee_scraped": 1300.0,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-kassel",
     "trade_slug": "zimmerer",
     "parts": [
@@ -3381,17 +3392,6 @@
     ],
     "fee": 10950.0,
     "exam_fee_scraped": 1224.0,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-hamburg",
-    "trade_slug": "friseur",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 7650.0,
-    "exam_fee_scraped": null,
     "is_generic": false
   },
   {
@@ -4905,7 +4905,7 @@
       2
     ],
     "fee": 3550.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 430.0,
     "is_generic": false
   },
   {
@@ -5089,7 +5089,7 @@
       2
     ],
     "fee": 9200.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 860.0,
     "is_generic": false
   },
   {
@@ -5122,7 +5122,7 @@
       2
     ],
     "fee": 7150.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 860.0,
     "is_generic": false
   },
   {
@@ -5231,7 +5231,7 @@
       2
     ],
     "fee": 10400.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 860.0,
     "is_generic": false
   },
   {
@@ -5717,6 +5717,17 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-hamburg",
+    "trade_slug": "maler-und-lackierer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 8100.0,
+    "exam_fee_scraped": 860.0,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-leipzig",
     "trade_slug": "tischler",
     "parts": [
@@ -5758,17 +5769,6 @@
     ],
     "fee": 9100.0,
     "exam_fee_scraped": 1130.0,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-hamburg",
-    "trade_slug": "maler-und-lackierer",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 8100.0,
-    "exam_fee_scraped": null,
     "is_generic": false
   },
   {
@@ -6432,6 +6432,17 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-hamburg",
+    "trade_slug": "massschneider",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 6595.0,
+    "exam_fee_scraped": 860.0,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-suedwestfalen",
     "trade_slug": "maurer-und-betonbauer",
     "parts": [
@@ -6440,17 +6451,6 @@
     ],
     "fee": 8350.0,
     "exam_fee_scraped": 1000.0,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-hamburg",
-    "trade_slug": "massschneider",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 6595.0,
-    "exam_fee_scraped": null,
     "is_generic": false
   },
   {
@@ -6567,7 +6567,7 @@
       2
     ],
     "fee": 11800.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 860.0,
     "is_generic": false
   },
   {
@@ -6589,6 +6589,17 @@
     ],
     "fee": 12500.0,
     "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-hamburg",
+    "trade_slug": "elektrotechniker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 13500.0,
+    "exam_fee_scraped": 860.0,
     "is_generic": false
   },
   {
@@ -6622,6 +6633,17 @@
     ],
     "fee": 7980.0,
     "exam_fee_scraped": 610.0,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-hamburg",
+    "trade_slug": "kalteanlagenbauer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 9900.0,
+    "exam_fee_scraped": 860.0,
     "is_generic": false
   },
   {
@@ -6659,24 +6681,13 @@
   },
   {
     "chamber_slug": "hwk-hamburg",
-    "trade_slug": "kalteanlagenbauer",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 9900.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-hamburg",
     "trade_slug": "maurer-und-betonbauer",
     "parts": [
       1,
       2
     ],
     "fee": 11100.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 860.0,
     "is_generic": false
   },
   {
@@ -7462,7 +7473,7 @@
       2
     ],
     "fee": 10500.0,
-    "exam_fee_scraped": null,
+    "exam_fee_scraped": 860.0,
     "is_generic": false
   },
   {
@@ -7495,17 +7506,6 @@
       2
     ],
     "fee": 8506.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-hamburg",
-    "trade_slug": "elektrotechniker",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 12900.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
