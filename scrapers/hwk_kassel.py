@@ -123,7 +123,14 @@ from datetime import datetime
 
 from bs4 import BeautifulSoup, Tag
 
-from .base import BaseScraper, RawCourseOffer, ScrapeResult, build_course_title
+from .base import BaseScraper, RawCourseOffer, build_course_title
+from .exam_fee_tariff import (
+    combo_fee_rows,
+    download_pdf_text,
+    find_gebuehrenverzeichnis_pdf_link,
+    parse_hesse_schedule_fees,
+    part_fee_rows,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -575,12 +582,15 @@ class HwkKasselScraper(BaseScraper):
     source_url      = BZ_LIST_URL
     request_delay   = 1.2
 
-    # Generic (trade-independent) Meisterprüfung exam fees — identical for
-    # every trade and provider in the HWK Kassel district.
-    # Source: https://www.hwk-kassel.de/weiterbildung/meister/-in-im-handwerk
-    # (verified 2026-06-24).
-    EXAM_FEES_SOURCE_URL = "https://www.hwk-kassel.de/weiterbildung/meister/-in-im-handwerk"
+    # Generic Hesse Meisterprüfung schedule — weekly scrape refreshes from PDF.
+    EXAM_FEES_PAGE_URL = "https://www.hwk-kassel.de/ueber-uns/beitraege-gebuehren"
+    EXAM_FEES_SOURCE_URL = EXAM_FEES_PAGE_URL
     EXAM_FEES: dict[int, float] = {1: 420.0, 2: 420.0, 3: 340.0, 4: 235.0}
+    EXAM_FEE_COMBOS: dict[tuple[int, ...], float] = {
+        (1, 2): 730.0,
+        (3, 4): 490.0,
+        (1, 2, 3, 4): 820.0,
+    }
 
     def fetch_raw_courses(self) -> list[RawCourseOffer]:
         offers: list[RawCourseOffer] = []
@@ -643,20 +653,22 @@ class HwkKasselScraper(BaseScraper):
         logger.info("HWK Kassel: %d course offers total.", len(offers))
         return offers
 
-    def collect(self) -> ScrapeResult:
-        """Run the scrape, then inject the chamber-wide exam-fee schedule."""
-        result = super().collect()
-        result.exam_fee_rows.extend(
-            {
-                "chamber_slug": self.chamber_slug,
-                "trade_slug":   None,
-                "part":         part,
-                "fee":          fee,
-                "source_url":   self.EXAM_FEES_SOURCE_URL,
-            }
-            for part, fee in self.EXAM_FEES.items()
-        )
-        return result
+    def published_exam_fee_rows(self) -> list[dict]:
+        """Parse Meisterprüfung fees from the chamber Gebührenverzeichnis PDF."""
+        soup = self.parse_html(self.EXAM_FEES_PAGE_URL)
+        pdf_url = find_gebuehrenverzeichnis_pdf_link(soup, self.EXAM_FEES_PAGE_URL) if soup else None
+        fees: dict[int, float] = {}
+        combos: dict[tuple[int, ...], float] = {}
+        if pdf_url:
+            pdf_text = download_pdf_text(self, pdf_url, label="HWK Kassel")
+            if pdf_text:
+                fees, combos = parse_hesse_schedule_fees(pdf_text)
+        if not fees:
+            logger.warning("HWK Kassel: using fallback Meister exam fees.")
+            fees, combos = dict(self.EXAM_FEES), dict(self.EXAM_FEE_COMBOS)
+        rows = part_fee_rows(self.chamber_slug, fees, source_url=self.EXAM_FEES_PAGE_URL)
+        rows.extend(combo_fee_rows(self.chamber_slug, combos, source_url=self.EXAM_FEES_PAGE_URL))
+        return rows
 
     # ------------------------------------------------------------------
     # BZ Bildungszentrum Kassel GmbH

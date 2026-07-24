@@ -7,7 +7,7 @@ from urllib.parse import urljoin
 
 from bs4 import Tag
 
-from .base import RawCourseOffer, ScrapeResult, normalize_trade
+from .base import RawCourseOffer, normalize_trade
 from .hwk_bayern import (
     BavariaCatalogue,
     BavariaOdavScraper,
@@ -276,10 +276,6 @@ class HwkBraunschweigLueneburgStadeScraper(BavariaOdavScraper):
             logger.warning("HWK BLS: could not parse trade-specific Teil-I exam fees from PDF.")
         return part_i_fees, generic_fees
 
-    def collect(self) -> ScrapeResult:
-        result = super().collect()
-        result.exam_fee_rows.extend(self.published_exam_fee_rows())
-        return result
 
     def published_exam_fee_rows(self) -> list[dict]:
         part_i_fees, generic_fees = self._fetch_exam_fees_from_pdf()

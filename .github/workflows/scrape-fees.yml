@@ -1,0 +1,66 @@
+name: Weekly exam-fee tariff scrape → data JSON
+
+# Scrapes Gebührenverzeichnisse / Gebührentarife (often PDFs) once a week.
+# Course-page exam fees always keep priority at resolve time; these tariffs
+# are the fallback when a course offer has no exam_fee_scraped.
+
+on:
+  schedule:
+    - cron: "0 1 * * 6"   # Saturday 01:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: scrape
+  cancel-in-progress: false
+
+jobs:
+  scrape-fees:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Create GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ vars.SCRAPE_APP_ID }}
+          private-key: ${{ secrets.SCRAPE_APP_PRIVATE_KEY }}
+          permission-contents: write
+
+      - name: Check out code
+        uses: actions/checkout@v7
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Scrape Gebührenverzeichnisse
+        run: python -m scrapers.run --mode fees
+
+      - name: Commit data changes
+        env:
+          APP_SLUG: ${{ steps.app-token.outputs.app-slug }}
+        run: |
+          git config user.name  "${APP_SLUG}[bot]"
+          git config user.email "${APP_SLUG}[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --staged --quiet; then
+            echo "No tariff data changes."
+          else
+            git commit -m "data: weekly exam-fee tariffs $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push
+          fi
+
+      - name: Notify on failure
+        if: failure()
+        run: echo "Weekly exam-fee scraper failed — check logs above."

@@ -5,7 +5,7 @@ import re
 
 from bs4 import BeautifulSoup
 
-from .base import ScrapeResult, normalize_trade
+from .base import normalize_trade
 from .hwk_bayern import parse_euro, parse_trade
 from .hwk_universal_kdb import KdbCatalogue, UniversalKdbScraper
 
@@ -109,7 +109,3 @@ class HwkOldenburgScraper(UniversalKdbScraper):
             })
         return rows
 
-    def collect(self) -> ScrapeResult:
-        result = super().collect()
-        result.exam_fee_rows.extend(self.published_exam_fee_rows())
-        return result

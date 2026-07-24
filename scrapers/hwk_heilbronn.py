@@ -7,13 +7,13 @@ from dataclasses import dataclass
 from bs4 import BeautifulSoup, Tag
 
 from .base import BaseScraper, RawCourseOffer, build_course_title
+from .bw_course_spec import DATE_RE, parse_bw_availability
 
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://www.hwk-heilbronn.de"
 OVERVIEW_URL = f"{BASE_URL}/meistervorbereitung/"
 
-DATE_RE = re.compile(r"^(\d{2})\.(\d{2})\.(\d{4})\s*[—–-]\s*(\d{2})\.(\d{2})\.(\d{4})$")
 DURATION_RE = re.compile(r"Seminardauer\s+(\d{2,4})\s+(?:Stunden|Unterrichtseinheiten)", re.IGNORECASE)
 FEE_RE = re.compile(r"Gebühr\s+([\d.]+)(?:,(\d{2}))?\s*(?:EURO|€)", re.IGNORECASE)
 COURSE_NO_RE = re.compile(r"Kursnummer\s+(\S+)", re.IGNORECASE)
@@ -73,15 +73,7 @@ CITY_LOCATION = {
 
 
 def parse_availability(text: str) -> str:
-    lower = text.lower()
-    if any(value in lower for value in ("keine plätze mehr frei", "bereits ausgebucht", "buchung ist nicht mehr möglich")):
-        return "full"
-    if "warteliste" in lower:
-        return "waitlist"
-    if "freie plätze" in lower or "in den warenkorb" in lower:
-        return "available"
-    return "unknown"
-
+    return parse_bw_availability(text)
 
 def _german_amount(match: re.Match, whole_group: int, cents_group: int) -> float:
     return float(match.group(whole_group).replace(".", "") + "." + (match.group(cents_group) or "00"))

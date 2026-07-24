@@ -232,7 +232,7 @@ class ThueringenParserTests(unittest.TestCase):
         scraped = {1: 335.0, 2: 220.0, 3: 190.0, 4: 190.0}
         with patch.object(scraper, "fetch_raw_courses", return_value=[]):
             with patch.object(scraper, "_fetch_exam_fees_from_pdf", return_value=scraped):
-                rows = scraper.collect().exam_fee_rows
+                rows = scraper.collect(include_published_fees=True).exam_fee_rows
         self.assertEqual(
             {(row["part"], row["fee"]) for row in rows},
             {(1, 335.0), (2, 220.0), (3, 190.0), (4, 190.0)},
@@ -304,7 +304,7 @@ class ThueringenIntegrationTests(unittest.TestCase):
         for scraper_class, parts, expected in cases:
             scraper = scraper_class()
             with patch.object(scraper, "fetch_raw_courses", return_value=[]):
-                rows = scraper.collect().exam_fee_rows
+                rows = scraper.collect(include_published_fees=True).exam_fee_rows
             lookup = build_exam_fee_lookup(rows, [])
             resolved = resolve_exam_fee(
                 scraper.chamber_slug, "any-trade", parts, None, lookup

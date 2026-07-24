@@ -242,7 +242,7 @@ class SachsenParserTests(unittest.TestCase):
                 "_fetch_exam_fees_from_pdf",
                 return_value={1: 440.0, 2: 300.0, 3: 240.0, 4: 240.0},
             ):
-                rows = scraper.collect().exam_fee_rows
+                rows = scraper.collect(include_published_fees=True).exam_fee_rows
         lookup = build_exam_fee_lookup(rows, [])
         self.assertEqual(
             resolve_exam_fee(scraper.chamber_slug, "any-trade", [1, 2], None, lookup)["fee"],

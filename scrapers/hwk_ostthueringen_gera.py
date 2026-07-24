@@ -4,7 +4,7 @@ import logging
 import re
 from io import BytesIO
 
-from .base import RawCourseOffer, ScrapeResult, build_course_title
+from .base import RawCourseOffer, build_course_title
 from .hwk_bayern import (
     BavariaCatalogue,
     BavariaOdavScraper,
@@ -305,10 +305,6 @@ class HwkOstthueringenGeraScraper(BavariaOdavScraper):
             logger.warning("HWK Ostthüringen: could not parse Meister exam fees from PDF.")
         return fees
 
-    def collect(self) -> ScrapeResult:
-        result = super().collect()
-        result.exam_fee_rows.extend(self.published_exam_fee_rows())
-        return result
 
     def published_exam_fee_rows(self) -> list[dict]:
         fees = self._fetch_exam_fees_from_pdf() or self.EXAM_FEES_FALLBACK

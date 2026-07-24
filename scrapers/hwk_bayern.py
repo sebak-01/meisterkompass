@@ -630,3 +630,8 @@ class BavariaOdavScraper(BaseScraper):
     ) -> RawCourseOffer | list[RawCourseOffer]:
         """Hook for a chamber-specific exceptional course."""
         return offer
+
+
+# Prefer these names in new code — the ODAV CMS is used far beyond Bayern.
+OdavCatalogue = BavariaCatalogue
+OdavCatalogueScraper = BavariaOdavScraper

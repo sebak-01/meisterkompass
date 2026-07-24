@@ -201,6 +201,7 @@ DATA_DIR = REPO_ROOT / "data"
 COURSES_JSON = DATA_DIR / "courses.json"            # upcoming + undated (bundled into the site)
 ARCHIVE_JSON = DATA_DIR / "courses_archive.json"    # past courses (lazy-loaded on demand)
 MANUAL_FEES_JSON = DATA_DIR / "manual" / "exam_fees_manual.json"
+SCRAPED_EXAM_FEES_JSON = DATA_DIR / "scraped_exam_fees.json"
 GEOCODE_CACHE = DATA_DIR / "cache" / "geocode_cache.json"
 
 AVAIL_RANK = {"available": 0, "waitlist": 1, "unknown": 2, "full": 3}
@@ -588,29 +589,62 @@ def _scraped_rows_from_courses(records: list[dict]) -> list[dict]:
     return rows
 
 
-def _published_exam_fee_rows_from_scrapers() -> list[dict]:
-    """Chamber-wide exam fees injected at collect() time, not stored on offers."""
-    rows: list[dict] = []
-    for cls in SCRAPERS.values():
+def _load_scraped_exam_fees() -> list[dict]:
+    """Last-good chamber tariff rows from the weekly Gebührenverzeichnis job."""
+    if not SCRAPED_EXAM_FEES_JSON.exists():
+        return []
+    data = json.loads(SCRAPED_EXAM_FEES_JSON.read_text(encoding="utf-8"))
+    if isinstance(data, list):
+        return data
+    return data.get("rows", [])
+
+
+def _write_scraped_exam_fees(rows: list[dict]) -> None:
+    _write_json(SCRAPED_EXAM_FEES_JSON, {"rows": rows})
+
+
+def _published_exam_fee_rows_from_scrapers(
+    chambers: list[str] | None = None,
+) -> dict[str, list[dict]]:
+    """
+    Fetch chamber-wide Gebührenverzeichnis / Gebührentarif rows.
+
+    Returns a mapping of chamber_slug → rows (empty list on failure / no method).
+    Does not fall back to network during ``--rebake`` — callers decide whether
+    to hit live PDFs or reuse ``data/scraped_exam_fees.json``.
+    """
+    selected = (
+        {slug: SCRAPERS[slug] for slug in chambers}
+        if chambers is not None
+        else dict(SCRAPERS)
+    )
+    out: dict[str, list[dict]] = {}
+    for slug, cls in selected.items():
         published = getattr(cls, "published_exam_fee_rows", None)
         if not callable(published):
+            out[slug] = []
             continue
         try:
-            rows.extend(cls().published_exam_fee_rows())
+            out[slug] = list(cls().published_exam_fee_rows() or [])
         except Exception:
             logger.warning(
                 "Could not load published exam fees for %s",
-                getattr(cls, "chamber_slug", cls.__name__),
+                slug,
                 exc_info=True,
             )
-    return rows
+            out[slug] = []
+    return out
 
 
-def rebake() -> int:
+def rebake(*, refresh_tariffs: bool = False) -> int:
     """
     Re-resolve exam fees and the derived datasets from the existing
-    ``data/courses.json`` WITHOUT scraping. Use after editing
+    ``data/courses.json`` WITHOUT scraping courses. Use after editing
     ``data/manual/exam_fees_manual.json`` to apply manual fee changes.
+
+    By default reuses ``data/scraped_exam_fees.json`` (last weekly tariff
+    scrape). Pass ``refresh_tariffs=True`` only when intentionally re-hitting
+    Gebührenverzeichnis PDFs.
     """
     records = _load_previous_courses()
     if not records:
@@ -618,7 +652,15 @@ def rebake() -> int:
 
     today_iso = date.today().isoformat()
     scraped_rows = _scraped_rows_from_courses(records)
-    scraped_rows.extend(_published_exam_fee_rows_from_scrapers())
+    if refresh_tariffs:
+        fresh = _published_exam_fee_rows_from_scrapers()
+        from .exam_fee_tariff import merge_tariff_rows_last_good
+
+        tariff_rows = merge_tariff_rows_last_good(_load_scraped_exam_fees(), fresh)
+        _write_scraped_exam_fees(tariff_rows)
+    else:
+        tariff_rows = _load_scraped_exam_fees()
+    scraped_rows = list(tariff_rows) + scraped_rows
     manual_rows = _load_manual_fee_rows()
     _resolve_and_write_derived(records, scraped_rows, manual_rows, today_iso)
     _write_json(DATA_DIR / "trades.json", build_trades_from_records(records))
@@ -632,26 +674,57 @@ def _scrape_workers(chamber_count: int) -> int:
     return min(SCRAPE_MAX_WORKERS, chamber_count)
 
 
-def _collect_chamber(slug: str, cls: type) -> ScrapeResult | None:
+def _collect_chamber(
+    slug: str,
+    cls: type,
+    *,
+    include_courses: bool,
+    include_published_fees: bool,
+) -> ScrapeResult | None:
     """Run one chamber's scraper; on failure log and return None (run continues)."""
     logger.info("▶ %s", slug)
     try:
-        result = cls().collect()
-        logger.info("  %s: %d offers", slug, len(result.offers))
+        result = cls().collect(
+            include_courses=include_courses,
+            include_published_fees=include_published_fees,
+        )
+        logger.info(
+            "  %s: %d offers, %d exam-fee row(s)",
+            slug,
+            len(result.offers),
+            len(result.exam_fee_rows),
+        )
         return result
     except Exception:
         logger.exception("  %s: scrape failed — keeping previous data for this chamber", slug)
         return None
 
 
-        return None
-
-
-def _scrape_selected(selected: dict[str, type]) -> ScrapeBatch:
+def _scrape_selected(
+    selected: dict[str, type],
+    *,
+    include_courses: bool = True,
+    include_published_fees: bool = False,
+) -> ScrapeBatch:
     workers = _scrape_workers(len(selected))
-    logger.info("Scraping %d chamber(s) with max_workers=%d", len(selected), workers)
+    logger.info(
+        "Scraping %d chamber(s) with max_workers=%d (courses=%s, published_fees=%s)",
+        len(selected),
+        workers,
+        include_courses,
+        include_published_fees,
+    )
     with ThreadPoolExecutor(max_workers=workers) as pool:
-        futures = {slug: pool.submit(_collect_chamber, slug, cls) for slug, cls in selected.items()}
+        futures = {
+            slug: pool.submit(
+                _collect_chamber,
+                slug,
+                cls,
+                include_courses=include_courses,
+                include_published_fees=include_published_fees,
+            )
+            for slug, cls in selected.items()
+        }
         raw = {slug: fut.result() for slug, fut in futures.items()}
 
     results: dict[str, ScrapeResult] = {slug: r for slug, r in raw.items() if r is not None}
@@ -717,33 +790,57 @@ def _load_scrape_partial(path: Path) -> ScrapeBatch:
     )
 
 
-def _finalize_batch(batch: ScrapeBatch, today_iso: str) -> RunReport:
+def _finalize_batch(
+    batch: ScrapeBatch,
+    today_iso: str,
+    *,
+    update_courses: bool = True,
+    tariff_rows: list[dict] | None = None,
+) -> RunReport:
     previous = _load_previous_courses()
-    records = merge_courses(previous, batch.fresh_by_chamber, today_iso)
+    if update_courses:
+        records = merge_courses(previous, batch.fresh_by_chamber, today_iso)
+        geocoder = Geocoder(GEOCODE_CACHE)
+        apply_coordinates(records, geocoder)
+        geocoder.save()
+    else:
+        records = previous
 
-    geocoder = Geocoder(GEOCODE_CACHE)
-    apply_coordinates(records, geocoder)
-    geocoder.save()
+    # Tariff rows (Gebührenverzeichnis) are durable across daily course scrapes.
+    # Course-page exam fees from this batch overlay them; manual still wins last.
+    stored_tariffs = _load_scraped_exam_fees() if tariff_rows is None else tariff_rows
+    course_derived = batch.scraped_exam_rows
+    if update_courses:
+        # Daily path: batch rows are course-derived only; keep stored tariffs.
+        scraped_rows = list(stored_tariffs) + list(course_derived)
+    else:
+        # Fee-only path: batch rows are published tariffs; already merged by caller.
+        scraped_rows = list(stored_tariffs) + _scraped_rows_from_courses(records)
 
     manual_rows = _load_manual_fee_rows()
+    scraped_chambers = set(batch.results.keys()) if update_courses else None
     _resolve_and_write_derived(
         records,
-        batch.scraped_exam_rows,
+        scraped_rows,
         manual_rows,
         today_iso,
-        scraped_chambers=set(batch.results.keys()),
+        scraped_chambers=scraped_chambers,
     )
 
-    previous_chambers = (
-        json.loads((DATA_DIR / "chambers.json").read_text(encoding="utf-8"))
-        if (DATA_DIR / "chambers.json").exists()
-        else []
-    )
-    chambers, trades = build_chambers_and_trades(records, batch.results, previous_chambers)
-    _write_json(DATA_DIR / "chambers.json", chambers)
-    _write_json(DATA_DIR / "trades.json", trades)
+    if update_courses:
+        previous_chambers = (
+            json.loads((DATA_DIR / "chambers.json").read_text(encoding="utf-8"))
+            if (DATA_DIR / "chambers.json").exists()
+            else []
+        )
+        chambers, trades = build_chambers_and_trades(records, batch.results, previous_chambers)
+        _write_json(DATA_DIR / "chambers.json", chambers)
+        _write_json(DATA_DIR / "trades.json", trades)
+        logger.info("Wrote %d courses, %d chambers, %d trades.", len(records), len(chambers), len(trades))
+    else:
+        _write_json(DATA_DIR / "trades.json", build_trades_from_records(records))
+        logger.info("Rebaked exam fees for %d courses after tariff scrape.", len(records))
 
-    logger.info("Wrote %d courses, %d chambers, %d trades.", len(records), len(chambers), len(trades))
     return RunReport(per_chamber=batch.per_chamber, total_courses=len(records))
 
 
@@ -772,7 +869,7 @@ def merge_scrape_partials(partial_paths: list[Path], dry_run: bool = False) -> R
         logger.info("Dry run — nothing written.")
         return RunReport(per_chamber=per_chamber, total_courses=sum(per_chamber.values()))
 
-    return _finalize_batch(combined, date.today().isoformat())
+    return _finalize_batch(combined, date.today().isoformat(), update_courses=True)
 
 
 def run(
@@ -781,7 +878,18 @@ def run(
     group: str | None = None,
     dry_run: bool = False,
     partial_out: Path | None = None,
+    *,
+    mode: str = "courses",
 ) -> RunReport:
+    """
+    ``mode``:
+      - ``courses`` (default, daily CI): scrape course offers only; reuse stored tariffs
+      - ``fees`` (weekly CI): scrape Gebührenverzeichnis rows only; rebake fees
+      - ``all``: scrape courses and published tariffs together (local/debug)
+    """
+    if mode not in {"courses", "fees", "all"}:
+        raise ValueError(f"Unknown scrape mode {mode!r}")
+
     if group is not None:
         if group not in SCRAPE_GROUPS:
             raise ValueError(f"Unknown scrape group {group!r}; choices: {', '.join(SCRAPE_GROUPS)}")
@@ -796,7 +904,16 @@ def run(
         raise ValueError(f"Unknown chamber slug(s): {', '.join(unknown)}")
 
     selected = {slug: SCRAPERS[slug] for slug in chambers}
-    batch = _scrape_selected(selected)
+
+    if mode == "fees":
+        return run_fee_scrape(chambers=chambers, dry_run=dry_run)
+
+    include_published = mode == "all"
+    batch = _scrape_selected(
+        selected,
+        include_courses=True,
+        include_published_fees=include_published,
+    )
 
     if partial_out is not None:
         write_scrape_partial(batch, partial_out, chambers)
@@ -807,4 +924,49 @@ def run(
         logger.info("Dry run — nothing written.")
         return RunReport(per_chamber=batch.per_chamber, total_courses=sum(batch.per_chamber.values()))
 
-    return _finalize_batch(batch, date.today().isoformat())
+    return _finalize_batch(batch, date.today().isoformat(), update_courses=True)
+
+
+def run_fee_scrape(
+    chambers: list[str] | None = None,
+    dry_run: bool = False,
+) -> RunReport:
+    """Weekly Gebührenverzeichnis scrape → update stored tariffs → rebake display fees."""
+    from .exam_fee_tariff import merge_tariff_rows_last_good
+
+    if chambers is None:
+        chambers = list(SCRAPERS)
+    selected = {slug: SCRAPERS[slug] for slug in chambers}
+    batch = _scrape_selected(
+        selected,
+        include_courses=False,
+        include_published_fees=True,
+    )
+
+    fresh_by_chamber: dict[str, list[dict]] = {
+        slug: [] for slug in chambers
+    }
+    for slug, result in batch.results.items():
+        fresh_by_chamber[slug] = list(result.exam_fee_rows)
+
+    previous = _load_scraped_exam_fees()
+    merged = merge_tariff_rows_last_good(previous, fresh_by_chamber)
+    per_chamber = {slug: len(fresh_by_chamber.get(slug, [])) for slug in chambers}
+    batch.per_chamber = per_chamber
+
+    if dry_run:
+        logger.info(
+            "Dry run — would update tariffs for %d chamber(s) (%d row(s) total).",
+            len(chambers),
+            len(merged),
+        )
+        return RunReport(per_chamber=per_chamber, total_courses=0)
+
+    _write_scraped_exam_fees(merged)
+    logger.info("Wrote %d scraped tariff row(s) to %s", len(merged), SCRAPED_EXAM_FEES_JSON)
+    return _finalize_batch(
+        batch,
+        date.today().isoformat(),
+        update_courses=False,
+        tariff_rows=merged,
+    )

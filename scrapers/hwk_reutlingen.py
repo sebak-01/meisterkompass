@@ -7,13 +7,13 @@ from dataclasses import dataclass
 from bs4 import BeautifulSoup, Tag
 
 from .base import BaseScraper, RawCourseOffer, build_course_title
+from .bw_course_spec import DATE_RE, parse_bw_availability
 
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://www.hwk-reutlingen.de"
 OVERVIEW_URL = f"{BASE_URL}/weiterbildung/der-weg-zum-meister/vorbereitung-und-pruefung/"
 
-DATE_RE = re.compile(r"^(\d{2})\.(\d{2})\.(\d{4})\s*[—–-]\s*(\d{2})\.(\d{2})\.(\d{4})$")
 DURATION_RE = re.compile(r"Seminardauer\s+([\d.]+)\s+Unterrichtseinheiten", re.IGNORECASE)
 PRICE_RE = re.compile(r"Kosten\s+([\d.]+),(\d{2})\s*€", re.IGNORECASE)
 COMBINED_PRICE_RE = re.compile(
@@ -56,15 +56,7 @@ LOCATIONS = {
 
 
 def parse_availability(text: str) -> str:
-    lower = text.lower()
-    if any(value in lower for value in ("keine plätze mehr frei", "bereits ausgebucht", "buchung ist nicht mehr möglich")):
-        return "full"
-    if "warteliste" in lower:
-        return "waitlist"
-    if "freie plätze" in lower or "freier platz" in lower or "in den warenkorb" in lower:
-        return "available"
-    return "unknown"
-
+    return parse_bw_availability(text)
 
 def parse_location(text: str) -> dict:
     lower = text.lower()

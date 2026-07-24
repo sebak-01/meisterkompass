@@ -21,10 +21,10 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 220.0,
+      "fee": 239.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "220 €",
+      "display": "239 €",
       "from_tariff": true
     },
     "city": "Dortmund",

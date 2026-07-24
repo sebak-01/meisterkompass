@@ -11,7 +11,7 @@ from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
 
-from .base import BaseScraper, RawCourseOffer, ScrapeResult, build_course_title, normalize_trade
+from .base import BaseScraper, RawCourseOffer, build_course_title, normalize_trade
 from .hwk_bayern import parse_parts, parse_trade
 
 logger = logging.getLogger(__name__)
@@ -356,10 +356,6 @@ class HwkDortmundScraper(BaseScraper):
             logger.warning("HWK Dortmund: could not parse exam fees from PDF.")
         return fees
 
-    def collect(self) -> ScrapeResult:
-        result = super().collect()
-        result.exam_fee_rows.extend(self.published_exam_fee_rows())
-        return result
 
     def published_exam_fee_rows(self) -> list[dict]:
         fees = self._fetch_exam_fees_from_pdf() or GENERIC_EXAM_FEES

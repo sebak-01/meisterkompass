@@ -7,7 +7,7 @@ from urllib.parse import urljoin
 
 from bs4 import Tag
 
-from .base import RawCourseOffer, ScrapeResult, normalize_trade
+from .base import RawCourseOffer, normalize_trade
 from .hwk_bayern import (
     BavariaCatalogue,
     BavariaOdavScraper,
@@ -270,10 +270,6 @@ class HwkHannoverScraper(BavariaOdavScraper):
         generic_fees = self.parse_generic_exam_fees(text) or GENERIC_EXAM_FEES
         return part_i_fees, generic_fees
 
-    def collect(self) -> ScrapeResult:
-        result = super().collect()
-        result.exam_fee_rows.extend(self.published_exam_fee_rows())
-        return result
 
     def published_exam_fee_rows(self) -> list[dict]:
         part_i_fees, generic_fees = self._fetch_exam_fees_from_pdf()

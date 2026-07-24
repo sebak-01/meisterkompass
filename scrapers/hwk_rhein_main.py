@@ -26,11 +26,26 @@ from datetime import datetime
 from bs4 import BeautifulSoup, Tag
 
 from .base import BaseScraper, RawCourseOffer, build_course_title
+from .exam_fee_tariff import (
+    combo_fee_rows,
+    download_pdf_text,
+    parse_hesse_schedule_fees,
+    part_fee_rows,
+    resolve_pdf_url_from_page,
+)
 
 logger = logging.getLogger(__name__)
 
 BASE_URL     = "https://portal.hwk-rhein-main.de"
 OVERVIEW_URL = f"{BASE_URL}/seminare/suche/"
+EXAM_FEES_PAGE_URL = (
+    "https://www.hwk-rhein-main.de/de/ihre-handwerkskammer/rechtsgrundlagen-amtliche-bekanntmachungen"
+)
+EXAM_FEES_PDF_FALLBACK = (
+    "https://www.hwk-rhein-main.de/Webseiten-Assets/hwk-dokumente/ueber-die-hwk/Geb%C3%BChrenverzeichnis-%2024.11.2025.pdf"
+)
+GENERIC_EXAM_FEES = {1: 420.0, 2: 420.0, 3: 340.0, 4: 235.0}
+GENERIC_COMBO_EXAM_FEES = {(1, 2): 730.0, (3, 4): 490.0, (1, 2, 3, 4): 820.0}
 
 ROMAN = {"I": 1, "II": 2, "III": 3, "IV": 4}
 _ROMAN_ALT = r"(?:IV|III|II|I)"
@@ -375,3 +390,20 @@ class HwkRheinMainScraper(BaseScraper):
                 "anmeldegebuehr": anmeldegebuehr,
             },
         )]
+
+    def published_exam_fee_rows(self) -> list[dict]:
+        pdf_url = resolve_pdf_url_from_page(
+            self,
+            EXAM_FEES_PAGE_URL,
+            fallback_url=EXAM_FEES_PDF_FALLBACK,
+            href_substrings=("gebuehrenverzeichnis", "gebührenverzeichnis"),
+            label="HWK Rhein-Main",
+        ) or EXAM_FEES_PDF_FALLBACK
+        pdf_text = download_pdf_text(self, pdf_url, label="HWK Rhein-Main")
+        fees, combos = parse_hesse_schedule_fees(pdf_text) if pdf_text else ({}, {})
+        if not fees:
+            logger.warning("HWK Rhein-Main: using fallback Meister exam fees.")
+            fees, combos = GENERIC_EXAM_FEES, GENERIC_COMBO_EXAM_FEES
+        rows = part_fee_rows(self.chamber_slug, fees, source_url=EXAM_FEES_PAGE_URL)
+        rows.extend(combo_fee_rows(self.chamber_slug, combos, source_url=EXAM_FEES_PAGE_URL))
+        return rows
