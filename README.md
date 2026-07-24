@@ -39,13 +39,15 @@ no database.
 
 ```
 Python scrapers ──▶ data/*.json (committed) ──▶ Vite static site ──▶ GitHub Pages
-   (daily CI)          (git is the audit log)      (build-time import + prerender)
+ daily + weekly       (git is the audit log)      (build-time import + prerender)
 ```
 
 1. **Scrapers** (`scrapers/`, Python) fetch each chamber's course pages and write
-   the dataset to `data/*.json`. A daily GitHub Action scrapes four regional
-   batches in parallel, merges the partial results, geocodes once, and commits
-   changed JSON.
+   the dataset to `data/*.json`. A **daily** GitHub Action scrapes four regional
+   batches in parallel (`--mode courses`), merges the partial results, geocodes once,
+   resolves exam fees from stored tariffs, and commits changed JSON. A **weekly**
+   Action (`scrape-fees.yml`, Saturday 01:00 UTC) refreshes
+   `data/scraped_exam_fees.json` from official Gebührenverzeichnisse / PDFs.
 2. **Static site** (`web/`, Vite multi-page app) imports the JSON at build time,
    prerenders the default course table into the HTML, and renders the Kursfinder,
    map, and AFBG calculator client-side.
@@ -84,31 +86,56 @@ meisterkompass/
 │   ├── hwk_{koeln,duesseldorf,aachen,ostwestfalen_lippe_zu_bielefeld,muenster,
 │   │         suedwestfalen,dortmund}.py
 │   ├── hwk_universal_kdb.py    # shared BUE universal-kdb REST client (SH + NI)
-│   ├── fees.py                # exam-fee resolution (scraped + manual overlay, combo-bundle keys)
+│   ├── exam_fee_tariff.py     # shared Gebührenverzeichnis PDF/HTML parsers + tariff helpers
+│   ├── fees.py                # exam-fee resolution (course page → tariff → manual overlay)
 │   ├── geocode.py             # Photon geocoder + committed cache
 │   ├── pipeline.py            # scrape → merge → geocode → resolve → split → write JSON
-│   └── run.py                 # CLI: python -m scrapers.run [--chamber|--group|--rebake|…]
+│   └── run.py                 # CLI: python -m scrapers.run [--mode courses|fees|all|…]
 ├── data/                       # checked-in dataset (consumed by web, written by CI)
 │   ├── courses.json            # UPCOMING + undated offers (resolved exam_fee baked in)
 │   ├── courses_archive.json    # PAST offers (lazy-loaded by the site on demand)
 │   ├── course_fees.json        # AFBG "next available" fee projection
 │   ├── exam_fees.json          # per-part (+ combo-bundle) fee table for the AFBG calculator
+│   ├── scraped_exam_fees.json  # weekly Gebührenverzeichnis tariff rows (CI-maintained)
 │   ├── chambers.json  trades.json
-│   ├── manual/exam_fees_manual.json   # hand-edited curated fees (Koblenz "bis zu", Rheinhessen
-│   │                                    ranges, Hessen chambers incl. combo-bundle keys)
+│   ├── manual/exam_fees_manual.json   # optional hand-edited fee overrides (manual wins on collision;
+│   │                                    currently empty — tariffs + course pages are primary)
 │   └── cache/geocode_cache.json       # CI-maintained address → [lat,lng]
 ├── web/                        # Vite static MPA
 │   ├── index.html afbg.html about.html imprint.html privacy.html
 │   ├── public/                 # favicon.svg, og-image.png, fonts/, sitemap.xml, robots.txt
 │   └── src/                    # base/list/afbg.css + nav/list/map/afbg/render/util.js
 ├── scripts/import_manual_fees_from_live.py  # recover curated fees from old site
-├── tests/test_{base,fees,scrape_pipeline,bw,bayern,thueringen,sachsen_anhalt,sachsen,
+├── tests/test_{base,fees,exam_fee_tariff,scrape_pipeline,bw,bayern,thueringen,sachsen_anhalt,sachsen,
 │              brandenburg,mecklenburg_vorpommern,schleswig_holstein,city_states,
 │              niedersachsen,nrw,rheinhessen}_scrapers.py
 ├── requirements.txt             # requests, beautifulsoup4, pypdf, cloudscraper
 ├── mise.toml                    # pins python 3.12 + node 22
-└── .github/workflows/{scrape.yml, deploy.yml}
+└── .github/workflows/{scrape.yml, scrape-fees.yml, deploy.yml}
 ```
+
+#### Exam fees — resolution priority
+
+Each course offer gets a display `exam_fee` baked into `courses.json` at scrape time.
+Resolution order (`scrapers/fees.py`):
+
+1. **`exam_fee_scraped` on the course page** — highest priority (Trier, Pfalz, Saarland,
+   Konstanz, Heilbronn, most Bayern ODAV detail pages, Freiburg, etc.)
+2. **Weekly tariff lookup** — per-part and combo-bundle rows from
+   `data/scraped_exam_fees.json`, populated by chambers that implement
+   `published_exam_fee_rows()` (Gebührenverzeichnis PDFs or HTML pages)
+3. **Manual overlay** — `data/manual/exam_fees_manual.json` wins on collision (optional;
+   file is currently empty)
+
+Daily course scrapes **reuse** stored tariffs (`--mode courses`); they do not
+re-fetch every PDF. Run `--mode fees` (or wait for the weekly CI job) to refresh
+tariffs. Use `--rebake` to re-resolve display fees from existing course data without
+re-scraping offers; add `--refresh-tariffs` to re-fetch PDFs first.
+
+Chambers without a tariff scraper rely on course-page fees where published.
+Known gaps: **Niederbayern-Oberpfalz** skips detail pages (`details_required=False`)
+so it has no exam fees yet; a handful of Trier/Pfalz/Saarland offers omit fees on
+the listing.
 
 #### Bayern — shared ODAV catalogue architecture
 
@@ -135,8 +162,9 @@ Caveats worth knowing when scraping or interpreting the data:
   required changing field, while a curated education-centre map supplies exact
   addresses. This avoids roughly 265 redundant detail requests per run.
 - **Oberfranken** and **Unterfranken** publish per-run exam fees on detail pages;
-  other Bavarian chambers rely on scraped `Prüfung:` where present, or curated
-  schedules (Mittelfranken, Schwaben Parts III/IV in `exam_fees_manual.json`).
+  other Bavarian chambers rely on scraped `Prüfung:` where present on detail pages.
+  **Mittelfranken** and **Schwaben** Parts III/IV come from weekly Gebührenverzeichnis
+  scrapers (`published_exam_fee_rows()`), not manual curation.
 - **Mittelfranken** shares one booking for a combined Feinwerkmechaniker/Metallbauer
   run — the scraper emits two offers with distinct `source_url` fragments.
 - **Schwaben** trade Meisterkurse often omit explicit part numbers in the title;
@@ -269,7 +297,7 @@ site; exam fees come from the chamber's Gebührenordnung PDF.
 
 | Chamber | Slug | Source |
 |---|---|---|
-| Aachen | `hwk-aachen` | hwk-aachen.de (ODAV) |
+| Aachen | `hwk-aachen` | hwk-aachen.de (ODAV; exam fees from Meisterprüfung HTML page) |
 | Köln | `hwk-koeln` | hwk-koeln.de (ODAV) |
 | Düsseldorf | `hwk-duesseldorf` | hwk-duesseldorf.de (ODAV) |
 | Münster | `hwk-muenster` | hwk-muenster.de (Meisterschule overview + detail pages) |
@@ -289,6 +317,18 @@ NRW-specific notes:
   `div.tx-wisumcourses-course` row (`ausgebucht`, `Jetzt Buchen`, `Warteliste`).
   Exam fees are parsed from the chamber's Gebührentarif PDF on hwk-swf.de.
 
+#### Baden-Württemberg — HTML pages and §3.2.2 PDFs
+
+All eight BW chambers have weekly tariff scrapers. Karlsruhe, Mannheim, Reutlingen,
+and Freiburg parse section **3.2.2** of the Gebührenverzeichnis PDF (per-part fees
+plus a combined Teile I–IV bundle). Ulm uses section **3.4.x** instead. Aachen and
+Stuttgart publish fees on HTML Meisterprüfung pages (no PDF). Reutlingen's PDF uses
+a column layout (labels and amounts on separate lines). Mannheim and Ulm may show
+Spannweiten for Part I on the tariff; the scraper stores the published base amount.
+
+Freiburg course pages also scrape per-offer exam fees; the course-page value wins at
+resolve time when present.
+
 #### City states — Berlin, Hamburg, Bremen
 
 | Chamber | Slug | Source |
@@ -297,10 +337,11 @@ NRW-specific notes:
 | Hamburg | `hwk-hamburg` | elbcampus.de (schema.org `Course` JSON-LD per trade page) |
 | Bremen | `hwk-bremen` | universal-kdb bulk feed + handwerkbremen.de Meisterkurs pages |
 
-Berlin exam fees are curated manually (not on course pages). Hamburg reads
-structured `hasCourseInstance` / `offers` arrays from JSON-LD. Bremen merges
-scheduled KDB runs with dateless overview placeholders when no Termin is published
-yet.
+Berlin exam fees come from the chamber Gebührenverzeichnis PDF (weekly tariff scrape).
+Hamburg reads structured `hasCourseInstance` / `offers` arrays from JSON-LD on course
+pages, with the Gebührenordnung PDF as tariff fallback. Bremen merges scheduled KDB runs
+with dateless overview placeholders when no Termin is published yet; trade-specific
+exam fees are parsed from the Gebührentarif PDF.
 
 ---
 
@@ -320,13 +361,23 @@ mise install                 # provision python 3.12 + node 22
 ```bash
 uv venv && uv pip install -r requirements.txt
 
-python -m scrapers.run                      # all chambers → write data/*.json
+# Daily course scrape (default — reuses stored tariffs, no PDF re-fetch)
+python -m scrapers.run --mode courses
+python -m scrapers.run                      # same as --mode courses
+
+# Weekly Gebührenverzeichnis scrape → data/scraped_exam_fees.json + rebake
+python -m scrapers.run --mode fees
+
+# Local debug: courses + live tariff fetch in one pass
+python -m scrapers.run --mode all
+
 python -m scrapers.run --chamber hwk-pfalz  # one chamber
 python -m scrapers.run --group west         # regional batch (see pipeline.SCRAPE_GROUPS)
 python -m scrapers.run --group west --partial-out partial-west.json   # CI partial
 python -m scrapers.run --merge-partials partials/partial-*.json       # merge + write
 python -m scrapers.run --dry-run            # scrape + log counts, write nothing
-python -m scrapers.run --rebake             # re-apply manual fees, no scraping
+python -m scrapers.run --rebake             # re-resolve exam fees from existing courses.json
+python -m scrapers.run --rebake --refresh-tariffs   # rebake after re-fetching PDFs
 
 # examples — run chambers individually (stops on first failure)
 python -m scrapers.run --chamber hwk-suedwestfalen
@@ -345,18 +396,18 @@ The pipeline:
 - **geocodes** new addresses via Photon (Komoot/OSM), caching results in
   `data/cache/geocode_cache.json`, with hardcoded coordinates for HWK Saarland and
   HWK Rheinhessen;
-- **resolves** each course's exam fee from scraped fees overlaid with the curated
-  `data/manual/exam_fees_manual.json` (manual entries always win). Fees can be
-  keyed per part or as an exact combo-bundle (e.g. `{1,2}` booked together at a
-  flat discounted price — used by several Hessen chambers);
+- **resolves** each course's exam fee: course-page `exam_fee_scraped` first, then
+  per-part and combo-bundle rows from `data/scraped_exam_fees.json`, then optional
+  manual overrides in `data/manual/exam_fees_manual.json`;
 - **splits** the result into `courses.json` (upcoming, bundled) and
   `courses_archive.json` (past, lazy-loaded) so the shipped payload stays small as
   history accumulates.
 
-Manually-curated exam fees (HWK Koblenz "bis zu", HWK Rheinhessen ranges, the
-three Hessen chambers' fee schedules incl. combo-bundle keys, Mittelfranken and
-Schwaben generic Parts III/IV) are edited by hand in
-`data/manual/exam_fees_manual.json`; run `--rebake` to apply them.
+Tariff scrapers live in `scrapers/exam_fee_tariff.py` (shared PDF/HTML parsers) and
+each chamber's `published_exam_fee_rows()` method. Hesse and Rheinland-Pfalz chambers
+(Koblenz, Rheinhessen, Frankfurt-Rhein-Main, Wiesbaden, Kassel) scrape their official
+Gebührenverzeichnisse weekly; Koblenz uses "bis zu" ceilings, Rheinhessen stores
+fee ranges (`fee` + `fee_max`).
 
 ---
 
@@ -419,10 +470,13 @@ is intentionally `noindex` (legal page). Highlights:
 
 ## CI
 
-- `.github/workflows/scrape.yml` — **daily** (03:00 UTC) + manual. Four parallel
-  matrix jobs scrape regional batches (`west` / `south` / `east` / `north`),
-  upload JSON partials, then a merge job geocodes, resolves fees, writes
-  `data/*.json`, and commits. Typical wall time ~7–10 minutes.
+- `.github/workflows/scrape.yml` — **daily** (01:00 UTC) + manual. Four parallel
+  matrix jobs scrape regional course batches (`--mode courses`; `west` / `south` /
+  `east` / `north`), upload JSON partials, then a merge job geocodes, resolves fees
+  from stored tariffs, writes `data/*.json`, and commits. Typical wall time ~7–10 minutes.
+- `.github/workflows/scrape-fees.yml` — **weekly** (Saturday 01:00 UTC) + manual.
+  Runs `--mode fees` for all chambers with `published_exam_fee_rows()`, updates
+  `data/scraped_exam_fees.json`, rebakes display fees, and commits.
 - `.github/workflows/deploy.yml` — on push to `data/**` or `web/**`, or chained off a
   successful scrape run; builds `web/` and deploys to GitHub Pages
   (meisterkompass.eu).
@@ -432,7 +486,8 @@ is intentionally `noindex` (legal page). Highlights:
 ## Migration from the old Django app (historical)
 
 The previous version was a Django + PostgreSQL app. Its hand-curated exam fees were
-the only data the scrapers can't regenerate; they were recovered from the old live
-site's AFBG page (which embedded the full per-part fee table as JSON) via
-`scripts/import_manual_fees_from_live.py` + `python -m scrapers.run --rebake`. Django
-has since been removed entirely.
+the only data the scrapers could not regenerate initially; they were recovered from
+the old live site's AFBG page via `scripts/import_manual_fees_from_live.py`. Most of
+those entries have since been replaced by weekly Gebührenverzeichnis scrapers;
+`data/manual/exam_fees_manual.json` remains as an optional override file. Django has
+since been removed entirely.
