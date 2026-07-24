@@ -219,7 +219,7 @@
           "qualifier": ""
         },
         "4": {
-          "fee": 290.0,
+          "fee": 100.0,
           "fee_max": null,
           "qualifier": ""
         }
@@ -1155,12 +1155,12 @@
           "qualifier": ""
         },
         "3": {
-          "fee": 350.0,
+          "fee": 330.0,
           "fee_max": null,
           "qualifier": ""
         },
         "4": {
-          "fee": 350.0,
+          "fee": 225.0,
           "fee_max": null,
           "qualifier": ""
         }
@@ -3551,6 +3551,16 @@
     },
     "hwk-schwaben": {
       "null": {
+        "1": {
+          "fee": 270.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 230.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
         "3": {
           "fee": 175.0,
           "fee_max": null,
@@ -3673,6 +3683,11 @@
       "null": {
         "1": {
           "fee": 360.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "1,2,3,4": {
+          "fee": 1050.0,
           "fee_max": null,
           "qualifier": ""
         },

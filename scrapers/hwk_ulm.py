@@ -13,11 +13,16 @@ from urllib.parse import urljoin, urlsplit, urlunsplit
 from bs4 import BeautifulSoup, Tag
 
 from .base import BaseScraper, RawCourseOffer, build_course_title
+from .exam_fee_tariff import published_bw_322_exam_fee_rows
 
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://www.hwk-ulm.de"
 OVERVIEW_URL = f"{BASE_URL}/meister-teil1-und2/"
+
+EXAM_FEES_PAGE_URL = f"{BASE_URL}/artikel/gebuehren-3,0,85.html"
+EXAM_FEES_FALLBACK = {1: 580.0, 2: 470.0, 3: 260.0, 4: 280.0}
+EXAM_COMBO_FALLBACK = {(1, 2, 3, 4): 1570.0}
 
 DATE_RANGE_RE = re.compile(
     r"(\d{2})\.(\d{2})\.(\d{4})\s*[-–]\s*(\d{2})\.(\d{2})\.(\d{4})"
@@ -234,3 +239,14 @@ class HwkUlmScraper(BaseScraper):
             if "Kurstyp" in text and "Kursort" in text and "Kurs-Nr." in text:
                 return node
         return None
+
+    def published_exam_fee_rows(self) -> list[dict]:
+        return published_bw_322_exam_fee_rows(
+            self,
+            chamber_slug=self.chamber_slug,
+            page_url=EXAM_FEES_PAGE_URL,
+            pdf_fallback=None,
+            fallback_fees=EXAM_FEES_FALLBACK,
+            fallback_combos=EXAM_COMBO_FALLBACK,
+            label="HWK Ulm",
+        )

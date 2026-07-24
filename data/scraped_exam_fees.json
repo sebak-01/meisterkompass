@@ -1,6 +1,51 @@
 {
   "rows": [
     {
+      "chamber_slug": "hwk-berlin",
+      "trade_slug": null,
+      "part": 1,
+      "fee": 315.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-berlin.de/artikel/gebuehren-91,0,85.html"
+    },
+    {
+      "chamber_slug": "hwk-berlin",
+      "trade_slug": null,
+      "part": 2,
+      "fee": 272.5,
+      "qualifier": "",
+      "source_url": "https://www.hwk-berlin.de/artikel/gebuehren-91,0,85.html"
+    },
+    {
+      "chamber_slug": "hwk-berlin",
+      "trade_slug": null,
+      "part": 3,
+      "fee": 168.75,
+      "qualifier": "",
+      "source_url": "https://www.hwk-berlin.de/artikel/gebuehren-91,0,85.html"
+    },
+    {
+      "chamber_slug": "hwk-berlin",
+      "trade_slug": null,
+      "part": 4,
+      "fee": 168.75,
+      "qualifier": "",
+      "source_url": "https://www.hwk-berlin.de/artikel/gebuehren-91,0,85.html"
+    },
+    {
+      "chamber_slug": "hwk-berlin",
+      "trade_slug": null,
+      "parts": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "fee": 462.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-berlin.de/artikel/gebuehren-91,0,85.html"
+    },
+    {
       "chamber_slug": "hwk-braunschweig-lueneburg-stade",
       "trade_slug": "augenoptiker",
       "part": 1,
@@ -143,6 +188,262 @@
       "fee": 590.0,
       "qualifier": "",
       "source_url": "https://weiterbildung.hwk-bls.de/artikel/meisterpruefung-im-handwerk-22,609,1093.html"
+    },
+    {
+      "chamber_slug": "hwk-bremen",
+      "trade_slug": "kfz-techniker",
+      "part": 1,
+      "fee": 250.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-bremen.de/uber-uns/beitraege-gebuehren"
+    },
+    {
+      "chamber_slug": "hwk-bremen",
+      "trade_slug": "kfz-techniker",
+      "part": 2,
+      "fee": 440.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-bremen.de/uber-uns/beitraege-gebuehren"
+    },
+    {
+      "chamber_slug": "hwk-bremen",
+      "trade_slug": "tischler",
+      "part": 1,
+      "fee": 400.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-bremen.de/uber-uns/beitraege-gebuehren"
+    },
+    {
+      "chamber_slug": "hwk-bremen",
+      "trade_slug": "tischler",
+      "part": 2,
+      "fee": 260.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-bremen.de/uber-uns/beitraege-gebuehren"
+    },
+    {
+      "chamber_slug": "hwk-bremen",
+      "trade_slug": "zimmerer",
+      "part": 1,
+      "fee": 460.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-bremen.de/uber-uns/beitraege-gebuehren"
+    },
+    {
+      "chamber_slug": "hwk-bremen",
+      "trade_slug": "zimmerer",
+      "part": 2,
+      "fee": 260.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-bremen.de/uber-uns/beitraege-gebuehren"
+    },
+    {
+      "chamber_slug": "hwk-bremen",
+      "trade_slug": "fahrzeuglackierer",
+      "part": 1,
+      "fee": 470.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-bremen.de/uber-uns/beitraege-gebuehren"
+    },
+    {
+      "chamber_slug": "hwk-bremen",
+      "trade_slug": "fahrzeuglackierer",
+      "part": 2,
+      "fee": 410.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-bremen.de/uber-uns/beitraege-gebuehren"
+    },
+    {
+      "chamber_slug": "hwk-bremen",
+      "trade_slug": "maurer-und-betonbauer",
+      "part": 1,
+      "fee": 530.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-bremen.de/uber-uns/beitraege-gebuehren"
+    },
+    {
+      "chamber_slug": "hwk-bremen",
+      "trade_slug": "maurer-und-betonbauer",
+      "part": 2,
+      "fee": 250.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-bremen.de/uber-uns/beitraege-gebuehren"
+    },
+    {
+      "chamber_slug": "hwk-bremen",
+      "trade_slug": "friseur",
+      "part": 1,
+      "fee": 570.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-bremen.de/uber-uns/beitraege-gebuehren"
+    },
+    {
+      "chamber_slug": "hwk-bremen",
+      "trade_slug": "friseur",
+      "part": 2,
+      "fee": 270.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-bremen.de/uber-uns/beitraege-gebuehren"
+    },
+    {
+      "chamber_slug": "hwk-bremen",
+      "trade_slug": "maler-und-lackierer",
+      "part": 1,
+      "fee": 750.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-bremen.de/uber-uns/beitraege-gebuehren"
+    },
+    {
+      "chamber_slug": "hwk-bremen",
+      "trade_slug": "maler-und-lackierer",
+      "part": 2,
+      "fee": 620.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-bremen.de/uber-uns/beitraege-gebuehren"
+    },
+    {
+      "chamber_slug": "hwk-bremen",
+      "trade_slug": "backer",
+      "part": 1,
+      "fee": 750.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-bremen.de/uber-uns/beitraege-gebuehren"
+    },
+    {
+      "chamber_slug": "hwk-bremen",
+      "trade_slug": "backer",
+      "part": 2,
+      "fee": 360.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-bremen.de/uber-uns/beitraege-gebuehren"
+    },
+    {
+      "chamber_slug": "hwk-bremen",
+      "trade_slug": "installateur-und-heizungsbauer",
+      "part": 1,
+      "fee": 770.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-bremen.de/uber-uns/beitraege-gebuehren"
+    },
+    {
+      "chamber_slug": "hwk-bremen",
+      "trade_slug": "installateur-und-heizungsbauer",
+      "part": 2,
+      "fee": 480.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-bremen.de/uber-uns/beitraege-gebuehren"
+    },
+    {
+      "chamber_slug": "hwk-bremen",
+      "trade_slug": "fleischer",
+      "part": 1,
+      "fee": 830.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-bremen.de/uber-uns/beitraege-gebuehren"
+    },
+    {
+      "chamber_slug": "hwk-bremen",
+      "trade_slug": "fleischer",
+      "part": 2,
+      "fee": 640.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-bremen.de/uber-uns/beitraege-gebuehren"
+    },
+    {
+      "chamber_slug": "hwk-bremen",
+      "trade_slug": "elektrotechniker",
+      "part": 1,
+      "fee": 860.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-bremen.de/uber-uns/beitraege-gebuehren"
+    },
+    {
+      "chamber_slug": "hwk-bremen",
+      "trade_slug": "elektrotechniker",
+      "part": 2,
+      "fee": 310.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-bremen.de/uber-uns/beitraege-gebuehren"
+    },
+    {
+      "chamber_slug": "hwk-bremen",
+      "trade_slug": "dachdecker",
+      "part": 1,
+      "fee": 1400.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-bremen.de/uber-uns/beitraege-gebuehren"
+    },
+    {
+      "chamber_slug": "hwk-bremen",
+      "trade_slug": "dachdecker",
+      "part": 2,
+      "fee": 340.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-bremen.de/uber-uns/beitraege-gebuehren"
+    },
+    {
+      "chamber_slug": "hwk-bremen",
+      "trade_slug": "feinwerkmechaniker",
+      "part": 1,
+      "fee": 1400.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-bremen.de/uber-uns/beitraege-gebuehren"
+    },
+    {
+      "chamber_slug": "hwk-bremen",
+      "trade_slug": "feinwerkmechaniker",
+      "part": 2,
+      "fee": 240.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-bremen.de/uber-uns/beitraege-gebuehren"
+    },
+    {
+      "chamber_slug": "hwk-bremen",
+      "trade_slug": "metallbauer",
+      "part": 1,
+      "fee": 1400.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-bremen.de/uber-uns/beitraege-gebuehren"
+    },
+    {
+      "chamber_slug": "hwk-bremen",
+      "trade_slug": "metallbauer",
+      "part": 2,
+      "fee": 510.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-bremen.de/uber-uns/beitraege-gebuehren"
+    },
+    {
+      "chamber_slug": "hwk-bremen",
+      "trade_slug": "strassenbauer",
+      "part": 1,
+      "fee": 1400.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-bremen.de/uber-uns/beitraege-gebuehren"
+    },
+    {
+      "chamber_slug": "hwk-bremen",
+      "trade_slug": "strassenbauer",
+      "part": 2,
+      "fee": 1400.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-bremen.de/uber-uns/beitraege-gebuehren"
+    },
+    {
+      "chamber_slug": "hwk-bremen",
+      "trade_slug": null,
+      "part": 3,
+      "fee": 220.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-bremen.de/uber-uns/beitraege-gebuehren"
+    },
+    {
+      "chamber_slug": "hwk-bremen",
+      "trade_slug": null,
+      "part": 4,
+      "fee": 100.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-bremen.de/uber-uns/beitraege-gebuehren"
     },
     {
       "chamber_slug": "hwk-chemnitz",
@@ -295,6 +596,38 @@
       "fee": 220.0,
       "qualifier": "",
       "source_url": "https://www.hwk-duesseldorf.de/artikel/meisterpruefungen-im-handwerk-31,0,643.html"
+    },
+    {
+      "chamber_slug": "hwk-erfurt",
+      "trade_slug": null,
+      "part": 1,
+      "fee": 380.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-erfurt.de/artikel/rechtsgrundlagen-4,0,116.html"
+    },
+    {
+      "chamber_slug": "hwk-erfurt",
+      "trade_slug": null,
+      "part": 2,
+      "fee": 380.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-erfurt.de/artikel/rechtsgrundlagen-4,0,116.html"
+    },
+    {
+      "chamber_slug": "hwk-erfurt",
+      "trade_slug": null,
+      "part": 3,
+      "fee": 340.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-erfurt.de/artikel/rechtsgrundlagen-4,0,116.html"
+    },
+    {
+      "chamber_slug": "hwk-erfurt",
+      "trade_slug": null,
+      "part": 4,
+      "fee": 340.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-erfurt.de/artikel/rechtsgrundlagen-4,0,116.html"
     },
     {
       "chamber_slug": "hwk-flensburg",
@@ -455,6 +788,51 @@
       "fee": 210.0,
       "qualifier": "",
       "source_url": "https://www.hwkhalle.de/wp-content/uploads/Gebuehrenverzeichnis-1.pdf"
+    },
+    {
+      "chamber_slug": "hwk-hamburg",
+      "trade_slug": null,
+      "part": 1,
+      "fee": 430.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-hamburg.de/artikel/gebuehren-und-beitraege-93,139,67.html"
+    },
+    {
+      "chamber_slug": "hwk-hamburg",
+      "trade_slug": null,
+      "part": 2,
+      "fee": 430.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-hamburg.de/artikel/gebuehren-und-beitraege-93,139,67.html"
+    },
+    {
+      "chamber_slug": "hwk-hamburg",
+      "trade_slug": null,
+      "part": 3,
+      "fee": 350.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-hamburg.de/artikel/gebuehren-und-beitraege-93,139,67.html"
+    },
+    {
+      "chamber_slug": "hwk-hamburg",
+      "trade_slug": null,
+      "part": 4,
+      "fee": 350.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-hamburg.de/artikel/gebuehren-und-beitraege-93,139,67.html"
+    },
+    {
+      "chamber_slug": "hwk-hamburg",
+      "trade_slug": null,
+      "parts": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "fee": 1300.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-hamburg.de/artikel/gebuehren-und-beitraege-93,139,67.html"
     },
     {
       "chamber_slug": "hwk-hannover",
@@ -801,6 +1179,51 @@
       "source_url": "https://www.hwk-hildesheim.de/artikel/oeffentliche-bekanntmachungen-24,657,1283.html"
     },
     {
+      "chamber_slug": "hwk-karlsruhe",
+      "trade_slug": null,
+      "part": 1,
+      "fee": 400.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-karlsruhe.de/artikel/gebuehren-63,0,85.html"
+    },
+    {
+      "chamber_slug": "hwk-karlsruhe",
+      "trade_slug": null,
+      "part": 2,
+      "fee": 350.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-karlsruhe.de/artikel/gebuehren-63,0,85.html"
+    },
+    {
+      "chamber_slug": "hwk-karlsruhe",
+      "trade_slug": null,
+      "part": 3,
+      "fee": 200.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-karlsruhe.de/artikel/gebuehren-63,0,85.html"
+    },
+    {
+      "chamber_slug": "hwk-karlsruhe",
+      "trade_slug": null,
+      "part": 4,
+      "fee": 200.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-karlsruhe.de/artikel/gebuehren-63,0,85.html"
+    },
+    {
+      "chamber_slug": "hwk-karlsruhe",
+      "trade_slug": null,
+      "parts": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "fee": 1150.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-karlsruhe.de/artikel/gebuehren-63,0,85.html"
+    },
+    {
       "chamber_slug": "hwk-kassel",
       "trade_slug": null,
       "part": 1,
@@ -1138,6 +1561,83 @@
       "fee": 240.0,
       "qualifier": "",
       "source_url": "https://www.hwk-magdeburg.de/downloads/gebuehren-und-entgeltordnung-der-handwerkskammer-magdeburg-2026-16,5916.pdf"
+    },
+    {
+      "chamber_slug": "hwk-mannheim",
+      "trade_slug": null,
+      "part": 1,
+      "fee": 400.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-mannheim.de/artikel/gebuehren-65,0,85.html"
+    },
+    {
+      "chamber_slug": "hwk-mannheim",
+      "trade_slug": null,
+      "part": 2,
+      "fee": 350.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-mannheim.de/artikel/gebuehren-65,0,85.html"
+    },
+    {
+      "chamber_slug": "hwk-mannheim",
+      "trade_slug": null,
+      "part": 3,
+      "fee": 200.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-mannheim.de/artikel/gebuehren-65,0,85.html"
+    },
+    {
+      "chamber_slug": "hwk-mannheim",
+      "trade_slug": null,
+      "part": 4,
+      "fee": 200.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-mannheim.de/artikel/gebuehren-65,0,85.html"
+    },
+    {
+      "chamber_slug": "hwk-mannheim",
+      "trade_slug": null,
+      "parts": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "fee": 1150.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-mannheim.de/artikel/gebuehren-65,0,85.html"
+    },
+    {
+      "chamber_slug": "hwk-mittelfranken",
+      "trade_slug": null,
+      "part": 1,
+      "fee": 340.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-mittelfranken.de/artikel/gebuehrenordnung-3751,0,85.html"
+    },
+    {
+      "chamber_slug": "hwk-mittelfranken",
+      "trade_slug": null,
+      "part": 2,
+      "fee": 290.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-mittelfranken.de/artikel/gebuehrenordnung-3751,0,85.html"
+    },
+    {
+      "chamber_slug": "hwk-mittelfranken",
+      "trade_slug": null,
+      "part": 3,
+      "fee": 165.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-mittelfranken.de/artikel/gebuehrenordnung-3751,0,85.html"
+    },
+    {
+      "chamber_slug": "hwk-mittelfranken",
+      "trade_slug": null,
+      "part": 4,
+      "fee": 165.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-mittelfranken.de/artikel/gebuehrenordnung-3751,0,85.html"
     },
     {
       "chamber_slug": "hwk-muenster",
@@ -1666,6 +2166,51 @@
       "source_url": "https://www.hwk-potsdam.de/artikel/gebuehren-9,783,2654.html"
     },
     {
+      "chamber_slug": "hwk-reutlingen",
+      "trade_slug": null,
+      "part": 1,
+      "fee": 300.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-reutlingen.de/artikel/gebuehren-1,0,85.html"
+    },
+    {
+      "chamber_slug": "hwk-reutlingen",
+      "trade_slug": null,
+      "part": 2,
+      "fee": 350.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-reutlingen.de/artikel/gebuehren-1,0,85.html"
+    },
+    {
+      "chamber_slug": "hwk-reutlingen",
+      "trade_slug": null,
+      "part": 3,
+      "fee": 200.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-reutlingen.de/artikel/gebuehren-1,0,85.html"
+    },
+    {
+      "chamber_slug": "hwk-reutlingen",
+      "trade_slug": null,
+      "part": 4,
+      "fee": 250.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-reutlingen.de/artikel/gebuehren-1,0,85.html"
+    },
+    {
+      "chamber_slug": "hwk-reutlingen",
+      "trade_slug": null,
+      "parts": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "fee": 1100.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-reutlingen.de/artikel/gebuehren-1,0,85.html"
+    },
+    {
       "chamber_slug": "hwk-rhein-main",
       "trade_slug": null,
       "part": 1,
@@ -1769,6 +2314,38 @@
       "fee_max": 500.0
     },
     {
+      "chamber_slug": "hwk-schwaben",
+      "trade_slug": null,
+      "part": 1,
+      "fee": 270.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-schwaben.de/artikel/gebuehrenordnung-3711,0,85.html"
+    },
+    {
+      "chamber_slug": "hwk-schwaben",
+      "trade_slug": null,
+      "part": 2,
+      "fee": 230.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-schwaben.de/artikel/gebuehrenordnung-3711,0,85.html"
+    },
+    {
+      "chamber_slug": "hwk-schwaben",
+      "trade_slug": null,
+      "part": 3,
+      "fee": 175.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-schwaben.de/artikel/gebuehrenordnung-3711,0,85.html"
+    },
+    {
+      "chamber_slug": "hwk-schwaben",
+      "trade_slug": null,
+      "part": 4,
+      "fee": 175.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-schwaben.de/artikel/gebuehrenordnung-3711,0,85.html"
+    },
+    {
       "chamber_slug": "hwk-schwerin",
       "trade_slug": null,
       "part": 1,
@@ -1799,6 +2376,51 @@
       "fee": 200.0,
       "qualifier": "",
       "source_url": "https://www.hwk-schwerin.de/artikel/aufgabenerfuellung-als-oeffentlich-rechtliche-koerperschaft-in-selbstverwaltung-19,95,763.html"
+    },
+    {
+      "chamber_slug": "hwk-stuttgart",
+      "trade_slug": null,
+      "part": 1,
+      "fee": 360.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-stuttgart.de/artikel/gebuehren-4,0,85.html"
+    },
+    {
+      "chamber_slug": "hwk-stuttgart",
+      "trade_slug": null,
+      "part": 2,
+      "fee": 330.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-stuttgart.de/artikel/gebuehren-4,0,85.html"
+    },
+    {
+      "chamber_slug": "hwk-stuttgart",
+      "trade_slug": null,
+      "part": 3,
+      "fee": 180.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-stuttgart.de/artikel/gebuehren-4,0,85.html"
+    },
+    {
+      "chamber_slug": "hwk-stuttgart",
+      "trade_slug": null,
+      "part": 4,
+      "fee": 180.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-stuttgart.de/artikel/gebuehren-4,0,85.html"
+    },
+    {
+      "chamber_slug": "hwk-stuttgart",
+      "trade_slug": null,
+      "parts": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "fee": 1050.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-stuttgart.de/artikel/gebuehren-4,0,85.html"
     },
     {
       "chamber_slug": "hwk-suedthueringen-suhl",
@@ -1879,6 +2501,51 @@
       "fee_max": 2500.0,
       "qualifier": "",
       "source_url": "https://www.hwk-swf.de/artikel/rechtsgrundlagen-38,0,100.html"
+    },
+    {
+      "chamber_slug": "hwk-ulm",
+      "trade_slug": null,
+      "part": 1,
+      "fee": 580.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-ulm.de/artikel/gebuehren-3,0,85.html"
+    },
+    {
+      "chamber_slug": "hwk-ulm",
+      "trade_slug": null,
+      "part": 2,
+      "fee": 470.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-ulm.de/artikel/gebuehren-3,0,85.html"
+    },
+    {
+      "chamber_slug": "hwk-ulm",
+      "trade_slug": null,
+      "part": 3,
+      "fee": 260.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-ulm.de/artikel/gebuehren-3,0,85.html"
+    },
+    {
+      "chamber_slug": "hwk-ulm",
+      "trade_slug": null,
+      "part": 4,
+      "fee": 280.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-ulm.de/artikel/gebuehren-3,0,85.html"
+    },
+    {
+      "chamber_slug": "hwk-ulm",
+      "trade_slug": null,
+      "parts": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "fee": 1570.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-ulm.de/artikel/gebuehren-3,0,85.html"
     },
     {
       "chamber_slug": "hwk-wiesbaden",

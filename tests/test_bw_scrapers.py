@@ -84,17 +84,27 @@ class MannheimParserTests(unittest.TestCase):
 
 
 class KarlsruheParserTests(unittest.TestCase):
-    def test_manual_exam_fees_include_parts_and_complete_bundle(self):
-        fee_path = Path(__file__).resolve().parents[1] / "data" / "manual" / "exam_fees_manual.json"
-        lookup = build_exam_fee_lookup([], json.loads(fee_path.read_text(encoding="utf-8")))
+    @classmethod
+    def setUpClass(cls):
+        from unittest.mock import patch
 
+        from scrapers.hwk_karlsruhe import HwkKarlsruheScraper
+        from scrapers.hwk_mannheim import HwkMannheimScraper
+
+        rows: list[dict] = []
+        with patch("scrapers.exam_fee_tariff.download_pdf_text", return_value=""):
+            rows.extend(HwkKarlsruheScraper().published_exam_fee_rows())
+            rows.extend(HwkMannheimScraper().published_exam_fee_rows())
+        cls.lookup = build_exam_fee_lookup(rows, [])
+
+    def test_published_exam_fees_include_parts_and_complete_bundle(self):
         expected_parts = {1: 400.0, 2: 350.0, 3: 200.0, 4: 200.0}
         for chamber_slug in ("hwk-karlsruhe", "hwk-mannheim"):
             for part, expected_fee in expected_parts.items():
-                resolved = resolve_exam_fee(chamber_slug, "any-trade", [part], None, lookup)
+                resolved = resolve_exam_fee(chamber_slug, "any-trade", [part], None, self.lookup)
                 self.assertEqual(resolved["fee"], expected_fee)
 
-            bundle = resolve_exam_fee(chamber_slug, "any-trade", [1, 2, 3, 4], None, lookup)
+            bundle = resolve_exam_fee(chamber_slug, "any-trade", [1, 2, 3, 4], None, self.lookup)
             self.assertEqual(bundle["fee"], 1150.0)
             self.assertEqual(bundle["display"], "1.150 €")
 
@@ -249,9 +259,13 @@ class KarlsruheParserTests(unittest.TestCase):
 
 
 class StuttgartParserTests(unittest.TestCase):
-    def test_manual_exam_fees(self):
-        fee_path = Path(__file__).resolve().parents[1] / "data" / "manual" / "exam_fees_manual.json"
-        lookup = build_exam_fee_lookup([], json.loads(fee_path.read_text(encoding="utf-8")))
+    def test_published_exam_fees(self):
+        from unittest.mock import patch
+
+        from scrapers.hwk_stuttgart import HwkStuttgartScraper
+
+        with patch("scrapers.exam_fee_tariff.download_pdf_text", return_value=""):
+            lookup = build_exam_fee_lookup(HwkStuttgartScraper().published_exam_fee_rows(), [])
         expected = {1: 360.0, 2: 330.0, 3: 180.0, 4: 180.0}
         for part, fee in expected.items():
             resolved = resolve_exam_fee("hwk-stuttgart", "any-trade", [part], None, lookup)
@@ -351,9 +365,13 @@ class StuttgartParserTests(unittest.TestCase):
 
 
 class UlmParserTests(unittest.TestCase):
-    def test_manual_exam_fees_and_complete_bundle(self):
-        fee_path = Path(__file__).resolve().parents[1] / "data" / "manual" / "exam_fees_manual.json"
-        lookup = build_exam_fee_lookup([], json.loads(fee_path.read_text(encoding="utf-8")))
+    def test_published_exam_fees_and_complete_bundle(self):
+        from unittest.mock import patch
+
+        from scrapers.hwk_ulm import HwkUlmScraper
+
+        with patch("scrapers.exam_fee_tariff.download_pdf_text", return_value=""):
+            lookup = build_exam_fee_lookup(HwkUlmScraper().published_exam_fee_rows(), [])
         expected = {1: 580.0, 2: 470.0, 3: 260.0, 4: 280.0}
         for part, fee in expected.items():
             resolved = resolve_exam_fee("hwk-ulm", "any-trade", [part], None, lookup)
@@ -548,9 +566,13 @@ class KonstanzParserTests(unittest.TestCase):
 
 
 class ReutlingenParserTests(unittest.TestCase):
-    def test_manual_exam_fees_and_complete_bundle(self):
-        fee_path = Path(__file__).resolve().parents[1] / "data" / "manual" / "exam_fees_manual.json"
-        lookup = build_exam_fee_lookup([], json.loads(fee_path.read_text(encoding="utf-8")))
+    def test_published_exam_fees_and_complete_bundle(self):
+        from unittest.mock import patch
+
+        from scrapers.hwk_reutlingen import HwkReutlingenScraper
+
+        with patch("scrapers.exam_fee_tariff.download_pdf_text", return_value=""):
+            lookup = build_exam_fee_lookup(HwkReutlingenScraper().published_exam_fee_rows(), [])
         expected = {1: 300.0, 2: 350.0, 3: 200.0, 4: 250.0}
         for part, fee in expected.items():
             resolved = resolve_exam_fee("hwk-reutlingen", "any-trade", [part], None, lookup)

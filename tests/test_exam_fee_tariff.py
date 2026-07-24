@@ -10,9 +10,15 @@ from unittest.mock import patch
 
 from scrapers.exam_fee_tariff import (
     merge_tariff_rows_last_good,
+    parse_berlin_meister_fees,
+    parse_bremen_meister_fees,
+    parse_bavaria_b_iv_meister_fees,
+    parse_bw_322_meister_fees,
+    parse_hamburg_meister_fees,
     parse_hesse_schedule_fees,
     parse_koblenz_meister_fees,
     parse_rheinhessen_meister_fees,
+    parse_thuringia_meister_fees,
 )
 from scrapers import pipeline
 
@@ -56,6 +62,59 @@ Höchstbetrag 820,00
 30 Fortbildungsprüfung
 """
 
+BERLIN_SNIPPET = """
+Meisterprüfung zu einem Prüfungstermin 462,00
+b. Abnahme von Teilprüfungen
+ Teil 1 315,00
+ Teil 2 272,50
+ Teil 3 168,75
+ Teil 4 168,75
+"""
+
+HAMBURG_SNIPPET = """
+Meisterprüfungen
+aa) Prüfungsteil I 430,--
+bb) Prüfungsteil II 430,--
+cc) Prüfungsteil III 350,--
+dd) Prüfungsteil IV 350,--
+ee) Anmeldung zur Ablegung der gesamten Meisterprüfung (Teile I-IV im Zusammenhang) 1.300,--
+"""
+
+BW_322_SNIPPET = """
+3.2.2 Meisterprüfung
+Teil I 400,00
+Teil II 350,00
+Teil III 200,00
+Teil IV 200,00
+Gesamtprüfung 1.150,00
+"""
+
+BAVARIA_B_IV_SNIPPET = """
+B. IV Meisterprüfung
+Teil I 340,00
+Teil II 290,00
+Teil III 165,00
+Teil IV 165,00
+"""
+
+BREMEN_SNIPPET = """
+3. Abnahme und Wiederholung der Meisterprüfung
+a) Teil I (Fachpraxis)
+Tischler 400,00 €
+b) Teil II (Fachtheorie)
+Tischler 260,00 €
+c) Teil III (gewerkeübergreifend) 220,00 €
+D. Fortbildungsprüfungen
+a) AEVO (Anerkennung als Teil 4 der Meisterprüfung möglich) 290,00 €
+"""
+
+THURINGIA_SNIPPET = """
+5.1 Teil I 380,00 €
+5.2 Teil II 380,00 €
+5.3 Teil III 340,00 €
+5.4 Teil IV 340,00 €
+"""
+
 
 class ExamFeeTariffParsersTest(unittest.TestCase):
     def test_parse_koblenz_ceiling_fees(self):
@@ -74,6 +133,34 @@ class ExamFeeTariffParsersTest(unittest.TestCase):
         self.assertEqual(combos[(1, 2)], 730.0)
         self.assertEqual(combos[(3, 4)], 490.0)
         self.assertEqual(combos[(1, 2, 3, 4)], 820.0)
+
+    def test_parse_berlin_meister_fees(self):
+        fees, combos = parse_berlin_meister_fees(BERLIN_SNIPPET)
+        self.assertEqual(fees, {1: 315.0, 2: 272.5, 3: 168.75, 4: 168.75})
+        self.assertEqual(combos[(1, 2, 3, 4)], 462.0)
+
+    def test_parse_hamburg_meister_fees(self):
+        fees, combos = parse_hamburg_meister_fees(HAMBURG_SNIPPET)
+        self.assertEqual(fees, {1: 430.0, 2: 430.0, 3: 350.0, 4: 350.0})
+        self.assertEqual(combos[(1, 2, 3, 4)], 1300.0)
+
+    def test_parse_bw_322_meister_fees(self):
+        fees, combos = parse_bw_322_meister_fees(BW_322_SNIPPET)
+        self.assertEqual(fees, {1: 400.0, 2: 350.0, 3: 200.0, 4: 200.0})
+        self.assertEqual(combos[(1, 2, 3, 4)], 1150.0)
+
+    def test_parse_bavaria_b_iv_meister_fees(self):
+        fees = parse_bavaria_b_iv_meister_fees(BAVARIA_B_IV_SNIPPET)
+        self.assertEqual(fees, {1: 340.0, 2: 290.0, 3: 165.0, 4: 165.0})
+
+    def test_parse_bremen_trade_and_generic_fees(self):
+        trade_fees, generic = parse_bremen_meister_fees(BREMEN_SNIPPET)
+        self.assertEqual(trade_fees["Tischler"], {1: 400.0, 2: 260.0})
+        self.assertEqual(generic, {3: 220.0, 4: 290.0})
+
+    def test_parse_thuringia_meister_fees(self):
+        fees = parse_thuringia_meister_fees(THURINGIA_SNIPPET)
+        self.assertEqual(fees, {1: 380.0, 2: 380.0, 3: 340.0, 4: 340.0})
 
     def test_merge_tariff_rows_keeps_last_good_on_empty(self):
         previous = [

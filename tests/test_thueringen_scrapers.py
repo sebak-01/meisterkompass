@@ -312,9 +312,13 @@ class ThueringenIntegrationTests(unittest.TestCase):
             self.assertEqual(resolved["fee"], expected)
             self.assertEqual(resolved["qualifier"], "")
 
-    def test_erfurt_manual_exam_fee_schedule(self):
-        fee_path = Path(__file__).resolve().parents[1] / "data/manual/exam_fees_manual.json"
-        lookup = build_exam_fee_lookup([], json.loads(fee_path.read_text(encoding="utf-8")))
+    def test_erfurt_published_exam_fee_schedule(self):
+        from unittest.mock import patch
+
+        from scrapers.hwk_erfurt import HwkErfurtScraper
+
+        with patch("scrapers.hwk_erfurt.download_pdf_text", return_value=""):
+            lookup = build_exam_fee_lookup(HwkErfurtScraper().published_exam_fee_rows(), [])
         cases = (
             ([1, 2], 760.0),
             ([3], 340.0),

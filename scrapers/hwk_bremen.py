@@ -14,6 +14,12 @@ from urllib.parse import urljoin
 from bs4 import BeautifulSoup
 
 from .base import BaseScraper, RawCourseOffer, build_course_title, normalize_trade
+from .exam_fee_tariff import (
+    download_pdf_text,
+    parse_bremen_meister_fees,
+    part_fee_rows,
+    trade_part_fee_rows,
+)
 from .hwk_bayern import parse_format_and_mode
 from .hwk_universal_kdb import build_kdb_detail_url, parse_kdb_availability
 
@@ -23,6 +29,42 @@ KDB_URL = "https://www.hwk-universal.de/universal-kdb-rest/v1/vorlagen/hwb"
 SOURCE_URL = "https://www.handwerkbremen.de/service-center/kurse-und-seminare#/"
 MEISTERKURSE_BASE = "https://www.handwerkbremen.de"
 MEISTERKURSE_OVERVIEW = f"{MEISTERKURSE_BASE}/meister-in/meisterkurse"
+
+EXAM_FEES_PAGE_URL = "https://www.hwk-bremen.de/uber-uns/beitraege-gebuehren"
+EXAM_FEES_PDF_FALLBACK = (
+    "https://www.hwk-bremen.de/_Resources/Persistent/c/f/f/2/"
+    "cff24b29fc80d04b4c57fca8308caf56503e4c74/Geb%C3%BChrentarif%20ab%20Januar%202026.pdf"
+)
+
+# Fallback when the Gebührentarif PDF cannot be fetched or parsed.
+BREMEN_TRADE_FEES_FALLBACK: dict[str, dict[int, float]] = {
+    "Kraftfahrzeugtechniker": {1: 250.0, 2: 440.0},
+    "Tischler": {1: 400.0, 2: 260.0},
+    "Zimmerer": {1: 460.0, 2: 260.0},
+    "Maler- und Lackierer, FR Fahrzeuglackierer": {1: 470.0, 2: 410.0},
+    "Maurer- und Betonbauer": {1: 530.0, 2: 250.0},
+    "Friseure": {1: 570.0, 2: 270.0},
+    "Maler- und Lackierer, FR Gestaltung und Instandhaltung": {1: 750.0, 2: 620.0},
+    "Bäcker": {1: 750.0, 2: 360.0},
+    "Installateur- und Heizungsbauer": {1: 770.0, 2: 480.0},
+    "Fleischer": {1: 830.0, 2: 640.0},
+    "Elektrotechniker": {1: 860.0, 2: 310.0},
+    "Dachdecker": {1: 1400.0, 2: 340.0},
+    "Feinwerkmechaniker": {1: 1400.0, 2: 240.0},
+    "Metallbauer": {1: 1400.0, 2: 510.0},
+    "Straßenbauer": {1: 1400.0, 2: 1400.0},
+}
+BREMEN_GENERIC_FEES_FALLBACK = {3: 220.0, 4: 290.0}
+
+# Map Gebührentarif trade labels to course trade names used in slug lookup.
+BREMEN_EXAM_FEE_TRADE_ALIASES = {
+    "Kraftfahrzeugtechniker": "Kfz.-Techniker",
+    "Friseure": "Friseur",
+    "Maler- und Lackierer, FR Fahrzeuglackierer": "Fahrzeuglackierer",
+    "Maler- und Lackierer, FR Gestaltung und Instandhaltung": "Maler und Lackierer",
+    "Maurer- und Betonbauer": "Maurer und Betonbauer",
+    "Installateur- und Heizungsbauer": "Installateur und Heizungsbauer",
+}
 
 DEFAULT_STREET = "Schongauerstr. 2"
 DEFAULT_ZIP = "28219"
@@ -439,3 +481,44 @@ class HwkBremenScraper(BaseScraper):
         if not value:
             return None
         return value.strip().split("T")[0] or None
+
+    def _resolve_exam_fees_pdf_url(self) -> str:
+        soup = self.parse_html(EXAM_FEES_PAGE_URL)
+        if soup is None:
+            return EXAM_FEES_PDF_FALLBACK
+        for link in soup.select("a[href]"):
+            href = link.get("href") or ""
+            text = link.get_text(" ", strip=True).lower()
+            if "gebührentarif" in text or "gebuehrentarif" in href.lower():
+                if href.lower().endswith(".pdf") or ".pdf" in href.lower():
+                    if href.startswith("http"):
+                        return href
+                    return f"https://www.hwk-bremen.de{href}" if href.startswith("/") else href
+        return EXAM_FEES_PDF_FALLBACK
+
+    @staticmethod
+    def _exam_fee_trade_slug(trade_name: str) -> str:
+        canonical = BREMEN_EXAM_FEE_TRADE_ALIASES.get(trade_name, trade_name)
+        return normalize_trade(canonical)[0]
+
+    def published_exam_fee_rows(self) -> list[dict]:
+        pdf_url = self._resolve_exam_fees_pdf_url()
+        text = download_pdf_text(self, pdf_url, label="HWK Bremen")
+        trade_fees, generic_fees = parse_bremen_meister_fees(text) if text else ({}, {})
+        if not trade_fees:
+            logger.warning("HWK Bremen: using fallback trade-specific Meister exam fees.")
+            trade_fees = BREMEN_TRADE_FEES_FALLBACK
+        if not generic_fees:
+            generic_fees = BREMEN_GENERIC_FEES_FALLBACK
+        rows = trade_part_fee_rows(
+            self.chamber_slug,
+            trade_fees,
+            source_url=EXAM_FEES_PAGE_URL,
+            trade_slug_fn=self._exam_fee_trade_slug,
+        )
+        rows.extend(part_fee_rows(
+            self.chamber_slug,
+            generic_fees,
+            source_url=EXAM_FEES_PAGE_URL,
+        ))
+        return rows

@@ -19,7 +19,7 @@ The one meaningful difference is the title format. Berlin titles carry a
 I/II courses name a trade.
 
 Exam fees are NOT listed on the course pages (only the Kursgebühr is); they
-are curated manually in ``data/manual/exam_fees_manual.json`` like HWK Koblenz.
+are published in the chamber Gebührenverzeichnis PDF (weekly tariff scrape).
 All courses are taught at the chamber's Bildungsstätte, Mehringdamm 14 in Berlin.
 """
 
@@ -29,6 +29,12 @@ import re
 from bs4 import BeautifulSoup, Tag
 
 from .base import BaseScraper, RawCourseOffer, build_course_title
+from .exam_fee_tariff import (
+    download_pdf_text,
+    parse_berlin_meister_fees,
+    published_rows_from_part_and_combo,
+    resolve_pdf_url_from_page,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -42,6 +48,11 @@ PAGE_SIZE = 20
 DEFAULT_STREET = "Mehringdamm 14"
 DEFAULT_ZIP    = "10961"
 DEFAULT_CITY   = "Berlin"
+
+EXAM_FEES_PAGE_URL = "https://www.hwk-berlin.de/artikel/gebuehren-91,0,85.html"
+EXAM_FEES_PDF_FALLBACK = "https://www.hwk-berlin.de/downloads/gebuehrenverzeichnis-91,151.pdf"
+EXAM_FEES_FALLBACK = {1: 315.0, 2: 272.5, 3: 168.75, 4: 168.75}
+EXAM_COMBO_FALLBACK = {(1, 2, 3, 4): 462.0}
 
 ROMAN = {"I": 1, "II": 2, "III": 3, "IV": 4}
 
@@ -268,3 +279,23 @@ class HwkBerlinScraper(BaseScraper):
             logger.warning("Could not fetch detail address from %s: %s", url, exc)
 
         return DEFAULT_STREET, DEFAULT_ZIP
+
+    def published_exam_fee_rows(self) -> list[dict]:
+        pdf_url = resolve_pdf_url_from_page(
+            self,
+            EXAM_FEES_PAGE_URL,
+            fallback_url=EXAM_FEES_PDF_FALLBACK,
+            href_substrings=("gebuehrenverzeichnis",),
+            label="HWK Berlin",
+        ) or EXAM_FEES_PDF_FALLBACK
+        text = download_pdf_text(self, pdf_url, label="HWK Berlin")
+        fees, combos = parse_berlin_meister_fees(text) if text else ({}, {})
+        if not fees:
+            logger.warning("HWK Berlin: using fallback Meister exam fees.")
+            fees, combos = EXAM_FEES_FALLBACK, EXAM_COMBO_FALLBACK
+        return published_rows_from_part_and_combo(
+            self.chamber_slug,
+            fees,
+            combos,
+            source_url=EXAM_FEES_PAGE_URL,
+        )
