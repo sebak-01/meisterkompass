@@ -156,7 +156,32 @@ class BrandenburgParserTests(unittest.TestCase):
         self.assertEqual(offers[0].exam_fee_scraped, 680.0)
         self.assertEqual(offers[0].duration_hours, 1200)
         self.assertEqual(offers[0].availability, "available")
+        self.assertEqual(offers[0].format_key, "part_time")
         self.assertEqual(offers[1].format_key, "full_time")
+
+    def test_ostbrandenburg_berufsbegleitend_beats_vollzeit_note(self):
+        soup = BeautifulSoup(
+            """
+            <main>
+              <h1>Meisterkurs im Friseur-Handwerk (Teile I und II)</h1>
+              <div class="hwk-course-app-wrapper">
+                05.04.2027 - 15.01.2028
+                Berufsbegleitend
+                Frankfurt (Oder)
+                Mo. und Sa.:08:00 - 15:00 Uhr (ca. 2 Wochen in Vollzeit)
+                Kurs buchen
+              </div>
+            </main>
+            """,
+            "html.parser",
+        )
+        offers = HwkFrankfurtOderOstbrandenburgScraper()._parse_course(
+            soup,
+            "Meisterkurs im Friseur-Handwerk (Teile I und II)",
+            "https://example.test/friseur/",
+        )
+        self.assertEqual(len(offers), 1)
+        self.assertEqual(offers[0].format_key, "part_time")
 
     def test_ostbrandenburg_parses_pruefungskosten_from_course_page(self):
         self.assertEqual(
