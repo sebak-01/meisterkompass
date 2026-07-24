@@ -1,6 +1,38 @@
 {
   "rows": [
     {
+      "chamber_slug": "hwk-aachen",
+      "trade_slug": null,
+      "part": 1,
+      "fee": 380.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-aachen.de/artikel/meisterpruefung-33,0,55.html"
+    },
+    {
+      "chamber_slug": "hwk-aachen",
+      "trade_slug": null,
+      "part": 2,
+      "fee": 200.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-aachen.de/artikel/meisterpruefung-33,0,55.html"
+    },
+    {
+      "chamber_slug": "hwk-aachen",
+      "trade_slug": null,
+      "part": 3,
+      "fee": 250.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-aachen.de/artikel/meisterpruefung-33,0,55.html"
+    },
+    {
+      "chamber_slug": "hwk-aachen",
+      "trade_slug": null,
+      "part": 4,
+      "fee": 150.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-aachen.de/artikel/meisterpruefung-33,0,55.html"
+    },
+    {
       "chamber_slug": "hwk-berlin",
       "trade_slug": null,
       "part": 1,
@@ -694,6 +726,51 @@
       "source_url": "https://www.hwk-ff.de/wp-content/uploads/2025/08/Gebuehrenverzeichnis.pdf"
     },
     {
+      "chamber_slug": "hwk-freiburg",
+      "trade_slug": null,
+      "part": 1,
+      "fee": 400.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-freiburg.de/rechtsgrundlagen/"
+    },
+    {
+      "chamber_slug": "hwk-freiburg",
+      "trade_slug": null,
+      "part": 2,
+      "fee": 350.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-freiburg.de/rechtsgrundlagen/"
+    },
+    {
+      "chamber_slug": "hwk-freiburg",
+      "trade_slug": null,
+      "part": 3,
+      "fee": 200.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-freiburg.de/rechtsgrundlagen/"
+    },
+    {
+      "chamber_slug": "hwk-freiburg",
+      "trade_slug": null,
+      "part": 4,
+      "fee": 200.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-freiburg.de/rechtsgrundlagen/"
+    },
+    {
+      "chamber_slug": "hwk-freiburg",
+      "trade_slug": null,
+      "parts": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "fee": 1150.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-freiburg.de/rechtsgrundlagen/"
+    },
+    {
       "chamber_slug": "hwk-halle-saale",
       "trade_slug": "friseur",
       "part": 1,
@@ -1184,7 +1261,7 @@
       "part": 1,
       "fee": 400.0,
       "qualifier": "",
-      "source_url": "https://www.hwk-karlsruhe.de/artikel/gebuehren-63,0,85.html"
+      "source_url": "https://www.hwk-karlsruhe.de/artikel/die-handwerksordnung-auf-einen-blick-63,86,46.html"
     },
     {
       "chamber_slug": "hwk-karlsruhe",
@@ -1192,7 +1269,7 @@
       "part": 2,
       "fee": 350.0,
       "qualifier": "",
-      "source_url": "https://www.hwk-karlsruhe.de/artikel/gebuehren-63,0,85.html"
+      "source_url": "https://www.hwk-karlsruhe.de/artikel/die-handwerksordnung-auf-einen-blick-63,86,46.html"
     },
     {
       "chamber_slug": "hwk-karlsruhe",
@@ -1200,7 +1277,7 @@
       "part": 3,
       "fee": 200.0,
       "qualifier": "",
-      "source_url": "https://www.hwk-karlsruhe.de/artikel/gebuehren-63,0,85.html"
+      "source_url": "https://www.hwk-karlsruhe.de/artikel/die-handwerksordnung-auf-einen-blick-63,86,46.html"
     },
     {
       "chamber_slug": "hwk-karlsruhe",
@@ -1208,7 +1285,7 @@
       "part": 4,
       "fee": 200.0,
       "qualifier": "",
-      "source_url": "https://www.hwk-karlsruhe.de/artikel/gebuehren-63,0,85.html"
+      "source_url": "https://www.hwk-karlsruhe.de/artikel/die-handwerksordnung-auf-einen-blick-63,86,46.html"
     },
     {
       "chamber_slug": "hwk-karlsruhe",
@@ -1221,7 +1298,7 @@
       ],
       "fee": 1150.0,
       "qualifier": "",
-      "source_url": "https://www.hwk-karlsruhe.de/artikel/gebuehren-63,0,85.html"
+      "source_url": "https://www.hwk-karlsruhe.de/artikel/die-handwerksordnung-auf-einen-blick-63,86,46.html"
     },
     {
       "chamber_slug": "hwk-kassel",
@@ -1568,7 +1645,7 @@
       "part": 1,
       "fee": 400.0,
       "qualifier": "",
-      "source_url": "https://www.hwk-mannheim.de/artikel/gebuehren-65,0,85.html"
+      "source_url": "https://www.hwk-mannheim.de/artikel/rechtsgrundlagen-65,743,4353.html"
     },
     {
       "chamber_slug": "hwk-mannheim",
@@ -1576,7 +1653,7 @@
       "part": 2,
       "fee": 350.0,
       "qualifier": "",
-      "source_url": "https://www.hwk-mannheim.de/artikel/gebuehren-65,0,85.html"
+      "source_url": "https://www.hwk-mannheim.de/artikel/rechtsgrundlagen-65,743,4353.html"
     },
     {
       "chamber_slug": "hwk-mannheim",
@@ -1584,7 +1661,7 @@
       "part": 3,
       "fee": 200.0,
       "qualifier": "",
-      "source_url": "https://www.hwk-mannheim.de/artikel/gebuehren-65,0,85.html"
+      "source_url": "https://www.hwk-mannheim.de/artikel/rechtsgrundlagen-65,743,4353.html"
     },
     {
       "chamber_slug": "hwk-mannheim",
@@ -1592,7 +1669,7 @@
       "part": 4,
       "fee": 200.0,
       "qualifier": "",
-      "source_url": "https://www.hwk-mannheim.de/artikel/gebuehren-65,0,85.html"
+      "source_url": "https://www.hwk-mannheim.de/artikel/rechtsgrundlagen-65,743,4353.html"
     },
     {
       "chamber_slug": "hwk-mannheim",
@@ -1605,7 +1682,7 @@
       ],
       "fee": 1150.0,
       "qualifier": "",
-      "source_url": "https://www.hwk-mannheim.de/artikel/gebuehren-65,0,85.html"
+      "source_url": "https://www.hwk-mannheim.de/artikel/rechtsgrundlagen-65,743,4353.html"
     },
     {
       "chamber_slug": "hwk-mittelfranken",
@@ -2171,7 +2248,7 @@
       "part": 1,
       "fee": 300.0,
       "qualifier": "",
-      "source_url": "https://www.hwk-reutlingen.de/artikel/gebuehren-1,0,85.html"
+      "source_url": "https://www.hwk-reutlingen.de/ueber-uns/rechtsgrundlagen/"
     },
     {
       "chamber_slug": "hwk-reutlingen",
@@ -2179,7 +2256,7 @@
       "part": 2,
       "fee": 350.0,
       "qualifier": "",
-      "source_url": "https://www.hwk-reutlingen.de/artikel/gebuehren-1,0,85.html"
+      "source_url": "https://www.hwk-reutlingen.de/ueber-uns/rechtsgrundlagen/"
     },
     {
       "chamber_slug": "hwk-reutlingen",
@@ -2187,7 +2264,7 @@
       "part": 3,
       "fee": 200.0,
       "qualifier": "",
-      "source_url": "https://www.hwk-reutlingen.de/artikel/gebuehren-1,0,85.html"
+      "source_url": "https://www.hwk-reutlingen.de/ueber-uns/rechtsgrundlagen/"
     },
     {
       "chamber_slug": "hwk-reutlingen",
@@ -2195,7 +2272,7 @@
       "part": 4,
       "fee": 250.0,
       "qualifier": "",
-      "source_url": "https://www.hwk-reutlingen.de/artikel/gebuehren-1,0,85.html"
+      "source_url": "https://www.hwk-reutlingen.de/ueber-uns/rechtsgrundlagen/"
     },
     {
       "chamber_slug": "hwk-reutlingen",
@@ -2208,7 +2285,7 @@
       ],
       "fee": 1100.0,
       "qualifier": "",
-      "source_url": "https://www.hwk-reutlingen.de/artikel/gebuehren-1,0,85.html"
+      "source_url": "https://www.hwk-reutlingen.de/ueber-uns/rechtsgrundlagen/"
     },
     {
       "chamber_slug": "hwk-rhein-main",
@@ -2383,7 +2460,7 @@
       "part": 1,
       "fee": 360.0,
       "qualifier": "",
-      "source_url": "https://www.hwk-stuttgart.de/artikel/gebuehren-4,0,85.html"
+      "source_url": "https://www.hwk-stuttgart.de/artikel/meisterpruefung-alles-wichtige-auf-einen-blick-67,230,525.html"
     },
     {
       "chamber_slug": "hwk-stuttgart",
@@ -2391,7 +2468,7 @@
       "part": 2,
       "fee": 330.0,
       "qualifier": "",
-      "source_url": "https://www.hwk-stuttgart.de/artikel/gebuehren-4,0,85.html"
+      "source_url": "https://www.hwk-stuttgart.de/artikel/meisterpruefung-alles-wichtige-auf-einen-blick-67,230,525.html"
     },
     {
       "chamber_slug": "hwk-stuttgart",
@@ -2399,7 +2476,7 @@
       "part": 3,
       "fee": 180.0,
       "qualifier": "",
-      "source_url": "https://www.hwk-stuttgart.de/artikel/gebuehren-4,0,85.html"
+      "source_url": "https://www.hwk-stuttgart.de/artikel/meisterpruefung-alles-wichtige-auf-einen-blick-67,230,525.html"
     },
     {
       "chamber_slug": "hwk-stuttgart",
@@ -2407,20 +2484,7 @@
       "part": 4,
       "fee": 180.0,
       "qualifier": "",
-      "source_url": "https://www.hwk-stuttgart.de/artikel/gebuehren-4,0,85.html"
-    },
-    {
-      "chamber_slug": "hwk-stuttgart",
-      "trade_slug": null,
-      "parts": [
-        1,
-        2,
-        3,
-        4
-      ],
-      "fee": 1050.0,
-      "qualifier": "",
-      "source_url": "https://www.hwk-stuttgart.de/artikel/gebuehren-4,0,85.html"
+      "source_url": "https://www.hwk-stuttgart.de/artikel/meisterpruefung-alles-wichtige-auf-einen-blick-67,230,525.html"
     },
     {
       "chamber_slug": "hwk-suedthueringen-suhl",
@@ -2508,7 +2572,7 @@
       "part": 1,
       "fee": 580.0,
       "qualifier": "",
-      "source_url": "https://www.hwk-ulm.de/artikel/gebuehren-3,0,85.html"
+      "source_url": "https://www.hwk-ulm.de/satzung-rechtsgrundlagen/"
     },
     {
       "chamber_slug": "hwk-ulm",
@@ -2516,7 +2580,7 @@
       "part": 2,
       "fee": 470.0,
       "qualifier": "",
-      "source_url": "https://www.hwk-ulm.de/artikel/gebuehren-3,0,85.html"
+      "source_url": "https://www.hwk-ulm.de/satzung-rechtsgrundlagen/"
     },
     {
       "chamber_slug": "hwk-ulm",
@@ -2524,7 +2588,7 @@
       "part": 3,
       "fee": 260.0,
       "qualifier": "",
-      "source_url": "https://www.hwk-ulm.de/artikel/gebuehren-3,0,85.html"
+      "source_url": "https://www.hwk-ulm.de/satzung-rechtsgrundlagen/"
     },
     {
       "chamber_slug": "hwk-ulm",
@@ -2532,7 +2596,7 @@
       "part": 4,
       "fee": 280.0,
       "qualifier": "",
-      "source_url": "https://www.hwk-ulm.de/artikel/gebuehren-3,0,85.html"
+      "source_url": "https://www.hwk-ulm.de/satzung-rechtsgrundlagen/"
     },
     {
       "chamber_slug": "hwk-ulm",
@@ -2545,7 +2609,7 @@
       ],
       "fee": 1570.0,
       "qualifier": "",
-      "source_url": "https://www.hwk-ulm.de/artikel/gebuehren-3,0,85.html"
+      "source_url": "https://www.hwk-ulm.de/satzung-rechtsgrundlagen/"
     },
     {
       "chamber_slug": "hwk-wiesbaden",

@@ -45,7 +45,8 @@ DEFAULT_LOCATION = {
     "zip_code": "68167",
 }
 
-EXAM_FEES_PAGE_URL = "https://www.hwk-mannheim.de/artikel/gebuehren-65,0,85.html"
+EXAM_FEES_PAGE_URL = "https://www.hwk-mannheim.de/artikel/rechtsgrundlagen-65,743,4353.html"
+EXAM_FEES_PDF_URL = "https://www.hwk-mannheim.de/downloads/pdf-das-gebuehrenverzeichnis-65,451.pdf"
 EXAM_FEES_FALLBACK = {1: 400.0, 2: 350.0, 3: 200.0, 4: 200.0}
 EXAM_COMBO_FALLBACK = {(1, 2, 3, 4): 1150.0}
 
@@ -213,7 +214,7 @@ class HwkMannheimScraper(BaseScraper):
             self,
             chamber_slug=self.chamber_slug,
             page_url=EXAM_FEES_PAGE_URL,
-            pdf_fallback=None,
+            pdf_fallback=EXAM_FEES_PDF_URL,
             fallback_fees=EXAM_FEES_FALLBACK,
             fallback_combos=EXAM_COMBO_FALLBACK,
             label="HWK Mannheim",

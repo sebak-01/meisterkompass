@@ -14,6 +14,8 @@ from scrapers.exam_fee_tariff import (
     parse_bremen_meister_fees,
     parse_bavaria_b_iv_meister_fees,
     parse_bw_322_meister_fees,
+    parse_bw_meister_fees_from_html,
+    parse_ulm_meister_fees,
     parse_hamburg_meister_fees,
     parse_hesse_schedule_fees,
     parse_koblenz_meister_fees,
@@ -81,12 +83,42 @@ ee) Anmeldung zur Ablegung der gesamten Meisterprüfung (Teile I-IV im Zusammenh
 """
 
 BW_322_SNIPPET = """
-3.2.2 Meisterprüfung
-Teil I 400,00
-Teil II 350,00
-Teil III 200,00
-Teil IV 200,00
-Gesamtprüfung 1.150,00
+3.2.2 Meisterprüfung, Teile 1 - 4 zusammen 1.150,00
+3.2.2.1 Teilgebühr für Prüfungsteil I 400,00
+3.2.2.2 Teilgebühr für Prüfungsteil II 350,00
+3.2.2.3 Teilgebühr für Prüfungsteil III 200,00
+3.2.2.4 Teilgebühr für Prüfungsteil IV 200,00
+"""
+
+REUTLINGEN_SNIPPET = """
+3.2.2 Meisterprüfung Teil I-IV zusammen
+Teilgebühr Prüfungsteil I
+Teilgebühr Prüfungsteil II
+Teilgebühr Prüfungsteil III
+Teilgebühr Prüfungsteil IV
+1.100,00
+300,00
+350,00
+200,00
+250,00
+3.2.3 Wiederholung
+"""
+
+ULM_SNIPPET = """
+3.4 Meisterprüfungen.
+3.4.1 Meisterprüfungsgebühr gesamt 1.570,00
+3.4.1.1 davon Teilgebühr Prüfungsteil I (fachpraktische Kenntnisse) 580,00
+3.4.1.2 davon Teilgebühr Prüfungsteil II (fachtheoretische Kenntnisse) 470,00
+3.4.1.3 davon Teilgebühr Prüfungsteil III (betriebswirtschaftliche, kaufmännische und rechtliche Kenntnisse) 260,00
+3.4.1.4 davon Teilgebühr Prüfungsteil IV (berufs- und arbeitspädagogische Kenntnisse) 280,00
+"""
+
+HTML_BW_SNIPPET = """
+Prüfungsgebühren
+Teil I (praktischer Teil): 380 Euro
+Teil II (fachtheoretischer Teil): 200 Euro
+Teil III (Betriebswirtschaftlicher Teil): 250 Euro
+Teil IV (AdA-Prüfung): 150 Euro
 """
 
 BAVARIA_B_IV_SNIPPET = """
@@ -148,6 +180,21 @@ class ExamFeeTariffParsersTest(unittest.TestCase):
         fees, combos = parse_bw_322_meister_fees(BW_322_SNIPPET)
         self.assertEqual(fees, {1: 400.0, 2: 350.0, 3: 200.0, 4: 200.0})
         self.assertEqual(combos[(1, 2, 3, 4)], 1150.0)
+
+    def test_parse_bw_322_reutlingen_column_layout(self):
+        fees, combos = parse_bw_322_meister_fees(REUTLINGEN_SNIPPET)
+        self.assertEqual(fees, {1: 300.0, 2: 350.0, 3: 200.0, 4: 250.0})
+        self.assertEqual(combos[(1, 2, 3, 4)], 1100.0)
+
+    def test_parse_ulm_meister_fees(self):
+        fees, combos = parse_ulm_meister_fees(ULM_SNIPPET)
+        self.assertEqual(fees, {1: 580.0, 2: 470.0, 3: 260.0, 4: 280.0})
+        self.assertEqual(combos[(1, 2, 3, 4)], 1570.0)
+
+    def test_parse_bw_meister_fees_from_html(self):
+        fees, combos = parse_bw_meister_fees_from_html(HTML_BW_SNIPPET)
+        self.assertEqual(fees, {1: 380.0, 2: 200.0, 3: 250.0, 4: 150.0})
+        self.assertEqual(combos, {})
 
     def test_parse_bavaria_b_iv_meister_fees(self):
         fees = parse_bavaria_b_iv_meister_fees(BAVARIA_B_IV_SNIPPET)

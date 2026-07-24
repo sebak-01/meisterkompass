@@ -15,7 +15,8 @@ logger = logging.getLogger(__name__)
 BASE_URL = "https://www.hwk-reutlingen.de"
 OVERVIEW_URL = f"{BASE_URL}/weiterbildung/der-weg-zum-meister/vorbereitung-und-pruefung/"
 
-EXAM_FEES_PAGE_URL = f"{BASE_URL}/artikel/gebuehren-1,0,85.html"
+EXAM_FEES_PAGE_URL = f"{BASE_URL}/ueber-uns/rechtsgrundlagen/"
+EXAM_FEES_PDF_URL = f"{BASE_URL}/wp-content/uploads/gebuehrenverzeichnis_januar-2026.pdf"
 EXAM_FEES_FALLBACK = {1: 300.0, 2: 350.0, 3: 200.0, 4: 250.0}
 EXAM_COMBO_FALLBACK = {(1, 2, 3, 4): 1100.0}
 
@@ -177,7 +178,7 @@ class HwkReutlingenScraper(BaseScraper):
             self,
             chamber_slug=self.chamber_slug,
             page_url=EXAM_FEES_PAGE_URL,
-            pdf_fallback=None,
+            pdf_fallback=EXAM_FEES_PDF_URL,
             fallback_fees=EXAM_FEES_FALLBACK,
             fallback_combos=EXAM_COMBO_FALLBACK,
             label="HWK Reutlingen",

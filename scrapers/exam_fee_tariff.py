@@ -371,10 +371,36 @@ _BW_PART_RE = re.compile(
     r"Teil\s+(I{1,3}|IV)\s+([\d.]+),(\d{2})",
     re.IGNORECASE,
 )
+_BW_SUBSECTION_PART_RE = re.compile(
+    r"3\.2\.2\.(?:[1-5]\s+)?(?:Teilgebühr\s+(?:für\s+)?)?Prüfungsteil\s+(I{1,3}|IV)\s+([\d.]+),(\d{2})",
+    re.IGNORECASE,
+)
 _BW_COMBO_RES = (
+    re.compile(
+        r"Meisterprüfung,?\s*Teile?\s+(?:I\s*[-–]\s*IV|1\s*[-–]\s*4)\s+zusammen\s+([\d.]+),(\d{2})",
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r"Meisterprüfung\s+Teil\s+I-IV\s+zusammen[\s\S]{0,160}?([\d.]+),(\d{2})",
+        re.IGNORECASE,
+    ),
     re.compile(r"Gesamtprüfung\s+([\d.]+),(\d{2})", re.IGNORECASE),
     re.compile(r"alle\s+vier\s+Prüfungsteile\s+([\d.]+),(\d{2})", re.IGNORECASE),
     re.compile(r"Teile\s+I\s+bis\s+IV\s+([\d.]+),(\d{2})", re.IGNORECASE),
+)
+
+_ULM_PART_RE = re.compile(
+    r"3\.4\.1\.(?:[1-4]\s+)?davon\s+Teilgebühr\s+Prüfungsteil\s+(I{1,3}|IV)\b[\s\S]{0,80}?([\d.]+),(\d{2})",
+    re.IGNORECASE,
+)
+_ULM_COMBO_RE = re.compile(
+    r"3\.4\.1\s+Meisterprüfungsgebühr\s+gesamt\s+([\d.]+),(\d{2})",
+    re.IGNORECASE,
+)
+
+_HTML_BW_PART_RE = re.compile(
+    r"Teil\s+(I{1,3}|IV)\s*(?:\([^)]*\))?(?:\s*/[^\n:]*)?:\s*([\d.]+)(?:,(\d{2}))?\s*Euro",
+    re.IGNORECASE,
 )
 
 _BAVARIA_B_IV_PART_RE = re.compile(
@@ -465,19 +491,69 @@ def parse_bw_322_meister_fees(text: str) -> tuple[dict[int, float], dict[tuple[i
     fees: dict[int, float] = {}
     combos: dict[tuple[int, ...], float] = {}
     lower = text.lower()
-    start = lower.find("3.2.2")
+    start = lower.find("3.2.2 meisterprüfung")
+    if start < 0:
+        start = lower.find("3.2.2")
     if start < 0:
         start = lower.find("meisterprüfung")
-    block = text[start:start + 1800] if start >= 0 else text
+    end = lower.find("3.2.3", start + 5) if start >= 0 else -1
+    block = text[start:end if end > start else start + 2200] if start >= 0 else text
 
-    for match in _BW_PART_RE.finditer(block):
+    for match in _BW_SUBSECTION_PART_RE.finditer(block):
         fees[ROMAN[match.group(1).upper()]] = german_amount(match.group(2), match.group(3))
+
+    column_layout = (
+        len(fees) < 4
+        and re.search(r"Teilgebühr\s+Prüfungsteil\s+IV", block, re.IGNORECASE)
+        and re.search(r"Teilgebühr\s+Prüfungsteil\s+I\b", block, re.IGNORECASE)
+    )
+    if not column_layout and len(fees) < 4:
+        for match in _BW_PART_RE.finditer(block):
+            fees.setdefault(ROMAN[match.group(1).upper()], german_amount(match.group(2), match.group(3)))
+
+    if len(fees) < 4 and (column_layout or "zusammen" in block.lower()):
+        block_lower = block.lower()
+        idx = block_lower.rfind("teilgebühr prüfungsteil iv")
+        if idx < 0:
+            idx = block_lower.find("zusammen")
+        tail = block[idx:idx + 500]
+        amounts = [
+            german_amount(whole, cents)
+            for whole, cents in re.findall(r"([\d.]+),(\d{2})", tail)
+            if float(whole.replace(".", "") + "." + cents) >= 100
+        ]
+        if len(amounts) >= 5 and amounts[0] > amounts[1]:
+            combos[(1, 2, 3, 4)] = amounts[0]
+            fees = {1: amounts[1], 2: amounts[2], 3: amounts[3], 4: amounts[4]}
+
     for pattern in _BW_COMBO_RES:
         combo_m = pattern.search(block)
         if combo_m:
             combos[(1, 2, 3, 4)] = german_amount(combo_m.group(1), combo_m.group(2))
             break
     return fees, combos
+
+
+def parse_ulm_meister_fees(text: str) -> tuple[dict[int, float], dict[tuple[int, ...], float]]:
+    """HWK Ulm uses section 3.4.x instead of 3.2.2."""
+    fees: dict[int, float] = {}
+    combos: dict[tuple[int, ...], float] = {}
+    for match in _ULM_PART_RE.finditer(text):
+        fees[ROMAN[match.group(1).upper()]] = german_amount(match.group(2), match.group(3))
+    combo_m = _ULM_COMBO_RE.search(text)
+    if combo_m:
+        combos[(1, 2, 3, 4)] = german_amount(combo_m.group(1), combo_m.group(2))
+    return fees, combos
+
+
+def parse_bw_meister_fees_from_html(text: str) -> tuple[dict[int, float], dict[tuple[int, ...], float]]:
+    """Parse generic Teile I–IV amounts published on a chamber HTML page."""
+    fees: dict[int, float] = {}
+    start = text.lower().find("prüfungsgebühr")
+    block = text[start:start + 1200] if start >= 0 else text
+    for match in _HTML_BW_PART_RE.finditer(block):
+        fees[ROMAN[match.group(1).upper()]] = german_amount(match.group(2), match.group(3))
+    return fees, {}
 
 
 def parse_bavaria_b_iv_meister_fees(text: str) -> dict[int, float]:
@@ -548,17 +624,23 @@ def published_bw_322_exam_fee_rows(
     fallback_fees: dict[int, float],
     fallback_combos: dict[tuple[int, ...], float],
     label: str,
+    parse_pdf_fn=parse_bw_322_meister_fees,
+    parse_html_fn=None,
 ) -> list[dict]:
-    """Shared weekly-tariff helper for BW chambers using Gebührenverzeichnis § 3.2.2."""
-    pdf_url = resolve_pdf_url_from_page(
-        scraper,
-        page_url,
-        fallback_url=pdf_fallback,
-        href_substrings=("gebuehrenverzeichnis", "gebuehrenordnung"),
-        label=label,
-    ) or pdf_fallback
-    text = download_pdf_text(scraper, pdf_url, label=label) if pdf_url else ""
-    fees, combos = parse_bw_322_meister_fees(text) if text else ({}, {})
+    """Shared weekly-tariff helper for BW chambers (PDF and/or HTML sources)."""
+    fees: dict[int, float] = {}
+    combos: dict[tuple[int, ...], float] = {}
+
+    if pdf_fallback:
+        text = download_pdf_text(scraper, pdf_fallback, label=label)
+        if text:
+            fees, combos = parse_pdf_fn(text)
+
+    if not fees and parse_html_fn:
+        soup = scraper.parse_html(page_url)
+        if soup is not None:
+            fees, combos = parse_html_fn(soup.get_text("\n", strip=True))
+
     if not fees:
         logger.warning("%s: using fallback Meister exam fees.", label)
         fees, combos = fallback_fees, fallback_combos

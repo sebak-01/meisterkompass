@@ -15,11 +15,19 @@ from urllib.parse import urljoin, urlsplit, urlunsplit
 from bs4 import BeautifulSoup
 
 from .base import BaseScraper, RawCourseOffer, build_course_title
+from .exam_fee_tariff import published_bw_322_exam_fee_rows
 
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://www.gewerbeakademie.de"
 CATEGORY_URL = f"{BASE_URL}/weiterbildung/kursangebot/kategorie/meister-kompetenz/"
+
+EXAM_FEES_PAGE_URL = "https://www.hwk-freiburg.de/rechtsgrundlagen/"
+EXAM_FEES_PDF_URL = (
+    "https://www.hwk-freiburg.de/wp-content/uploads/Gebuehrenverzeichnis_ab_19.11.2025-1.pdf"
+)
+EXAM_FEES_FALLBACK = {1: 400.0, 2: 350.0, 3: 200.0, 4: 200.0}
+EXAM_COMBO_FALLBACK = {(1, 2, 3, 4): 1150.0}
 
 DATE_LOCATION_RE = re.compile(
     r"Termine:\s*(\d{2})\.(\d{2})\.(\d{4})\s*[-–]\s*(\d{2})\.(\d{2})\.(\d{4}),\s*"
@@ -221,4 +229,15 @@ class HwkFreiburgScraper(BaseScraper):
             availability="unknown",
             source_url=url,
             scraped_raw={"placeholder": True},
+        )
+
+    def published_exam_fee_rows(self) -> list[dict]:
+        return published_bw_322_exam_fee_rows(
+            self,
+            chamber_slug=self.chamber_slug,
+            page_url=EXAM_FEES_PAGE_URL,
+            pdf_fallback=EXAM_FEES_PDF_URL,
+            fallback_fees=EXAM_FEES_FALLBACK,
+            fallback_combos=EXAM_COMBO_FALLBACK,
+            label="HWK Freiburg",
         )

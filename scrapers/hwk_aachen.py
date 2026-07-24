@@ -8,6 +8,10 @@ from urllib.parse import urljoin
 from bs4 import Tag
 
 from .base import RawCourseOffer, normalize_trade
+from .exam_fee_tariff import (
+    parse_bw_meister_fees_from_html,
+    published_bw_322_exam_fee_rows,
+)
 from .hwk_bayern import (
     BavariaCatalogue,
     BavariaOdavScraper,
@@ -27,9 +31,9 @@ logger = logging.getLogger(__name__)
 BASE_URL = "https://www.hwk-aachen.de"
 LANDING_URL = f"{BASE_URL}/artikel/meisterschulen-kurse-33,0,244.html"
 EXAM_FEES_PAGE_URL = f"{BASE_URL}/artikel/meisterpruefung-33,0,55.html"
-FEES_PDF_URL = f"{BASE_URL}/downloads/gebuehrenverzeichnis-handwerkskammer-aachen-33,4332.pdf"
+EXAM_FEES_FALLBACK = {1: 380.0, 2: 200.0, 3: 250.0, 4: 150.0}
+GENERIC_EXAM_FEES = EXAM_FEES_FALLBACK
 SEARCH_TERMS = ("Meisterschule", "Meistervorbereitung", "Teil I", "Teil II", "Teil III")
-GENERIC_EXAM_FEES = {3: 250.0, 4: 240.0}
 
 
 def parse_aachen_title(title: str) -> tuple[list[int], str | None]:
@@ -238,26 +242,13 @@ class HwkAachenScraper(BavariaOdavScraper):
 
 
     def published_exam_fee_rows(self) -> list[dict]:
-        trade_fees, generic_fees = self._fetch_exam_fees_from_pdf()
-        rows: list[dict] = []
-        for trade_name, parts in trade_fees.items():
-            trade_slug = normalize_trade(trade_name)[0]
-            for part, fee in parts.items():
-                rows.append({
-                    "chamber_slug": self.chamber_slug,
-                    "trade_slug": trade_slug,
-                    "part": part,
-                    "fee": fee,
-                    "qualifier": "",
-                    "source_url": EXAM_FEES_PAGE_URL,
-                })
-        for part, fee in generic_fees.items():
-            rows.append({
-                "chamber_slug": self.chamber_slug,
-                "trade_slug": None,
-                "part": part,
-                "fee": fee,
-                "qualifier": "",
-                "source_url": EXAM_FEES_PAGE_URL,
-            })
-        return rows
+        return published_bw_322_exam_fee_rows(
+            self,
+            chamber_slug=self.chamber_slug,
+            page_url=EXAM_FEES_PAGE_URL,
+            pdf_fallback=None,
+            fallback_fees=EXAM_FEES_FALLBACK,
+            fallback_combos={},
+            label="HWK Aachen",
+            parse_html_fn=parse_bw_meister_fees_from_html,
+        )

@@ -1,6 +1,28 @@
 {
   "nested": {
     "hwk-aachen": {
+      "null": {
+        "1": {
+          "fee": 380.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 200.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "3": {
+          "fee": 250.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "4": {
+          "fee": 150.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
       "elektrotechniker": {
         "1,2": {
           "fee": 610.0,
@@ -1001,6 +1023,21 @@
     },
     "hwk-freiburg": {
       "null": {
+        "1": {
+          "fee": 400.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "1,2,3,4": {
+          "fee": 1150.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 350.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
         "3": {
           "fee": 200.0,
           "fee_max": null,
@@ -3683,11 +3720,6 @@
       "null": {
         "1": {
           "fee": 360.0,
-          "fee_max": null,
-          "qualifier": ""
-        },
-        "1,2,3,4": {
-          "fee": 1050.0,
           "fee_max": null,
           "qualifier": ""
         },

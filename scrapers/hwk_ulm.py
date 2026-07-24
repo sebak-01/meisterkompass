@@ -13,14 +13,17 @@ from urllib.parse import urljoin, urlsplit, urlunsplit
 from bs4 import BeautifulSoup, Tag
 
 from .base import BaseScraper, RawCourseOffer, build_course_title
-from .exam_fee_tariff import published_bw_322_exam_fee_rows
+from .exam_fee_tariff import parse_ulm_meister_fees, published_bw_322_exam_fee_rows
 
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://www.hwk-ulm.de"
 OVERVIEW_URL = f"{BASE_URL}/meister-teil1-und2/"
 
-EXAM_FEES_PAGE_URL = f"{BASE_URL}/artikel/gebuehren-3,0,85.html"
+EXAM_FEES_PAGE_URL = f"{BASE_URL}/satzung-rechtsgrundlagen/"
+EXAM_FEES_PDF_URL = (
+    f"{BASE_URL}/wp-content/uploads/Gebuehrenverzeichnis-Stand-10.12.2025-1.pdf"
+)
 EXAM_FEES_FALLBACK = {1: 580.0, 2: 470.0, 3: 260.0, 4: 280.0}
 EXAM_COMBO_FALLBACK = {(1, 2, 3, 4): 1570.0}
 
@@ -245,8 +248,9 @@ class HwkUlmScraper(BaseScraper):
             self,
             chamber_slug=self.chamber_slug,
             page_url=EXAM_FEES_PAGE_URL,
-            pdf_fallback=None,
+            pdf_fallback=EXAM_FEES_PDF_URL,
             fallback_fees=EXAM_FEES_FALLBACK,
             fallback_combos=EXAM_COMBO_FALLBACK,
             label="HWK Ulm",
+            parse_pdf_fn=parse_ulm_meister_fees,
         )
