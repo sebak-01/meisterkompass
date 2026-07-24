@@ -3,7 +3,12 @@ import unittest
 from unittest.mock import patch
 
 from scrapers.fees import build_exam_fee_lookup, resolve_exam_fee
-from scrapers.hwk_aachen import HwkAachenScraper, parse_aachen_title
+from scrapers.hwk_aachen import (
+    HwkAachenScraper,
+    _is_meister_card as aachen_is_meister_card,
+    _is_part_iii_iv_card,
+    parse_aachen_title,
+)
 from scrapers.hwk_bayern import parse_exam_fee
 from scrapers.hwk_dortmund import (
     HwkDortmundScraper,
@@ -50,6 +55,28 @@ class NrwParserTests(unittest.TestCase):
             parse_aachen_title("Betriebswirtschaft und Recht | Teil III der Meisterprüfung"),
             ([3], None),
         )
+
+    def test_aachen_part_iii_iv_card_detection(self):
+        self.assertTrue(_is_part_iii_iv_card(
+            "31.08.2026 - 16.10.2026: Vollzeit Betriebswirtschaft und Recht | Teil III der Meisterprüfung",
+            "/kurse/betriebswirtschaft-und-recht-teil-iii",
+        ))
+        self.assertTrue(_is_part_iii_iv_card(
+            "29.08.2026 - 16.10.2026: Vollzeit Geprüfte/r Fachmann/frau für kaufmännische Betriebsführung (HWO)",
+            "/kurse/gepruefte-r-fachmann-frau",
+        ))
+        self.assertTrue(_is_part_iii_iv_card(
+            "10.08.2026 - 21.08.2026: Vollzeit Ausbildung der Ausbilder nach AEVO 6",
+            "/kurse/ausbildung-der-ausbilder-nach-aevo",
+        ))
+        self.assertTrue(aachen_is_meister_card(
+            "31.08.2026 - 16.10.2026: Vollzeit Betriebswirtschaft und Recht | Teil III der Meisterprüfung",
+            "/kurse/betriebswirtschaft",
+        ))
+        self.assertFalse(aachen_is_meister_card(
+            "Infoveranstaltung Meisterprüfung",
+            "/kurse/info",
+        ))
 
     def test_owl_title_parsing(self):
         self.assertEqual(

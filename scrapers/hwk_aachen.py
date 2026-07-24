@@ -30,6 +30,9 @@ logger = logging.getLogger(__name__)
 
 BASE_URL = "https://www.hwk-aachen.de"
 LANDING_URL = f"{BASE_URL}/artikel/meisterschulen-kurse-33,0,244.html"
+UNTERNEHMENSFUEHRUNG_URL = f"{BASE_URL}/artikel/unternehmensfuehrung-33,0,136.html"  # hub page
+PART_III_URL = f"{BASE_URL}/artikel/betriebswirtschaft-und-recht-33,0,191.html"
+PART_IV_URL = f"{BASE_URL}/artikel/ausbildung-der-ausbilder-ada-33,0,192.html"
 EXAM_FEES_PAGE_URL = f"{BASE_URL}/artikel/meisterpruefung-33,0,55.html"
 EXAM_FEES_FALLBACK = {1: 380.0, 2: 200.0, 3: 250.0, 4: 150.0}
 GENERIC_EXAM_FEES = EXAM_FEES_FALLBACK
@@ -48,20 +51,42 @@ def parse_aachen_title(title: str) -> tuple[list[int], str | None]:
     return (parts, trade) if trade else ([], None)
 
 
+def _is_part_iii_iv_card(title: str, href: str) -> bool:
+    """Detect Meister Part III/IV courses linked from Unternehmensführung pages."""
+    lower = f"{title} {href}".lower()
+    if any(value in lower for value in (
+        "infoveranstaltung", "infotag", "infoabend", "schnupperstudium",
+    )):
+        return False
+    parts = parse_parts(title, implicit_trade_parts=True)
+    if not parts or not set(parts) <= {3, 4}:
+        return False
+    if 3 in parts:
+        return any(value in lower for value in (
+            "teil iii", "betriebswirtschaft", "betriebsführung",
+            "fachmann", "fachfrau", "kaufmännische",
+        ))
+    return any(value in lower for value in (
+        "teil iv", "ausbildung der ausbilder", "ada", "aevo",
+    ))
+
+
 def _is_meister_card(title: str, href: str) -> bool:
     lower = f"{title} {href}".lower()
     if any(value in lower for value in (
-        "infoveranstaltung", "infotag", "infoabend", "schnupperstudium", "aevo",
+        "infoveranstaltung", "infotag", "infoabend", "schnupperstudium",
         "gestalter im handwerk", "asbest-sachkunde", "schmiedetechnik",
-        "kommunikations- und präsentationstechniken", "betriebswirt",
+        "kommunikations- und präsentationstechniken",
         "geprüfte/r betriebswirt",
     )):
+        return False
+    if "aevo" in lower and not _is_part_iii_iv_card(title, href):
         return False
     parts = parse_parts(title, implicit_trade_parts=True)
     if not parts:
         return False
     if set(parts) <= {3, 4}:
-        return "teil iii" in lower or "teil iv" in lower or "betriebswirtschaft" in lower
+        return _is_part_iii_iv_card(title, href)
     _, trade = parse_aachen_title(title)
     return trade is not None
 
@@ -126,6 +151,9 @@ class HwkAachenScraper(BavariaOdavScraper):
                 if offset >= total:
                     break
 
+        for article_url in (PART_III_URL, PART_IV_URL):
+            unique.update(self._discover_from_article_page(article_url))
+
         offers: list[RawCourseOffer] = []
         for card in unique.values():
             try:
@@ -138,6 +166,32 @@ class HwkAachenScraper(BavariaOdavScraper):
 
         logger.info("HWK Aachen: parsed %d unique course offers.", len(offers))
         return offers
+
+    def _discover_from_article_page(self, article_url: str) -> dict[str, dict]:
+        cards: dict[str, dict] = {}
+        soup = self.parse_html(article_url)
+        if soup is None:
+            logger.warning("HWK Aachen: could not fetch article page %s", article_url)
+            return cards
+
+        for link in soup.select("a[href*='coursedetail']"):
+            href = link.get("href", "")
+            if "id=" not in href:
+                continue
+            raw_title = link.get_text(" ", strip=True)
+            if not _is_part_iii_iv_card(raw_title, href):
+                continue
+            detail_url = canonical_detail_url(BASE_URL, href)
+            course_id = course_id_from_url(detail_url) or detail_url
+            card = self._parse_aachen_card(link, detail_url, raw_title=raw_title)
+            if card:
+                cards[course_id] = card
+        logger.info(
+            "HWK Aachen: discovered %d Part III/IV course(s) on %s",
+            len(cards),
+            article_url,
+        )
+        return cards
 
     def _parse_card(self, link: Tag, detail_url: str | None = None) -> dict | None:
         raw_title = link.get_text(" ", strip=True)
