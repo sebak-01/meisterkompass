@@ -254,15 +254,39 @@ class BaseScraper(ABC):
                 })
         return rows
 
-    def collect(self) -> ScrapeResult:
-        """Run the scraper and return its in-memory result (no persistence)."""
+    def collect(
+        self,
+        *,
+        include_courses: bool = True,
+        include_published_fees: bool = False,
+    ) -> ScrapeResult:
+        """
+        Run the scraper and return its in-memory result (no persistence).
+
+        Daily course scrapes use ``include_courses=True`` and leave
+        chamber-wide Gebührenverzeichnis rows to the weekly fee job
+        (``include_published_fees=True``). Course-page ``exam_fee_scraped``
+        values are always collected with the courses and keep priority at
+        resolve time.
+        """
         logger.info("Starting scraper: %s", self.__class__.__name__)
-        offers = self.fetch_raw_courses()
+        offers: list[RawCourseOffer] = []
+        exam_fee_rows: list[dict] = []
+
+        if include_courses:
+            offers = self.fetch_raw_courses()
+            exam_fee_rows.extend(self.scraped_exam_fee_rows(offers))
+
+        if include_published_fees:
+            published = getattr(self, "published_exam_fee_rows", None)
+            if callable(published):
+                exam_fee_rows.extend(published())
+
         return ScrapeResult(
             chamber_slug=self.chamber_slug,
             chamber_name=self.chamber_name or self.chamber_slug,
             chamber_region=self.chamber_region,
             chamber_website=self.chamber_website,
             offers=offers,
-            exam_fee_rows=self.scraped_exam_fee_rows(offers),
+            exam_fee_rows=exam_fee_rows,
         )

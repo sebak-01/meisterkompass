@@ -39,8 +39,8 @@ Page structure (verified 2026-06-21):
   is its own separate card/link with its own unambiguous title — there is
   no multi-module-tab attribution problem on this chamber's pages.
 
-  Exam fees are not listed on these pages — left for manual entry, same as
-  HWK Kassel and HWK Frankfurt-Rhein-Main. All HWK in Hesse seem to have the same exam fees.
+  Exam fees are not listed on course pages; the weekly tariff job reads the
+  chamber Gebührenverzeichnis PDF (same Hesse schedule as Kassel / Rhein-Main).
 """
 
 import logging
@@ -50,11 +50,22 @@ from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 from bs4 import BeautifulSoup, Tag
 
 from .base import BaseScraper, RawCourseOffer, build_course_title
+from .exam_fee_tariff import (
+    combo_fee_rows,
+    download_pdf_text,
+    parse_hesse_schedule_fees,
+    part_fee_rows,
+    resolve_pdf_url_from_page,
+)
 
 logger = logging.getLogger(__name__)
 
 BASE_URL     = "https://www.hwk-wiesbaden.de"
 OVERVIEW_URL = f"{BASE_URL}/artikel/die-meisterschaft-im-handwerk-44,0,4281.html"
+EXAM_FEES_PAGE_URL = f"{BASE_URL}/artikel/gebuehrenverzeichnis-44,0,4481.html"
+EXAM_FEES_PDF_FALLBACK = f"{BASE_URL}/downloads/gebuehrenverzeichnis-2025-44,2121.pdf"
+GENERIC_EXAM_FEES = {1: 420.0, 2: 420.0, 3: 340.0, 4: 235.0}
+GENERIC_COMBO_EXAM_FEES = {(1, 2): 730.0, (3, 4): 490.0, (1, 2, 3, 4): 820.0}
 PAGE_SIZE    = 20
 
 # (trade article URL, canonical trade name or None for the generic Teil III/IV page)
@@ -295,3 +306,20 @@ class HwkWiesbadenScraper(BaseScraper):
             source_url=detail_url,
             scraped_raw={"title": title, "card_text": card_text[:400]},
         )
+
+    def published_exam_fee_rows(self) -> list[dict]:
+        pdf_url = resolve_pdf_url_from_page(
+            self,
+            EXAM_FEES_PAGE_URL,
+            fallback_url=EXAM_FEES_PDF_FALLBACK,
+            href_substrings=("gebuehrenverzeichnis",),
+            label="HWK Wiesbaden",
+        ) or EXAM_FEES_PDF_FALLBACK
+        pdf_text = download_pdf_text(self, pdf_url, label="HWK Wiesbaden")
+        fees, combos = parse_hesse_schedule_fees(pdf_text) if pdf_text else ({}, {})
+        if not fees:
+            logger.warning("HWK Wiesbaden: using fallback Meister exam fees.")
+            fees, combos = GENERIC_EXAM_FEES, GENERIC_COMBO_EXAM_FEES
+        rows = part_fee_rows(self.chamber_slug, fees, source_url=EXAM_FEES_PAGE_URL)
+        rows.extend(combo_fee_rows(self.chamber_slug, combos, source_url=EXAM_FEES_PAGE_URL))
+        return rows

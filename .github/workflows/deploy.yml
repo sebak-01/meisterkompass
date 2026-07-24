@@ -11,7 +11,9 @@ on:
   # The scrape job commits with GITHUB_TOKEN, which by design does not trigger
   # the push event above. Chain off the scrape workflow's completion instead.
   workflow_run:
-    workflows: ["Daily scrape → data JSON"]
+    workflows:
+      - "Daily course scrape → data JSON"
+      - "Weekly exam-fee tariff scrape → data JSON"
     types: [completed]
 
 permissions:

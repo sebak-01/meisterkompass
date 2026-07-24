@@ -5,7 +5,7 @@ import re
 from io import BytesIO
 from urllib.parse import urljoin
 
-from .base import RawCourseOffer, ScrapeResult
+from .base import RawCourseOffer
 from .hwk_bayern import BavariaCatalogue, BavariaOdavScraper
 
 logger = logging.getLogger(__name__)
@@ -140,10 +140,6 @@ class HwkPotsdamScraper(BavariaOdavScraper):
             logger.warning("HWK Potsdam: could not parse Meister exam fees from PDF.")
         return fees
 
-    def collect(self) -> ScrapeResult:
-        result = super().collect()
-        result.exam_fee_rows.extend(self.published_exam_fee_rows())
-        return result
 
     def published_exam_fee_rows(self) -> list[dict]:
         fees = self._fetch_exam_fees_from_pdf() or GENERIC_EXAM_FEES

@@ -6,7 +6,7 @@ from urllib.parse import urljoin, urlsplit, urlunsplit
 
 from bs4 import BeautifulSoup, Tag
 
-from .base import BaseScraper, RawCourseOffer, ScrapeResult, build_course_title
+from .base import BaseScraper, RawCourseOffer, build_course_title
 from .hwk_bayern import parse_parts, parse_trade
 
 logger = logging.getLogger(__name__)
@@ -267,10 +267,6 @@ class HwkSuedthueringenSuhlScraper(BaseScraper):
                 return node
         return None
 
-    def collect(self) -> ScrapeResult:
-        result = super().collect()
-        result.exam_fee_rows.extend(self.published_exam_fee_rows())
-        return result
 
     def published_exam_fee_rows(self) -> list[dict]:
         return [

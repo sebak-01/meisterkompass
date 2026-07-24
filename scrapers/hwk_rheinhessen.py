@@ -13,9 +13,8 @@ Architecture:
     WordPress page containing one or more course runs
   - Each course run block contains:
       date range, availability, full address, duration (Stunden), fee (EURO)
-  - Exam fees are not reliably listed on course pages; they require a
-    separate page per trade (e.g. /meisterpruefung-dachdecker/).
-    For now, exam fees are left blank and can be entered manually in admin.
+  - Exam fees are not reliably listed on course pages. Chamber-wide ranges
+    come from the Gebührenverzeichnis on /bekanntmachungen/ (weekly tariff job).
 
 Course run detection strategy:
   Since the WordPress pages have no standard container class per run,
@@ -29,11 +28,23 @@ import re
 from bs4 import BeautifulSoup
 
 from .base import BaseScraper, RawCourseOffer, build_course_title
+from .exam_fee_tariff import (
+    download_pdf_text,
+    parse_rheinhessen_meister_fees,
+    part_fee_rows,
+    resolve_pdf_url_from_page,
+)
 
 logger = logging.getLogger(__name__)
 
 BASE_URL      = "https://www.hwk.de"
 OVERVIEW_URL  = f"{BASE_URL}/meisterkurse/"
+EXAM_FEES_PAGE_URL = f"{BASE_URL}/bekanntmachungen/"
+EXAM_FEES_PDF_FALLBACK = (
+    f"{BASE_URL}/wp-content/uploads/2026_1201_Gebuehrenverzeichnis-1.pdf"
+)
+GENERIC_EXAM_FEES = {1: 600.0, 2: 300.0, 3: 220.0, 4: 220.0}
+GENERIC_EXAM_FEE_MAX = {1: 2000.0, 2: 700.0, 3: 300.0, 4: 500.0}
 
 # -----------------------------------------------------------------------
 # Known trade pages with their canonical trade name and parts.
@@ -447,4 +458,25 @@ class HwkRheinhessenScraper(BaseScraper):
                 "location_name":  location_name,
                 "block_preview":  block[:300],
             },
+        )
+
+    def published_exam_fee_rows(self) -> list[dict]:
+        pdf_url = resolve_pdf_url_from_page(
+            self,
+            EXAM_FEES_PAGE_URL,
+            fallback_url=EXAM_FEES_PDF_FALLBACK,
+            href_substrings=("gebuehrenverzeichnis",),
+            skip_substrings=("genehmigung",),
+            label="HWK Rheinhessen",
+        ) or EXAM_FEES_PDF_FALLBACK
+        text = download_pdf_text(self, pdf_url, label="HWK Rheinhessen")
+        fees, fee_max = parse_rheinhessen_meister_fees(text) if text else ({}, {})
+        if not fees:
+            logger.warning("HWK Rheinhessen: using fallback Meister exam fee ranges.")
+            fees, fee_max = GENERIC_EXAM_FEES, GENERIC_EXAM_FEE_MAX
+        return part_fee_rows(
+            self.chamber_slug,
+            fees,
+            source_url=EXAM_FEES_PAGE_URL,
+            fee_max=fee_max,
         )

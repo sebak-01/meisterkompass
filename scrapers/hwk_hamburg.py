@@ -25,7 +25,7 @@ Three kinds of Meistervorbereitung page are collected:
 
 Exam fees are parsed from the course-page prose when stated (e.g. ELBCAMPUS
 ``Für Ihren Lehrgang betragen diese z. Zt. … €``); otherwise they fall back to
-manual curation in ``data/manual/exam_fees_manual.json``.
+the chamber Gebührenordnung PDF (weekly tariff scrape).
 """
 
 import json
@@ -36,12 +36,25 @@ from urllib.parse import urljoin
 from bs4 import BeautifulSoup, Tag
 
 from .base import BaseScraper, RawCourseOffer, build_course_title
+from .exam_fee_tariff import (
+    download_pdf_text,
+    parse_hamburg_meister_fees,
+    published_rows_from_part_and_combo,
+    resolve_pdf_url_from_page,
+)
 from .format_keys import parse_format_key
 
 logger = logging.getLogger(__name__)
 
 BASE_URL     = "https://www.elbcampus.de"
 OVERVIEW_URL = BASE_URL + "/weiterbildung/meistervorbereitung/"
+
+EXAM_FEES_PAGE_URL = "https://www.hwk-hamburg.de/artikel/gebuehren-und-beitraege-93,139,67.html"
+EXAM_FEES_PDF_FALLBACK = (
+    "https://www.hwk-hamburg.de/downloads/gebuehrenordnung-handwerkskammer-hamburg-93,14.pdf"
+)
+EXAM_FEES_FALLBACK = {1: 430.0, 2: 430.0, 3: 350.0, 4: 350.0}
+EXAM_COMBO_FALLBACK = {(1, 2, 3, 4): 1300.0}
 
 # Cross-trade course pages: URL slug → generic exam part it prepares for.
 GENERIC_PAGES: dict[str, int] = {
@@ -468,4 +481,24 @@ class HwkHamburgScraper(BaseScraper):
                 "workload":     inst.get("courseWorkload"),
                 "availability_label": availability,
             },
+        )
+
+    def published_exam_fee_rows(self) -> list[dict]:
+        pdf_url = resolve_pdf_url_from_page(
+            self,
+            EXAM_FEES_PAGE_URL,
+            fallback_url=EXAM_FEES_PDF_FALLBACK,
+            href_substrings=("gebuehrenordnung",),
+            label="HWK Hamburg",
+        ) or EXAM_FEES_PDF_FALLBACK
+        text = download_pdf_text(self, pdf_url, label="HWK Hamburg")
+        fees, combos = parse_hamburg_meister_fees(text) if text else ({}, {})
+        if not fees:
+            logger.warning("HWK Hamburg: using fallback Meister exam fees.")
+            fees, combos = EXAM_FEES_FALLBACK, EXAM_COMBO_FALLBACK
+        return published_rows_from_part_and_combo(
+            self.chamber_slug,
+            fees,
+            combos,
+            source_url=EXAM_FEES_PAGE_URL,
         )

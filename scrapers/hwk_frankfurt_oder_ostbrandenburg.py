@@ -7,7 +7,7 @@ from urllib.parse import urljoin, urlsplit, urlunsplit
 
 from bs4 import BeautifulSoup, Tag
 
-from .base import BaseScraper, RawCourseOffer, ScrapeResult, build_course_title
+from .base import BaseScraper, RawCourseOffer, build_course_title
 from .format_keys import parse_format_key
 from .hwk_bayern import parse_parts, parse_trade
 
@@ -334,10 +334,6 @@ class HwkFrankfurtOderOstbrandenburgScraper(BaseScraper):
     def _fetch_exam_fees(self) -> dict[int, float]:
         return self._fetch_exam_fees_from_pdf()
 
-    def collect(self) -> ScrapeResult:
-        result = super().collect()
-        result.exam_fee_rows.extend(self.published_exam_fee_rows())
-        return result
 
     def published_exam_fee_rows(self) -> list[dict]:
         fees = self._fetch_exam_fees_from_pdf() or GENERIC_EXAM_FEES

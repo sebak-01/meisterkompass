@@ -259,8 +259,20 @@ class CityStateScraperIntegrationTests(unittest.TestCase):
 class CityStateExamFeeTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        fee_path = Path(__file__).resolve().parents[1] / "data" / "manual" / "exam_fees_manual.json"
-        cls.lookup = build_exam_fee_lookup([], json.loads(fee_path.read_text(encoding="utf-8")))
+        from unittest.mock import patch
+
+        from scrapers.hwk_bremen import HwkBremenScraper
+        from scrapers.hwk_berlin import HwkBerlinScraper
+        from scrapers.hwk_hamburg import HwkHamburgScraper
+
+        rows: list[dict] = []
+        with patch("scrapers.hwk_berlin.download_pdf_text", return_value=""), \
+             patch("scrapers.hwk_hamburg.download_pdf_text", return_value=""), \
+             patch("scrapers.hwk_bremen.download_pdf_text", return_value=""):
+            rows.extend(HwkBerlinScraper().published_exam_fee_rows())
+            rows.extend(HwkHamburgScraper().published_exam_fee_rows())
+            rows.extend(HwkBremenScraper().published_exam_fee_rows())
+        cls.lookup = build_exam_fee_lookup(rows, [])
 
     def test_berlin_full_master_exam_bundle(self):
         resolved = resolve_exam_fee("hwk-berlin", "elektrotechniker", [1, 2, 3, 4], None, self.lookup)

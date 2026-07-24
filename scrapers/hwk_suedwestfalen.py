@@ -17,7 +17,7 @@ try:
 except ImportError:  # pragma: no cover - exercised via fallback in tests
     cloudscraper = None
 
-from .base import BaseScraper, RawCourseOffer, ScrapeResult, build_course_title, normalize_trade
+from .base import BaseScraper, RawCourseOffer, build_course_title, normalize_trade
 from .hwk_bayern import parse_parts, parse_trade
 
 logger = logging.getLogger(__name__)
@@ -568,10 +568,6 @@ class HwkSuedwestfalenScraper(BaseScraper):
             return None
         return fees, combo
 
-    def collect(self) -> ScrapeResult:
-        result = super().collect()
-        result.exam_fee_rows.extend(self.published_exam_fee_rows())
-        return result
 
     def published_exam_fee_rows(self) -> list[dict]:
         fetched = self._fetch_exam_fees_from_pdf()

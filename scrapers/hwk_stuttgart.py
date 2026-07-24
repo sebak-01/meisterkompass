@@ -16,6 +16,7 @@ from bs4 import BeautifulSoup
 
 from .base import BaseScraper, RawCourseOffer, build_course_title
 from .biv_suedwest import BAKER_COURSE_URL, parse_baker_offers
+from .exam_fee_tariff import parse_bw_meister_fees_from_html, published_bw_322_exam_fee_rows
 
 logger = logging.getLogger(__name__)
 
@@ -27,6 +28,12 @@ DEFAULT_LOCATION = {
     "zip_code": "70499",
     "city": "Stuttgart",
 }
+
+EXAM_FEES_PAGE_URL = (
+    "https://www.hwk-stuttgart.de/artikel/meisterpruefung-alles-wichtige-auf-einen-blick-67,230,525.html"
+)
+EXAM_FEES_FALLBACK = {1: 360.0, 2: 330.0, 3: 180.0, 4: 180.0}
+EXAM_COMBO_FALLBACK = {(1, 2, 3, 4): 1050.0}
 
 
 @dataclass(frozen=True)
@@ -177,4 +184,16 @@ class HwkStuttgartScraper(BaseScraper):
             availability=spec.placeholder_availability,
             source_url=spec.url,
             scraped_raw={"course_url": spec.url, "placeholder": True, "course_text": text[:700]},
+        )
+
+    def published_exam_fee_rows(self) -> list[dict]:
+        return published_bw_322_exam_fee_rows(
+            self,
+            chamber_slug=self.chamber_slug,
+            page_url=EXAM_FEES_PAGE_URL,
+            pdf_fallback=None,
+            fallback_fees=EXAM_FEES_FALLBACK,
+            fallback_combos=EXAM_COMBO_FALLBACK,
+            label="HWK Stuttgart",
+            parse_html_fn=parse_bw_meister_fees_from_html,
         )

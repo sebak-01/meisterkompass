@@ -2,24 +2,23 @@
 
 import logging
 import re
-from io import BytesIO
-from urllib.parse import urljoin
 
 from bs4 import Tag
 
-from .base import RawCourseOffer, ScrapeResult
+from .base import RawCourseOffer
+from .exam_fee_tariff import download_pdf_text, part_fee_rows, resolve_pdf_url_from_page
 from .hwk_bayern import (
-    BavariaCatalogue,
-    BavariaOdavScraper,
     canonical_detail_url,
+    parse_availability,
     parse_dates,
     parse_euro,
     parse_format_and_mode,
     parse_parts,
     parse_trade,
-    parse_availability,
     DURATION_RE,
 )
+from .odav import OdavCatalogue as BavariaCatalogue
+from .odav import OdavCatalogueScraper as BavariaOdavScraper
 
 logger = logging.getLogger(__name__)
 
@@ -188,51 +187,27 @@ class HwkCottbusScraper(BavariaOdavScraper):
         return fees
 
     def _resolve_exam_fees_pdf_url(self) -> str:
-        soup = self.parse_html(EXAM_FEES_PAGE_URL)
-        if soup is None:
-            return FEES_PDF_URL
-        for link in soup.select("a[href*='gebuehrenverzeichnis']"):
-            href = link.get("href", "")
-            if href.lower().endswith(".pdf"):
-                return urljoin(BASE_URL, href)
-        return FEES_PDF_URL
+        return resolve_pdf_url_from_page(
+            self,
+            EXAM_FEES_PAGE_URL,
+            fallback_url=FEES_PDF_URL,
+            href_substrings=("gebuehrenverzeichnis",),
+            label="HWK Cottbus",
+        ) or FEES_PDF_URL
 
     def _fetch_exam_fees_from_pdf(self) -> dict[int, float]:
-        try:
-            from pypdf import PdfReader
-        except ImportError:
-            logger.warning("HWK Cottbus: pypdf not installed — using fallback exam fees.")
+        text = download_pdf_text(self, self._resolve_exam_fees_pdf_url(), label="HWK Cottbus")
+        if not text:
             return {}
-
-        pdf_url = self._resolve_exam_fees_pdf_url()
-        response = self.get(pdf_url)
-        if response is None:
-            logger.warning("HWK Cottbus: could not fetch exam-fee PDF.")
-            return {}
-
-        text = ""
-        for page in PdfReader(BytesIO(response.content)).pages:
-            text += (page.extract_text() or "") + "\n"
         fees = self.parse_meister_exam_fees(text)
         if not fees:
             logger.warning("HWK Cottbus: could not parse Meister exam fees from PDF.")
         return fees
 
-    def collect(self) -> ScrapeResult:
-        result = super().collect()
-        result.exam_fee_rows.extend(self.published_exam_fee_rows())
-        return result
-
     def published_exam_fee_rows(self) -> list[dict]:
         fees = self._fetch_exam_fees_from_pdf() or GENERIC_EXAM_FEES
-        rows: list[dict] = []
-        for part, fee in fees.items():
-            rows.append({
-                "chamber_slug": self.chamber_slug,
-                "trade_slug": None,
-                "part": part,
-                "fee": fee,
-                "qualifier": "",
-                "source_url": EXAM_FEES_PAGE_URL,
-            })
-        return rows
+        return part_fee_rows(
+            self.chamber_slug,
+            fees,
+            source_url=EXAM_FEES_PAGE_URL,
+        )

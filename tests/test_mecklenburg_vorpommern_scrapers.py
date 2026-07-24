@@ -59,7 +59,7 @@ class MecklenburgVorpommernParserTests(unittest.TestCase):
                 "_fetch_exam_fees_from_pdf",
                 return_value={1: 400.0, 2: 400.0, 3: 200.0, 4: 200.0},
             ):
-                rows = scraper.collect().exam_fee_rows
+                rows = scraper.collect(include_published_fees=True).exam_fee_rows
         lookup = build_exam_fee_lookup(rows, [])
         self.assertEqual(
             resolve_exam_fee(scraper.chamber_slug, "any-trade", [1, 2], None, lookup)["fee"],
@@ -126,7 +126,7 @@ class MecklenburgVorpommernParserTests(unittest.TestCase):
                 "_fetch_exam_fees_from_pdf",
                 return_value={1: 380.0, 2: 330.0, 3: 190.0, 4: 190.0},
             ):
-                rows = scraper.collect().exam_fee_rows
+                rows = scraper.collect(include_published_fees=True).exam_fee_rows
         lookup = build_exam_fee_lookup(rows, [])
         self.assertEqual(
             resolve_exam_fee(scraper.chamber_slug, "any-trade", [1, 2], None, lookup)["fee"],

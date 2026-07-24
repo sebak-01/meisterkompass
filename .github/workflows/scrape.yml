@@ -1,4 +1,4 @@
-name: Daily scrape → data JSON
+name: Daily course scrape → data JSON
 
 on:
   schedule:
@@ -34,8 +34,8 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Scrape regional batch
-        run: python -m scrapers.run --group ${{ matrix.group }} --partial-out partial-${{ matrix.group }}.json
+      - name: Scrape regional course batch
+        run: python -m scrapers.run --mode courses --group ${{ matrix.group }} --partial-out partial-${{ matrix.group }}.json
 
       - name: Upload scrape partial
         uses: actions/upload-artifact@v7
@@ -81,7 +81,7 @@ jobs:
           merge-multiple: true
 
       - name: Merge partials → data/*.json
-        run: python -m scrapers.run --merge-partials partials/partial-*.json
+        run: python -m scrapers.run --mode courses --merge-partials partials/partial-*.json
 
       - name: Commit data changes
         env:
@@ -93,10 +93,10 @@ jobs:
           if git diff --staged --quiet; then
             echo "No data changes."
           else
-            git commit -m "data: scheduled scrape $(date -u +%Y-%m-%dT%H:%MZ)"
+            git commit -m "data: scheduled course scrape $(date -u +%Y-%m-%dT%H:%MZ)"
             git push
           fi
 
       - name: Notify on failure
         if: failure()
-        run: echo "Scraper run failed — check logs above."
+        run: echo "Course scraper run failed — check logs above."

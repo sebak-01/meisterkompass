@@ -5,7 +5,6 @@ import re
 
 from bs4 import BeautifulSoup
 
-from .base import ScrapeResult
 from .hwk_universal_kdb import KdbCatalogue, UniversalKdbScraper
 
 logger = logging.getLogger(__name__)
@@ -71,7 +70,3 @@ class HwkLuebeckScraper(UniversalKdbScraper):
             for part, fee in fees.items()
         ]
 
-    def collect(self) -> ScrapeResult:
-        result = super().collect()
-        result.exam_fee_rows.extend(self.published_exam_fee_rows())
-        return result

@@ -12,6 +12,7 @@ import re
 from bs4 import BeautifulSoup, Tag
 
 from .base import BaseScraper, RawCourseOffer, build_course_title
+from .exam_fee_tariff import published_bw_322_exam_fee_rows
 
 logger = logging.getLogger(__name__)
 
@@ -43,6 +44,11 @@ DEFAULT_LOCATION = {
     "street": "Gutenbergstraße 49",
     "zip_code": "68167",
 }
+
+EXAM_FEES_PAGE_URL = "https://www.hwk-mannheim.de/artikel/rechtsgrundlagen-65,743,4353.html"
+EXAM_FEES_PDF_URL = "https://www.hwk-mannheim.de/downloads/pdf-das-gebuehrenverzeichnis-65,451.pdf"
+EXAM_FEES_FALLBACK = {1: 400.0, 2: 350.0, 3: 200.0, 4: 200.0}
+EXAM_COMBO_FALLBACK = {(1, 2, 3, 4): 1150.0}
 
 
 def parse_parts(title: str) -> list[int]:
@@ -201,4 +207,15 @@ class HwkMannheimScraper(BaseScraper):
             availability=parse_availability(card_text),
             source_url=detail_url,
             scraped_raw={"title": source_title, "card_text": card_text[:500]},
+        )
+
+    def published_exam_fee_rows(self) -> list[dict]:
+        return published_bw_322_exam_fee_rows(
+            self,
+            chamber_slug=self.chamber_slug,
+            page_url=EXAM_FEES_PAGE_URL,
+            pdf_fallback=EXAM_FEES_PDF_URL,
+            fallback_fees=EXAM_FEES_FALLBACK,
+            fallback_combos=EXAM_COMBO_FALLBACK,
+            label="HWK Mannheim",
         )

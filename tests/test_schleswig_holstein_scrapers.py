@@ -142,7 +142,7 @@ class SchleswigHolsteinParserTests(unittest.TestCase):
                 "_fetch_exam_fees_from_page",
                 return_value={1: 585.0, 2: 585.0, 3: 380.0, 4: 380.0},
             ):
-                rows = scraper.collect().exam_fee_rows
+                rows = scraper.collect(include_published_fees=True).exam_fee_rows
         lookup = build_exam_fee_lookup(rows, [])
         self.assertEqual(
             resolve_exam_fee(scraper.chamber_slug, "any-trade", [1, 2], None, lookup)["fee"],

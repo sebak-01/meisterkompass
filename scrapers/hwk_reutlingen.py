@@ -7,13 +7,19 @@ from dataclasses import dataclass
 from bs4 import BeautifulSoup, Tag
 
 from .base import BaseScraper, RawCourseOffer, build_course_title
+from .bw_course_spec import DATE_RE, parse_bw_availability
+from .exam_fee_tariff import published_bw_322_exam_fee_rows
 
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://www.hwk-reutlingen.de"
 OVERVIEW_URL = f"{BASE_URL}/weiterbildung/der-weg-zum-meister/vorbereitung-und-pruefung/"
 
-DATE_RE = re.compile(r"^(\d{2})\.(\d{2})\.(\d{4})\s*[—–-]\s*(\d{2})\.(\d{2})\.(\d{4})$")
+EXAM_FEES_PAGE_URL = f"{BASE_URL}/ueber-uns/rechtsgrundlagen/"
+EXAM_FEES_PDF_URL = f"{BASE_URL}/wp-content/uploads/gebuehrenverzeichnis_januar-2026.pdf"
+EXAM_FEES_FALLBACK = {1: 300.0, 2: 350.0, 3: 200.0, 4: 250.0}
+EXAM_COMBO_FALLBACK = {(1, 2, 3, 4): 1100.0}
+
 DURATION_RE = re.compile(r"Seminardauer\s+([\d.]+)\s+Unterrichtseinheiten", re.IGNORECASE)
 PRICE_RE = re.compile(r"Kosten\s+([\d.]+),(\d{2})\s*€", re.IGNORECASE)
 COMBINED_PRICE_RE = re.compile(
@@ -56,15 +62,7 @@ LOCATIONS = {
 
 
 def parse_availability(text: str) -> str:
-    lower = text.lower()
-    if any(value in lower for value in ("keine plätze mehr frei", "bereits ausgebucht", "buchung ist nicht mehr möglich")):
-        return "full"
-    if "warteliste" in lower:
-        return "waitlist"
-    if "freie plätze" in lower or "freier platz" in lower or "in den warenkorb" in lower:
-        return "available"
-    return "unknown"
-
+    return parse_bw_availability(text)
 
 def parse_location(text: str) -> dict:
     lower = text.lower()
@@ -173,4 +171,15 @@ class HwkReutlingenScraper(BaseScraper):
             availability="unknown",
             source_url=spec.url,
             scraped_raw={"placeholder": True},
+        )
+
+    def published_exam_fee_rows(self) -> list[dict]:
+        return published_bw_322_exam_fee_rows(
+            self,
+            chamber_slug=self.chamber_slug,
+            page_url=EXAM_FEES_PAGE_URL,
+            pdf_fallback=EXAM_FEES_PDF_URL,
+            fallback_fees=EXAM_FEES_FALLBACK,
+            fallback_combos=EXAM_COMBO_FALLBACK,
+            label="HWK Reutlingen",
         )

@@ -300,8 +300,12 @@ class BavariaRegistrationTests(unittest.TestCase):
             self.assertEqual(scraper_class.chamber_region, "Bayern")
 
     def test_published_generic_exam_fee_schedules(self):
-        fee_path = Path(__file__).resolve().parents[1] / "data/manual/exam_fees_manual.json"
-        lookup = build_exam_fee_lookup([], json.loads(fee_path.read_text(encoding="utf-8")))
+        from unittest.mock import patch
+
+        from scrapers.hwk_schwaben import HwkSchwabenScraper
+
+        with patch("scrapers.exam_fee_tariff.download_pdf_text", return_value=""):
+            lookup = build_exam_fee_lookup(HwkSchwabenScraper().published_exam_fee_rows(), [])
 
         schwaben = resolve_exam_fee(
             "hwk-schwaben", "any-trade", [3, 4], None, lookup

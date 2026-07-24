@@ -653,6 +653,16 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-aachen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      3
+    ],
+    "fee": 1935.0,
+    "exam_fee_scraped": 250.0,
+    "is_generic": true
+  },
+  {
     "chamber_slug": "hwk-hildesheim-suedniedersachsen",
     "trade_slug": "allgemein-teil-iii-iv",
     "parts": [
@@ -893,6 +903,16 @@
     ],
     "fee": 1800.0,
     "exam_fee_scraped": null,
+    "is_generic": true
+  },
+  {
+    "chamber_slug": "hwk-aachen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      4
+    ],
+    "fee": 685.0,
+    "exam_fee_scraped": 150.0,
     "is_generic": true
   },
   {

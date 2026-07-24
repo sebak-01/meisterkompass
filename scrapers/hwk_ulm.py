@@ -12,12 +12,30 @@ from urllib.parse import urljoin, urlsplit, urlunsplit
 
 from bs4 import BeautifulSoup, Tag
 
-from .base import BaseScraper, RawCourseOffer, build_course_title
+from .base import BaseScraper, RawCourseOffer, build_course_title, normalize_trade
+from .exam_fee_tariff import (
+    combo_fee_rows,
+    download_pdf_text,
+    part_fee_rows,
+    parse_ulm_infoblatt_fees,
+)
 
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://www.hwk-ulm.de"
 OVERVIEW_URL = f"{BASE_URL}/meister-teil1-und2/"
+
+EXAM_FEES_PAGE_URL = f"{BASE_URL}/meisterpruefung/"
+EXAM_FEES_PDF_URL = (
+    f"{BASE_URL}/wp-content/uploads/Infoblatt-Meisterpruefungsgebuehr-2.pdf"
+)
+EXAM_FEES_FALLBACK = {1: 580.0, 2: 470.0, 3: 260.0, 4: 280.0}
+EXAM_COMBO_FALLBACK = {(1, 2, 3, 4): 1590.0}
+
+ULM_EXAM_FEE_TRADE_ALIASES = {
+    "Friseure": "Friseur",
+    "Kraftfahrzeugtechniker": "Kfz.-Techniker",
+}
 
 DATE_RANGE_RE = re.compile(
     r"(\d{2})\.(\d{2})\.(\d{4})\s*[-–]\s*(\d{2})\.(\d{2})\.(\d{4})"
@@ -234,3 +252,44 @@ class HwkUlmScraper(BaseScraper):
             if "Kurstyp" in text and "Kursort" in text and "Kurs-Nr." in text:
                 return node
         return None
+
+    def published_exam_fee_rows(self) -> list[dict]:
+        text = download_pdf_text(self, EXAM_FEES_PDF_URL, label="HWK Ulm")
+        if text:
+            generic, combos, trade_part1, trade_part1_max = parse_ulm_infoblatt_fees(text)
+        else:
+            generic, combos, trade_part1, trade_part1_max = {}, {}, {}, {}
+
+        if not generic:
+            logger.warning("HWK Ulm: using fallback Meister exam fees.")
+            generic, combos = EXAM_FEES_FALLBACK, EXAM_COMBO_FALLBACK
+
+        rows: list[dict] = []
+        for trade_name, parts in trade_part1.items():
+            canonical = ULM_EXAM_FEE_TRADE_ALIASES.get(trade_name, trade_name)
+            trade_slug = normalize_trade(canonical)[0]
+            for part, fee in parts.items():
+                row = {
+                    "chamber_slug": self.chamber_slug,
+                    "trade_slug": trade_slug,
+                    "part": part,
+                    "fee": float(fee),
+                    "qualifier": "",
+                    "source_url": EXAM_FEES_PAGE_URL,
+                }
+                fee_max = trade_part1_max.get(trade_name, {}).get(part)
+                if fee_max is not None:
+                    row["fee_max"] = float(fee_max)
+                rows.append(row)
+
+        rows.extend(part_fee_rows(
+            self.chamber_slug,
+            generic,
+            source_url=EXAM_FEES_PAGE_URL,
+        ))
+        rows.extend(combo_fee_rows(
+            self.chamber_slug,
+            combos,
+            source_url=EXAM_FEES_PAGE_URL,
+        ))
+        return rows

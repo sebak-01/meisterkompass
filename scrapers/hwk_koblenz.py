@@ -10,8 +10,8 @@ HTML structure (verified 2026-05-20 via debug_koblenz.py):
     - <div class='col-sm-5'> with <h3> → date range + format + course title link
     - Details col → price (6.990,00 €), duration (650 Std.), city, availability
 
-  Exam fees are NOT listed on course pages; enter manually from the PDF
-  Gebührenverzeichnis at https://wisum.hwk-koblenz.de/bildung/pdf/meisterakademie/
+  Exam fees are NOT listed on course pages; weekly tariff scrape reads the
+  Gebührenverzeichnis PDF from the Rechtsgrundlagen page.
 """
 
 import logging
@@ -20,6 +20,12 @@ import re
 from bs4 import BeautifulSoup, Tag
 
 from .base import BaseScraper, RawCourseOffer, build_course_title
+from .exam_fee_tariff import (
+    download_pdf_text,
+    parse_koblenz_meister_fees,
+    part_fee_rows,
+    resolve_pdf_url_from_page,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -28,6 +34,13 @@ LIST_URL = (
     "?search-filter-template=0&search-type=6&limit=20&offset={offset}"
 )
 PAGE_SIZE = 20
+EXAM_FEES_PAGE_URL = (
+    "https://www.hwk-koblenz.de/artikel/rechtsgrundlagen-52,86,199.html#gebuehren"
+)
+EXAM_FEES_PDF_FALLBACK = (
+    "https://www.hwk-koblenz.de/downloads/gebuehrenverzeichnis-2025-52,1964.pdf"
+)
+GENERIC_EXAM_FEES = {1: 1200.0, 2: 600.0, 3: 400.0, 4: 400.0}
 
 # Maps title/heading keywords to (format_key, teaching_mode)
 FORMAT_MAP = {
@@ -249,3 +262,23 @@ class HwkKoblenzScraper(BaseScraper):
             logger.warning("Could not fetch detail address from %s: %s", url, exc)
 
         return DEFAULT_STREET, DEFAULT_ZIP
+
+    def published_exam_fee_rows(self) -> list[dict]:
+        pdf_url = resolve_pdf_url_from_page(
+            self,
+            EXAM_FEES_PAGE_URL,
+            fallback_url=EXAM_FEES_PDF_FALLBACK,
+            href_substrings=("gebuehrenverzeichnis",),
+            label="HWK Koblenz",
+        ) or EXAM_FEES_PDF_FALLBACK
+        text = download_pdf_text(self, pdf_url, label="HWK Koblenz")
+        fees, qualifier = parse_koblenz_meister_fees(text) if text else ({}, "bis zu")
+        if not fees:
+            logger.warning("HWK Koblenz: using fallback Meister exam fees.")
+            fees, qualifier = GENERIC_EXAM_FEES, "bis zu"
+        return part_fee_rows(
+            self.chamber_slug,
+            fees,
+            source_url=EXAM_FEES_PAGE_URL,
+            qualifier=qualifier,
+        )
