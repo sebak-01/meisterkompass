@@ -11,6 +11,7 @@ from urllib.parse import parse_qs, urlencode, urljoin, urlsplit, urlunsplit
 from bs4 import BeautifulSoup, Tag
 
 from .base import BaseScraper, RawCourseOffer, build_course_title
+from .format_keys import parse_format_key
 
 logger = logging.getLogger(__name__)
 
@@ -215,7 +216,7 @@ def parse_dates(text: str) -> tuple[str | None, str | None]:
 
 def parse_format_and_mode(text: str) -> tuple[str, str]:
     lower = text.lower()
-    format_key = "full_time" if "vollzeit" in lower else "part_time"
+    format_key = parse_format_key(text)
     has_online = any(word in lower for word in ("online", "e-learning", "virtuell"))
     has_presence = any(word in lower for word in ("präsenz", "praesenz", "blended", "hybrid"))
     if has_online and has_presence:
