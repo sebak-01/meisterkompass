@@ -34,6 +34,33 @@ const TRADES = tradesData.filter((t) => tradeIds12.has(t.slug)).map((t) => ({ id
 
 const PART_LABELS = { 1: "Teil I", 2: "Teil II", 3: "Teil III", 4: "Teil IV" };
 const MAX_FOERDERBAR = 15000;
+const DISCLAIMER =
+  "Alle Angaben ohne Gewähr. Erkundige dich bei der jeweiligen Kammer für zuverlässige Informationen.";
+const EMPTY_FEE = 0;
+
+function feeInputValue(value) {
+  return value != null ? value : EMPTY_FEE;
+}
+
+function isSubsetParts(subset, superset) {
+  return subset.every((p) => superset.includes(p));
+}
+
+/** Drop singles covered by a combo and smaller combos covered by a larger one. */
+function filterRedundantGroups(groups) {
+  const combos = groups.filter((g) => g.parts.length > 1);
+  return groups.filter((g) => {
+    if (g.parts.length === 1) {
+      return !combos.some((combo) => combo.parts.includes(g.parts[0]));
+    }
+    return !combos.some(
+      (other) =>
+        other !== g &&
+        other.parts.length > g.parts.length &&
+        isSubsetParts(g.parts, other.parts),
+    );
+  });
+}
 let currentMode = "auto";
 let currentCid = null;
 let currentTid = null;
@@ -189,16 +216,16 @@ function fillExamFees() {
     }
 
     if (hasAny) {
-      // Neither a range ("Spanne", e.g. HWK Rheinhessen) nor a "bis zu"
-      // qualifier (e.g. HWK Koblenz) is a fee the chamber commits to in
-      // advance — the exact amount is set by the chamber later. Pre-filling
-      // a computed midpoint/maximum would misrepresent that as a known fee,
-      // so leave the input blank in both cases; the range/qualifier is still
-      // shown as a hint via buildExamLabel()'s tooltip.
-      g.examFee = (hasMax || qualifier) ? null : totalFee;
       g.examFeeMin = totalMin;
       g.examFeeMax = hasMax ? totalMax : null;
       g.qualifier = qualifier;
+      if (g.fromTariff) {
+        // Gebührenverzeichnis / manual fees: show amount beside the label only.
+        g.examFee = null;
+      } else {
+        // Course-page fee: pre-fill unless range or non-tariff qualifier applies.
+        g.examFee = (hasMax || qualifier) ? null : totalFee;
+      }
     }
   });
 }
@@ -257,13 +284,7 @@ function renderFeeInputs() {
     });
     groupsToRender = shownGroups;
   } else {
-    const activeComboGroups = allComboGroups;
-    groupsToRender = candidateGroups.filter((g) => {
-      if (g.parts.length === 1) {
-        return !activeComboGroups.some((combo) => combo.parts.indexOf(g.parts[0]) >= 0);
-      }
-      return true;
-    });
+    groupsToRender = filterRedundantGroups(candidateGroups);
   }
 
   if (feeGroups.length === 0) {
@@ -278,8 +299,8 @@ function renderFeeInputs() {
 
   let html = "";
   groupsToRender.forEach((g, idx) => {
-    const cFee = g.courseFee != null ? g.courseFee : "";
-    const eFee = g.examFee != null ? g.examFee : "";
+    const cFee = feeInputValue(g.courseFee);
+    const eFee = feeInputValue(g.examFee);
     const partsStr = partsLabel(g.parts);
     const title = g.parts.length > 1
       ? "Teile " + partsStr + (g.isAuto ? '<span class="auto-badge">Auto</span>' : '') + ' <span class="combo-note">(Kombikurs)</span>'
@@ -290,9 +311,9 @@ function renderFeeInputs() {
         '<div class="part-title">' + title + "</div>" +
         '<div class="field-row">' +
           '<div class="field"><label for="g-course-' + idx + '">Kursgebühr (€)</label>' +
-          '<input type="number" id="g-course-' + idx + '" aria-label="Kursgebühr ' + partsStr + '" value="' + cFee + '" min="0" step="10" placeholder="z. B. 7.300"></div>' +
+          '<input type="number" id="g-course-' + idx + '" aria-label="Kursgebühr ' + partsStr + '" value="' + cFee + '" min="0" step="10" placeholder="0"></div>' +
           '<div class="field"><label for="g-exam-' + idx + '">' + buildExamLabel(g) + "</label>" +
-          '<input type="number" id="g-exam-' + idx + '" aria-label="Prüfungsgebühr ' + partsStr + '" value="' + eFee + '" min="0" step="10" placeholder="z. B. 1.130"></div>' +
+          '<input type="number" id="g-exam-' + idx + '" aria-label="Prüfungsgebühr ' + partsStr + '" value="' + eFee + '" min="0" step="10" placeholder="0"></div>' +
         "</div>" +
       "</div>";
   });
@@ -302,24 +323,43 @@ function renderFeeInputs() {
 
 function buildExamLabel(g) {
   let label = "Prüfungsgebühr (€)";
-  if (g.examFeeMax) {
-    const span = Math.round(g.examFeeMin).toLocaleString("de-DE") + " bis " + Math.round(g.examFeeMax).toLocaleString("de-DE") + " €";
-    label += ' <span class="fee-info-wrap-calc"><small style="color:var(--text-lt)">' + span + "</small>";
-    if (g.fromTariff) {
-      label += ' <button class="fee-info-btn-calc" type="button" data-tooltip="' + TOOLTIP_TARIFF + '">i</button>';
+  if (g.fromTariff) {
+    label += ' <span class="fee-info-wrap-calc">';
+    if (g.examFeeMax) {
+      const span =
+        Math.round(g.examFeeMin).toLocaleString("de-DE") +
+        " bis " +
+        Math.round(g.examFeeMax).toLocaleString("de-DE") +
+        " €";
+      label += '<small style="color:var(--text-lt)">' + span + "</small>";
+    } else if (g.examFeeMin != null) {
+      label +=
+        '<small style="color:var(--text-lt)">' +
+        Math.round(g.examFeeMin).toLocaleString("de-DE") +
+        " €</small>";
     }
-    label += "</span>";
-  } else if (g.qualifier) {
+    label +=
+      ' <button class="fee-info-btn-calc" type="button" data-tooltip="' +
+      TOOLTIP_TARIFF +
+      '">i</button></span>';
+  } else if (g.qualifier && g.examFeeMin != null) {
     const qualifierAmount = Math.round(g.examFeeMin).toLocaleString("de-DE") + " €";
-    label += ' <span class="fee-info-wrap-calc"><small style="color:var(--text-lt)">' + g.qualifier + " " + qualifierAmount + "</small>";
-    if (g.fromTariff) {
-      label += ' <button class="fee-info-btn-calc" type="button" data-tooltip="' + TOOLTIP_TARIFF + '">i</button>';
-    }
-    label += "</span>";
-  } else if (g.fromTariff) {
-    label += ' <button class="fee-info-btn-calc" type="button" data-tooltip="' + TOOLTIP_TARIFF + '">i</button>';
+    label +=
+      ' <span class="fee-info-wrap-calc"><small style="color:var(--text-lt)">' +
+      g.qualifier +
+      " " +
+      qualifierAmount +
+      "</small></span>";
   }
   return label;
+}
+
+function resultDisclaimerHtml() {
+  return (
+    '<p class="result-note" style="font-size:.72rem;color:var(--text-lt);margin-top:.75rem;line-height:1.5">' +
+    DISCLAIMER +
+    "</p>"
+  );
 }
 
 function fmt(v) {
@@ -398,7 +438,7 @@ function calculate() {
       '<p class="result-note">Kein Darlehenserlass beim Meisterprojekt – das KfW-Darlehen (' + fmt(pDarlehen) + ") ist vollständig zurückzuzahlen.</p>";
 
     document.getElementById("result-box-projekt").style.display = "";
-    document.getElementById("result-projekt-content").innerHTML = pHtml + '<p style="font-size:.72rem;color:var(--text-lt);margin-top:.75rem;line-height:1.5">Angaben ohne Gewähr. Es handelt sich um eine Annäherung auf Basis der verfügbaren Daten. Weitere Kosten oder Gebühren können hinzukommen.</p>';
+    document.getElementById("result-projekt-content").innerHTML = pHtml + resultDisclaimerHtml();
   } else {
     document.getElementById("result-box-projekt").style.display = "none";
   }
@@ -413,11 +453,11 @@ function calculate() {
     '<div class="result-row loan"><span class="label"><span class="icon">🏦</span>Davon KfW-Darlehen (gesamt)</span><span class="value">' + fmt(totalDarlehen) + "</span></div>";
 
   document.getElementById("result-box-total").style.display = "";
-  document.getElementById("result-total-content").innerHTML = tHtml + '<p style="font-size:.72rem;color:var(--text-lt);margin-top:.75rem;line-height:1.5">Angaben ohne Gewähr. Es handelt sich um eine Annäherung auf Basis der verfügbaren Daten. Weitere Kosten oder Gebühren können hinzukommen.</p>';
+  document.getElementById("result-total-content").innerHTML = tHtml + resultDisclaimerHtml();
 
   document.getElementById("result-empty").style.display = "none";
   document.getElementById("result-content").style.display = "";
-  document.getElementById("result-content").innerHTML = html + '<p style="font-size:.72rem;color:var(--text-lt);margin-top:.75rem;line-height:1.5">Angaben ohne Gewähr. Es handelt sich um eine Annäherung auf Basis der verfügbaren Daten. Weitere Kosten oder Gebühren können hinzukommen.</p>';
+  document.getElementById("result-content").innerHTML = html + resultDisclaimerHtml();
 }
 
 // ── Init + wiring ─────────────────────────────────────────────────────
