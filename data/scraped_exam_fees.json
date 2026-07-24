@@ -2568,11 +2568,156 @@
     },
     {
       "chamber_slug": "hwk-ulm",
+      "trade_slug": "backer",
+      "part": 1,
+      "fee": 895.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-ulm.de/meisterpruefung/"
+    },
+    {
+      "chamber_slug": "hwk-ulm",
+      "trade_slug": "brauer-und-malzer",
+      "part": 1,
+      "fee": 705.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-ulm.de/meisterpruefung/"
+    },
+    {
+      "chamber_slug": "hwk-ulm",
+      "trade_slug": "buchsenmacher",
+      "part": 1,
+      "fee": 800.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-ulm.de/meisterpruefung/"
+    },
+    {
+      "chamber_slug": "hwk-ulm",
+      "trade_slug": "elektrotechniker",
+      "part": 1,
+      "fee": 1430.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-ulm.de/meisterpruefung/"
+    },
+    {
+      "chamber_slug": "hwk-ulm",
+      "trade_slug": "feinwerkmechaniker",
+      "part": 1,
+      "fee": 1040.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-ulm.de/meisterpruefung/"
+    },
+    {
+      "chamber_slug": "hwk-ulm",
+      "trade_slug": "fliesen-platten-und-mosaikleger",
+      "part": 1,
+      "fee": 880.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-ulm.de/meisterpruefung/"
+    },
+    {
+      "chamber_slug": "hwk-ulm",
+      "trade_slug": "friseur",
+      "part": 1,
+      "fee": 630.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-ulm.de/meisterpruefung/"
+    },
+    {
+      "chamber_slug": "hwk-ulm",
+      "trade_slug": "installateur-und-heizungsbauer",
+      "part": 1,
+      "fee": 1100.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-ulm.de/meisterpruefung/"
+    },
+    {
+      "chamber_slug": "hwk-ulm",
+      "trade_slug": "klempner",
+      "part": 1,
+      "fee": 940.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-ulm.de/meisterpruefung/"
+    },
+    {
+      "chamber_slug": "hwk-ulm",
+      "trade_slug": "kfz-techniker",
+      "part": 1,
+      "fee": 715.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-ulm.de/meisterpruefung/"
+    },
+    {
+      "chamber_slug": "hwk-ulm",
+      "trade_slug": "maler-und-lackierer",
+      "part": 1,
+      "fee": 790.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-ulm.de/meisterpruefung/",
+      "fee_max": 850.0
+    },
+    {
+      "chamber_slug": "hwk-ulm",
+      "trade_slug": "maurer-und-betonbauer",
+      "part": 1,
+      "fee": 1020.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-ulm.de/meisterpruefung/"
+    },
+    {
+      "chamber_slug": "hwk-ulm",
+      "trade_slug": "metallbauer",
+      "part": 1,
+      "fee": 1070.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-ulm.de/meisterpruefung/"
+    },
+    {
+      "chamber_slug": "hwk-ulm",
+      "trade_slug": "parkettleger",
+      "part": 1,
+      "fee": 955.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-ulm.de/meisterpruefung/"
+    },
+    {
+      "chamber_slug": "hwk-ulm",
+      "trade_slug": "rollladen-und-sonnenschutztechniker",
+      "part": 1,
+      "fee": 795.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-ulm.de/meisterpruefung/"
+    },
+    {
+      "chamber_slug": "hwk-ulm",
+      "trade_slug": "schornsteinfeger",
+      "part": 1,
+      "fee": 700.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-ulm.de/meisterpruefung/"
+    },
+    {
+      "chamber_slug": "hwk-ulm",
+      "trade_slug": "tischler",
+      "part": 1,
+      "fee": 1030.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-ulm.de/meisterpruefung/"
+    },
+    {
+      "chamber_slug": "hwk-ulm",
+      "trade_slug": "zimmerer",
+      "part": 1,
+      "fee": 780.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-ulm.de/meisterpruefung/"
+    },
+    {
+      "chamber_slug": "hwk-ulm",
       "trade_slug": null,
       "part": 1,
       "fee": 580.0,
       "qualifier": "",
-      "source_url": "https://www.hwk-ulm.de/satzung-rechtsgrundlagen/"
+      "source_url": "https://www.hwk-ulm.de/meisterpruefung/"
     },
     {
       "chamber_slug": "hwk-ulm",
@@ -2580,7 +2725,7 @@
       "part": 2,
       "fee": 470.0,
       "qualifier": "",
-      "source_url": "https://www.hwk-ulm.de/satzung-rechtsgrundlagen/"
+      "source_url": "https://www.hwk-ulm.de/meisterpruefung/"
     },
     {
       "chamber_slug": "hwk-ulm",
@@ -2588,7 +2733,7 @@
       "part": 3,
       "fee": 260.0,
       "qualifier": "",
-      "source_url": "https://www.hwk-ulm.de/satzung-rechtsgrundlagen/"
+      "source_url": "https://www.hwk-ulm.de/meisterpruefung/"
     },
     {
       "chamber_slug": "hwk-ulm",
@@ -2596,7 +2741,7 @@
       "part": 4,
       "fee": 280.0,
       "qualifier": "",
-      "source_url": "https://www.hwk-ulm.de/satzung-rechtsgrundlagen/"
+      "source_url": "https://www.hwk-ulm.de/meisterpruefung/"
     },
     {
       "chamber_slug": "hwk-ulm",
@@ -2607,9 +2752,9 @@
         3,
         4
       ],
-      "fee": 1570.0,
+      "fee": 1590.0,
       "qualifier": "",
-      "source_url": "https://www.hwk-ulm.de/satzung-rechtsgrundlagen/"
+      "source_url": "https://www.hwk-ulm.de/meisterpruefung/"
     },
     {
       "chamber_slug": "hwk-wiesbaden",

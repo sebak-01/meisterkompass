@@ -389,13 +389,15 @@ _BW_COMBO_RES = (
     re.compile(r"Teile\s+I\s+bis\s+IV\s+([\d.]+),(\d{2})", re.IGNORECASE),
 )
 
-_ULM_PART_RE = re.compile(
-    r"3\.4\.1\.(?:[1-4]\s+)?davon\s+Teilgebühr\s+Prüfungsteil\s+(I{1,3}|IV)\b[\s\S]{0,80}?([\d.]+),(\d{2})",
-    re.IGNORECASE,
+_ULM_INFOBLATT_PARTS_RE = re.compile(
+    r"Meisterprüfungsgebühr von (\d+) Euro "
+    r"\(Teil I = (\d+) Euro, Teil II = (\d+) Euro, Teil III = (\d+) Euro, Teil IV =\s*"
+    r"(\d+) Euro\)",
+    re.IGNORECASE | re.DOTALL,
 )
-_ULM_COMBO_RE = re.compile(
-    r"3\.4\.1\s+Meisterprüfungsgebühr\s+gesamt\s+([\d.]+),(\d{2})",
-    re.IGNORECASE,
+_ULM_NEBENKOSTEN_ROW_RE = re.compile(
+    r"^(.+?)\s+([\d.]+(?:/[\d.]+)?)\s*$",
+    re.MULTILINE,
 )
 
 _HTML_BW_PART_RE = re.compile(
@@ -534,16 +536,66 @@ def parse_bw_322_meister_fees(text: str) -> tuple[dict[int, float], dict[tuple[i
     return fees, combos
 
 
-def parse_ulm_meister_fees(text: str) -> tuple[dict[int, float], dict[tuple[int, ...], float]]:
-    """HWK Ulm uses section 3.4.x instead of 3.2.2."""
-    fees: dict[int, float] = {}
+def parse_ulm_infoblatt_fees(
+    text: str,
+) -> tuple[
+    dict[int, float],
+    dict[tuple[int, ...], float],
+    dict[str, dict[int, float]],
+    dict[str, dict[int, float]],
+]:
+    """
+    Parse HWK Ulm Infoblatt Meisterprüfungsgebühr PDF.
+
+    Returns generic per-part fees, the all-parts combo, trade-specific Part I totals
+    (base fee + Nebenkosten), and optional Part I fee_max where Nebenkosten vary.
+    """
+    generic: dict[int, float] = {}
     combos: dict[tuple[int, ...], float] = {}
-    for match in _ULM_PART_RE.finditer(text):
-        fees[ROMAN[match.group(1).upper()]] = german_amount(match.group(2), match.group(3))
-    combo_m = _ULM_COMBO_RE.search(text)
-    if combo_m:
-        combos[(1, 2, 3, 4)] = german_amount(combo_m.group(1), combo_m.group(2))
-    return fees, combos
+    trade_part1: dict[str, dict[int, float]] = {}
+    trade_part1_max: dict[str, dict[int, float]] = {}
+
+    parts_m = _ULM_INFOBLATT_PARTS_RE.search(text)
+    if parts_m:
+        combos[(1, 2, 3, 4)] = float(parts_m.group(1))
+        generic = {
+            1: float(parts_m.group(2)),
+            2: float(parts_m.group(3)),
+            3: float(parts_m.group(4)),
+            4: float(parts_m.group(5)),
+        }
+
+    base_part1 = generic.get(1, 580.0)
+    lower = text.lower()
+    start = lower.find("handwerksberuf")
+    end = lower.find("der aufstellung", start + 1) if start >= 0 else -1
+    block = text[start:end if end > start else start + 1200] if start >= 0 else ""
+    for match in _ULM_NEBENKOSTEN_ROW_RE.finditer(block):
+        trade = match.group(1).strip()
+        lower_trade = trade.lower()
+        if (
+            lower_trade.startswith("handwerksberuf")
+            or lower_trade.endswith("nebenkosten in euro")
+            or "handwerkskammer" in lower_trade
+            or "seite" in lower_trade
+        ):
+            continue
+        raw_amounts = match.group(2)
+        if "/" in raw_amounts:
+            lo_s, hi_s = raw_amounts.split("/", 1)
+            lo = float(lo_s.replace(".", ""))
+            hi = float(hi_s.replace(".", ""))
+            if lo < 20 or hi < 20:
+                continue
+            trade_part1[trade] = {1: base_part1 + lo}
+            trade_part1_max[trade] = {1: base_part1 + hi}
+        else:
+            extra = float(raw_amounts.replace(".", ""))
+            if extra < 20:
+                continue
+            trade_part1[trade] = {1: base_part1 + extra}
+
+    return generic, combos, trade_part1, trade_part1_max
 
 
 def parse_bw_meister_fees_from_html(text: str) -> tuple[dict[int, float], dict[tuple[int, ...], float]]:

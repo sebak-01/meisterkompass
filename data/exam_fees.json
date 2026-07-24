@@ -3974,7 +3974,7 @@
           "qualifier": ""
         },
         "1,2,3,4": {
-          "fee": 1570.0,
+          "fee": 1590.0,
           "fee_max": null,
           "qualifier": ""
         },
@@ -3990,6 +3990,132 @@
         },
         "4": {
           "fee": 280.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "backer": {
+        "1": {
+          "fee": 895.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "brauer-und-malzer": {
+        "1": {
+          "fee": 705.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "buchsenmacher": {
+        "1": {
+          "fee": 800.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "elektrotechniker": {
+        "1": {
+          "fee": 1430.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "feinwerkmechaniker": {
+        "1": {
+          "fee": 1040.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "fliesen-platten-und-mosaikleger": {
+        "1": {
+          "fee": 880.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "friseur": {
+        "1": {
+          "fee": 630.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "installateur-und-heizungsbauer": {
+        "1": {
+          "fee": 1100.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "kfz-techniker": {
+        "1": {
+          "fee": 715.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "klempner": {
+        "1": {
+          "fee": 940.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "maler-und-lackierer": {
+        "1": {
+          "fee": 790.0,
+          "fee_max": 850.0,
+          "qualifier": ""
+        }
+      },
+      "maurer-und-betonbauer": {
+        "1": {
+          "fee": 1020.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "metallbauer": {
+        "1": {
+          "fee": 1070.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "parkettleger": {
+        "1": {
+          "fee": 955.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "rollladen-und-sonnenschutztechniker": {
+        "1": {
+          "fee": 795.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "schornsteinfeger": {
+        "1": {
+          "fee": 700.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "tischler": {
+        "1": {
+          "fee": 1030.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "zimmerer": {
+        "1": {
+          "fee": 780.0,
           "fee_max": null,
           "qualifier": ""
         }

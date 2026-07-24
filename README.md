@@ -321,10 +321,9 @@ NRW-specific notes:
 
 All eight BW chambers have weekly tariff scrapers. Karlsruhe, Mannheim, Reutlingen,
 and Freiburg parse section **3.2.2** of the Gebührenverzeichnis PDF (per-part fees
-plus a combined Teile I–IV bundle). Ulm uses section **3.4.x** instead. Aachen and
-Stuttgart publish fees on HTML Meisterprüfung pages (no PDF). Reutlingen's PDF uses
-a column layout (labels and amounts on separate lines). Mannheim and Ulm may show
-Spannweiten for Part I on the tariff; the scraper stores the published base amount.
+plus a combined Teile I–IV bundle). Ulm uses the dedicated Infoblatt
+Meisterprüfungsgebühr PDF (base fees plus trade-specific Part I Nebenkosten).
+Aachen and Stuttgart publish fees on HTML Meisterprüfung pages (no PDF).
 
 Freiburg course pages also scrape per-offer exam fees; the course-page value wins at
 resolve time when present.

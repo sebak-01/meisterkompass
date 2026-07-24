@@ -378,8 +378,11 @@ class UlmParserTests(unittest.TestCase):
             self.assertEqual(resolved["fee"], fee)
 
         bundle = resolve_exam_fee("hwk-ulm", "any-trade", [1, 2, 3, 4], None, lookup)
-        self.assertEqual(bundle["fee"], 1570.0)
-        self.assertEqual(bundle["display"], "1.570 €")
+        self.assertEqual(bundle["fee"], 1590.0)
+        self.assertEqual(bundle["display"], "1.590 €")
+
+        elektro = resolve_exam_fee("hwk-ulm", "elektrotechniker", [1], None, lookup)
+        self.assertEqual(elektro["fee"], 1430.0)
 
     def test_title_mapping(self):
         self.assertEqual(

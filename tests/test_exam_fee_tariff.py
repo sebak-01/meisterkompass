@@ -15,7 +15,7 @@ from scrapers.exam_fee_tariff import (
     parse_bavaria_b_iv_meister_fees,
     parse_bw_322_meister_fees,
     parse_bw_meister_fees_from_html,
-    parse_ulm_meister_fees,
+    parse_ulm_infoblatt_fees,
     parse_hamburg_meister_fees,
     parse_hesse_schedule_fees,
     parse_koblenz_meister_fees,
@@ -105,12 +105,15 @@ Teilgebühr Prüfungsteil IV
 """
 
 ULM_SNIPPET = """
-3.4 Meisterprüfungen.
-3.4.1 Meisterprüfungsgebühr gesamt 1.570,00
-3.4.1.1 davon Teilgebühr Prüfungsteil I (fachpraktische Kenntnisse) 580,00
-3.4.1.2 davon Teilgebühr Prüfungsteil II (fachtheoretische Kenntnisse) 470,00
-3.4.1.3 davon Teilgebühr Prüfungsteil III (betriebswirtschaftliche, kaufmännische und rechtliche Kenntnisse) 260,00
-3.4.1.4 davon Teilgebühr Prüfungsteil IV (berufs- und arbeitspädagogische Kenntnisse) 280,00
+Meisterprüfungsgebühr sowie Nebenkosten
+Die Meisterprüfungsgebühr von 1590 Euro (Teil I = 580 Euro, Teil II = 470 Euro, Teil III = 260 Euro, Teil IV =
+280 Euro).
+Handwerksberuf Nebenkosten in Euro
+Bäcker 315
+Elektrotechniker 850
+Maler und Lackierer 210/270
+Tischler 450
+Der Aufstellung liegen die Erfahrungswerte
 """
 
 HTML_BW_SNIPPET = """
@@ -186,10 +189,15 @@ class ExamFeeTariffParsersTest(unittest.TestCase):
         self.assertEqual(fees, {1: 300.0, 2: 350.0, 3: 200.0, 4: 250.0})
         self.assertEqual(combos[(1, 2, 3, 4)], 1100.0)
 
-    def test_parse_ulm_meister_fees(self):
-        fees, combos = parse_ulm_meister_fees(ULM_SNIPPET)
-        self.assertEqual(fees, {1: 580.0, 2: 470.0, 3: 260.0, 4: 280.0})
-        self.assertEqual(combos[(1, 2, 3, 4)], 1570.0)
+    def test_parse_ulm_infoblatt_fees(self):
+        generic, combos, trade_part1, trade_part1_max = parse_ulm_infoblatt_fees(ULM_SNIPPET)
+        self.assertEqual(generic, {1: 580.0, 2: 470.0, 3: 260.0, 4: 280.0})
+        self.assertEqual(combos[(1, 2, 3, 4)], 1590.0)
+        self.assertEqual(trade_part1["Bäcker"], {1: 895.0})
+        self.assertEqual(trade_part1["Elektrotechniker"], {1: 1430.0})
+        self.assertEqual(trade_part1["Tischler"], {1: 1030.0})
+        self.assertEqual(trade_part1["Maler und Lackierer"], {1: 790.0})
+        self.assertEqual(trade_part1_max["Maler und Lackierer"], {1: 850.0})
 
     def test_parse_bw_meister_fees_from_html(self):
         fees, combos = parse_bw_meister_fees_from_html(HTML_BW_SNIPPET)
