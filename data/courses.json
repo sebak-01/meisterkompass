@@ -18513,7 +18513,7 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/"
   },
   {
@@ -61538,6 +61538,43 @@
     "chamber_slug": "hwk-muenster",
     "chamber_name": "HWK Münster",
     "chamber_region": "Nordrhein-Westfalen",
+    "trade_slug": "dachdecker",
+    "trade_name": "Dachdecker",
+    "title": "Dachdecker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": null,
+    "end_date": null,
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": null,
+    "course_fee_display": "—",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 1650.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "1.650 €",
+      "from_tariff": true
+    },
+    "city": "Münster",
+    "street": "Albrecht-Thaer-Straße 9",
+    "zip_code": "48147",
+    "latitude": 51.9830337,
+    "longitude": 7.6358696,
+    "availability": "unknown",
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/dachdecker-meisterschule-teile-i-und-ii-vollzeit-94464"
+  },
+  {
+    "chamber_slug": "hwk-muenster",
+    "chamber_name": "HWK Münster",
+    "chamber_region": "Nordrhein-Westfalen",
     "trade_slug": "elektrotechniker",
     "trade_name": "Elektrotechniker",
     "title": "Elektrotechniker (Teile I + II)",
@@ -62056,6 +62093,43 @@
     "chamber_slug": "hwk-muenster",
     "chamber_name": "HWK Münster",
     "chamber_region": "Nordrhein-Westfalen",
+    "trade_slug": "fahrzeuglackierer",
+    "trade_name": "Fahrzeuglackierer",
+    "title": "Fahrzeuglackierer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": null,
+    "end_date": null,
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": null,
+    "course_fee_display": "—",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 1550.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "1.550 €",
+      "from_tariff": true
+    },
+    "city": "Münster",
+    "street": "Albrecht-Thaer-Straße 9",
+    "zip_code": "48147",
+    "latitude": 51.9830337,
+    "longitude": 7.6358696,
+    "availability": "unknown",
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/fahrzeuglackierer-meisterschule-teile-i-und-ii-teilzeit-92698"
+  },
+  {
+    "chamber_slug": "hwk-muenster",
+    "chamber_name": "HWK Münster",
+    "chamber_region": "Nordrhein-Westfalen",
     "trade_slug": "feinwerkmechaniker",
     "trade_name": "Feinwerkmechaniker",
     "title": "Feinwerkmechaniker (Teile I + II)",
@@ -62551,8 +62625,8 @@
     "end_date": "2029-07-06",
     "start_date_note": "",
     "duration_hours": null,
-    "course_fee": 12060.0,
-    "course_fee_display": "12.060 €",
+    "course_fee": 12780.0,
+    "course_fee_display": "12.780 €",
     "exam_fee_scraped": 1350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -62568,7 +62642,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "waitlist",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/installateur-und-heizungsbauer-meisterschule-teile-i-und-ii-vollzeit-bis-2026-104731#termin-2"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/installateur-und-heizungsbauer-meisterschule-teile-i-und-ii-vollzeit-105355#termin-4"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -62588,8 +62662,8 @@
     "end_date": "2029-10-26",
     "start_date_note": "",
     "duration_hours": null,
-    "course_fee": 12060.0,
-    "course_fee_display": "12.060 €",
+    "course_fee": 12780.0,
+    "course_fee_display": "12.780 €",
     "exam_fee_scraped": 1350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -62605,7 +62679,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "waitlist",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/installateur-und-heizungsbauer-meisterschule-teile-i-und-ii-vollzeit-bis-2026-104731#termin-3"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/installateur-und-heizungsbauer-meisterschule-teile-i-und-ii-vollzeit-105355#termin-5"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -62662,8 +62736,8 @@
     "end_date": "2030-06-21",
     "start_date_note": "",
     "duration_hours": null,
-    "course_fee": 12060.0,
-    "course_fee_display": "12.060 €",
+    "course_fee": 12780.0,
+    "course_fee_display": "12.780 €",
     "exam_fee_scraped": 1350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -62679,7 +62753,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "waitlist",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/installateur-und-heizungsbauer-meisterschule-teile-i-und-ii-vollzeit-bis-2026-104731#termin-4"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/installateur-und-heizungsbauer-meisterschule-teile-i-und-ii-vollzeit-105355#termin-6"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -62716,7 +62790,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "waitlist",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/installateur-und-heizungsbauer-meisterschule-teile-i-und-ii-vollzeit-bis-2026-104731#termin-5"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/installateur-und-heizungsbauer-meisterschule-teile-i-und-ii-vollzeit-bis-2026-104731#termin-2"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -95614,6 +95688,43 @@
     "longitude": 12.7280699,
     "availability": "available",
     "source_url": "https://www.hwk-potsdam.de/9,0,coursedetail.html?id=353671"
+  },
+  {
+    "chamber_slug": "hwk-potsdam",
+    "chamber_name": "HWK Potsdam",
+    "chamber_region": "Brandenburg",
+    "trade_slug": "friseur",
+    "trade_name": "Friseur",
+    "title": "Friseur (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-08-09",
+    "end_date": "2027-11-05",
+    "start_date_note": "",
+    "duration_hours": 430,
+    "course_fee": 7500.0,
+    "course_fee_display": "7.500 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 740.0,
+      "fee_max": null,
+      "qualifier": "zzgl. Auslagen",
+      "display": "740 €",
+      "from_tariff": true
+    },
+    "city": "Groß Kreutz (Havel)",
+    "street": "Am Mühlenberg 15",
+    "zip_code": "14550",
+    "latitude": 52.4063025,
+    "longitude": 12.7280699,
+    "availability": "available",
+    "source_url": "https://www.hwk-potsdam.de/9,0,coursedetail.html?id=367851"
   },
   {
     "chamber_slug": "hwk-potsdam",
