@@ -441,8 +441,9 @@ entry, per-part and combo-bundle fee handling, prefer-singles logic for
 Kombikurse vs Einzelkurse, Meisterprojekt funding),
 **Über MeisterKompass**. Footer links: **Datenschutz**, **Impressum**.
 
-**Privacy & analytics:** anonymous usage statistics via **Umami Cloud** (EU data
-region, cookieless — see `privacy.html`). No Google Analytics.
+**Privacy & analytics:** pseudonymisierte, aggregierte usage statistics via
+**Umami Cloud** (EU data region, cookieless, 6-month retention on the Hobby
+plan — see `privacy.html`). No cross-site or advertising tracking; no Google Analytics.
 
 Key build behaviour:
 - **`base` path:** `VITE_BASE=/` for the custom domain (meisterkompass.eu).
