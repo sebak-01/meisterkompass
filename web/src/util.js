@@ -18,6 +18,10 @@ export const esc = (s) =>
 export const TOOLTIP_TARIFF =
   "Die Prüfungsgebühren wurden aus dem Gebührenverzeichnis der Kammer übernommen. Diese können sich ändern. Teilweise kommen gewerkspezifische oder andere Gebühren hinzu.";
 
+/** Fee stated on the course listing/detail page (exam_fee_scraped). */
+export const TOOLTIP_COURSE_EXAM =
+  "Die Prüfungsgebühren können sich ändern. Teilweise kommen gewerkspezifische oder andere Gebühren hinzu.";
+
 /** HWK Frankfurt-Rhein-Main charges an additional registration fee on top of the course fee. */
 export const ANMELDEGEBUEHR_NOTE =
   "Die HWK Frankfurt-Rhein-Main erhebt möglicherweise eine zusätzliche Anmeldegebühr. Informiere dich zu den genauen Gebühren bei der HWK Frankfurt-Rhein-Main.";
