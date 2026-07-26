@@ -106,7 +106,7 @@ meisterkompass/
 │   ├── public/                 # favicon.svg, og-image.png, fonts/, sitemap.xml, robots.txt
 │   └── src/                    # base/list/afbg.css + nav/list/map/afbg/render/util.js
 ├── scripts/import_manual_fees_from_live.py  # recover curated fees from old site
-├── tests/test_{base,fees,exam_fee_tariff,scrape_pipeline,bw,bayern,thueringen,sachsen_anhalt,sachsen,
+├── tests/test_{base,fees,exam_fee_tariff,scrape_pipeline,trier,bw,bayern,thueringen,sachsen_anhalt,sachsen,
 │              brandenburg,mecklenburg_vorpommern,schleswig_holstein,city_states,
 │              niedersachsen,nrw,rheinhessen}_scrapers.py
 ├── requirements.txt             # requests, beautifulsoup4, pypdf, cloudscraper
@@ -134,8 +134,8 @@ re-scraping offers; add `--refresh-tariffs` to re-fetch PDFs first.
 
 Chambers without a tariff scraper rely on course-page fees where published.
 Known gaps: **Niederbayern-Oberpfalz** skips detail pages (`details_required=False`)
-so it has no exam fees yet; a handful of Trier/Pfalz/Saarland offers omit fees on
-the listing.
+so it has no exam fees yet; some Trier/Pfalz/Saarland offers omit fees on the
+course page (Trier falls back to its Gebührenverzeichnis tariff for missing parts).
 
 #### Bayern — shared ODAV catalogue architecture
 
@@ -277,6 +277,21 @@ scheduled run comes from the vorlage detail endpoint.
 Exam fees are parsed from each chamber's Meisterprüfung fees page
 ([Flensburg](https://www.hwk-flensburg.de/weiterbildung/weiterbildung/der-weg-zum-meister),
 [Lübeck](https://www.hwk-luebeck.de/weiterbildung/der-weg-zum-meister/pruefung-gebuehren)).
+The Flensburg parser scopes to the „Gebühren für das Meisterprüfungsverfahren“
+block so overview mentions of Teil III/IV on the same page do not pick up wrong amounts.
+
+#### Rheinland-Pfalz — course pages and Gebührenverzeichnis
+
+| Chamber | Slug | Course source | Exam-fee tariff |
+|---|---|---|---|
+| Koblenz | `hwk-koblenz` | bildung4u.de (ODAV) | Gebührenverzeichnis PDF (`bis zu` ceilings) |
+| der Pfalz | `hwk-pfalz` | hwk-pfalz.de | course-page `exam_fee_scraped` where published |
+| Rheinhessen | `hwk-rheinhessen` | hwk-rheinhessen.de (WordPress) | Gebührenverzeichnis PDF (fee ranges) |
+| Trier | `hwk-trier` | hwk-trier.de (Meistervorbereitungskurse + coursedetail) | course-page fees where published; weekly fallback from [Rechtsgrundlagen → Gebührenverzeichnis PDF](https://www.hwk-trier.de/artikel/rechtsgrundlagen-54,182,1061.html) for missing parts (e.g. generic Teil III) |
+
+Trier course pages often publish combined Teile I+II exam fees and per-part fees for
+Kfz; Parts III/IV generic courses may omit `exam_fee_scraped`, in which case the
+tariff supplies per-part amounts (615 / 515 / 180 / 215 € as of the current PDF).
 
 #### Niedersachsen — ODAV and universal-kdb
 
@@ -404,9 +419,10 @@ The pipeline:
 
 Tariff scrapers live in `scrapers/exam_fee_tariff.py` (shared PDF/HTML parsers) and
 each chamber's `published_exam_fee_rows()` method. Hesse and Rheinland-Pfalz chambers
-(Koblenz, Rheinhessen, Frankfurt-Rhein-Main, Wiesbaden, Kassel) scrape their official
-Gebührenverzeichnisse weekly; Koblenz uses "bis zu" ceilings, Rheinhessen stores
-fee ranges (`fee` + `fee_max`).
+(Koblenz, Rheinhessen, Frankfurt-Rhein-Main, Wiesbaden, Kassel, Trier) scrape their
+official Gebührenverzeichnisse weekly; Koblenz uses "bis zu" ceilings, Rheinhessen
+stores fee ranges (`fee` + `fee_max`), Trier parses section 3.4 Meisterprüfungen
+from its Gebührenverzeichnis PDF.
 
 ---
 
@@ -421,8 +437,12 @@ npm run build    # → web/dist (deployed to GitHub Pages)
 
 Pages: **Kursfinder** (filterable list + Leaflet/CartoDB map, multi-select
 chamber filter), **AFBG-Rechner** (auto-fill from Kursfinder data or manual
-entry, per-part and combo-bundle fee handling, Meisterprojekt funding),
+entry, per-part and combo-bundle fee handling, prefer-singles logic for
+Kombikurse vs Einzelkurse, Meisterprojekt funding),
 **Über MeisterKompass**. Footer links: **Datenschutz**, **Impressum**.
+
+**Privacy & analytics:** anonymous usage statistics via **Umami Cloud** (EU data
+region, cookieless — see `privacy.html`). No Google Analytics.
 
 Key build behaviour:
 - **`base` path:** `VITE_BASE=/` for the custom domain (meisterkompass.eu).
@@ -441,12 +461,24 @@ Key build behaviour:
 
 Tooltip copy lives in JS constants (`web/src/util.js`), not in the JSON data:
 
+**Kursfinder / map**
+
 - `TOOLTIP_QUALIFIER` — HWK Koblenz "bis zu" (maximum chargeable fee)
 - `TOOLTIP_RANGE` — HWK Rheinhessen fee ranges
 - `TOOLTIP_HESSEN` — HWK Frankfurt-Rhein-Main / Wiesbaden / Kassel (`HESSEN_CHAMBERS`
   set), exact fee from the official schedule, subject to change
 - `ANMELDEGEBUEHR_NOTE` — HWK Frankfurt-Rhein-Main may charge an additional
   registration fee on top of the listed Kursgebühr
+
+**AFBG-Rechner** (`web/src/afbg.js`)
+
+- Course-page `exam_fee_scraped` wins over tariff lookup (same priority as
+  `scrapers/fees.py`) and pre-fills the Prüfungsgebühr input.
+- Tariff-only fees show beside the label with `TOOLTIP_TARIFF`; course-page fees
+  use `TOOLTIP_COURSE_EXAM` and fill the input.
+- „Einzelne Kursteile bevorzugen“ keeps Kombikurse when no Einzelkurs exists for
+  those parts, and avoids double-counting when a combo is required (e.g. Teil III
+  only offered as III+IV).
 
 ---
 
