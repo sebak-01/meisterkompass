@@ -20,11 +20,20 @@ from datetime import date
 from bs4 import BeautifulSoup
 
 from .base import BaseScraper, RawCourseOffer, build_course_title
+from .exam_fee_tariff import (
+    download_pdf_text,
+    parse_trier_meister_fees,
+    part_fee_rows,
+    resolve_pdf_url_from_page,
+)
 
 logger = logging.getLogger(__name__)
 
 BASE_URL     = "https://www.hwk-trier.de"
 OVERVIEW_URL = f"{BASE_URL}/artikel/meistervorbereitungskurse-54,585,2181.html"
+EXAM_FEES_PAGE_URL = f"{BASE_URL}/artikel/rechtsgrundlagen-54,182,1061.html"
+EXAM_FEES_PDF_FALLBACK = f"{BASE_URL}/downloads/gebuehrenverzeichnis-54,77.pdf"
+EXAM_FEES_FALLBACK = {1: 615.0, 2: 515.0, 3: 180.0, 4: 215.0}
 
 PRICE_PATTERN    = re.compile(r"([\d.]+),(\d{2})[\s\xa0]*€")
 DURATION_PATTERN = re.compile(r"(\d+)[\s\xa0]*Std\.", re.IGNORECASE)
@@ -363,3 +372,22 @@ class HwkTrierScraper(BaseScraper):
         if any(w in lower for w in ("freie", "ausreichend", "verfügbar", "buchbar")):
             return "available"
         return "unknown"
+
+    def published_exam_fee_rows(self) -> list[dict]:
+        pdf_url = resolve_pdf_url_from_page(
+            self,
+            EXAM_FEES_PAGE_URL,
+            fallback_url=EXAM_FEES_PDF_FALLBACK,
+            href_substrings=("gebuehrenverzeichnis",),
+            label="HWK Trier",
+        ) or EXAM_FEES_PDF_FALLBACK
+        text = download_pdf_text(self, pdf_url, label="HWK Trier")
+        fees = parse_trier_meister_fees(text) if text else {}
+        if not fees:
+            logger.warning("HWK Trier: using fallback Meister exam fees from Gebührenverzeichnis.")
+            fees = EXAM_FEES_FALLBACK
+        return part_fee_rows(
+            self.chamber_slug,
+            fees,
+            source_url=EXAM_FEES_PAGE_URL,
+        )

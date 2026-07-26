@@ -3884,6 +3884,21 @@
     },
     "hwk-trier": {
       "null": {
+        "1": {
+          "fee": 615.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 515.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "3": {
+          "fee": 180.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
         "4": {
           "fee": 225.0,
           "fee_max": null,
