@@ -31,8 +31,18 @@ class HwkFlensburgScraper(UniversalKdbScraper):
     )
 
     @staticmethod
+    def _exam_fee_section(text: str) -> str:
+        """Limit parsing to the published Meisterprüfungsgebühren table."""
+        start = text.find("Gebühren für das Meisterprüfungsverfahren")
+        if start < 0:
+            return text
+        end = text.find("Anträge, Verordnungen", start)
+        return text[start:end] if end > start else text[start:]
+
+    @staticmethod
     def parse_meister_exam_fees(text: str) -> dict[int, float]:
         fees: dict[int, float] = {}
+        section = HwkFlensburgScraper._exam_fee_section(text)
         patterns = (
             (1, r"Teil\s+I\b[^0-9€]*([\d.]+),(\d{2})\s*(?:Euro|€)"),
             (2, r"Teil\s+II\b[^0-9€]*([\d.]+),(\d{2})\s*(?:Euro|€)"),
@@ -40,7 +50,7 @@ class HwkFlensburgScraper(UniversalKdbScraper):
             (4, r"Teil\s+IV\b[^0-9€]*([\d.]+),(\d{2})\s*(?:Euro|€)"),
         )
         for part, pattern in patterns:
-            match = re.search(pattern, text, re.IGNORECASE | re.DOTALL)
+            match = re.search(pattern, section, re.IGNORECASE | re.DOTALL)
             if match:
                 fees[part] = float(match.group(1).replace(".", "") + "." + match.group(2))
         return fees
