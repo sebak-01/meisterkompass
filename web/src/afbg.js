@@ -4,7 +4,9 @@ import courseFeesData from "@data/course_fees.json";
 import examFeesData from "@data/exam_fees.json";
 import { initNav } from "./nav.js";
 import {
+  esc,
   partsLabel,
+  TOOLTIP_COURSE_EXAM,
   TOOLTIP_TARIFF,
 } from "./util.js";
 import { chamberSelectAccordionHtml } from "./render.js";
@@ -220,11 +222,11 @@ function fillExamFees() {
       g.examFeeMax = hasMax ? totalMax : null;
       g.qualifier = qualifier;
       if (g.fromTariff) {
-        // Gebührenverzeichnis / manual fees: show amount beside the label only.
+        // Gebührenverzeichnis: show amount beside the label only.
         g.examFee = null;
       } else {
-        // Course-page fee: pre-fill unless range or non-tariff qualifier applies.
-        g.examFee = (hasMax || qualifier) ? null : totalFee;
+        // Course-page fee: pre-fill the input like Kursgebühr.
+        g.examFee = totalFee;
       }
     }
   });
@@ -270,19 +272,8 @@ function renderFeeInputs() {
 
   let groupsToRender;
   if (preferSingles) {
-    const shownGroups = [];
-    parts.forEach((p) => {
-      const indiv = candidateGroups.find((g) => g.parts.length === 1 && g.parts[0] === p);
-      if (indiv) {
-        shownGroups.push(indiv);
-      } else {
-        const fallback = allComboGroups
-          .filter((g) => g.parts.indexOf(p) >= 0)
-          .sort((a, b) => a.parts.length - b.parts.length)[0];
-        if (fallback && shownGroups.indexOf(fallback) < 0) shownGroups.push(fallback);
-      }
-    });
-    groupsToRender = shownGroups;
+    // Only single-part courses — never show a Kombikurs (avoids counting a part twice).
+    groupsToRender = candidateGroups.filter((g) => g.parts.length === 1);
   } else {
     groupsToRender = filterRedundantGroups(candidateGroups);
   }
@@ -340,16 +331,22 @@ function buildExamLabel(g) {
     }
     label +=
       ' <button class="fee-info-btn-calc" type="button" data-tooltip="' +
-      TOOLTIP_TARIFF +
+      esc(TOOLTIP_TARIFF) +
       '">i</button></span>';
-  } else if (g.qualifier && g.examFeeMin != null) {
-    const qualifierAmount = Math.round(g.examFeeMin).toLocaleString("de-DE") + " €";
+  } else if (g.examFeeMin != null || g.examFee != null) {
     label +=
-      ' <span class="fee-info-wrap-calc"><small style="color:var(--text-lt)">' +
-      g.qualifier +
-      " " +
-      qualifierAmount +
-      "</small></span>";
+      ' <span class="fee-info-wrap-calc"><button class="fee-info-btn-calc" type="button" data-tooltip="' +
+      esc(TOOLTIP_COURSE_EXAM) +
+      '">i</button></span>';
+    if (g.qualifier && g.examFeeMin != null) {
+      const qualifierAmount = Math.round(g.examFeeMin).toLocaleString("de-DE") + " €";
+      label +=
+        ' <span class="fee-info-wrap-calc"><small style="color:var(--text-lt)">' +
+        g.qualifier +
+        " " +
+        qualifierAmount +
+        "</small></span>";
+    }
   }
   return label;
 }
