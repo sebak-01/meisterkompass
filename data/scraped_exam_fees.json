@@ -681,7 +681,7 @@
       "chamber_slug": "hwk-flensburg",
       "trade_slug": null,
       "part": 3,
-      "fee": 480.0,
+      "fee": 290.0,
       "qualifier": "",
       "source_url": "https://www.hwk-flensburg.de/weiterbildung/weiterbildung/der-weg-zum-meister"
     },
@@ -689,7 +689,7 @@
       "chamber_slug": "hwk-flensburg",
       "trade_slug": null,
       "part": 4,
-      "fee": 480.0,
+      "fee": 290.0,
       "qualifier": "",
       "source_url": "https://www.hwk-flensburg.de/weiterbildung/weiterbildung/der-weg-zum-meister"
     },
@@ -2565,6 +2565,38 @@
       "fee_max": 2500.0,
       "qualifier": "",
       "source_url": "https://www.hwk-swf.de/artikel/rechtsgrundlagen-38,0,100.html"
+    },
+    {
+      "chamber_slug": "hwk-trier",
+      "trade_slug": null,
+      "part": 1,
+      "fee": 615.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-trier.de/artikel/rechtsgrundlagen-54,182,1061.html"
+    },
+    {
+      "chamber_slug": "hwk-trier",
+      "trade_slug": null,
+      "part": 2,
+      "fee": 515.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-trier.de/artikel/rechtsgrundlagen-54,182,1061.html"
+    },
+    {
+      "chamber_slug": "hwk-trier",
+      "trade_slug": null,
+      "part": 3,
+      "fee": 180.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-trier.de/artikel/rechtsgrundlagen-54,182,1061.html"
+    },
+    {
+      "chamber_slug": "hwk-trier",
+      "trade_slug": null,
+      "part": 4,
+      "fee": 215.0,
+      "qualifier": "",
+      "source_url": "https://www.hwk-trier.de/artikel/rechtsgrundlagen-54,182,1061.html"
     },
     {
       "chamber_slug": "hwk-ulm",

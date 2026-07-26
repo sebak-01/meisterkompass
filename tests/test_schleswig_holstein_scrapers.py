@@ -113,6 +113,27 @@ class SchleswigHolsteinParserTests(unittest.TestCase):
             {1: 480.0, 2: 480.0, 3: 290.0, 4: 290.0},
         )
 
+    def test_flensburg_ignores_early_teil_mentions_without_fees(self):
+        text = """
+        Schritt für Schritt zum Meister
+        Teil III – Betriebswirtschaftliche Kenntnisse
+        Teil IV – Berufs und Arbeitspädagogik
+        Gebühren für das Meisterprüfungsverfahren
+        Teil I – Praktische Prüfung, ggf. zusätzliche Materialkosten
+        480,00 Euro
+        Teil II – Fachtheoretische Kenntnisse
+        480,00 Euro
+        Teil III – Wirtschaftliche und rechtliche Kenntnisse
+        290,00 Euro
+        Teil IV – Berufs- und arbeitspädagogische Kenntnisse
+        290,00 Euro
+        Anträge, Verordnungen & Befreiungen
+        """
+        self.assertEqual(
+            HwkFlensburgScraper.parse_meister_exam_fees(text),
+            {1: 480.0, 2: 480.0, 3: 290.0, 4: 290.0},
+        )
+
     def test_luebeck_parses_exam_fees_from_page_text(self):
         text = """
         Teil I: 585,00 €

@@ -25766,10 +25766,10 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1920.0,
+      "fee": 1540.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.920 €",
+      "display": "1.540 €",
       "from_tariff": true
     },
     "city": "Flensburg",
@@ -25913,10 +25913,10 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 480.0,
+      "fee": 290.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "480 €",
+      "display": "290 €",
       "from_tariff": true
     },
     "city": "Flensburg",
@@ -25949,10 +25949,10 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 480.0,
+      "fee": 290.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "480 €",
+      "display": "290 €",
       "from_tariff": true
     },
     "city": "Flensburg",
@@ -25985,10 +25985,10 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 480.0,
+      "fee": 290.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "480 €",
+      "display": "290 €",
       "from_tariff": true
     },
     "city": "Flensburg",
@@ -26021,10 +26021,10 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 480.0,
+      "fee": 290.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "480 €",
+      "display": "290 €",
       "from_tariff": true
     },
     "city": "Flensburg",
@@ -26057,10 +26057,10 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 480.0,
+      "fee": 290.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "480 €",
+      "display": "290 €",
       "from_tariff": true
     },
     "city": "Flensburg",
@@ -26093,10 +26093,10 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 480.0,
+      "fee": 290.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "480 €",
+      "display": "290 €",
       "from_tariff": true
     },
     "city": "Flensburg",
@@ -26129,10 +26129,10 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 480.0,
+      "fee": 290.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "480 €",
+      "display": "290 €",
       "from_tariff": true
     },
     "city": "Flensburg",
@@ -26165,10 +26165,10 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 480.0,
+      "fee": 290.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "480 €",
+      "display": "290 €",
       "from_tariff": true
     },
     "city": "Flensburg",
@@ -26201,10 +26201,10 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 480.0,
+      "fee": 290.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "480 €",
+      "display": "290 €",
       "from_tariff": true
     },
     "city": "Flensburg",
@@ -26237,10 +26237,10 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 480.0,
+      "fee": 290.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "480 €",
+      "display": "290 €",
       "from_tariff": true
     },
     "city": "Flensburg",
@@ -26276,10 +26276,10 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1920.0,
+      "fee": 1540.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.920 €",
+      "display": "1.540 €",
       "from_tariff": true
     },
     "city": "Flensburg",
@@ -113387,11 +113387,11 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": null,
+      "fee": 180.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "",
-      "from_tariff": false
+      "display": "180 €",
+      "from_tariff": true
     },
     "city": "Trier",
     "street": "Loebstraße 18",
@@ -113423,11 +113423,11 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": null,
+      "fee": 180.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "",
-      "from_tariff": false
+      "display": "180 €",
+      "from_tariff": true
     },
     "city": "Trier",
     "street": "Loebstraße 18",
@@ -113459,11 +113459,11 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": null,
+      "fee": 180.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "",
-      "from_tariff": false
+      "display": "180 €",
+      "from_tariff": true
     },
     "city": "Trier",
     "street": "Loebstraße 18",
@@ -113495,11 +113495,11 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": null,
+      "fee": 180.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "",
-      "from_tariff": false
+      "display": "180 €",
+      "from_tariff": true
     },
     "city": "Trier",
     "street": "Loebstraße 18",
@@ -113531,11 +113531,11 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": null,
+      "fee": 180.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "",
-      "from_tariff": false
+      "display": "180 €",
+      "from_tariff": true
     },
     "city": "Trier",
     "street": "Loebstraße 18",
@@ -113567,11 +113567,11 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": null,
+      "fee": 180.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "",
-      "from_tariff": false
+      "display": "180 €",
+      "from_tariff": true
     },
     "city": "Trier",
     "street": "Loebstraße 18",

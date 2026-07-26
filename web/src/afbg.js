@@ -4,7 +4,9 @@ import courseFeesData from "@data/course_fees.json";
 import examFeesData from "@data/exam_fees.json";
 import { initNav } from "./nav.js";
 import {
+  esc,
   partsLabel,
+  TOOLTIP_COURSE_EXAM,
   TOOLTIP_TARIFF,
 } from "./util.js";
 import { chamberSelectAccordionHtml } from "./render.js";
@@ -148,6 +150,18 @@ function buildGroupsFromOffers(offers, isAuto) {
   });
 }
 
+function findCoursePageExamFee(group) {
+  const matchingOffers = COURSE_FEES.filter((o) => {
+    if (o.chamber_id !== currentCid) return false;
+    if (o.exam_fee_scraped == null) return false;
+    const sameParts = partsKey(o.parts) === partsKey(group.parts);
+    const tradeMatch = o.is_generic || (currentTid && o.trade_id === currentTid);
+    return sameParts && tradeMatch;
+  });
+  if (matchingOffers.length === 0) return null;
+  return matchingOffers[0].exam_fee_scraped;
+}
+
 function fillExamFees() {
   if (!currentCid) return;
   const cidStr = String(currentCid);
@@ -163,12 +177,24 @@ function fillExamFees() {
   Object.keys(efTrade).forEach((k) => { efByPart[k] = efTrade[k]; });
 
   feeGroups.forEach((g) => {
+    g.fromTariff = false;
+    g.examFee = null;
+    g.examFeeMin = null;
+    g.examFeeMax = null;
+    g.qualifier = "";
+
+    // Priority 1: fee stated on the course page (mirrors fees.py resolve_exam_fee).
+    const scrapedFee = findCoursePageExamFee(g);
+    if (scrapedFee != null) {
+      g.examFee = scrapedFee;
+      g.examFeeMin = scrapedFee;
+      return;
+    }
+
     let totalFee = 0, totalMin = 0, totalMax = 0;
     let hasMax = false, qualifier = "", hasAny = false;
-    g.fromTariff = false;
 
     // Priority 2a: exact combo-bundle key (e.g. "1,2" for Teile I+II).
-    // Mirrors fees.py's resolve_exam_fee priority 2a.
     const comboKey = partsKey(g.parts);
     const comboEf = g.parts.length > 1 ? efByPart[comboKey] : null;
 
@@ -198,36 +224,50 @@ function fillExamFees() {
       });
     }
 
-    if (!hasAny) {
-      const matchingOffers = COURSE_FEES.filter((o) => {
-        if (o.chamber_id !== currentCid) return false;
-        if (o.exam_fee_scraped == null) return false;
-        const sameParts = partsKey(o.parts) === partsKey(g.parts);
-        const isGeneric = o.is_generic;
-        const tradeMatch = isGeneric || (currentTid && o.trade_id === currentTid);
-        return sameParts && tradeMatch;
-      });
-      if (matchingOffers.length > 0 && matchingOffers[0].exam_fee_scraped) {
-        hasAny = true;
-        totalFee = matchingOffers[0].exam_fee_scraped;
-        totalMin = totalFee;
-        g.fromTariff = false;
-      }
-    }
-
     if (hasAny) {
       g.examFeeMin = totalMin;
       g.examFeeMax = hasMax ? totalMax : null;
       g.qualifier = qualifier;
-      if (g.fromTariff) {
-        // Gebührenverzeichnis / manual fees: show amount beside the label only.
-        g.examFee = null;
-      } else {
-        // Course-page fee: pre-fill unless range or non-tariff qualifier applies.
-        g.examFee = (hasMax || qualifier) ? null : totalFee;
-      }
+      // Gebührenverzeichnis: show amount beside the label only.
+      g.examFee = null;
     }
   });
+}
+
+/** Prefer Einzelkurse, but keep Kombikurse when no single exists for those parts. */
+function preferSingleGroups(candidateGroups, parts) {
+  const singles = candidateGroups.filter((g) => g.parts.length === 1);
+  const combos = candidateGroups.filter((g) => g.parts.length > 1);
+  const hasSingle = (part) => singles.some((g) => g.parts[0] === part);
+
+  // Parts that can only be covered by a combo (no Einzelkurs available).
+  const mustComboParts = parts.filter((p) => !hasSingle(p));
+  const uncovered = new Set(mustComboParts);
+  const requiredCombos = [];
+
+  const comboCandidates = combos
+    .filter((g) => g.parts.every((p) => parts.includes(p)))
+    .slice()
+    .sort((a, b) => a.parts.length - b.parts.length || a.parts[0] - b.parts[0]);
+
+  while (uncovered.size > 0) {
+    const combo = comboCandidates.find(
+      (g) => !requiredCombos.includes(g) && g.parts.some((p) => uncovered.has(p)),
+    );
+    if (!combo) break;
+    requiredCombos.push(combo);
+    combo.parts.forEach((p) => uncovered.delete(p));
+  }
+
+  const comboCovered = new Set(requiredCombos.flatMap((g) => g.parts));
+  const shown = requiredCombos.slice();
+  parts.forEach((p) => {
+    if (comboCovered.has(p)) return;
+    const indiv = singles.find((g) => g.parts[0] === p);
+    if (indiv && shown.indexOf(indiv) < 0) shown.push(indiv);
+  });
+
+  return shown;
 }
 
 function onPartCheck(p) {
@@ -270,19 +310,7 @@ function renderFeeInputs() {
 
   let groupsToRender;
   if (preferSingles) {
-    const shownGroups = [];
-    parts.forEach((p) => {
-      const indiv = candidateGroups.find((g) => g.parts.length === 1 && g.parts[0] === p);
-      if (indiv) {
-        shownGroups.push(indiv);
-      } else {
-        const fallback = allComboGroups
-          .filter((g) => g.parts.indexOf(p) >= 0)
-          .sort((a, b) => a.parts.length - b.parts.length)[0];
-        if (fallback && shownGroups.indexOf(fallback) < 0) shownGroups.push(fallback);
-      }
-    });
-    groupsToRender = shownGroups;
+    groupsToRender = preferSingleGroups(candidateGroups, parts);
   } else {
     groupsToRender = filterRedundantGroups(candidateGroups);
   }
@@ -340,16 +368,22 @@ function buildExamLabel(g) {
     }
     label +=
       ' <button class="fee-info-btn-calc" type="button" data-tooltip="' +
-      TOOLTIP_TARIFF +
+      esc(TOOLTIP_TARIFF) +
       '">i</button></span>';
-  } else if (g.qualifier && g.examFeeMin != null) {
-    const qualifierAmount = Math.round(g.examFeeMin).toLocaleString("de-DE") + " €";
+  } else if (g.examFeeMin != null || g.examFee != null) {
     label +=
-      ' <span class="fee-info-wrap-calc"><small style="color:var(--text-lt)">' +
-      g.qualifier +
-      " " +
-      qualifierAmount +
-      "</small></span>";
+      ' <span class="fee-info-wrap-calc"><button class="fee-info-btn-calc" type="button" data-tooltip="' +
+      esc(TOOLTIP_COURSE_EXAM) +
+      '">i</button></span>';
+    if (g.qualifier && g.examFeeMin != null) {
+      const qualifierAmount = Math.round(g.examFeeMin).toLocaleString("de-DE") + " €";
+      label +=
+        ' <span class="fee-info-wrap-calc"><small style="color:var(--text-lt)">' +
+        g.qualifier +
+        " " +
+        qualifierAmount +
+        "</small></span>";
+    }
   }
   return label;
 }

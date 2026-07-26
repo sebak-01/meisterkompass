@@ -445,7 +445,7 @@
           "qualifier": ""
         },
         "4": {
-          "fee": 420.0,
+          "fee": 205.0,
           "fee_max": null,
           "qualifier": ""
         }
@@ -897,12 +897,12 @@
           "qualifier": ""
         },
         "3": {
-          "fee": 480.0,
+          "fee": 290.0,
           "fee_max": null,
           "qualifier": ""
         },
         "4": {
-          "fee": 480.0,
+          "fee": 290.0,
           "fee_max": null,
           "qualifier": ""
         }
@@ -1491,7 +1491,7 @@
       },
       "friseur": {
         "1,2": {
-          "fee": 1525.0,
+          "fee": 1375.0,
           "fee_max": null,
           "qualifier": "ca."
         }
@@ -3829,7 +3829,7 @@
       },
       "kfz-techniker": {
         "1,2": {
-          "fee": 1000.0,
+          "fee": 675.0,
           "fee_max": null,
           "qualifier": ""
         },
@@ -3884,6 +3884,21 @@
     },
     "hwk-trier": {
       "null": {
+        "1": {
+          "fee": 615.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 515.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "3": {
+          "fee": 180.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
         "4": {
           "fee": 225.0,
           "fee_max": null,
