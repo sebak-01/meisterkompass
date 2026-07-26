@@ -21,6 +21,7 @@ from scrapers.exam_fee_tariff import (
     parse_koblenz_meister_fees,
     parse_rheinhessen_meister_fees,
     parse_thuringia_meister_fees,
+    parse_trier_meister_fees,
 )
 from scrapers import pipeline
 
@@ -150,12 +151,52 @@ THURINGIA_SNIPPET = """
 5.4 Teil IV 340,00 €
 """
 
+TRIER_SNIPPET = """
+Meisterprüfungen
+Antrag auf Zulassung zur Meisterprüfung
+50,00 €
+Praktische Prüfung (Teil I)
+Prüfung der fachtheoretischen Kenntnisse (Teil II)
+Prüfung der wirtschaftlichen und rechtlichen Kenntnisse (Teil III)
+Prüfung der berufs- und arbeitspädagogischen Kenntnisse (Teil IV)
+615,00 €
+515,00 €
+180,00 €
+215,00 €
+Fortbildungsprüfungen
+"""
+
+TRIER_PDF_SNIPPET = """
+Meisterprüfungen
+Praktische Prüfung (Teil I)
+Prüfung der fachtheoretischen Kenntnisse (Teil II)
+Prüfung der wirtschaftlichen und rechtlichen Kenntnisse (Teil III)
+Prüfung der berufs- und arbeitspädagogische Kenntnisse (Teil IV)
+615 €
+515 €
+180 €
+215 €
+Fortbildungsprüfungen
+"""
+
 
 class ExamFeeTariffParsersTest(unittest.TestCase):
     def test_parse_koblenz_ceiling_fees(self):
         fees, qualifier = parse_koblenz_meister_fees(KOBLENZ_SNIPPET)
         self.assertEqual(qualifier, "bis zu")
         self.assertEqual(fees, {1: 1200.0, 2: 600.0, 3: 400.0, 4: 400.0})
+
+    def test_parse_trier_meister_fees(self):
+        self.assertEqual(
+            parse_trier_meister_fees(TRIER_SNIPPET),
+            {1: 615.0, 2: 515.0, 3: 180.0, 4: 215.0},
+        )
+
+    def test_parse_trier_meister_fees_from_pdf_layout(self):
+        self.assertEqual(
+            parse_trier_meister_fees(TRIER_PDF_SNIPPET),
+            {1: 615.0, 2: 515.0, 3: 180.0, 4: 215.0},
+        )
 
     def test_parse_rheinhessen_ranges(self):
         fees, fee_max = parse_rheinhessen_meister_fees(RHEINHESSEN_SNIPPET)

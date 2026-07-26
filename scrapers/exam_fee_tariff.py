@@ -184,6 +184,8 @@ _KOBLENZ_PART_RE = re.compile(
     re.IGNORECASE,
 )
 
+_TRIER_TEIL_LABEL_RE = re.compile(r"\(Teil\s+(I{1,3}|IV)\)", re.IGNORECASE)
+
 _RH_RANGE_RE = re.compile(
     r"Teil\s+(I{1,3}|IV)\)?\s*([\d.]+)\s*[-–]\s*([\d.]+)",
     re.IGNORECASE,
@@ -222,6 +224,35 @@ def parse_koblenz_meister_fees(text: str) -> tuple[dict[int, float], str]:
         part = ROMAN[match.group(1).upper()]
         fees[part] = german_amount(match.group(2), match.group(3))
     return fees, "bis zu"
+
+
+def parse_trier_meister_fees(text: str) -> dict[int, float]:
+    """
+    HWK Trier Gebührenverzeichnis (section 3.4 Meisterprüfungen):
+    four Teil labels followed by Euro amounts on separate lines.
+    """
+    lower = text.lower()
+    start = lower.find("meisterprüfungen")
+    if start < 0:
+        return {}
+    end = lower.find("fortbildungsprüfungen", start + 10)
+    section = text[start:end if end > start else start + 2000]
+
+    teil_order = _TRIER_TEIL_LABEL_RE.findall(section)
+    if len(teil_order) < 4:
+        return {}
+
+    amounts: list[float] = []
+    for match in re.finditer(r"\b([\d.]+)(?:,(\d{2}))?\s*€", section):
+        amounts.append(german_amount(match.group(1), match.group(2)))
+    amounts = [amount for amount in amounts if amount >= 100]
+    if len(amounts) < 4:
+        return {}
+
+    fees: dict[int, float] = {}
+    for roman, fee in zip(teil_order[:4], amounts[:4]):
+        fees[ROMAN[roman.upper()]] = fee
+    return fees
 
 
 def parse_rheinhessen_meister_fees(text: str) -> tuple[dict[int, float], dict[int, float]]:
