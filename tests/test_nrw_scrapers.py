@@ -16,6 +16,7 @@ from scrapers.hwk_dortmund import (
     parse_availability_from_variations,
     parse_dates_from_termin,
     parse_dortmund_title,
+    parse_variations_from_form,
 )
 from scrapers.hwk_duesseldorf import HwkDuesseldorfScraper, parse_duesseldorf_title
 from scrapers.hwk_koeln import (
