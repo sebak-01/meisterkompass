@@ -43,6 +43,26 @@ class SaarlandScraperTests(unittest.TestCase):
         self.assertEqual(runs[0]["availability"], "full")
         self.assertEqual(runs[1]["availability"], "available")
 
+    def test_parse_runs_m2ih_three_termin_blocks(self):
+        """Live m2ih page: two fully booked runs must not bleed into the open run."""
+        text = """
+        22.08.2026 — 27.11.2027
+        Kurstyp: Teilzeit
+        (Keine Plätze mehr frei)
+        Details
+        17.08.2027 — 23.11.2028
+        Kurstyp: Teilzeit
+        (Keine Plätze mehr frei)
+        Details
+        19.08.2028 — 22.11.2029
+        Kurstyp: Teilzeit
+        Es gibt noch freie Plätze
+        Details
+        """
+        runs = HwkSaarlandScraper()._parse_runs(text)
+        self.assertEqual(len(runs), 3)
+        self.assertEqual([r["availability"] for r in runs], ["full", "full", "available"])
+
 
 if __name__ == "__main__":
     unittest.main()
