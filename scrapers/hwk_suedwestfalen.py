@@ -448,12 +448,23 @@ class HwkSuedwestfalenScraper(BaseScraper):
         seen_ids: set[str] = set()
         current_format = default_format
 
-        for el in soup.find_all(["h2", "h3", "h4", "div"]):
-            if el.name in ("h2", "h3", "h4"):
+        for el in soup.find_all(["h2", "h3", "h4", "h5", "h6", "div"]):
+            if el.name in ("h2", "h3", "h4", "h5", "h6"):
                 header = el.get_text(" ", strip=True)
+                # Date headings inside course rows are h4 — only treat short
+                # section labels (Vollzeit / Teilzeit) as format switches.
+                if DATE_RANGE_RE.search(header) and not re.search(
+                    r"Vollzeit|Teilzeit|Blockunterricht|Wochenende",
+                    header,
+                    re.IGNORECASE,
+                ):
+                    continue
                 header_format = cls._format_from_block(header, current_format)
                 if header_format != current_format and (
-                    "vollzeit" in header.lower() or "teilzeit" in header.lower()
+                    "vollzeit" in header.lower()
+                    or "teilzeit" in header.lower()
+                    or "blockunterricht" in header.lower()
+                    or "wochenende" in header.lower()
                 ):
                     current_format = header_format
 
