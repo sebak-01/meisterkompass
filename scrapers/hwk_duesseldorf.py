@@ -214,6 +214,8 @@ class HwkDuesseldorfScraper(BavariaOdavScraper):
         }
 
     def _enrich(self, card: dict) -> RawCourseOffer | list[RawCourseOffer] | None:
+        listing_format = card.get("format_key")
+        listing_teaching_mode = card.get("teaching_mode")
         soup = self.parse_html(card["detail_url"]) if self.catalogue.details_required else None
         if soup is not None:
             h1 = soup.select_one("h1")
@@ -223,7 +225,13 @@ class HwkDuesseldorfScraper(BavariaOdavScraper):
                 card = {**card, "parts": parts}
             if trade_name:
                 card = {**card, "trade_name": trade_name}
-        return super()._enrich(card)
+        result = super()._enrich(card)
+        if result and listing_format:
+            for offer in (result if isinstance(result, list) else [result]):
+                offer.format_key = listing_format
+                if listing_teaching_mode:
+                    offer.teaching_mode = listing_teaching_mode
+        return result
 
     @staticmethod
     def parse_part_i_exam_fees(text: str) -> dict[str, float]:

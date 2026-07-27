@@ -14,7 +14,9 @@ from scrapers.hwk_dortmund import (
     HwkDortmundScraper,
     parse_availability_from_stock_html,
     parse_availability_from_variations,
+    parse_dates_from_termin,
     parse_dortmund_title,
+    parse_variations_from_form,
 )
 from scrapers.hwk_duesseldorf import HwkDuesseldorfScraper, parse_duesseldorf_title
 from scrapers.hwk_koeln import HwkKoelnScraper, parse_koeln_title
@@ -463,6 +465,102 @@ class NrwParserTests(unittest.TestCase):
             parse_availability_from_variations(soup, "2026-07-20", "2026-09-15"),
             "available",
         )
+
+    def test_dortmund_parse_dates_from_termin(self):
+        self.assertEqual(
+            parse_dates_from_termin(
+                "17.08.2026 - 13.10.2026 (Bildungszentrum Handwerkskammer Dortmund)"
+            ),
+            ("2026-08-17", "2026-10-13"),
+        )
+
+    def test_dortmund_event_page_emits_one_offer_per_variation(self):
+        from bs4 import BeautifulSoup
+
+        html = """
+        <h1>Gepr. Fachmann/-frau für kaufmännische Betriebsführung (HwO) Vollzeit</h1>
+        <p>Umfang: 320 Unterrichtseinheiten</p>
+        <form class="variations_form" data-product_variations='[
+          {
+            "attributes": {"attribute_termin": "17.08.2026 - 13.10.2026 (Bildungszentrum)"},
+            "availability_html": "<p class=\\"stock in-stock\\">3 Plätze verfügbar</p>",
+            "display_price": 2245
+          },
+          {
+            "attributes": {"attribute_termin": "14.09.2026 - 10.11.2026 (Bildungszentrum)"},
+            "availability_html": "<p class=\\"stock available-on-backorder\\">Ausgebucht. Auf Warteliste setzen.</p>",
+            "display_price": 2245
+          }
+        ]'>
+        </form>
+        """
+        soup = BeautifulSoup(html, "html.parser")
+        offers = HwkDortmundScraper()._parse_event_page(
+            soup, "https://www.hwk-do.de/event/example", html
+        )
+        self.assertEqual(len(offers), 2)
+        self.assertEqual(offers[0].parts, [3])
+        self.assertEqual(offers[0].format_key, "full_time")
+        self.assertEqual(offers[0].start_date, "2026-08-17")
+        self.assertEqual(offers[0].end_date, "2026-10-13")
+        self.assertEqual(offers[0].availability, "available")
+        self.assertEqual(offers[1].availability, "waitlist")
+        self.assertEqual(offers[0].source_url, "https://www.hwk-do.de/event/example#termin-1")
+        self.assertEqual(offers[1].source_url, "https://www.hwk-do.de/event/example#termin-2")
+
+    def test_duesseldorf_preserves_listing_format_over_mixed_detail_page(self):
+        from bs4 import BeautifulSoup
+        from unittest.mock import patch
+
+        card = {
+            "raw_title": "Gepr. Fachfrau/mann für kaufm. Betriebsführung HwO (III)",
+            "parts": [3],
+            "trade_name": None,
+            "start_date": "2026-08-31",
+            "end_date": "2026-10-23",
+            "format_key": "full_time",
+            "teaching_mode": "presence",
+            "duration_hours": 320,
+            "course_fee": 1500.0,
+            "availability": "available",
+            "detail_url": "https://www.hwk-duesseldorf.de/31,0,coursedetail.html?id=59940",
+            "card_text": "31.08.2026 - 23.10.2026: Vollzeit Gepr. Fachfrau/mann für kaufm. Betriebsführung HwO (III)",
+        }
+        detail_html = """
+        <main>
+          <h1>Gepr. Fachfrau/mann für kaufm. Betriebsführung HwO (III)</h1>
+          <p>Teilzeit</p>
+          <p>31.08.2026 - 23.10.2026: Vollzeit</p>
+          <p>07.09.2026 - 15.07.2027: Teilzeit</p>
+          <p>Lehrgangsdauer 320 Unterrichtsstunden</p>
+          <p>Kursgebühr 1.500,00 Euro</p>
+        </main>
+        """
+        scraper = HwkDuesseldorfScraper()
+        with patch.object(scraper, "parse_html", return_value=BeautifulSoup(detail_html, "html.parser")):
+            result = scraper._enrich(card)
+        self.assertIsNotNone(result)
+        offer = result[0] if isinstance(result, list) else result
+        self.assertEqual(offer.format_key, "full_time")
+
+    def test_muenster_almost_full_icon_maps_to_available(self):
+        from bs4 import BeautifulSoup
+
+        html = """
+        <div class="course-detail__dates-list">
+          <li class="course-detail__dates-list-item">
+            <label class="course-detail__date-choice-label">
+              <svg class="icon icon--course-state icon--course-almost-full">
+                <use xlink:href="#square-solid"></use>
+              </svg>
+              <span class="date">22.10.27 - 19.01.30</span>
+            </label>
+          </li>
+        </div>
+        """
+        runs = HwkMuensterScraper._parse_runs(BeautifulSoup(html, "html.parser"))
+        self.assertEqual(len(runs), 1)
+        self.assertEqual(runs[0][2], "available")
 
     def test_suedwestfalen_exam_fee_tariff_parsing(self):
         sample = """

@@ -26,6 +26,9 @@ GENERIC_EXAM_FEES = {1: 400.0, 2: 320.0, 3: 240.0, 4: 220.0}
 
 DISPLAY_PRICE_RE = re.compile(r'"display_price":(\d+)')
 DATE_RE = re.compile(r"(\d{2})\.(\d{2})\.(\d{4})")
+TERMIN_DATE_RE = re.compile(
+    r"(\d{2})\.(\d{2})\.(\d{4})\s*-\s*(\d{2})\.(\d{2})\.(\d{4})"
+)
 DURATION_RE = re.compile(
     r"([\d.]+)\s+(?:Unterrichtseinheiten|Unterrichtsstunden|UE|Std\.)",
     re.IGNORECASE,
@@ -72,6 +75,30 @@ def parse_availability_from_stock_html(stock_html: str) -> str:
     if "available-on-backorder" in stock_html.lower():
         return "waitlist"
     return "unknown"
+
+
+def parse_dates_from_termin(termin: str) -> tuple[str | None, str | None]:
+    """Parse ISO start/end dates from a WooCommerce ``attribute_termin`` value."""
+    match = TERMIN_DATE_RE.search(termin)
+    if not match:
+        return None, None
+    start = f"{match.group(3)}-{match.group(2)}-{match.group(1)}"
+    end = f"{match.group(6)}-{match.group(5)}-{match.group(4)}"
+    return start, end
+
+
+def parse_variations_from_form(soup: BeautifulSoup) -> list[dict]:
+    """Return WooCommerce product variations from the event page form."""
+    form = soup.select_one("form.variations_form")
+    if form is None:
+        return []
+    raw = form.get("data-product_variations")
+    if not raw:
+        return []
+    try:
+        return json.loads(html.unescape(raw))
+    except json.JSONDecodeError:
+        return []
 
 
 def parse_availability_from_variations(
@@ -153,12 +180,11 @@ class HwkDortmundScraper(BaseScraper):
                 continue
             soup = BeautifulSoup(response.text, "html.parser")
             try:
-                offer = self._parse_event_page(soup, link, response.text)
+                page_offers = self._parse_event_page(soup, link, response.text)
             except Exception as exc:
                 logger.warning("Could not parse Dortmund event %s: %s", link, exc)
                 continue
-            if offer:
-                offers.append(offer)
+            offers.extend(page_offers)
         logger.info("HWK Dortmund: parsed %d course offers.", len(offers))
         return offers
 
@@ -198,20 +224,69 @@ class HwkDortmundScraper(BaseScraper):
 
     def _parse_event_page(
         self, soup: BeautifulSoup, url: str, html: str
-    ) -> RawCourseOffer | None:
+    ) -> list[RawCourseOffer]:
         h1 = soup.select_one("h1")
         title = h1.get_text(" ", strip=True) if h1 else ""
         if not title or EXCLUDE_TITLE_RE.search(title):
-            return None
+            return []
 
         parts, trade = parse_dortmund_title(title)
         if not parts:
-            return None
+            return []
 
         page_text = soup.get_text("\n", strip=True)
         duration_match = DURATION_RE.search(page_text) or DURATION_RE.search(html)
         duration = int(duration_match.group(1).replace(".", "")) if duration_match else None
         course_fee, exam_fee = self._parse_fees(html)
+
+        format_key = self._parse_format(title, page_text)
+        if "online" in page_text.lower() and "präsenz" not in page_text.lower():
+            teaching_mode = "online"
+        elif "hybrid" in page_text.lower():
+            teaching_mode = "hybrid"
+        else:
+            teaching_mode = "presence"
+
+        exam_fee_source = "course_page" if exam_fee else "tariff"
+        variations = parse_variations_from_form(soup)
+        if variations:
+            offers: list[RawCourseOffer] = []
+            for index, variation in enumerate(variations):
+                termin = variation.get("attributes", {}).get("attribute_termin", "")
+                start_date, end_date = parse_dates_from_termin(termin)
+                availability = parse_availability_from_stock_html(
+                    variation.get("availability_html", "")
+                )
+                var_price = variation.get("display_price")
+                var_course_fee = course_fee
+                if var_price and float(var_price) > 0:
+                    if exam_fee and float(var_price) > exam_fee * 1.05:
+                        var_course_fee = float(var_price) - exam_fee
+                    else:
+                        var_course_fee = float(var_price)
+                offers.append(RawCourseOffer(
+                    title=build_course_title(trade, parts),
+                    trade_name=trade,
+                    parts=parts,
+                    format_key=format_key,
+                    teaching_mode=teaching_mode,
+                    start_date=start_date,
+                    end_date=end_date,
+                    duration_hours=duration,
+                    course_fee=var_course_fee,
+                    exam_fee_scraped=exam_fee,
+                    city=DEFAULT_LOCATION["city"],
+                    street=DEFAULT_LOCATION["street"],
+                    zip_code=DEFAULT_LOCATION["zip_code"],
+                    availability=availability,
+                    source_url=f"{url}#termin-{index + 1}",
+                    scraped_raw={
+                        "title": title,
+                        "termin": termin,
+                        "exam_fee_source": exam_fee_source,
+                    },
+                ))
+            return offers
 
         dates = DATE_RE.findall(page_text)
         start_date = end_date = None
@@ -224,17 +299,9 @@ class HwkDortmundScraper(BaseScraper):
             start = dates[0]
             start_date = f"{start[2]}-{start[1]}-{start[0]}"
 
-        format_key = self._parse_format(title, page_text)
-        if "online" in page_text.lower() and "präsenz" not in page_text.lower():
-            teaching_mode = "online"
-        elif "hybrid" in page_text.lower():
-            teaching_mode = "hybrid"
-        else:
-            teaching_mode = "presence"
-
         availability = parse_availability_from_variations(soup, start_date, end_date)
 
-        return RawCourseOffer(
+        return [RawCourseOffer(
             title=build_course_title(trade, parts),
             trade_name=trade,
             parts=parts,
@@ -250,8 +317,8 @@ class HwkDortmundScraper(BaseScraper):
             zip_code=DEFAULT_LOCATION["zip_code"],
             availability=availability,
             source_url=url,
-            scraped_raw={"title": title, "exam_fee_source": "course_page" if exam_fee else "tariff"},
-        )
+            scraped_raw={"title": title, "exam_fee_source": exam_fee_source},
+        )]
 
     @staticmethod
     def _parse_format(title: str, page_text: str) -> str:
