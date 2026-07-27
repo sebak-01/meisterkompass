@@ -209,6 +209,9 @@ class HwkSaarlandScraper(BaseScraper):
             if not start or start < today:
                 continue
             ctx   = text[mm.end():mm.end() + 300]
+            next_date = dash_re.search(ctx)
+            if next_date:
+                ctx = ctx[:next_date.start()]
             avail = self._parse_availability(ctx)
             runs.append({"start": start, "end": end, "availability": avail})
         if runs:
@@ -369,7 +372,14 @@ class HwkSaarlandScraper(BaseScraper):
 
     def _parse_availability(self, text: str) -> str:
         t = text.lower()
-        if "ausgebucht" in t:
+        if any(phrase in t for phrase in (
+            "ausgebucht",
+            "keine plätze mehr frei",
+            "keine plaetze mehr frei",
+            "buchung ist nicht mehr möglich",
+            "buchung ist nicht mehr moeglich",
+            "nicht mehr buchbar",
+        )):
             return "full"
         if "warteliste" in t:
             return "waitlist"
