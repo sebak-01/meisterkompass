@@ -14,15 +14,25 @@ from scrapers.hwk_dortmund import (
     HwkDortmundScraper,
     parse_availability_from_stock_html,
     parse_availability_from_variations,
+    parse_dates_from_termin,
     parse_dortmund_title,
+    parse_variations_from_form,
 )
 from scrapers.hwk_duesseldorf import HwkDuesseldorfScraper, parse_duesseldorf_title
-from scrapers.hwk_koeln import HwkKoelnScraper, parse_koeln_title
+from scrapers.hwk_koeln import (
+    HwkKoelnScraper,
+    parse_koeln_course_fee,
+    parse_koeln_title,
+    _is_meister_listing,
+)
 from scrapers.hwk_muenster import HwkMuensterScraper, parse_muenster_title
 from scrapers.hwk_ostwestfalen_lippe_zu_bielefeld import (
     HwkOstwestfalenLippeZuBielefeldScraper,
-    parse_owl_title,
+    _card_key,
+    _format_from_schedule_line,
     _is_meister_card,
+    _parse_schedule_from_title,
+    parse_owl_title,
 )
 from scrapers.hwk_suedwestfalen import HwkSuedwestfalenScraper, parse_suedwestfalen_title
 from scrapers.pipeline import SCRAPERS
@@ -253,9 +263,9 @@ class NrwParserTests(unittest.TestCase):
         self.assertEqual(
             runs,
             [
-                ("2026-10-12", "2027-06-11", "full"),
-                ("2027-10-11", "2028-06-09", "available"),
-                ("2028-10-16", "2029-06-08", "waitlist"),
+                ("2026-10-12", "2027-06-11", "full", "part_time"),
+                ("2027-10-11", "2028-06-09", "available", "part_time"),
+                ("2028-10-16", "2029-06-08", "waitlist", "part_time"),
             ],
         )
 
@@ -376,6 +386,43 @@ class NrwParserTests(unittest.TestCase):
         self.assertEqual(course_fee, 6696.0)
         self.assertEqual(exam_fee, 1514.0)
 
+    def test_dortmund_fees_exclude_lernmittel_from_kurskosten(self):
+        html = (
+            '"display_price":11529,"display_regular_price":11529,'
+            '"bue_additional_prices":[{"bezeichnung":"Prüfungsgebühr","gebuehr":1899},'
+            '{"bezeichnung":"Kurskosten","gebuehr":9480},'
+            '{"bezeichnung":"Lernmittel","gebuehr":150}]'
+        )
+        course_fee, exam_fee = HwkDortmundScraper._parse_fees(html)
+        self.assertEqual(course_fee, 9480.0)
+        self.assertEqual(exam_fee, 1899.0)
+
+    def test_dortmund_variation_display_price_does_not_add_lernmittel(self):
+        from bs4 import BeautifulSoup
+
+        html = """
+        <h1>Augenoptiker/in Teilzeitlehrgang (Meistervorbereitung Teile I und II)</h1>
+        <p>Umfang: 1264 Unterrichtseinheiten</p>
+        <form class="variations_form" data-product_variations='[
+          {
+            "attributes": {"attribute_termin": "18.01.2027 - 08.07.2028 (Bildungszentrum)"},
+            "availability_html": "<p class=\\"stock in-stock\\">3 Plätze verfügbar</p>",
+            "display_price": 11529
+          }
+        ]'>
+        </form>
+        "bue_additional_prices":[{"bezeichnung":"Prüfungsgebühr","gebuehr":1899},
+        {"bezeichnung":"Kurskosten","gebuehr":9480},
+        {"bezeichnung":"Lernmittel","gebuehr":150}]
+        """
+        soup = BeautifulSoup(html, "html.parser")
+        offers = HwkDortmundScraper()._parse_event_page(
+            soup, "https://www.hwk-do.de/event/augenoptiker", html
+        )
+        self.assertEqual(len(offers), 1)
+        self.assertEqual(offers[0].course_fee, 9480.0)
+        self.assertEqual(offers[0].exam_fee_scraped, 1899.0)
+
     def test_dortmund_format_prefers_title_teilzeit(self):
         self.assertEqual(
             HwkDortmundScraper._parse_format(
@@ -463,6 +510,431 @@ class NrwParserTests(unittest.TestCase):
             parse_availability_from_variations(soup, "2026-07-20", "2026-09-15"),
             "available",
         )
+
+    def test_dortmund_parse_dates_from_termin(self):
+        self.assertEqual(
+            parse_dates_from_termin(
+                "17.08.2026 - 13.10.2026 (Bildungszentrum Handwerkskammer Dortmund)"
+            ),
+            ("2026-08-17", "2026-10-13"),
+        )
+
+    def test_dortmund_event_page_emits_one_offer_per_variation(self):
+        from bs4 import BeautifulSoup
+
+        html = """
+        <h1>Gepr. Fachmann/-frau für kaufmännische Betriebsführung (HwO) Vollzeit</h1>
+        <p>Umfang: 320 Unterrichtseinheiten</p>
+        <form class="variations_form" data-product_variations='[
+          {
+            "attributes": {"attribute_termin": "17.08.2026 - 13.10.2026 (Bildungszentrum)"},
+            "availability_html": "<p class=\\"stock in-stock\\">3 Plätze verfügbar</p>",
+            "display_price": 2245
+          },
+          {
+            "attributes": {"attribute_termin": "14.09.2026 - 10.11.2026 (Bildungszentrum)"},
+            "availability_html": "<p class=\\"stock available-on-backorder\\">Ausgebucht. Auf Warteliste setzen.</p>",
+            "display_price": 2245
+          }
+        ]'>
+        </form>
+        """
+        soup = BeautifulSoup(html, "html.parser")
+        offers = HwkDortmundScraper()._parse_event_page(
+            soup, "https://www.hwk-do.de/event/example", html
+        )
+        self.assertEqual(len(offers), 2)
+        self.assertEqual(offers[0].parts, [3])
+        self.assertEqual(offers[0].format_key, "full_time")
+        self.assertEqual(offers[0].start_date, "2026-08-17")
+        self.assertEqual(offers[0].end_date, "2026-10-13")
+        self.assertEqual(offers[0].availability, "available")
+        self.assertEqual(offers[1].availability, "waitlist")
+        self.assertEqual(offers[0].source_url, "https://www.hwk-do.de/event/example#termin-1")
+        self.assertEqual(offers[1].source_url, "https://www.hwk-do.de/event/example#termin-2")
+
+    def test_duesseldorf_preserves_listing_format_over_mixed_detail_page(self):
+        from bs4 import BeautifulSoup
+        from unittest.mock import patch
+
+        card = {
+            "raw_title": "Gepr. Fachfrau/mann für kaufm. Betriebsführung HwO (III)",
+            "parts": [3],
+            "trade_name": None,
+            "start_date": "2026-08-31",
+            "end_date": "2026-10-23",
+            "format_key": "full_time",
+            "teaching_mode": "presence",
+            "duration_hours": 320,
+            "course_fee": 1500.0,
+            "availability": "available",
+            "detail_url": "https://www.hwk-duesseldorf.de/31,0,coursedetail.html?id=59940",
+            "card_text": "31.08.2026 - 23.10.2026: Vollzeit Gepr. Fachfrau/mann für kaufm. Betriebsführung HwO (III)",
+        }
+        detail_html = """
+        <main>
+          <h1>Gepr. Fachfrau/mann für kaufm. Betriebsführung HwO (III)</h1>
+          <p>Teilzeit</p>
+          <p>31.08.2026 - 23.10.2026: Vollzeit</p>
+          <p>07.09.2026 - 15.07.2027: Teilzeit</p>
+          <p>Lehrgangsdauer 320 Unterrichtsstunden</p>
+          <p>Kursgebühr 1.500,00 Euro</p>
+        </main>
+        """
+        scraper = HwkDuesseldorfScraper()
+        with patch.object(scraper, "parse_html", return_value=BeautifulSoup(detail_html, "html.parser")):
+            result = scraper._enrich(card)
+        self.assertIsNotNone(result)
+        offer = result[0] if isinstance(result, list) else result
+        self.assertEqual(offer.format_key, "full_time")
+
+    def test_muenster_almost_full_icon_maps_to_available(self):
+        from bs4 import BeautifulSoup
+
+        html = """
+        <div class="course-detail__dates-list">
+          <li class="course-detail__dates-list-item">
+            <label class="course-detail__date-choice-label">
+              <svg class="icon icon--course-state icon--course-almost-full">
+                <use xlink:href="#square-solid"></use>
+              </svg>
+              <span class="date">22.10.27 - 19.01.30</span>
+            </label>
+          </li>
+        </div>
+        """
+        runs = HwkMuensterScraper._parse_runs(BeautifulSoup(html, "html.parser"))
+        self.assertEqual(len(runs), 1)
+        self.assertEqual(runs[0][2], "available")
+
+    def test_owl_preserves_listing_format_and_dates(self):
+        from bs4 import BeautifulSoup
+        from unittest.mock import patch
+
+        card = {
+            "raw_title": "07.09.2026 - 22.04.2027: Vollzeit Meistervorbereitung im Installateur-/ Heizungsbauer-Handwerk, Teile I + II",
+            "parts": [1, 2],
+            "trade_name": "Installateur- und Heizungsbauer",
+            "start_date": "2026-09-07",
+            "end_date": "2027-04-22",
+            "format_key": "full_time",
+            "teaching_mode": "presence",
+            "duration_hours": 1300,
+            "course_fee": None,
+            "availability": "unknown",
+            "detail_url": "https://bbz.handwerk-owl.de/3351,0,coursedetail.html?id=128641",
+            "card_text": "07.09.2026 - 22.04.2027: Vollzeit Meistervorbereitung im Installateur-/ Heizungsbauer-Handwerk, Teile I + II",
+        }
+        detail_html = """
+        <main>
+          <h1>Meistervorbereitung im Installateur-/ Heizungsbauer-Handwerk, Teile I + II</h1>
+          <p>Teilzeit</p>
+          <p>07.09.2026 - 22.04.2027: Vollzeit</p>
+          <p>02.11.2026 - 16.03.2029: Teilzeit</p>
+          <p>Lehrgangsdauer 1300 Std.</p>
+        </main>
+        """
+        scraper = HwkOstwestfalenLippeZuBielefeldScraper()
+        with patch.object(scraper, "parse_html", return_value=BeautifulSoup(detail_html, "html.parser")):
+            result = scraper._enrich(card)
+        offer = result[0] if isinstance(result, list) else result
+        self.assertEqual(offer.format_key, "full_time")
+        self.assertEqual(offer.start_date, "2026-09-07")
+        self.assertEqual(offer.end_date, "2027-04-22")
+
+    def test_owl_card_key_allows_multiple_listings_per_detail_page(self):
+        card_a = {
+            "detail_url": "https://bbz.handwerk-owl.de/3351,0,coursedetail.html?id=128641",
+            "start_date": "2026-09-07",
+            "end_date": "2027-04-22",
+            "format_key": "full_time",
+        }
+        card_b = {
+            "detail_url": "https://bbz.handwerk-owl.de/3351,0,coursedetail.html?id=128641",
+            "start_date": "2026-11-02",
+            "end_date": "2029-03-16",
+            "format_key": "part_time",
+        }
+        self.assertNotEqual(_card_key(card_a), _card_key(card_b))
+
+    def test_owl_article_list_group_item_ignores_sibling_runs(self):
+        from bs4 import BeautifulSoup
+
+        html = """
+        <div class="list-group odav-listgroup">
+          <a class="list-group-item clearfix" href="/3351,0,coursedetail.html?id=128641">
+            07.09.2026 - 22.04.2027: Vollzeit
+            Meistervorbereitung im Installateur-/ Heizungsbauer-Handwerk, Teile I + II
+            Bielefeld
+          </a>
+          <a class="list-group-item clearfix" href="/3351,0,coursedetail.html?id=128641">
+            02.11.2026 - 16.03.2029: Teilzeit
+            Meistervorbereitung im Installateur-/ Heizungsbauer-Handwerk, Teile I + II
+            Bielefeld
+          </a>
+          <a class="list-group-item clearfix" href="/3351,0,coursedetail.html?id=128641">
+            10.05.2027 - 22.12.2027: Vollzeit
+            Meistervorbereitung im Installateur-/ Heizungsbauer-Handwerk, Teile I + II
+            Bielefeld
+          </a>
+        </div>
+        """
+        soup = BeautifulSoup(html, "html.parser")
+        scraper = HwkOstwestfalenLippeZuBielefeldScraper()
+        cards = []
+        for link in soup.select("a.list-group-item"):
+            card = scraper._parse_owl_card(
+                link,
+                "https://bbz.handwerk-owl.de/3351,0,coursedetail.html?id=128641",
+                article_trade="shk",
+            )
+            cards.append(card)
+        self.assertEqual(
+            [(c["start_date"], c["end_date"], c["format_key"]) for c in cards],
+            [
+                ("2026-09-07", "2027-04-22", "full_time"),
+                ("2026-11-02", "2029-03-16", "part_time"),
+                ("2027-05-10", "2027-12-22", "full_time"),
+            ],
+        )
+
+    def test_owl_schedule_line_parsed_from_link_title(self):
+        self.assertEqual(
+            _parse_schedule_from_title(
+                "07.09.2026 - 22.04.2027: Vollzeit Meistervorbereitung im Installateur-/ "
+                "Heizungsbauer-Handwerk, Teile I + II Bielefeld"
+            ),
+            ("2026-09-07", "2027-04-22", "full_time"),
+        )
+        self.assertEqual(
+            _parse_schedule_from_title(
+                "04.09.2026 - 31.10.2026: Wochenende AdA - Ausbildung der Ausbilder, BL (Teil IV)"
+            ),
+            ("2026-09-04", "2026-10-31", "part_time"),
+        )
+
+    def test_owl_aevo_and_betriebsfuehrung_titles_are_meister_cards(self):
+        self.assertTrue(_is_meister_card("Ausbildung der Ausbilder nach AEVO"))
+        self.assertTrue(
+            _is_meister_card("Fachmann/-frau kaufmaennische Betriebsführung (HWO), (Teil III)")
+        )
+        self.assertTrue(
+            _is_meister_card(
+                "28.09.2026 - 20.11.2026: Vollzeit Fachmann/-frau kaufmännische "
+                "Betriebsführung (HWO), (Teil III) Bielefeld"
+            )
+        )
+        self.assertFalse(_is_meister_card("Infoveranstaltung Meisterprüfung"))
+
+    def test_owl_format_matched_from_detail_schedule_line(self):
+        from bs4 import BeautifulSoup
+        from unittest.mock import patch
+
+        detail_text = """
+        28.09.2026 - 20.11.2026: Vollzeit
+        17.08.2026 - 30.06.2027: Teilzeit
+        31.08.2026 - 19.09.2026: Vollzeit
+        """
+        self.assertEqual(
+            _format_from_schedule_line(detail_text, "2026-09-28"),
+            "full_time",
+        )
+        self.assertEqual(
+            _format_from_schedule_line(detail_text, "2026-08-17"),
+            "part_time",
+        )
+
+        card = {
+            "raw_title": "Fachmann/-frau kaufmännische Betriebsführung (HWO), (Teil III)",
+            "parts": [3],
+            "trade_name": None,
+            "start_date": "2026-09-28",
+            "end_date": "2026-11-20",
+            "format_key": None,
+            "teaching_mode": "presence",
+            "duration_hours": 320,
+            "course_fee": 2650.0,
+            "availability": "available",
+            "detail_url": "https://bbz.handwerk-owl.de/3351,0,coursedetail.html?id=131116",
+            "card_text": "",
+        }
+        detail_html = """
+        <main>
+          <h1>Fachmann/-frau kaufmännische Betriebsführung (HWO), (Teil III)</h1>
+          <p>28.09.2026 - 20.11.2026: Vollzeit</p>
+          <p>17.08.2026 - 30.06.2027: Teilzeit</p>
+          <p>Lehrgangsdauer 320 Std.</p>
+        </main>
+        """
+        scraper = HwkOstwestfalenLippeZuBielefeldScraper()
+        with patch.object(
+            scraper, "parse_html", return_value=BeautifulSoup(detail_html, "html.parser")
+        ):
+            result = scraper._enrich(card)
+        offer = result[0] if isinstance(result, list) else result
+        self.assertEqual(offer.format_key, "full_time")
+        self.assertEqual(offer.start_date, "2026-09-28")
+
+    def test_koeln_part_iii_iv_listings_are_included(self):
+        self.assertTrue(_is_meister_listing(
+            "Geprüfte/r Fachfrau/-mann für kaufmännische Betriebsführung nach der HwO"
+        ))
+        self.assertTrue(_is_meister_listing(
+            "02.11.2026 - 20.11.2026: Vollzeit Vorbereitung auf die Ausbildereignungsprüfung"
+        ))
+        self.assertTrue(_is_meister_listing(
+            "Kombikurs Geprüfte/r Fachfrau/-mann für kfm. Betriebsführung (HwO) und Ausbildereignung"
+        ))
+
+    def test_koeln_lehrgangsgebuehr_fee_parsing(self):
+        sample = "Lehrgangsgebühr 4755,00 Euro plus 950,00 Euro Prüfungsgebühr"
+        self.assertEqual(parse_koeln_course_fee(sample), 4755.0)
+
+    def test_suedwestfalen_run_format_from_schedule_lines(self):
+        from bs4 import BeautifulSoup
+
+        page_text = """
+        31.08.2026 — 23.10.2026: Vollzeit
+        Jetzt Buchen
+        07.09.2026 — 15.07.2027: Teilzeit
+        ausgebucht
+        """
+        runs = HwkSuedwestfalenScraper._parse_runs(BeautifulSoup("", "html.parser"), page_text)
+        self.assertEqual(runs[0][:3], ("2026-08-31", "2026-10-23", "available"))
+        self.assertEqual(runs[0][3], "full_time")
+        self.assertEqual(runs[1][3], "part_time")
+
+    def test_suedwestfalen_run_format_from_course_rows(self):
+        from bs4 import BeautifulSoup
+
+        html = """
+        <div class="row tx-wisumcourses-course" data-kurs-id="1">
+          <div class="col-xs-6"><h4>31.08.2026 — 23.10.2026</h4><p>Vollzeit</p></div>
+          <div class="col-xs-6"><a class="btn btn-secondary">Jetzt Buchen</a></div>
+        </div>
+        <div class="row tx-wisumcourses-course" data-kurs-id="2">
+          <div class="col-xs-6"><h4>07.09.2026 — 15.07.2027</h4><p>Teilzeit</p></div>
+          <div class="col-xs-6"><button>ausgebucht</button></div>
+        </div>
+        """
+        runs = HwkSuedwestfalenScraper._parse_runs(BeautifulSoup(html, "html.parser"), "")
+        self.assertEqual(runs[0][3], "full_time")
+        self.assertEqual(runs[1][3], "part_time")
+
+    def test_suedwestfalen_h5_section_headers_set_run_format(self):
+        from bs4 import BeautifulSoup
+
+        html = """
+        <h1>Kursangebot</h1>
+        <h3>Geprüfte/r Fachfrau/Fachmann für kaufmännische Betriebsführung (HWO)</h3>
+        <h5>Vollzeit</h5>
+        <p>Montag - Donnerstag 8 - 16.30 Uhr</p>
+        <div class="row tx-wisumcourses-course tx-wisumcourses-course-unavailable" data-kurs-id="1">
+          <div class="col-xs-6"><h4>31.08.2026 — 23.10.2026</h4></div>
+          <div class="col-xs-6"><button>ausgebucht</button></div>
+        </div>
+        <div class="row tx-wisumcourses-course" data-kurs-id="2">
+          <div class="col-xs-6"><h4>02.11.2026 — 18.12.2026</h4></div>
+          <div class="col-xs-6"><a class="btn">Jetzt Buchen</a></div>
+        </div>
+        <h5>Teilzeit</h5>
+        <p>Freitag 14 - 19 Uhr</p>
+        <div class="row tx-wisumcourses-course" data-kurs-id="3">
+          <div class="col-xs-6"><h4>04.09.2026 — 26.06.2027</h4></div>
+          <div class="col-xs-6"><a class="btn">Jetzt Buchen</a></div>
+        </div>
+        """
+        soup = BeautifulSoup(html, "html.parser")
+        url = (
+            "https://www.bbz-arnsberg.de/kurse/"
+            "gepruefte-r-fachfrau-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo"
+        )
+        offers = HwkSuedwestfalenScraper()._parse_course_page(soup, url)
+        self.assertEqual(
+            [(o.start_date, o.format_key, o.source_url.rsplit("#", 1)[-1]) for o in offers],
+            [
+                ("2026-08-31", "full_time", "termin-1"),
+                ("2026-11-02", "full_time", "termin-2"),
+                ("2026-09-04", "part_time", "termin-3"),
+            ],
+        )
+
+    def test_suedwestfalen_rows_before_section_headers_use_following_label(self):
+        from bs4 import BeautifulSoup
+
+        html = """
+        <div class="row tx-wisumcourses-course" data-kurs-id="1">
+          <div class="col-xs-6"><h4>31.08.2026 — 23.10.2026</h4></div>
+        </div>
+        <div class="row tx-wisumcourses-course" data-kurs-id="2">
+          <div class="col-xs-6"><h4>02.11.2026 — 18.12.2026</h4></div>
+        </div>
+        <h5>Vollzeit</h5>
+        <h5>Teilzeit</h5>
+        <div class="row tx-wisumcourses-course" data-kurs-id="3">
+          <div class="col-xs-6"><h4>04.09.2026 — 26.06.2027</h4></div>
+        </div>
+        """
+        runs = HwkSuedwestfalenScraper._parse_runs(BeautifulSoup(html, "html.parser"), "")
+        self.assertEqual([run[3] for run in runs], ["full_time", "full_time", "part_time"])
+
+    def test_suedwestfalen_panel_sections_assign_run_format(self):
+        from bs4 import BeautifulSoup
+
+        html = """
+        <div class="panel panel-default">
+          <div class="panel-heading"><h5 class="panel-title">Vollzeit</h5></div>
+          <div class="panel-body">
+            <div class="row tx-wisumcourses-course" data-kurs-id="1">
+              <div class="col-xs-6"><h4>31.08.2026 — 23.10.2026</h4></div>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading"><h5 class="panel-title">Teilzeit</h5></div>
+          <div class="panel-body">
+            <div class="row tx-wisumcourses-course" data-kurs-id="2">
+              <div class="col-xs-6"><h4>04.09.2026 — 26.06.2027</h4></div>
+            </div>
+          </div>
+        </div>
+        """
+        runs = HwkSuedwestfalenScraper._parse_runs(BeautifulSoup(html, "html.parser"), "")
+        self.assertEqual([run[3] for run in runs], ["full_time", "part_time"])
+
+    def test_suedwestfalen_maler_fahrzeuglackierer_uses_parent_filter_slug(self):
+        from bs4 import BeautifulSoup
+
+        html = """
+        <h1>Kursangebot</h1>
+        <h3>Meisterkurs Maler und Lackierer (Fahrzeuglackierer)</h3>
+        <p>Lehrgangsdauer: 900 Unterrichtsstunden</p>
+        <p>7.500,00 € (zzgl. Prüfungsgebühr 900,00 € )</p>
+        <div class="row tx-wisumcourses-course" data-kurs-id="1">
+          <div class="col-xs-6"><h4>01.09.2026 — 30.06.2027</h4><p>Vollzeit</p></div>
+        </div>
+        """
+        url = "https://www.bbz-arnsberg.de/kurse/meisterkurs-maler-und-lackierer-fahrzeuglackierer"
+        offers = HwkSuedwestfalenScraper()._parse_course_page(BeautifulSoup(html, "html.parser"), url)
+        self.assertEqual(len(offers), 1)
+        self.assertEqual(offers[0].trade_name, "Maler und Lackierer (Fahrzeuglackierer)")
+
+        from scrapers.base import ScrapeResult
+        from scrapers.pipeline import offer_to_record
+
+        record = offer_to_record(
+            ScrapeResult(
+                chamber_slug="hwk-suedwestfalen",
+                chamber_name="Handwerkskammer Südwestfalen",
+                chamber_region="Nordrhein-Westfalen",
+                chamber_website="https://www.hwk-swf.de",
+                offers=offers,
+                exam_fee_rows=[],
+            ),
+            offers[0],
+        )
+        self.assertEqual(record["trade_slug"], "maler-und-lackierer")
+        self.assertEqual(record["trade_name"], "Maler und Lackierer (Fahrzeuglackierer)")
 
     def test_suedwestfalen_exam_fee_tariff_parsing(self):
         sample = """

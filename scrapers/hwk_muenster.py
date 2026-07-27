@@ -200,6 +200,8 @@ class HwkMuensterScraper(BaseScraper):
         classes = " ".join(state.get("class", []))
         if "icon--course-open" in classes:
             return "available"
+        if "icon--course-almost-full" in classes:
+            return "available"
         if "icon--course-fully-booked" in classes:
             return "waitlist"
         return "unknown"

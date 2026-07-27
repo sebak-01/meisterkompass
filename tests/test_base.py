@@ -26,6 +26,12 @@ class TradeNormalizationTests(unittest.TestCase):
         self.assertEqual(normalize_trade("Maler"), ("maler-und-lackierer", "Maler und Lackierer"))
         self.assertEqual(normalize_trade("Zahntechnik"), ("zahntechniker", "Zahntechniker"))
 
+    def test_normalize_trade_maps_specialization_slug_to_parent(self):
+        self.assertEqual(
+            normalize_trade("Maler und Lackierer (Fahrzeuglackierer)"),
+            ("maler-und-lackierer", "Maler und Lackierer (Fahrzeuglackierer)"),
+        )
+
     def test_harmonize_course_record_rebuilds_title(self):
         rec = {
             "trade_name": "Konditoren",
