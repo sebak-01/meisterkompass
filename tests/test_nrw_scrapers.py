@@ -383,6 +383,43 @@ class NrwParserTests(unittest.TestCase):
         self.assertEqual(course_fee, 6696.0)
         self.assertEqual(exam_fee, 1514.0)
 
+    def test_dortmund_fees_exclude_lernmittel_from_kurskosten(self):
+        html = (
+            '"display_price":11529,"display_regular_price":11529,'
+            '"bue_additional_prices":[{"bezeichnung":"Prüfungsgebühr","gebuehr":1899},'
+            '{"bezeichnung":"Kurskosten","gebuehr":9480},'
+            '{"bezeichnung":"Lernmittel","gebuehr":150}]'
+        )
+        course_fee, exam_fee = HwkDortmundScraper._parse_fees(html)
+        self.assertEqual(course_fee, 9480.0)
+        self.assertEqual(exam_fee, 1899.0)
+
+    def test_dortmund_variation_display_price_does_not_add_lernmittel(self):
+        from bs4 import BeautifulSoup
+
+        html = """
+        <h1>Augenoptiker/in Teilzeitlehrgang (Meistervorbereitung Teile I und II)</h1>
+        <p>Umfang: 1264 Unterrichtseinheiten</p>
+        <form class="variations_form" data-product_variations='[
+          {
+            "attributes": {"attribute_termin": "18.01.2027 - 08.07.2028 (Bildungszentrum)"},
+            "availability_html": "<p class=\\"stock in-stock\\">3 Plätze verfügbar</p>",
+            "display_price": 11529
+          }
+        ]'>
+        </form>
+        "bue_additional_prices":[{"bezeichnung":"Prüfungsgebühr","gebuehr":1899},
+        {"bezeichnung":"Kurskosten","gebuehr":9480},
+        {"bezeichnung":"Lernmittel","gebuehr":150}]
+        """
+        soup = BeautifulSoup(html, "html.parser")
+        offers = HwkDortmundScraper()._parse_event_page(
+            soup, "https://www.hwk-do.de/event/augenoptiker", html
+        )
+        self.assertEqual(len(offers), 1)
+        self.assertEqual(offers[0].course_fee, 9480.0)
+        self.assertEqual(offers[0].exam_fee_scraped, 1899.0)
+
     def test_dortmund_format_prefers_title_teilzeit(self):
         self.assertEqual(
             HwkDortmundScraper._parse_format(

@@ -257,12 +257,10 @@ class HwkDortmundScraper(BaseScraper):
                 availability = parse_availability_from_stock_html(
                     variation.get("availability_html", "")
                 )
-                var_price = variation.get("display_price")
                 var_course_fee = course_fee
-                if var_price and float(var_price) > 0:
-                    if exam_fee and float(var_price) > exam_fee * 1.05:
-                        var_course_fee = float(var_price) - exam_fee
-                    else:
+                if var_course_fee is None:
+                    var_price = variation.get("display_price")
+                    if var_price and float(var_price) > 0:
                         var_course_fee = float(var_price)
                 offers.append(RawCourseOffer(
                     title=build_course_title(trade, parts),
@@ -340,6 +338,7 @@ class HwkDortmundScraper(BaseScraper):
         """
         course_fee = None
         exam_fee = None
+        lernmittel_fee = None
         prices_match = BUE_PRICES_RE.search(html)
         if prices_match:
             try:
@@ -350,6 +349,8 @@ class HwkDortmundScraper(BaseScraper):
                         exam_fee = amount
                     elif "kurskosten" in label or "kursgebühr" in label:
                         course_fee = amount
+                    elif "lernmittel" in label:
+                        lernmittel_fee = amount
             except (json.JSONDecodeError, KeyError, TypeError, ValueError):
                 pass
 
@@ -365,9 +366,10 @@ class HwkDortmundScraper(BaseScraper):
                 value = float(match.group(1))
                 if value <= 0:
                     continue
-                # display_price is often Kurskosten + Prüfungsgebühr.
-                if exam_fee and value > exam_fee * 1.05:
-                    course_fee = value - exam_fee
+                # display_price is often Kurskosten + Prüfungsgebühr (+ Lernmittel).
+                deductions = (exam_fee or 0) + (lernmittel_fee or 0)
+                if deductions and value > deductions * 1.05:
+                    course_fee = value - deductions
                 else:
                     course_fee = value
                 break
