@@ -859,6 +859,83 @@ class NrwParserTests(unittest.TestCase):
             ],
         )
 
+    def test_suedwestfalen_rows_before_section_headers_use_following_label(self):
+        from bs4 import BeautifulSoup
+
+        html = """
+        <div class="row tx-wisumcourses-course" data-kurs-id="1">
+          <div class="col-xs-6"><h4>31.08.2026 — 23.10.2026</h4></div>
+        </div>
+        <div class="row tx-wisumcourses-course" data-kurs-id="2">
+          <div class="col-xs-6"><h4>02.11.2026 — 18.12.2026</h4></div>
+        </div>
+        <h5>Vollzeit</h5>
+        <h5>Teilzeit</h5>
+        <div class="row tx-wisumcourses-course" data-kurs-id="3">
+          <div class="col-xs-6"><h4>04.09.2026 — 26.06.2027</h4></div>
+        </div>
+        """
+        runs = HwkSuedwestfalenScraper._parse_runs(BeautifulSoup(html, "html.parser"), "")
+        self.assertEqual([run[3] for run in runs], ["full_time", "full_time", "part_time"])
+
+    def test_suedwestfalen_panel_sections_assign_run_format(self):
+        from bs4 import BeautifulSoup
+
+        html = """
+        <div class="panel panel-default">
+          <div class="panel-heading"><h5 class="panel-title">Vollzeit</h5></div>
+          <div class="panel-body">
+            <div class="row tx-wisumcourses-course" data-kurs-id="1">
+              <div class="col-xs-6"><h4>31.08.2026 — 23.10.2026</h4></div>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading"><h5 class="panel-title">Teilzeit</h5></div>
+          <div class="panel-body">
+            <div class="row tx-wisumcourses-course" data-kurs-id="2">
+              <div class="col-xs-6"><h4>04.09.2026 — 26.06.2027</h4></div>
+            </div>
+          </div>
+        </div>
+        """
+        runs = HwkSuedwestfalenScraper._parse_runs(BeautifulSoup(html, "html.parser"), "")
+        self.assertEqual([run[3] for run in runs], ["full_time", "part_time"])
+
+    def test_suedwestfalen_maler_fahrzeuglackierer_uses_parent_filter_slug(self):
+        from bs4 import BeautifulSoup
+
+        html = """
+        <h1>Kursangebot</h1>
+        <h3>Meisterkurs Maler und Lackierer (Fahrzeuglackierer)</h3>
+        <p>Lehrgangsdauer: 900 Unterrichtsstunden</p>
+        <p>7.500,00 € (zzgl. Prüfungsgebühr 900,00 € )</p>
+        <div class="row tx-wisumcourses-course" data-kurs-id="1">
+          <div class="col-xs-6"><h4>01.09.2026 — 30.06.2027</h4><p>Vollzeit</p></div>
+        </div>
+        """
+        url = "https://www.bbz-arnsberg.de/kurse/meisterkurs-maler-und-lackierer-fahrzeuglackierer"
+        offers = HwkSuedwestfalenScraper()._parse_course_page(BeautifulSoup(html, "html.parser"), url)
+        self.assertEqual(len(offers), 1)
+        self.assertEqual(offers[0].trade_name, "Maler und Lackierer (Fahrzeuglackierer)")
+
+        from scrapers.base import ScrapeResult
+        from scrapers.pipeline import offer_to_record
+
+        record = offer_to_record(
+            ScrapeResult(
+                chamber_slug="hwk-suedwestfalen",
+                chamber_name="Handwerkskammer Südwestfalen",
+                chamber_region="Nordrhein-Westfalen",
+                chamber_website="https://www.hwk-swf.de",
+                offers=offers,
+                exam_fee_rows=[],
+            ),
+            offers[0],
+        )
+        self.assertEqual(record["trade_slug"], "maler-und-lackierer")
+        self.assertEqual(record["trade_name"], "Maler und Lackierer (Fahrzeuglackierer)")
+
     def test_suedwestfalen_exam_fee_tariff_parsing(self):
         sample = """
         4.  Meisterprüfung

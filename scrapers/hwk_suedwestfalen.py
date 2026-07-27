@@ -48,6 +48,10 @@ SCHEDULE_WITH_FORMAT_RE = re.compile(
     r"(?:\s*:\s*(Vollzeit|Teilzeit|Blockunterricht|Wochenende))?",
     re.IGNORECASE,
 )
+FORMAT_SECTION_LABEL_RE = re.compile(
+    r"^(Vollzeit|Teilzeit|Blockunterricht|Wochenende)$",
+    re.IGNORECASE,
+)
 EXAM_FEE_BRACKET_RE = re.compile(
     r"\(zzgl\.\s*Prüfungsgebühr\s*([\d.]+),(\d{2})\s*€\s*\)",
     re.IGNORECASE,
@@ -437,6 +441,80 @@ class HwkSuedwestfalenScraper(BaseScraper):
         return default
 
     @classmethod
+    def _format_label(cls, label: str) -> str | None:
+        match = FORMAT_SECTION_LABEL_RE.match(label.strip())
+        if not match:
+            return None
+        return "full_time" if match.group(1).lower() == "vollzeit" else "part_time"
+
+    @classmethod
+    def _format_for_course_row(cls, row, default_format: str) -> str:
+        heading = row.select_one("h4")
+        text = heading.get_text(" ", strip=True) if heading else ""
+        block = row.get_text(" ", strip=True)
+        combined = f"{text} {block}".strip()
+        if re.search(
+            r":\s*(Vollzeit|Teilzeit|Blockunterricht|Wochenende)\b",
+            combined,
+            re.IGNORECASE,
+        ) or re.search(
+            r"\b(Vollzeit|Teilzeit|Blockunterricht|Wochenende)\b",
+            combined,
+            re.IGNORECASE,
+        ):
+            return cls._format_from_block(combined, default_format)
+
+        for ancestor in row.parents:
+            if getattr(ancestor, "name", None) in {None, "[document]", "html", "body"}:
+                break
+            ident = " ".join(
+                [
+                    ancestor.get("id", ""),
+                    " ".join(ancestor.get("class") or []),
+                ]
+            ).lower()
+            if "vollzeit" in ident and "teilzeit" not in ident:
+                return "full_time"
+            if "teilzeit" in ident:
+                return "part_time"
+
+            for hdr in ancestor.find_all(["h2", "h3", "h4", "h5", "h6"], recursive=False):
+                label = hdr.get_text(" ", strip=True)
+                if DATE_RANGE_RE.search(label):
+                    continue
+                section_format = cls._format_label(label)
+                if section_format:
+                    return section_format
+
+            panel_heading = ancestor.select_one(".panel-heading, .panel-title, .accordion-header")
+            if panel_heading is not None:
+                section_format = cls._format_label(panel_heading.get_text(" ", strip=True))
+                if section_format:
+                    return section_format
+                heading_format = cls._format_from_block(
+                    panel_heading.get_text(" ", strip=True),
+                    default_format,
+                )
+                if heading_format != default_format:
+                    return heading_format
+
+        for hdr in row.find_all_previous(["h2", "h3", "h4", "h5", "h6"], limit=30):
+            label = hdr.get_text(" ", strip=True)
+            if DATE_RANGE_RE.search(label) and not FORMAT_SECTION_LABEL_RE.search(label):
+                continue
+            section_format = cls._format_label(label)
+            if section_format:
+                return section_format
+
+        for hdr in row.find_all_next(["h2", "h3", "h4", "h5", "h6"], limit=10):
+            label = hdr.get_text(" ", strip=True)
+            section_format = cls._format_label(label)
+            if section_format:
+                return section_format
+
+        return default_format
+
+    @classmethod
     def _parse_runs(
         cls,
         soup: BeautifulSoup,
@@ -488,8 +566,7 @@ class HwkSuedwestfalenScraper(BaseScraper):
             end = f"{match.group(6)}-{match.group(5)}-{match.group(4)}"
             if int(start[:4]) < 2020 or int(start[:4]) > 2035:
                 continue
-            block = el.get_text(" ", strip=True)
-            run_format = cls._format_from_block(f"{text} {block}", current_format)
+            run_format = cls._format_for_course_row(el, current_format)
             key = (start, end, run_format)
             if key in seen:
                 continue
