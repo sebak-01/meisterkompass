@@ -79,6 +79,17 @@ class HwkLeipzigScraper(BavariaOdavScraper):
         logger.info("HWK Leipzig: parsed %d unique course offers.", len(offers))
         return offers
 
+    def _enrich(self, card: dict) -> RawCourseOffer | list[RawCourseOffer] | None:
+        listing_format = card.get("format_key")
+        listing_teaching_mode = card.get("teaching_mode")
+        result = super()._enrich(card)
+        if result and listing_format:
+            for offer in (result if isinstance(result, list) else [result]):
+                offer.format_key = listing_format
+                if listing_teaching_mode:
+                    offer.teaching_mode = listing_teaching_mode
+        return result
+
     @staticmethod
     def parse_meister_exam_fees(text: str) -> dict[int, float]:
         fees: dict[int, float] = {}
