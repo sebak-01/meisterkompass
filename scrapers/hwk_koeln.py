@@ -32,6 +32,17 @@ FEES_PDF_URL = (
 )
 GENERIC_EXAM_FEES = {1: 450.0, 2: 380.0, 3: 230.0, 4: 190.0}
 
+KOL_LISTING_SOURCES = (
+    {"search-searchterm": "Meistervorbereitung"},
+    {"search-topic": "27"},  # Teil III / Betriebsführung
+    {"search-topic": "26"},  # Teil IV / Ausbildereignung
+)
+
+LEHRGANGSGEBUEHR_RE = re.compile(
+    r"Lehrgangsgebühr\s*([\d.]+),(\d{2})\s*(?:€|Euro)",
+    re.IGNORECASE,
+)
+
 KOL_TRADE_ALIASES = {
     "friseur-handwerk": "Friseur",
     "zahntechniker-handwerk": "Zahntechniker",
@@ -82,18 +93,36 @@ def parse_koeln_title(title: str) -> tuple[list[int], str | None]:
 
 def _is_meister_listing(title: str) -> bool:
     lower = title.lower()
+    parts = parse_parts(title, implicit_trade_parts=True)
+
+    if parts and set(parts) <= {3, 4}:
+        if any(value in lower for value in (
+            "infoveranstaltung", "informationsveranstaltung", "infoabend",
+        )):
+            return False
+        return True
+
     if any(value in lower for value in (
         "infoveranstaltung", "informationsveranstaltung", "infoabend",
-        "auffrischungskurs", "aufstiegs-bafög", "ausbildereignung",
-        "kombikurs geprüfte", "geprüfte/r fachfrau", "gepr. fachmann",
-        "sachkundenachweis", "knx -", "netzanschluss",
+        "auffrischungskurs", "aufstiegs-bafög", "sachkundenachweis",
+        "knx -", "netzanschluss",
     )):
         return False
     return (
         "vorbereitung auf die meisterprüfung" in lower
         or "meistervorbereitung" in lower
-        or (set(parse_parts(title, implicit_trade_parts=True)) <= {3, 4} and "teil" in lower)
     )
+
+
+def parse_koeln_course_fee(text: str) -> float | None:
+    """Parse Köln course fees from structured blocks and Lehrgangsgebühr prose."""
+    fee = parse_euro(text, "Kurs")
+    if fee is not None:
+        return fee
+    match = LEHRGANGSGEBUEHR_RE.search(text)
+    if match:
+        return float(match.group(1).replace(".", "") + "." + match.group(2))
+    return None
 
 
 class HwkKoelnScraper(BavariaOdavScraper):
@@ -117,24 +146,25 @@ class HwkKoelnScraper(BavariaOdavScraper):
 
     def fetch_raw_courses(self) -> list[RawCourseOffer]:
         unique: dict[str, dict] = {}
-        offset = 0
-        while True:
-            url = (
-                f"{BASE_URL}/32,0,courselist.html?search-filter-template=0"
-                f"&search-searchterm=Meistervorbereitung&limit={self.catalogue.page_size}"
-                f"&offset={offset}"
-            )
-            soup = self.parse_html(url)
-            if soup is None:
-                logger.warning("HWK Köln listing failed at offset %d.", offset)
-                break
-            total = self._parse_total(soup)
-            for card in self._parse_page(soup):
-                key = course_id_from_url(card["detail_url"]) or card["detail_url"]
-                unique[key] = card
-            offset += self.catalogue.page_size
-            if offset >= total:
-                break
+        for source in KOL_LISTING_SOURCES:
+            offset = 0
+            while True:
+                params = "&".join(f"{key}={value}" for key, value in source.items())
+                url = (
+                    f"{BASE_URL}/32,0,courselist.html?search-filter-template=0"
+                    f"&{params}&limit={self.catalogue.page_size}&offset={offset}"
+                )
+                soup = self.parse_html(url)
+                if soup is None:
+                    logger.warning("HWK Köln listing failed for %s at offset %d.", params, offset)
+                    break
+                total = self._parse_total(soup)
+                for card in self._parse_page(soup):
+                    key = course_id_from_url(card["detail_url"]) or card["detail_url"]
+                    unique[key] = card
+                offset += self.catalogue.page_size
+                if offset >= total:
+                    break
 
         offers: list[RawCourseOffer] = []
         for card in unique.values():
@@ -185,6 +215,8 @@ class HwkKoelnScraper(BavariaOdavScraper):
         }
 
     def _enrich(self, card: dict) -> RawCourseOffer | list[RawCourseOffer] | None:
+        listing_format = card.get("format_key")
+        listing_teaching_mode = card.get("teaching_mode")
         soup = self.parse_html(card["detail_url"]) if self.catalogue.details_required else None
         if soup is not None:
             h1 = soup.select_one("h1")
@@ -194,7 +226,22 @@ class HwkKoelnScraper(BavariaOdavScraper):
                 card = {**card, "parts": parts}
             if trade_name:
                 card = {**card, "trade_name": trade_name}
-        return super()._enrich(card)
+        result = super()._enrich(card)
+        if not result:
+            return result
+        offers = result if isinstance(result, list) else [result]
+        if soup is not None:
+            main_text = (soup.select_one("main") or soup).get_text("\n", strip=True)
+            course_fee = parse_koeln_course_fee(main_text)
+            if course_fee is not None:
+                for offer in offers:
+                    offer.course_fee = course_fee
+        if listing_format:
+            for offer in offers:
+                offer.format_key = listing_format
+                if listing_teaching_mode:
+                    offer.teaching_mode = listing_teaching_mode
+        return result
 
     @staticmethod
     def parse_meister_exam_fees(text: str) -> dict[int, float]:
