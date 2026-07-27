@@ -5,7 +5,7 @@ import re
 from io import BytesIO
 from urllib.parse import urljoin
 
-from bs4 import Tag
+from bs4 import BeautifulSoup, Tag
 
 from .base import RawCourseOffer
 from .hwk_bayern import (
@@ -40,6 +40,14 @@ GENERIC_COMBO_EXAM_FEE = {"fee": 580.0, "fee_max": 3200.0}
 
 OWL_HUB_ARTICLES = (
     "teile-iii-und-iv-3351,180,52.html",
+)
+
+OWL_SEARCH_TERMS = (
+    "Meistervorbereitung",
+    "Teil III",
+    "Teil IV",
+    "Betriebsführung",
+    "AEVO",
 )
 
 OWL_TRADE_ARTICLES = (
@@ -102,6 +110,16 @@ def _is_meister_card(title: str) -> bool:
     return bool(parts and set(parts) <= {3, 4})
 
 
+def _card_key(card: dict) -> tuple:
+    """Unique key for listing cards that share one detail page."""
+    return (
+        course_id_from_url(card["detail_url"]) or card["detail_url"],
+        card.get("start_date"),
+        card.get("end_date"),
+        card.get("format_key"),
+    )
+
+
 class HwkOstwestfalenLippeZuBielefeldScraper(BavariaOdavScraper):
     chamber_slug = "hwk-ostwestfalen-lippe-zu-bielefeld"
     chamber_name = "Handwerkskammer Ostwestfalen-Lippe zu Bielefeld"
@@ -122,7 +140,26 @@ class HwkOstwestfalenLippeZuBielefeldScraper(BavariaOdavScraper):
     )
 
     def fetch_raw_courses(self) -> list[RawCourseOffer]:
-        unique: dict[str, dict] = {}
+        unique: dict[tuple, dict] = {}
+
+        for term in OWL_SEARCH_TERMS:
+            offset = 0
+            while True:
+                url = (
+                    f"{BASE_URL}/3351,0,courselist.html?search-filter-template=0"
+                    f"&search-searchterm={term}&limit={self.catalogue.page_size}&offset={offset}"
+                )
+                soup = self.parse_html(url)
+                if soup is None:
+                    logger.warning("HWK OWL listing failed for %r at offset %d.", term, offset)
+                    break
+                total = self._parse_total(soup)
+                for card in self._parse_page(soup):
+                    unique[_card_key(card)] = card
+                offset += self.catalogue.page_size
+                if offset >= total:
+                    break
+
         article_urls = self._discover_trade_articles()
         for article_url, article_trade in article_urls:
             article = self.parse_html(article_url)
@@ -137,14 +174,11 @@ class HwkOstwestfalenLippeZuBielefeldScraper(BavariaOdavScraper):
                 if not _is_meister_card(raw_title):
                     continue
                 detail_url = canonical_detail_url(BASE_URL, href)
-                course_id = course_id_from_url(detail_url)
-                if not course_id:
-                    continue
                 card = self._parse_owl_card(
                     link, detail_url, raw_title=raw_title, article_trade=article_trade
                 )
                 if card:
-                    unique[course_id] = card
+                    unique[_card_key(card)] = card
 
         offers: list[RawCourseOffer] = []
         for card in unique.values():
@@ -158,6 +192,29 @@ class HwkOstwestfalenLippeZuBielefeldScraper(BavariaOdavScraper):
 
         logger.info("HWK OWL: parsed %d unique course offers.", len(offers))
         return offers
+
+    def _parse_page(self, soup: BeautifulSoup) -> list[dict]:
+        cards: list[dict] = []
+        seen: set[tuple] = set()
+        for link in soup.select("a[href*='coursedetail']"):
+            detail_url = canonical_detail_url(self.catalogue.base_url, link.get("href", ""))
+            if not detail_url:
+                continue
+            card = self._parse_owl_listing_card(link, detail_url)
+            if not card:
+                continue
+            key = _card_key(card)
+            if key in seen:
+                continue
+            seen.add(key)
+            cards.append(card)
+        return cards
+
+    def _parse_owl_listing_card(self, link: Tag, detail_url: str) -> dict | None:
+        raw_title = link.get_text(" ", strip=True)
+        if not _is_meister_card(raw_title):
+            return None
+        return self._parse_owl_card(link, detail_url, raw_title=raw_title)
 
     def _discover_trade_articles(self) -> list[tuple[str, str]]:
         landing = self.parse_html(LANDING_URL)
@@ -225,6 +282,8 @@ class HwkOstwestfalenLippeZuBielefeldScraper(BavariaOdavScraper):
         }
 
     def _enrich(self, card: dict) -> RawCourseOffer | list[RawCourseOffer] | None:
+        listing_format = card.get("format_key")
+        listing_teaching_mode = card.get("teaching_mode")
         soup = self.parse_html(card["detail_url"]) if self.catalogue.details_required else None
         if soup is not None:
             h1 = soup.select_one("h1")
@@ -234,7 +293,27 @@ class HwkOstwestfalenLippeZuBielefeldScraper(BavariaOdavScraper):
                 card = {**card, "parts": parts}
             if trade_name:
                 card = {**card, "trade_name": trade_name}
-        return super()._enrich(card)
+        result = super()._enrich(card)
+        if result and listing_format:
+            for offer in (result if isinstance(result, list) else [result]):
+                offer.format_key = listing_format
+                if listing_teaching_mode:
+                    offer.teaching_mode = listing_teaching_mode
+        return result
+
+    def resolve_schedule_dates(
+        self,
+        soup: BeautifulSoup | None,
+        card: dict,
+        main_text: str,
+    ) -> tuple[str | None, str | None, str]:
+        if card.get("start_date"):
+            return (
+                card["start_date"],
+                card.get("end_date"),
+                card.get("start_date_note", ""),
+            )
+        return super().resolve_schedule_dates(soup, card, main_text)
 
     @staticmethod
     def _amount_pair(match: re.Match, low_group: int = 1) -> dict[str, float]:

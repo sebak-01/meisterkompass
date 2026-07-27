@@ -43,6 +43,11 @@ DURATION_RE = re.compile(r"([\d.]+)\s+Unterrichtsstunden", re.IGNORECASE)
 DATE_RANGE_RE = re.compile(
     r"(\d{2})\.(\d{2})\.(\d{4})\s*[—–\-]+\s*(\d{2})\.(\d{2})\.(\d{4})"
 )
+SCHEDULE_WITH_FORMAT_RE = re.compile(
+    r"(\d{2})\.(\d{2})\.(\d{4})\s*[—–\-]+\s*(\d{2})\.(\d{2})\.(\d{4})"
+    r"(?:\s*:\s*(Vollzeit|Teilzeit|Blockunterricht|Wochenende))?",
+    re.IGNORECASE,
+)
 EXAM_FEE_BRACKET_RE = re.compile(
     r"\(zzgl\.\s*Prüfungsgebühr\s*([\d.]+),(\d{2})\s*€\s*\)",
     re.IGNORECASE,
@@ -318,7 +323,7 @@ class HwkSuedwestfalenScraper(BaseScraper):
         format_key = "full_time" if "vollzeit" in lower else "part_time"
         teaching_mode = "presence"
 
-        runs = self._parse_runs(soup, page_text)
+        runs = self._parse_runs(soup, page_text, default_format=format_key)
         if not runs:
             return [RawCourseOffer(
                 title=build_course_title(trade, parts),
@@ -340,9 +345,9 @@ class HwkSuedwestfalenScraper(BaseScraper):
             )]
 
         offers: list[RawCourseOffer] = []
-        seen: set[tuple[str, str]] = set()
-        for index, (start_date, end_date, availability) in enumerate(runs):
-            key = (start_date, end_date)
+        seen: set[tuple[str, str, str]] = set()
+        for index, (start_date, end_date, availability, run_format) in enumerate(runs):
+            key = (start_date, end_date, run_format)
             if key in seen:
                 continue
             seen.add(key)
@@ -350,7 +355,7 @@ class HwkSuedwestfalenScraper(BaseScraper):
                 title=build_course_title(trade, parts),
                 trade_name=trade,
                 parts=parts,
-                format_key=format_key,
+                format_key=run_format,
                 teaching_mode=teaching_mode,
                 start_date=start_date,
                 end_date=end_date,
@@ -412,20 +417,56 @@ class HwkSuedwestfalenScraper(BaseScraper):
             return "full"
         return cls._availability_from_block(block)
 
-    @classmethod
-    def _parse_runs(cls, soup: BeautifulSoup, page_text: str) -> list[tuple[str, str, str]]:
-        runs: list[tuple[str, str, str]] = []
-        seen: set[tuple[str, str]] = set()
-        seen_ids: set[str] = set()
+    @staticmethod
+    def _format_from_block(text: str, default: str = "part_time") -> str:
+        match = re.search(
+            r":\s*(Vollzeit|Teilzeit|Blockunterricht|Wochenende)\b",
+            text,
+            re.IGNORECASE,
+        )
+        if match:
+            label = match.group(1).lower()
+            if label in ("teilzeit", "blockunterricht", "wochenende"):
+                return "part_time"
+            return "full_time"
+        lower = text.lower()
+        if any(word in lower for word in ("teilzeit", "berufsbegleitend", "wochenende", "blockunterricht")):
+            return "part_time"
+        if "vollzeit" in lower:
+            return "full_time"
+        return default
 
-        for row in soup.select("div.tx-wisumcourses-course"):
-            kurs_id = row.get("data-kurs-id")
+    @classmethod
+    def _parse_runs(
+        cls,
+        soup: BeautifulSoup,
+        page_text: str,
+        default_format: str = "part_time",
+    ) -> list[tuple[str, str, str, str]]:
+        runs: list[tuple[str, str, str, str]] = []
+        seen: set[tuple[str, str, str]] = set()
+        seen_ids: set[str] = set()
+        current_format = default_format
+
+        for el in soup.find_all(["h2", "h3", "h4", "div"]):
+            if el.name in ("h2", "h3", "h4"):
+                header = el.get_text(" ", strip=True)
+                header_format = cls._format_from_block(header, current_format)
+                if header_format != current_format and (
+                    "vollzeit" in header.lower() or "teilzeit" in header.lower()
+                ):
+                    current_format = header_format
+
+            if el.name != "div" or "tx-wisumcourses-course" not in (el.get("class") or []):
+                continue
+
+            kurs_id = el.get("data-kurs-id")
             if kurs_id:
                 if kurs_id in seen_ids:
                     continue
                 seen_ids.add(kurs_id)
 
-            heading = row.select_one("h4")
+            heading = el.select_one("h4")
             if heading is None:
                 continue
             text = heading.get_text(" ", strip=True)
@@ -436,11 +477,13 @@ class HwkSuedwestfalenScraper(BaseScraper):
             end = f"{match.group(6)}-{match.group(5)}-{match.group(4)}"
             if int(start[:4]) < 2020 or int(start[:4]) > 2035:
                 continue
-            key = (start, end)
+            block = el.get_text(" ", strip=True)
+            run_format = cls._format_from_block(f"{text} {block}", current_format)
+            key = (start, end, run_format)
             if key in seen:
                 continue
             seen.add(key)
-            runs.append((start, end, cls._availability_from_course_row(row)))
+            runs.append((start, end, cls._availability_from_course_row(el), run_format))
 
         if runs:
             return runs
@@ -459,27 +502,39 @@ class HwkSuedwestfalenScraper(BaseScraper):
             if sibling is not None:
                 block = f"{text}\n{sibling.get_text(' ', strip=True)}"
             availability = cls._availability_from_block(block)
-            key = (start, end)
+            run_format = cls._format_from_block(block, default_format)
+            key = (start, end, run_format)
             if key not in seen:
                 seen.add(key)
-                runs.append((start, end, availability))
+                runs.append((start, end, availability, run_format))
 
         if runs:
             return runs
 
-        matches = list(DATE_RANGE_RE.finditer(page_text))
-        for index, match in enumerate(matches):
+        schedule_matches = list(SCHEDULE_WITH_FORMAT_RE.finditer(page_text))
+        for index, match in enumerate(schedule_matches):
             start = f"{match.group(3)}-{match.group(2)}-{match.group(1)}"
             end = f"{match.group(6)}-{match.group(5)}-{match.group(4)}"
             if int(start[:4]) < 2020 or int(start[:4]) > 2035:
                 continue
-            block_end = matches[index + 1].start() if index + 1 < len(matches) else match.end() + 120
+            label = (match.group(7) or "").lower()
+            if label in ("teilzeit", "blockunterricht", "wochenende"):
+                run_format = "part_time"
+            elif label == "vollzeit":
+                run_format = "full_time"
+            else:
+                run_format = default_format
+            block_end = (
+                schedule_matches[index + 1].start()
+                if index + 1 < len(schedule_matches)
+                else match.end() + 120
+            )
             block = page_text[match.start():block_end]
             availability = cls._availability_from_block(block)
-            key = (start, end)
+            key = (start, end, run_format)
             if key not in seen:
                 seen.add(key)
-                runs.append((start, end, availability))
+                runs.append((start, end, availability, run_format))
         return runs
 
     @staticmethod
