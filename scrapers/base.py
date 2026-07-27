@@ -41,6 +41,11 @@ TRADE_CANONICAL_ALIASES: dict[str, str] = {
     "zahntechnik": "Zahntechniker",
 }
 
+# Specialization slugs that should appear under a parent trade in filters.
+TRADE_FILTER_SLUG_ALIASES: dict[str, str] = {
+    "maler-und-lackierer-fahrzeuglackierer": "maler-und-lackierer",
+}
+
 
 def slugify(value: str) -> str:
     """
@@ -73,7 +78,9 @@ def normalize_trade(trade_name: str | None) -> tuple[str, str]:
     if trade_name is None:
         return GENERIC_TRADE_SLUG, GENERIC_TRADE_NAME
     trade_name = canonicalize_trade_name(trade_name)
-    return slugify(trade_name), trade_name
+    slug = slugify(trade_name)
+    slug = TRADE_FILTER_SLUG_ALIASES.get(slug, slug)
+    return slug, trade_name
 
 
 def harmonize_course_record(rec: dict) -> None:
