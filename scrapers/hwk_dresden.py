@@ -76,11 +76,13 @@ def _availability(text: str, element: Tag | None = None) -> str:
         for btn in buttons:
             combined += " " + btn.get_text(" ", strip=True)
     lower = combined.lower()
-    if "ausgebucht" in lower or "keine plätze" in lower:
-        return "full"
     has_button = _has_booking_button(combined)
     if "warteliste" in lower:
+        if "ausgebucht" in lower:
+            return "waitlist"
         return "available" if has_button else "waitlist"
+    if "ausgebucht" in lower or "keine plätze" in lower:
+        return "full"
     if "plätze verfügbar" in lower or "freie plätze" in lower:
         return "available"
     if has_button:
@@ -153,10 +155,18 @@ class HwkDresdenScraper(BaseScraper):
         for link in soup.select("a[href*='kursdetails']"):
             title = link.get_text(" ", strip=True)
             href = link.get("href", "")
-            if not title or not href or EXCLUDE_TITLE_RE.search(title):
+            if not title or not href:
                 continue
-            if not re.search(r"meister|teil\s+(i{1,3}|iv|1|2|3|4)\b", title, re.I):
-                continue
+            parts, _ = parse_dresden_title(title)
+            if EXCLUDE_TITLE_RE.search(title):
+                if not (
+                    parts == [4]
+                    and re.search(r"ausbildereignung nach aevo", title, re.IGNORECASE)
+                ):
+                    continue
+            elif not re.search(r"meister|teil\s+(i{1,3}|iv|1|2|3|4)\b", title, re.I):
+                if not parts:
+                    continue
             url = urljoin(BASE_URL, href)
             found.setdefault(url, title)
         return [(title, url) for url, title in found.items()]

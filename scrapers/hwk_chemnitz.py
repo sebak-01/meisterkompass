@@ -87,9 +87,14 @@ def parse_chemnitz_title(title: str) -> tuple[list[int], str | None]:
     return (parts, trade) if trade else ([], None)
 
 
-def _availability(text: str) -> str:
+def _availability(text: str, block: Tag | None = None) -> str:
+    if block is not None:
+        if block.select_one(".reservation_red"):
+            return "full"
+        if block.select_one(".reservation_green"):
+            return "available"
     lower = text.lower()
-    if "ausgebucht" in lower or "keine plätze" in lower:
+    if "ausgebucht" in lower or "keine plätze" in lower or "kurs leider ausgebucht" in lower:
         return "full"
     if "warteliste" in lower:
         return "waitlist"
@@ -244,7 +249,7 @@ class HwkChemnitzScraper(BaseScraper):
             city=city,
             street=street,
             zip_code=zip_code,
-            availability=_availability(info_text),
+            availability=_availability(info_text, block),
             source_url=f"{url}#termin_{termin_id}" if termin_id else url,
             scraped_raw={"title": page_title, "course_no": number_match.group(1) if number_match else ""},
         )

@@ -4,7 +4,7 @@ from unittest.mock import patch
 from bs4 import BeautifulSoup
 
 from scrapers.fees import build_exam_fee_lookup, resolve_exam_fee
-from scrapers.hwk_chemnitz import HwkChemnitzScraper, parse_chemnitz_title
+from scrapers.hwk_chemnitz import HwkChemnitzScraper, _availability as chemnitz_availability, parse_chemnitz_title
 from scrapers.hwk_dresden import (
     EXAM_FEES_PAGE_URL as DRESDEN_EXAM_FEES_PAGE_URL,
     HwkDresdenScraper,
@@ -132,6 +132,36 @@ class SachsenParserTests(unittest.TestCase):
         )
         self.assertEqual(_availability("Ausgebucht"), "full")
         self.assertEqual(_availability("Warteliste"), "waitlist")
+        self.assertEqual(_availability("Ausgebucht / Warteliste"), "waitlist")
+
+    def test_dresden_discover_includes_part_iii_and_iv_courses(self):
+        soup = BeautifulSoup(
+            """
+            <a href="/kurs-finden/kursdetails/kurs/gepruefter-fachmann-kaufmaennische-betriebsfuehrung-1.html">
+              Geprüfter Fachmann für kaufmännische Betriebsführung HwO
+            </a>
+            <a href="/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-1.html">
+              Ausbildereignung nach AEVO
+            </a>
+            <a href="/kurs-finden/kursdetails/kurs/vorschaltkurs-zum-teil-ii-1.html">
+              Vorschaltkurs zum Teil II im Metallbauerhandwerk
+            </a>
+            """,
+            "html.parser",
+        )
+        courses = {url: title for title, url in HwkDresdenScraper._discover(soup)}
+        self.assertIn(
+            "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-kaufmaennische-betriebsfuehrung-1.html",
+            courses,
+        )
+        self.assertIn(
+            "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-1.html",
+            courses,
+        )
+        self.assertNotIn(
+            "https://www.njumii.de/kurs-finden/kursdetails/kurs/vorschaltkurs-zum-teil-ii-1.html",
+            courses,
+        )
 
     def test_dresden_exam_fee_rows_use_meisterpruefungen_page(self):
         scraper = HwkDresdenScraper()
@@ -233,6 +263,63 @@ class SachsenParserTests(unittest.TestCase):
         }
         offer = scraper._enrich({**card, "detail_url": card["detail_url"]})
         self.assertEqual(offer.exam_fee_scraped, 715.0)
+
+    def test_leipzig_preserves_listing_format_over_mixed_detail_page(self):
+        card = {
+            "raw_title": "Elektrotechniker-Meister Teile I und II, Vollzeit",
+            "parts": [1, 2],
+            "trade_name": "Elektrotechniker",
+            "start_date": "2026-09-07",
+            "end_date": "2027-04-22",
+            "format_key": "full_time",
+            "teaching_mode": "presence",
+            "duration_hours": 1200,
+            "course_fee": 7990.0,
+            "availability": "available",
+            "detail_url": "https://www.hwk-leipzig.de/3,0,coursedetail.html?id=73102",
+            "card_text": "07.09.2026 - 22.04.2027: Vollzeit Elektrotechniker-Meister Teile I und II",
+        }
+        detail_html = """
+        <main>
+          <h1>Elektrotechniker-Meister Teile I und II</h1>
+          <p>07.09.2026 - 22.04.2027: Vollzeit</p>
+          <p>08.09.2026 - 15.07.2027: Teilzeit</p>
+          <p>Lehrgangsdauer 1.200 Unterrichtsstunden</p>
+          <p>Kursgebühr 7.990,00 Euro</p>
+        </main>
+        """
+        scraper = HwkLeipzigScraper()
+        with patch.object(
+            scraper,
+            "parse_html",
+            return_value=BeautifulSoup(detail_html, "html.parser"),
+        ):
+            result = scraper._enrich(card)
+        self.assertIsNotNone(result)
+        offer = result[0] if isinstance(result, list) else result
+        self.assertEqual(offer.format_key, "full_time")
+
+    def test_chemnitz_reservation_css_classes_override_text(self):
+        available_block = BeautifulSoup(
+            """
+            <details id="termin_100">
+              <summary>Teilzeit - 21. August 2026 in Chemnitz</summary>
+              <span class="reservation_green">Freie Plätze</span>
+            </details>
+            """,
+            "html.parser",
+        ).select_one("#termin_100")
+        full_block = BeautifulSoup(
+            """
+            <details id="termin_101">
+              <summary>Teilzeit - 7. September 2029 in Chemnitz</summary>
+              <span class="reservation_red">Kurs leider ausgebucht</span>
+            </details>
+            """,
+            "html.parser",
+        ).select_one("#termin_101")
+        self.assertEqual(chemnitz_availability("", available_block), "available")
+        self.assertEqual(chemnitz_availability("", full_block), "full")
 
     def test_dresden_collect_resolves_exam_fees(self):
         scraper = HwkDresdenScraper()
