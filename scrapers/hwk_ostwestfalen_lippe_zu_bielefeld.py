@@ -110,6 +110,33 @@ def _is_meister_card(title: str) -> bool:
     return bool(parts and set(parts) <= {3, 4})
 
 
+def _card_text_scope(link: Tag, raw_title: str) -> str:
+    """Return page text scoped to a single listing/run, not an entire course hub."""
+    if "list-group-item" in (link.get("class") or []):
+        return link.get_text("\n", strip=True)
+    row = link.find_parent("div", class_="row")
+    if row is not None:
+        return row.get_text("\n", strip=True)
+    li = link.find_parent("li")
+    if li is not None:
+        return li.get_text("\n", strip=True)
+    return raw_title or link.get_text("\n", strip=True)
+
+
+def _parse_schedule_from_title(raw_title: str) -> tuple[str | None, str | None, str | None]:
+    """Parse ``DD.MM.YYYY - DD.MM.YYYY: Vollzeit/Teilzeit`` from link titles."""
+    match = re.search(
+        r"(\d{2}\.\d{2}\.\d{4}\s*-\s*\d{2}\.\d{2}\.\d{4})\s*:\s*(Vollzeit|Teilzeit)",
+        raw_title,
+        re.IGNORECASE,
+    )
+    if not match:
+        return None, None, None
+    start_date, end_date = parse_dates(match.group(1))
+    format_key = "full_time" if match.group(2).lower() == "vollzeit" else "part_time"
+    return start_date, end_date, format_key
+
+
 def _card_key(card: dict) -> tuple:
     """Unique key for listing cards that share one detail page."""
     return (
@@ -261,10 +288,14 @@ class HwkOstwestfalenLippeZuBielefeldScraper(BavariaOdavScraper):
         if not parts or (not trade_name and not set(parts) <= {3, 4}):
             return None
 
-        row = link.find_parent("div", class_="row") or link.find_parent("li")
-        text = row.get_text("\n", strip=True) if row else raw_title
+        text = _card_text_scope(link, raw_title)
+        title_start, title_end, title_format = _parse_schedule_from_title(raw_title)
         start_date, end_date = parse_dates(text)
+        if title_start:
+            start_date, end_date = title_start, title_end
         format_key, teaching_mode = parse_format_and_mode(f"{text} {raw_title}")
+        if title_format:
+            format_key = title_format
         duration = DURATION_RE.search(text)
         return {
             "raw_title": raw_title,

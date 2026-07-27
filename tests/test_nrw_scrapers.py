@@ -30,6 +30,7 @@ from scrapers.hwk_ostwestfalen_lippe_zu_bielefeld import (
     HwkOstwestfalenLippeZuBielefeldScraper,
     _card_key,
     _is_meister_card,
+    _parse_schedule_from_title,
     parse_owl_title,
 )
 from scrapers.hwk_suedwestfalen import HwkSuedwestfalenScraper, parse_suedwestfalen_title
@@ -654,6 +655,56 @@ class NrwParserTests(unittest.TestCase):
             "format_key": "part_time",
         }
         self.assertNotEqual(_card_key(card_a), _card_key(card_b))
+
+    def test_owl_article_list_group_item_ignores_sibling_runs(self):
+        from bs4 import BeautifulSoup
+
+        html = """
+        <div class="list-group odav-listgroup">
+          <a class="list-group-item clearfix" href="/3351,0,coursedetail.html?id=128641">
+            07.09.2026 - 22.04.2027: Vollzeit
+            Meistervorbereitung im Installateur-/ Heizungsbauer-Handwerk, Teile I + II
+            Bielefeld
+          </a>
+          <a class="list-group-item clearfix" href="/3351,0,coursedetail.html?id=128641">
+            02.11.2026 - 16.03.2029: Teilzeit
+            Meistervorbereitung im Installateur-/ Heizungsbauer-Handwerk, Teile I + II
+            Bielefeld
+          </a>
+          <a class="list-group-item clearfix" href="/3351,0,coursedetail.html?id=128641">
+            10.05.2027 - 22.12.2027: Vollzeit
+            Meistervorbereitung im Installateur-/ Heizungsbauer-Handwerk, Teile I + II
+            Bielefeld
+          </a>
+        </div>
+        """
+        soup = BeautifulSoup(html, "html.parser")
+        scraper = HwkOstwestfalenLippeZuBielefeldScraper()
+        cards = []
+        for link in soup.select("a.list-group-item"):
+            card = scraper._parse_owl_card(
+                link,
+                "https://bbz.handwerk-owl.de/3351,0,coursedetail.html?id=128641",
+                article_trade="shk",
+            )
+            cards.append(card)
+        self.assertEqual(
+            [(c["start_date"], c["end_date"], c["format_key"]) for c in cards],
+            [
+                ("2026-09-07", "2027-04-22", "full_time"),
+                ("2026-11-02", "2029-03-16", "part_time"),
+                ("2027-05-10", "2027-12-22", "full_time"),
+            ],
+        )
+
+    def test_owl_schedule_line_parsed_from_link_title(self):
+        self.assertEqual(
+            _parse_schedule_from_title(
+                "07.09.2026 - 22.04.2027: Vollzeit Meistervorbereitung im Installateur-/ "
+                "Heizungsbauer-Handwerk, Teile I + II Bielefeld"
+            ),
+            ("2026-09-07", "2027-04-22", "full_time"),
+        )
 
     def test_koeln_part_iii_iv_listings_are_included(self):
         self.assertTrue(_is_meister_listing(
