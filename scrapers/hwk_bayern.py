@@ -11,7 +11,7 @@ from urllib.parse import parse_qs, urlencode, urljoin, urlsplit, urlunsplit
 from bs4 import BeautifulSoup, Tag
 
 from .base import BaseScraper, RawCourseOffer, build_course_title
-from .format_keys import parse_format_key
+from .format_keys import parse_format_key, strip_odav_alternate_runs
 
 logger = logging.getLogger(__name__)
 
@@ -539,8 +539,10 @@ class BavariaOdavScraper(BaseScraper):
             return None
 
         start_date, end_date, start_date_note = self.resolve_schedule_dates(soup, card, main_text)
+        primary_text = strip_odav_alternate_runs(main_text)
+        card_text = card.get("card_text") or card.get("raw_title") or ""
         format_key, teaching_mode = parse_format_and_mode(
-            f"{detail_title}\n{main_text[:3000]}"
+            f"{detail_title}\n{card_text}\n{primary_text[:3000]}"
         )
         duration = re.search(
             rf"Lehrgangsdauer\s+([\d.]+)\s*{DURATION_UNIT}", main_text, re.IGNORECASE

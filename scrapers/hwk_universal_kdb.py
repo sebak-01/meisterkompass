@@ -155,16 +155,29 @@ def parse_kdb_price(text: str | None) -> float | None:
     return float(match.group(1).replace(".", "") + "." + match.group(2))
 
 
+def _city_from_kdb_venue(venue: str, ort: str) -> str | None:
+    """Prefer a named campus/locality over the administrative ``ort`` city."""
+    venue = venue.strip()
+    if not venue:
+        return None
+    tokens = re.split(r"[\s\-–]+", venue)
+    if len(tokens) >= 2:
+        candidate = tokens[-1]
+        if candidate.lower() != ort.lower() and len(candidate) >= 4:
+            return candidate
+    return None
+
+
 def parse_kdb_location(block: str) -> tuple[str, str, str]:
     street = _xml_field(block, "strasse") or ""
     hausnummer = _xml_field(block, "hausnummer") or ""
     if street and hausnummer:
         street = f"{street} {hausnummer}"
     zip_code = _xml_field(block, "plz") or ""
-    city = _xml_field(block, "ort") or ""
-    if not city:
-        names = re.findall(r"<lehrgangsort>([^<]+)</lehrgangsort>", block)
-        city = names[-1] if names else ""
+    ort = _xml_field(block, "ort") or ""
+    venue_names = re.findall(r"<lehrgangsort>([^<]+)</lehrgangsort>", block)
+    venue = venue_names[-1] if venue_names else ""
+    city = _city_from_kdb_venue(venue, ort) or ort or venue
     return street, zip_code, city
 
 

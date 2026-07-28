@@ -51,6 +51,38 @@ class ThueringenParserTests(unittest.TestCase):
         self.assertEqual(card["trade_name"], "Friseur")
         self.assertEqual(card["detail_url"], "https://www.hwk-erfurt.de/4,0,coursedetail.html?id=42")
 
+    def test_odav_enrich_keeps_vollzeit_when_detail_lists_teilzeit_alternatives(self):
+        card = {
+            "raw_title": "Geprüfter Fachmann für kaufmännische Betriebsführung",
+            "parts": [3],
+            "trade_name": None,
+            "start_date": "2026-11-02",
+            "end_date": "2026-12-04",
+            "start_date_note": "",
+            "format_key": "full_time",
+            "teaching_mode": "presence",
+            "duration_hours": 190,
+            "course_fee": 1795.0,
+            "availability": "available",
+            "detail_url": "https://www.hwk-erfurt.de/4,0,coursedetail.html?id=63166",
+            "card_text": "02.11.2026 - 04.12.2026: Vollzeit",
+        }
+        detail_html = """
+        <main>
+          <h1>Geprüfter Fachmann für kaufmännische Betriebsführung</h1>
+          <p>Unterricht</p>
+          <p>02.11.2026 - 04.12.2026</p>
+          <p>Montag bis Freitag von 08:00 Uhr bis 15:00 Uhr</p>
+          <p>Vollzeit</p>
+          <h2>Alle Termine</h2>
+          <p>21.08.2026 - 30.01.2027: Teilzeit</p>
+        </main>
+        """
+        scraper = HwkErfurtScraper()
+        with patch.object(scraper, "parse_html", return_value=BeautifulSoup(detail_html, "html.parser")):
+            offer = scraper._enrich(card)
+        self.assertEqual(offer.format_key, "full_time")
+
     def test_suhl_title_parsing(self):
         self.assertEqual(
             parse_suhl_title("Meister im Elektrotechniker-Handwerk Teil I und II"),
