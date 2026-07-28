@@ -445,7 +445,7 @@
           "qualifier": ""
         },
         "4": {
-          "fee": 205.0,
+          "fee": 420.0,
           "fee_max": null,
           "qualifier": ""
         }
@@ -1491,7 +1491,7 @@
       },
       "friseur": {
         "1,2": {
-          "fee": 1375.0,
+          "fee": 1525.0,
           "fee_max": null,
           "qualifier": "ca."
         }
@@ -1747,12 +1747,12 @@
           "qualifier": ""
         },
         "3": {
-          "fee": 230.0,
+          "fee": 360.0,
           "fee_max": null,
           "qualifier": ""
         },
         "4": {
-          "fee": 190.0,
+          "fee": 300.0,
           "fee_max": null,
           "qualifier": ""
         }
@@ -1760,6 +1760,13 @@
       "backer": {
         "1,2": {
           "fee": 1750.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "dachdecker": {
+        "1,2": {
+          "fee": 1400.0,
           "fee_max": null,
           "qualifier": ""
         }
@@ -3829,7 +3836,7 @@
       },
       "kfz-techniker": {
         "1,2": {
-          "fee": 675.0,
+          "fee": 1000.0,
           "fee_max": null,
           "qualifier": ""
         },
@@ -3840,13 +3847,6 @@
         }
       },
       "maler-und-lackierer": {
-        "1,2": {
-          "fee": 1000.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "maler-und-lackierer-fahrzeuglackierer": {
         "1,2": {
           "fee": 1000.0,
           "fee_max": null,
