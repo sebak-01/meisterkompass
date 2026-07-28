@@ -7,7 +7,9 @@ from scrapers.pipeline import (
     SCRAPE_GROUPS,
     SCRAPERS,
     ScrapeBatch,
+    _is_online_location,
     _scrape_workers,
+    apply_coordinates,
     merge_scrape_partials,
     write_scrape_partial,
 )
@@ -72,6 +74,52 @@ class MergePartialsTests(unittest.TestCase):
         self.assertEqual(report.per_chamber["hwk-berlin"], 1)
         self.assertEqual(report.per_chamber["hwk-bremen"], 1)
         self.assertEqual(report.total_courses, 2)
+
+
+class OnlineLocationGeocodeTests(unittest.TestCase):
+    def test_online_city_is_detected(self):
+        self.assertTrue(_is_online_location("Online"))
+        self.assertTrue(_is_online_location(" online "))
+        self.assertFalse(_is_online_location("Lübeck"))
+        self.assertFalse(_is_online_location("Onlinekursstadt"))
+
+    def test_apply_coordinates_skips_online_venues(self):
+        class FakeGeocoder:
+            def lookup(self, query):
+                raise AssertionError(f"must not geocode online venue: {query}")
+
+        records = [
+            {
+                "chamber_slug": "hwk-rheinhessen",
+                "city": "Online",
+                "street": "",
+                "zip_code": "",
+                "chamber_region": "Rheinland-Pfalz",
+                "latitude": 49.19,
+                "longitude": 7.60,
+            },
+            {
+                "chamber_slug": "hwk-rheinhessen",
+                "city": "Lübeck",
+                "street": "Bessemerstraße 3",
+                "zip_code": "23562",
+                "chamber_region": "Rheinland-Pfalz",
+                "latitude": None,
+                "longitude": None,
+            },
+        ]
+
+        class SelectiveGeocoder(FakeGeocoder):
+            def lookup(self, query):
+                if "Online" in query:
+                    raise AssertionError(f"must not geocode online venue: {query}")
+                return (53.84, 10.70)
+
+        apply_coordinates(records, SelectiveGeocoder())
+        self.assertIsNone(records[0]["latitude"])
+        self.assertIsNone(records[0]["longitude"])
+        self.assertEqual(records[1]["latitude"], 53.84)
+        self.assertEqual(records[1]["longitude"], 10.70)
 
 
 if __name__ == "__main__":

@@ -14,6 +14,7 @@ logger = logging.getLogger(__name__)
 
 BASE_URL = "https://www.hwkhalle.de"
 OVERVIEW_URL = f"{BASE_URL}/meisterkurse/"
+PART_III_IV_URL = f"{BASE_URL}/weg-zum-meister/teile3-und-4/"
 EXAM_FEES_PDF_URL = f"{BASE_URL}/wp-content/uploads/Gebuehrenverzeichnis-1.pdf"
 DATE_RE = re.compile(
     r"^(\d{2})\.(\d{2})\.(\d{4})\s*[—–-]\s*(\d{2})\.(\d{2})\.(\d{4})"
@@ -142,12 +143,21 @@ class HwkHalleSaaleScraper(BaseScraper):
     request_delay = 0.8
 
     def fetch_raw_courses(self) -> list[RawCourseOffer]:
-        soup = self.parse_html(OVERVIEW_URL)
-        if soup is None:
-            logger.error("Could not fetch HWK Halle course overview.")
+        courses: list[tuple[str, str]] = []
+        seen_urls: set[str] = set()
+        for url in (OVERVIEW_URL, PART_III_IV_URL):
+            soup = self.parse_html(url)
+            if soup is None:
+                logger.warning("Could not fetch HWK Halle course overview %s.", url)
+                continue
+            for title, course_url in self._discover(soup):
+                if course_url in seen_urls:
+                    continue
+                seen_urls.add(course_url)
+                courses.append((title, course_url))
+        if not courses:
+            logger.error("Could not fetch HWK Halle course overviews.")
             return []
-
-        courses = self._discover(soup)
         offers: list[RawCourseOffer] = []
         for title, url in courses:
             detail = self.parse_html(url)

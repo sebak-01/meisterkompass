@@ -526,6 +526,8 @@ initNav();
     }
   });
 })();
+document.getElementById("btn-mode-auto").addEventListener("click", () => setMode("auto"));
+document.getElementById("btn-mode-manual").addEventListener("click", () => setMode("manual"));
 document.getElementById("auto-trade").addEventListener("change", onTradeChange);
 document.getElementById("prefer-singles").addEventListener("change", renderFeeInputs);
 [1, 2, 3, 4].forEach((p) => document.getElementById("chk" + p).addEventListener("change", () => onPartCheck(p)));

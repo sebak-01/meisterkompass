@@ -38,7 +38,6 @@ from .hwk_reutlingen import HwkReutlingenScraper
 from .hwk_rheinhessen import (
     HwkRheinhessenScraper,
     resolve_coords as rh_resolve_coords,
-    DEFAULT_COORDS as RH_DEFAULT_COORDS,
 )
 from .hwk_saarland import HWK_SAARLAND_LAT, HWK_SAARLAND_LNG, HwkSaarlandScraper
 from .hwk_trier import HwkTrierScraper
@@ -348,13 +347,21 @@ def _drop_stale_approx_dates(records: list[dict], today_iso: str) -> list[dict]:
 
 def apply_coordinates(records: list[dict], geocoder: Geocoder):
     for rec in records:
+        # Online-only courses have no physical venue — leave them off the map.
+        if _is_online_location(rec.get("city", "")):
+            rec["latitude"] = None
+            rec["longitude"] = None
+            continue
         cs = rec["chamber_slug"]
         if cs == "hwk-saarland":
             rec["latitude"], rec["longitude"] = HWK_SAARLAND_LAT, HWK_SAARLAND_LNG
             continue
         if cs == "hwk-rheinhessen":
-            rec["latitude"], rec["longitude"] = rh_resolve_coords(rec.get("street", "")) or RH_DEFAULT_COORDS
-            continue
+            coords = rh_resolve_coords(rec.get("street", ""))
+            if coords:
+                rec["latitude"], rec["longitude"] = coords
+                continue
+            # External providers (e.g. AFH Lübeck for Hörakustiker) — geocode below.
         if (
             cs == "hwk-suedthueringen-suhl"
             and rec.get("zip_code") == "98530"
@@ -371,6 +378,12 @@ def apply_coordinates(records: list[dict], geocoder: Geocoder):
         coords = geocoder.lookup(query)
         if coords:
             rec["latitude"], rec["longitude"] = coords
+
+
+def _is_online_location(city: str | None) -> bool:
+    """True when the course venue is online-only (no mappable address)."""
+    value = (city or "").strip().lower()
+    return value == "online" or value.startswith("online ")
 
 
 # ----------------------------------------------------------------------

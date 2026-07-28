@@ -72,7 +72,8 @@ meisterkompass/
 │   ├── hwk_rhein_main.py      # HWK Frankfurt-Rhein-Main — tabbed multi-module pages
 │   ├── hwk_wiesbaden.py       # HWK Wiesbaden
 │   ├── hwk_{freiburg,heilbronn,karlsruhe,konstanz,mannheim,reutlingen,stuttgart,ulm}.py
-│   ├── hwk_bayern.py          # shared ODAV catalogue/detail parser for Bavaria
+│   ├── hwk_bayern.py          # shared ODAV catalogue/detail parser (see odav.py)
+│   ├── odav.py                # preferred alias: OdavCatalogueScraper (cross-region)
 │   ├── hwk_{muenchen_und_oberbayern,niederbayern_oberpfalz,oberfranken}.py
 │   ├── hwk_{mittelfranken,unterfranken,schwaben}.py
 │   ├── hwk_{erfurt,ostthueringen_gera,suedthueringen_suhl}.py
@@ -137,13 +138,15 @@ Known gaps: **Niederbayern-Oberpfalz** skips detail pages (`details_required=Fal
 so it has no exam fees yet; some Trier/Pfalz/Saarland offers omit fees on the
 course page (Trier falls back to its Gebührenverzeichnis tariff for missing parts).
 
-#### Bayern — shared ODAV catalogue architecture
+#### Shared ODAV catalogue architecture (Bayern and beyond)
 
-All six Bavarian chambers publish Meister courses through the same server-rendered
-ODAV course CMS (paginated `courselist.html` + per-run `coursedetail.html?id=…`).
-`hwk_bayern.py` implements the shared catalogue parser and optional detail-page
-enrichment; each chamber file only sets metadata, catalogue URL, and any
-chamber-specific hooks:
+Many chambers publish Meister courses through the same server-rendered ODAV course
+CMS (paginated `courselist.html` + per-run `coursedetail.html?id=…`). The engine
+lives in `hwk_bayern.py` (class `BavariaOdavScraper`, historical name); new code
+should import `OdavCatalogueScraper` from `scrapers/odav.py`. Each chamber file
+only sets metadata, catalogue URL, and any chamber-specific hooks.
+
+**Bavaria** — all six chambers use this stack:
 
 | Chamber | Slug | Source |
 |---|---|---|
@@ -153,6 +156,14 @@ chamber-specific hooks:
 | Mittelfranken | `hwk-mittelfranken` | hwk-akademie.de (chamber host blocks bots) |
 | Unterfranken | `hwk-unterfranken` | hwk-ufr.de |
 | Schwaben | `hwk-schwaben` | bildungschwaben.de |
+
+**Other regions** inheriting the same parser include Erfurt, Magdeburg, Leipzig,
+Cottbus, Potsdam, Hannover, Köln, Düsseldorf, Aachen, Schwerin, Berlin (via
+Koblenz/bildung4u), Braunschweig-Lüneburg-Stade, Hildesheim-Südniedersachsen,
+Oldenburg, and OWL (Bielefeld). Magdeburg and Erfurt override listing-card parsing
+for article pages that embed multiple `list-group-item` runs inside one large
+`div.row` — the shared `_listing_card_text()` helper scopes format detection to
+each link's own card text so sibling Teilzeit runs do not leak into Vollzeit rows.
 
 Caveats worth knowing when scraping or interpreting the data:
 
@@ -202,15 +213,14 @@ Exam fees for HWK Kassel are chamber-wide rather than per-offer, so they're
 injected via an overridden `collect()` rather than `exam_fee_scraped` on
 individual offers.
 
-#### Thüringen — three independent catalogues
+#### Thüringen — ODAV plus two independent catalogues
 
-Each Thuringian chamber publishes Meister courses on its own CMS; exam fees are
-parsed from each chamber's Gebührenverzeichnis PDF and cited via the relevant
-legal/fees page:
+Exam fees are parsed from each chamber's Gebührenverzeichnis PDF and cited via the
+relevant legal/fees page:
 
 | Chamber | Slug | Source |
 |---|---|---|
-| Erfurt | `hwk-erfurt` | hwk-erfurt.de |
+| Erfurt | `hwk-erfurt` | hwk-erfurt.de (ODAV article catalogue via shared `OdavCatalogueScraper`) |
 | Ostthüringen (Gera) | `hwk-ostthueringen-gera` | hwk-gera.de |
 | Südthüringen (Suhl) | `hwk-suedthueringen-suhl` | hwk-suhl.de |
 
@@ -286,7 +296,7 @@ block so overview mentions of Teil III/IV on the same page do not pick up wrong 
 |---|---|---|---|
 | Koblenz | `hwk-koblenz` | bildung4u.de (ODAV) | Gebührenverzeichnis PDF (`bis zu` ceilings) |
 | der Pfalz | `hwk-pfalz` | hwk-pfalz.de | course-page `exam_fee_scraped` where published |
-| Rheinhessen | `hwk-rheinhessen` | hwk-rheinhessen.de (WordPress) | Gebührenverzeichnis PDF (fee ranges) |
+| Rheinhessen | `hwk-rheinhessen` | hwk-rheinhessen.de (WordPress) + [AFH Lübeck](https://www.afh-luebeck.de/en/meistervorbereitung/) portal for Hörakustiker | Gebührenverzeichnis PDF (fee ranges) |
 | Trier | `hwk-trier` | hwk-trier.de (Meistervorbereitungskurse + coursedetail) | course-page fees where published; weekly fallback from [Rechtsgrundlagen → Gebührenverzeichnis PDF](https://www.hwk-trier.de/artikel/rechtsgrundlagen-54,182,1061.html) for missing parts (e.g. generic Teil III) |
 
 Trier course pages often publish combined Teile I+II exam fees and per-part fees for
