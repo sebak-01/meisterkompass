@@ -395,8 +395,8 @@
     "city": "Online",
     "street": "",
     "zip_code": "",
-    "latitude": 49.1249172,
-    "longitude": 10.7805332,
+    "latitude": null,
+    "longitude": null,
     "availability": "waitlist",
     "source_url": "https://www.hwk-ufr.de/78,0,coursedetail.html?id=449041"
   }
