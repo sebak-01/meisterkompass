@@ -2,14 +2,15 @@ import unittest
 
 from bs4 import BeautifulSoup
 
-from scrapers.afh_luebeck import (
-    enrich_listing_from_detail,
-    infer_format_and_mode,
-    infer_parts,
-    listing_to_offer,
-    parse_search_page,
+from scrapers.hwk_rheinhessen import (
+    HwkRheinhessenScraper,
+    _afh_enrich_listing_from_detail,
+    _afh_infer_format_and_mode,
+    _afh_infer_parts,
+    _afh_listing_to_offer,
+    _afh_parse_search_page,
+    parse_availability,
 )
-from scrapers.hwk_rheinhessen import HwkRheinhessenScraper, parse_availability
 
 
 AFH_SEARCH_SNIPPET = """
@@ -159,7 +160,7 @@ class RheinhessenRunExtractionTests(unittest.TestCase):
 
 class AfhHorakustikerParserTests(unittest.TestCase):
     def test_parse_search_page_extracts_meister_courses(self):
-        listings = parse_search_page(BeautifulSoup(AFH_SEARCH_SNIPPET, "html.parser"))
+        listings = _afh_parse_search_page(BeautifulSoup(AFH_SEARCH_SNIPPET, "html.parser"))
         self.assertEqual(len(listings), 2)
         self.assertEqual(listings[0]["title"], "Meistervollzeitkurs Teile I - IV 2026/2027")
         self.assertEqual(listings[0]["parts"], [1, 2, 3, 4])
@@ -169,8 +170,8 @@ class AfhHorakustikerParserTests(unittest.TestCase):
         self.assertEqual(listings[1]["teaching_mode"], "online")
 
     def test_detail_enrichment_adds_end_date_and_luebeck_address(self):
-        listing = parse_search_page(BeautifulSoup(AFH_SEARCH_SNIPPET, "html.parser"))[0]
-        enrich_listing_from_detail(listing, BeautifulSoup(AFH_DETAIL_SNIPPET, "html.parser"))
+        listing = _afh_parse_search_page(BeautifulSoup(AFH_SEARCH_SNIPPET, "html.parser"))[0]
+        _afh_enrich_listing_from_detail(listing, BeautifulSoup(AFH_DETAIL_SNIPPET, "html.parser"))
         self.assertEqual(listing["start_date"], "2026-09-14")
         self.assertEqual(listing["end_date"], "2027-06-11")
         self.assertEqual(listing["duration_hours"], 1313)
@@ -179,23 +180,23 @@ class AfhHorakustikerParserTests(unittest.TestCase):
         self.assertEqual(listing["availability"], "available")
 
     def test_listing_to_offer_uses_horakustiker_trade(self):
-        listing = parse_search_page(BeautifulSoup(AFH_SEARCH_SNIPPET, "html.parser"))[0]
-        enrich_listing_from_detail(listing, BeautifulSoup(AFH_DETAIL_SNIPPET, "html.parser"))
-        offer = listing_to_offer(listing)
+        listing = _afh_parse_search_page(BeautifulSoup(AFH_SEARCH_SNIPPET, "html.parser"))[0]
+        _afh_enrich_listing_from_detail(listing, BeautifulSoup(AFH_DETAIL_SNIPPET, "html.parser"))
+        offer = _afh_listing_to_offer(listing)
         self.assertEqual(offer.trade_name, "Hörakustiker")
         self.assertEqual(offer.parts, [1, 2, 3, 4])
         self.assertEqual(offer.city, "Lübeck")
         self.assertEqual(offer.scraped_raw["provider"], "Akademie für Hörakustik")
 
     def test_infer_parts_and_format_helpers(self):
-        self.assertEqual(infer_parts("MVIK Lübeck Teile I & II 2027"), [1, 2])
-        self.assertEqual(infer_parts("MVIK-III/IV 2026/2027 Online"), [3, 4])
+        self.assertEqual(_afh_infer_parts("MVIK Lübeck Teile I & II 2027"), [1, 2])
+        self.assertEqual(_afh_infer_parts("MVIK-III/IV 2026/2027 Online"), [3, 4])
         self.assertEqual(
-            infer_format_and_mode("Meistervollzeitkurs Teile I - IV", "Lübeck")[0],
+            _afh_infer_format_and_mode("Meistervollzeitkurs Teile I - IV", "Lübeck")[0],
             "full_time",
         )
         self.assertEqual(
-            infer_format_and_mode("MVIK Lübeck Teile I & II", "Lübeck", "Hybridformat")[1],
+            _afh_infer_format_and_mode("MVIK Lübeck Teile I & II", "Lübeck", "Hybridformat")[1],
             "hybrid",
         )
 
