@@ -347,6 +347,11 @@ def _drop_stale_approx_dates(records: list[dict], today_iso: str) -> list[dict]:
 
 def apply_coordinates(records: list[dict], geocoder: Geocoder):
     for rec in records:
+        # Online-only courses have no physical venue — leave them off the map.
+        if _is_online_location(rec.get("city", "")):
+            rec["latitude"] = None
+            rec["longitude"] = None
+            continue
         cs = rec["chamber_slug"]
         if cs == "hwk-saarland":
             rec["latitude"], rec["longitude"] = HWK_SAARLAND_LAT, HWK_SAARLAND_LNG
@@ -373,6 +378,12 @@ def apply_coordinates(records: list[dict], geocoder: Geocoder):
         coords = geocoder.lookup(query)
         if coords:
             rec["latitude"], rec["longitude"] = coords
+
+
+def _is_online_location(city: str | None) -> bool:
+    """True when the course venue is online-only (no mappable address)."""
+    value = (city or "").strip().lower()
+    return value == "online" or value.startswith("online ")
 
 
 # ----------------------------------------------------------------------
