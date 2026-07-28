@@ -296,7 +296,7 @@ block so overview mentions of Teil III/IV on the same page do not pick up wrong 
 |---|---|---|---|
 | Koblenz | `hwk-koblenz` | bildung4u.de (ODAV) | Gebührenverzeichnis PDF (`bis zu` ceilings) |
 | der Pfalz | `hwk-pfalz` | hwk-pfalz.de | course-page `exam_fee_scraped` where published |
-| Rheinhessen | `hwk-rheinhessen` | hwk-rheinhessen.de (WordPress) | Gebührenverzeichnis PDF (fee ranges) |
+| Rheinhessen | `hwk-rheinhessen` | hwk-rheinhessen.de (WordPress) + [AFH Lübeck](https://www.afh-luebeck.de/en/meistervorbereitung/) portal for Hörakustiker | Gebührenverzeichnis PDF (fee ranges) |
 | Trier | `hwk-trier` | hwk-trier.de (Meistervorbereitungskurse + coursedetail) | course-page fees where published; weekly fallback from [Rechtsgrundlagen → Gebührenverzeichnis PDF](https://www.hwk-trier.de/artikel/rechtsgrundlagen-54,182,1061.html) for missing parts (e.g. generic Teil III) |
 
 Trier course pages often publish combined Teile I+II exam fees and per-part fees for

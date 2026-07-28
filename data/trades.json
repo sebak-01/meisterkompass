@@ -84,6 +84,10 @@
     "name": "Holzbildhauer"
   },
   {
+    "slug": "horakustiker",
+    "name": "Hörakustiker"
+  },
+  {
     "slug": "informationstechniker",
     "name": "Informationstechniker"
   },
@@ -122,10 +126,6 @@
   {
     "slug": "maler-und-lackierer",
     "name": "Maler und Lackierer"
-  },
-  {
-    "slug": "maler-und-lackierer-fahrzeuglackierer",
-    "name": "Maler und Lackierer (Fahrzeuglackierer)"
   },
   {
     "slug": "maurer-und-betonbauer",

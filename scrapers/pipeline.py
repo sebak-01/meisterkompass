@@ -38,7 +38,6 @@ from .hwk_reutlingen import HwkReutlingenScraper
 from .hwk_rheinhessen import (
     HwkRheinhessenScraper,
     resolve_coords as rh_resolve_coords,
-    DEFAULT_COORDS as RH_DEFAULT_COORDS,
 )
 from .hwk_saarland import HWK_SAARLAND_LAT, HWK_SAARLAND_LNG, HwkSaarlandScraper
 from .hwk_trier import HwkTrierScraper
@@ -353,8 +352,11 @@ def apply_coordinates(records: list[dict], geocoder: Geocoder):
             rec["latitude"], rec["longitude"] = HWK_SAARLAND_LAT, HWK_SAARLAND_LNG
             continue
         if cs == "hwk-rheinhessen":
-            rec["latitude"], rec["longitude"] = rh_resolve_coords(rec.get("street", "")) or RH_DEFAULT_COORDS
-            continue
+            coords = rh_resolve_coords(rec.get("street", ""))
+            if coords:
+                rec["latitude"], rec["longitude"] = coords
+                continue
+            # External providers (e.g. AFH Lübeck for Hörakustiker) — geocode below.
         if (
             cs == "hwk-suedthueringen-suhl"
             and rec.get("zip_code") == "98530"

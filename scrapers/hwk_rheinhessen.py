@@ -27,6 +27,7 @@ import re
 
 from bs4 import BeautifulSoup
 
+from .afh_luebeck import AFH_SEARCH_URL, listing_to_offer, parse_search_page, enrich_listing_from_detail
 from .base import BaseScraper, RawCourseOffer, build_course_title
 from .exam_fee_tariff import (
     download_pdf_text,
@@ -201,7 +202,25 @@ class HwkRheinhessenScraper(BaseScraper):
             logger.info("  %s → %d offer(s)", trade_page["slug"], len(page_offers))
             offers.extend(page_offers)
 
+        afh_offers = self._fetch_afh_horakustiker_courses()
+        logger.info("  AFH Lübeck Hörakustiker → %d offer(s)", len(afh_offers))
+        offers.extend(afh_offers)
+
         logger.info("HWK Rheinhessen: parsed %d course offers total.", len(offers))
+        return offers
+
+    def _fetch_afh_horakustiker_courses(self) -> list[RawCourseOffer]:
+        soup = self.parse_html(AFH_SEARCH_URL)
+        if soup is None:
+            logger.warning("Could not fetch AFH Lübeck course search: %s", AFH_SEARCH_URL)
+            return []
+
+        offers: list[RawCourseOffer] = []
+        for listing in parse_search_page(soup):
+            detail_soup = self.parse_html(listing["detail_url"])
+            if detail_soup is not None:
+                enrich_listing_from_detail(listing, detail_soup)
+            offers.append(listing_to_offer(listing))
         return offers
 
     # ------------------------------------------------------------------

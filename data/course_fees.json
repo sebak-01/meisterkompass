@@ -245,6 +245,17 @@
     "is_generic": true
   },
   {
+    "chamber_slug": "hwk-rheinhessen",
+    "trade_slug": "kfz-techniker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 7900.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-suedthueringen-suhl",
     "trade_slug": "allgemein-teil-iii-iv",
     "parts": [
@@ -430,16 +441,6 @@
     ],
     "fee": 7990.0,
     "exam_fee_scraped": 730.0,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-saarland",
-    "trade_slug": "installateur-und-heizungsbauer",
-    "parts": [
-      2
-    ],
-    "fee": 1615.0,
-    "exam_fee_scraped": 560.0,
     "is_generic": false
   },
   {
@@ -1026,16 +1027,6 @@
     "is_generic": true
   },
   {
-    "chamber_slug": "hwk-saarland",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      4
-    ],
-    "fee": 505.0,
-    "exam_fee_scraped": 130.0,
-    "is_generic": true
-  },
-  {
     "chamber_slug": "hwk-schwaben",
     "trade_slug": "allgemein-teil-iii-iv",
     "parts": [
@@ -1471,6 +1462,19 @@
     "is_generic": true
   },
   {
+    "chamber_slug": "hwk-rheinhessen",
+    "trade_slug": "horakustiker",
+    "parts": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "fee": 15950.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-saarland",
     "trade_slug": "maurer-und-betonbauer",
     "parts": [
@@ -1658,6 +1662,16 @@
     ],
     "fee": 860.0,
     "exam_fee_scraped": null,
+    "is_generic": true
+  },
+  {
+    "chamber_slug": "hwk-saarland",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      4
+    ],
+    "fee": 505.0,
+    "exam_fee_scraped": 130.0,
     "is_generic": true
   },
   {
@@ -3005,6 +3019,28 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-rheinhessen",
+    "trade_slug": "horakustiker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 8515.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-rheinhessen",
+    "trade_slug": "horakustiker",
+    "parts": [
+      3,
+      4
+    ],
+    "fee": 2160.0,
+    "exam_fee_scraped": null,
+    "is_generic": true
+  },
+  {
     "chamber_slug": "hwk-aachen",
     "trade_slug": "fahrzeuglackierer",
     "parts": [
@@ -3874,17 +3910,6 @@
     "is_generic": false
   },
   {
-    "chamber_slug": "hwk-suedwestfalen",
-    "trade_slug": "maler-und-lackierer-fahrzeuglackierer",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 7110.0,
-    "exam_fee_scraped": 1000.0,
-    "is_generic": false
-  },
-  {
     "chamber_slug": "hwk-duesseldorf",
     "trade_slug": "installateur-und-heizungsbauer",
     "parts": [
@@ -3926,16 +3951,6 @@
     ],
     "fee": 9900.0,
     "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-saarland",
-    "trade_slug": "elektrotechniker",
-    "parts": [
-      1
-    ],
-    "fee": 4265.0,
-    "exam_fee_scraped": 990.0,
     "is_generic": false
   },
   {
@@ -4327,17 +4342,6 @@
     ],
     "fee": 1425.0,
     "exam_fee_scraped": 420.0,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-rheinhessen",
-    "trade_slug": "kfz-techniker",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 7900.0,
-    "exam_fee_scraped": null,
     "is_generic": false
   },
   {
@@ -5407,16 +5411,6 @@
     "is_generic": false
   },
   {
-    "chamber_slug": "hwk-saarland",
-    "trade_slug": "installateur-und-heizungsbauer",
-    "parts": [
-      1
-    ],
-    "fee": 3035.0,
-    "exam_fee_scraped": 990.0,
-    "is_generic": false
-  },
-  {
     "chamber_slug": "hwk-koblenz",
     "trade_slug": "fleischer",
     "parts": [
@@ -5556,6 +5550,16 @@
     ],
     "fee": 10990.0,
     "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-saarland",
+    "trade_slug": "elektrotechniker",
+    "parts": [
+      1
+    ],
+    "fee": 4265.0,
+    "exam_fee_scraped": 990.0,
     "is_generic": false
   },
   {
@@ -5806,6 +5810,16 @@
     ],
     "fee": 2415.0,
     "exam_fee_scraped": 810.0,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-saarland",
+    "trade_slug": "installateur-und-heizungsbauer",
+    "parts": [
+      2
+    ],
+    "fee": 1615.0,
+    "exam_fee_scraped": 560.0,
     "is_generic": false
   },
   {
@@ -6242,6 +6256,16 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-saarland",
+    "trade_slug": "installateur-und-heizungsbauer",
+    "parts": [
+      1
+    ],
+    "fee": 3035.0,
+    "exam_fee_scraped": 990.0,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-trier",
     "trade_slug": "elektrotechniker",
     "parts": [
@@ -6673,16 +6697,6 @@
     ],
     "fee": 9250.0,
     "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-saarland",
-    "trade_slug": "elektrotechniker",
-    "parts": [
-      2
-    ],
-    "fee": 1390.0,
-    "exam_fee_scraped": 560.0,
     "is_generic": false
   },
   {
@@ -7546,6 +7560,16 @@
     ],
     "fee": 11200.0,
     "exam_fee_scraped": 750.0,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-saarland",
+    "trade_slug": "elektrotechniker",
+    "parts": [
+      2
+    ],
+    "fee": 1390.0,
+    "exam_fee_scraped": 560.0,
     "is_generic": false
   },
   {
