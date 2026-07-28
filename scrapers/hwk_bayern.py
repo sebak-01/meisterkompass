@@ -495,6 +495,21 @@ class BavariaOdavScraper(BaseScraper):
                 cards.append(card)
         return cards
 
+    @staticmethod
+    def _listing_card_text(link: Tag, raw_title: str) -> tuple[str, str]:
+        """Scope listing text to one course card, not a whole overview row."""
+        if "list-group-item" in link.get("class", []):
+            text = link.get_text("\n", strip=True)
+            heading = link.select_one("h3")
+            heading_text = heading.get_text(" ", strip=True) if heading else text
+            return text, heading_text
+
+        row = link.find_parent("div", class_="row")
+        heading = link.find_parent("h3")
+        text = row.get_text("\n", strip=True) if row else raw_title
+        heading_text = heading.get_text(" ", strip=True) if heading else text
+        return text, heading_text
+
     def _parse_card(self, link: Tag, detail_url: str | None = None) -> dict | None:
         raw_title = link.get_text(" ", strip=True)
         parts = parse_parts(raw_title, implicit_trade_parts=self.catalogue.implicit_trade_parts)
@@ -502,12 +517,9 @@ class BavariaOdavScraper(BaseScraper):
         if not parts or (not trade_name and not set(parts) <= {3, 4}):
             logger.debug("Skipping non-Meister or unknown title %r", raw_title)
             return None
-        row = link.find_parent("div", class_="row")
-        heading = link.find_parent("h3")
-        text = row.get_text("\n", strip=True) if row else raw_title
-        heading_text = heading.get_text(" ", strip=True) if heading else text
+        text, heading_text = self._listing_card_text(link, raw_title)
         start_date, end_date, start_date_note = parse_dates_with_note(heading_text)
-        format_key, teaching_mode = parse_format_and_mode(f"{heading_text} {raw_title}")
+        format_key, teaching_mode = parse_format_and_mode(f"{raw_title} {heading_text}")
         duration = DURATION_RE.search(text)
         return {
             "raw_title": raw_title,

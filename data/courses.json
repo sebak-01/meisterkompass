@@ -24662,8 +24662,8 @@
     "parts": [
       3
     ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
+    "format": "full_time",
+    "format_display": "Vollzeit",
     "teaching_mode": "presence",
     "start_date": "2026-08-17",
     "end_date": "2026-10-09",
@@ -24806,8 +24806,8 @@
     "parts": [
       3
     ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
+    "format": "full_time",
+    "format_display": "Vollzeit",
     "teaching_mode": "presence",
     "start_date": "2026-11-02",
     "end_date": "2026-12-04",
@@ -24842,8 +24842,8 @@
     "parts": [
       4
     ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
+    "format": "full_time",
+    "format_display": "Vollzeit",
     "teaching_mode": "presence",
     "start_date": "2026-11-23",
     "end_date": "2026-12-04",
@@ -24878,8 +24878,8 @@
     "parts": [
       3
     ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
+    "format": "full_time",
+    "format_display": "Vollzeit",
     "teaching_mode": "presence",
     "start_date": "2027-01-04",
     "end_date": "2027-03-12",
@@ -25022,8 +25022,8 @@
     "parts": [
       3
     ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
+    "format": "full_time",
+    "format_display": "Vollzeit",
     "teaching_mode": "presence",
     "start_date": "2027-04-05",
     "end_date": "2027-06-04",
@@ -25094,8 +25094,8 @@
     "parts": [
       4
     ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
+    "format": "full_time",
+    "format_display": "Vollzeit",
     "teaching_mode": "presence",
     "start_date": "2027-04-12",
     "end_date": "2027-04-30",
@@ -25166,8 +25166,8 @@
     "parts": [
       4
     ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
+    "format": "full_time",
+    "format_display": "Vollzeit",
     "teaching_mode": "presence",
     "start_date": "2027-08-09",
     "end_date": "2027-08-27",
@@ -25238,8 +25238,8 @@
     "parts": [
       3
     ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
+    "format": "full_time",
+    "format_display": "Vollzeit",
     "teaching_mode": "presence",
     "start_date": "2027-08-23",
     "end_date": "2027-10-29",
@@ -25346,8 +25346,8 @@
     "parts": [
       4
     ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
+    "format": "full_time",
+    "format_display": "Vollzeit",
     "teaching_mode": "presence",
     "start_date": "2027-10-25",
     "end_date": "2027-11-05",
@@ -25382,8 +25382,8 @@
     "parts": [
       3
     ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
+    "format": "full_time",
+    "format_display": "Vollzeit",
     "teaching_mode": "presence",
     "start_date": "2027-11-08",
     "end_date": "2027-12-10",
