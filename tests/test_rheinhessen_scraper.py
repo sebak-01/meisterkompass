@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 from scrapers.hwk_rheinhessen import (
     HwkRheinhessenScraper,
     _afh_enrich_listing_from_detail,
-    _afh_infer_format_and_mode,
+    _afh_infer_format,
     _afh_infer_parts,
     _afh_listing_to_offer,
     _afh_parse_search_page,
@@ -167,7 +167,8 @@ class AfhHorakustikerParserTests(unittest.TestCase):
         self.assertEqual(listings[0]["format_key"], "full_time")
         self.assertEqual(listings[0]["course_fee"], 15950.0)
         self.assertEqual(listings[1]["parts"], [3, 4])
-        self.assertEqual(listings[1]["teaching_mode"], "online")
+        self.assertEqual(listings[1]["format_key"], "part_time")
+        self.assertEqual(listings[1]["location_label"], "ONLINE")
 
     def test_detail_enrichment_adds_end_date_and_luebeck_address(self):
         listing = _afh_parse_search_page(BeautifulSoup(AFH_SEARCH_SNIPPET, "html.parser"))[0]
@@ -186,18 +187,24 @@ class AfhHorakustikerParserTests(unittest.TestCase):
         self.assertEqual(offer.trade_name, "Hörakustiker")
         self.assertEqual(offer.parts, [1, 2, 3, 4])
         self.assertEqual(offer.city, "Lübeck")
+        self.assertEqual(offer.format_key, "full_time")
+        self.assertEqual(offer.teaching_mode, "presence")
         self.assertEqual(offer.scraped_raw["provider"], "Akademie für Hörakustik")
 
     def test_infer_parts_and_format_helpers(self):
         self.assertEqual(_afh_infer_parts("MVIK Lübeck Teile I & II 2027"), [1, 2])
         self.assertEqual(_afh_infer_parts("MVIK-III/IV 2026/2027 Online"), [3, 4])
         self.assertEqual(
-            _afh_infer_format_and_mode("Meistervollzeitkurs Teile I - IV", "Lübeck")[0],
+            _afh_infer_format("Meistervollzeitkurs Teile I - IV", "Lübeck"),
             "full_time",
         )
         self.assertEqual(
-            _afh_infer_format_and_mode("MVIK Lübeck Teile I & II", "Lübeck", "Hybridformat")[1],
-            "hybrid",
+            _afh_infer_format("MVIK Lübeck Teile I & II", "Lübeck", "Hybridformat"),
+            "part_time",
+        )
+        self.assertEqual(
+            _afh_infer_format("MVIK-III/IV 2026/2027 Online", "ONLINE"),
+            "part_time",
         )
 
 

@@ -174,17 +174,9 @@ def _afh_infer_parts(title: str, description: str = "") -> list[int]:
     return [1, 2]
 
 
-def _afh_infer_format_and_mode(
-    title: str, location_label: str, description: str = "",
-) -> tuple[str, str]:
-    text = f"{title} {location_label} {description}"
-    format_key = parse_format_key(text, default="part_time")
-    lower = text.lower()
-    if "hybrid" in lower:
-        return format_key, "hybrid"
-    if location_label.strip().upper() == "ONLINE" or re.search(r"\bonline\b", lower):
-        return format_key, "online"
-    return format_key, "presence"
+def _afh_infer_format(title: str, location_label: str, description: str = "") -> str:
+    """Derive Vollzeit/Teilzeit only — delivery style belongs in location, not Zeitmodell."""
+    return parse_format_key(f"{title} {location_label} {description}", default="part_time")
 
 
 def _afh_parse_address_from_html(html: str) -> dict[str, str] | None:
@@ -248,7 +240,7 @@ def _afh_parse_search_listing(card: Tag) -> dict | None:
     )
 
     parts = _afh_infer_parts(title, description)
-    format_key, teaching_mode = _afh_infer_format_and_mode(title, location_label, description)
+    format_key = _afh_infer_format(title, location_label, description)
 
     return {
         "title": title,
@@ -259,7 +251,6 @@ def _afh_parse_search_listing(card: Tag) -> dict | None:
         "course_fee": _afh_parse_euro(fee_raw or ""),
         "parts": parts,
         "format_key": format_key,
-        "teaching_mode": teaching_mode,
     }
 
 
@@ -323,7 +314,7 @@ def _afh_listing_to_offer(listing: dict) -> RawCourseOffer:
         trade_name=trade_name,
         parts=parts,
         format_key=listing["format_key"],
-        teaching_mode=listing["teaching_mode"],
+        teaching_mode="presence",
         start_date=listing.get("start_date"),
         end_date=listing.get("end_date"),
         duration_hours=listing.get("duration_hours"),
