@@ -142,15 +142,13 @@ class HwkMagdeburgScraper(BavariaOdavScraper):
             logger.debug("Skipping non-Meister or unknown Magdeburg title %r.", context)
             return None
 
-        row = link.find_parent("div", class_="row")
-        if row is not None:
-            text = row.get_text("\n", strip=True)
-        elif "list-group-item" in link.get("class", []):
+        if "list-group-item" in link.get("class", []):
             text = link.get_text("\n", strip=True)
         else:
-            text = raw_title
+            row = link.find_parent("div", class_="row")
+            text = row.get_text("\n", strip=True) if row is not None else raw_title
         start_date, end_date, start_date_note = parse_dates_with_note(text)
-        format_key, teaching_mode = parse_format_and_mode(f"{text} {raw_title}")
+        format_key, teaching_mode = parse_format_and_mode(f"{raw_title} {text}")
         duration = DURATION_RE.search(text)
         return {
             "raw_title": raw_title,
