@@ -288,6 +288,38 @@ class SachsenAnhaltParserTests(unittest.TestCase):
         self.assertEqual(card["format_key"], "full_time")
         self.assertEqual(card["start_date"], "2026-10-05")
 
+    def test_magdeburg_prefers_list_group_text_over_article_row(self):
+        soup = BeautifulSoup(
+            """
+            <div class="row">
+              <div class="col col-sm-8">
+                <p>Marketing prose about Teilzeit and Vollzeit options.</p>
+                <div class="list-group">
+                  <a href="/kurse/maler-16,0,coursedetail.html?id=48503"
+                     class="list-group-item clearfix">
+                    <h3 class="h6"><span>05.10.2026 - 15.05.2027:&nbsp;Vollzeit</span>
+                      Vorbereitung auf die Maler- und Lackierermeisterprüfung Teile I/II</h3>
+                    <p>Montag bis Samstag 08:00-14:45 Uhr | Magdeburg</p>
+                  </a>
+                  <a href="/kurse/maler-16,0,coursedetail.html?id=49492"
+                     class="list-group-item clearfix">
+                    <h3 class="h6"><span>19.02.2027 - 15.07.2028:&nbsp;Teilzeit</span>
+                      Vorbereitung auf die Maler- und Lackierermeisterprüfung Teile I/II</h3>
+                  </a>
+                </div>
+              </div>
+            </div>
+            """,
+            "html.parser",
+        )
+        card = HwkMagdeburgScraper()._parse_magdeburg_card(
+            soup.select("a.list-group-item")[0],
+            "https://www.hwk-magdeburg.de/16,0,coursedetail.html?id=48503",
+            article_title="Meister im Maler- und Lackiererhandwerk",
+        )
+        self.assertEqual(card["format_key"], "full_time")
+        self.assertNotIn("Teilzeit", card["card_text"])
+
     def test_magdeburg_parses_trade_specific_exam_fees_from_pdf_text(self):
         text = """
         2.1. Elektrotechnik
