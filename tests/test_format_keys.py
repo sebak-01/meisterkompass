@@ -1,6 +1,6 @@
 import unittest
 
-from scrapers.format_keys import parse_format_key
+from scrapers.format_keys import parse_format_key, strip_odav_alternate_runs
 
 
 class FormatKeyTests(unittest.TestCase):
@@ -19,6 +19,16 @@ class FormatKeyTests(unittest.TestCase):
 
     def test_tageskurs_is_full_time(self):
         self.assertEqual(parse_format_key("Tageskurs"), "full_time")
+
+    def test_strip_odav_alternate_runs_removes_other_formats(self):
+        text = (
+            "Unterricht\n05.10.2026 - 15.05.2027\nVollzeit\n"
+            "Alle Termine\n19.02.2027 - 15.07.2028: Teilzeit"
+        )
+        self.assertEqual(
+            parse_format_key(strip_odav_alternate_runs(text)),
+            "full_time",
+        )
 
 
 if __name__ == "__main__":

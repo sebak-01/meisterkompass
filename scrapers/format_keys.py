@@ -1,5 +1,7 @@
 """Shared Vollzeit/Teilzeit detection from course-page prose."""
 
+import re
+
 PART_TIME_WORDS = (
     "teilzeit",
     "berufsbegleitend",
@@ -12,6 +14,14 @@ FULL_TIME_WORDS = (
     "vollzeit",
     "tageskurs",
 )
+
+ALLE_TERMINE_RE = re.compile(r"\nAlle Termine\b", re.IGNORECASE)
+
+
+def strip_odav_alternate_runs(text: str) -> str:
+    """Drop ODAV detail-page sections listing other course runs."""
+    match = ALLE_TERMINE_RE.search(text)
+    return text[: match.start()] if match else text
 
 
 def parse_format_key(text: str, *, default: str = "part_time") -> str:

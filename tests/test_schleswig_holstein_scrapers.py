@@ -79,6 +79,13 @@ class SchleswigHolsteinParserTests(unittest.TestCase):
         )
         self.assertEqual(parse_kdb_location(block), ("Russeer Weg 167", "24109", "Kiel"))
 
+    def test_kdb_location_prefers_named_campus_over_administrative_city(self):
+        block = (
+            "<lehrgangsort><hausnummer>5</hausnummer><lehrgangsort>BBS Travemünde</lehrgangsort>"
+            "<ort>Lübeck</ort><plz>23570</plz><strasse>Wiekstraße</strasse></lehrgangsort>"
+        )
+        self.assertEqual(parse_kdb_location(block), ("Wiekstraße 5", "23570", "Travemünde"))
+
     def test_kdb_availability_uses_enrolled_vs_capacity(self):
         # Flensburg Tischler: 18 enrolled of 18 max → full (0 Plätze frei)
         self.assertEqual(parse_kdb_availability("18", "18"), "full")

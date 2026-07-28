@@ -134,14 +134,21 @@ class HwkMagdeburgScraper(BavariaOdavScraper):
     ) -> dict | None:
         raw_title = _clean_card_title(link.get_text(" ", strip=True))
         context = f"{article_title} {raw_title}".strip()
-        parts = parse_parts(context, implicit_trade_parts=self.catalogue.implicit_trade_parts)
-        trade_name = parse_trade(context, parts)
+        parts = parse_parts(raw_title, implicit_trade_parts=self.catalogue.implicit_trade_parts)
+        if not parts:
+            parts = parse_parts(context, implicit_trade_parts=self.catalogue.implicit_trade_parts)
+        trade_name = parse_trade(context, parts) or parse_trade(raw_title, parts)
         if not parts or (not trade_name and not set(parts) <= {3, 4}):
             logger.debug("Skipping non-Meister or unknown Magdeburg title %r.", context)
             return None
 
         row = link.find_parent("div", class_="row")
-        text = row.get_text("\n", strip=True) if row else raw_title
+        if row is not None:
+            text = row.get_text("\n", strip=True)
+        elif "list-group-item" in link.get("class", []):
+            text = link.get_text("\n", strip=True)
+        else:
+            text = raw_title
         start_date, end_date, start_date_note = parse_dates_with_note(text)
         format_key, teaching_mode = parse_format_and_mode(f"{text} {raw_title}")
         duration = DURATION_RE.search(text)
