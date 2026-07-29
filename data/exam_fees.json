@@ -1048,6 +1048,48 @@
           "fee_max": null,
           "qualifier": ""
         }
+      },
+      "elektrotechniker": {
+        "1,2": {
+          "fee": 750.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "feinwerkmechaniker": {
+        "1,2": {
+          "fee": 750.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "installateur-und-heizungsbauer": {
+        "1,2": {
+          "fee": 750.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "metallbauer": {
+        "1,2": {
+          "fee": 750.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "tischler": {
+        "1,2": {
+          "fee": 750.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "zahntechniker": {
+        "1,2": {
+          "fee": 750.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
       }
     },
     "hwk-halle-saale": {
