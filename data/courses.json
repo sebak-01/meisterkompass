@@ -8626,6 +8626,43 @@
     "chamber_slug": "hwk-chemnitz",
     "chamber_name": "HWK Chemnitz",
     "chamber_region": "Sachsen",
+    "trade_slug": "maurer-und-betonbauer",
+    "trade_name": "Maurer und Betonbauer",
+    "title": "Maurer und Betonbauer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-12-07",
+    "end_date": "2028-06-16",
+    "start_date_note": "",
+    "duration_hours": 808,
+    "course_fee": 8880.0,
+    "course_fee_display": "8.880 €",
+    "exam_fee_scraped": 730.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 730.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "730 €",
+      "from_tariff": false
+    },
+    "city": "Chemnitz",
+    "street": "Limbacher Straße 195",
+    "zip_code": "09116",
+    "latitude": 50.8307235,
+    "longitude": 12.8727524,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/vorbereitungskurs-maurer-und-betonbauermeister-teile-i-ii/#termin_1676"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
     "trade_slug": "metallbauer",
     "trade_name": "Metallbauer",
     "title": "Metallbauer (Teile I + II)",
@@ -18846,8 +18883,8 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-2"
+    "availability": "available",
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-1"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -18882,8 +18919,8 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-4"
+    "availability": "waitlist",
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-3"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -18955,7 +18992,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-1"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-2"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -18991,7 +19028,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-3"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-4"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -19682,7 +19719,7 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "waitlist",
+    "availability": "available",
     "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufm-betriebsfuehrung-hwo-teilzeit/#termin-9"
   },
   {
@@ -33479,7 +33516,7 @@
     "zip_code": "",
     "latitude": 54.5797194,
     "longitude": 9.5331938,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.hwk-flensburg.de/weiterbildung/kurse-seminare#/vorlage/MVK/475?kurs=24684"
   },
   {
@@ -45825,6 +45862,43 @@
     "longitude": 9.169312,
     "availability": "full",
     "source_url": "https://www.hwk-heilbronn.de/seminar/mv-zimmer-iii-vz/#kurs-20"
+  },
+  {
+    "chamber_slug": "hwk-heilbronn-franken",
+    "chamber_name": "HWK Heilbronn-Franken",
+    "chamber_region": "Baden-Württemberg",
+    "trade_slug": "zimmerer",
+    "trade_name": "Zimmerer",
+    "title": "Zimmerer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-08-28",
+    "end_date": "2029-01-26",
+    "start_date_note": "",
+    "duration_hours": 850,
+    "course_fee": 4590.0,
+    "course_fee_display": "4.590 €",
+    "exam_fee_scraped": 1425.0,
+    "exam_fee_qualifier": "ca.",
+    "exam_fee": {
+      "fee": 1425.0,
+      "fee_max": null,
+      "qualifier": "ca.",
+      "display": "ca. 1.425 €",
+      "from_tariff": false
+    },
+    "city": "Heilbronn",
+    "street": "Wannenäckerstraße 62",
+    "zip_code": "74078",
+    "latitude": 49.1847456,
+    "longitude": 9.169312,
+    "availability": "available",
+    "source_url": "https://www.hwk-heilbronn.de/seminar/mv-zimmer-iii-vz/#kurs-21"
   },
   {
     "chamber_slug": "hwk-hildesheim-suedniedersachsen",
@@ -72504,42 +72578,6 @@
     "chamber_region": "Bayern",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-09-14",
-    "end_date": "2026-12-09",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 810.0,
-    "course_fee_display": "810 €",
-    "exam_fee_scraped": 156.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 156.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "156 €",
-      "from_tariff": false
-    },
-    "city": "Traunstein",
-    "street": "Mühlwiesen 4",
-    "zip_code": "83278",
-    "latitude": 47.855512,
-    "longitude": 12.6341286,
-    "availability": "available",
-    "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1228874"
-  },
-  {
-    "chamber_slug": "hwk-muenchen-und-oberbayern",
-    "chamber_name": "HWK für München und Oberbayern",
-    "chamber_region": "Bayern",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
     "parts": [
       3,
@@ -72607,6 +72645,42 @@
     "longitude": 12.5306834,
     "availability": "available",
     "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1216998"
+  },
+  {
+    "chamber_slug": "hwk-muenchen-und-oberbayern",
+    "chamber_name": "HWK für München und Oberbayern",
+    "chamber_region": "Bayern",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
+    "parts": [
+      4
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-09-16",
+    "end_date": "2026-12-09",
+    "start_date_note": "",
+    "duration_hours": 100,
+    "course_fee": 810.0,
+    "course_fee_display": "810 €",
+    "exam_fee_scraped": 156.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 156.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "156 €",
+      "from_tariff": false
+    },
+    "city": "Traunstein",
+    "street": "Mühlwiesen 4",
+    "zip_code": "83278",
+    "latitude": 47.855512,
+    "longitude": 12.6341286,
+    "availability": "available",
+    "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1228874"
   },
   {
     "chamber_slug": "hwk-muenchen-und-oberbayern",
@@ -80072,7 +80146,7 @@
     "zip_code": "93055",
     "latitude": 49.0144753,
     "longitude": 12.1382992,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1014125"
   },
   {
@@ -80865,6 +80939,43 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
+    "start_date": "2027-08-30",
+    "end_date": "2028-03-08",
+    "start_date_note": "",
+    "duration_hours": 960,
+    "course_fee": null,
+    "course_fee_display": "—",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": null,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "",
+      "from_tariff": false
+    },
+    "city": "Schwandorf",
+    "street": "Charlottenhof 1",
+    "zip_code": "92421",
+    "latitude": 49.3456906,
+    "longitude": 12.1756219,
+    "availability": "full",
+    "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1013899"
+  },
+  {
+    "chamber_slug": "hwk-niederbayern-oberpfalz",
+    "chamber_name": "HWK Niederbayern-Oberpfalz",
+    "chamber_region": "Bayern",
+    "trade_slug": "installateur-und-heizungsbauer",
+    "trade_name": "Installateur- und Heizungsbauer",
+    "title": "Installateur- und Heizungsbauer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
     "start_date": "2028-01-01",
     "end_date": "2028-08-01",
     "start_date_note": "Genauer Termin steht noch nicht fest.",
@@ -80887,43 +80998,6 @@
     "longitude": 13.4060264,
     "availability": "full",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1016456"
-  },
-  {
-    "chamber_slug": "hwk-niederbayern-oberpfalz",
-    "chamber_name": "HWK Niederbayern-Oberpfalz",
-    "chamber_region": "Bayern",
-    "trade_slug": "installateur-und-heizungsbauer",
-    "trade_name": "Installateur- und Heizungsbauer",
-    "title": "Installateur- und Heizungsbauer (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2028-02-01",
-    "end_date": "2028-10-01",
-    "start_date_note": "Genauer Termin steht noch nicht fest.",
-    "duration_hours": 960,
-    "course_fee": null,
-    "course_fee_display": "—",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": null,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "",
-      "from_tariff": false
-    },
-    "city": "Schwandorf",
-    "street": "Charlottenhof 1",
-    "zip_code": "92421",
-    "latitude": 49.3456906,
-    "longitude": 12.1756219,
-    "availability": "full",
-    "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1013899"
   },
   {
     "chamber_slug": "hwk-niederbayern-oberpfalz",
@@ -85111,7 +85185,7 @@
     "zip_code": "93413",
     "latitude": 49.2086425,
     "longitude": 12.4925217,
-    "availability": "full",
+    "availability": "unknown",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1018843"
   },
   {
@@ -85183,7 +85257,7 @@
     "zip_code": "94315",
     "latitude": 48.8708639,
     "longitude": 12.5760232,
-    "availability": "full",
+    "availability": "unknown",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1013317"
   },
   {
@@ -94618,7 +94692,7 @@
     "zip_code": "26135",
     "latitude": 53.1144351,
     "longitude": 8.2605231,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.hwk-oldenburg.de/weiterbildung/kurse-und-seminare#/vorlage/MVK/2245?kurs=45726"
   },
   {
@@ -99119,7 +99193,7 @@
     "zip_code": "49088",
     "latitude": 52.290842,
     "longitude": 8.0401607,
-    "availability": "unknown",
+    "availability": "available",
     "source_url": "https://www.btz-osnabrueck.de/seminar/mstrkrvzb/#kurs-20264"
   },
   {
@@ -104086,8 +104160,8 @@
     "format": "part_time",
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
-    "start_date": "2026-11-13",
-    "end_date": "2028-04-29",
+    "start_date": null,
+    "end_date": null,
     "start_date_note": "",
     "duration_hours": 800,
     "course_fee": 8506.0,
@@ -105686,43 +105760,6 @@
     "chamber_region": "Thüringen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
-    "parts": [
-      3,
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-09-01",
-    "end_date": "2027-12-01",
-    "start_date_note": "Genauer Termin steht noch nicht fest.",
-    "duration_hours": 354,
-    "course_fee": 2850.0,
-    "course_fee_display": "2.850 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 380.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "380 €",
-      "from_tariff": true
-    },
-    "city": "Zeulenroda-Triebes",
-    "street": "Heinrich-Heine-Straße 45",
-    "zip_code": "07937",
-    "latitude": 50.6531977,
-    "longitude": 11.9958817,
-    "availability": "unknown",
-    "source_url": "https://www.hwk-gera.de/5,0,coursedetail.html?id=120970"
-  },
-  {
-    "chamber_slug": "hwk-ostthueringen-gera",
-    "chamber_name": "HWK für Ostthüringen",
-    "chamber_region": "Thüringen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Wirtschaft und Recht (Teil III)",
     "parts": [
       3
@@ -105788,6 +105825,43 @@
     "longitude": 11.9958817,
     "availability": "unknown",
     "source_url": "https://www.hwk-gera.de/5,0,coursedetail.html?id=120972"
+  },
+  {
+    "chamber_slug": "hwk-ostthueringen-gera",
+    "chamber_name": "HWK für Ostthüringen",
+    "chamber_region": "Thüringen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "parts": [
+      3,
+      4
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-09-27",
+    "end_date": "2027-12-10",
+    "start_date_note": "",
+    "duration_hours": 354,
+    "course_fee": 2850.0,
+    "course_fee_display": "2.850 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 380.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "380 €",
+      "from_tariff": true
+    },
+    "city": "Zeulenroda-Triebes",
+    "street": "Heinrich-Heine-Straße 45",
+    "zip_code": "07937",
+    "latitude": 50.6531977,
+    "longitude": 11.9958817,
+    "availability": "available",
+    "source_url": "https://www.hwk-gera.de/5,0,coursedetail.html?id=120970"
   },
   {
     "chamber_slug": "hwk-ostthueringen-gera",
@@ -106119,6 +106193,154 @@
     "longitude": 8.5354738,
     "availability": "unknown",
     "source_url": "https://bbz.handwerk-owl.de/3351,0,coursedetail.html?id=131684"
+  },
+  {
+    "chamber_slug": "hwk-ostwestfalen-lippe-zu-bielefeld",
+    "chamber_name": "HWK Ostwestfalen-Lippe zu Bielefeld",
+    "chamber_region": "Nordrhein-Westfalen",
+    "trade_slug": "elektrotechniker",
+    "trade_name": "Elektrotechniker",
+    "title": "Elektrotechniker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-09-27",
+    "end_date": "2028-05-19",
+    "start_date_note": "",
+    "duration_hours": 1300,
+    "course_fee": null,
+    "course_fee_display": "—",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 580.0,
+      "fee_max": 3200.0,
+      "qualifier": "",
+      "display": "580 € bis 3.200 €",
+      "from_tariff": true
+    },
+    "city": "Bielefeld",
+    "street": "Campus Handwerk 1",
+    "zip_code": "33613",
+    "latitude": 52.0325564,
+    "longitude": 8.5354738,
+    "availability": "unknown",
+    "source_url": "https://bbz.handwerk-owl.de/3351,0,coursedetail.html?id=134957"
+  },
+  {
+    "chamber_slug": "hwk-ostwestfalen-lippe-zu-bielefeld",
+    "chamber_name": "HWK Ostwestfalen-Lippe zu Bielefeld",
+    "chamber_region": "Nordrhein-Westfalen",
+    "trade_slug": "elektrotechniker",
+    "trade_name": "Elektrotechniker",
+    "title": "Elektrotechniker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-11-29",
+    "end_date": "2028-08-11",
+    "start_date_note": "",
+    "duration_hours": 1300,
+    "course_fee": null,
+    "course_fee_display": "—",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 580.0,
+      "fee_max": 3200.0,
+      "qualifier": "",
+      "display": "580 € bis 3.200 €",
+      "from_tariff": true
+    },
+    "city": "Bielefeld",
+    "street": "Campus Handwerk 1",
+    "zip_code": "33613",
+    "latitude": 52.0325564,
+    "longitude": 8.5354738,
+    "availability": "unknown",
+    "source_url": "https://bbz.handwerk-owl.de/3351,0,coursedetail.html?id=134958"
+  },
+  {
+    "chamber_slug": "hwk-ostwestfalen-lippe-zu-bielefeld",
+    "chamber_name": "HWK Ostwestfalen-Lippe zu Bielefeld",
+    "chamber_region": "Nordrhein-Westfalen",
+    "trade_slug": "elektrotechniker",
+    "trade_name": "Elektrotechniker",
+    "title": "Elektrotechniker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-03-06",
+    "end_date": "2028-11-10",
+    "start_date_note": "",
+    "duration_hours": 1300,
+    "course_fee": null,
+    "course_fee_display": "—",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 580.0,
+      "fee_max": 3200.0,
+      "qualifier": "",
+      "display": "580 € bis 3.200 €",
+      "from_tariff": true
+    },
+    "city": "Bielefeld",
+    "street": "Campus Handwerk 1",
+    "zip_code": "33613",
+    "latitude": 52.0325564,
+    "longitude": 8.5354738,
+    "availability": "unknown",
+    "source_url": "https://bbz.handwerk-owl.de/3351,0,coursedetail.html?id=134959"
+  },
+  {
+    "chamber_slug": "hwk-ostwestfalen-lippe-zu-bielefeld",
+    "chamber_name": "HWK Ostwestfalen-Lippe zu Bielefeld",
+    "chamber_region": "Nordrhein-Westfalen",
+    "trade_slug": "elektrotechniker",
+    "trade_name": "Elektrotechniker",
+    "title": "Elektrotechniker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-06-26",
+    "end_date": "2029-02-23",
+    "start_date_note": "",
+    "duration_hours": 1300,
+    "course_fee": null,
+    "course_fee_display": "—",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 580.0,
+      "fee_max": 3200.0,
+      "qualifier": "",
+      "display": "580 € bis 3.200 €",
+      "from_tariff": true
+    },
+    "city": "Bielefeld",
+    "street": "Campus Handwerk 1",
+    "zip_code": "33613",
+    "latitude": 52.0325564,
+    "longitude": 8.5354738,
+    "availability": "unknown",
+    "source_url": "https://bbz.handwerk-owl.de/3351,0,coursedetail.html?id=134961"
   },
   {
     "chamber_slug": "hwk-ostwestfalen-lippe-zu-bielefeld",
@@ -112595,78 +112817,6 @@
     "chamber_region": "Hessen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-08-27",
-    "end_date": "2026-10-16",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": 2290.0,
-    "course_fee_display": "2.290 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 340.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "340 €",
-      "from_tariff": true
-    },
-    "city": "Frankfurt am Main",
-    "street": "Schönstraße 21",
-    "zip_code": "60327",
-    "latitude": 50.1013705,
-    "longitude": 8.65682,
-    "availability": "available",
-    "source_url": "https://portal.hwk-rhein-main.de/seminar/ml-99vz/"
-  },
-  {
-    "chamber_slug": "hwk-rhein-main",
-    "chamber_name": "HWK Frankfurt-Rhein-Main",
-    "chamber_region": "Hessen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-09-10",
-    "end_date": "2026-10-30",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": 2290.0,
-    "course_fee_display": "2.290 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 340.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "340 €",
-      "from_tariff": true
-    },
-    "city": "Frankfurt am Main",
-    "street": "Schönstraße 21",
-    "zip_code": "60327",
-    "latitude": 50.1013705,
-    "longitude": 8.65682,
-    "availability": "available",
-    "source_url": "https://portal.hwk-rhein-main.de/seminar/ml-99vz/"
-  },
-  {
-    "chamber_slug": "hwk-rhein-main",
-    "chamber_name": "HWK Frankfurt-Rhein-Main",
-    "chamber_region": "Hessen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
     "parts": [
       3,
@@ -112733,42 +112883,6 @@
     "longitude": 8.6137976,
     "availability": "available",
     "source_url": "https://portal.hwk-rhein-main.de/seminar/ml-99sp/"
-  },
-  {
-    "chamber_slug": "hwk-rhein-main",
-    "chamber_name": "HWK Frankfurt-Rhein-Main",
-    "chamber_region": "Hessen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-10-20",
-    "end_date": "2026-12-09",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": 2290.0,
-    "course_fee_display": "2.290 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 340.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "340 €",
-      "from_tariff": true
-    },
-    "city": "Weiterstadt",
-    "street": "Rudolf-Diesel-Straße 30",
-    "zip_code": "64331",
-    "latitude": 49.9011703,
-    "longitude": 8.6137976,
-    "availability": "available",
-    "source_url": "https://portal.hwk-rhein-main.de/seminar/ml-99vz/"
   },
   {
     "chamber_slug": "hwk-rhein-main",
@@ -124002,7 +124116,7 @@
     "zip_code": "98530",
     "latitude": 50.707055,
     "longitude": 10.891878,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/elektro_vz/#kurs-208401"
   },
   {
@@ -130078,7 +130192,7 @@
     "zip_code": "54292",
     "latitude": 49.775426,
     "longitude": 6.6804464,
-    "availability": "waitlist",
+    "availability": "available",
     "source_url": "https://www.hwk-trier.de/kurse/teil-iii-zahntechniker-54,0,coursedetail.html?id=60528&search-onr=54&img=2"
   },
   {
@@ -130725,8 +130839,8 @@
     "end_date": "2027-04-16",
     "start_date_note": "",
     "duration_hours": 610,
-    "course_fee": 5830.0,
-    "course_fee_display": "5.830 €",
+    "course_fee": 10000.0,
+    "course_fee_display": "10.000 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -134998,6 +135112,43 @@
     "longitude": 8.4921662,
     "availability": "available",
     "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-friseurhandwerk-teile-i-ii-vollzeit-44,0,coursedetail.html?id=121726&search-onr=44&img=4"
+  },
+  {
+    "chamber_slug": "hwk-wiesbaden",
+    "chamber_name": "HWK Wiesbaden",
+    "chamber_region": "Hessen",
+    "trade_slug": "friseur",
+    "trade_name": "Friseur",
+    "title": "Friseur (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-08-09",
+    "end_date": "2028-09-04",
+    "start_date_note": "",
+    "duration_hours": 446,
+    "course_fee": 3950.0,
+    "course_fee_display": "3.950 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 730.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "730 €",
+      "from_tariff": true
+    },
+    "city": "Wetzlar",
+    "street": "Dillufer 40",
+    "zip_code": "35576",
+    "latitude": 50.5548159,
+    "longitude": 8.4921662,
+    "availability": "available",
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-friseurhandwerk-teile-i-ii-teilzeit-44,0,coursedetail.html?id=125561&search-onr=44&img=5"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
