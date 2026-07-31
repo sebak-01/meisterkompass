@@ -921,14 +921,103 @@
           "qualifier": "Werkstatt- und Materialkosten gesondert"
         },
         "3": {
-          "fee": 200.0,
+          "fee": 350.0,
           "fee_max": null,
-          "qualifier": "Werkstatt- und Materialkosten gesondert"
+          "qualifier": ""
+        },
+        "3,4": {
+          "fee": 625.0,
+          "fee_max": null,
+          "qualifier": ""
         },
         "4": {
           "fee": 275.0,
           "fee_max": null,
-          "qualifier": "Werkstatt- und Materialkosten gesondert"
+          "qualifier": ""
+        }
+      },
+      "dachdecker": {
+        "1,2": {
+          "fee": 680.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "elektrotechniker": {
+        "1,2": {
+          "fee": 680.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "friseur": {
+        "1,2": {
+          "fee": 680.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "installateur-und-heizungsbauer": {
+        "1,2": {
+          "fee": 680.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "kfz-techniker": {
+        "1,2": {
+          "fee": 680.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "kosmetiker": {
+        "1,2": {
+          "fee": 680.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "maler-und-lackierer": {
+        "1,2": {
+          "fee": 680.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "maurer-und-betonbauer": {
+        "1,2": {
+          "fee": 680.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "metallbauer": {
+        "1,2": {
+          "fee": 680.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "strassenbauer": {
+        "1,2": {
+          "fee": 680.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "tischler": {
+        "1,2": {
+          "fee": 680.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "zimmerer": {
+        "1,2": {
+          "fee": 680.0,
+          "fee_max": null,
+          "qualifier": ""
         }
       }
     },
