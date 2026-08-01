@@ -104057,11 +104057,11 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 710.0,
+      "fee": null,
       "fee_max": null,
       "qualifier": "",
-      "display": "710 €",
-      "from_tariff": true
+      "display": "",
+      "from_tariff": false
     },
     "city": "Rostock",
     "street": "Schwaaner Landstrasse 8",
@@ -104094,11 +104094,11 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 710.0,
+      "fee": null,
       "fee_max": null,
       "qualifier": "",
-      "display": "710 €",
-      "from_tariff": true
+      "display": "",
+      "from_tariff": false
     },
     "city": "Rostock",
     "street": "Schwaaner Landstrasse 8",
@@ -104131,11 +104131,11 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 710.0,
+      "fee": null,
       "fee_max": null,
       "qualifier": "",
-      "display": "710 €",
-      "from_tariff": true
+      "display": "",
+      "from_tariff": false
     },
     "city": "Neubrandenburg",
     "street": "Friedrich-Engels-Ring 11",
@@ -104167,11 +104167,11 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 380.0,
+      "fee": null,
       "fee_max": null,
       "qualifier": "",
-      "display": "380 €",
-      "from_tariff": true
+      "display": "",
+      "from_tariff": false
     },
     "city": "Neustrelitz",
     "street": "Straße des Handwerks 1",
@@ -104204,11 +104204,11 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 710.0,
+      "fee": null,
       "fee_max": null,
       "qualifier": "",
-      "display": "710 €",
-      "from_tariff": true
+      "display": "",
+      "from_tariff": false
     },
     "city": "Rostock",
     "street": "Schwaaner Landstrasse 8",
@@ -104241,11 +104241,11 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 710.0,
+      "fee": null,
       "fee_max": null,
       "qualifier": "",
-      "display": "710 €",
-      "from_tariff": true
+      "display": "",
+      "from_tariff": false
     },
     "city": "Rostock",
     "street": "Schwaaner Landstrasse 8",
@@ -104277,11 +104277,11 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 380.0,
+      "fee": null,
       "fee_max": null,
       "qualifier": "",
-      "display": "380 €",
-      "from_tariff": true
+      "display": "",
+      "from_tariff": false
     },
     "city": "Neubrandenburg",
     "street": "Friedrich-Engels-Ring 11",
@@ -104314,11 +104314,11 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 710.0,
+      "fee": null,
       "fee_max": null,
       "qualifier": "",
-      "display": "710 €",
-      "from_tariff": true
+      "display": "",
+      "from_tariff": false
     },
     "city": "Neubrandenburg",
     "street": "Friedrich-Engels-Ring 11",
@@ -104351,11 +104351,11 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 710.0,
+      "fee": null,
       "fee_max": null,
       "qualifier": "",
-      "display": "710 €",
-      "from_tariff": true
+      "display": "",
+      "from_tariff": false
     },
     "city": "Neustrelitz",
     "street": "Straße des Handwerks 1",
@@ -104388,11 +104388,11 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 710.0,
+      "fee": null,
       "fee_max": null,
       "qualifier": "",
-      "display": "710 €",
-      "from_tariff": true
+      "display": "",
+      "from_tariff": false
     },
     "city": "Rostock",
     "street": "Schwaaner Landstrasse 8",
@@ -104425,11 +104425,11 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 710.0,
+      "fee": null,
       "fee_max": null,
       "qualifier": "",
-      "display": "710 €",
-      "from_tariff": true
+      "display": "",
+      "from_tariff": false
     },
     "city": "Rostock",
     "street": "Schwaaner Landstrasse 8",
@@ -104462,11 +104462,11 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 710.0,
+      "fee": null,
       "fee_max": null,
       "qualifier": "",
-      "display": "710 €",
-      "from_tariff": true
+      "display": "",
+      "from_tariff": false
     },
     "city": "Rostock",
     "street": "Schwaaner Landstrasse 8",
@@ -104499,11 +104499,11 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 710.0,
+      "fee": null,
       "fee_max": null,
       "qualifier": "",
-      "display": "710 €",
-      "from_tariff": true
+      "display": "",
+      "from_tariff": false
     },
     "city": "Rostock",
     "street": "Schwaaner Landstrasse 8",
@@ -104535,10 +104535,10 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 190.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "190 €",
+      "display": "420 €",
       "from_tariff": true
     },
     "city": "Rostock",
@@ -104571,10 +104571,10 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 190.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "190 €",
+      "display": "420 €",
       "from_tariff": true
     },
     "city": "Neubrandenburg",
@@ -104607,10 +104607,10 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 190.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "190 €",
+      "display": "420 €",
       "from_tariff": true
     },
     "city": "Rostock",
@@ -104643,10 +104643,10 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 190.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "190 €",
+      "display": "420 €",
       "from_tariff": true
     },
     "city": "Neubrandenburg",
@@ -104679,10 +104679,10 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 190.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "190 €",
+      "display": "420 €",
       "from_tariff": true
     },
     "city": "Neubrandenburg",
@@ -104715,10 +104715,10 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 190.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "190 €",
+      "display": "420 €",
       "from_tariff": true
     },
     "city": "Rostock",
@@ -104751,10 +104751,10 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 190.0,
+      "fee": 420.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "190 €",
+      "display": "420 €",
       "from_tariff": true
     },
     "city": "Neubrandenburg",
@@ -104788,11 +104788,11 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 710.0,
+      "fee": null,
       "fee_max": null,
       "qualifier": "",
-      "display": "710 €",
-      "from_tariff": true
+      "display": "",
+      "from_tariff": false
     },
     "city": "Rostock",
     "street": "Schwaaner Landstrasse 8",
@@ -127353,43 +127353,6 @@
     "longitude": 7.9631509,
     "availability": "waitlist",
     "source_url": "https://www.bbz-arnsberg.de/kurse/meisterkurs-installateure-und-heizungsbauer-vollzeit#termin-5"
-  },
-  {
-    "chamber_slug": "hwk-suedwestfalen",
-    "chamber_name": "HWK Südwestfalen",
-    "chamber_region": "Nordrhein-Westfalen",
-    "trade_slug": "kfz-techniker",
-    "trade_name": "Kfz.-Techniker",
-    "title": "Kfz.-Techniker (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-07-31",
-    "end_date": "2027-09-03",
-    "start_date_note": "",
-    "duration_hours": 860,
-    "course_fee": 7830.0,
-    "course_fee_display": "7.830 €",
-    "exam_fee_scraped": 1000.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 1000.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "1.000 €",
-      "from_tariff": false
-    },
-    "city": "Arnsberg",
-    "street": "Im Hülsenfeld 42",
-    "zip_code": "59755",
-    "latitude": 51.4470454,
-    "longitude": 7.9631509,
-    "availability": "waitlist",
-    "source_url": "https://www.bbz-arnsberg.de/kurse/meisterkurs-kraftfahrzeugtechniker-teilzeit#termin-1"
   },
   {
     "chamber_slug": "hwk-suedwestfalen",

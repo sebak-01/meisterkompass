@@ -2087,32 +2087,8 @@
     {
       "chamber_slug": "hwk-ostmecklenburg-vorpommern",
       "trade_slug": null,
-      "part": 1,
-      "fee": 380.0,
-      "qualifier": "",
-      "source_url": "https://www.hwk-omv.de/artikel/gebuehren-und-beitraege-18,945,2052.html"
-    },
-    {
-      "chamber_slug": "hwk-ostmecklenburg-vorpommern",
-      "trade_slug": null,
-      "part": 2,
-      "fee": 330.0,
-      "qualifier": "",
-      "source_url": "https://www.hwk-omv.de/artikel/gebuehren-und-beitraege-18,945,2052.html"
-    },
-    {
-      "chamber_slug": "hwk-ostmecklenburg-vorpommern",
-      "trade_slug": null,
       "part": 3,
-      "fee": 190.0,
-      "qualifier": "",
-      "source_url": "https://www.hwk-omv.de/artikel/gebuehren-und-beitraege-18,945,2052.html"
-    },
-    {
-      "chamber_slug": "hwk-ostmecklenburg-vorpommern",
-      "trade_slug": null,
-      "part": 4,
-      "fee": 190.0,
+      "fee": 420.0,
       "qualifier": "",
       "source_url": "https://www.hwk-omv.de/artikel/gebuehren-und-beitraege-18,945,2052.html"
     },
