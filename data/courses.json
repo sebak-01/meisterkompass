@@ -4648,7 +4648,7 @@
     "zip_code": "21684",
     "latitude": 53.5783325,
     "longitude": 9.4910483,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://weiterbildung.hwk-bls.de/22,0,coursedetail.html?id=315248"
   },
   {
@@ -7960,6 +7960,43 @@
     "chamber_slug": "hwk-chemnitz",
     "chamber_name": "HWK Chemnitz",
     "chamber_region": "Sachsen",
+    "trade_slug": "glaser",
+    "trade_name": "Glaser",
+    "title": "Glaser (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-12-01",
+    "end_date": "2030-03-09",
+    "start_date_note": "",
+    "duration_hours": 656,
+    "course_fee": 12040.0,
+    "course_fee_display": "12.040 €",
+    "exam_fee_scraped": 730.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 730.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "730 €",
+      "from_tariff": false
+    },
+    "city": "Chemnitz",
+    "street": "Limbacher Straße 195",
+    "zip_code": "09116",
+    "latitude": 50.8307235,
+    "longitude": 12.8727524,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/vorbereitungskurs-glasermeister-teile-i-ii/#termin_1679"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
     "trade_slug": "informationstechniker",
     "trade_name": "Informationstechniker",
     "title": "Informationstechniker (Teile I + II)",
@@ -8954,6 +8991,43 @@
     "longitude": 12.8727524,
     "availability": "available",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/vorbereitungskurs-tischlermeister-teile-i-ii/#termin_969"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "tischler",
+    "trade_name": "Tischler",
+    "title": "Tischler (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-11-10",
+    "end_date": "2030-05-11",
+    "start_date_note": "",
+    "duration_hours": 714,
+    "course_fee": 8920.0,
+    "course_fee_display": "8.920 €",
+    "exam_fee_scraped": 730.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 730.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "730 €",
+      "from_tariff": false
+    },
+    "city": "Chemnitz",
+    "street": "Limbacher Straße 195",
+    "zip_code": "09116",
+    "latitude": 50.8307235,
+    "longitude": 12.8727524,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/vorbereitungskurs-tischlermeister-teile-i-ii/#termin_1680"
   },
   {
     "chamber_slug": "hwk-chemnitz",
@@ -16605,42 +16679,6 @@
     "chamber_region": "Brandenburg",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-08-11",
-    "end_date": "2027-02-11",
-    "start_date_note": "",
-    "duration_hours": 240,
-    "course_fee": 2260.0,
-    "course_fee_display": "2.260 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 200.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "200 €",
-      "from_tariff": true
-    },
-    "city": "Großräschen",
-    "street": "Werner-Seelenbinder-Straße 24",
-    "zip_code": "01983",
-    "latitude": 51.580024,
-    "longitude": 13.9997132,
-    "availability": "available",
-    "source_url": "https://www.hwk-cottbus.de/7,0,coursedetail.html?id=64779"
-  },
-  {
-    "chamber_slug": "hwk-cottbus",
-    "chamber_name": "HWK Cottbus",
-    "chamber_region": "Brandenburg",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Berufs- und Arbeitspädagogik (Teil IV)",
     "parts": [
       4
@@ -18346,43 +18384,6 @@
       1,
       2
     ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "online",
-    "start_date": "2026-09-12",
-    "end_date": "2027-10-15",
-    "start_date_note": "",
-    "duration_hours": 812,
-    "course_fee": 8630.0,
-    "course_fee_display": "8.630 €",
-    "exam_fee_scraped": 1804.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 1804.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "1.804 €",
-      "from_tariff": false
-    },
-    "city": "Dortmund",
-    "street": "Schützenstraße 32-34",
-    "zip_code": "44147",
-    "latitude": 51.5206367,
-    "longitude": 7.4529522,
-    "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-feinwerkmechaniker/feinwerkmechaniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teile-i-und-ii/#termin-1"
-  },
-  {
-    "chamber_slug": "hwk-dortmund",
-    "chamber_name": "HWK Dortmund",
-    "chamber_region": "Nordrhein-Westfalen",
-    "trade_slug": "feinwerkmechaniker",
-    "trade_name": "Feinwerkmechaniker",
-    "title": "Feinwerkmechaniker (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "online",
@@ -18518,7 +18519,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-feinwerkmechaniker/feinwerkmechaniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teile-i-und-ii/#termin-2"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-feinwerkmechaniker/feinwerkmechaniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teile-i-und-ii/#termin-1"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -18555,7 +18556,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-feinwerkmechaniker/feinwerkmechaniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teile-i-und-ii/#termin-3"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-feinwerkmechaniker/feinwerkmechaniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teile-i-und-ii/#termin-2"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -18833,8 +18834,8 @@
     "end_date": "2027-11-12",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3730.0,
-    "course_fee_display": "3.730 €",
+    "course_fee": 3530.0,
+    "course_fee_display": "3.530 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -18850,7 +18851,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-3"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-1"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -18869,8 +18870,8 @@
     "end_date": "2027-11-12",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3730.0,
-    "course_fee_display": "3.730 €",
+    "course_fee": 3530.0,
+    "course_fee_display": "3.530 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -19157,8 +19158,8 @@
     "end_date": "2028-11-10",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3730.0,
-    "course_fee_display": "3.730 €",
+    "course_fee": 3530.0,
+    "course_fee_display": "3.530 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -19174,7 +19175,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-1"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-2"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -19193,8 +19194,8 @@
     "end_date": "2028-11-10",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3730.0,
-    "course_fee_display": "3.730 €",
+    "course_fee": 3530.0,
+    "course_fee_display": "3.530 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -19210,7 +19211,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-2"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-3"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -19247,43 +19248,6 @@
     "longitude": 7.4529522,
     "availability": "available",
     "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-teilzeit-lehrgangmeistervorbereitung-teil-ii/#termin-2"
-  },
-  {
-    "chamber_slug": "hwk-dortmund",
-    "chamber_name": "HWK Dortmund",
-    "chamber_region": "Nordrhein-Westfalen",
-    "trade_slug": "metallbauer",
-    "trade_name": "Metallbauer",
-    "title": "Metallbauer (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "online",
-    "start_date": "2026-09-12",
-    "end_date": "2027-10-15",
-    "start_date_note": "",
-    "duration_hours": 812,
-    "course_fee": 8630.0,
-    "course_fee_display": "8.630 €",
-    "exam_fee_scraped": 1630.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 1630.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "1.630 €",
-      "from_tariff": false
-    },
-    "city": "Dortmund",
-    "street": "Schützenstraße 32-34",
-    "zip_code": "44147",
-    "latitude": 51.5206367,
-    "longitude": 7.4529522,
-    "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-metallbauer/metallbauer-in-teilzeitlehrgang-meistervorbereitung-teile-i-und-ii-2/#termin-1"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -19431,7 +19395,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-metallbauer/metallbauer-in-teilzeitlehrgang-meistervorbereitung-teile-i-und-ii-2/#termin-2"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-metallbauer/metallbauer-in-teilzeitlehrgang-meistervorbereitung-teile-i-und-ii-2/#termin-1"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -19468,7 +19432,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-metallbauer/metallbauer-in-teilzeitlehrgang-meistervorbereitung-teile-i-und-ii-2/#termin-3"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-metallbauer/metallbauer-in-teilzeitlehrgang-meistervorbereitung-teile-i-und-ii-2/#termin-2"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -19649,7 +19613,7 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-teilzeit/#termin-7"
   },
   {
@@ -20189,7 +20153,7 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-6"
   },
   {
@@ -27451,43 +27415,6 @@
     "longitude": 6.6563395,
     "availability": "available",
     "source_url": "https://www.hwk-duesseldorf.de/31,0,coursedetail.html?id=62426"
-  },
-  {
-    "chamber_slug": "hwk-duesseldorf",
-    "chamber_name": "HWK Düsseldorf",
-    "chamber_region": "Nordrhein-Westfalen",
-    "trade_slug": "elektrotechniker",
-    "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2028-01-31",
-    "end_date": "2028-11-03",
-    "start_date_note": "",
-    "duration_hours": 1250,
-    "course_fee": 9720.0,
-    "course_fee_display": "9.720 €",
-    "exam_fee_scraped": 3210.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 3210.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "3.210 €",
-      "from_tariff": false
-    },
-    "city": "Düsseldorf",
-    "street": "Georg-Schulhoff-Platz 1",
-    "zip_code": "40221",
-    "latitude": 51.2067505,
-    "longitude": 6.7597173,
-    "availability": "waitlist",
-    "source_url": "https://www.hwk-duesseldorf.de/31,0,coursedetail.html?id=59529"
   },
   {
     "chamber_slug": "hwk-duesseldorf",
@@ -81875,7 +81802,7 @@
     "zip_code": "92637",
     "latitude": 49.6703429,
     "longitude": 12.1626407,
-    "availability": "full",
+    "availability": "unknown",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1023332"
   },
   {
@@ -82132,7 +82059,7 @@
     "zip_code": "94315",
     "latitude": 48.8708639,
     "longitude": 12.5760232,
-    "availability": "full",
+    "availability": "unknown",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1018714"
   },
   {
@@ -98321,7 +98248,7 @@
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
     "start_date": "2027-05-03",
-    "end_date": "2028-05-05",
+    "end_date": "2028-05-08",
     "start_date_note": "",
     "duration_hours": null,
     "course_fee": 6700.0,
@@ -98342,6 +98269,154 @@
     "longitude": 8.0401607,
     "availability": "available",
     "source_url": "https://www.btz-osnabrueck.de/seminar/mstrfritza/#kurs-20271"
+  },
+  {
+    "chamber_slug": "hwk-osnabrueck-emsland-grafschaft-bentheim",
+    "chamber_name": "HWK Osnabrück-Emsland-Grafschaft Bentheim",
+    "chamber_region": "Niedersachsen",
+    "trade_slug": "friseur",
+    "trade_name": "Friseur",
+    "title": "Friseur (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-01-03",
+    "end_date": "2028-03-31",
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": 6700.0,
+    "course_fee_display": "6.700 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 874.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "874 €",
+      "from_tariff": true
+    },
+    "city": "Osnabrück",
+    "street": "Bramscher Straße 134 - 136",
+    "zip_code": "49088",
+    "latitude": 52.290842,
+    "longitude": 8.0401607,
+    "availability": "available",
+    "source_url": "https://www.btz-osnabrueck.de/seminar/mstrfrivza/#kurs-20281"
+  },
+  {
+    "chamber_slug": "hwk-osnabrueck-emsland-grafschaft-bentheim",
+    "chamber_name": "HWK Osnabrück-Emsland-Grafschaft Bentheim",
+    "chamber_region": "Niedersachsen",
+    "trade_slug": "friseur",
+    "trade_name": "Friseur",
+    "title": "Friseur (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-05-15",
+    "end_date": "2029-05-07",
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": 6700.0,
+    "course_fee_display": "6.700 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 874.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "874 €",
+      "from_tariff": true
+    },
+    "city": "Osnabrück",
+    "street": "Bramscher Straße 134 - 136",
+    "zip_code": "49088",
+    "latitude": 52.290842,
+    "longitude": 8.0401607,
+    "availability": "available",
+    "source_url": "https://www.btz-osnabrueck.de/seminar/mstrfritza/#kurs-20281"
+  },
+  {
+    "chamber_slug": "hwk-osnabrueck-emsland-grafschaft-bentheim",
+    "chamber_name": "HWK Osnabrück-Emsland-Grafschaft Bentheim",
+    "chamber_region": "Niedersachsen",
+    "trade_slug": "friseur",
+    "trade_name": "Friseur",
+    "title": "Friseur (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2029-01-02",
+    "end_date": "2029-03-30",
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": 6700.0,
+    "course_fee_display": "6.700 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 874.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "874 €",
+      "from_tariff": true
+    },
+    "city": "Osnabrück",
+    "street": "Bramscher Straße 134 - 136",
+    "zip_code": "49088",
+    "latitude": 52.290842,
+    "longitude": 8.0401607,
+    "availability": "available",
+    "source_url": "https://www.btz-osnabrueck.de/seminar/mstrfrivza/#kurs-20291"
+  },
+  {
+    "chamber_slug": "hwk-osnabrueck-emsland-grafschaft-bentheim",
+    "chamber_name": "HWK Osnabrück-Emsland-Grafschaft Bentheim",
+    "chamber_region": "Niedersachsen",
+    "trade_slug": "friseur",
+    "trade_name": "Friseur",
+    "title": "Friseur (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2029-05-14",
+    "end_date": "2030-05-13",
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": 6700.0,
+    "course_fee_display": "6.700 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 874.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "874 €",
+      "from_tariff": true
+    },
+    "city": "Osnabrück",
+    "street": "Bramscher Straße 134 - 136",
+    "zip_code": "49088",
+    "latitude": 52.290842,
+    "longitude": 8.0401607,
+    "availability": "available",
+    "source_url": "https://www.btz-osnabrueck.de/seminar/mstrfritza/#kurs-20291"
   },
   {
     "chamber_slug": "hwk-osnabrueck-emsland-grafschaft-bentheim",
@@ -104252,7 +104327,7 @@
     "zip_code": "18055",
     "latitude": 54.0753091,
     "longitude": 12.141125,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.hwk-omv.de/18,0,coursedetail.html?id=105673"
   },
   {
@@ -104780,7 +104855,7 @@
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
     "start_date": "2026-11-16",
-    "end_date": "2027-06-11",
+    "end_date": "2027-07-09",
     "start_date_note": "",
     "duration_hours": 1140,
     "course_fee": null,
@@ -110467,6 +110542,43 @@
     "longitude": 12.7280699,
     "availability": "available",
     "source_url": "https://www.hwk-potsdam.de/9,0,coursedetail.html?id=356051"
+  },
+  {
+    "chamber_slug": "hwk-potsdam",
+    "chamber_name": "HWK Potsdam",
+    "chamber_region": "Brandenburg",
+    "trade_slug": "land-und-baumaschinenmechatroniker",
+    "trade_name": "Land- und Baumaschinenmechatroniker",
+    "title": "Land- und Baumaschinenmechatroniker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-09-11",
+    "end_date": "2029-04-13",
+    "start_date_note": "",
+    "duration_hours": 1060,
+    "course_fee": 9600.0,
+    "course_fee_display": "9.600 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 740.0,
+      "fee_max": null,
+      "qualifier": "zzgl. Auslagen",
+      "display": "740 €",
+      "from_tariff": true
+    },
+    "city": "Groß Kreutz (Havel)",
+    "street": "Am Mühlenberg 15",
+    "zip_code": "14550",
+    "latitude": 52.4063025,
+    "longitude": 12.7280699,
+    "availability": "available",
+    "source_url": "https://www.hwk-potsdam.de/9,0,coursedetail.html?id=368171"
   },
   {
     "chamber_slug": "hwk-potsdam",
@@ -118633,7 +118745,7 @@
     "zip_code": "86161",
     "latitude": 48.3486219,
     "longitude": 10.9175439,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=387122"
   },
   {
@@ -127611,7 +127723,7 @@
     "latitude": 51.4470454,
     "longitude": 7.9631509,
     "availability": "available",
-    "source_url": "https://www.bbz-arnsberg.de/kurse/meisterkurs-kraftfahrzeugtechniker-teilzeit#termin-2"
+    "source_url": "https://www.bbz-arnsberg.de/kurse/meisterkurs-kraftfahrzeugtechniker-teilzeit#termin-1"
   },
   {
     "chamber_slug": "hwk-suedwestfalen",
@@ -132970,7 +133082,7 @@
     "zip_code": "",
     "latitude": 50.0451485,
     "longitude": 10.2340647,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-ufr.de/78,0,coursedetail.html?id=456858"
   },
   {

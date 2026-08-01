@@ -755,16 +755,6 @@
     "is_generic": false
   },
   {
-    "chamber_slug": "hwk-braunschweig-lueneburg-stade",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      4
-    ],
-    "fee": 800.0,
-    "exam_fee_scraped": null,
-    "is_generic": true
-  },
-  {
     "chamber_slug": "hwk-cottbus",
     "trade_slug": "kosmetiker",
     "parts": [
@@ -1160,6 +1150,16 @@
     "is_generic": true
   },
   {
+    "chamber_slug": "hwk-braunschweig-lueneburg-stade",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      4
+    ],
+    "fee": 800.0,
+    "exam_fee_scraped": null,
+    "is_generic": true
+  },
+  {
     "chamber_slug": "hwk-dortmund",
     "trade_slug": "zweiradmechaniker",
     "parts": [
@@ -1438,28 +1438,6 @@
     ],
     "fee": 7370.0,
     "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-dortmund",
-    "trade_slug": "feinwerkmechaniker",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 8630.0,
-    "exam_fee_scraped": 1804.0,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-dortmund",
-    "trade_slug": "metallbauer",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 8630.0,
-    "exam_fee_scraped": 1630.0,
     "is_generic": false
   },
   {
@@ -2777,6 +2755,28 @@
     "is_generic": true
   },
   {
+    "chamber_slug": "hwk-dortmund",
+    "trade_slug": "feinwerkmechaniker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 8630.0,
+    "exam_fee_scraped": 1804.0,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-dortmund",
+    "trade_slug": "metallbauer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 8630.0,
+    "exam_fee_scraped": 1630.0,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-mannheim",
     "trade_slug": "allgemein-teil-iii-iv",
     "parts": [
@@ -2957,6 +2957,17 @@
     ],
     "fee": 7874.0,
     "exam_fee_scraped": 1480.0,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-schwaben",
+    "trade_slug": "maler-und-lackierer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 7950.0,
+    "exam_fee_scraped": 500.0,
     "is_generic": false
   },
   {
@@ -3927,19 +3938,6 @@
     "is_generic": false
   },
   {
-    "chamber_slug": "hwk-unterfranken",
-    "trade_slug": "land-und-baumaschinenmechatroniker",
-    "parts": [
-      1,
-      2,
-      3,
-      4
-    ],
-    "fee": 14600.0,
-    "exam_fee_scraped": 1530.0,
-    "is_generic": false
-  },
-  {
     "chamber_slug": "hwk-luebeck",
     "trade_slug": "fliesen-platten-und-mosaikleger",
     "parts": [
@@ -4175,6 +4173,17 @@
       2
     ],
     "fee": 8400.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-ostmecklenburg-vorpommern",
+    "trade_slug": "installateur-und-heizungsbauer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 9558.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
@@ -4863,6 +4872,19 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-unterfranken",
+    "trade_slug": "land-und-baumaschinenmechatroniker",
+    "parts": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "fee": 14600.0,
+    "exam_fee_scraped": 1530.0,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-bremen",
     "trade_slug": "tischler",
     "parts": [
@@ -5390,17 +5412,6 @@
     ],
     "fee": 12250.0,
     "exam_fee_scraped": 630.0,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-schwaben",
-    "trade_slug": "maler-und-lackierer",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 7950.0,
-    "exam_fee_scraped": 500.0,
     "is_generic": false
   },
   {
@@ -7875,17 +7886,6 @@
     ],
     "fee": 1390.0,
     "exam_fee_scraped": 560.0,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-ostmecklenburg-vorpommern",
-    "trade_slug": "installateur-und-heizungsbauer",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 9558.0,
-    "exam_fee_scraped": null,
     "is_generic": false
   },
   {
