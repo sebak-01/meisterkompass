@@ -353,6 +353,18 @@ BBZ_TRADE_ALIASES = {
     "Installateur- und Heizungsbauer":  "Installateur- und Heizungsbauer",
 }
 
+# BBZ Marburg typo: "Maler + LackiererTeilzeit" / "Maler + LackiererVollzeit" (no space).
+MALER_LACKIERER_RE = re.compile(r"^Maler\s*\+\s*Lackierer", re.IGNORECASE)
+# Strip format suffix even when glued to the trade name (word boundary not present).
+BBZ_FORMAT_SUFFIX_RE = re.compile(r"(?i)(?:teilzeit|vollzeit)")
+
+
+def normalize_bbz_trade(trade_name: str) -> str:
+    """Map BBZ Marburg trade labels to canonical names."""
+    if MALER_LACKIERER_RE.match(trade_name.strip()):
+        return "Maler und Lackierer"
+    return BBZ_TRADE_ALIASES.get(trade_name, trade_name)
+
 
 def parse_parts_from_text(text: str) -> list[int]:
     """
@@ -389,7 +401,7 @@ def extract_bbz_trade(title: str) -> str | None:
         return None
     rest = title[len("meistervorbereitung"):].strip()
     rest = re.sub(r"\([^)]*\)", " ", rest)                                  # "(Teil I und II)" / "(I-IV)"
-    rest = re.sub(r"\b(?:Teilzeit|Vollzeit)\b", " ", rest, flags=re.IGNORECASE)
+    rest = BBZ_FORMAT_SUFFIX_RE.sub(" ", rest)                              # spaced or glued "Teilzeit"/"Vollzeit"
     rest = re.sub(r"[-–]?\s*Handwerk\s*$", "", rest.strip(), flags=re.IGNORECASE)
     rest = re.sub(r"\bTeile?\b.*$", "", rest, flags=re.IGNORECASE)          # trailing "Teil ..." -> generic
     rest = rest.strip(" -–\t")
@@ -890,7 +902,7 @@ class HwkKasselScraper(BaseScraper):
         if set(parts) <= {3, 4}:
             trade_name = None
         elif trade_name:
-            trade_name = BBZ_TRADE_ALIASES.get(trade_name, trade_name)
+            trade_name = normalize_bbz_trade(trade_name)
 
         info           = self._parse_bbz_info_table(soup)
         course_fee     = parse_price(info.get("Kosten"))
