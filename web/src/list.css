@@ -140,10 +140,16 @@
 
 .map-legend-control {
   background: #fff; padding: 8px 12px; border-radius: 6px; font-size: .8rem;
-  box-shadow: 0 1px 4px rgba(0,0,0,.15); max-height: min(60vh, 420px); overflow-y: auto;
-  min-width: 220px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.15); min-width: 0;
 }
-.map-legend-accordion { margin-top: .35rem; }
+.map-legend-control.is-open {
+  max-height: min(60vh, 420px); overflow-y: auto; min-width: 220px;
+}
+.map-legend-toggle {
+  width: 100%; height: auto; padding: .35rem .6rem; font-size: .8rem; white-space: nowrap;
+}
+.map-legend-content { margin-top: .35rem; }
+.map-legend-accordion { margin-top: 0; }
 .map-legend-panel .region-panel-summary { font-size: .65rem; padding: .35rem .45rem; }
 .map-legend-body { padding: .1rem .2rem .25rem; }
 .map-legend-item {
@@ -349,6 +355,7 @@
   .course-table td:empty { display: none; }
   .course-table td.col-duration { display: none; }
   #map { height: 440px; }
+  .map-legend-control { display: none !important; }
 
   .course-table .mob-summary { display: block !important; padding-top: 0; }
   .course-table .mob-summary::before { display: none; }
