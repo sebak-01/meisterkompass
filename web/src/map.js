@@ -102,13 +102,31 @@ export function renderMap(mapData, listHref) {
     marker.bindPopup(html, { maxWidth: 290 });
   });
 
-  const legend = L.control({ position: "bottomright" });
-  legend.onAdd = function () {
-    const div = L.DomUtil.create("div", "map-legend-control");
-    div.innerHTML = "<strong>Kammern</strong>" + buildMapLegendHtml(chamberColors);
-    return div;
-  };
-  legend.addTo(map);
+  if (!window.matchMedia("(max-width: 660px)").matches) {
+    const legend = L.control({ position: "bottomright" });
+    legend.onAdd = function () {
+      const div = L.DomUtil.create("div", "map-legend-control");
+      const toggle = L.DomUtil.create("button", "map-legend-toggle btn btn-ghost", div);
+      toggle.type = "button";
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.textContent = "Kammernübersicht";
+
+      const content = L.DomUtil.create("div", "map-legend-content", div);
+      content.hidden = true;
+      content.innerHTML = buildMapLegendHtml(chamberColors);
+
+      L.DomEvent.disableClickPropagation(div);
+      L.DomEvent.disableScrollPropagation(div);
+      L.DomEvent.on(toggle, "click", () => {
+        const open = div.classList.toggle("is-open");
+        content.hidden = !open;
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+
+      return div;
+    };
+    legend.addTo(map);
+  }
 
   // Container may have been sized while hidden — recalc once visible.
   setTimeout(() => map && map.invalidateSize(), 50);
