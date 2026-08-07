@@ -1059,5 +1059,46 @@ class NrwExamFeeTests(unittest.TestCase):
         self.assertIs(result, fake_response)
 
 
+class AachenExamFeePdfResolutionTests(unittest.TestCase):
+    """Aachen referenced an undefined FEES_PDF_URL on both fallback paths, so a
+    fee page that was unreachable — or simply stopped linking a PDF — raised
+    NameError and _collect_chamber lost the whole chamber for that run."""
+
+    def test_unreachable_fee_page_yields_no_url(self):
+        scraper = HwkAachenScraper()
+        with patch.object(scraper, "parse_html", return_value=None):
+            self.assertIsNone(scraper._resolve_exam_fees_pdf_url())
+
+    def test_fee_page_without_a_pdf_link_yields_no_url(self):
+        from bs4 import BeautifulSoup
+
+        scraper = HwkAachenScraper()
+        soup = BeautifulSoup(
+            "<div><a href='/artikel/meisterpruefung.html'>Meisterpr\u00fcfung</a></div>",
+            "html.parser",
+        )
+        with patch.object(scraper, "parse_html", return_value=soup):
+            self.assertIsNone(scraper._resolve_exam_fees_pdf_url())
+
+    def test_missing_pdf_degrades_instead_of_raising(self):
+        scraper = HwkAachenScraper()
+        with patch.object(scraper, "parse_html", return_value=None):
+            self.assertEqual(scraper._fetch_exam_fees_from_pdf(), ({}, {}))
+
+    def test_linked_pdf_is_resolved_absolutely(self):
+        from bs4 import BeautifulSoup
+
+        scraper = HwkAachenScraper()
+        soup = BeautifulSoup(
+            "<div><a href='/downloads/gebuehrenverzeichnis.pdf'>Geb\u00fchren</a></div>",
+            "html.parser",
+        )
+        with patch.object(scraper, "parse_html", return_value=soup):
+            self.assertEqual(
+                scraper._resolve_exam_fees_pdf_url(),
+                "https://www.hwk-aachen.de/downloads/gebuehrenverzeichnis.pdf",
+            )
+
+
 if __name__ == "__main__":
     unittest.main()
