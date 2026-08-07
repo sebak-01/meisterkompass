@@ -73,7 +73,14 @@ class Geocoder:
         if query in self.cache:
             self.hits += 1
             coords = self.cache[query]
-            return (coords[0], coords[1]) if coords else None
+            if not coords:
+                return None
+            try:
+                return float(coords[0]), float(coords[1])
+            except (IndexError, TypeError, ValueError):
+                logger.warning("Discarding malformed cache entry for %r", query)
+                del self.cache[query]
+                self._dirty = True
 
         self.misses += 1
         coords, resolved = self._geocode(query)
@@ -110,7 +117,10 @@ class Geocoder:
         if not features:
             return None, True
         try:
-            lon, lat = features[0]["geometry"]["coordinates"]
+            # GeoJSON allows an optional third element (elevation), so take the
+            # first two rather than unpacking the whole sequence.
+            coordinates = features[0]["geometry"]["coordinates"]
+            lon, lat = coordinates[0], coordinates[1]
             return (float(lat), float(lon)), True
         except (KeyError, IndexError, TypeError, ValueError) as exc:
             logger.warning("Photon returned unusable geometry for %r: %s", query, exc)

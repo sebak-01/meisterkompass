@@ -79,6 +79,23 @@ class GeocoderCacheTests(unittest.TestCase):
         self.assertIn("Irgendwo 1, 00000 Nirgendwo", g.cache)
         self.assertEqual(g.failures, 0)
 
+    def test_three_dimensional_coordinates_are_accepted(self):
+        """GeoJSON permits an optional elevation element; unpacking the whole
+        sequence would raise ValueError and cache a valid place as a null."""
+        g = self._geocoder()
+        elevated = [{"geometry": {"coordinates": [13.7373, 51.0504, 113.0]}}]
+        with patch("scrapers.geocode.requests.get", return_value=_photon_response(elevated)):
+            self.assertEqual(g.lookup("Am Lagerplatz 8, 01099 Dresden"), (51.0504, 13.7373))
+        self.assertEqual(g.cache["Am Lagerplatz 8, 01099 Dresden"], [51.0504, 13.7373])
+
+    def test_malformed_cache_entry_is_dropped_and_relooked_up(self):
+        g = self._geocoder()
+        g.cache["Musterweg 1, 12345 Musterstadt"] = [51.0]   # truncated pair
+        with patch("scrapers.geocode.requests.get", return_value=_photon_response(_HIT)):
+            self.assertEqual(
+                g.lookup("Musterweg 1, 12345 Musterstadt"), (51.0504, 13.7373)
+            )
+
     def test_unreadable_cache_is_discarded_rather_than_fatal(self):
         self.cache_path.parent.mkdir(parents=True, exist_ok=True)
         self.cache_path.write_text('{"truncated": ', encoding="utf-8")
