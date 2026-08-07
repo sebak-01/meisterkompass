@@ -2,7 +2,6 @@
 
 import logging
 import re
-from io import BytesIO
 
 from .base import RawCourseOffer, build_course_title
 from .hwk_bayern import (
@@ -15,6 +14,7 @@ from .hwk_bayern import (
     parse_dates,
     parse_format_and_mode,
 )
+from .exam_fee_tariff import download_pdf_text
 
 logger = logging.getLogger(__name__)
 
@@ -285,21 +285,12 @@ class HwkOstthueringenGeraScraper(BavariaOdavScraper):
             fees[part] = float(match.group(1).replace(".", "") + "." + match.group(2))
         return fees if len(fees) == 4 else {}
 
-    def _fetch_exam_fees_from_pdf(self) -> dict[int, float]:
-        try:
-            from pypdf import PdfReader
-        except ImportError:
-            logger.warning("HWK Ostthüringen: pypdf not installed — using fallback exam fees.")
+    def _fetch_exam_fees_from_pdf(
+        self,
+    ) -> dict[int, float]:
+        text = download_pdf_text(self, FEES_PDF_URL, label="HWK Ostthüringen")
+        if not text:
             return {}
-
-        response = self.get(FEES_PDF_URL)
-        if response is None:
-            logger.warning("HWK Ostthüringen: could not fetch exam-fee PDF.")
-            return {}
-
-        text = ""
-        for page in PdfReader(BytesIO(response.content)).pages:
-            text += (page.extract_text() or "") + "\n"
         fees = self.parse_meister_exam_fees(text)
         if not fees:
             logger.warning("HWK Ostthüringen: could not parse Meister exam fees from PDF.")

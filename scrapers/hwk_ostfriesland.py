@@ -2,12 +2,12 @@
 
 import logging
 import re
-from io import BytesIO
 from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
 
 from .hwk_universal_kdb import KdbCatalogue, UniversalKdbScraper
+from .exam_fee_tariff import download_pdf_text
 
 logger = logging.getLogger(__name__)
 
@@ -64,21 +64,9 @@ class HwkOstfrieslandScraper(UniversalKdbScraper):
         return FEES_PDF_URL
 
     def _fetch_exam_fees_from_pdf(self) -> dict[int, float]:
-        try:
-            from pypdf import PdfReader
-        except ImportError:
-            logger.warning("HWK Ostfriesland: pypdf not installed — using fallback exam fees.")
+        text = download_pdf_text(self, self._resolve_exam_fees_pdf_url(), label="HWK Ostfriesland")
+        if not text:
             return {}
-
-        pdf_url = self._resolve_exam_fees_pdf_url()
-        response = self.get(pdf_url)
-        if response is None:
-            logger.warning("HWK Ostfriesland: could not fetch exam-fee PDF.")
-            return {}
-
-        text = ""
-        for page in PdfReader(BytesIO(response.content)).pages:
-            text += (page.extract_text() or "") + "\n"
         fees = self.parse_meister_exam_fees(text)
         if not fees:
             logger.warning("HWK Ostfriesland: could not parse Meister exam fees from PDF.")
