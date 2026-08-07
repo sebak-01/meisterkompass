@@ -12,6 +12,7 @@ only thing that notices a chamber quietly changing its HTML, so they are kept
 rather than deleted. Run them with ``pytest -m network``.
 """
 
+import re
 import socket
 
 import pytest
@@ -50,8 +51,11 @@ def _blocked_create_connection(address, *args, **kwargs):
 
 
 def pytest_collection_modifyitems(config, items):
-    if config.getoption("-m"):
-        return   # an explicit -m selection (e.g. "network") speaks for itself
+    # Only a marker expression that actually mentions `network` is taken as
+    # intent to run them. Bailing out on any -m at all would silently unblock
+    # live HTTP for an unrelated selection such as -m "not slow".
+    if re.search(r"\bnetwork\b", config.getoption("-m") or ""):
+        return
     skip = pytest.mark.skip(reason="live-network test; run with -m network")
     for item in items:
         if "network" in item.keywords:

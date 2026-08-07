@@ -36,8 +36,13 @@ jobs:
       - name: Run live-network tests
         run: python -m pytest tests/ -q -m network
 
-      - name: Notify on failure
+      # A scheduled run that merely logs sends no signal, so make the failure
+      # itself the notification: GitHub emails the actor on a failed cron run,
+      # and the annotation names the likely cause.
+      - name: Explain failure
         if: failure()
         run: |
-          echo "::warning::Live-site canary failed — a chamber page or fee PDF" \
-               "likely changed. Check the failing test for which chamber."
+          echo "::error::Live-site canary failed — a chamber page or fee PDF" \
+               "likely changed. The failing test names the chamber; fix the" \
+               "scraper before the next scheduled scrape writes bad data."
+          exit 1
