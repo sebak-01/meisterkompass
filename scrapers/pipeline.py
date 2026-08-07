@@ -895,10 +895,19 @@ def _finalize_batch(
         scraped_rows = list(stored_tariffs) + _scraped_rows_from_courses(records)
 
     manual_rows = _load_manual_fee_rows()
-    # Exclude collapsed chambers: their course-derived rows come from the same
-    # degraded scrape, so re-resolving would undo the records we just retained.
+    # Only chambers whose courses were actually replaced may have their derived
+    # fees replaced. A collapsed chamber's rows come from the same degraded
+    # scrape, and an empty-scrape chamber contributes no rows at all — counting
+    # either as "scraped" would drop its retained records' fees from
+    # exam_fees.json while merge_courses kept the courses themselves.
     scraped_chambers = (
-        set(batch.results.keys()) - set(collapsed) if update_courses else None
+        {
+            slug
+            for slug in batch.results
+            if slug not in collapsed and batch.fresh_by_chamber.get(slug)
+        }
+        if update_courses
+        else None
     )
     _resolve_and_write_derived(
         records,

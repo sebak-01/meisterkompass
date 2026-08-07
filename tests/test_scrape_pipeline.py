@@ -10,6 +10,7 @@ from scrapers.pipeline import (
     ScrapeBatch,
     _is_online_location,
     _scrape_workers,
+    _merge_exam_fees_nested,
     apply_coordinates,
     collapsed_chambers,
     merge_courses,
@@ -203,6 +204,24 @@ class CollapseGuardTests(unittest.TestCase):
 
         self.assertEqual(collapsed_chambers(previous, fresh, TODAY), {})
         self.assertEqual(len(merge_courses(previous, fresh, TODAY)), 200)
+
+    def test_retained_chambers_keep_their_exam_fees(self):
+        """merge_courses keeps a collapsed or empty chamber's courses, so those
+        courses' fees must survive too — treating the chamber as "scraped" would
+        replace its exam_fees.json entry with the nothing the scrape produced."""
+        previous_fees = {
+            "hwk-collapsed": {"tischler": {"1": 500.0}},
+            "hwk-empty": {"maler": {"1": 400.0}},
+            "hwk-healthy": {"maurer": {"1": 300.0}},
+        }
+        # Only the healthy chamber actually produced fresh rows.
+        current_fees = {"hwk-healthy": {"maurer": {"1": 300.0}}}
+
+        merged = _merge_exam_fees_nested(previous_fees, current_fees, {"hwk-healthy"})
+
+        self.assertEqual(merged["hwk-collapsed"], {"tischler": {"1": 500.0}})
+        self.assertEqual(merged["hwk-empty"], {"maler": {"1": 400.0}})
+        self.assertEqual(merged["hwk-healthy"], {"maurer": {"1": 300.0}})
 
     def test_ratio_zero_disables_the_guard(self):
         """Escape hatch for a real collapse (a chamber genuinely retiring its
