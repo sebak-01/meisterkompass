@@ -11,7 +11,9 @@ from scrapers.pipeline import (
     _is_online_location,
     _scrape_workers,
     _merge_exam_fees_nested,
+    _to_iso,
     apply_coordinates,
+    build_course_fees,
     collapsed_chambers,
     merge_courses,
     merge_scrape_partials,
@@ -232,6 +234,57 @@ class CollapseGuardTests(unittest.TestCase):
         with unittest.mock.patch("scrapers.pipeline.SCRAPE_COLLAPSE_RATIO", 0.0):
             self.assertEqual(collapsed_chambers(previous, fresh, TODAY), {})
             self.assertEqual(len(merge_courses(previous, fresh, TODAY)), 1)
+
+
+class DateValidationTests(unittest.TestCase):
+    """Scrapers assemble start_date strings from regex groups, so a site changing
+    its date format can emit something no calendar accepts. Every downstream
+    string comparison tolerates that, but build_course_fees called
+    date.fromisoformat() on it and aborted the entire write — after all 60
+    chambers had already been scraped."""
+
+    def test_valid_iso_date_passes_through(self):
+        self.assertEqual(_to_iso("2026-09-07"), "2026-09-07")
+
+    def test_date_objects_are_serialised(self):
+        import datetime
+
+        self.assertEqual(_to_iso(datetime.date(2026, 9, 7)), "2026-09-07")
+
+    def test_none_stays_none(self):
+        self.assertIsNone(_to_iso(None))
+
+    def test_impossible_date_is_discarded(self):
+        with self.assertLogs("scrapers.pipeline", level="WARNING"):
+            self.assertIsNone(_to_iso("2026-13-45"))
+
+    def test_partial_and_prose_dates_are_discarded(self):
+        with self.assertLogs("scrapers.pipeline", level="WARNING"):
+            self.assertIsNone(_to_iso("2025-05"))
+        with self.assertLogs("scrapers.pipeline", level="WARNING"):
+            self.assertIsNone(_to_iso("Herbst 2025"))
+
+    def test_build_course_fees_survives_a_legacy_bad_date(self):
+        """Records already committed to data/ predate the _to_iso guard."""
+        records = [
+            {
+                "chamber_slug": "hwk-x",
+                "trade_slug": "tischler",
+                "parts": [1],
+                "course_fee": 1000.0,
+                "availability": "unknown",
+                "start_date": "2026-13-45",
+            },
+            {
+                "chamber_slug": "hwk-y",
+                "trade_slug": "tischler",
+                "parts": [1],
+                "course_fee": 2000.0,
+                "availability": "unknown",
+                "start_date": "2026-09-07",
+            },
+        ]
+        self.assertEqual(len(build_course_fees(records, "2026-08-07")), 2)
 
 
 if __name__ == "__main__":
