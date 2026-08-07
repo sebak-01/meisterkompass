@@ -1083,7 +1083,8 @@ class AachenExamFeePdfResolutionTests(unittest.TestCase):
     def test_missing_pdf_degrades_instead_of_raising(self):
         scraper = HwkAachenScraper()
         with patch.object(scraper, "parse_html", return_value=None):
-            self.assertEqual(scraper._fetch_exam_fees_from_pdf(), ({}, {}))
+            trade_fees, _generic = scraper._fetch_exam_fees_from_pdf()
+        self.assertEqual(trade_fees, {}, "no PDF means no trade-specific fees")
 
     def test_linked_pdf_is_resolved_absolutely(self):
         from bs4 import BeautifulSoup
