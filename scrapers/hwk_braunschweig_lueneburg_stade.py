@@ -257,7 +257,9 @@ class HwkBraunschweigLueneburgStadeScraper(BavariaOdavScraper):
     def _fetch_exam_fees_from_pdf(self) -> tuple[dict[str, float], dict[int, float]]:
         text = download_pdf_text(self, self._resolve_exam_fees_pdf_url(), label="HWK BLS")
         if not text:
-            return {}, {}
+            # The old inline fetch let empty text reach the parser below, so the
+            # generic fallback still applied. Preserve that on fetch failure.
+            return {}, dict(GENERIC_EXAM_FEES)
         part_i_fees = self.parse_part_i_exam_fees(text)
         generic_fees = self.parse_generic_exam_fees(text) or GENERIC_EXAM_FEES
         if not part_i_fees:
