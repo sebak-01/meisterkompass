@@ -5,7 +5,6 @@ from __future__ import annotations
 import logging
 import re
 import time
-from io import BytesIO
 from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
@@ -19,6 +18,7 @@ except ImportError:  # pragma: no cover - exercised via fallback in tests
 
 from .base import BaseScraper, RawCourseOffer, build_course_title, normalize_trade
 from .hwk_bayern import parse_parts, parse_trade
+from .exam_fee_tariff import download_pdf_text
 
 logger = logging.getLogger(__name__)
 
@@ -690,21 +690,9 @@ class HwkSuedwestfalenScraper(BaseScraper):
     def _fetch_exam_fees_from_pdf(
         self,
     ) -> tuple[dict[int, dict[str, float]], dict[str, float] | None] | None:
-        try:
-            from pypdf import PdfReader
-        except ImportError:
-            logger.warning("HWK Südwestfalen: pypdf not installed — using fallback exam fees.")
+        text = download_pdf_text(self, self._resolve_exam_fees_pdf_url(), label="HWK Südwestfalen")
+        if not text:
             return None
-
-        pdf_url = self._resolve_exam_fees_pdf_url()
-        response = self.get(pdf_url)
-        if response is None:
-            logger.warning("HWK Südwestfalen: could not fetch exam-fee PDF.")
-            return None
-
-        text = ""
-        for page in PdfReader(BytesIO(response.content)).pages:
-            text += (page.extract_text() or "") + "\n"
         fees, combo = self.parse_meister_exam_fees(text)
         if not fees:
             logger.warning("HWK Südwestfalen: could not parse exam fees from PDF.")

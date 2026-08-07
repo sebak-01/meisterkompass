@@ -2,13 +2,13 @@
 
 import logging
 import re
-from io import BytesIO
 from urllib.parse import urljoin
 
 from bs4 import Tag
 
 from .base import RawCourseOffer, normalize_trade
 from .exam_fee_tariff import (
+    download_pdf_text,
     parse_bw_meister_fees_from_html,
     published_bw_322_exam_fee_rows,
 )
@@ -275,21 +275,11 @@ class HwkAachenScraper(BavariaOdavScraper):
         return FEES_PDF_URL
 
     def _fetch_exam_fees_from_pdf(self) -> tuple[dict[str, dict[int, float]], dict[int, float]]:
-        try:
-            from pypdf import PdfReader
-        except ImportError:
-            logger.warning("HWK Aachen: pypdf not installed — using fallback exam fees.")
-            return {}, {}
-
-        pdf_url = self._resolve_exam_fees_pdf_url()
-        response = self.get(pdf_url)
-        if response is None:
-            logger.warning("HWK Aachen: could not fetch exam-fee PDF.")
-            return {}, {}
-
-        text = ""
-        for page in PdfReader(BytesIO(response.content)).pages:
-            text += (page.extract_text() or "") + "\n"
+        text = download_pdf_text(self, self._resolve_exam_fees_pdf_url(), label="HWK Aachen")
+        if not text:
+            # The old inline fetch let empty text reach the parser below, so the
+            # generic fallback still applied. Preserve that on fetch failure.
+            return {}, dict(GENERIC_EXAM_FEES)
         trade_fees = self.parse_trade_exam_fees(text)
         generic_fees = self.parse_generic_exam_fees(text) or GENERIC_EXAM_FEES
         return trade_fees, generic_fees

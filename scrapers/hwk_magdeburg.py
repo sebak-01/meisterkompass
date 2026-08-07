@@ -2,7 +2,6 @@
 
 import logging
 import re
-from io import BytesIO
 from urllib.parse import urljoin
 
 from bs4 import Tag
@@ -25,6 +24,7 @@ from .hwk_bayern import (
     parse_availability,
     DURATION_RE,
 )
+from .exam_fee_tariff import download_pdf_text
 
 logger = logging.getLogger(__name__)
 
@@ -243,20 +243,9 @@ class HwkMagdeburgScraper(BavariaOdavScraper):
         return fees
 
     def _fetch_exam_fees_from_pdf(self) -> tuple[dict[str, dict[int, float]], dict[int, float]]:
-        try:
-            from pypdf import PdfReader
-        except ImportError:
-            logger.warning("HWK Magdeburg: pypdf not installed — using fallback exam fees.")
+        text = download_pdf_text(self, FEES_PDF_URL, label="HWK Magdeburg")
+        if not text:
             return {}, {}
-
-        response = self.get(FEES_PDF_URL)
-        if response is None:
-            logger.warning("HWK Magdeburg: could not fetch exam-fee PDF.")
-            return {}, {}
-
-        text = ""
-        for page in PdfReader(BytesIO(response.content)).pages:
-            text += (page.extract_text() or "") + "\n"
         trade_fees = self.parse_trade_exam_fees(text)
         generic_fees = self.parse_generic_exam_fees(text)
         if not trade_fees:

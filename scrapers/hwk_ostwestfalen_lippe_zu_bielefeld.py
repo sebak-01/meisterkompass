@@ -2,7 +2,6 @@
 
 import logging
 import re
-from io import BytesIO
 from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup, Tag
@@ -21,6 +20,7 @@ from .hwk_bayern import (
     parse_trade,
     DURATION_RE,
 )
+from .exam_fee_tariff import download_pdf_text
 
 logger = logging.getLogger(__name__)
 
@@ -483,21 +483,9 @@ class HwkOstwestfalenLippeZuBielefeldScraper(BavariaOdavScraper):
     def _fetch_exam_fees_from_pdf(
         self,
     ) -> tuple[dict[int, dict[str, float]], dict[str, float] | None] | None:
-        try:
-            from pypdf import PdfReader
-        except ImportError:
-            logger.warning("HWK OWL: pypdf not installed — using fallback exam fees.")
+        text = download_pdf_text(self, self._resolve_exam_fees_pdf_url(), label="HWK OWL")
+        if not text:
             return None
-
-        pdf_url = self._resolve_exam_fees_pdf_url()
-        response = self.get(pdf_url)
-        if response is None:
-            logger.warning("HWK OWL: could not fetch exam-fee PDF.")
-            return None
-
-        text = ""
-        for page in PdfReader(BytesIO(response.content)).pages:
-            text += (page.extract_text() or "") + "\n"
         fees, combo = self.parse_meister_exam_fees(text)
         if not fees:
             logger.warning("HWK OWL: could not parse Meister exam fee ranges from PDF.")

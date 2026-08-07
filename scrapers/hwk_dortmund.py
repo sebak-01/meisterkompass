@@ -6,13 +6,13 @@ import logging
 import re
 import json
 import html
-from io import BytesIO
 from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
 
 from .base import BaseScraper, RawCourseOffer, build_course_title, normalize_trade
 from .hwk_bayern import parse_parts, parse_trade
+from .exam_fee_tariff import download_pdf_text
 
 logger = logging.getLogger(__name__)
 
@@ -405,21 +405,9 @@ class HwkDortmundScraper(BaseScraper):
         return FEES_PDF_URL
 
     def _fetch_exam_fees_from_pdf(self) -> dict[int, float]:
-        try:
-            from pypdf import PdfReader
-        except ImportError:
-            logger.warning("HWK Dortmund: pypdf not installed — using fallback exam fees.")
+        text = download_pdf_text(self, self._resolve_exam_fees_pdf_url(), label="HWK Dortmund")
+        if not text:
             return {}
-
-        pdf_url = self._resolve_exam_fees_pdf_url()
-        response = self.get(pdf_url)
-        if response is None:
-            logger.warning("HWK Dortmund: could not fetch exam-fee PDF.")
-            return {}
-
-        text = ""
-        for page in PdfReader(BytesIO(response.content)).pages:
-            text += (page.extract_text() or "") + "\n"
         fees = self.parse_generic_exam_fees(text)
         if not fees:
             logger.warning("HWK Dortmund: could not parse exam fees from PDF.")
