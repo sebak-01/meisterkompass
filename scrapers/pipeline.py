@@ -215,12 +215,37 @@ def _to_float(value) -> float | None:
 
 
 def _to_iso(value) -> str | None:
-    """Normalise a date to an ISO string. Saarland emits date objects; others emit strings."""
+    """
+    Normalise a date to an ISO string. Saarland emits date objects; others emit
+    strings assembled from regex groups.
+
+    Those strings are the dataset's only date validation point. A site changing
+    its date format can otherwise yield something like "2026-13-45", which every
+    downstream string comparison happily accepts but ``date.fromisoformat`` in
+    ``build_course_fees`` rejects — aborting the whole write after all 60
+    chambers have already been scraped. Drop an unparseable date instead: the
+    course keeps its record and is simply treated as undated.
+    """
     if value is None:
         return None
-    if isinstance(value, str):
-        return value
-    return value.isoformat()   # datetime.date / datetime.datetime
+    if not isinstance(value, str):
+        return value.isoformat()   # datetime.date / datetime.datetime
+    try:
+        date.fromisoformat(value)
+    except ValueError:
+        logger.warning("Discarding unparseable date %r", value)
+        return None
+    return value
+
+
+def _iso_ordinal(value: str | None) -> int | None:
+    """Ordinal for an ISO date, or None when absent or unparseable."""
+    if not value:
+        return None
+    try:
+        return date.fromisoformat(value).toordinal()
+    except ValueError:
+        return None
 
 
 def _course_fee_display(fee: float | None) -> str:
@@ -438,11 +463,13 @@ def build_course_fees(records: list[dict], today_iso: str) -> list[dict]:
         sd = rec.get("start_date")
         is_future = sd is None or sd >= today_iso
         avail = AVAIL_RANK.get(rec.get("availability"), AVAIL_RANK["unknown"])
-        if sd:
-            d = date.fromisoformat(sd).toordinal()
-            date_score = d if is_future else (10_000_000 - d)
-        else:
+        ordinal = _iso_ordinal(sd)
+        if ordinal is None:
+            # Undated (or, for records written before _to_iso validated dates,
+            # undatable) courses rank between future and past ones.
             date_score = 5_000_000
+        else:
+            date_score = ordinal if is_future else (10_000_000 - ordinal)
         return (0 if is_future else 1, avail, date_score)
 
     candidates = sorted(
