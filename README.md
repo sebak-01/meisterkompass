@@ -407,8 +407,16 @@ python -m scrapers.run --rebake --refresh-tariffs   # rebake after re-fetching P
 python -m scrapers.run --chamber hwk-suedwestfalen
 python -m scrapers.run --chamber hwk-dortmund
 
-python -m unittest discover -s tests        # offline parser + fee tests
+pytest -q                                   # offline parser + fee tests (sockets blocked)
+pytest -q -m network                        # live-site canary (fetches real chamber pages)
 ```
+
+Tests install with `pip install -r requirements-dev.txt`. `tests/conftest.py`
+blocks sockets by default, so a test that forgets to mock a fetch fails loudly
+instead of silently depending on 60 third-party sites. The handful of tests that
+genuinely fetch live pages carry `@pytest.mark.network`, are deselected by
+default, and run weekly via the `Live-site canary` workflow — they are the only
+thing that notices a chamber restructuring its HTML.
 
 Local full runs cap parallel chamber scrapes at 15 workers to avoid egress
 connection limits. CI uses four matrix jobs (`west`, `south`, `east`, `north`)

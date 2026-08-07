@@ -1,4 +1,6 @@
 import unittest
+
+import pytest
 from unittest.mock import patch
 
 from bs4 import BeautifulSoup
@@ -53,6 +55,7 @@ class BrandenburgParserTests(unittest.TestCase):
             "Nuthetal",
         )
 
+    @pytest.mark.network
     def test_potsdam_resolves_latest_exam_fee_pdf(self):
         scraper = HwkPotsdamScraper()
         pdf_url = scraper._resolve_exam_fees_pdf_url()

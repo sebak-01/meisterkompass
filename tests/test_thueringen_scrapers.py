@@ -1,5 +1,7 @@
 import json
 import unittest
+
+import pytest
 from pathlib import Path
 from unittest.mock import patch
 
@@ -235,6 +237,7 @@ class ThueringenParserTests(unittest.TestCase):
         resolved = resolve_exam_fee(scraper.chamber_slug, "any-trade", [1, 2], None, lookup)
         self.assertEqual(resolved["fee"], 555.0)
 
+    @pytest.mark.network
     def test_ostthueringen_ignores_format_suffixes_in_trade_names(self):
         offers = HwkOstthueringenGeraScraper().fetch_raw_courses()
         weird = {o.trade_name for o in offers if o.trade_name and "(" in o.trade_name}
@@ -364,6 +367,7 @@ class ThueringenIntegrationTests(unittest.TestCase):
             self.assertIs(SCRAPERS[slug], scraper)
             self.assertEqual(scraper.chamber_region, "Thüringen")
 
+    @pytest.mark.network
     def test_published_chamber_exam_fees_are_injected(self):
         cases = (
             (HwkOstthueringenGeraScraper, [1, 2], 555.0),
@@ -382,6 +386,7 @@ class ThueringenIntegrationTests(unittest.TestCase):
             self.assertEqual(resolved["fee"], expected)
             self.assertEqual(resolved["qualifier"], "")
 
+    @pytest.mark.network
     def test_erfurt_published_exam_fee_schedule(self):
         from unittest.mock import patch
 

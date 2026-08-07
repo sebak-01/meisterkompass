@@ -1,5 +1,7 @@
 import json
 import unittest
+
+import pytest
 from pathlib import Path
 
 from scrapers.fees import build_exam_fee_lookup, resolve_exam_fee
@@ -256,6 +258,7 @@ class CityStateScraperIntegrationTests(unittest.TestCase):
             self.assertEqual(SCRAPERS[slug].chamber_region, region)
 
 
+@pytest.mark.network
 class CityStateExamFeeTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):

@@ -1,4 +1,6 @@
 import unittest
+
+import pytest
 from unittest.mock import patch
 
 from bs4 import BeautifulSoup
@@ -231,6 +233,7 @@ class SachsenParserTests(unittest.TestCase):
             rows = scraper.published_exam_fee_rows()
         self.assertTrue(all(row["source_url"] == LEIPZIG_EXAM_FEES_PAGE_URL for row in rows))
 
+    @pytest.mark.network
     def test_leipzig_course_page_exam_fees_take_priority(self):
         from scrapers.hwk_bayern import parse_exam_fee
 
