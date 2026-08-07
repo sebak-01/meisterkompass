@@ -57,10 +57,16 @@ class Geocoder:
         self.cache_path = cache_path
         self.cache: dict[str, list | None] = {}
         if cache_path.exists():
-            self.cache = json.loads(cache_path.read_text(encoding="utf-8"))
+            try:
+                self.cache = json.loads(cache_path.read_text(encoding="utf-8"))
+            except json.JSONDecodeError as exc:
+                # A cache truncated by an interrupted run must not wedge every
+                # future run; rebuilding it only costs live lookups.
+                logger.warning("Discarding unreadable geocode cache %s: %s", cache_path, exc)
         self._dirty = False
         self.hits = 0
         self.misses = 0
+        self.failures = 0
 
     def lookup(self, query: str) -> tuple[float, float] | None:
         """Return (lat, lng) for an address query, using the cache first."""
@@ -70,13 +76,25 @@ class Geocoder:
             return (coords[0], coords[1]) if coords else None
 
         self.misses += 1
-        coords = self._geocode(query)
+        coords, resolved = self._geocode(query)
         time.sleep(DELAY)
-        self.cache[query] = list(coords) if coords else None
-        self._dirty = True
+        # Only a definitive answer earns a cache entry. Caching a transient
+        # outage or rate-limit would pin the address to "no coordinates"
+        # forever, because the cache is consulted before the network.
+        if resolved:
+            self.cache[query] = list(coords) if coords else None
+            self._dirty = True
+        else:
+            self.failures += 1
         return coords
 
-    def _geocode(self, query: str) -> tuple[float, float] | None:
+    def _geocode(self, query: str) -> tuple[tuple[float, float] | None, bool]:
+        """
+        Return ``(coords, resolved)``. ``resolved`` is True when Photon answered
+        authoritatively — including an authoritative "no such place" (empty
+        feature list) — and False when the lookup itself failed and should be
+        retried on a later run.
+        """
         try:
             r = requests.get(
                 PHOTON_URL,
@@ -86,21 +104,35 @@ class Geocoder:
             )
             r.raise_for_status()
             features = r.json().get("features", [])
-            if features:
-                lon, lat = features[0]["geometry"]["coordinates"]
-                return float(lat), float(lon)
         except Exception as exc:  # noqa: BLE001 — network/parse errors are non-fatal
-            logger.warning("Photon error for %r: %s", query, exc)
-        return None
+            logger.warning("Photon lookup failed for %r (will retry): %s", query, exc)
+            return None, False
+        if not features:
+            return None, True
+        try:
+            lon, lat = features[0]["geometry"]["coordinates"]
+            return (float(lat), float(lon)), True
+        except (KeyError, IndexError, TypeError, ValueError) as exc:
+            logger.warning("Photon returned unusable geometry for %r: %s", query, exc)
+            return None, True
 
     def save(self):
         if self._dirty:
             self.cache_path.parent.mkdir(parents=True, exist_ok=True)
-            self.cache_path.write_text(
+            # Write-then-replace: a run interrupted mid-write would otherwise
+            # leave truncated JSON behind for the next run to choke on.
+            tmp = self.cache_path.with_suffix(self.cache_path.suffix + ".tmp")
+            tmp.write_text(
                 json.dumps(self.cache, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
                 encoding="utf-8",
             )
+            tmp.replace(self.cache_path)
             logger.info(
                 "Geocode cache saved (%d entries, %d hits, %d misses).",
                 len(self.cache), self.hits, self.misses,
+            )
+        if self.failures:
+            logger.warning(
+                "%d geocode lookup(s) failed and stayed uncached; they retry next run.",
+                self.failures,
             )
