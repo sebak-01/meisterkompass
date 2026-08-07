@@ -100,13 +100,29 @@ def _fill_shared_duration(offers: list[RawCourseOffer]) -> None:
             offer.duration_hours = shared
 
 
+# Street names either glue the type onto the name ("Musterweg", "Preuschwitzer
+# Straße") or follow a short article-style prefix ("Am Lagerplatz", "Grüner Weg").
+# Matching only these two shapes stops the name reaching backwards into the
+# course prose that shares the page with the venue block.
+_STREET_SUFFIX = (
+    r"(?:[Ss]tra(?:ß|ss)e|[Ss]tr\.|[Ww]eg|[Pp]latz|[Gg]asse"
+    r"|[Aa]llee|[Rr]ing|[Dd]amm|[Uu]fer)"
+)
+_STREET_PREFIX = (
+    r"(?:Am|An|Auf|Zum|Zur|Im|In|Bei|Alte|Alter|Neue|Neuer"
+    r"|Große|Großer|Kleine|Kleiner|Grüne|Grüner|Obere|Untere)"
+)
+STREET_RE = re.compile(
+    rf"((?:{_STREET_PREFIX}\s+)?"
+    rf"(?:[A-ZÄÖÜ][A-Za-zÄÖÜäöüß-]*{_STREET_SUFFIX}"
+    rf"|[A-ZÄÖÜ][A-Za-zÄÖÜäöüß.-]*\s+{_STREET_SUFFIX})"
+    rf"\s+\d+\s*[A-Za-z]?)"
+    rf"\s*,?\s+(\d{{5}})\s+([A-ZÄÖÜ][A-Za-zÄÖÜäöüß ()-]+)"
+)
+
+
 def _parse_address(text: str) -> tuple[str, str, str]:
-    street_match = re.search(
-        r"([A-ZÄÖÜ][A-Za-zÄÖÜäöüß .-]+(?:straße|str\.|weg|platz|gasse)\s+\d+[A-Za-z]?)"
-        r"\s+(\d{5})\s+([A-ZÄÖÜ][A-Za-zÄÖÜäöüß ()-]+)",
-        text,
-        re.IGNORECASE,
-    )
+    street_match = STREET_RE.search(text)
     if street_match:
         return (
             street_match.group(1).strip(),
