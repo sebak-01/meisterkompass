@@ -1,5 +1,7 @@
 import json
 import unittest
+
+import pytest
 from pathlib import Path
 
 from bs4 import BeautifulSoup
@@ -259,6 +261,7 @@ class KarlsruheParserTests(unittest.TestCase):
 
 
 class StuttgartParserTests(unittest.TestCase):
+    @pytest.mark.network
     def test_published_exam_fees(self):
         from unittest.mock import patch
 
@@ -365,6 +368,7 @@ class StuttgartParserTests(unittest.TestCase):
 
 
 class UlmParserTests(unittest.TestCase):
+    @pytest.mark.network
     def test_published_exam_fees_and_complete_bundle(self):
         from unittest.mock import patch
 

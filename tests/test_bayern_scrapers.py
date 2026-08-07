@@ -1,5 +1,7 @@
 import json
 import unittest
+
+import pytest
 from pathlib import Path
 
 from bs4 import BeautifulSoup
@@ -299,6 +301,7 @@ class BavariaRegistrationTests(unittest.TestCase):
             self.assertIs(SCRAPERS[slug], scraper_class)
             self.assertEqual(scraper_class.chamber_region, "Bayern")
 
+    @pytest.mark.network
     def test_published_generic_exam_fee_schedules(self):
         from unittest.mock import patch
 
