@@ -112,12 +112,23 @@ _STREET_PREFIX = (
     r"(?:Am|An|Auf|Zum|Zur|Im|In|Bei|Alte|Alter|Neue|Neuer"
     r"|Große|Großer|Kleine|Kleiner|Grüne|Grüner|Obere|Untere)"
 )
+# Bounding the city stops it running on into the course prose that follows the
+# venue block — the same failure the street pattern above guards against. The
+# name requires lowercase after its initial capital, so a run of Title-Case
+# prose words ("Weitere Informationen zum Kurs") cannot be absorbed.
+_CITY = (
+    r"(?:Bad |Sankt |St\. )?"
+    r"[A-ZÄÖÜ][a-zäöüß]+(?:-[A-ZÄÖÜ][a-zäöüß]+)*"
+    r"(?:\s+(?:an|am|ob|auf|vor|im|in)\s+(?:der|dem|den)?\s*[A-ZÄÖÜ][a-zäöüß]+)?"
+    r"(?:\s*\([A-ZÄÖÜ][a-zäöüß]+\))?"
+)
+
 STREET_RE = re.compile(
     rf"((?:{_STREET_PREFIX}\s+)?"
     rf"(?:[A-ZÄÖÜ][A-Za-zÄÖÜäöüß-]*{_STREET_SUFFIX}"
     rf"|[A-ZÄÖÜ][A-Za-zÄÖÜäöüß.-]*\s+{_STREET_SUFFIX})"
     rf"\s+\d+\s*[A-Za-z]?)"
-    rf"\s*,?\s+(\d{{5}})\s+([A-ZÄÖÜ][A-Za-zÄÖÜäöüß ()-]+)"
+    rf"\s*,?\s+(\d{{5}})\s+({_CITY})"
 )
 
 
@@ -129,7 +140,7 @@ def _parse_address(text: str) -> tuple[str, str, str]:
             street_match.group(2),
             street_match.group(3).strip(),
         )
-    zip_match = re.search(r"\b(\d{5})\s+([A-ZÄÖÜ][A-Za-zÄÖÜäöüß ()-]+)", text)
+    zip_match = re.search(rf"\b(\d{{5}})\s+({_CITY})", text)
     if zip_match:
         return "", zip_match.group(1), zip_match.group(2).strip()
     return "Am Lagerplatz 8", "01099", "Dresden"
