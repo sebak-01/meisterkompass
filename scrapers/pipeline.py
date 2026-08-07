@@ -92,6 +92,14 @@ logger = logging.getLogger(__name__)
 SCRAPE_MAX_WORKERS = max(1, int(os.environ.get("SCRAPE_MAX_WORKERS", "15")))
 SCRAPE_PARALLEL_CAP_THRESHOLD = max(1, int(os.environ.get("SCRAPE_PARALLEL_CAP_THRESHOLD", "15")))
 
+# A chamber that returns far fewer upcoming courses than it had last run is
+# usually a half-broken scrape (BaseScraper.get() yields None per failed page
+# rather than raising, so a chamber whose detail pages start timing out simply
+# reports fewer offers). Retain the previous records for such a chamber instead
+# of committing the loss. Chambers below the floor are too small to judge.
+SCRAPE_COLLAPSE_RATIO = float(os.environ.get("SCRAPE_COLLAPSE_RATIO", "0.4"))
+SCRAPE_COLLAPSE_FLOOR = max(1, int(os.environ.get("SCRAPE_COLLAPSE_FLOOR", "8")))
+
 SCRAPERS: dict[str, type] = {
     "hwk-koblenz":     HwkKoblenzScraper,
     "hwk-trier":       HwkTrierScraper,
@@ -284,26 +292,80 @@ def offer_to_record(result: ScrapeResult, offer) -> dict:
 # Merge / retention (replaces DB soft-delete cleanup)
 # ----------------------------------------------------------------------
 
-def merge_courses(previous: list[dict], fresh_by_chamber: dict[str, list[dict]], today_iso: str) -> list[dict]:
+def collapsed_chambers(
+    previous: list[dict],
+    fresh_by_chamber: dict[str, list[dict]],
+    today_iso: str,
+) -> dict[str, tuple[int, int]]:
+    """
+    Identify chambers whose fresh scrape lost an implausible share of their
+    upcoming courses, mapping slug -> (fresh count, previous upcoming count).
+
+    Compares like with like: only previous records that are still upcoming can
+    plausibly reappear in a fresh scrape, so courses that merely started since
+    the last run do not count as a loss.
+    """
+    previous_upcoming: dict[str, int] = {}
+    for rec in previous:
+        if not _is_past(rec, today_iso):
+            cs = rec["chamber_slug"]
+            previous_upcoming[cs] = previous_upcoming.get(cs, 0) + 1
+
+    collapsed: dict[str, tuple[int, int]] = {}
+    for cs, fresh in fresh_by_chamber.items():
+        if not fresh:
+            continue   # empty scrapes are already retained wholesale below
+        before = previous_upcoming.get(cs, 0)
+        if before < SCRAPE_COLLAPSE_FLOOR:
+            continue
+        if len(fresh) < before * SCRAPE_COLLAPSE_RATIO:
+            collapsed[cs] = (len(fresh), before)
+    return collapsed
+
+
+def merge_courses(
+    previous: list[dict],
+    fresh_by_chamber: dict[str, list[dict]],
+    today_iso: str,
+    collapsed: dict[str, tuple[int, int]] | None = None,
+) -> list[dict]:
     """
     Rebuild the course set from a fresh scrape while retaining past courses.
 
     - Chambers NOT scraped this run keep all their previous records untouched.
     - A chamber with an EMPTY scrape keeps its previous records (safety mirror
       of the old ``if not scraped_keys: return``).
+    - A chamber whose scrape COLLAPSED (see ``collapsed_chambers``) likewise
+      keeps its previous records, so a half-broken scrape cannot delete a
+      chamber's catalogue.
     - Otherwise: keep previous PAST records, take all FRESH records (fresh wins
       on key collision), and drop previous FUTURE records absent from the scrape.
     """
-    scraped_chambers = set(fresh_by_chamber)
+    if collapsed is None:
+        collapsed = collapsed_chambers(previous, fresh_by_chamber, today_iso)
+    for cs, (fresh_count, before) in sorted(collapsed.items()):
+        logger.error(
+            "%s: scrape returned %d upcoming course(s) but %d were known — "
+            "keeping previous records for this chamber. If the drop is real, "
+            "re-run with SCRAPE_COLLAPSE_RATIO=0 to accept it.",
+            cs, fresh_count, before,
+        )
+
+    effective_fresh = {
+        cs: ([] if cs in collapsed else fresh)
+        for cs, fresh in fresh_by_chamber.items()
+    }
+
+    scraped_chambers = set(effective_fresh)
     merged: dict[tuple, dict] = {}
 
     # Untouched chambers (and empty-scrape chambers) carry forward verbatim.
     for rec in previous:
         cs = rec["chamber_slug"]
-        if cs not in scraped_chambers or not fresh_by_chamber.get(cs):
+        if cs not in scraped_chambers or not effective_fresh.get(cs):
             merged[_course_key(rec)] = rec
 
-    for cs, fresh in fresh_by_chamber.items():
+    for cs, fresh in effective_fresh.items():
         if not fresh:
             continue
         # Retain previous PAST records for this chamber.
@@ -811,8 +873,10 @@ def _finalize_batch(
     tariff_rows: list[dict] | None = None,
 ) -> RunReport:
     previous = _load_previous_courses()
+    collapsed: dict[str, tuple[int, int]] = {}
     if update_courses:
-        records = merge_courses(previous, batch.fresh_by_chamber, today_iso)
+        collapsed = collapsed_chambers(previous, batch.fresh_by_chamber, today_iso)
+        records = merge_courses(previous, batch.fresh_by_chamber, today_iso, collapsed)
         geocoder = Geocoder(GEOCODE_CACHE)
         apply_coordinates(records, geocoder)
         geocoder.save()
@@ -831,7 +895,20 @@ def _finalize_batch(
         scraped_rows = list(stored_tariffs) + _scraped_rows_from_courses(records)
 
     manual_rows = _load_manual_fee_rows()
-    scraped_chambers = set(batch.results.keys()) if update_courses else None
+    # Only chambers whose courses were actually replaced may have their derived
+    # fees replaced. A collapsed chamber's rows come from the same degraded
+    # scrape, and an empty-scrape chamber contributes no rows at all — counting
+    # either as "scraped" would drop its retained records' fees from
+    # exam_fees.json while merge_courses kept the courses themselves.
+    scraped_chambers = (
+        {
+            slug
+            for slug in batch.results
+            if slug not in collapsed and batch.fresh_by_chamber.get(slug)
+        }
+        if update_courses
+        else None
+    )
     _resolve_and_write_derived(
         records,
         scraped_rows,

@@ -1,4 +1,5 @@
 import unittest
+import unittest.mock
 from pathlib import Path
 import tempfile
 
@@ -9,7 +10,10 @@ from scrapers.pipeline import (
     ScrapeBatch,
     _is_online_location,
     _scrape_workers,
+    _merge_exam_fees_nested,
     apply_coordinates,
+    collapsed_chambers,
+    merge_courses,
     merge_scrape_partials,
     write_scrape_partial,
 )
@@ -120,6 +124,114 @@ class OnlineLocationGeocodeTests(unittest.TestCase):
         self.assertIsNone(records[0]["longitude"])
         self.assertEqual(records[1]["latitude"], 53.84)
         self.assertEqual(records[1]["longitude"], 10.70)
+
+
+TODAY = "2026-08-07"
+
+
+def _rec(slug, i, start_date="2026-12-01"):
+    return {
+        "chamber_slug": slug,
+        "trade_slug": "tischler",
+        "trade_name": "Tischler",
+        "parts": [1],
+        "format": "full_time",
+        "start_date": start_date,
+        "end_date": None,
+        "source_url": f"https://example.test/{slug}/{i}",
+        "city": "Musterstadt",
+    }
+
+
+class CollapseGuardTests(unittest.TestCase):
+    """BaseScraper.get() returns None per failed page instead of raising, so a
+    chamber whose detail pages start failing reports fewer offers rather than an
+    error. Committing that silently deletes the chamber's catalogue."""
+
+    def test_collapsed_scrape_retains_previous_records(self):
+        previous = [_rec("hwk-x", i) for i in range(200)]
+        fresh = {"hwk-x": [_rec("hwk-x", i) for i in range(3)]}
+
+        self.assertEqual(collapsed_chambers(previous, fresh, TODAY), {"hwk-x": (3, 200)})
+        with self.assertLogs("scrapers.pipeline", level="ERROR"):
+            merged = merge_courses(previous, fresh, TODAY)
+        self.assertEqual(len(merged), 200)
+
+    def test_plausible_shrink_is_accepted(self):
+        previous = [_rec("hwk-x", i) for i in range(200)]
+        fresh = {"hwk-x": [_rec("hwk-x", i) for i in range(120)]}
+
+        self.assertEqual(collapsed_chambers(previous, fresh, TODAY), {})
+        self.assertEqual(len(merge_courses(previous, fresh, TODAY)), 120)
+
+    def test_small_chambers_are_below_the_floor(self):
+        """A chamber with a handful of courses swings wildly by nature; guarding
+        it would pin its catalogue permanently."""
+        previous = [_rec("hwk-small", i) for i in range(4)]
+        fresh = {"hwk-small": [_rec("hwk-small", 0)]}
+
+        self.assertEqual(collapsed_chambers(previous, fresh, TODAY), {})
+        self.assertEqual(len(merge_courses(previous, fresh, TODAY)), 1)
+
+    def test_courses_that_merely_started_are_not_counted_as_loss(self):
+        """Only previously-upcoming courses can reappear in a fresh scrape, so a
+        catalogue that rolled into the past must not look like a collapse."""
+        previous = [_rec("hwk-x", i, start_date="2026-01-01") for i in range(200)]
+        previous += [_rec("hwk-x", 900 + i) for i in range(10)]
+        fresh = {"hwk-x": [_rec("hwk-x", 900 + i) for i in range(10)]}
+
+        self.assertEqual(collapsed_chambers(previous, fresh, TODAY), {})
+
+    def test_collapse_is_per_chamber(self):
+        previous = [_rec("hwk-x", i) for i in range(200)]
+        previous += [_rec("hwk-y", i) for i in range(50)]
+        fresh = {
+            "hwk-x": [_rec("hwk-x", i) for i in range(2)],
+            "hwk-y": [_rec("hwk-y", i) for i in range(40)],
+        }
+
+        with self.assertLogs("scrapers.pipeline", level="ERROR"):
+            merged = merge_courses(previous, fresh, TODAY)
+        by_chamber = {}
+        for rec in merged:
+            by_chamber[rec["chamber_slug"]] = by_chamber.get(rec["chamber_slug"], 0) + 1
+        self.assertEqual(by_chamber["hwk-x"], 200, "collapsed chamber retained")
+        self.assertEqual(by_chamber["hwk-y"], 40, "healthy chamber still updates")
+
+    def test_empty_scrape_still_retains_without_being_flagged(self):
+        previous = [_rec("hwk-x", i) for i in range(200)]
+        fresh = {"hwk-x": []}
+
+        self.assertEqual(collapsed_chambers(previous, fresh, TODAY), {})
+        self.assertEqual(len(merge_courses(previous, fresh, TODAY)), 200)
+
+    def test_retained_chambers_keep_their_exam_fees(self):
+        """merge_courses keeps a collapsed or empty chamber's courses, so those
+        courses' fees must survive too — treating the chamber as "scraped" would
+        replace its exam_fees.json entry with the nothing the scrape produced."""
+        previous_fees = {
+            "hwk-collapsed": {"tischler": {"1": 500.0}},
+            "hwk-empty": {"maler": {"1": 400.0}},
+            "hwk-healthy": {"maurer": {"1": 300.0}},
+        }
+        # Only the healthy chamber actually produced fresh rows.
+        current_fees = {"hwk-healthy": {"maurer": {"1": 300.0}}}
+
+        merged = _merge_exam_fees_nested(previous_fees, current_fees, {"hwk-healthy"})
+
+        self.assertEqual(merged["hwk-collapsed"], {"tischler": {"1": 500.0}})
+        self.assertEqual(merged["hwk-empty"], {"maler": {"1": 400.0}})
+        self.assertEqual(merged["hwk-healthy"], {"maurer": {"1": 300.0}})
+
+    def test_ratio_zero_disables_the_guard(self):
+        """Escape hatch for a real collapse (a chamber genuinely retiring its
+        programme) so the dataset can never be permanently pinned."""
+        previous = [_rec("hwk-x", i) for i in range(200)]
+        fresh = {"hwk-x": [_rec("hwk-x", 0)]}
+
+        with unittest.mock.patch("scrapers.pipeline.SCRAPE_COLLAPSE_RATIO", 0.0):
+            self.assertEqual(collapsed_chambers(previous, fresh, TODAY), {})
+            self.assertEqual(len(merge_courses(previous, fresh, TODAY)), 1)
 
 
 if __name__ == "__main__":
