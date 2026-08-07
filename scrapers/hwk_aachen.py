@@ -264,18 +264,28 @@ class HwkAachenScraper(BavariaOdavScraper):
                 fees[part] = float(match.group(1).replace(".", "") + "." + match.group(2))
         return fees
 
-    def _resolve_exam_fees_pdf_url(self) -> str:
+    def _resolve_exam_fees_pdf_url(self) -> str | None:
+        """
+        Locate the current Gebührenverzeichnis PDF, or None when the page is
+        unreachable or no longer links one. Unlike its sibling NRW chambers,
+        Aachen publishes no stable PDF URL to fall back on.
+        """
         soup = self.parse_html(EXAM_FEES_PAGE_URL)
         if soup is None:
-            return FEES_PDF_URL
+            return None
         for link in soup.select("a[href*='gebuehrenverzeichnis'], a[href*='gebuehr']"):
             href = link.get("href", "")
             if href.lower().endswith(".pdf"):
                 return urljoin(BASE_URL, href)
-        return FEES_PDF_URL
+        return None
 
     def _fetch_exam_fees_from_pdf(self) -> tuple[dict[str, dict[int, float]], dict[int, float]]:
-        text = download_pdf_text(self, self._resolve_exam_fees_pdf_url(), label="HWK Aachen")
+        pdf_url = self._resolve_exam_fees_pdf_url()
+        if pdf_url is None:
+            logger.warning("HWK Aachen: no exam-fee PDF linked on %s.", EXAM_FEES_PAGE_URL)
+            return {}, dict(GENERIC_EXAM_FEES)
+
+        text = download_pdf_text(self, pdf_url, label="HWK Aachen")
         if not text:
             # The old inline fetch let empty text reach the parser below, so the
             # generic fallback still applied. Preserve that on fetch failure.
