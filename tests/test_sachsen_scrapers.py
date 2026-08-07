@@ -384,6 +384,35 @@ class DresdenAddressTests(unittest.TestCase):
             ("Am Lagerplatz 8", "01099", "Dresden"),
         )
 
+    def test_city_does_not_absorb_trailing_page_prose(self):
+        """The venue block is followed by more page text, so the city group must
+        stop at the place name rather than running to the end of the line."""
+        text = "L\u00f6\u00dfnitzer Str. 50, 08301 Bad Schlema Weitere Informationen zum Kurs Telefon"
+        self.assertEqual(
+            _parse_address(text),
+            ("L\u00f6\u00dfnitzer Str. 50", "08301", "Bad Schlema"),
+        )
+
+    def test_multiword_and_parenthesised_place_names_survive(self):
+        self.assertEqual(
+            _parse_address("Musterweg 1, 06108 Halle (Saale) Hinweis")[2],
+            "Halle (Saale)",
+        )
+        self.assertEqual(
+            _parse_address("Musterweg 1, 15230 Frankfurt an der Oder Kursort")[2],
+            "Frankfurt an der Oder",
+        )
+        self.assertEqual(
+            _parse_address("Musterweg 1, 78050 Villingen-Schwenningen Telefon")[2],
+            "Villingen-Schwenningen",
+        )
+
+    def test_zip_only_fallback_also_bounds_the_city(self):
+        self.assertEqual(
+            _parse_address("Veranstaltungsort wird bekannt gegeben 01099 Dresden Hinweis"),
+            ("", "01099", "Dresden"),
+        )
+
     def test_zip_only_text_yields_no_street(self):
         self.assertEqual(
             _parse_address("Veranstaltungsort wird bekannt gegeben 01099 Dresden"),
