@@ -12,9 +12,10 @@ DB-based cleanup and coordinate fixes.
 import json
 import logging
 import os
+import re
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
-from datetime import date
+from datetime import date, datetime
 from pathlib import Path
 
 from .base import (
@@ -222,6 +223,9 @@ def _to_float(value) -> float | None:
     return float(value) if value is not None else None
 
 
+_ISO_DATE_RE = re.compile(r"\d{4}-\d{2}-\d{2}")
+
+
 def _to_iso(value) -> str | None:
     """
     Normalise a date to an ISO string. Saarland emits date objects; others emit
@@ -236,8 +240,19 @@ def _to_iso(value) -> str | None:
     """
     if value is None:
         return None
+    if isinstance(value, datetime):
+        value = value.date()
+    if isinstance(value, date):
+        return value.isoformat()
     if not isinstance(value, str):
-        return value.isoformat()   # datetime.date / datetime.datetime
+        logger.warning("Discarding non-date value %r", value)
+        return None
+    # date.fromisoformat alone is too permissive on 3.11+: it accepts "20260907"
+    # and "2026-W37-1", which then break the plain string comparisons and the
+    # sd[:7] month slicing that the rest of the pipeline relies on.
+    if not _ISO_DATE_RE.fullmatch(value):
+        logger.warning("Discarding unparseable date %r", value)
+        return None
     try:
         date.fromisoformat(value)
     except ValueError:
@@ -252,7 +267,7 @@ def _iso_ordinal(value: str | None) -> int | None:
         return None
     try:
         return date.fromisoformat(value).toordinal()
-    except ValueError:
+    except (TypeError, ValueError):
         return None
 
 

@@ -264,6 +264,42 @@ class DateValidationTests(unittest.TestCase):
         with self.assertLogs("scrapers.pipeline", level="WARNING"):
             self.assertIsNone(_to_iso("Herbst 2025"))
 
+    def test_lenient_iso_forms_are_rejected(self):
+        """date.fromisoformat on 3.11+ accepts these, but the pipeline compares
+        dates as plain strings and slices sd[:7] for the month, so anything but
+        YYYY-MM-DD corrupts downstream logic."""
+        for value in ("20260907", "2026-W37-1", "2026-09-07T10:30:00"):
+            with self.subTest(value=value):
+                with self.assertLogs("scrapers.pipeline", level="WARNING"):
+                    self.assertIsNone(_to_iso(value))
+
+    def test_datetimes_are_narrowed_to_a_plain_date(self):
+        import datetime
+
+        self.assertEqual(_to_iso(datetime.datetime(2026, 9, 7, 10, 30)), "2026-09-07")
+
+    def test_non_date_values_are_discarded_not_raised(self):
+        with self.assertLogs("scrapers.pipeline", level="WARNING"):
+            self.assertIsNone(_to_iso(12345))
+
+    def test_bad_date_does_not_outrank_a_valid_past_course(self):
+        """Same chamber/trade/parts, so sort_key actually compares them."""
+        records = [
+            {
+                "chamber_slug": "hwk-x", "trade_slug": "tischler", "parts": [1],
+                "course_fee": 999.0, "availability": "unknown",
+                "start_date": "2020-99-99",
+            },
+            {
+                "chamber_slug": "hwk-x", "trade_slug": "tischler", "parts": [1],
+                "course_fee": 1000.0, "availability": "unknown",
+                "start_date": "2026-09-07",
+            },
+        ]
+        picked = build_course_fees(records, "2026-08-07")
+        self.assertEqual(len(picked), 1)
+        self.assertEqual(picked[0]["fee"], 1000.0, "the real upcoming course must win")
+
     def test_build_course_fees_survives_a_legacy_bad_date(self):
         """Records already committed to data/ predate the _to_iso guard."""
         records = [
