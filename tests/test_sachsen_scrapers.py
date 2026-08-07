@@ -9,6 +9,7 @@ from scrapers.hwk_dresden import (
     EXAM_FEES_PAGE_URL as DRESDEN_EXAM_FEES_PAGE_URL,
     HwkDresdenScraper,
     _availability,
+    _parse_address,
     parse_dresden_title,
 )
 from scrapers.hwk_leipzig import EXAM_FEES_PAGE_URL as LEIPZIG_EXAM_FEES_PAGE_URL, HwkLeipzigScraper
@@ -347,6 +348,76 @@ class SachsenIntegrationTests(unittest.TestCase):
         for slug, scraper in expected.items():
             self.assertIs(SCRAPERS[slug], scraper)
             self.assertEqual(scraper.chamber_region, "Sachsen")
+
+
+class DresdenAddressTests(unittest.TestCase):
+    """njumii course pages put the venue block after the course prose, so the
+    street pattern must not absorb the preceding text (issue: 73 records shipped
+    451-char paragraphs as their street and never geocoded)."""
+
+    def test_street_is_not_absorbed_by_preceding_course_prose(self):
+        text = (
+            "Dachplatten und Dachziegeln Au\u00dfenwandbekleidung Holz- und "
+            "Metallarbeiten Dachabdichtungen Projektarbeit Zielgruppe "
+            "Voraussetzung Kursort G\u00e4stehaus Hinweis Gesellen des "
+            "Dachdeckerhandwerks LBZ - Landesbildungszentrum des S\u00e4chsischen "
+            "Dachdeckerhandwerks e.V. L\u00f6\u00dfnitzer Str. 50, 08301 Bad Schlema"
+        )
+        self.assertEqual(
+            _parse_address(text),
+            ("L\u00f6\u00dfnitzer Str. 50", "08301", "Bad Schlema"),
+        )
+
+    def test_company_name_is_not_absorbed_into_street(self):
+        text = (
+            "Technologie- und Gr\u00fcnderzentrum Bautzen GmbH "
+            "Preuschwitzer Stra\u00dfe 20, 02625 Bautzen"
+        )
+        self.assertEqual(
+            _parse_address(text),
+            ("Preuschwitzer Stra\u00dfe 20", "02625", "Bautzen"),
+        )
+
+    def test_article_prefixed_street_keeps_its_prefix(self):
+        self.assertEqual(
+            _parse_address("Am Lagerplatz 8 01099 Dresden"),
+            ("Am Lagerplatz 8", "01099", "Dresden"),
+        )
+
+    def test_city_does_not_absorb_trailing_page_prose(self):
+        """The venue block is followed by more page text, so the city group must
+        stop at the place name rather than running to the end of the line."""
+        text = "L\u00f6\u00dfnitzer Str. 50, 08301 Bad Schlema Weitere Informationen zum Kurs Telefon"
+        self.assertEqual(
+            _parse_address(text),
+            ("L\u00f6\u00dfnitzer Str. 50", "08301", "Bad Schlema"),
+        )
+
+    def test_multiword_and_parenthesised_place_names_survive(self):
+        self.assertEqual(
+            _parse_address("Musterweg 1, 06108 Halle (Saale) Hinweis")[2],
+            "Halle (Saale)",
+        )
+        self.assertEqual(
+            _parse_address("Musterweg 1, 15230 Frankfurt an der Oder Kursort")[2],
+            "Frankfurt an der Oder",
+        )
+        self.assertEqual(
+            _parse_address("Musterweg 1, 78050 Villingen-Schwenningen Telefon")[2],
+            "Villingen-Schwenningen",
+        )
+
+    def test_zip_only_fallback_also_bounds_the_city(self):
+        self.assertEqual(
+            _parse_address("Veranstaltungsort wird bekannt gegeben 01099 Dresden Hinweis"),
+            ("", "01099", "Dresden"),
+        )
+
+    def test_zip_only_text_yields_no_street(self):
+        self.assertEqual(
+            _parse_address("Veranstaltungsort wird bekannt gegeben 01099 Dresden"),
+            ("", "01099", "Dresden"),
+        )
 
 
 if __name__ == "__main__":
