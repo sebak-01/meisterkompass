@@ -445,7 +445,7 @@
           "qualifier": ""
         },
         "4": {
-          "fee": 205.0,
+          "fee": 420.0,
           "fee_max": null,
           "qualifier": ""
         }
@@ -848,13 +848,6 @@
       "tischler": {
         "1,2": {
           "fee": 2210.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "zahntechniker": {
-        "1,2": {
-          "fee": 3010.0,
           "fee_max": null,
           "qualifier": ""
         }
@@ -1491,7 +1484,7 @@
       },
       "friseur": {
         "1,2": {
-          "fee": 1375.0,
+          "fee": 1525.0,
           "fee_max": null,
           "qualifier": "ca."
         }
