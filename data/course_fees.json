@@ -1,15 +1,5 @@
 [
   {
-    "chamber_slug": "hwk-kassel",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      3
-    ],
-    "fee": 1485.0,
-    "exam_fee_scraped": null,
-    "is_generic": true
-  },
-  {
     "chamber_slug": "hwk-cottbus",
     "trade_slug": "allgemein-teil-iii-iv",
     "parts": [
@@ -291,6 +281,16 @@
       3
     ],
     "fee": 1978.0,
+    "exam_fee_scraped": null,
+    "is_generic": true
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      3
+    ],
+    "fee": 2100.0,
     "exam_fee_scraped": null,
     "is_generic": true
   },

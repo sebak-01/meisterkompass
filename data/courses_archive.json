@@ -221,6 +221,42 @@
     "source_url": "https://www.bbz-marburg.de/kurs/mv-shk-vz/"
   },
   {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-08-07",
+    "end_date": "2026-12-05",
+    "start_date_note": "",
+    "duration_hours": 240,
+    "course_fee": 1485.0,
+    "course_fee_display": "1.485 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 340.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "340 €",
+      "from_tariff": true
+    },
+    "city": "Marburg",
+    "street": "Umgehungsstraße 1-3",
+    "zip_code": "35043",
+    "latitude": 50.7872688,
+    "longitude": 8.7666044,
+    "availability": "available",
+    "source_url": "https://www.bbz-marburg.de/kurs/mv-iii-tz/"
+  },
+  {
     "chamber_slug": "hwk-konstanz",
     "chamber_name": "HWK Konstanz",
     "chamber_region": "Baden-Württemberg",
