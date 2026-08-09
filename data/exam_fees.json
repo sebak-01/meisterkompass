@@ -851,6 +851,13 @@
           "fee_max": null,
           "qualifier": ""
         }
+      },
+      "zahntechniker": {
+        "1,2": {
+          "fee": 3010.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
       }
     },
     "hwk-erfurt": {

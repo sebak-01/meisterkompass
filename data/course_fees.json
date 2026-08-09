@@ -5817,6 +5817,17 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-duesseldorf",
+    "trade_slug": "zahntechniker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 10302.0,
+    "exam_fee_scraped": 3010.0,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-oberfranken",
     "trade_slug": "fliesen-platten-und-mosaikleger",
     "parts": [
@@ -7016,19 +7027,6 @@
       4
     ],
     "fee": 15950.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-stuttgart",
-    "trade_slug": "backer",
-    "parts": [
-      1,
-      2,
-      3,
-      4
-    ],
-    "fee": 4950.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
