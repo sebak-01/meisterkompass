@@ -20080,7 +20080,7 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufm-betriebsfuehrung-hwo-teilzeit/#termin-11"
   },
   {
@@ -40259,42 +40259,6 @@
     "longitude": 10.1200455,
     "availability": "full",
     "source_url": "https://www.elbcampus.de/weiterbildung/meistervorbereitung-im-tischlerhandwerk/"
-  },
-  {
-    "chamber_slug": "hwk-hamburg",
-    "chamber_name": "HWK Hamburg",
-    "chamber_region": "Hamburg",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-08-10",
-    "end_date": "2026-09-25",
-    "start_date_note": "",
-    "duration_hours": 242,
-    "course_fee": 1650.0,
-    "course_fee_display": "1.650 €",
-    "exam_fee_scraped": 330.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 330.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "330 €",
-      "from_tariff": false
-    },
-    "city": "Hamburg",
-    "street": "Zum Handwerkszentrum 1",
-    "zip_code": "21079",
-    "latitude": 53.4582352,
-    "longitude": 9.9959008,
-    "availability": "waitlist",
-    "source_url": "https://www.elbcampus.de/weiterbildung/gepr.-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo/"
   },
   {
     "chamber_slug": "hwk-hamburg",
@@ -76619,43 +76583,6 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
-    "start_date": "2026-08-10",
-    "end_date": "2026-11-13",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": 3059.0,
-    "course_fee_display": "3.059 €",
-    "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 500.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "500 €",
-      "from_tariff": false
-    },
-    "city": "Münster",
-    "street": "Albrecht-Thaer-Straße 9",
-    "zip_code": "48147",
-    "latitude": 51.9830337,
-    "longitude": 7.6358696,
-    "availability": "waitlist",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-1"
-  },
-  {
-    "chamber_slug": "hwk-muenster",
-    "chamber_name": "HWK Münster",
-    "chamber_region": "Nordrhein-Westfalen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
-    "parts": [
-      3,
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
     "start_date": "2026-09-07",
     "end_date": "2026-12-11",
     "start_date_note": "",
@@ -76677,7 +76604,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "waitlist",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-2"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-1"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -76714,7 +76641,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "waitlist",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-3"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-2"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -76788,7 +76715,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "waitlist",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-4"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-3"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -76899,7 +76826,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-5"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-4"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -76936,7 +76863,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "waitlist",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-6"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-5"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -76973,7 +76900,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "waitlist",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-7"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-6"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -77047,7 +76974,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-8"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-7"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -77084,7 +77011,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-9"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-8"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -77158,7 +77085,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-10"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-9"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -77195,7 +77122,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "waitlist",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-11"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-10"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -77232,7 +77159,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-12"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-11"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -77269,7 +77196,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-13"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-12"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -77306,7 +77233,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-14"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-13"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -77380,7 +77307,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-15"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-14"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -77454,7 +77381,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-16"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-15"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -77528,7 +77455,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-17"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-16"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -77565,7 +77492,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-18"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-17"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -77602,7 +77529,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-19"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-18"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -77639,7 +77566,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-20"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-19"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -77713,7 +77640,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-21"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-20"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -77787,7 +77714,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-22"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-21"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -77824,7 +77751,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-23"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-22"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -77898,7 +77825,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-24"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-23"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -77935,7 +77862,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-25"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-24"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -77972,7 +77899,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-26"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-25"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -78009,7 +77936,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-27"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-26"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -78046,7 +77973,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-28"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-27"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -78083,7 +78010,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-29"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-28"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -78120,7 +78047,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-30"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-29"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -78157,7 +78084,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-31"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-30"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -78194,7 +78121,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-32"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-31"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -78268,7 +78195,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-33"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-32"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -98459,7 +98386,7 @@
     "zip_code": "49088",
     "latitude": 52.290842,
     "longitude": 8.0401607,
-    "availability": "unknown",
+    "availability": "full",
     "source_url": "https://www.btz-osnabrueck.de/seminar/mstrmauvza/#kurs-20261"
   },
   {
@@ -113692,45 +113619,6 @@
     "chamber_region": "Hessen",
     "trade_slug": "zweirad",
     "trade_name": "Zweirad",
-    "title": "Zweirad (Teile I + II + III + IV)",
-    "parts": [
-      1,
-      2,
-      3,
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-08-10",
-    "end_date": "2027-03-13",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": 11480.0,
-    "course_fee_display": "11.480 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 820.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "820 €",
-      "from_tariff": true
-    },
-    "city": "Frankfurt am Main",
-    "street": "Schönstraße 21",
-    "zip_code": "60327",
-    "latitude": 50.1013705,
-    "longitude": 8.65682,
-    "availability": "available",
-    "source_url": "https://portal.hwk-rhein-main.de/seminar/ml-20vz-m/"
-  },
-  {
-    "chamber_slug": "hwk-rhein-main",
-    "chamber_name": "HWK Frankfurt-Rhein-Main",
-    "chamber_region": "Hessen",
-    "trade_slug": "zweirad",
-    "trade_name": "Zweirad",
     "title": "Zweirad (Teile I + II)",
     "parts": [
       1,
@@ -123719,6 +123607,45 @@
     "chamber_slug": "hwk-stuttgart",
     "chamber_name": "HWK Region Stuttgart",
     "chamber_region": "Baden-Württemberg",
+    "trade_slug": "backer",
+    "trade_name": "Bäcker",
+    "title": "Bäcker (Teile I + II + III + IV)",
+    "parts": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-01-11",
+    "end_date": "2027-06-25",
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": 4950.0,
+    "course_fee_display": "4.950 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 1050.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "1.050 €",
+      "from_tariff": true
+    },
+    "city": "Stuttgart",
+    "street": "Wilhelmstraße 7",
+    "zip_code": "70182",
+    "latitude": 48.7706662,
+    "longitude": 9.1800889,
+    "availability": "unknown",
+    "source_url": "https://bivsuedwest.de/meistervorbereitungskurse/"
+  },
+  {
+    "chamber_slug": "hwk-stuttgart",
+    "chamber_name": "HWK Region Stuttgart",
+    "chamber_region": "Baden-Württemberg",
     "trade_slug": "installateur-und-heizungsbauer",
     "trade_name": "Installateur und Heizungsbauer",
     "title": "Installateur und Heizungsbauer (Teile I + II)",
@@ -131153,7 +131080,7 @@
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
     "start_date": "2027-09-10",
-    "end_date": "2028-06-24",
+    "end_date": "2028-06-17",
     "start_date_note": "",
     "duration_hours": 880,
     "course_fee": 7370.0,
@@ -131890,7 +131817,7 @@
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
     "start_date": "2027-09-10",
-    "end_date": "2028-06-24",
+    "end_date": "2028-06-17",
     "start_date_note": "",
     "duration_hours": 884,
     "course_fee": 7370.0,
@@ -132317,6 +132244,42 @@
     "chamber_region": "Baden-Württemberg",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-02-15",
+    "end_date": "2027-07-14",
+    "start_date_note": "",
+    "duration_hours": 240,
+    "course_fee": 1950.0,
+    "course_fee_display": "1.950 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 260.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "260 €",
+      "from_tariff": true
+    },
+    "city": "Ulm",
+    "street": "Köllestraße 55",
+    "zip_code": "89077",
+    "latitude": 48.3856229,
+    "longitude": 9.9563226,
+    "availability": "available",
+    "source_url": "https://www.bildungsakademie-ulm.de/seminar/1-mv-teil-iii-tz/#kurs-1-MV-TEIL"
+  },
+  {
+    "chamber_slug": "hwk-ulm",
+    "chamber_name": "HWK Ulm",
+    "chamber_region": "Baden-Württemberg",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Berufs- und Arbeitspädagogik (Teil IV)",
     "parts": [
       4
@@ -132490,6 +132453,42 @@
     "longitude": 9.9563226,
     "availability": "available",
     "source_url": "https://www.bildungsakademie-ulm.de/seminar/1-mv-aevo-vz-2/#kurs-1-MV-AEVO-VZ"
+  },
+  {
+    "chamber_slug": "hwk-ulm",
+    "chamber_name": "HWK Ulm",
+    "chamber_region": "Baden-Württemberg",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-08-30",
+    "end_date": "2028-02-09",
+    "start_date_note": "",
+    "duration_hours": 240,
+    "course_fee": 1950.0,
+    "course_fee_display": "1.950 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 260.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "260 €",
+      "from_tariff": true
+    },
+    "city": "Ulm",
+    "street": "Köllestraße 55",
+    "zip_code": "89077",
+    "latitude": 48.3856229,
+    "longitude": 9.9563226,
+    "availability": "available",
+    "source_url": "https://www.bildungsakademie-ulm.de/seminar/1-mv-teil-iii-tz/#kurs-1-MV-TEIL"
   },
   {
     "chamber_slug": "hwk-ulm",

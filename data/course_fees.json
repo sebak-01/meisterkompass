@@ -55,19 +55,6 @@
     "is_generic": false
   },
   {
-    "chamber_slug": "hwk-rhein-main",
-    "trade_slug": "zweirad",
-    "parts": [
-      1,
-      2,
-      3,
-      4
-    ],
-    "fee": 11480.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
     "chamber_slug": "hwk-wiesbaden",
     "trade_slug": "kosmetiker",
     "parts": [
@@ -7027,6 +7014,19 @@
       4
     ],
     "fee": 15950.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-stuttgart",
+    "trade_slug": "backer",
+    "parts": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "fee": 4950.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
