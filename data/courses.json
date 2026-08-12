@@ -406,6 +406,43 @@
     "chamber_slug": "hwk-aachen",
     "chamber_name": "HWK Aachen",
     "chamber_region": "Nordrhein-Westfalen",
+    "trade_slug": "metallbauer",
+    "trade_name": "Metallbauer",
+    "title": "Metallbauer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-07-12",
+    "end_date": "2027-11-26",
+    "start_date_note": "",
+    "duration_hours": 850,
+    "course_fee": 7365.0,
+    "course_fee_display": "7.365 €",
+    "exam_fee_scraped": 610.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 610.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "610 €",
+      "from_tariff": false
+    },
+    "city": "Aachen",
+    "street": "Tempelhofer Str. 15 - 17",
+    "zip_code": "52068",
+    "latitude": 50.7818511,
+    "longitude": 6.1312387,
+    "availability": "available",
+    "source_url": "https://www.hwk-aachen.de/33,0,coursedetail.html?id=42850"
+  },
+  {
+    "chamber_slug": "hwk-aachen",
+    "chamber_name": "HWK Aachen",
+    "chamber_region": "Nordrhein-Westfalen",
     "trade_slug": "tischler",
     "trade_name": "Tischler",
     "title": "Tischler (Teile I + II)",
@@ -4648,7 +4685,7 @@
     "zip_code": "",
     "latitude": 52.7798987,
     "longitude": 9.2984612,
-    "availability": "waitlist",
+    "availability": "available",
     "source_url": "https://weiterbildung.hwk-bls.de/22,0,coursedetail.html?id=315221"
   },
   {
@@ -6679,43 +6716,6 @@
     "longitude": 8.7803106,
     "availability": "available",
     "source_url": "https://www.handwerkbremen.de/service-center/kurse-und-seminare#/vorlage/MVK/209280?kurs=75125"
-  },
-  {
-    "chamber_slug": "hwk-bremen",
-    "chamber_name": "HWK Bremen",
-    "chamber_region": "Bremen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
-    "parts": [
-      3,
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-08-16",
-    "end_date": "2027-10-22",
-    "start_date_note": "",
-    "duration_hours": 300,
-    "course_fee": 3200.0,
-    "course_fee_display": "3.200 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 320.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "320 €",
-      "from_tariff": true
-    },
-    "city": "Bremen",
-    "street": "Schongauerstr. 2",
-    "zip_code": "28219",
-    "latitude": 53.0979216,
-    "longitude": 8.7803106,
-    "availability": "available",
-    "source_url": "https://www.handwerkbremen.de/service-center/kurse-und-seminare#/vorlage/MVK/215045?kurs=69527"
   },
   {
     "chamber_slug": "hwk-bremen",
@@ -14645,7 +14645,7 @@
     "zip_code": "09116",
     "latitude": 50.8307235,
     "longitude": 12.8727524,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/vorbereitungskurs-zimmerermeister-teile-i-ii/#termin_1202"
   },
   {
@@ -17862,6 +17862,43 @@
     "source_url": "https://www.hwk-cottbus.de/7,0,coursedetail.html?id=65156"
   },
   {
+    "chamber_slug": "hwk-cottbus",
+    "chamber_name": "HWK Cottbus",
+    "chamber_region": "Brandenburg",
+    "trade_slug": "zimmerer",
+    "trade_name": "Zimmerer",
+    "title": "Zimmerer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-10-11",
+    "end_date": "2028-06-16",
+    "start_date_note": "",
+    "duration_hours": 1120,
+    "course_fee": 10650.0,
+    "course_fee_display": "10.650 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 825.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "825 €",
+      "from_tariff": true
+    },
+    "city": "Großräschen",
+    "street": "Werner-Seelenbinder-Straße 24",
+    "zip_code": "01983",
+    "latitude": 51.580024,
+    "longitude": 13.9997132,
+    "availability": "available",
+    "source_url": "https://www.hwk-cottbus.de/7,0,coursedetail.html?id=67917"
+  },
+  {
     "chamber_slug": "hwk-dortmund",
     "chamber_name": "HWK Dortmund",
     "chamber_region": "Nordrhein-Westfalen",
@@ -19432,7 +19469,7 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufm-betriebsfuehrung-hwo-teilzeit/#termin-7"
   },
   {
@@ -37605,12 +37642,12 @@
     "format": "part_time",
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
-    "start_date": null,
-    "end_date": null,
+    "start_date": "2026-09-07",
+    "end_date": "2028-07-15",
     "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": null,
-    "course_fee_display": "—",
+    "duration_hours": 960,
+    "course_fee": 10660.0,
+    "course_fee_display": "10.660 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -37625,8 +37662,8 @@
     "zip_code": "06132",
     "latitude": 51.4232026,
     "longitude": 12.0122588,
-    "availability": "unknown",
-    "source_url": "https://www.hwkhalle.de/seminar/mvl-i-h-teil-1-und-2/"
+    "availability": "full",
+    "source_url": "https://www.hwkhalle.de/seminar/mvl-i-h-teil-1-und-2/#kurs-27281"
   },
   {
     "chamber_slug": "hwk-halle-saale",
@@ -46349,6 +46386,188 @@
     "chamber_slug": "hwk-kassel",
     "chamber_name": "HWK Kassel",
     "chamber_region": "Hessen",
+    "trade_slug": "elektrotechniker",
+    "trade_name": "Elektrotechniker",
+    "title": "Elektrotechniker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-08-24",
+    "end_date": "2027-06-11",
+    "start_date_note": "",
+    "duration_hours": 1200,
+    "course_fee": 9500.0,
+    "course_fee_display": "9.500 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 730.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "730 €",
+      "from_tariff": true
+    },
+    "city": "Petersberg",
+    "street": "Goerdelerstraße 139",
+    "zip_code": "36100",
+    "latitude": 50.5673891,
+    "longitude": 9.699491,
+    "availability": "available",
+    "source_url": "https://www.bbz-mitte.de/de/kursfinder/elektrotechnikermeister-teil-ii-i-vollzeit"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "elektrotechniker",
+    "trade_name": "Elektrotechniker",
+    "title": "Elektrotechniker (Teil II)",
+    "parts": [
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-02-16",
+    "end_date": "2028-09-23",
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": 6150.0,
+    "course_fee_display": "6.150 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 420.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "420 €",
+      "from_tariff": true
+    },
+    "city": "Petersberg",
+    "street": "Goerdelerstraße 139",
+    "zip_code": "36100",
+    "latitude": 50.5673891,
+    "longitude": 9.699491,
+    "availability": "available",
+    "source_url": "https://www.bbz-mitte.de/de/kursfinder/elektrotechnikermeister-teil-ii"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "elektrotechniker",
+    "trade_name": "Elektrotechniker",
+    "title": "Elektrotechniker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-08-23",
+    "end_date": "2028-06-14",
+    "start_date_note": "",
+    "duration_hours": 1200,
+    "course_fee": 9750.0,
+    "course_fee_display": "9.750 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 730.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "730 €",
+      "from_tariff": true
+    },
+    "city": "Petersberg",
+    "street": "Goerdelerstraße 139",
+    "zip_code": "36100",
+    "latitude": 50.5673891,
+    "longitude": 9.699491,
+    "availability": "available",
+    "source_url": "https://www.bbz-mitte.de/de/kursfinder/elektrotechnikermeister-teil-ii-i-vollzeit"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "elektrotechniker",
+    "trade_name": "Elektrotechniker",
+    "title": "Elektrotechniker (Teil I)",
+    "parts": [
+      1
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": null,
+    "end_date": null,
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": null,
+    "course_fee_display": "—",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 420.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "420 €",
+      "from_tariff": true
+    },
+    "city": "Petersberg",
+    "street": "Goerdelerstraße 139",
+    "zip_code": "36100",
+    "latitude": 50.5673891,
+    "longitude": 9.699491,
+    "availability": "available",
+    "source_url": "https://www.bbz-mitte.de/de/kursfinder/elektrotechnikermeister-teil-i"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "elektrotechniker",
+    "trade_name": "Elektrotechniker",
+    "title": "Elektrotechniker (Teil II)",
+    "parts": [
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": null,
+    "end_date": null,
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": null,
+    "course_fee_display": "—",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 420.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "420 €",
+      "from_tariff": true
+    },
+    "city": "Petersberg",
+    "street": "Goerdelerstraße 139",
+    "zip_code": "36100",
+    "latitude": 50.5673891,
+    "longitude": 9.699491,
+    "availability": "available",
+    "source_url": "https://www.bbz-mitte.de/de/kursfinder/elektrotechnikermeister-teil-ii"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
     "trade_slug": "feinwerkmechaniker",
     "trade_name": "Feinwerkmechaniker",
     "title": "Feinwerkmechaniker (Teile I + II)",
@@ -46758,6 +46977,42 @@
     "chamber_region": "Hessen",
     "trade_slug": "kfz-techniker",
     "trade_name": "Kfz.-Techniker",
+    "title": "Kfz.-Techniker (Teil II)",
+    "parts": [
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-03-08",
+    "end_date": "2027-06-11",
+    "start_date_note": "",
+    "duration_hours": 530,
+    "course_fee": 3990.0,
+    "course_fee_display": "3.990 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 420.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "420 €",
+      "from_tariff": true
+    },
+    "city": "Petersberg",
+    "street": "Goerdelerstraße 139",
+    "zip_code": "36100",
+    "latitude": 50.5673891,
+    "longitude": 9.699491,
+    "availability": "available",
+    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-im-kfz-techniker-handwerk"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "kfz-techniker",
+    "trade_name": "Kfz.-Techniker",
     "title": "Kfz.-Techniker (Teile I + II)",
     "parts": [
       1,
@@ -46788,6 +47043,42 @@
     "longitude": 8.7666044,
     "availability": "available",
     "source_url": "https://www.bbz-marburg.de/kurs/mv-kfz-tz/"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "kfz-techniker",
+    "trade_name": "Kfz.-Techniker",
+    "title": "Kfz.-Techniker (Teil I)",
+    "parts": [
+      1
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-06-14",
+    "end_date": "2027-08-06",
+    "start_date_note": "",
+    "duration_hours": 320,
+    "course_fee": 2990.0,
+    "course_fee_display": "2.990 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 420.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "420 €",
+      "from_tariff": true
+    },
+    "city": "Petersberg",
+    "street": "Goerdelerstraße 139",
+    "zip_code": "36100",
+    "latitude": 50.5673891,
+    "longitude": 9.699491,
+    "availability": "available",
+    "source_url": "https://www.bbz-mitte.de/de/kursfinder/kraftfahrzeugservicetechniker"
   },
   {
     "chamber_slug": "hwk-kassel",
@@ -46861,6 +47152,78 @@
     "longitude": 8.7666044,
     "availability": "available",
     "source_url": "https://www.bbz-marburg.de/kurs/mv-kfz-tz/"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "kfz-techniker",
+    "trade_name": "Kfz.-Techniker",
+    "title": "Kfz.-Techniker (Teil II)",
+    "parts": [
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-03-13",
+    "end_date": "2028-06-16",
+    "start_date_note": "",
+    "duration_hours": 530,
+    "course_fee": 4600.0,
+    "course_fee_display": "4.600 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 420.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "420 €",
+      "from_tariff": true
+    },
+    "city": "Petersberg",
+    "street": "Goerdelerstraße 139",
+    "zip_code": "36100",
+    "latitude": 50.5673891,
+    "longitude": 9.699491,
+    "availability": "available",
+    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-im-kfz-techniker-handwerk"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "kfz-techniker",
+    "trade_name": "Kfz.-Techniker",
+    "title": "Kfz.-Techniker (Teil I)",
+    "parts": [
+      1
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-06-19",
+    "end_date": "2028-08-11",
+    "start_date_note": "",
+    "duration_hours": 320,
+    "course_fee": 3700.0,
+    "course_fee_display": "3.700 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 420.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "420 €",
+      "from_tariff": true
+    },
+    "city": "Petersberg",
+    "street": "Goerdelerstraße 139",
+    "zip_code": "36100",
+    "latitude": 50.5673891,
+    "longitude": 9.699491,
+    "availability": "available",
+    "source_url": "https://www.bbz-mitte.de/de/kursfinder/kraftfahrzeugservicetechniker"
   },
   {
     "chamber_slug": "hwk-kassel",
@@ -46970,6 +47333,80 @@
     "longitude": 9.498614,
     "availability": "unknown",
     "source_url": "https://www.kfz-innung-kassel.de/aus-und-weiterbildung-im-ftz/seminare-im-ftz#accordion-content-1109-490"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "land-und-baumaschinenmechatroniker",
+    "trade_name": "Land- und Baumaschinenmechatroniker",
+    "title": "Land- und Baumaschinenmechatroniker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-09-28",
+    "end_date": "2027-04-23",
+    "start_date_note": "",
+    "duration_hours": 1100,
+    "course_fee": 10500.0,
+    "course_fee_display": "10.500 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 730.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "730 €",
+      "from_tariff": true
+    },
+    "city": "Petersberg",
+    "street": "Goerdelerstraße 139",
+    "zip_code": "36100",
+    "latitude": 50.5673891,
+    "longitude": 9.699491,
+    "availability": "available",
+    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-landmaschinenmechaniker-handwerk-teile-i-ii"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "land-und-baumaschinenmechatroniker",
+    "trade_name": "Land- und Baumaschinenmechatroniker",
+    "title": "Land- und Baumaschinenmechatroniker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-10-04",
+    "end_date": "2028-04-28",
+    "start_date_note": "",
+    "duration_hours": 1100,
+    "course_fee": 11000.0,
+    "course_fee_display": "11.000 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 730.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "730 €",
+      "from_tariff": true
+    },
+    "city": "Petersberg",
+    "street": "Goerdelerstraße 139",
+    "zip_code": "36100",
+    "latitude": 50.5673891,
+    "longitude": 9.699491,
+    "availability": "available",
+    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-landmaschinenmechaniker-handwerk-teile-i-ii"
   },
   {
     "chamber_slug": "hwk-kassel",
@@ -47266,6 +47703,43 @@
     "longitude": 9.1225344,
     "availability": "full",
     "source_url": "https://veranstaltung.holzfachschule.de/seminar/vorbereitungslehrgang-auf-die-meisterpruefung-im-tischlerhandwerk-teil-i-ii_104765"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "tischler",
+    "trade_name": "Tischler",
+    "title": "Tischler (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-01-18",
+    "end_date": "2027-06-11",
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": 9500.0,
+    "course_fee_display": "9.500 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 730.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "730 €",
+      "from_tariff": true
+    },
+    "city": "Petersberg",
+    "street": "Goerdelerstraße 139",
+    "zip_code": "36100",
+    "latitude": 50.5673891,
+    "longitude": 9.699491,
+    "availability": "available",
+    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungslehrgang-im-tischler-schreinerhandwerk"
   },
   {
     "chamber_slug": "hwk-kassel",
@@ -47719,6 +48193,42 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
+    "start_date": "2026-10-19",
+    "end_date": "2026-11-06",
+    "start_date_note": "",
+    "duration_hours": 92,
+    "course_fee": 750.0,
+    "course_fee_display": "750 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 235.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "235 €",
+      "from_tariff": true
+    },
+    "city": "Kassel",
+    "street": "Falderbaumstraße 18-20",
+    "zip_code": "34123",
+    "latitude": 51.2841009,
+    "longitude": 9.498614,
+    "availability": "available",
+    "source_url": "https://www.bz-kassel.de/bildungsangebot/kaufmaennisches-fachwissen-und-management/kursdetail/kurs-830"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
+    "parts": [
+      4
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
     "start_date": "2026-11-30",
     "end_date": "2026-12-15",
     "start_date_note": "",
@@ -47778,6 +48288,42 @@
     "longitude": 9.1225344,
     "availability": "available",
     "source_url": "https://veranstaltung.holzfachschule.de/seminar/vorbereitungslehrgang-auf-die-meisterpruefung-teil-iii-iv_104853"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-01-04",
+    "end_date": "2027-02-26",
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": 1830.0,
+    "course_fee_display": "1.830 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 340.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "340 €",
+      "from_tariff": true
+    },
+    "city": "Petersberg",
+    "street": "Goerdelerstraße 139",
+    "zip_code": "36100",
+    "latitude": 50.5673891,
+    "longitude": 9.699491,
+    "availability": "available",
+    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-teil-iii-fuer-alle-gewerke-im-handwerk"
   },
   {
     "chamber_slug": "hwk-kassel",
@@ -48188,6 +48734,42 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
+    "start_date": "2027-05-10",
+    "end_date": "2027-07-09",
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": 1830.0,
+    "course_fee_display": "1.830 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 340.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "340 €",
+      "from_tariff": true
+    },
+    "city": "Petersberg",
+    "street": "Goerdelerstraße 139",
+    "zip_code": "36100",
+    "latitude": 50.5673891,
+    "longitude": 9.699491,
+    "availability": "available",
+    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-teil-iii-fuer-alle-gewerke-im-handwerk"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
     "start_date": "2027-06-14",
     "end_date": "2027-07-16",
     "start_date_note": "",
@@ -48391,6 +48973,42 @@
     "longitude": 8.7666044,
     "availability": "available",
     "source_url": "https://www.bbz-marburg.de/kurs/ada-vz-96/"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-08-09",
+    "end_date": "2027-10-01",
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": 1830.0,
+    "course_fee_display": "1.830 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 340.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "340 €",
+      "from_tariff": true
+    },
+    "city": "Petersberg",
+    "street": "Goerdelerstraße 139",
+    "zip_code": "36100",
+    "latitude": 50.5673891,
+    "longitude": 9.699491,
+    "availability": "available",
+    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-teil-iii-fuer-alle-gewerke-im-handwerk"
   },
   {
     "chamber_slug": "hwk-kassel",
@@ -48832,6 +49450,42 @@
     "chamber_region": "Hessen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-01-10",
+    "end_date": "2028-02-29",
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": 1920.0,
+    "course_fee_display": "1.920 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 340.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "340 €",
+      "from_tariff": true
+    },
+    "city": "Petersberg",
+    "street": "Goerdelerstraße 139",
+    "zip_code": "36100",
+    "latitude": 50.5673891,
+    "longitude": 9.699491,
+    "availability": "available",
+    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-teil-iii-fuer-alle-gewerke-im-handwerk"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Berufs- und Arbeitspädagogik (Teil IV)",
     "parts": [
       4
@@ -48897,6 +49551,78 @@
     "longitude": 9.4991416,
     "availability": "available",
     "source_url": "https://www.bubiza.de/kurse/vollzeit-hoehere-berufsbildung/zimmermeister-holzbau-deutschland-anerkannt.html"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-05-08",
+    "end_date": "2028-06-30",
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": 1920.0,
+    "course_fee_display": "1.920 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 340.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "340 €",
+      "from_tariff": true
+    },
+    "city": "Petersberg",
+    "street": "Goerdelerstraße 139",
+    "zip_code": "36100",
+    "latitude": 50.5673891,
+    "longitude": 9.699491,
+    "availability": "available",
+    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-teil-iii-fuer-alle-gewerke-im-handwerk"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-07-31",
+    "end_date": "2028-09-22",
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": 1920.0,
+    "course_fee_display": "1.920 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 340.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "340 €",
+      "from_tariff": true
+    },
+    "city": "Petersberg",
+    "street": "Goerdelerstraße 139",
+    "zip_code": "36100",
+    "latitude": 50.5673891,
+    "longitude": 9.699491,
+    "availability": "available",
+    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-teil-iii-fuer-alle-gewerke-im-handwerk"
   },
   {
     "chamber_slug": "hwk-kassel",
@@ -49152,42 +49878,6 @@
     "longitude": 9.4991416,
     "availability": "available",
     "source_url": "https://www.bubiza.de/kurse/vollzeit-hoehere-berufsbildung/zimmermeister-holzbau-deutschland-anerkannt.html"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "zimmerer",
-    "trade_name": "Zimmerer",
-    "title": "Zimmerer (Teil I)",
-    "parts": [
-      1
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-08-11",
-    "end_date": "2026-10-02",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": 3990.0,
-    "course_fee_display": "3.990 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 420.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "420 €",
-      "from_tariff": true
-    },
-    "city": "Kassel",
-    "street": "Auedamm 18",
-    "zip_code": "34123",
-    "latitude": 51.3021202,
-    "longitude": 9.4991416,
-    "availability": "available",
-    "source_url": "https://www.bubiza.de/kurse/vollzeit-hoehere-berufsbildung/zimmermeister-fuer-architekten-ingenieure-techniker.html"
   },
   {
     "chamber_slug": "hwk-kassel",
@@ -49733,8 +50423,8 @@
     "end_date": "2027-11-26",
     "start_date_note": "",
     "duration_hours": 420,
-    "course_fee": 5990.0,
-    "course_fee_display": "5.990 €",
+    "course_fee": 6100.0,
+    "course_fee_display": "6.100 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -49844,8 +50534,8 @@
     "end_date": "2028-01-21",
     "start_date_note": "",
     "duration_hours": 1100,
-    "course_fee": 9800.0,
-    "course_fee_display": "9.800 €",
+    "course_fee": 10150.0,
+    "course_fee_display": "10.150 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -49881,8 +50571,8 @@
     "end_date": "2029-09-01",
     "start_date_note": "",
     "duration_hours": 1100,
-    "course_fee": 9800.0,
-    "course_fee_display": "9.800 €",
+    "course_fee": 10150.0,
+    "course_fee_display": "10.150 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -49898,7 +50588,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=112327&search-onr=52&img=7"
+    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=112327&search-onr=52&img=9"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -49918,8 +50608,8 @@
     "end_date": "2029-01-23",
     "start_date_note": "",
     "duration_hours": 1100,
-    "course_fee": 9800.0,
-    "course_fee_display": "9.800 €",
+    "course_fee": 10150.0,
+    "course_fee_display": "10.150 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -49935,7 +50625,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=110619&search-onr=52&img=20"
+    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=110619&search-onr=52&img=2"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -49955,8 +50645,8 @@
     "end_date": "2030-09-07",
     "start_date_note": "",
     "duration_hours": 1100,
-    "course_fee": 9800.0,
-    "course_fee_display": "9.800 €",
+    "course_fee": 10150.0,
+    "course_fee_display": "10.150 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -49972,7 +50662,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=115146&search-onr=52&img=16"
+    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=115146&search-onr=52&img=19"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -49992,8 +50682,8 @@
     "end_date": "2030-01-11",
     "start_date_note": "",
     "duration_hours": 1100,
-    "course_fee": 9800.0,
-    "course_fee_display": "9.800 €",
+    "course_fee": 10150.0,
+    "course_fee_display": "10.150 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -50009,7 +50699,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=112332&search-onr=52&img=17"
+    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=112332&search-onr=52&img=20"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -50029,8 +50719,8 @@
     "end_date": "2031-08-30",
     "start_date_note": "",
     "duration_hours": 1100,
-    "course_fee": 9800.0,
-    "course_fee_display": "9.800 €",
+    "course_fee": 10150.0,
+    "course_fee_display": "10.150 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -50046,7 +50736,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=116774&search-onr=52&img=20"
+    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=116774&search-onr=52&img=3"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -50066,8 +50756,8 @@
     "end_date": "2031-01-24",
     "start_date_note": "",
     "duration_hours": 1100,
-    "course_fee": 9800.0,
-    "course_fee_display": "9.800 €",
+    "course_fee": 10150.0,
+    "course_fee_display": "10.150 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -50083,7 +50773,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=114994&search-onr=52&img=1"
+    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=114994&search-onr=52&img=4"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -50103,8 +50793,8 @@
     "end_date": "2032-08-28",
     "start_date_note": "",
     "duration_hours": 1100,
-    "course_fee": 9800.0,
-    "course_fee_display": "9.800 €",
+    "course_fee": 10150.0,
+    "course_fee_display": "10.150 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -50120,7 +50810,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=119250&search-onr=52&img=3"
+    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=119250&search-onr=52&img=6"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -50140,8 +50830,8 @@
     "end_date": "2032-01-16",
     "start_date_note": "",
     "duration_hours": 1100,
-    "course_fee": 9800.0,
-    "course_fee_display": "9.800 €",
+    "course_fee": 10150.0,
+    "course_fee_display": "10.150 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -50157,7 +50847,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=117151&search-onr=52&img=4"
+    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=117151&search-onr=52&img=7"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -50177,8 +50867,8 @@
     "end_date": "2033-01-14",
     "start_date_note": "",
     "duration_hours": 1100,
-    "course_fee": 9800.0,
-    "course_fee_display": "9.800 €",
+    "course_fee": 10150.0,
+    "course_fee_display": "10.150 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -50194,7 +50884,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=118637&search-onr=52&img=6"
+    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=118637&search-onr=52&img=9"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -50214,8 +50904,8 @@
     "end_date": "2034-01-13",
     "start_date_note": "",
     "duration_hours": 1100,
-    "course_fee": 9800.0,
-    "course_fee_display": "9.800 €",
+    "course_fee": 10150.0,
+    "course_fee_display": "10.150 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -50231,7 +50921,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=120060&search-onr=52&img=8"
+    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=120060&search-onr=52&img=11"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -50311,6 +51001,80 @@
     "chamber_slug": "hwk-koblenz",
     "chamber_name": "HWK Koblenz",
     "chamber_region": "Rheinland-Pfalz",
+    "trade_slug": "feinwerkmechaniker",
+    "trade_name": "Feinwerkmechaniker",
+    "title": "Feinwerkmechaniker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-09-17",
+    "end_date": "2028-09-22",
+    "start_date_note": "",
+    "duration_hours": 800,
+    "course_fee": 7550.0,
+    "course_fee_display": "7.550 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 1800.0,
+      "fee_max": null,
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €",
+      "from_tariff": true
+    },
+    "city": "Koblenz",
+    "street": "August-Horch-Str. 6-8",
+    "zip_code": "56070",
+    "latitude": 50.3894351,
+    "longitude": 7.5720768,
+    "availability": "available",
+    "source_url": "https://www.hwk-koblenz.de/kurse/feinwerkmechaniker-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=121772&search-onr=52&img=19"
+  },
+  {
+    "chamber_slug": "hwk-koblenz",
+    "chamber_name": "HWK Koblenz",
+    "chamber_region": "Rheinland-Pfalz",
+    "trade_slug": "feinwerkmechaniker",
+    "trade_name": "Feinwerkmechaniker",
+    "title": "Feinwerkmechaniker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-11-22",
+    "end_date": "2028-05-19",
+    "start_date_note": "",
+    "duration_hours": 800,
+    "course_fee": 7550.0,
+    "course_fee_display": "7.550 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 1800.0,
+      "fee_max": null,
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €",
+      "from_tariff": true
+    },
+    "city": "Koblenz",
+    "street": "August-Horch-Str. 6-8",
+    "zip_code": "56070",
+    "latitude": 50.3894351,
+    "longitude": 7.5720768,
+    "availability": "available",
+    "source_url": "https://www.hwk-koblenz.de/kurse/feinwerkmechaniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=121777&search-onr=52&img=3"
+  },
+  {
+    "chamber_slug": "hwk-koblenz",
+    "chamber_name": "HWK Koblenz",
+    "chamber_region": "Rheinland-Pfalz",
     "trade_slug": "fleischer",
     "trade_name": "Fleischer",
     "title": "Fleischer (Teile I + II)",
@@ -50325,8 +51089,8 @@
     "end_date": "2028-08-23",
     "start_date_note": "",
     "duration_hours": 350,
-    "course_fee": 4690.0,
-    "course_fee_display": "4.690 €",
+    "course_fee": 4750.0,
+    "course_fee_display": "4.750 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -50342,7 +51106,7 @@
     "latitude": 50.3603382,
     "longitude": 7.5844202,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/fleischer-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=119741&search-onr=52&img=15"
+    "source_url": "https://www.hwk-koblenz.de/kurse/fleischer-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=119741&search-onr=52&img=17"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -50490,7 +51254,7 @@
     "latitude": 50.3603382,
     "longitude": 7.5844202,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/friseur-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=121187&search-onr=52&img=19"
+    "source_url": "https://www.hwk-koblenz.de/kurse/friseur-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=121187&search-onr=52&img=20"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -50564,7 +51328,7 @@
     "latitude": 50.3603382,
     "longitude": 7.5844202,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/geruestbauer-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=117968&search-onr=52&img=1"
+    "source_url": "https://www.hwk-koblenz.de/kurse/geruestbauer-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=117968&search-onr=52&img=2"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -50601,7 +51365,7 @@
     "latitude": 50.3603382,
     "longitude": 7.5844202,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/geruestbauer-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=120978&search-onr=52&img=12"
+    "source_url": "https://www.hwk-koblenz.de/kurse/geruestbauer-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=120978&search-onr=52&img=15"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -50749,7 +51513,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=108316&search-onr=52&img=4"
+    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=108316&search-onr=52&img=6"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -50786,7 +51550,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=110696&search-onr=52&img=15"
+    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=110696&search-onr=52&img=18"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -50823,7 +51587,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=115931&search-onr=52&img=18"
+    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=115931&search-onr=52&img=1"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -50860,7 +51624,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=113746&search-onr=52&img=19"
+    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=113746&search-onr=52&img=2"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -50897,7 +51661,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=115926&search-onr=52&img=2"
+    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=115926&search-onr=52&img=5"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -50934,7 +51698,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=118234&search-onr=52&img=5"
+    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=118234&search-onr=52&img=8"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -50971,7 +51735,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=119662&search-onr=52&img=7"
+    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=119662&search-onr=52&img=10"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -51230,7 +51994,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/kfz-techniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=120460&search-onr=52&img=9"
+    "source_url": "https://www.hwk-koblenz.de/kurse/kfz-techniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=120460&search-onr=52&img=11"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -51267,7 +52031,7 @@
     "latitude": 50.7821939,
     "longitude": 7.740086,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/kfz-techniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=121099&search-onr=52&img=17"
+    "source_url": "https://www.hwk-koblenz.de/kurse/kfz-techniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=121099&search-onr=52&img=19"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -51304,7 +52068,7 @@
     "latitude": 50.3603382,
     "longitude": 7.5844202,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/kfz-techniker-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=119721&search-onr=52&img=2"
+    "source_url": "https://www.hwk-koblenz.de/kurse/kfz-techniker-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=119721&search-onr=52&img=4"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -51324,8 +52088,8 @@
     "end_date": "2027-11-05",
     "start_date_note": "",
     "duration_hours": 490,
-    "course_fee": 7350.0,
-    "course_fee_display": "7.350 €",
+    "course_fee": 7550.0,
+    "course_fee_display": "7.550 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -51361,8 +52125,8 @@
     "end_date": "2028-11-07",
     "start_date_note": "",
     "duration_hours": 490,
-    "course_fee": 7350.0,
-    "course_fee_display": "7.350 €",
+    "course_fee": 7550.0,
+    "course_fee_display": "7.550 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -51378,7 +52142,7 @@
     "latitude": 50.3603382,
     "longitude": 7.5844202,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/konditoren-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=119736&search-onr=52&img=10"
+    "source_url": "https://www.hwk-koblenz.de/kurse/konditoren-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=119736&search-onr=52&img=12"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -51415,7 +52179,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/land-und-baumaschinenmechatroniker-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=120601&search-onr=52&img=13"
+    "source_url": "https://www.hwk-koblenz.de/kurse/land-und-baumaschinenmechatroniker-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=120601&search-onr=52&img=16"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -51509,8 +52273,8 @@
     "end_date": "2028-09-23",
     "start_date_note": "",
     "duration_hours": 550,
-    "course_fee": 6390.0,
-    "course_fee_display": "6.390 €",
+    "course_fee": 6600.0,
+    "course_fee_display": "6.600 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -51546,8 +52310,8 @@
     "end_date": "2028-03-31",
     "start_date_note": "",
     "duration_hours": 860,
-    "course_fee": 7550.0,
-    "course_fee_display": "7.550 €",
+    "course_fee": 7800.0,
+    "course_fee_display": "7.800 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -51563,7 +52327,44 @@
     "latitude": 50.3895583,
     "longitude": 7.5708933,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/maler-und-lackierer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=117526&search-onr=52&img=20"
+    "source_url": "https://www.hwk-koblenz.de/kurse/maler-und-lackierer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=117526&search-onr=52&img=1"
+  },
+  {
+    "chamber_slug": "hwk-koblenz",
+    "chamber_name": "HWK Koblenz",
+    "chamber_region": "Rheinland-Pfalz",
+    "trade_slug": "maler-und-lackierer",
+    "trade_name": "Maler und Lackierer",
+    "title": "Maler und Lackierer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-09-08",
+    "end_date": "2030-03-30",
+    "start_date_note": "",
+    "duration_hours": 860,
+    "course_fee": 7800.0,
+    "course_fee_display": "7.800 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 1800.0,
+      "fee_max": null,
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €",
+      "from_tariff": true
+    },
+    "city": "Koblenz",
+    "street": "August-Horch-Str. 6",
+    "zip_code": "56070",
+    "latitude": 50.3895583,
+    "longitude": 7.5708933,
+    "availability": "available",
+    "source_url": "https://www.hwk-koblenz.de/kurse/maler-und-lackierer-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=121760&search-onr=52&img=8"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -51674,7 +52475,7 @@
     "latitude": 50.3895583,
     "longitude": 7.5708933,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/maurer-und-betonbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=120845&search-onr=52&img=2"
+    "source_url": "https://www.hwk-koblenz.de/kurse/maurer-und-betonbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=120845&search-onr=52&img=4"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -51694,8 +52495,8 @@
     "end_date": "2028-04-07",
     "start_date_note": "",
     "duration_hours": 650,
-    "course_fee": 6990.0,
-    "course_fee_display": "6.990 €",
+    "course_fee": 7200.0,
+    "course_fee_display": "7.200 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -51731,8 +52532,8 @@
     "end_date": "2027-11-05",
     "start_date_note": "",
     "duration_hours": 650,
-    "course_fee": 6990.0,
-    "course_fee_display": "6.990 €",
+    "course_fee": 7200.0,
+    "course_fee_display": "7.200 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -51895,7 +52696,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/strassenbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=119901&search-onr=52&img=5"
+    "source_url": "https://www.hwk-koblenz.de/kurse/strassenbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=119901&search-onr=52&img=7"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -51989,8 +52790,8 @@
     "end_date": "2028-08-04",
     "start_date_note": "",
     "duration_hours": 1100,
-    "course_fee": 9500.0,
-    "course_fee_display": "9.500 €",
+    "course_fee": 9750.0,
+    "course_fee_display": "9.750 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -52006,7 +52807,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/tischler-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=118921&search-onr=52&img=6"
+    "source_url": "https://www.hwk-koblenz.de/kurse/tischler-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=118921&search-onr=52&img=8"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -52026,8 +52827,8 @@
     "end_date": "2030-02-02",
     "start_date_note": "",
     "duration_hours": 1100,
-    "course_fee": 9500.0,
-    "course_fee_display": "9.500 €",
+    "course_fee": 9750.0,
+    "course_fee_display": "9.750 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -52043,7 +52844,7 @@
     "latitude": 50.3895583,
     "longitude": 7.5708933,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/tischler-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=120519&search-onr=52&img=1"
+    "source_url": "https://www.hwk-koblenz.de/kurse/tischler-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=120519&search-onr=52&img=3"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -52820,7 +53621,7 @@
     "latitude": 49.850123,
     "longitude": 7.8827044,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-vollzeit-52,0,coursedetail.html?id=120011&search-onr=52&img=8"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-vollzeit-52,0,coursedetail.html?id=120011&search-onr=52&img=10"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -52857,7 +53658,7 @@
     "latitude": 50.3603382,
     "longitude": 7.5844202,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-vollzeit-52,0,coursedetail.html?id=120016&search-onr=52&img=11"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-vollzeit-52,0,coursedetail.html?id=120016&search-onr=52&img=13"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -52894,7 +53695,7 @@
     "latitude": 50.5456433,
     "longitude": 7.1017081,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-crashkurs-52,0,coursedetail.html?id=120021&search-onr=52&img=12"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-crashkurs-52,0,coursedetail.html?id=120021&search-onr=52&img=14"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -52931,7 +53732,7 @@
     "latitude": 50.7821939,
     "longitude": 7.740086,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-crashkurs-52,0,coursedetail.html?id=120026&search-onr=52&img=13"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-crashkurs-52,0,coursedetail.html?id=120026&search-onr=52&img=15"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -52968,7 +53769,7 @@
     "latitude": 49.9837081,
     "longitude": 7.5250674,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-crashkurs-52,0,coursedetail.html?id=120031&search-onr=52&img=14"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-crashkurs-52,0,coursedetail.html?id=120031&search-onr=52&img=16"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -53005,7 +53806,7 @@
     "latitude": 50.3603382,
     "longitude": 7.5844202,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-teilzeit-52,0,coursedetail.html?id=120036&search-onr=52&img=16"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-teilzeit-52,0,coursedetail.html?id=120036&search-onr=52&img=18"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -53042,7 +53843,7 @@
     "latitude": 50.3603382,
     "longitude": 7.5844202,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-crashkurs-52,0,coursedetail.html?id=120041&search-onr=52&img=19"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-crashkurs-52,0,coursedetail.html?id=120041&search-onr=52&img=1"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -53079,7 +53880,7 @@
     "latitude": 50.1524067,
     "longitude": 7.1673054,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-crashkurs-52,0,coursedetail.html?id=120046&search-onr=52&img=18"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-crashkurs-52,0,coursedetail.html?id=120046&search-onr=52&img=20"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -53116,7 +53917,7 @@
     "latitude": 50.7821939,
     "longitude": 7.740086,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-vollzeit-52,0,coursedetail.html?id=120118&search-onr=52&img=4"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-vollzeit-52,0,coursedetail.html?id=120118&search-onr=52&img=6"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -53153,7 +53954,7 @@
     "latitude": 50.3603382,
     "longitude": 7.5844202,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-vollzeit-52,0,coursedetail.html?id=120123&search-onr=52&img=3"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-vollzeit-52,0,coursedetail.html?id=120123&search-onr=52&img=5"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -53190,7 +53991,7 @@
     "latitude": 49.7813929,
     "longitude": 7.3375888,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-teilzeit-52,0,coursedetail.html?id=120134&search-onr=52&img=5"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-teilzeit-52,0,coursedetail.html?id=120134&search-onr=52&img=7"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -53227,7 +54028,7 @@
     "latitude": 50.3603382,
     "longitude": 7.5844202,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-teilzeit-52,0,coursedetail.html?id=120158&search-onr=52&img=6"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-teilzeit-52,0,coursedetail.html?id=120158&search-onr=52&img=9"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -53264,7 +54065,7 @@
     "latitude": 50.7821939,
     "longitude": 7.740086,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-teilzeit-52,0,coursedetail.html?id=120138&search-onr=52&img=7"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-teilzeit-52,0,coursedetail.html?id=120138&search-onr=52&img=10"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -53301,7 +54102,7 @@
     "latitude": 50.5456433,
     "longitude": 7.1017081,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-teilzeit-52,0,coursedetail.html?id=120145&search-onr=52&img=8"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-teilzeit-52,0,coursedetail.html?id=120145&search-onr=52&img=11"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -53338,7 +54139,7 @@
     "latitude": 50.1524067,
     "longitude": 7.1673054,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-teilzeit-52,0,coursedetail.html?id=120148&search-onr=52&img=10"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-teilzeit-52,0,coursedetail.html?id=120148&search-onr=52&img=13"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -53375,7 +54176,7 @@
     "latitude": 50.3603382,
     "longitude": 7.5844202,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-teilzeit-52,0,coursedetail.html?id=120153&search-onr=52&img=9"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-teilzeit-52,0,coursedetail.html?id=120153&search-onr=52&img=12"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -53412,7 +54213,7 @@
     "latitude": 50.5456433,
     "longitude": 7.1017081,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-crashkurs-52,0,coursedetail.html?id=120128&search-onr=52&img=11"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-crashkurs-52,0,coursedetail.html?id=120128&search-onr=52&img=14"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -53469,8 +54270,8 @@
     "end_date": "2028-07-14",
     "start_date_note": "",
     "duration_hours": 1100,
-    "course_fee": 9590.0,
-    "course_fee_display": "9.590 €",
+    "course_fee": 9900.0,
+    "course_fee_display": "9.900 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -53486,7 +54287,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/zimmerer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=116380&search-onr=52&img=3"
+    "source_url": "https://www.hwk-koblenz.de/kurse/zimmerer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=116380&search-onr=52&img=5"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -53506,8 +54307,8 @@
     "end_date": "2029-07-06",
     "start_date_note": "",
     "duration_hours": 1100,
-    "course_fee": 9590.0,
-    "course_fee_display": "9.590 €",
+    "course_fee": 9900.0,
+    "course_fee_display": "9.900 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -53523,7 +54324,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/zimmerer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=120631&search-onr=52&img=14"
+    "source_url": "https://www.hwk-koblenz.de/kurse/zimmerer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=120631&search-onr=52&img=17"
   },
   {
     "chamber_slug": "hwk-koeln",
@@ -55463,7 +56264,7 @@
     "zip_code": "50827",
     "latitude": 50.9758161,
     "longitude": 6.8975287,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-koeln.de/32,0,coursedetail.html?id=33052"
   },
   {
@@ -55499,7 +56300,7 @@
     "zip_code": "50827",
     "latitude": 50.9758161,
     "longitude": 6.8975287,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-koeln.de/32,0,coursedetail.html?id=34228"
   },
   {
@@ -66404,7 +67205,7 @@
     "zip_code": "",
     "latitude": 52.1314783,
     "longitude": 11.6400789,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.hwk-magdeburg.de/16,0,coursedetail.html?id=46626"
   },
   {
@@ -66767,7 +67568,7 @@
     "latitude": 49.4936232,
     "longitude": 8.5038439,
     "availability": "available",
-    "source_url": "https://www.hwk-mannheim.de/kurse/meistervorbereitung-kraftfahrzeugtechnik-teil-ii-65,0,coursedetail.html?id=85912&search-onr=65&img=8"
+    "source_url": "https://www.hwk-mannheim.de/kurse/meistervorbereitung-kraftfahrzeugtechnik-teil-ii-65,0,coursedetail.html?id=85912&search-onr=65&img=9"
   },
   {
     "chamber_slug": "hwk-mannheim",
@@ -66804,7 +67605,7 @@
     "latitude": 49.4936232,
     "longitude": 8.5038439,
     "availability": "available",
-    "source_url": "https://www.hwk-mannheim.de/kurse/meistervorbereitung-konditoren-teil-i-ii-65,0,coursedetail.html?id=85421&search-onr=65&img=5"
+    "source_url": "https://www.hwk-mannheim.de/kurse/meistervorbereitung-konditoren-teil-i-ii-65,0,coursedetail.html?id=85421&search-onr=65&img=6"
   },
   {
     "chamber_slug": "hwk-mannheim",
@@ -66841,7 +67642,7 @@
     "latitude": 49.4936232,
     "longitude": 8.5038439,
     "availability": "unknown",
-    "source_url": "https://www.hwk-mannheim.de/kurse/meistervorbereitung-konditoren-teil-i-ii-65,0,coursedetail.html?id=85916&search-onr=65&img=12"
+    "source_url": "https://www.hwk-mannheim.de/kurse/meistervorbereitung-konditoren-teil-i-ii-65,0,coursedetail.html?id=85916&search-onr=65&img=13"
   },
   {
     "chamber_slug": "hwk-mannheim",
@@ -66878,7 +67679,7 @@
     "latitude": 49.4936232,
     "longitude": 8.5038439,
     "availability": "available",
-    "source_url": "https://www.hwk-mannheim.de/kurse/meistervorbereitung-maler-und-lackierer-teil-i-ii-maler-65,0,coursedetail.html?id=85004&search-onr=65&img=4"
+    "source_url": "https://www.hwk-mannheim.de/kurse/meistervorbereitung-maler-und-lackierer-teil-i-ii-maler-65,0,coursedetail.html?id=85004&search-onr=65&img=5"
   },
   {
     "chamber_slug": "hwk-mannheim",
@@ -66951,7 +67752,7 @@
     "latitude": 49.4936232,
     "longitude": 8.5038439,
     "availability": "available",
-    "source_url": "https://www.hwk-mannheim.de/kurse/ausbilderschein-vorbereitung-auf-die-aevo-pruefung-meister-teil-iv-65,0,coursedetail.html?id=83274&search-onr=65&img=2"
+    "source_url": "https://www.hwk-mannheim.de/kurse/ausbilderschein-vorbereitung-auf-die-aevo-pruefung-meister-teil-iv-65,0,coursedetail.html?id=83274&search-onr=65&img=3"
   },
   {
     "chamber_slug": "hwk-mannheim",
@@ -66988,7 +67789,7 @@
     "latitude": 49.4936232,
     "longitude": 8.5038439,
     "availability": "available",
-    "source_url": "https://www.hwk-mannheim.de/kurse/meistervorbereitung-teil-iii-iv-65,0,coursedetail.html?id=85635&search-onr=65&img=3"
+    "source_url": "https://www.hwk-mannheim.de/kurse/meistervorbereitung-teil-iii-iv-65,0,coursedetail.html?id=85635&search-onr=65&img=4"
   },
   {
     "chamber_slug": "hwk-mannheim",
@@ -67024,7 +67825,7 @@
     "latitude": 49.4936232,
     "longitude": 8.5038439,
     "availability": "available",
-    "source_url": "https://www.hwk-mannheim.de/kurse/meistervorbereitung-teil-iii-65,0,coursedetail.html?id=85738&search-onr=65&img=6"
+    "source_url": "https://www.hwk-mannheim.de/kurse/meistervorbereitung-teil-iii-65,0,coursedetail.html?id=85738&search-onr=65&img=7"
   },
   {
     "chamber_slug": "hwk-mannheim",
@@ -67060,7 +67861,7 @@
     "latitude": 49.4936232,
     "longitude": 8.5038439,
     "availability": "available",
-    "source_url": "https://www.hwk-mannheim.de/kurse/ausbilderschein-vorbereitung-auf-die-aevo-pruefung-meister-teil-iv-65,0,coursedetail.html?id=86220&search-onr=65&img=7"
+    "source_url": "https://www.hwk-mannheim.de/kurse/ausbilderschein-vorbereitung-auf-die-aevo-pruefung-meister-teil-iv-65,0,coursedetail.html?id=86220&search-onr=65&img=8"
   },
   {
     "chamber_slug": "hwk-mannheim",
@@ -67096,7 +67897,7 @@
     "latitude": 49.4936232,
     "longitude": 8.5038439,
     "availability": "available",
-    "source_url": "https://www.hwk-mannheim.de/kurse/ausbilderschein-vorbereitung-auf-die-aevo-pruefung-meister-teil-iv-65,0,coursedetail.html?id=86221&search-onr=65&img=9"
+    "source_url": "https://www.hwk-mannheim.de/kurse/ausbilderschein-vorbereitung-auf-die-aevo-pruefung-meister-teil-iv-65,0,coursedetail.html?id=86221&search-onr=65&img=10"
   },
   {
     "chamber_slug": "hwk-mannheim",
@@ -67133,7 +67934,7 @@
     "latitude": 49.4936232,
     "longitude": 8.5038439,
     "availability": "available",
-    "source_url": "https://www.hwk-mannheim.de/kurse/meistervorbereitung-teil-iii-iv-65,0,coursedetail.html?id=85732&search-onr=65&img=10"
+    "source_url": "https://www.hwk-mannheim.de/kurse/meistervorbereitung-teil-iii-iv-65,0,coursedetail.html?id=85732&search-onr=65&img=11"
   },
   {
     "chamber_slug": "hwk-mannheim",
@@ -67169,7 +67970,7 @@
     "latitude": 49.4936232,
     "longitude": 8.5038439,
     "availability": "available",
-    "source_url": "https://www.hwk-mannheim.de/kurse/ausbilderschein-vorbereitung-auf-die-aevo-pruefung-meister-teil-iv-65,0,coursedetail.html?id=86222&search-onr=65&img=11"
+    "source_url": "https://www.hwk-mannheim.de/kurse/ausbilderschein-vorbereitung-auf-die-aevo-pruefung-meister-teil-iv-65,0,coursedetail.html?id=86222&search-onr=65&img=12"
   },
   {
     "chamber_slug": "hwk-mittelfranken",
@@ -70963,7 +71764,7 @@
     "zip_code": "81671",
     "latitude": 48.1282296,
     "longitude": 11.6098462,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1215871"
   },
   {
@@ -75028,6 +75829,80 @@
     "longitude": 7.6358696,
     "availability": "waitlist",
     "source_url": "https://www.hbz-bildung.de/de/weiterbildung/maurer-und-betonbauer-meisterschule-teile-i-und-ii-teilzeit-103431#termin-1"
+  },
+  {
+    "chamber_slug": "hwk-muenster",
+    "chamber_name": "HWK Münster",
+    "chamber_region": "Nordrhein-Westfalen",
+    "trade_slug": "maurer-und-betonbauer",
+    "trade_name": "Maurer und Betonbauer",
+    "title": "Maurer und Betonbauer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-10-19",
+    "end_date": "2027-05-28",
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": 9900.0,
+    "course_fee_display": "9.900 €",
+    "exam_fee_scraped": 1100.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 1100.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "1.100 €",
+      "from_tariff": false
+    },
+    "city": "Münster",
+    "street": "Albrecht-Thaer-Straße 9",
+    "zip_code": "48147",
+    "latitude": 51.9830337,
+    "longitude": 7.6358696,
+    "availability": "waitlist",
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/maurer-und-betonbauer-meisterschule-teile-i-und-ii-vollzeit-106031#termin-1"
+  },
+  {
+    "chamber_slug": "hwk-muenster",
+    "chamber_name": "HWK Münster",
+    "chamber_region": "Nordrhein-Westfalen",
+    "trade_slug": "maurer-und-betonbauer",
+    "trade_name": "Maurer und Betonbauer",
+    "title": "Maurer und Betonbauer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-10-18",
+    "end_date": "2028-05-26",
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": 9900.0,
+    "course_fee_display": "9.900 €",
+    "exam_fee_scraped": 1100.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 1100.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "1.100 €",
+      "from_tariff": false
+    },
+    "city": "Münster",
+    "street": "Albrecht-Thaer-Straße 9",
+    "zip_code": "48147",
+    "latitude": 51.9830337,
+    "longitude": 7.6358696,
+    "availability": "available",
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/maurer-und-betonbauer-meisterschule-teile-i-und-ii-vollzeit-106031#termin-2"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -81100,8 +81975,8 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
-    "start_date": "2027-10-11",
-    "end_date": "2028-05-02",
+    "start_date": "2027-10-04",
+    "end_date": "2028-04-21",
     "start_date_note": "",
     "duration_hours": 951,
     "course_fee": null,
@@ -97912,7 +98787,7 @@
     "zip_code": "49088",
     "latitude": 52.290842,
     "longitude": 8.0401607,
-    "availability": "unknown",
+    "availability": "full",
     "source_url": "https://www.btz-osnabrueck.de/seminar/mstrkrvzb/#kurs-20266"
   },
   {
@@ -103128,43 +104003,6 @@
     "chamber_slug": "hwk-ostthueringen-gera",
     "chamber_name": "HWK für Ostthüringen",
     "chamber_region": "Thüringen",
-    "trade_slug": "dachdecker",
-    "trade_name": "Dachdecker",
-    "title": "Dachdecker (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-09-07",
-    "end_date": "2027-03-25",
-    "start_date_note": "",
-    "duration_hours": 1140,
-    "course_fee": 8710.0,
-    "course_fee_display": "8.710 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 555.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "555 €",
-      "from_tariff": true
-    },
-    "city": "Lehesten",
-    "street": "Friedrichsbruch 3",
-    "zip_code": "07349",
-    "latitude": 50.4796375,
-    "longitude": 11.4489243,
-    "availability": "available",
-    "source_url": "https://dachdeckerschule-lehesten.de/de-de/meisterlehrgaenge/meistervorbereitungslehrgang-dachdecker-teil-1-und-teil-2-3174697/"
-  },
-  {
-    "chamber_slug": "hwk-ostthueringen-gera",
-    "chamber_name": "HWK für Ostthüringen",
-    "chamber_region": "Thüringen",
     "trade_slug": "elektrotechniker",
     "trade_name": "Elektrotechniker",
     "title": "Elektrotechniker (Teile I + II)",
@@ -103271,43 +104109,6 @@
     "longitude": 12.1220551,
     "availability": "unknown",
     "source_url": "https://www.hwk-gera.de/5,0,coursedetail.html?id=120798"
-  },
-  {
-    "chamber_slug": "hwk-ostthueringen-gera",
-    "chamber_name": "HWK für Ostthüringen",
-    "chamber_region": "Thüringen",
-    "trade_slug": "klempner",
-    "trade_name": "Klempner",
-    "title": "Klempner (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-08-24",
-    "end_date": "2027-01-29",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": 9450.0,
-    "course_fee_display": "9.450 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 555.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "555 €",
-      "from_tariff": true
-    },
-    "city": "Lehesten",
-    "street": "Friedrichsbruch 3",
-    "zip_code": "07349",
-    "latitude": 50.4796375,
-    "longitude": 11.4489243,
-    "availability": "available",
-    "source_url": "https://dachdeckerschule-lehesten.de/de-de/meisterlehrgaenge/meistervorbereitungslehrgang-klempner-teil-1-und-teil-2-6582935/"
   },
   {
     "chamber_slug": "hwk-ostthueringen-gera",
@@ -104438,43 +105239,6 @@
     "longitude": 11.9958817,
     "availability": "unknown",
     "source_url": "https://www.hwk-gera.de/5,0,coursedetail.html?id=121598"
-  },
-  {
-    "chamber_slug": "hwk-ostthueringen-gera",
-    "chamber_name": "HWK für Ostthüringen",
-    "chamber_region": "Thüringen",
-    "trade_slug": "zimmerer",
-    "trade_name": "Zimmerer",
-    "title": "Zimmerer (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-09-07",
-    "end_date": "2027-03-25",
-    "start_date_note": "",
-    "duration_hours": 1140,
-    "course_fee": 8420.0,
-    "course_fee_display": "8.420 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 555.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "555 €",
-      "from_tariff": true
-    },
-    "city": "Lehesten",
-    "street": "Friedrichsbruch 3",
-    "zip_code": "07349",
-    "latitude": 50.4796375,
-    "longitude": 11.4489243,
-    "availability": "available",
-    "source_url": "https://dachdeckerschule-lehesten.de/de-de/meisterlehrgaenge/meistervorbereitungslehrgang-zimmerer-teil-1-und-teil-2-5100981/"
   },
   {
     "chamber_slug": "hwk-ostwestfalen-lippe-zu-bielefeld",
@@ -106810,7 +107574,7 @@
     "zip_code": "67065",
     "latitude": 49.4760852,
     "longitude": 8.4080881,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-elektrotechniker-teile-i-ii-51,0,coursedetail.html?id=103638&search-onr=51&img=3"
   },
   {
@@ -109288,8 +110052,8 @@
     "end_date": "2027-06-05",
     "start_date_note": "",
     "duration_hours": 376,
-    "course_fee": 3600.0,
-    "course_fee_display": "3.600 €",
+    "course_fee": 3000.0,
+    "course_fee_display": "3.000 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -109325,8 +110089,8 @@
     "end_date": "2027-03-25",
     "start_date_note": "",
     "duration_hours": 376,
-    "course_fee": 3600.0,
-    "course_fee_display": "3.600 €",
+    "course_fee": 3000.0,
+    "course_fee_display": "3.000 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -109362,8 +110126,8 @@
     "end_date": "2027-03-25",
     "start_date_note": "",
     "duration_hours": 376,
-    "course_fee": 3600.0,
-    "course_fee_display": "3.600 €",
+    "course_fee": 3000.0,
+    "course_fee_display": "3.000 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -109399,8 +110163,8 @@
     "end_date": "2027-03-25",
     "start_date_note": "",
     "duration_hours": 376,
-    "course_fee": 3600.0,
-    "course_fee_display": "3.600 €",
+    "course_fee": 3000.0,
+    "course_fee_display": "3.000 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -109436,8 +110200,8 @@
     "end_date": "2027-09-25",
     "start_date_note": "",
     "duration_hours": 376,
-    "course_fee": 3600.0,
-    "course_fee_display": "3.600 €",
+    "course_fee": 3000.0,
+    "course_fee_display": "3.000 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -113887,7 +114651,7 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
-    "start_date": "2027-06-01",
+    "start_date": "2027-05-31",
     "end_date": "2027-06-26",
     "start_date_note": "",
     "duration_hours": 240,
@@ -113995,7 +114759,7 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
-    "start_date": "2027-08-02",
+    "start_date": "2027-07-26",
     "end_date": "2027-08-21",
     "start_date_note": "",
     "duration_hours": 240,
@@ -117044,6 +117808,43 @@
     "longitude": 10.3185888,
     "availability": "full",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=394322"
+  },
+  {
+    "chamber_slug": "hwk-schwaben",
+    "chamber_name": "HWK für Schwaben",
+    "chamber_region": "Bayern",
+    "trade_slug": "elektrotechniker",
+    "trade_name": "Elektrotechniker",
+    "title": "Elektrotechniker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2031-09-19",
+    "end_date": "2032-06-10",
+    "start_date_note": "",
+    "duration_hours": 1360,
+    "course_fee": 8150.0,
+    "course_fee_display": "8.150 €",
+    "exam_fee_scraped": 500.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 500.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "500 €",
+      "from_tariff": false
+    },
+    "city": "Augsburg",
+    "street": "Siebentischstraße 54",
+    "zip_code": "86161",
+    "latitude": 48.3522511,
+    "longitude": 10.9173148,
+    "availability": "available",
+    "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=402814"
   },
   {
     "chamber_slug": "hwk-schwaben",
@@ -122364,6 +123165,45 @@
     "chamber_slug": "hwk-stuttgart",
     "chamber_name": "HWK Region Stuttgart",
     "chamber_region": "Baden-Württemberg",
+    "trade_slug": "backer",
+    "trade_name": "Bäcker",
+    "title": "Bäcker (Teile I + II + III + IV)",
+    "parts": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-01-11",
+    "end_date": "2027-06-25",
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": 4950.0,
+    "course_fee_display": "4.950 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 1050.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "1.050 €",
+      "from_tariff": true
+    },
+    "city": "Stuttgart",
+    "street": "Wilhelmstraße 7",
+    "zip_code": "70182",
+    "latitude": 48.7706662,
+    "longitude": 9.1800889,
+    "availability": "unknown",
+    "source_url": "https://bivsuedwest.de/meistervorbereitungskurse/"
+  },
+  {
+    "chamber_slug": "hwk-stuttgart",
+    "chamber_name": "HWK Region Stuttgart",
+    "chamber_region": "Baden-Württemberg",
     "trade_slug": "installateur-und-heizungsbauer",
     "trade_name": "Installateur und Heizungsbauer",
     "title": "Installateur und Heizungsbauer (Teile I + II)",
@@ -127210,42 +128050,6 @@
     "chamber_region": "Nordrhein-Westfalen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-08-11",
-    "end_date": "2026-09-25",
-    "start_date_note": "",
-    "duration_hours": 300,
-    "course_fee": 1810.0,
-    "course_fee_display": "1.810 €",
-    "exam_fee_scraped": 275.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 275.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "275 €",
-      "from_tariff": false
-    },
-    "city": "Arnsberg",
-    "street": "Im Hülsenfeld 42",
-    "zip_code": "59755",
-    "latitude": 51.4470454,
-    "longitude": 7.9631509,
-    "availability": "available",
-    "source_url": "https://www.bbz-arnsberg.de/kurse/gepruefte-r-fachfrau-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo#termin-1"
-  },
-  {
-    "chamber_slug": "hwk-suedwestfalen",
-    "chamber_name": "HWK Südwestfalen",
-    "chamber_region": "Nordrhein-Westfalen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Berufs- und Arbeitspädagogik (Teil IV)",
     "parts": [
       4
@@ -127257,8 +128061,8 @@
     "end_date": "2026-10-02",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -127273,7 +128077,7 @@
     "zip_code": "59755",
     "latitude": 51.4470454,
     "longitude": 7.9631509,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.bbz-arnsberg.de/kurse/ausbildung-der-ausbilder-nach-aevo#termin-1"
   },
   {
@@ -127293,8 +128097,8 @@
     "end_date": "2026-11-20",
     "start_date_note": "",
     "duration_hours": 300,
-    "course_fee": 1810.0,
-    "course_fee_display": "1.810 €",
+    "course_fee": 1990.0,
+    "course_fee_display": "1.990 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -127310,7 +128114,7 @@
     "latitude": 51.4470454,
     "longitude": 7.9631509,
     "availability": "waitlist",
-    "source_url": "https://www.bbz-arnsberg.de/kurse/gepruefte-r-fachfrau-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo#termin-2"
+    "source_url": "https://www.bbz-arnsberg.de/kurse/gepruefte-r-fachfrau-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo#termin-1"
   },
   {
     "chamber_slug": "hwk-suedwestfalen",
@@ -127329,8 +128133,8 @@
     "end_date": "2026-12-12",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -127365,8 +128169,8 @@
     "end_date": "2026-12-18",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -127401,8 +128205,8 @@
     "end_date": "2027-02-19",
     "start_date_note": "",
     "duration_hours": 300,
-    "course_fee": 1810.0,
-    "course_fee_display": "1.810 €",
+    "course_fee": 1990.0,
+    "course_fee_display": "1.990 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -127418,7 +128222,7 @@
     "latitude": 51.4470454,
     "longitude": 7.9631509,
     "availability": "waitlist",
-    "source_url": "https://www.bbz-arnsberg.de/kurse/gepruefte-r-fachfrau-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo#termin-3"
+    "source_url": "https://www.bbz-arnsberg.de/kurse/gepruefte-r-fachfrau-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo#termin-2"
   },
   {
     "chamber_slug": "hwk-suedwestfalen",
@@ -127437,8 +128241,8 @@
     "end_date": "2027-07-17",
     "start_date_note": "",
     "duration_hours": 300,
-    "course_fee": 1810.0,
-    "course_fee_display": "1.810 €",
+    "course_fee": 1990.0,
+    "course_fee_display": "1.990 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -127454,7 +128258,7 @@
     "latitude": 51.4470454,
     "longitude": 7.9631509,
     "availability": "available",
-    "source_url": "https://www.bbz-arnsberg.de/kurse/gepruefte-r-fachfrau-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo#termin-17"
+    "source_url": "https://www.bbz-arnsberg.de/kurse/gepruefte-r-fachfrau-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo#termin-16"
   },
   {
     "chamber_slug": "hwk-suedwestfalen",
@@ -127473,8 +128277,8 @@
     "end_date": "2027-01-29",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -127509,8 +128313,8 @@
     "end_date": "2027-03-19",
     "start_date_note": "",
     "duration_hours": 300,
-    "course_fee": 1810.0,
-    "course_fee_display": "1.810 €",
+    "course_fee": 1990.0,
+    "course_fee_display": "1.990 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -127526,7 +128330,7 @@
     "latitude": 51.4470454,
     "longitude": 7.9631509,
     "availability": "waitlist",
-    "source_url": "https://www.bbz-arnsberg.de/kurse/gepruefte-r-fachfrau-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo#termin-4"
+    "source_url": "https://www.bbz-arnsberg.de/kurse/gepruefte-r-fachfrau-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo#termin-3"
   },
   {
     "chamber_slug": "hwk-suedwestfalen",
@@ -127545,8 +128349,8 @@
     "end_date": "2027-03-19",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -127581,8 +128385,8 @@
     "end_date": "2027-04-23",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -127617,8 +128421,44 @@
     "end_date": "2027-06-22",
     "start_date_note": "",
     "duration_hours": 300,
-    "course_fee": 1810.0,
-    "course_fee_display": "1.810 €",
+    "course_fee": 1990.0,
+    "course_fee_display": "1.990 €",
+    "exam_fee_scraped": 275.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 275.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "275 €",
+      "from_tariff": false
+    },
+    "city": "Arnsberg",
+    "street": "Im Hülsenfeld 42",
+    "zip_code": "59755",
+    "latitude": 51.4470454,
+    "longitude": 7.9631509,
+    "availability": "available",
+    "source_url": "https://www.bbz-arnsberg.de/kurse/gepruefte-r-fachfrau-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo#termin-4"
+  },
+  {
+    "chamber_slug": "hwk-suedwestfalen",
+    "chamber_name": "HWK Südwestfalen",
+    "chamber_region": "Nordrhein-Westfalen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-05-31",
+    "end_date": "2027-07-14",
+    "start_date_note": "",
+    "duration_hours": 300,
+    "course_fee": 1990.0,
+    "course_fee_display": "1.990 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -127642,42 +128482,6 @@
     "chamber_region": "Nordrhein-Westfalen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-05-31",
-    "end_date": "2027-07-14",
-    "start_date_note": "",
-    "duration_hours": 300,
-    "course_fee": 1810.0,
-    "course_fee_display": "1.810 €",
-    "exam_fee_scraped": 275.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 275.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "275 €",
-      "from_tariff": false
-    },
-    "city": "Arnsberg",
-    "street": "Im Hülsenfeld 42",
-    "zip_code": "59755",
-    "latitude": 51.4470454,
-    "longitude": 7.9631509,
-    "availability": "available",
-    "source_url": "https://www.bbz-arnsberg.de/kurse/gepruefte-r-fachfrau-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo#termin-6"
-  },
-  {
-    "chamber_slug": "hwk-suedwestfalen",
-    "chamber_name": "HWK Südwestfalen",
-    "chamber_region": "Nordrhein-Westfalen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Berufs- und Arbeitspädagogik (Teil IV)",
     "parts": [
       4
@@ -127689,8 +128493,8 @@
     "end_date": "2027-07-16",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -127725,8 +128529,8 @@
     "end_date": "2027-12-11",
     "start_date_note": "",
     "duration_hours": 300,
-    "course_fee": 1810.0,
-    "course_fee_display": "1.810 €",
+    "course_fee": 1990.0,
+    "course_fee_display": "1.990 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -127742,7 +128546,7 @@
     "latitude": 51.4470454,
     "longitude": 7.9631509,
     "availability": "available",
-    "source_url": "https://www.bbz-arnsberg.de/kurse/gepruefte-r-fachfrau-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo#termin-18"
+    "source_url": "https://www.bbz-arnsberg.de/kurse/gepruefte-r-fachfrau-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo#termin-17"
   },
   {
     "chamber_slug": "hwk-suedwestfalen",
@@ -127761,8 +128565,8 @@
     "end_date": "2027-09-03",
     "start_date_note": "",
     "duration_hours": 300,
-    "course_fee": 1810.0,
-    "course_fee_display": "1.810 €",
+    "course_fee": 1990.0,
+    "course_fee_display": "1.990 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -127778,7 +128582,7 @@
     "latitude": 51.4470454,
     "longitude": 7.9631509,
     "availability": "available",
-    "source_url": "https://www.bbz-arnsberg.de/kurse/gepruefte-r-fachfrau-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo#termin-7"
+    "source_url": "https://www.bbz-arnsberg.de/kurse/gepruefte-r-fachfrau-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo#termin-6"
   },
   {
     "chamber_slug": "hwk-suedwestfalen",
@@ -127797,8 +128601,8 @@
     "end_date": "2027-08-13",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -127833,8 +128637,8 @@
     "end_date": "2027-10-01",
     "start_date_note": "",
     "duration_hours": 300,
-    "course_fee": 1810.0,
-    "course_fee_display": "1.810 €",
+    "course_fee": 1990.0,
+    "course_fee_display": "1.990 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -127850,7 +128654,7 @@
     "latitude": 51.4470454,
     "longitude": 7.9631509,
     "availability": "available",
-    "source_url": "https://www.bbz-arnsberg.de/kurse/gepruefte-r-fachfrau-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo#termin-8"
+    "source_url": "https://www.bbz-arnsberg.de/kurse/gepruefte-r-fachfrau-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo#termin-7"
   },
   {
     "chamber_slug": "hwk-suedwestfalen",
@@ -127869,8 +128673,8 @@
     "end_date": "2027-10-01",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -127905,8 +128709,8 @@
     "end_date": "2027-11-27",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -127941,8 +128745,8 @@
     "end_date": "2027-11-23",
     "start_date_note": "",
     "duration_hours": 300,
-    "course_fee": 1810.0,
-    "course_fee_display": "1.810 €",
+    "course_fee": 1990.0,
+    "course_fee_display": "1.990 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -127958,7 +128762,7 @@
     "latitude": 51.4470454,
     "longitude": 7.9631509,
     "availability": "available",
-    "source_url": "https://www.bbz-arnsberg.de/kurse/gepruefte-r-fachfrau-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo#termin-9"
+    "source_url": "https://www.bbz-arnsberg.de/kurse/gepruefte-r-fachfrau-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo#termin-8"
   },
   {
     "chamber_slug": "hwk-suedwestfalen",
@@ -127977,8 +128781,8 @@
     "end_date": "2027-12-17",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -128013,8 +128817,8 @@
     "end_date": "2028-01-21",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -128049,8 +128853,80 @@
     "end_date": "2028-02-18",
     "start_date_note": "",
     "duration_hours": 300,
-    "course_fee": 1810.0,
-    "course_fee_display": "1.810 €",
+    "course_fee": 1990.0,
+    "course_fee_display": "1.990 €",
+    "exam_fee_scraped": 275.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 275.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "275 €",
+      "from_tariff": false
+    },
+    "city": "Arnsberg",
+    "street": "Im Hülsenfeld 42",
+    "zip_code": "59755",
+    "latitude": 51.4470454,
+    "longitude": 7.9631509,
+    "availability": "available",
+    "source_url": "https://www.bbz-arnsberg.de/kurse/gepruefte-r-fachfrau-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo#termin-9"
+  },
+  {
+    "chamber_slug": "hwk-suedwestfalen",
+    "chamber_name": "HWK Südwestfalen",
+    "chamber_region": "Nordrhein-Westfalen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-01-07",
+    "end_date": "2028-07-08",
+    "start_date_note": "",
+    "duration_hours": 300,
+    "course_fee": 1990.0,
+    "course_fee_display": "1.990 €",
+    "exam_fee_scraped": 275.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 275.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "275 €",
+      "from_tariff": false
+    },
+    "city": "Arnsberg",
+    "street": "Im Hülsenfeld 42",
+    "zip_code": "59755",
+    "latitude": 51.4470454,
+    "longitude": 7.9631509,
+    "availability": "available",
+    "source_url": "https://www.bbz-arnsberg.de/kurse/gepruefte-r-fachfrau-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo#termin-18"
+  },
+  {
+    "chamber_slug": "hwk-suedwestfalen",
+    "chamber_name": "HWK Südwestfalen",
+    "chamber_region": "Nordrhein-Westfalen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-01-31",
+    "end_date": "2028-03-16",
+    "start_date_note": "",
+    "duration_hours": 300,
+    "course_fee": 1990.0,
+    "course_fee_display": "1.990 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -128074,78 +128950,6 @@
     "chamber_region": "Nordrhein-Westfalen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2028-01-07",
-    "end_date": "2028-07-08",
-    "start_date_note": "",
-    "duration_hours": 300,
-    "course_fee": 1810.0,
-    "course_fee_display": "1.810 €",
-    "exam_fee_scraped": 275.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 275.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "275 €",
-      "from_tariff": false
-    },
-    "city": "Arnsberg",
-    "street": "Im Hülsenfeld 42",
-    "zip_code": "59755",
-    "latitude": 51.4470454,
-    "longitude": 7.9631509,
-    "availability": "available",
-    "source_url": "https://www.bbz-arnsberg.de/kurse/gepruefte-r-fachfrau-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo#termin-19"
-  },
-  {
-    "chamber_slug": "hwk-suedwestfalen",
-    "chamber_name": "HWK Südwestfalen",
-    "chamber_region": "Nordrhein-Westfalen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2028-01-31",
-    "end_date": "2028-03-16",
-    "start_date_note": "",
-    "duration_hours": 300,
-    "course_fee": 1810.0,
-    "course_fee_display": "1.810 €",
-    "exam_fee_scraped": 275.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 275.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "275 €",
-      "from_tariff": false
-    },
-    "city": "Arnsberg",
-    "street": "Im Hülsenfeld 42",
-    "zip_code": "59755",
-    "latitude": 51.4470454,
-    "longitude": 7.9631509,
-    "availability": "available",
-    "source_url": "https://www.bbz-arnsberg.de/kurse/gepruefte-r-fachfrau-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo#termin-11"
-  },
-  {
-    "chamber_slug": "hwk-suedwestfalen",
-    "chamber_name": "HWK Südwestfalen",
-    "chamber_region": "Nordrhein-Westfalen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Berufs- und Arbeitspädagogik (Teil IV)",
     "parts": [
       4
@@ -128157,8 +128961,8 @@
     "end_date": "2028-03-17",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -128193,8 +128997,8 @@
     "end_date": "2028-04-13",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -128229,8 +129033,44 @@
     "end_date": "2028-06-21",
     "start_date_note": "",
     "duration_hours": 300,
-    "course_fee": 1810.0,
-    "course_fee_display": "1.810 €",
+    "course_fee": 1990.0,
+    "course_fee_display": "1.990 €",
+    "exam_fee_scraped": 275.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 275.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "275 €",
+      "from_tariff": false
+    },
+    "city": "Arnsberg",
+    "street": "Im Hülsenfeld 42",
+    "zip_code": "59755",
+    "latitude": 51.4470454,
+    "longitude": 7.9631509,
+    "availability": "available",
+    "source_url": "https://www.bbz-arnsberg.de/kurse/gepruefte-r-fachfrau-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo#termin-11"
+  },
+  {
+    "chamber_slug": "hwk-suedwestfalen",
+    "chamber_name": "HWK Südwestfalen",
+    "chamber_region": "Nordrhein-Westfalen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-05-29",
+    "end_date": "2028-07-14",
+    "start_date_note": "",
+    "duration_hours": 300,
+    "course_fee": 1990.0,
+    "course_fee_display": "1.990 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -128261,48 +129101,12 @@
     "format": "part_time",
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
-    "start_date": "2028-05-29",
-    "end_date": "2028-07-14",
-    "start_date_note": "",
-    "duration_hours": 300,
-    "course_fee": 1810.0,
-    "course_fee_display": "1.810 €",
-    "exam_fee_scraped": 275.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 275.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "275 €",
-      "from_tariff": false
-    },
-    "city": "Arnsberg",
-    "street": "Im Hülsenfeld 42",
-    "zip_code": "59755",
-    "latitude": 51.4470454,
-    "longitude": 7.9631509,
-    "availability": "available",
-    "source_url": "https://www.bbz-arnsberg.de/kurse/gepruefte-r-fachfrau-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo#termin-13"
-  },
-  {
-    "chamber_slug": "hwk-suedwestfalen",
-    "chamber_name": "HWK Südwestfalen",
-    "chamber_region": "Nordrhein-Westfalen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
     "start_date": "2028-06-30",
     "end_date": "2028-12-09",
     "start_date_note": "",
     "duration_hours": 300,
-    "course_fee": 1810.0,
-    "course_fee_display": "1.810 €",
+    "course_fee": 1990.0,
+    "course_fee_display": "1.990 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -128318,7 +129122,7 @@
     "latitude": 51.4470454,
     "longitude": 7.9631509,
     "availability": "available",
-    "source_url": "https://www.bbz-arnsberg.de/kurse/gepruefte-r-fachfrau-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo#termin-20"
+    "source_url": "https://www.bbz-arnsberg.de/kurse/gepruefte-r-fachfrau-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo#termin-19"
   },
   {
     "chamber_slug": "hwk-suedwestfalen",
@@ -128337,8 +129141,8 @@
     "end_date": "2028-07-21",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -128373,8 +129177,8 @@
     "end_date": "2028-08-11",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -128409,8 +129213,44 @@
     "end_date": "2028-09-08",
     "start_date_note": "",
     "duration_hours": 300,
-    "course_fee": 1810.0,
-    "course_fee_display": "1.810 €",
+    "course_fee": 1990.0,
+    "course_fee_display": "1.990 €",
+    "exam_fee_scraped": 275.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 275.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "275 €",
+      "from_tariff": false
+    },
+    "city": "Arnsberg",
+    "street": "Im Hülsenfeld 42",
+    "zip_code": "59755",
+    "latitude": 51.4470454,
+    "longitude": 7.9631509,
+    "availability": "available",
+    "source_url": "https://www.bbz-arnsberg.de/kurse/gepruefte-r-fachfrau-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo#termin-13"
+  },
+  {
+    "chamber_slug": "hwk-suedwestfalen",
+    "chamber_name": "HWK Südwestfalen",
+    "chamber_region": "Nordrhein-Westfalen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-08-15",
+    "end_date": "2028-09-29",
+    "start_date_note": "",
+    "duration_hours": 300,
+    "course_fee": 1990.0,
+    "course_fee_display": "1.990 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -128434,42 +129274,6 @@
     "chamber_region": "Nordrhein-Westfalen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2028-08-15",
-    "end_date": "2028-09-29",
-    "start_date_note": "",
-    "duration_hours": 300,
-    "course_fee": 1810.0,
-    "course_fee_display": "1.810 €",
-    "exam_fee_scraped": 275.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 275.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "275 €",
-      "from_tariff": false
-    },
-    "city": "Arnsberg",
-    "street": "Im Hülsenfeld 42",
-    "zip_code": "59755",
-    "latitude": 51.4470454,
-    "longitude": 7.9631509,
-    "availability": "available",
-    "source_url": "https://www.bbz-arnsberg.de/kurse/gepruefte-r-fachfrau-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo#termin-15"
-  },
-  {
-    "chamber_slug": "hwk-suedwestfalen",
-    "chamber_name": "HWK Südwestfalen",
-    "chamber_region": "Nordrhein-Westfalen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Berufs- und Arbeitspädagogik (Teil IV)",
     "parts": [
       4
@@ -128481,8 +129285,8 @@
     "end_date": "2028-09-29",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -128517,8 +129321,8 @@
     "end_date": "2028-11-25",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -128553,8 +129357,8 @@
     "end_date": "2028-11-24",
     "start_date_note": "",
     "duration_hours": 300,
-    "course_fee": 1810.0,
-    "course_fee_display": "1.810 €",
+    "course_fee": 1990.0,
+    "course_fee_display": "1.990 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -128570,7 +129374,7 @@
     "latitude": 51.4470454,
     "longitude": 7.9631509,
     "availability": "available",
-    "source_url": "https://www.bbz-arnsberg.de/kurse/gepruefte-r-fachfrau-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo#termin-16"
+    "source_url": "https://www.bbz-arnsberg.de/kurse/gepruefte-r-fachfrau-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo#termin-15"
   },
   {
     "chamber_slug": "hwk-suedwestfalen",
@@ -128589,8 +129393,8 @@
     "end_date": "2028-12-15",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -132599,7 +133403,7 @@
     "zip_code": "63741",
     "latitude": 49.9881654,
     "longitude": 9.1079515,
-    "availability": "waitlist",
+    "availability": "available",
     "source_url": "https://www.hwk-ufr.de/78,0,coursedetail.html?id=453635"
   },
   {
@@ -133576,23 +134380,23 @@
     "end_date": "2028-03-17",
     "start_date_note": "",
     "duration_hours": 355,
-    "course_fee": null,
-    "course_fee_display": "—",
-    "exam_fee_scraped": null,
+    "course_fee": 3035.0,
+    "course_fee_display": "3.035 €",
+    "exam_fee_scraped": 330.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 330.0,
       "fee_max": null,
       "qualifier": "",
       "display": "330 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Aschaffenburg",
     "street": "Hasenhägweg 67",
     "zip_code": "63741",
     "latitude": 49.9881654,
     "longitude": 9.1079515,
-    "availability": "unknown",
+    "availability": "available",
     "source_url": "https://www.hwk-ufr.de/78,0,coursedetail.html?id=460862"
   },
   {
@@ -133687,23 +134491,23 @@
     "end_date": "2028-09-01",
     "start_date_note": "",
     "duration_hours": 355,
-    "course_fee": null,
-    "course_fee_display": "—",
-    "exam_fee_scraped": null,
+    "course_fee": 3035.0,
+    "course_fee_display": "3.035 €",
+    "exam_fee_scraped": 330.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 330.0,
       "fee_max": null,
       "qualifier": "",
       "display": "330 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Aschaffenburg",
     "street": "Hasenhägweg 67",
     "zip_code": "63741",
     "latitude": 49.9881654,
     "longitude": 9.1079515,
-    "availability": "unknown",
+    "availability": "available",
     "source_url": "https://www.hwk-ufr.de/78,0,coursedetail.html?id=460867"
   },
   {
@@ -135594,42 +136398,6 @@
     ],
     "format": "full_time",
     "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-08-11",
-    "end_date": "2026-08-25",
-    "start_date_note": "",
-    "duration_hours": 110,
-    "course_fee": 900.0,
-    "course_fee_display": "900 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 235.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "235 €",
-      "from_tariff": true
-    },
-    "city": "Wetzlar",
-    "street": "Dillufer 40",
-    "zip_code": "35576",
-    "latitude": 50.5548159,
-    "longitude": 8.4921662,
-    "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-44,0,coursedetail.html?id=50893&search-onr=44&img=1"
-  },
-  {
-    "chamber_slug": "hwk-wiesbaden",
-    "chamber_name": "HWK Wiesbaden",
-    "chamber_region": "Hessen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
     "teaching_mode": "hybrid",
     "start_date": "2026-08-17",
     "end_date": "2026-08-28",
@@ -135652,7 +136420,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=94347&search-onr=44&img=2"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=94347&search-onr=44&img=1"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -135689,7 +136457,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-teilzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=105441&search-onr=44&img=3"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-teilzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=105441&search-onr=44&img=2"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -135725,7 +136493,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=94343&search-onr=44&img=4"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=94343&search-onr=44&img=3"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -135761,7 +136529,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-44,0,coursedetail.html?id=53244&search-onr=44&img=5"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-44,0,coursedetail.html?id=53244&search-onr=44&img=4"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -135798,7 +136566,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-vollzeit-44,0,coursedetail.html?id=48864&search-onr=44&img=6"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-vollzeit-44,0,coursedetail.html?id=48864&search-onr=44&img=5"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -135834,7 +136602,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103826&search-onr=44&img=8"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103826&search-onr=44&img=7"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -135870,7 +136638,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=94350&search-onr=44&img=7"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=94350&search-onr=44&img=6"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -135906,7 +136674,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-44,0,coursedetail.html?id=50894&search-onr=44&img=9"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-44,0,coursedetail.html?id=50894&search-onr=44&img=8"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -135942,7 +136710,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=94344&search-onr=44&img=10"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=94344&search-onr=44&img=9"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -135978,7 +136746,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103827&search-onr=44&img=12"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103827&search-onr=44&img=11"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136014,7 +136782,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=94351&search-onr=44&img=11"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=94351&search-onr=44&img=10"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136050,7 +136818,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-44,0,coursedetail.html?id=53245&search-onr=44&img=13"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-44,0,coursedetail.html?id=53245&search-onr=44&img=12"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136087,7 +136855,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-vollzeit-44,0,coursedetail.html?id=77273&search-onr=44&img=14"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-vollzeit-44,0,coursedetail.html?id=77273&search-onr=44&img=13"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136123,7 +136891,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103182&search-onr=44&img=15"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103182&search-onr=44&img=14"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136159,7 +136927,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103841&search-onr=44&img=17"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103841&search-onr=44&img=16"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136195,7 +136963,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103645&search-onr=44&img=16"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103645&search-onr=44&img=15"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136231,7 +136999,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103624&search-onr=44&img=18"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103624&search-onr=44&img=17"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136267,7 +137035,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103842&search-onr=44&img=20"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103842&search-onr=44&img=19"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136303,7 +137071,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-44,0,coursedetail.html?id=113231&search-onr=44&img=1"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-44,0,coursedetail.html?id=113231&search-onr=44&img=20"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136339,7 +137107,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103646&search-onr=44&img=19"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103646&search-onr=44&img=18"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136376,7 +137144,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-vollzeit-44,0,coursedetail.html?id=113223&search-onr=44&img=2"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-vollzeit-44,0,coursedetail.html?id=113223&search-onr=44&img=1"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136412,7 +137180,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103641&search-onr=44&img=3"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103641&search-onr=44&img=2"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136448,7 +137216,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-teilzeit-44,0,coursedetail.html?id=123886&search-onr=44&img=4"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-teilzeit-44,0,coursedetail.html?id=123886&search-onr=44&img=3"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136485,7 +137253,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-teilzeit-44,0,coursedetail.html?id=115841&search-onr=44&img=5"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-teilzeit-44,0,coursedetail.html?id=115841&search-onr=44&img=4"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136521,7 +137289,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-44,0,coursedetail.html?id=113233&search-onr=44&img=6"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-44,0,coursedetail.html?id=113233&search-onr=44&img=5"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136557,7 +137325,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103843&search-onr=44&img=8"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103843&search-onr=44&img=7"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136593,7 +137361,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103647&search-onr=44&img=7"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103647&search-onr=44&img=6"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136629,7 +137397,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103642&search-onr=44&img=9"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103642&search-onr=44&img=8"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136665,7 +137433,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-44,0,coursedetail.html?id=113235&search-onr=44&img=10"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-44,0,coursedetail.html?id=113235&search-onr=44&img=9"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136702,7 +137470,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-vollzeit-44,0,coursedetail.html?id=113228&search-onr=44&img=11"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-vollzeit-44,0,coursedetail.html?id=113228&search-onr=44&img=10"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136738,7 +137506,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-44,0,coursedetail.html?id=113234&search-onr=44&img=12"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-44,0,coursedetail.html?id=113234&search-onr=44&img=11"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136774,7 +137542,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103844&search-onr=44&img=14"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103844&search-onr=44&img=13"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136810,7 +137578,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103648&search-onr=44&img=13"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103648&search-onr=44&img=12"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136847,7 +137615,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-teilzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125841&search-onr=44&img=15"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-teilzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125841&search-onr=44&img=14"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136883,7 +137651,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103643&search-onr=44&img=16"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103643&search-onr=44&img=15"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136919,7 +137687,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-44,0,coursedetail.html?id=113236&search-onr=44&img=17"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-44,0,coursedetail.html?id=113236&search-onr=44&img=16"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136956,7 +137724,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-vollzeit-44,0,coursedetail.html?id=113229&search-onr=44&img=18"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-vollzeit-44,0,coursedetail.html?id=113229&search-onr=44&img=17"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136992,7 +137760,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103845&search-onr=44&img=20"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103845&search-onr=44&img=19"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137028,7 +137796,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103649&search-onr=44&img=19"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103649&search-onr=44&img=18"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137064,7 +137832,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-44,0,coursedetail.html?id=113237&search-onr=44&img=1"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-44,0,coursedetail.html?id=113237&search-onr=44&img=20"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137100,7 +137868,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103644&search-onr=44&img=2"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103644&search-onr=44&img=1"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137136,7 +137904,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103846&search-onr=44&img=4"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103846&search-onr=44&img=3"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137172,7 +137940,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103650&search-onr=44&img=3"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103650&search-onr=44&img=2"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137208,7 +137976,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-44,0,coursedetail.html?id=113238&search-onr=44&img=5"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-44,0,coursedetail.html?id=113238&search-onr=44&img=4"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137245,7 +138013,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-vollzeit-44,0,coursedetail.html?id=113230&search-onr=44&img=6"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-vollzeit-44,0,coursedetail.html?id=113230&search-onr=44&img=5"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137281,7 +138049,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125642&search-onr=44&img=7"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125642&search-onr=44&img=6"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137317,7 +138085,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125681&search-onr=44&img=9"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125681&search-onr=44&img=8"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137353,7 +138121,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125652&search-onr=44&img=8"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125652&search-onr=44&img=7"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137389,7 +138157,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-44,0,coursedetail.html?id=113239&search-onr=44&img=10"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-44,0,coursedetail.html?id=113239&search-onr=44&img=9"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137425,7 +138193,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125646&search-onr=44&img=11"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125646&search-onr=44&img=10"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137461,7 +138229,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125682&search-onr=44&img=13"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125682&search-onr=44&img=12"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137497,7 +138265,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125653&search-onr=44&img=12"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125653&search-onr=44&img=11"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137533,7 +138301,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125647&search-onr=44&img=14"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125647&search-onr=44&img=13"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137569,7 +138337,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125683&search-onr=44&img=16"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125683&search-onr=44&img=15"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137605,7 +138373,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125654&search-onr=44&img=15"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125654&search-onr=44&img=14"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137641,7 +138409,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125648&search-onr=44&img=17"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125648&search-onr=44&img=16"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137677,7 +138445,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125684&search-onr=44&img=19"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125684&search-onr=44&img=18"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137713,7 +138481,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125655&search-onr=44&img=18"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125655&search-onr=44&img=17"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137749,7 +138517,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125649&search-onr=44&img=20"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125649&search-onr=44&img=19"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137785,7 +138553,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125685&search-onr=44&img=2"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125685&search-onr=44&img=1"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137821,7 +138589,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125656&search-onr=44&img=1"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125656&search-onr=44&img=20"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137857,7 +138625,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125650&search-onr=44&img=3"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125650&search-onr=44&img=2"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137893,7 +138661,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125686&search-onr=44&img=5"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125686&search-onr=44&img=4"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137929,6 +138697,6 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125657&search-onr=44&img=4"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125657&search-onr=44&img=3"
   }
 ]
