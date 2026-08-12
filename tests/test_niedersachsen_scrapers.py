@@ -1,5 +1,7 @@
 import re
 import unittest
+
+import pytest
 from unittest.mock import patch
 
 from scrapers.fees import build_exam_fee_lookup, resolve_exam_fee
@@ -199,6 +201,7 @@ class NiedersachsenExamFeeTests(unittest.TestCase):
             {3: 330.0, 4: 349.0},
         )
 
+    @pytest.mark.network
     def test_hildesheim_resolves_current_gebuehrentarif_pdf(self):
         pdf_url = HwkHildesheimSuedniedersachsenScraper()._resolve_exam_fees_pdf_url()
         self.assertIn("gebuehrenordnung-und-gebuehrentarife", pdf_url.lower())
@@ -280,6 +283,7 @@ class NiedersachsenExamFeeTests(unittest.TestCase):
         self.assertEqual(part_i["Kfz.-Techniker"], 962.0)
         self.assertEqual(generic, {2: 406.0, 3: 290.0, 4: 221.0})
 
+    @pytest.mark.network
     def test_osn_resolves_current_gebuehrenordnung_pdf(self):
         pdf_url = HwkOsnabrueckEmslandGrafschaftBentheimScraper()._resolve_exam_fees_pdf_url()
         self.assertIn("2026-01-gebuehrenordnung", pdf_url.lower())

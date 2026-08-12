@@ -1,0 +1,48 @@
+name: Live-site canary
+
+# The @pytest.mark.network tests fetch real chamber pages and PDFs. They are the
+# only thing that notices a chamber quietly restructuring its HTML or moving its
+# Gebührenverzeichnis, so they are kept — just out of the fast PR suite, where a
+# third-party site being down would otherwise fail unrelated changes.
+
+on:
+  schedule:
+    - cron: "0 5 * * 1"   # Monday 05:00 UTC, before the weekly fee scrape
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  canary:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install -r requirements-dev.txt
+
+      - name: Run live-network tests
+        run: python -m pytest tests/ -q -m network
+
+      # A scheduled run that merely logs sends no signal, so make the failure
+      # itself the notification: GitHub emails the actor on a failed cron run,
+      # and the annotation names the likely cause.
+      - name: Explain failure
+        if: failure()
+        run: |
+          echo "::error::Live-site canary failed — a chamber page or fee PDF" \
+               "likely changed. The failing test names the chamber; fix the" \
+               "scraper before the next scheduled scrape writes bad data."
+          exit 1
