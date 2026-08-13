@@ -244,10 +244,10 @@
       "from_tariff": true
     },
     "city": "Dresden",
-    "street": "entsprechend der geltenden Rechtsverordnung geprüft. Zu Einzelheiten informieren wir Sie gern. Technologie- und Gründerzentrum Bautzen GmbH Preuschwitzer Straße 20",
+    "street": "Preuschwitzer Straße 20",
     "zip_code": "02625",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 51.1721673,
+    "longitude": 14.4213099,
     "availability": "waitlist",
     "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114133.html"
   },
@@ -477,6 +477,43 @@
     "longitude": 8.7666044,
     "availability": "available",
     "source_url": "https://www.bbz-marburg.de/kurs/mv-shk-vz/"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "maler-und-lackierer",
+    "trade_name": "Maler und Lackierer",
+    "title": "Maler und Lackierer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-08-12",
+    "end_date": "2027-03-05",
+    "start_date_note": "",
+    "duration_hours": 880,
+    "course_fee": 7120.0,
+    "course_fee_display": "7.120 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 730.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "730 €",
+      "from_tariff": true
+    },
+    "city": "Marburg",
+    "street": "Umgehungsstraße 1-3",
+    "zip_code": "35043",
+    "latitude": 50.7872688,
+    "longitude": 8.7666044,
+    "availability": "available",
+    "source_url": "https://www.bbz-marburg.de/kurs/mv-mal-vz/"
   },
   {
     "chamber_slug": "hwk-kassel",
