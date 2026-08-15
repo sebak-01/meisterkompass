@@ -72,6 +72,43 @@
     "source_url": "https://www.bildung4u.de/kurse/meistervorbereitungslehrgang-teil-iv-ausbildereignungsverordnung-aevo-6-26-3911,0,coursedetail.html?id=58071&search-onr=3911&img=1"
   },
   {
+    "chamber_slug": "hwk-braunschweig-lueneburg-stade",
+    "chamber_name": "HWK Braunschweig-Lüneburg-Stade",
+    "chamber_region": "Niedersachsen",
+    "trade_slug": "kfz-techniker",
+    "trade_name": "Kfz.-Techniker",
+    "title": "Kfz.-Techniker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-08-14",
+    "end_date": "2027-11-05",
+    "start_date_note": "",
+    "duration_hours": 860,
+    "course_fee": 8900.0,
+    "course_fee_display": "8.900 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 1790.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "1.790 €",
+      "from_tariff": true
+    },
+    "city": "Stade",
+    "street": "Rudolf-Diesel-Straße 9",
+    "zip_code": "21684",
+    "latitude": 53.5783325,
+    "longitude": 9.4910483,
+    "availability": "available",
+    "source_url": "https://weiterbildung.hwk-bls.de/22,0,coursedetail.html?id=321189"
+  },
+  {
     "chamber_slug": "hwk-cottbus",
     "chamber_name": "HWK Cottbus",
     "chamber_region": "Brandenburg",
@@ -252,6 +289,42 @@
     "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114133.html"
   },
   {
+    "chamber_slug": "hwk-dresden",
+    "chamber_name": "HWK Dresden",
+    "chamber_region": "Sachsen",
+    "trade_slug": "zahntechniker",
+    "trade_name": "Zahntechniker",
+    "title": "Zahntechniker (Teil II)",
+    "parts": [
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-08-14",
+    "end_date": "2027-07-10",
+    "start_date_note": "",
+    "duration_hours": 550,
+    "course_fee": 4900.0,
+    "course_fee_display": "4.900 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 300.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "300 €",
+      "from_tariff": true
+    },
+    "city": "Dresden",
+    "street": "Am Lagerplatz 8",
+    "zip_code": "01099",
+    "latitude": 51.0833678,
+    "longitude": 13.7677525,
+    "availability": "available",
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/zahntechnikerhandwerk-teil-ii-166520.html"
+  },
+  {
     "chamber_slug": "hwk-flensburg",
     "chamber_name": "HWK Flensburg",
     "chamber_region": "Schleswig-Holstein",
@@ -328,6 +401,42 @@
     "longitude": 9.5331938,
     "availability": "full",
     "source_url": "https://www.hwk-flensburg.de/weiterbildung/kurse-seminare#/vorlage/MVK/469?kurs=40908"
+  },
+  {
+    "chamber_slug": "hwk-halle-saale",
+    "chamber_name": "HWK Halle (Saale)",
+    "chamber_region": "Sachsen-Anhalt",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
+    "parts": [
+      4
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-08-14",
+    "end_date": "2026-10-24",
+    "start_date_note": "",
+    "duration_hours": 102,
+    "course_fee": 910.0,
+    "course_fee_display": "910 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 210.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "210 €",
+      "from_tariff": true
+    },
+    "city": "Halle (Saale)",
+    "street": "Straße der Handwerker 2",
+    "zip_code": "06132",
+    "latitude": 51.4232026,
+    "longitude": 12.0122588,
+    "availability": "available",
+    "source_url": "https://www.hwkhalle.de/seminar/fb-aep-neu/#kurs-27576"
   },
   {
     "chamber_slug": "hwk-hamburg",
@@ -988,6 +1097,42 @@
     "longitude": 12.7280699,
     "availability": "full",
     "source_url": "https://www.hwk-potsdam.de/9,0,coursedetail.html?id=353671"
+  },
+  {
+    "chamber_slug": "hwk-suedthueringen-suhl",
+    "chamber_name": "HWK Südthüringen",
+    "chamber_region": "Thüringen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-08-14",
+    "end_date": "2026-12-16",
+    "start_date_note": "",
+    "duration_hours": 250,
+    "course_fee": 1890.0,
+    "course_fee_display": "1.890 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 205.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "205 €",
+      "from_tariff": true
+    },
+    "city": "Rohr",
+    "street": "Kloster 1",
+    "zip_code": "98530",
+    "latitude": 50.707055,
+    "longitude": 10.891878,
+    "availability": "available",
+    "source_url": "https://www.hwk-suedthueringen.de/seminar/gefa_we/#kurs-3005005"
   },
   {
     "chamber_slug": "hwk-suedthueringen-suhl",
