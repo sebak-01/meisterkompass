@@ -445,7 +445,7 @@
           "qualifier": ""
         },
         "4": {
-          "fee": 205.0,
+          "fee": 420.0,
           "fee_max": null,
           "qualifier": ""
         }
@@ -1491,7 +1491,7 @@
       },
       "friseur": {
         "1,2": {
-          "fee": 1375.0,
+          "fee": 1525.0,
           "fee_max": null,
           "qualifier": "ca."
         }
@@ -2368,6 +2368,13 @@
           "qualifier": ""
         }
       },
+      "maurer-und-betonbauer": {
+        "1,2": {
+          "fee": 630.0,
+          "fee_max": null,
+          "qualifier": "ca."
+        }
+      },
       "metallbauer": {
         "1,2": {
           "fee": 630.0,
@@ -2392,6 +2399,13 @@
       "zahntechniker": {
         "1,2": {
           "fee": 680.0,
+          "fee_max": null,
+          "qualifier": "ca."
+        }
+      },
+      "zimmerer": {
+        "1,2": {
+          "fee": 630.0,
           "fee_max": null,
           "qualifier": "ca."
         }
@@ -2683,6 +2697,13 @@
       "fahrzeuglackierer": {
         "1,2": {
           "fee": 1530.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "feinwerkmechaniker": {
+        "1,2": {
+          "fee": 2070.0,
           "fee_max": null,
           "qualifier": ""
         }
