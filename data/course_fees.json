@@ -282,16 +282,6 @@
     "is_generic": false
   },
   {
-    "chamber_slug": "hwk-leipzig",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      3
-    ],
-    "fee": 1936.0,
-    "exam_fee_scraped": null,
-    "is_generic": true
-  },
-  {
     "chamber_slug": "hwk-magdeburg",
     "trade_slug": "allgemein-teil-iii-iv",
     "parts": [
@@ -1300,6 +1290,16 @@
     ],
     "fee": 780.0,
     "exam_fee_scraped": 180.0,
+    "is_generic": true
+  },
+  {
+    "chamber_slug": "hwk-leipzig",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      3
+    ],
+    "fee": 1936.0,
+    "exam_fee_scraped": null,
     "is_generic": true
   },
   {

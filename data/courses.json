@@ -40911,10 +40911,10 @@
     "parts": [
       3
     ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
+    "format": "part_time",
+    "format_display": "Teilzeit",
     "teaching_mode": "presence",
-    "start_date": "2027-08-20",
+    "start_date": "2027-08-13",
     "end_date": "2028-01-14",
     "start_date_note": "",
     "duration_hours": 240,
@@ -40934,7 +40934,7 @@
     "zip_code": "21079",
     "latitude": 53.4582352,
     "longitude": 9.9959008,
-    "availability": "unknown",
+    "availability": "available",
     "source_url": "https://www.elbcampus.de/weiterbildung/gepr.-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo/"
   },
   {
@@ -63512,7 +63512,7 @@
     "zip_code": "04451",
     "latitude": 51.348242,
     "longitude": 12.5485819,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-leipzig.de/3,0,coursedetail.html?id=73280"
   },
   {
@@ -75294,43 +75294,6 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
-    "start_date": "2026-08-17",
-    "end_date": "2027-04-09",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": 12395.0,
-    "course_fee_display": "12.395 €",
-    "exam_fee_scraped": 2100.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 2100.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "2.100 €",
-      "from_tariff": false
-    },
-    "city": "Münster",
-    "street": "Albrecht-Thaer-Straße 9",
-    "zip_code": "48147",
-    "latitude": 51.9830337,
-    "longitude": 7.6358696,
-    "availability": "waitlist",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/karosserie-u-fahrzeugbauer-meisterschule-schwerpunkt-fahrzeugbau-teile-i-und-ii-vollzeit-93896#termin-1"
-  },
-  {
-    "chamber_slug": "hwk-muenster",
-    "chamber_name": "HWK Münster",
-    "chamber_region": "Nordrhein-Westfalen",
-    "trade_slug": "karosserie-und-fahrzeugbauer",
-    "trade_name": "Karosserie- und Fahrzeugbauer",
-    "title": "Karosserie- und Fahrzeugbauer (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
     "start_date": "2027-03-15",
     "end_date": "2027-10-08",
     "start_date_note": "",
@@ -75389,7 +75352,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/karosserie-u-fahrzeugbauer-meisterschule-schwerpunkt-fahrzeugbau-teile-i-und-ii-vollzeit-93896#termin-2"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/karosserie-u-fahrzeugbauer-meisterschule-schwerpunkt-fahrzeugbau-teile-i-und-ii-vollzeit-93896#termin-1"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -76401,43 +76364,6 @@
       1,
       2
     ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-08-17",
-    "end_date": "2027-04-16",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": 9800.0,
-    "course_fee_display": "9.800 €",
-    "exam_fee_scraped": 1300.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 1300.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "1.300 €",
-      "from_tariff": false
-    },
-    "city": "Münster",
-    "street": "Albrecht-Thaer-Straße 9",
-    "zip_code": "48147",
-    "latitude": 51.9830337,
-    "longitude": 7.6358696,
-    "availability": "waitlist",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/tischler-meisterschule-teile-i-und-ii-vollzeit-97693#termin-1"
-  },
-  {
-    "chamber_slug": "hwk-muenster",
-    "chamber_name": "HWK Münster",
-    "chamber_region": "Nordrhein-Westfalen",
-    "trade_slug": "tischler",
-    "trade_name": "Tischler",
-    "title": "Tischler (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
     "format": "part_time",
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
@@ -76499,7 +76425,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "waitlist",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/tischler-meisterschule-teile-i-und-ii-vollzeit-97693#termin-2"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/tischler-meisterschule-teile-i-und-ii-vollzeit-97693#termin-1"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -76536,7 +76462,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "waitlist",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/tischler-meisterschule-teile-i-und-ii-vollzeit-97693#termin-3"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/tischler-meisterschule-teile-i-und-ii-vollzeit-97693#termin-2"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -76610,7 +76536,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/tischler-meisterschule-teile-i-und-ii-vollzeit-97693#termin-4"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/tischler-meisterschule-teile-i-und-ii-vollzeit-97693#termin-3"
   },
   {
     "chamber_slug": "hwk-muenster",
