@@ -3232,13 +3232,6 @@
           "qualifier": ""
         }
       },
-      "land-und-baumaschinenmechatroniker": {
-        "1": {
-          "fee": 1100.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
       "strassenbauer": {
         "1,2": {
           "fee": 1300.0,

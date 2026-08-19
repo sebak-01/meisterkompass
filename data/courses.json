@@ -4059,7 +4059,7 @@
     "zip_code": "",
     "latitude": 52.2646577,
     "longitude": 10.5236066,
-    "availability": "waitlist",
+    "availability": "available",
     "source_url": "https://weiterbildung.hwk-bls.de/22,0,coursedetail.html?id=318341"
   },
   {
@@ -8826,42 +8826,6 @@
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
     "start_date": "2026-08-24",
-    "end_date": "2026-10-28",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 790.0,
-    "course_fee_display": "790 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Chemnitz",
-    "street": "Limbacher Straße 195",
-    "zip_code": "09116",
-    "latitude": 50.8307235,
-    "longitude": 12.8727524,
-    "availability": "full",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_502"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-08-24",
     "end_date": "2027-06-09",
     "start_date_note": "",
     "duration_hours": 390,
@@ -8883,42 +8847,6 @@
     "longitude": 12.8727524,
     "availability": "full",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo-ausbildung-der-ausbilder/#termin_504"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-08-25",
-    "end_date": "2026-11-04",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 790.0,
-    "course_fee_display": "790 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Plauen",
-    "street": "Rähnisstraße 19",
-    "zip_code": "08523",
-    "latitude": 50.4993901,
-    "longitude": 12.1453036,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_424"
   },
   {
     "chamber_slug": "hwk-chemnitz",
@@ -9027,78 +8955,6 @@
     "longitude": 12.8727524,
     "availability": "full",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_505"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-09-01",
-    "end_date": "2026-09-17",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 790.0,
-    "course_fee_display": "790 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Chemnitz",
-    "street": "Limbacher Straße 195",
-    "zip_code": "09116",
-    "latitude": 50.8307235,
-    "longitude": 12.8727524,
-    "availability": "full",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_488"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-09-01",
-    "end_date": "2026-09-17",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 790.0,
-    "course_fee_display": "790 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Chemnitz",
-    "street": "Limbacher Straße 195",
-    "zip_code": "09116",
-    "latitude": 50.8307235,
-    "longitude": 12.8727524,
-    "availability": "full",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_489"
   },
   {
     "chamber_slug": "hwk-chemnitz",
@@ -9294,42 +9150,6 @@
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
     "start_date": "2026-09-11",
-    "end_date": "2026-11-21",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 790.0,
-    "course_fee_display": "790 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Annaberg-Buchholz",
-    "street": "Bahnhofstraße 1",
-    "zip_code": "09456",
-    "latitude": 50.5739084,
-    "longitude": 13.0021358,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_986"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-09-11",
     "end_date": "2027-06-26",
     "start_date_note": "",
     "duration_hours": 390,
@@ -9438,42 +9258,6 @@
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
     "start_date": "2026-10-24",
-    "end_date": "2026-12-16",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 790.0,
-    "course_fee_display": "790 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Chemnitz",
-    "street": "Limbacher Straße 195",
-    "zip_code": "09116",
-    "latitude": 50.8307235,
-    "longitude": 12.8727524,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_560"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-10-24",
     "end_date": "2027-06-23",
     "start_date_note": "",
     "duration_hours": 390,
@@ -9495,78 +9279,6 @@
     "longitude": 12.8727524,
     "availability": "available",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo-ausbildung-der-ausbilder/#termin_562"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-11-02",
-    "end_date": "2026-11-20",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 790.0,
-    "course_fee_display": "790 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Plauen",
-    "street": "Rähnisstraße 19",
-    "zip_code": "08523",
-    "latitude": 50.4993901,
-    "longitude": 12.1453036,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_480"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-11-06",
-    "end_date": "2027-01-09",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 790.0,
-    "course_fee_display": "790 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Zwickau",
-    "street": "Scheffelstraße 39",
-    "zip_code": "08066",
-    "latitude": 50.7334417,
-    "longitude": 12.5051553,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_534"
   },
   {
     "chamber_slug": "hwk-chemnitz",
@@ -9711,114 +9423,6 @@
     "longitude": 13.0021358,
     "availability": "available",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_990"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-01-11",
-    "end_date": "2027-01-28",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 820.0,
-    "course_fee_display": "820 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Plauen",
-    "street": "Rähnisstraße 19",
-    "zip_code": "08523",
-    "latitude": 50.4993901,
-    "longitude": 12.1453036,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_566"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-01-11",
-    "end_date": "2027-01-28",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 820.0,
-    "course_fee_display": "820 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Chemnitz",
-    "street": "Limbacher Straße 195",
-    "zip_code": "09116",
-    "latitude": 50.8307235,
-    "longitude": 12.8727524,
-    "availability": "full",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_735"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-01-11",
-    "end_date": "2027-01-28",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 820.0,
-    "course_fee_display": "820 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Chemnitz",
-    "street": "Limbacher Straße 195",
-    "zip_code": "09116",
-    "latitude": 50.8307235,
-    "longitude": 12.8727524,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_736"
   },
   {
     "chamber_slug": "hwk-chemnitz",
@@ -10122,42 +9726,6 @@
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
     "start_date": "2027-04-05",
-    "end_date": "2027-04-22",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 820.0,
-    "course_fee_display": "820 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Chemnitz",
-    "street": "Limbacher Straße 195",
-    "zip_code": "09116",
-    "latitude": 50.8307235,
-    "longitude": 12.8727524,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_734"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-04-05",
     "end_date": "2027-06-25",
     "start_date_note": "",
     "duration_hours": 390,
@@ -10179,78 +9747,6 @@
     "longitude": 12.8727524,
     "availability": "available",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo-ausbildung-der-ausbilder/#termin_738"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-04-09",
-    "end_date": "2027-06-19",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 790.0,
-    "course_fee_display": "790 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Zwickau",
-    "street": "Scheffelstraße 39",
-    "zip_code": "08066",
-    "latitude": 50.7334417,
-    "longitude": 12.5051553,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_533"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-04-23",
-    "end_date": "2027-07-03",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 790.0,
-    "course_fee_display": "790 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Chemnitz",
-    "street": "Limbacher Straße 195",
-    "zip_code": "09116",
-    "latitude": 50.8307235,
-    "longitude": 12.8727524,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_501"
   },
   {
     "chamber_slug": "hwk-chemnitz",
@@ -10287,150 +9783,6 @@
     "longitude": 12.8727524,
     "availability": "available",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_742"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-09-06",
-    "end_date": "2027-09-23",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 820.0,
-    "course_fee_display": "820 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Plauen",
-    "street": "Rähnisstraße 19",
-    "zip_code": "08523",
-    "latitude": 50.4993901,
-    "longitude": 12.1453036,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_567"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-09-06",
-    "end_date": "2027-11-10",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 820.0,
-    "course_fee_display": "820 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Chemnitz",
-    "street": "Limbacher Straße 195",
-    "zip_code": "09116",
-    "latitude": 50.8307235,
-    "longitude": 12.8727524,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_727"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-09-06",
-    "end_date": "2027-09-23",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 820.0,
-    "course_fee_display": "820 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Chemnitz",
-    "street": "Limbacher Straße 195",
-    "zip_code": "09116",
-    "latitude": 50.8307235,
-    "longitude": 12.8727524,
-    "availability": "full",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_737"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-09-06",
-    "end_date": "2027-09-23",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 820.0,
-    "course_fee_display": "820 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Chemnitz",
-    "street": "Limbacher Straße 195",
-    "zip_code": "09116",
-    "latitude": 50.8307235,
-    "longitude": 12.8727524,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_746"
   },
   {
     "chamber_slug": "hwk-chemnitz",
@@ -10590,42 +9942,6 @@
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
     "start_date": "2027-09-07",
-    "end_date": "2027-11-16",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 820.0,
-    "course_fee_display": "820 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Plauen",
-    "street": "Rähnisstraße 19",
-    "zip_code": "08523",
-    "latitude": 50.4993901,
-    "longitude": 12.1453036,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_568"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-09-07",
     "end_date": "2028-07-05",
     "start_date_note": "",
     "duration_hours": 390,
@@ -10647,42 +9963,6 @@
     "longitude": 12.1453036,
     "availability": "available",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo-ausbildung-der-ausbilder/#termin_571"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-09-10",
-    "end_date": "2027-11-13",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 820.0,
-    "course_fee_display": "820 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Annaberg-Buchholz",
-    "street": "Bahnhofstraße 1",
-    "zip_code": "09456",
-    "latitude": 50.5739084,
-    "longitude": 13.0021358,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_1018"
   },
   {
     "chamber_slug": "hwk-chemnitz",
@@ -10986,42 +10266,6 @@
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
     "start_date": "2027-10-23",
-    "end_date": "2027-12-15",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 820.0,
-    "course_fee_display": "820 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Chemnitz",
-    "street": "Limbacher Straße 195",
-    "zip_code": "09116",
-    "latitude": 50.8307235,
-    "longitude": 12.8727524,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_750"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-10-23",
     "end_date": "2028-06-21",
     "start_date_note": "",
     "duration_hours": 390,
@@ -11043,42 +10287,6 @@
     "longitude": 12.8727524,
     "availability": "available",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo-ausbildung-der-ausbilder/#termin_753"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-11-12",
-    "end_date": "2028-01-15",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 820.0,
-    "course_fee_display": "820 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Zwickau",
-    "street": "Scheffelstraße 39",
-    "zip_code": "08066",
-    "latitude": 50.7334417,
-    "longitude": 12.5051553,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_751"
   },
   {
     "chamber_slug": "hwk-chemnitz",
@@ -11259,114 +10467,6 @@
     "longitude": 12.8727524,
     "availability": "available",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_756"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2028-01-10",
-    "end_date": "2028-01-27",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 900.0,
-    "course_fee_display": "900 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Plauen",
-    "street": "Rähnisstraße 19",
-    "zip_code": "08523",
-    "latitude": 50.4993901,
-    "longitude": 12.1453036,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_1128"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2028-01-10",
-    "end_date": "2028-01-27",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 900.0,
-    "course_fee_display": "900 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Chemnitz",
-    "street": "Limbacher Straße 195",
-    "zip_code": "09116",
-    "latitude": 50.8307235,
-    "longitude": 12.8727524,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_991"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2028-01-10",
-    "end_date": "2028-01-27",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 900.0,
-    "course_fee_display": "900 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Chemnitz",
-    "street": "Limbacher Straße 195",
-    "zip_code": "09116",
-    "latitude": 50.8307235,
-    "longitude": 12.8727524,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_992"
   },
   {
     "chamber_slug": "hwk-chemnitz",
@@ -11630,78 +10730,6 @@
     "parts": [
       4
     ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2028-04-14",
-    "end_date": "2028-07-01",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 820.0,
-    "course_fee_display": "820 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Chemnitz",
-    "street": "Limbacher Straße 195",
-    "zip_code": "09116",
-    "latitude": 50.8307235,
-    "longitude": 12.8727524,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_728"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2028-04-24",
-    "end_date": "2028-05-11",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 900.0,
-    "course_fee_display": "900 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Chemnitz",
-    "street": "Limbacher Straße 195",
-    "zip_code": "09116",
-    "latitude": 50.8307235,
-    "longitude": 12.8727524,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_993"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
@@ -11727,42 +10755,6 @@
     "longitude": 12.8727524,
     "availability": "available",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo-ausbildung-der-ausbilder/#termin_996"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2028-04-28",
-    "end_date": "2028-07-01",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 820.0,
-    "course_fee_display": "820 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Zwickau",
-    "street": "Scheffelstraße 39",
-    "zip_code": "08066",
-    "latitude": 50.7334417,
-    "longitude": 12.5051553,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_749"
   },
   {
     "chamber_slug": "hwk-chemnitz",
@@ -11814,42 +10806,6 @@
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
     "start_date": "2028-08-29",
-    "end_date": "2028-11-21",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 900.0,
-    "course_fee_display": "900 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Plauen",
-    "street": "Rähnisstraße 19",
-    "zip_code": "08523",
-    "latitude": 50.4993901,
-    "longitude": 12.1453036,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_1138"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2028-08-29",
     "end_date": "2029-07-18",
     "start_date_note": "",
     "duration_hours": 390,
@@ -11871,150 +10827,6 @@
     "longitude": 12.1453036,
     "availability": "available",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo-ausbildung-der-ausbilder/#termin_1141"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2028-09-04",
-    "end_date": "2028-09-21",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 900.0,
-    "course_fee_display": "900 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Chemnitz",
-    "street": "Limbacher Straße 195",
-    "zip_code": "09116",
-    "latitude": 50.8307235,
-    "longitude": 12.8727524,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_1000"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2028-09-04",
-    "end_date": "2028-09-21",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 900.0,
-    "course_fee_display": "900 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Chemnitz",
-    "street": "Limbacher Straße 195",
-    "zip_code": "09116",
-    "latitude": 50.8307235,
-    "longitude": 12.8727524,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_1001"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2028-09-04",
-    "end_date": "2028-11-15",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 900.0,
-    "course_fee_display": "900 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Chemnitz",
-    "street": "Limbacher Straße 195",
-    "zip_code": "09116",
-    "latitude": 50.8307235,
-    "longitude": 12.8727524,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_1006"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2028-09-04",
-    "end_date": "2028-09-21",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 900.0,
-    "course_fee_display": "900 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Plauen",
-    "street": "Rähnisstraße 19",
-    "zip_code": "08523",
-    "latitude": 50.4993901,
-    "longitude": 12.1453036,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_1129"
   },
   {
     "chamber_slug": "hwk-chemnitz",
@@ -12159,42 +10971,6 @@
     "longitude": 12.1453036,
     "availability": "available",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo-ausbildung-der-ausbilder/#termin_1131"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2028-09-08",
-    "end_date": "2028-11-04",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 900.0,
-    "course_fee_display": "900 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Annaberg-Buchholz",
-    "street": "Bahnhofstraße 1",
-    "zip_code": "09456",
-    "latitude": 50.5739084,
-    "longitude": 13.0021358,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_1019"
   },
   {
     "chamber_slug": "hwk-chemnitz",
@@ -12570,42 +11346,6 @@
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
     "start_date": "2028-11-17",
-    "end_date": "2029-01-20",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 900.0,
-    "course_fee_display": "900 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Zwickau",
-    "street": "Scheffelstraße 39",
-    "zip_code": "08066",
-    "latitude": 50.7334417,
-    "longitude": 12.5051553,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_1013"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2028-11-17",
     "end_date": "2029-07-14",
     "start_date_note": "",
     "duration_hours": 390,
@@ -12663,42 +11403,6 @@
     "longitude": 13.0021358,
     "availability": "available",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_1025"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2028-11-18",
-    "end_date": "2029-01-24",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 900.0,
-    "course_fee_display": "900 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Chemnitz",
-    "street": "Limbacher Straße 195",
-    "zip_code": "09116",
-    "latitude": 50.8307235,
-    "longitude": 12.8727524,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_1027"
   },
   {
     "chamber_slug": "hwk-chemnitz",
@@ -12807,114 +11511,6 @@
     "longitude": 12.1453036,
     "availability": "available",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_1144"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2029-01-08",
-    "end_date": "2029-01-25",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 930.0,
-    "course_fee_display": "930 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Chemnitz",
-    "street": "Limbacher Straße 195",
-    "zip_code": "09116",
-    "latitude": 50.8307235,
-    "longitude": 12.8727524,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_1032"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2029-01-08",
-    "end_date": "2029-01-25",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 930.0,
-    "course_fee_display": "930 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Chemnitz",
-    "street": "Limbacher Straße 195",
-    "zip_code": "09116",
-    "latitude": 50.8307235,
-    "longitude": 12.8727524,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_1061"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2029-01-08",
-    "end_date": "2029-01-25",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 930.0,
-    "course_fee_display": "930 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Plauen",
-    "street": "Rähnisstraße 19",
-    "zip_code": "08523",
-    "latitude": 50.4993901,
-    "longitude": 12.1453036,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_1134"
   },
   {
     "chamber_slug": "hwk-chemnitz",
@@ -13218,42 +11814,6 @@
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
     "start_date": "2029-04-09",
-    "end_date": "2029-04-26",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 930.0,
-    "course_fee_display": "930 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Chemnitz",
-    "street": "Limbacher Straße 195",
-    "zip_code": "09116",
-    "latitude": 50.8307235,
-    "longitude": 12.8727524,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_1062"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2029-04-09",
     "end_date": "2029-06-29",
     "start_date_note": "",
     "duration_hours": 390,
@@ -13275,114 +11835,6 @@
     "longitude": 12.8727524,
     "availability": "available",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo-ausbildung-der-ausbilder/#termin_1066"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2029-04-13",
-    "end_date": "2029-06-23",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 900.0,
-    "course_fee_display": "900 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Zwickau",
-    "street": "Scheffelstraße 39",
-    "zip_code": "08066",
-    "latitude": 50.7334417,
-    "longitude": 12.5051553,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_1012"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2029-04-20",
-    "end_date": "2029-06-23",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 900.0,
-    "course_fee_display": "900 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Freiberg",
-    "street": "Mühlweg 5",
-    "zip_code": "09599",
-    "latitude": 50.9102617,
-    "longitude": 13.3229558,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_1020"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2029-04-27",
-    "end_date": "2029-07-07",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 900.0,
-    "course_fee_display": "900 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Chemnitz",
-    "street": "Limbacher Straße 195",
-    "zip_code": "09116",
-    "latitude": 50.8307235,
-    "longitude": 12.8727524,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_1007"
   },
   {
     "chamber_slug": "hwk-chemnitz",
@@ -13419,42 +11871,6 @@
     "longitude": 12.8727524,
     "availability": "available",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_1070"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2029-08-21",
-    "end_date": "2029-11-07",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 930.0,
-    "course_fee_display": "930 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Plauen",
-    "street": "Rähnisstraße 19",
-    "zip_code": "08523",
-    "latitude": 50.4993901,
-    "longitude": 12.1453036,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_1139"
   },
   {
     "chamber_slug": "hwk-chemnitz",
@@ -13563,150 +11979,6 @@
     "longitude": 12.8727524,
     "availability": "available",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_1504"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2029-09-03",
-    "end_date": "2029-09-20",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 930.0,
-    "course_fee_display": "930 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Chemnitz",
-    "street": "Limbacher Straße 195",
-    "zip_code": "09116",
-    "latitude": 50.8307235,
-    "longitude": 12.8727524,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_1063"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2029-09-03",
-    "end_date": "2029-09-20",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 930.0,
-    "course_fee_display": "930 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Chemnitz",
-    "street": "Limbacher Straße 195",
-    "zip_code": "09116",
-    "latitude": 50.8307235,
-    "longitude": 12.8727524,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_1064"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2029-09-03",
-    "end_date": "2029-09-20",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 930.0,
-    "course_fee_display": "930 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Plauen",
-    "street": "Rähnisstraße 19",
-    "zip_code": "08523",
-    "latitude": 50.4993901,
-    "longitude": 12.1453036,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_1140"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2029-09-03",
-    "end_date": "2029-11-07",
-    "start_date_note": "",
-    "duration_hours": 390,
-    "course_fee": 930.0,
-    "course_fee_display": "930 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Chemnitz",
-    "street": "Limbacher Straße 195",
-    "zip_code": "09116",
-    "latitude": 50.8307235,
-    "longitude": 12.8727524,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_1493"
   },
   {
     "chamber_slug": "hwk-chemnitz",
@@ -13938,42 +12210,6 @@
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
     "start_date": "2029-09-14",
-    "end_date": "2029-11-24",
-    "start_date_note": "",
-    "duration_hours": 390,
-    "course_fee": 930.0,
-    "course_fee_display": "930 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Annaberg-Buchholz",
-    "street": "Bahnhofstraße 1",
-    "zip_code": "09456",
-    "latitude": 50.5739084,
-    "longitude": 13.0021358,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_1495"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2029-09-14",
     "end_date": "2030-07-06",
     "start_date_note": "",
     "duration_hours": 390,
@@ -14118,42 +12354,6 @@
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
     "start_date": "2029-10-20",
-    "end_date": "2029-12-19",
-    "start_date_note": "",
-    "duration_hours": 390,
-    "course_fee": 930.0,
-    "course_fee_display": "930 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Chemnitz",
-    "street": "Limbacher Straße 195",
-    "zip_code": "09116",
-    "latitude": 50.8307235,
-    "longitude": 12.8727524,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_1496"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2029-10-20",
     "end_date": "2030-06-26",
     "start_date_note": "",
     "duration_hours": 390,
@@ -14175,42 +12375,6 @@
     "longitude": 12.8727524,
     "availability": "available",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo-ausbildung-der-ausbilder/#termin_1502"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2029-11-02",
-    "end_date": "2030-01-05",
-    "start_date_note": "",
-    "duration_hours": 390,
-    "course_fee": 930.0,
-    "course_fee_display": "930 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Zwickau",
-    "street": "Scheffelstraße 39",
-    "zip_code": "08066",
-    "latitude": 50.7334417,
-    "longitude": 12.5051553,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_1497"
   },
   {
     "chamber_slug": "hwk-chemnitz",
@@ -14427,78 +12591,6 @@
     "longitude": 12.8727524,
     "availability": "available",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_1508"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2030-04-12",
-    "end_date": "2030-06-22",
-    "start_date_note": "",
-    "duration_hours": 390,
-    "course_fee": 930.0,
-    "course_fee_display": "930 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Zwickau",
-    "street": "Scheffelstraße 39",
-    "zip_code": "08066",
-    "latitude": 50.7334417,
-    "longitude": 12.5051553,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_1494"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2030-04-26",
-    "end_date": "2030-07-06",
-    "start_date_note": "",
-    "duration_hours": 390,
-    "course_fee": 930.0,
-    "course_fee_display": "930 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Chemnitz",
-    "street": "Limbacher Straße 195",
-    "zip_code": "09116",
-    "latitude": 50.8307235,
-    "longitude": 12.8727524,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_1492"
   },
   {
     "chamber_slug": "hwk-chemnitz",
@@ -18524,7 +16616,7 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "waitlist",
+    "availability": "available",
     "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-geruestbauer/geruestbauer-in-vollzeitlehrgang-meistervorbereitung-teile-i-und-ii-2/#termin-2"
   },
   {
@@ -18655,8 +16747,8 @@
     "end_date": "2027-11-12",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3530.0,
-    "course_fee_display": "3.530 €",
+    "course_fee": 3730.0,
+    "course_fee_display": "3.730 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -18672,7 +16764,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-1"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-2"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -18691,8 +16783,8 @@
     "end_date": "2027-11-12",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3530.0,
-    "course_fee_display": "3.530 €",
+    "course_fee": 3730.0,
+    "course_fee_display": "3.730 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -18708,7 +16800,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-3"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-4"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -18780,7 +16872,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-1"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-2"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -18816,7 +16908,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-2"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-3"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -18888,7 +16980,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-3"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-1"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -18979,8 +17071,8 @@
     "end_date": "2028-11-10",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3530.0,
-    "course_fee_display": "3.530 €",
+    "course_fee": 3730.0,
+    "course_fee_display": "3.730 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -18996,7 +17088,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-2"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-1"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -19015,8 +17107,8 @@
     "end_date": "2028-11-10",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3530.0,
-    "course_fee_display": "3.530 €",
+    "course_fee": 3730.0,
+    "course_fee_display": "3.730 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -19032,7 +17124,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-4"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-3"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -19543,7 +17635,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-2"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-1"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -19615,7 +17707,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-3"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-2"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -19687,7 +17779,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-4"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-3"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -19830,8 +17922,8 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-5"
+    "availability": "available",
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-4"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -19902,8 +17994,8 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-6"
+    "availability": "waitlist",
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-5"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -20119,7 +18211,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-7"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-6"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -20191,7 +18283,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-8"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-7"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -20263,7 +18355,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-9"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-8"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -20407,7 +18499,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-10"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-9"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -20479,7 +18571,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-11"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-10"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -20551,7 +18643,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-12"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-11"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -20623,7 +18715,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-13"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-12"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -20695,7 +18787,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-14"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-13"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -20911,7 +19003,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-15"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-14"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -20983,7 +19075,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-16"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-15"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -21055,7 +19147,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-17"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-16"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -21199,7 +19291,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-18"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-17"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -21271,7 +19363,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-19"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-18"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -21451,7 +19543,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-20"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-19"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -21487,7 +19579,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-21"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-20"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -27757,7 +25849,7 @@
     "zip_code": "40221",
     "latitude": 51.2052396,
     "longitude": 6.7578972,
-    "availability": "waitlist",
+    "availability": "available",
     "source_url": "https://www.hwk-duesseldorf.de/31,0,coursedetail.html?id=61044"
   },
   {
@@ -34151,7 +32243,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-teile-i-und-ii-im-maler-und-lackierer-handwerk/#termin-2"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-teile-i-und-ii-im-maler-und-lackierer-handwerk/#termin-1"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -34188,7 +32280,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-teile-i-und-ii-im-maler-und-lackierer-handwerk/#termin-3"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-teile-i-und-ii-im-maler-und-lackierer-handwerk/#termin-2"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -34225,7 +32317,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-teile-i-und-ii-im-maler-und-lackierer-handwerk/#termin-4"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-teile-i-und-ii-im-maler-und-lackierer-handwerk/#termin-3"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -34262,7 +32354,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-teile-i-und-ii-im-maler-und-lackierer-handwerk/#termin-5"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-teile-i-und-ii-im-maler-und-lackierer-handwerk/#termin-4"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -35367,6 +33459,43 @@
     "longitude": 13.1045766,
     "availability": "available",
     "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-4"
+  },
+  {
+    "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
+    "chamber_name": "HWK Frankfurt (Oder) – Region Ostbrandenburg",
+    "chamber_region": "Brandenburg",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "parts": [
+      3,
+      4
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-05-14",
+    "end_date": "2028-03-13",
+    "start_date_note": "",
+    "duration_hours": 378,
+    "course_fee": 3050.0,
+    "course_fee_display": "3.050 €",
+    "exam_fee_scraped": 625.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 625.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "625 €",
+      "from_tariff": false
+    },
+    "city": "Frankfurt (Oder)",
+    "street": "Spiekerstraße 11",
+    "zip_code": "15230",
+    "latitude": 52.3388204,
+    "longitude": 14.5470716,
+    "availability": "available",
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung-2/#termin-1"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -39081,7 +37210,7 @@
     "zip_code": "21079",
     "latitude": 53.4582352,
     "longitude": 9.9959008,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.elbcampus.de/weiterbildung/meistervorbereitung-im-friseurhandwerk/"
   },
   {
@@ -39378,6 +37507,43 @@
     "latitude": 53.4582352,
     "longitude": 9.9959008,
     "availability": "waitlist",
+    "source_url": "https://www.elbcampus.de/weiterbildung/meistervorbereitung-im-massschneiderhandwerk/"
+  },
+  {
+    "chamber_slug": "hwk-hamburg",
+    "chamber_name": "HWK Hamburg",
+    "chamber_region": "Hamburg",
+    "trade_slug": "massschneider",
+    "trade_name": "Maßschneider",
+    "title": "Maßschneider (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-09-01",
+    "end_date": "2030-03-02",
+    "start_date_note": "",
+    "duration_hours": 550,
+    "course_fee": 6860.0,
+    "course_fee_display": "6.860 €",
+    "exam_fee_scraped": 860.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 860.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "860 €",
+      "from_tariff": false
+    },
+    "city": "Hamburg",
+    "street": "Zum Handwerkszentrum 1",
+    "zip_code": "21079",
+    "latitude": 53.4582352,
+    "longitude": 9.9959008,
+    "availability": "available",
     "source_url": "https://www.elbcampus.de/weiterbildung/meistervorbereitung-im-massschneiderhandwerk/"
   },
   {
@@ -54369,7 +52535,7 @@
     "zip_code": "50829",
     "latitude": 50.9782563,
     "longitude": 6.8936135,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-koeln.de/32,0,coursedetail.html?id=37202"
   },
   {
@@ -54405,7 +52571,7 @@
     "zip_code": "50829",
     "latitude": 50.9782563,
     "longitude": 6.8936135,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-koeln.de/32,0,coursedetail.html?id=37205"
   },
   {
@@ -55433,7 +53599,7 @@
     "zip_code": "50827",
     "latitude": 50.9758161,
     "longitude": 6.8975287,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-koeln.de/32,0,coursedetail.html?id=34293"
   },
   {
@@ -66126,43 +64292,6 @@
       1,
       2
     ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-09-06",
-    "end_date": "2028-06-03",
-    "start_date_note": "",
-    "duration_hours": 984,
-    "course_fee": null,
-    "course_fee_display": "—",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 890.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "890 €",
-      "from_tariff": true
-    },
-    "city": "Magdeburg",
-    "street": "",
-    "zip_code": "",
-    "latitude": 52.1314783,
-    "longitude": 11.6400789,
-    "availability": "unknown",
-    "source_url": "https://www.hwk-magdeburg.de/16,0,coursedetail.html?id=49764"
-  },
-  {
-    "chamber_slug": "hwk-magdeburg",
-    "chamber_name": "HWK Magdeburg",
-    "chamber_region": "Sachsen-Anhalt",
-    "trade_slug": "installateur-und-heizungsbauer",
-    "trade_name": "Installateur- und Heizungsbauer",
-    "title": "Installateur- und Heizungsbauer (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
     "format": "part_time",
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
@@ -75437,7 +73566,7 @@
     "zip_code": "48147",
     "latitude": 51.9830337,
     "longitude": 7.6358696,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hbz-bildung.de/de/weiterbildung/maler-und-lackierer-meisterschule-teile-i-und-ii-vollzeit-92767#termin-1"
   },
   {
@@ -84926,7 +83055,7 @@
     "zip_code": "94469",
     "latitude": 48.84793,
     "longitude": 12.9572569,
-    "availability": "full",
+    "availability": "unknown",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1018415"
   },
   {
@@ -85358,7 +83487,7 @@
     "zip_code": "94469",
     "latitude": 48.84793,
     "longitude": 12.9572569,
-    "availability": "full",
+    "availability": "unknown",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1018607"
   },
   {
@@ -94881,7 +93010,7 @@
     "zip_code": "26135",
     "latitude": 53.1144351,
     "longitude": 8.2605231,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.hwk-oldenburg.de/weiterbildung/kurse-und-seminare#/vorlage/MVK/1734?kurs=43448"
   },
   {
@@ -97111,43 +95240,6 @@
     "longitude": 8.0401607,
     "availability": "available",
     "source_url": "https://www.btz-osnabrueck.de/seminar/mstrfritza/#kurs-20291"
-  },
-  {
-    "chamber_slug": "hwk-osnabrueck-emsland-grafschaft-bentheim",
-    "chamber_name": "HWK Osnabrück-Emsland-Grafschaft Bentheim",
-    "chamber_region": "Niedersachsen",
-    "trade_slug": "installateur-und-heizungsbauer",
-    "trade_name": "Installateur- und Heizungsbauer",
-    "title": "Installateur- und Heizungsbauer (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-08-19",
-    "end_date": "2028-09-23",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": 10395.0,
-    "course_fee_display": "10.395 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 1000.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "1.000 €",
-      "from_tariff": true
-    },
-    "city": "Osnabrück",
-    "street": "Bramscher Straße 134 - 136",
-    "zip_code": "49088",
-    "latitude": 52.290842,
-    "longitude": 8.0401607,
-    "availability": "full",
-    "source_url": "https://www.btz-osnabrueck.de/seminar/mstriheiztza/#kurs-20261"
   },
   {
     "chamber_slug": "hwk-osnabrueck-emsland-grafschaft-bentheim",
@@ -101872,42 +99964,6 @@
     "chamber_region": "Niedersachsen",
     "trade_slug": "kfz-techniker",
     "trade_name": "Kfz.-Techniker",
-    "title": "Kfz.-Techniker (Teil I)",
-    "parts": [
-      1
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-08-18",
-    "end_date": "2027-09-09",
-    "start_date_note": "",
-    "duration_hours": 330,
-    "course_fee": 3800.0,
-    "course_fee_display": "3.800 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 390.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "390 €",
-      "from_tariff": true
-    },
-    "city": "Aurich",
-    "street": "Straße des Handwerks 2",
-    "zip_code": "26603",
-    "latitude": 53.4780195,
-    "longitude": 7.4858939,
-    "availability": "full",
-    "source_url": "https://www.hwk-aurich.de/weiterbildung/kurse-and-seminare-finden#/vorlage/MVK/5407?kurs=26980"
-  },
-  {
-    "chamber_slug": "hwk-ostfriesland",
-    "chamber_name": "HWK Ostfriesland",
-    "chamber_region": "Niedersachsen",
-    "trade_slug": "kfz-techniker",
-    "trade_name": "Kfz.-Techniker",
     "title": "Kfz.-Techniker (Teil II)",
     "parts": [
       2
@@ -104049,79 +102105,6 @@
     "longitude": 12.0058399,
     "availability": "available",
     "source_url": "https://www.hwk-gera.de/5,0,coursedetail.html?id=121297"
-  },
-  {
-    "chamber_slug": "hwk-ostthueringen-gera",
-    "chamber_name": "HWK für Ostthüringen",
-    "chamber_region": "Thüringen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
-    "parts": [
-      3,
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-08-18",
-    "end_date": "2027-07-15",
-    "start_date_note": "",
-    "duration_hours": 354,
-    "course_fee": 2710.0,
-    "course_fee_display": "2.710 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 380.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "380 €",
-      "from_tariff": true
-    },
-    "city": "Gera",
-    "street": "Straße der Freundschaft  27",
-    "zip_code": "07554",
-    "latitude": 50.9625096,
-    "longitude": 12.1033789,
-    "availability": "available",
-    "source_url": "https://www.hwk-gera.de/5,0,coursedetail.html?id=114532"
-  },
-  {
-    "chamber_slug": "hwk-ostthueringen-gera",
-    "chamber_name": "HWK für Ostthüringen",
-    "chamber_region": "Thüringen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-08-18",
-    "end_date": "2026-11-10",
-    "start_date_note": "",
-    "duration_hours": 104,
-    "course_fee": 770.0,
-    "course_fee_display": "770 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 190.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "190 €",
-      "from_tariff": true
-    },
-    "city": "Gera",
-    "street": "Straße der Freundschaft  27",
-    "zip_code": "07554",
-    "latitude": 50.9625096,
-    "longitude": 12.1033789,
-    "availability": "available",
-    "source_url": "https://www.hwk-gera.de/5,0,coursedetail.html?id=114536"
   },
   {
     "chamber_slug": "hwk-ostthueringen-gera",
@@ -107330,7 +105313,7 @@
     "latitude": 49.4261268,
     "longitude": 7.7748284,
     "availability": "available",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-dachdecker-teil-ii-51,0,coursedetail.html?id=109082&search-onr=51&img=14"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-dachdecker-teil-ii-51,0,coursedetail.html?id=109082&search-onr=51&img=13"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -107366,8 +105349,8 @@
     "zip_code": "67065",
     "latitude": 49.4760852,
     "longitude": 8.4080881,
-    "availability": "available",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-elektrotechniker-teile-i-ii-51,0,coursedetail.html?id=103638&search-onr=51&img=2"
+    "availability": "full",
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-elektrotechniker-teile-i-ii-51,0,coursedetail.html?id=103638&search-onr=51&img=1"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -107404,7 +105387,7 @@
     "latitude": 49.4760852,
     "longitude": 8.4080881,
     "availability": "available",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-elektrotechniker-teile-i-ii-51,0,coursedetail.html?id=110304&search-onr=51&img=8"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-elektrotechniker-teile-i-ii-51,0,coursedetail.html?id=110304&search-onr=51&img=7"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -107440,7 +105423,7 @@
     "latitude": 49.444007,
     "longitude": 7.7687411,
     "availability": "available",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-fliesen-platten-und-mosaikleger-teil-ii-51,0,coursedetail.html?id=103642&search-onr=51&img=2"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-fliesen-platten-und-mosaikleger-teil-ii-51,0,coursedetail.html?id=103642&search-onr=51&img=1"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -107476,7 +105459,7 @@
     "latitude": 49.444007,
     "longitude": 7.7687411,
     "availability": "unknown",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-fliesen-platten-und-mosaikleger-teil-ii-51,0,coursedetail.html?id=109085&search-onr=51&img=3"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-fliesen-platten-und-mosaikleger-teil-ii-51,0,coursedetail.html?id=109085&search-onr=51&img=2"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -107513,7 +105496,7 @@
     "latitude": 49.4495183,
     "longitude": 7.7678746,
     "availability": "available",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-informationstechniker-teile-i-ii-51,0,coursedetail.html?id=91509&search-onr=51&img=11"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-informationstechniker-teile-i-ii-51,0,coursedetail.html?id=91509&search-onr=51&img=10"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -107549,7 +105532,7 @@
     "latitude": 49.4495183,
     "longitude": 7.7678746,
     "availability": "full",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-installateur-und-heizungsbauer-teil-ii-51,0,coursedetail.html?id=103650&search-onr=51&img=12"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-installateur-und-heizungsbauer-teil-ii-51,0,coursedetail.html?id=103650&search-onr=51&img=11"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -107586,7 +105569,7 @@
     "latitude": 49.2117701,
     "longitude": 8.1271493,
     "availability": "full",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-installateur-und-heizungsbauer-teile-i-ii-51,0,coursedetail.html?id=107527&search-onr=51&img=17"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-installateur-und-heizungsbauer-teile-i-ii-51,0,coursedetail.html?id=107527&search-onr=51&img=16"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -107623,7 +105606,7 @@
     "latitude": 49.2117701,
     "longitude": 8.1271493,
     "availability": "available",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-installateur-und-heizungsbauer-teile-i-ii-51,0,coursedetail.html?id=110030&search-onr=51&img=6"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-installateur-und-heizungsbauer-teile-i-ii-51,0,coursedetail.html?id=110030&search-onr=51&img=5"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -107659,7 +105642,7 @@
     "latitude": 49.4495183,
     "longitude": 7.7678746,
     "availability": "available",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-installateur-und-heizungsbauer-teil-ii-51,0,coursedetail.html?id=107707&search-onr=51&img=7"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-installateur-und-heizungsbauer-teil-ii-51,0,coursedetail.html?id=107707&search-onr=51&img=6"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -107695,43 +105678,7 @@
     "latitude": 49.444007,
     "longitude": 7.7687411,
     "availability": "unknown",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-kraftfahrzeugtechniker-teil-ii-51,0,coursedetail.html?id=107662&search-onr=51&img=1"
-  },
-  {
-    "chamber_slug": "hwk-pfalz",
-    "chamber_name": "HWK der Pfalz",
-    "chamber_region": "Rheinland-Pfalz",
-    "trade_slug": "land-und-baumaschinenmechatroniker",
-    "trade_name": "Land- und Baumaschinenmechatroniker",
-    "title": "Land- und Baumaschinenmechatroniker (Teil I)",
-    "parts": [
-      1
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-08-18",
-    "end_date": "2027-05-20",
-    "start_date_note": "",
-    "duration_hours": 360,
-    "course_fee": 6100.0,
-    "course_fee_display": "6.100 €",
-    "exam_fee_scraped": 1100.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 1100.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "1.100 €",
-      "from_tariff": false
-    },
-    "city": "Kaiserslautern",
-    "street": "Im Stadtwald 15",
-    "zip_code": "67663",
-    "latitude": 49.4261268,
-    "longitude": 7.7748284,
-    "availability": "available",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-land-und-baumaschinenmechatroniker-teil-i-51,0,coursedetail.html?id=107083&search-onr=51&img=1"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-kraftfahrzeugtechniker-teil-ii-51,0,coursedetail.html?id=107662&search-onr=51&img=20"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -107767,7 +105714,7 @@
     "latitude": 49.444007,
     "longitude": 7.7687411,
     "availability": "unknown",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-metallbauer-teil-ii-51,0,coursedetail.html?id=92252&search-onr=51&img=10"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-metallbauer-teil-ii-51,0,coursedetail.html?id=92252&search-onr=51&img=9"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -107804,7 +105751,7 @@
     "latitude": 49.4261268,
     "longitude": 7.7748284,
     "availability": "full",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-strassenbauer-teile-i-ii-51,0,coursedetail.html?id=103631&search-onr=51&img=3"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-strassenbauer-teile-i-ii-51,0,coursedetail.html?id=103631&search-onr=51&img=2"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -107841,7 +105788,7 @@
     "latitude": 49.4261268,
     "longitude": 7.7748284,
     "availability": "available",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-strassenbauer-teile-i-ii-51,0,coursedetail.html?id=111061&search-onr=51&img=4"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-strassenbauer-teile-i-ii-51,0,coursedetail.html?id=111061&search-onr=51&img=3"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -107878,7 +105825,7 @@
     "latitude": 49.444007,
     "longitude": 7.7687411,
     "availability": "available",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=102615&search-onr=51&img=4"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=102615&search-onr=51&img=3"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -107915,7 +105862,7 @@
     "latitude": 49.444007,
     "longitude": 7.7687411,
     "availability": "available",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105678&search-onr=51&img=5"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105678&search-onr=51&img=4"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -107952,7 +105899,7 @@
     "latitude": 49.444007,
     "longitude": 7.7687411,
     "availability": "full",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105652&search-onr=51&img=6"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105652&search-onr=51&img=5"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -107989,7 +105936,7 @@
     "latitude": 49.4760852,
     "longitude": 8.4080881,
     "availability": "available",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=104969&search-onr=51&img=9"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=104969&search-onr=51&img=8"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -108026,7 +105973,7 @@
     "latitude": 49.444007,
     "longitude": 7.7687411,
     "availability": "available",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105601&search-onr=51&img=7"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105601&search-onr=51&img=6"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -108063,7 +106010,7 @@
     "latitude": 49.2117701,
     "longitude": 8.1271493,
     "availability": "available",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105611&search-onr=51&img=8"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105611&search-onr=51&img=7"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -108100,7 +106047,7 @@
     "latitude": 49.444007,
     "longitude": 7.7687411,
     "availability": "available",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=104043&search-onr=51&img=13"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=104043&search-onr=51&img=12"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -108137,7 +106084,7 @@
     "latitude": 49.444007,
     "longitude": 7.7687411,
     "availability": "unknown",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105629&search-onr=51&img=15"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105629&search-onr=51&img=14"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -108174,7 +106121,7 @@
     "latitude": 49.444007,
     "longitude": 7.7687411,
     "availability": "unknown",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105647&search-onr=51&img=16"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105647&search-onr=51&img=15"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -108211,7 +106158,7 @@
     "latitude": 49.444007,
     "longitude": 7.7687411,
     "availability": "unknown",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105606&search-onr=51&img=20"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105606&search-onr=51&img=19"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -108248,7 +106195,7 @@
     "latitude": 49.444007,
     "longitude": 7.7687411,
     "availability": "unknown",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105616&search-onr=51&img=18"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105616&search-onr=51&img=17"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -108285,7 +106232,7 @@
     "latitude": 49.444007,
     "longitude": 7.7687411,
     "availability": "unknown",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105621&search-onr=51&img=19"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105621&search-onr=51&img=18"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -108322,7 +106269,7 @@
     "latitude": 49.444007,
     "longitude": 7.7687411,
     "availability": "unknown",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=109016&search-onr=51&img=5"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=109016&search-onr=51&img=4"
   },
   {
     "chamber_slug": "hwk-potsdam",
@@ -112758,43 +110705,6 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
-    "start_date": "2026-10-05",
-    "end_date": "2027-03-13",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": 8490.0,
-    "course_fee_display": "8.490 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 730.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "730 €",
-      "from_tariff": true
-    },
-    "city": "Frankfurt am Main",
-    "street": "Schönstraße 21",
-    "zip_code": "60327",
-    "latitude": 50.1013705,
-    "longitude": 8.65682,
-    "availability": "available",
-    "source_url": "https://portal.hwk-rhein-main.de/seminar/ml-20vz-m/"
-  },
-  {
-    "chamber_slug": "hwk-rhein-main",
-    "chamber_name": "HWK Frankfurt-Rhein-Main",
-    "chamber_region": "Hessen",
-    "trade_slug": "zweirad",
-    "trade_name": "Zweirad",
-    "title": "Zweirad (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
     "start_date": "2027-10-18",
     "end_date": "2028-03-17",
     "start_date_note": "",
@@ -112817,6 +110727,43 @@
     "longitude": 8.65682,
     "availability": "available",
     "source_url": "https://portal.hwk-rhein-main.de/seminar/ml-20vz-m-iii/"
+  },
+  {
+    "chamber_slug": "hwk-rheinhessen",
+    "chamber_name": "HWK Rheinhessen",
+    "chamber_region": "Rheinland-Pfalz",
+    "trade_slug": "dachdecker",
+    "trade_name": "Dachdecker",
+    "title": "Dachdecker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-09-03",
+    "end_date": "2028-01-18",
+    "start_date_note": "",
+    "duration_hours": 950,
+    "course_fee": 6600.0,
+    "course_fee_display": "6.600 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 900.0,
+      "fee_max": 2700.0,
+      "qualifier": "",
+      "display": "900 € bis 2.700 €",
+      "from_tariff": true
+    },
+    "city": "Mainz",
+    "street": "Robert-Bosch-Straße 8",
+    "zip_code": "55129",
+    "latitude": 49.959692,
+    "longitude": 8.260685,
+    "availability": "available",
+    "source_url": "https://www.hwk.de/seminar/dd/"
   },
   {
     "chamber_slug": "hwk-rheinhessen",
@@ -113426,6 +111373,43 @@
     "format": "part_time",
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
+    "start_date": "2026-09-04",
+    "end_date": "2027-07-24",
+    "start_date_note": "",
+    "duration_hours": 600,
+    "course_fee": 5700.0,
+    "course_fee_display": "5.700 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 900.0,
+      "fee_max": 2700.0,
+      "qualifier": "",
+      "display": "900 € bis 2.700 €",
+      "from_tariff": true
+    },
+    "city": "Mainz",
+    "street": "Robert-Bosch-Straße 8",
+    "zip_code": "55129",
+    "latitude": 49.959692,
+    "longitude": 8.260685,
+    "availability": "available",
+    "source_url": "https://www.hwk.de/seminar/mal/"
+  },
+  {
+    "chamber_slug": "hwk-rheinhessen",
+    "chamber_name": "HWK Rheinhessen",
+    "chamber_region": "Rheinland-Pfalz",
+    "trade_slug": "maler-und-lackierer",
+    "trade_name": "Maler und Lackierer",
+    "title": "Maler und Lackierer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
     "start_date": "2027-09-03",
     "end_date": "2028-07-22",
     "start_date_note": "",
@@ -113527,6 +111511,43 @@
     "chamber_slug": "hwk-rheinhessen",
     "chamber_name": "HWK Rheinhessen",
     "chamber_region": "Rheinland-Pfalz",
+    "trade_slug": "metallbauer",
+    "trade_name": "Metallbauer",
+    "title": "Metallbauer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-09-01",
+    "end_date": "2027-11-13",
+    "start_date_note": "",
+    "duration_hours": 750,
+    "course_fee": 6100.0,
+    "course_fee_display": "6.100 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 900.0,
+      "fee_max": 2700.0,
+      "qualifier": "",
+      "display": "900 € bis 2.700 €",
+      "from_tariff": true
+    },
+    "city": "Mainz",
+    "street": "Robert-Bosch-Straße 8",
+    "zip_code": "55129",
+    "latitude": 49.959692,
+    "longitude": 8.260685,
+    "availability": "available",
+    "source_url": "https://www.hwk.de/seminar/metallbauer-teile-i-und-ii-met/"
+  },
+  {
+    "chamber_slug": "hwk-rheinhessen",
+    "chamber_name": "HWK Rheinhessen",
+    "chamber_region": "Rheinland-Pfalz",
     "trade_slug": "tischler",
     "trade_name": "Tischler",
     "title": "Tischler (Teile I + II)",
@@ -113596,6 +111617,42 @@
     "longitude": 8.260685,
     "availability": "available",
     "source_url": "https://www.hwk.de/seminar/tischler-teile-i-und-ii-ti/"
+  },
+  {
+    "chamber_slug": "hwk-rheinhessen",
+    "chamber_name": "HWK Rheinhessen",
+    "chamber_region": "Rheinland-Pfalz",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
+    "parts": [
+      4
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-08-31",
+    "end_date": "2026-09-05",
+    "start_date_note": "",
+    "duration_hours": 60,
+    "course_fee": 650.0,
+    "course_fee_display": "650 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 220.0,
+      "fee_max": 500.0,
+      "qualifier": "",
+      "display": "220 € bis 500 €",
+      "from_tariff": true
+    },
+    "city": "Mainz",
+    "street": "Robert-Bosch-Straße 8",
+    "zip_code": "55129",
+    "latitude": 49.959692,
+    "longitude": 8.260685,
+    "availability": "available",
+    "source_url": "https://www.hwk.de/seminar/vorbereitung-ausbildereignung-in-vollzeit-aevo-ada-vz/"
   },
   {
     "chamber_slug": "hwk-rheinhessen",
@@ -114439,6 +112496,43 @@
     "format": "part_time",
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
+    "start_date": "2026-09-03",
+    "end_date": "2027-12-18",
+    "start_date_note": "",
+    "duration_hours": 960,
+    "course_fee": 6700.0,
+    "course_fee_display": "6.700 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 900.0,
+      "fee_max": 2700.0,
+      "qualifier": "",
+      "display": "900 € bis 2.700 €",
+      "from_tariff": true
+    },
+    "city": "Mainz",
+    "street": "Robert-Bosch-Straße 8",
+    "zip_code": "55129",
+    "latitude": 49.959692,
+    "longitude": 8.260685,
+    "availability": "available",
+    "source_url": "https://www.hwk.de/seminar/zimmerer-teile-i-und-ii-zim/"
+  },
+  {
+    "chamber_slug": "hwk-rheinhessen",
+    "chamber_name": "HWK Rheinhessen",
+    "chamber_region": "Rheinland-Pfalz",
+    "trade_slug": "zimmerer",
+    "trade_name": "Zimmerer",
+    "title": "Zimmerer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
     "start_date": "2027-09-02",
     "end_date": "2028-12-15",
     "start_date_note": "",
@@ -115262,7 +113356,7 @@
     "zip_code": "66117",
     "latitude": 49.2297,
     "longitude": 6.9967,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwk-saarland.de/seminar/mv-teil-i-installateur-und-heizungsbauer-m1ih/"
   },
   {
@@ -117268,7 +115362,7 @@
     "zip_code": "86161",
     "latitude": 48.3522511,
     "longitude": 10.9173148,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=396962"
   },
   {
@@ -123637,7 +121731,7 @@
     "zip_code": "98530",
     "latitude": 50.707055,
     "longitude": 10.891878,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/elektro_vz/#kurs-207748"
   },
   {
@@ -130181,8 +128275,8 @@
     "end_date": "2028-01-29",
     "start_date_note": "",
     "duration_hours": 1300,
-    "course_fee": 16600.0,
-    "course_fee_display": "16.600 €",
+    "course_fee": 8500.0,
+    "course_fee_display": "8.500 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -130255,8 +128349,8 @@
     "end_date": "2029-01-27",
     "start_date_note": "",
     "duration_hours": 1300,
-    "course_fee": 16600.0,
-    "course_fee_display": "16.600 €",
+    "course_fee": 8500.0,
+    "course_fee_display": "8.500 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -130329,8 +128423,8 @@
     "end_date": "2030-01-26",
     "start_date_note": "",
     "duration_hours": 1300,
-    "course_fee": 16600.0,
-    "course_fee_display": "16.600 €",
+    "course_fee": 8500.0,
+    "course_fee_display": "8.500 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -130638,7 +128732,7 @@
     "zip_code": "89077",
     "latitude": 48.3856229,
     "longitude": 9.9563226,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.bildungsakademie-ulm.de/seminar/1-mv-maler-und-lackie/#kurs-1-MV-MALER"
   },
   {
@@ -132280,7 +130374,7 @@
     "start_date": "2028-03-20",
     "end_date": "2028-11-30",
     "start_date_note": "",
-    "duration_hours": 1048,
+    "duration_hours": 1052,
     "course_fee": 14435.0,
     "course_fee_display": "14.435 €",
     "exam_fee_scraped": 1400.0,
@@ -132358,7 +130452,7 @@
     "start_date": "2028-08-21",
     "end_date": "2029-05-31",
     "start_date_note": "",
-    "duration_hours": 1048,
+    "duration_hours": 1052,
     "course_fee": 14435.0,
     "course_fee_display": "14.435 €",
     "exam_fee_scraped": 1400.0,
@@ -132436,7 +130530,7 @@
     "start_date": "2028-11-13",
     "end_date": "2029-08-15",
     "start_date_note": "",
-    "duration_hours": 1048,
+    "duration_hours": 1052,
     "course_fee": 14435.0,
     "course_fee_display": "14.435 €",
     "exam_fee_scraped": 1400.0,
@@ -132591,8 +130685,8 @@
     "end_date": "2027-11-19",
     "start_date_note": "",
     "duration_hours": 800,
-    "course_fee": 9140.0,
-    "course_fee_display": "9.140 €",
+    "course_fee": 10670.0,
+    "course_fee_display": "10.670 €",
     "exam_fee_scraped": 630.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -132627,9 +130721,9 @@
     "start_date": "2027-01-11",
     "end_date": "2027-07-23",
     "start_date_note": "",
-    "duration_hours": 850,
-    "course_fee": 9140.0,
-    "course_fee_display": "9.140 €",
+    "duration_hours": 800,
+    "course_fee": 10670.0,
+    "course_fee_display": "10.670 €",
     "exam_fee_scraped": 630.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -134561,7 +132655,7 @@
     "zip_code": "35576",
     "latitude": 50.5548159,
     "longitude": 8.4921662,
-    "availability": "waitlist",
+    "availability": "available",
     "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-dachdeckerhandwerk-teil-i-vollzeit-44,0,coursedetail.html?id=111327&search-onr=44&img=1"
   },
   {
@@ -135633,43 +133727,6 @@
     "chamber_region": "Hessen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
-    "parts": [
-      3,
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "hybrid",
-    "start_date": "2026-08-18",
-    "end_date": "2027-06-17",
-    "start_date_note": "",
-    "duration_hours": 360,
-    "course_fee": 2650.0,
-    "course_fee_display": "2.650 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 490.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "490 €",
-      "from_tariff": true
-    },
-    "city": "Wiesbaden",
-    "street": "Brunhildenstraße 110",
-    "zip_code": "65189",
-    "latitude": 50.0652806,
-    "longitude": 8.2590004,
-    "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-teilzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=105441&search-onr=44&img=1"
-  },
-  {
-    "chamber_slug": "hwk-wiesbaden",
-    "chamber_name": "HWK Wiesbaden",
-    "chamber_region": "Hessen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Wirtschaft und Recht (Teil III)",
     "parts": [
       3
@@ -135698,7 +133755,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=94343&search-onr=44&img=2"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=94343&search-onr=44&img=1"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -135734,7 +133791,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-44,0,coursedetail.html?id=53244&search-onr=44&img=3"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-44,0,coursedetail.html?id=53244&search-onr=44&img=2"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -135771,7 +133828,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-vollzeit-44,0,coursedetail.html?id=48864&search-onr=44&img=4"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-vollzeit-44,0,coursedetail.html?id=48864&search-onr=44&img=3"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -135807,7 +133864,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103826&search-onr=44&img=6"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103826&search-onr=44&img=5"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -135843,7 +133900,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=94350&search-onr=44&img=5"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=94350&search-onr=44&img=4"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -135879,7 +133936,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-44,0,coursedetail.html?id=50894&search-onr=44&img=7"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-44,0,coursedetail.html?id=50894&search-onr=44&img=6"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -135915,7 +133972,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=94344&search-onr=44&img=8"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=94344&search-onr=44&img=7"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -135951,7 +134008,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103827&search-onr=44&img=10"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103827&search-onr=44&img=9"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -135987,7 +134044,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=94351&search-onr=44&img=9"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=94351&search-onr=44&img=8"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136023,7 +134080,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-44,0,coursedetail.html?id=53245&search-onr=44&img=11"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-44,0,coursedetail.html?id=53245&search-onr=44&img=10"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136060,7 +134117,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-vollzeit-44,0,coursedetail.html?id=77273&search-onr=44&img=12"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-vollzeit-44,0,coursedetail.html?id=77273&search-onr=44&img=11"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136096,7 +134153,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103182&search-onr=44&img=13"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103182&search-onr=44&img=12"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136132,7 +134189,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103841&search-onr=44&img=15"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103841&search-onr=44&img=14"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136168,7 +134225,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103645&search-onr=44&img=14"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103645&search-onr=44&img=13"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136204,7 +134261,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103624&search-onr=44&img=16"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103624&search-onr=44&img=15"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136240,7 +134297,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103842&search-onr=44&img=18"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103842&search-onr=44&img=17"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136276,7 +134333,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-44,0,coursedetail.html?id=113231&search-onr=44&img=19"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-44,0,coursedetail.html?id=113231&search-onr=44&img=18"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136312,7 +134369,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103646&search-onr=44&img=17"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103646&search-onr=44&img=16"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136349,7 +134406,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-vollzeit-44,0,coursedetail.html?id=113223&search-onr=44&img=20"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-vollzeit-44,0,coursedetail.html?id=113223&search-onr=44&img=19"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136385,7 +134442,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103641&search-onr=44&img=1"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103641&search-onr=44&img=20"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136421,7 +134478,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-teilzeit-44,0,coursedetail.html?id=123886&search-onr=44&img=3"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-teilzeit-44,0,coursedetail.html?id=123886&search-onr=44&img=2"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136458,7 +134515,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-teilzeit-44,0,coursedetail.html?id=115841&search-onr=44&img=2"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-teilzeit-44,0,coursedetail.html?id=115841&search-onr=44&img=1"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136494,7 +134551,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-44,0,coursedetail.html?id=113233&search-onr=44&img=4"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-44,0,coursedetail.html?id=113233&search-onr=44&img=3"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136530,7 +134587,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103843&search-onr=44&img=6"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103843&search-onr=44&img=5"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136566,7 +134623,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103647&search-onr=44&img=5"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103647&search-onr=44&img=4"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136602,7 +134659,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103642&search-onr=44&img=7"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103642&search-onr=44&img=6"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136638,7 +134695,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-44,0,coursedetail.html?id=113235&search-onr=44&img=8"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-44,0,coursedetail.html?id=113235&search-onr=44&img=7"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136675,7 +134732,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-vollzeit-44,0,coursedetail.html?id=113228&search-onr=44&img=9"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-vollzeit-44,0,coursedetail.html?id=113228&search-onr=44&img=8"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136711,7 +134768,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-44,0,coursedetail.html?id=113234&search-onr=44&img=10"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-44,0,coursedetail.html?id=113234&search-onr=44&img=9"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136747,7 +134804,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103844&search-onr=44&img=12"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103844&search-onr=44&img=11"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136783,7 +134840,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103648&search-onr=44&img=11"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103648&search-onr=44&img=10"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136820,7 +134877,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-teilzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125841&search-onr=44&img=13"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-teilzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125841&search-onr=44&img=12"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136856,7 +134913,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103643&search-onr=44&img=14"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103643&search-onr=44&img=13"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136892,7 +134949,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-44,0,coursedetail.html?id=113236&search-onr=44&img=15"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-44,0,coursedetail.html?id=113236&search-onr=44&img=14"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136929,7 +134986,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-vollzeit-44,0,coursedetail.html?id=113229&search-onr=44&img=16"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-vollzeit-44,0,coursedetail.html?id=113229&search-onr=44&img=15"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -136965,7 +135022,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103845&search-onr=44&img=18"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103845&search-onr=44&img=17"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137001,7 +135058,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103649&search-onr=44&img=17"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103649&search-onr=44&img=16"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137037,7 +135094,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-44,0,coursedetail.html?id=113237&search-onr=44&img=19"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-44,0,coursedetail.html?id=113237&search-onr=44&img=18"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137073,7 +135130,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103644&search-onr=44&img=20"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103644&search-onr=44&img=19"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137109,7 +135166,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103846&search-onr=44&img=2"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103846&search-onr=44&img=1"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137145,7 +135202,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103650&search-onr=44&img=1"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103650&search-onr=44&img=20"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137181,7 +135238,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-44,0,coursedetail.html?id=113238&search-onr=44&img=3"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-44,0,coursedetail.html?id=113238&search-onr=44&img=2"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137218,7 +135275,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-vollzeit-44,0,coursedetail.html?id=113230&search-onr=44&img=4"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-vollzeit-44,0,coursedetail.html?id=113230&search-onr=44&img=3"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137254,7 +135311,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125642&search-onr=44&img=5"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125642&search-onr=44&img=4"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137290,7 +135347,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125681&search-onr=44&img=7"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125681&search-onr=44&img=6"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137326,7 +135383,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125652&search-onr=44&img=6"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125652&search-onr=44&img=5"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137362,7 +135419,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-44,0,coursedetail.html?id=113239&search-onr=44&img=8"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-44,0,coursedetail.html?id=113239&search-onr=44&img=7"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137398,7 +135455,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125646&search-onr=44&img=9"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125646&search-onr=44&img=8"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137434,7 +135491,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125682&search-onr=44&img=11"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125682&search-onr=44&img=10"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137470,7 +135527,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125653&search-onr=44&img=10"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125653&search-onr=44&img=9"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137506,7 +135563,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125647&search-onr=44&img=12"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125647&search-onr=44&img=11"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137542,7 +135599,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125683&search-onr=44&img=14"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125683&search-onr=44&img=13"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137578,7 +135635,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125654&search-onr=44&img=13"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125654&search-onr=44&img=12"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137614,7 +135671,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125648&search-onr=44&img=15"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125648&search-onr=44&img=14"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137650,7 +135707,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125684&search-onr=44&img=17"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125684&search-onr=44&img=16"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137686,7 +135743,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125655&search-onr=44&img=16"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125655&search-onr=44&img=15"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137722,7 +135779,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125649&search-onr=44&img=18"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125649&search-onr=44&img=17"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137758,7 +135815,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125685&search-onr=44&img=20"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125685&search-onr=44&img=19"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137794,7 +135851,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125656&search-onr=44&img=19"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125656&search-onr=44&img=18"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137830,7 +135887,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125650&search-onr=44&img=1"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125650&search-onr=44&img=20"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137866,7 +135923,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125686&search-onr=44&img=3"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/ausbildereignungspruefung-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125686&search-onr=44&img=2"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -137902,6 +135959,6 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125657&search-onr=44&img=2"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=125657&search-onr=44&img=1"
   }
 ]

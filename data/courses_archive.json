@@ -395,7 +395,7 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-1"
   },
   {
@@ -1754,6 +1754,42 @@
     "source_url": "https://www.hwk-oldenburg.de/weiterbildung/kurse-und-seminare#/vorlage/MVK/905?kurs=42266"
   },
   {
+    "chamber_slug": "hwk-ostfriesland",
+    "chamber_name": "HWK Ostfriesland",
+    "chamber_region": "Niedersachsen",
+    "trade_slug": "kfz-techniker",
+    "trade_name": "Kfz.-Techniker",
+    "title": "Kfz.-Techniker (Teil I)",
+    "parts": [
+      1
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-08-18",
+    "end_date": "2027-09-09",
+    "start_date_note": "",
+    "duration_hours": 330,
+    "course_fee": 3800.0,
+    "course_fee_display": "3.800 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 390.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "390 €",
+      "from_tariff": true
+    },
+    "city": "Aurich",
+    "street": "Straße des Handwerks 2",
+    "zip_code": "26603",
+    "latitude": 53.4780195,
+    "longitude": 7.4858939,
+    "availability": "full",
+    "source_url": "https://www.hwk-aurich.de/weiterbildung/kurse-and-seminare-finden#/vorlage/MVK/5407?kurs=26980"
+  },
+  {
     "chamber_slug": "hwk-ostthueringen-gera",
     "chamber_name": "HWK für Ostthüringen",
     "chamber_region": "Thüringen",
@@ -1791,6 +1827,79 @@
     "source_url": "https://www.hwk-gera.de/5,0,coursedetail.html?id=80404"
   },
   {
+    "chamber_slug": "hwk-ostthueringen-gera",
+    "chamber_name": "HWK für Ostthüringen",
+    "chamber_region": "Thüringen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "parts": [
+      3,
+      4
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-08-18",
+    "end_date": "2027-07-15",
+    "start_date_note": "",
+    "duration_hours": 354,
+    "course_fee": 2710.0,
+    "course_fee_display": "2.710 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 380.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "380 €",
+      "from_tariff": true
+    },
+    "city": "Gera",
+    "street": "Straße der Freundschaft  27",
+    "zip_code": "07554",
+    "latitude": 50.9625096,
+    "longitude": 12.1033789,
+    "availability": "available",
+    "source_url": "https://www.hwk-gera.de/5,0,coursedetail.html?id=114532"
+  },
+  {
+    "chamber_slug": "hwk-ostthueringen-gera",
+    "chamber_name": "HWK für Ostthüringen",
+    "chamber_region": "Thüringen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
+    "parts": [
+      4
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-08-18",
+    "end_date": "2026-11-10",
+    "start_date_note": "",
+    "duration_hours": 104,
+    "course_fee": 770.0,
+    "course_fee_display": "770 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 190.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "190 €",
+      "from_tariff": true
+    },
+    "city": "Gera",
+    "street": "Straße der Freundschaft  27",
+    "zip_code": "07554",
+    "latitude": 50.9625096,
+    "longitude": 12.1033789,
+    "availability": "available",
+    "source_url": "https://www.hwk-gera.de/5,0,coursedetail.html?id=114536"
+  },
+  {
     "chamber_slug": "hwk-ostwestfalen-lippe-zu-bielefeld",
     "chamber_name": "HWK Ostwestfalen-Lippe zu Bielefeld",
     "chamber_region": "Nordrhein-Westfalen",
@@ -1825,6 +1934,42 @@
     "longitude": 8.5354738,
     "availability": "available",
     "source_url": "https://bbz.handwerk-owl.de/3351,0,coursedetail.html?id=131120"
+  },
+  {
+    "chamber_slug": "hwk-pfalz",
+    "chamber_name": "HWK der Pfalz",
+    "chamber_region": "Rheinland-Pfalz",
+    "trade_slug": "land-und-baumaschinenmechatroniker",
+    "trade_name": "Land- und Baumaschinenmechatroniker",
+    "title": "Land- und Baumaschinenmechatroniker (Teil I)",
+    "parts": [
+      1
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-08-18",
+    "end_date": "2027-05-20",
+    "start_date_note": "",
+    "duration_hours": 360,
+    "course_fee": 6100.0,
+    "course_fee_display": "6.100 €",
+    "exam_fee_scraped": 1100.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 1100.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "1.100 €",
+      "from_tariff": false
+    },
+    "city": "Kaiserslautern",
+    "street": "Im Stadtwald 15",
+    "zip_code": "67663",
+    "latitude": 49.4261268,
+    "longitude": 7.7748284,
+    "availability": "available",
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-land-und-baumaschinenmechatroniker-teil-i-51,0,coursedetail.html?id=107083&search-onr=51&img=1"
   },
   {
     "chamber_slug": "hwk-potsdam",
@@ -2484,5 +2629,42 @@
     "longitude": 8.2590004,
     "availability": "waitlist",
     "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=94347&search-onr=44&img=1"
+  },
+  {
+    "chamber_slug": "hwk-wiesbaden",
+    "chamber_name": "HWK Wiesbaden",
+    "chamber_region": "Hessen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "parts": [
+      3,
+      4
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "hybrid",
+    "start_date": "2026-08-18",
+    "end_date": "2027-06-17",
+    "start_date_note": "",
+    "duration_hours": 360,
+    "course_fee": 2650.0,
+    "course_fee_display": "2.650 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 490.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "490 €",
+      "from_tariff": true
+    },
+    "city": "Wiesbaden",
+    "street": "Brunhildenstraße 110",
+    "zip_code": "65189",
+    "latitude": 50.0652806,
+    "longitude": 8.2590004,
+    "availability": "available",
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-teilzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=105441&search-onr=44&img=1"
   }
 ]
