@@ -836,7 +836,7 @@
     "zip_code": "21079",
     "latitude": 53.4582352,
     "longitude": 9.9959008,
-    "availability": "waitlist",
+    "availability": "available",
     "source_url": "https://www.elbcampus.de/weiterbildung/meistervorbereitung-im-friseurhandwerk/"
   },
   {
@@ -1788,6 +1788,42 @@
     "longitude": 7.4858939,
     "availability": "full",
     "source_url": "https://www.hwk-aurich.de/weiterbildung/kurse-and-seminare-finden#/vorlage/MVK/5407?kurs=26980"
+  },
+  {
+    "chamber_slug": "hwk-ostfriesland",
+    "chamber_name": "HWK Ostfriesland",
+    "chamber_region": "Niedersachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-08-19",
+    "end_date": "2026-12-11",
+    "start_date_note": "",
+    "duration_hours": 240,
+    "course_fee": 1700.0,
+    "course_fee_display": "1.700 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 250.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "250 €",
+      "from_tariff": true
+    },
+    "city": "Aurich",
+    "street": "Straße des Handwerks 2",
+    "zip_code": "26603",
+    "latitude": 53.4780195,
+    "longitude": 7.4858939,
+    "availability": "available",
+    "source_url": "https://www.hwk-aurich.de/weiterbildung/kurse-and-seminare-finden#/vorlage/MVK/1068?kurs=25438"
   },
   {
     "chamber_slug": "hwk-ostthueringen-gera",
