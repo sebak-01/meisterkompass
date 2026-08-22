@@ -1,26 +1,5 @@
 [
   {
-    "chamber_slug": "hwk-chemnitz",
-    "trade_slug": "metallbauer",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 7990.0,
-    "exam_fee_scraped": 730.0,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-dresden",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      4
-    ],
-    "fee": 810.0,
-    "exam_fee_scraped": null,
-    "is_generic": true
-  },
-  {
     "chamber_slug": "hwk-cottbus",
     "trade_slug": "allgemein-teil-iii-iv",
     "parts": [
@@ -951,6 +930,16 @@
     ],
     "fee": 1985.0,
     "exam_fee_scraped": 260.0,
+    "is_generic": true
+  },
+  {
+    "chamber_slug": "hwk-dresden",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      4
+    ],
+    "fee": 660.0,
+    "exam_fee_scraped": null,
     "is_generic": true
   },
   {
@@ -4684,6 +4673,17 @@
       2
     ],
     "fee": 11530.0,
+    "exam_fee_scraped": 730.0,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "trade_slug": "metallbauer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 8460.0,
     "exam_fee_scraped": 730.0,
     "is_generic": false
   },
