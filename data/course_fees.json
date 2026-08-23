@@ -30,6 +30,17 @@
     "is_generic": true
   },
   {
+    "chamber_slug": "hwk-kassel",
+    "trade_slug": "elektrotechniker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 9500.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-koeln",
     "trade_slug": "allgemein-teil-iii-iv",
     "parts": [
@@ -122,16 +133,6 @@
     ],
     "fee": 1430.0,
     "exam_fee_scraped": null,
-    "is_generic": true
-  },
-  {
-    "chamber_slug": "hwk-aachen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      3
-    ],
-    "fee": 1935.0,
-    "exam_fee_scraped": 250.0,
     "is_generic": true
   },
   {
@@ -384,6 +385,16 @@
     "fee": 10975.0,
     "exam_fee_scraped": null,
     "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-aachen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      3
+    ],
+    "fee": 1655.0,
+    "exam_fee_scraped": 250.0,
+    "is_generic": true
   },
   {
     "chamber_slug": "hwk-duesseldorf",
@@ -1408,6 +1419,17 @@
       2
     ],
     "fee": 7350.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "trade_slug": "land-und-baumaschinenmechatroniker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 10500.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
@@ -3486,6 +3508,16 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-kassel",
+    "trade_slug": "elektrotechniker",
+    "parts": [
+      2
+    ],
+    "fee": 6150.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-magdeburg",
     "trade_slug": "maler-und-lackierer",
     "parts": [
@@ -3627,6 +3659,16 @@
   },
   {
     "chamber_slug": "hwk-stuttgart",
+    "trade_slug": "kfz-techniker",
+    "parts": [
+      2
+    ],
+    "fee": 3990.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-kassel",
     "trade_slug": "kfz-techniker",
     "parts": [
       2
@@ -7352,16 +7394,6 @@
     ],
     "fee": 4775.0,
     "exam_fee_scraped": 275.0,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-cottbus",
-    "trade_slug": "orthopadietechniker",
-    "parts": [
-      1
-    ],
-    "fee": 3660.0,
-    "exam_fee_scraped": null,
     "is_generic": false
   },
   {
