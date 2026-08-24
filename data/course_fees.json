@@ -51,17 +51,6 @@
     "is_generic": true
   },
   {
-    "chamber_slug": "hwk-leipzig",
-    "trade_slug": "fliesen-platten-und-mosaikleger",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 10061.0,
-    "exam_fee_scraped": 770.0,
-    "is_generic": false
-  },
-  {
     "chamber_slug": "hwk-magdeburg",
     "trade_slug": "allgemein-teil-iii-iv",
     "parts": [
@@ -5378,7 +5367,7 @@
     "parts": [
       1
     ],
-    "fee": 3530.0,
+    "fee": 3730.0,
     "exam_fee_scraped": 854.0,
     "is_generic": false
   },
@@ -6717,6 +6706,17 @@
     ],
     "fee": 3035.0,
     "exam_fee_scraped": 990.0,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-leipzig",
+    "trade_slug": "fliesen-platten-und-mosaikleger",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 10061.0,
+    "exam_fee_scraped": 770.0,
     "is_generic": false
   },
   {
