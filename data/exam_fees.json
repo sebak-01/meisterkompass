@@ -2064,13 +2064,6 @@
           "qualifier": ""
         }
       },
-      "fliesen-platten-und-mosaikleger": {
-        "1,2": {
-          "fee": 770.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
       "installateur-und-heizungsbauer": {
         "1,2": {
           "fee": 715.0,
