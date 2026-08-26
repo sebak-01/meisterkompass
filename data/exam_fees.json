@@ -1879,13 +1879,6 @@
           "qualifier": ""
         }
       },
-      "zahntechniker": {
-        "1,2": {
-          "fee": 2370.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
       "zimmerer": {
         "1,2": {
           "fee": 1700.0,

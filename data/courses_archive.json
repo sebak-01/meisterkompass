@@ -401,6 +401,78 @@
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo-ausbildung-der-ausbilder/#termin_504"
   },
   {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
+    "parts": [
+      4
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-08-25",
+    "end_date": "2026-11-04",
+    "start_date_note": "",
+    "duration_hours": 100,
+    "course_fee": 790.0,
+    "course_fee_display": "790 €",
+    "exam_fee_scraped": 205.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 205.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "205 €",
+      "from_tariff": false
+    },
+    "city": "Plauen",
+    "street": "Rähnisstraße 19",
+    "zip_code": "08523",
+    "latitude": 50.4993901,
+    "longitude": 12.1453036,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_424"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
+    "parts": [
+      4
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-08-25",
+    "end_date": "2027-07-07",
+    "start_date_note": "",
+    "duration_hours": 390,
+    "course_fee": 3170.0,
+    "course_fee_display": "3.170 €",
+    "exam_fee_scraped": 420.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 420.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "420 €",
+      "from_tariff": false
+    },
+    "city": "Plauen",
+    "street": "Rähnisstraße 19",
+    "zip_code": "08523",
+    "latitude": 50.4993901,
+    "longitude": 12.1453036,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo-ausbildung-der-ausbilder/#termin_425"
+  },
+  {
     "chamber_slug": "hwk-cottbus",
     "chamber_name": "HWK Cottbus",
     "chamber_region": "Brandenburg",
@@ -723,6 +795,42 @@
     "longitude": 7.4529522,
     "availability": "waitlist",
     "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-teilzeit/#termin-7"
+  },
+  {
+    "chamber_slug": "hwk-dortmund",
+    "chamber_name": "HWK Dortmund",
+    "chamber_region": "Nordrhein-Westfalen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
+    "parts": [
+      4
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-08-25",
+    "end_date": "2026-12-08",
+    "start_date_note": "",
+    "duration_hours": 108,
+    "course_fee": 750.0,
+    "course_fee_display": "750 €",
+    "exam_fee_scraped": 239.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 239.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "239 €",
+      "from_tariff": false
+    },
+    "city": "Dortmund",
+    "street": "Schützenstraße 32-34",
+    "zip_code": "44147",
+    "latitude": 51.5206367,
+    "longitude": 7.4529522,
+    "availability": "available",
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-teilzeit/#termin-8"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -1419,6 +1527,42 @@
     "source_url": "https://www.hwk-hannover.de/23,0,coursedetail.html?id=75518"
   },
   {
+    "chamber_slug": "hwk-hannover",
+    "chamber_name": "HWK Hannover",
+    "chamber_region": "Niedersachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "online",
+    "start_date": "2026-08-25",
+    "end_date": "2027-04-29",
+    "start_date_note": "",
+    "duration_hours": 350,
+    "course_fee": 2220.0,
+    "course_fee_display": "2.220 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 330.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "330 €",
+      "from_tariff": true
+    },
+    "city": "Garbsen",
+    "street": "Seeweg 4",
+    "zip_code": "30827",
+    "latitude": 52.4347317,
+    "longitude": 9.5920065,
+    "availability": "full",
+    "source_url": "https://www.hwk-hannover.de/23,0,coursedetail.html?id=75533"
+  },
+  {
     "chamber_slug": "hwk-hildesheim-suedniedersachsen",
     "chamber_name": "HWK Hildesheim-Südniedersachsen",
     "chamber_region": "Niedersachsen",
@@ -1969,6 +2113,43 @@
     "source_url": "https://www.hwk-koeln.de/32,0,coursedetail.html?id=36065"
   },
   {
+    "chamber_slug": "hwk-koeln",
+    "chamber_name": "HWK zu Köln",
+    "chamber_region": "Nordrhein-Westfalen",
+    "trade_slug": "zahntechniker",
+    "trade_name": "Zahntechniker",
+    "title": "Zahntechniker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-08-25",
+    "end_date": "2027-07-16",
+    "start_date_note": "",
+    "duration_hours": 1400,
+    "course_fee": 11176.0,
+    "course_fee_display": "11.176 €",
+    "exam_fee_scraped": 2370.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 2370.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "2.370 €",
+      "from_tariff": false
+    },
+    "city": "Köln",
+    "street": "Köhlstr. 8",
+    "zip_code": "50827",
+    "latitude": 50.9758161,
+    "longitude": 6.8975287,
+    "availability": "waitlist",
+    "source_url": "https://www.hwk-koeln.de/32,0,coursedetail.html?id=35711"
+  },
+  {
     "chamber_slug": "hwk-konstanz",
     "chamber_name": "HWK Konstanz",
     "chamber_region": "Baden-Württemberg",
@@ -2077,6 +2258,43 @@
     "longitude": 12.5485819,
     "availability": "waitlist",
     "source_url": "https://www.hwk-leipzig.de/3,0,coursedetail.html?id=65115"
+  },
+  {
+    "chamber_slug": "hwk-leipzig",
+    "chamber_name": "HWK zu Leipzig",
+    "chamber_region": "Sachsen",
+    "trade_slug": "maurer-und-betonbauer",
+    "trade_name": "Maurer und Betonbauer",
+    "title": "Maurer und Betonbauer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-08-25",
+    "end_date": "2027-05-14",
+    "start_date_note": "",
+    "duration_hours": 1156,
+    "course_fee": 12577.0,
+    "course_fee_display": "12.577 €",
+    "exam_fee_scraped": 830.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 830.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "830 €",
+      "from_tariff": false
+    },
+    "city": "Borsdorf",
+    "street": "Steinweg 3",
+    "zip_code": "04451",
+    "latitude": 51.348242,
+    "longitude": 12.5485819,
+    "availability": "waitlist",
+    "source_url": "https://www.hwk-leipzig.de/3,0,coursedetail.html?id=74002"
   },
   {
     "chamber_slug": "hwk-leipzig",
@@ -2514,6 +2732,42 @@
     "longitude": 13.4060264,
     "availability": "full",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1013231"
+  },
+  {
+    "chamber_slug": "hwk-niederbayern-oberpfalz",
+    "chamber_name": "HWK Niederbayern-Oberpfalz",
+    "chamber_region": "Bayern",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-08-25",
+    "end_date": "2026-10-08",
+    "start_date_note": "",
+    "duration_hours": 264,
+    "course_fee": 1430.0,
+    "course_fee_display": "1.430 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": null,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "",
+      "from_tariff": false
+    },
+    "city": "Straubing",
+    "street": "Johannes-Kepler-Straße 14",
+    "zip_code": "94315",
+    "latitude": 48.8708639,
+    "longitude": 12.5760232,
+    "availability": "full",
+    "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1009328"
   },
   {
     "chamber_slug": "hwk-oldenburg",
