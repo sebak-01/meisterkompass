@@ -654,7 +654,7 @@
     "zip_code": "52068",
     "latitude": 50.7818511,
     "longitude": 6.1312387,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-aachen.de/33,0,coursedetail.html?id=40172"
   },
   {
@@ -2181,43 +2181,6 @@
       1,
       2
     ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-08-31",
-    "end_date": "2027-05-20",
-    "start_date_note": "",
-    "duration_hours": 1400,
-    "course_fee": 11400.0,
-    "course_fee_display": "11.400 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 587.5,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "588 €",
-      "from_tariff": true
-    },
-    "city": "Berlin",
-    "street": "Mehringdamm 14",
-    "zip_code": "10961",
-    "latitude": 52.4966028,
-    "longitude": 13.388784,
-    "availability": "waitlist",
-    "source_url": "https://www.bildung4u.de/kurse/meistervorbereitungslehrgang-elektrotechnik-teil-i-und-teil-ii-3911,0,coursedetail.html?id=57662&search-onr=3911&img=3"
-  },
-  {
-    "chamber_slug": "hwk-berlin",
-    "chamber_name": "HWK Berlin",
-    "chamber_region": "Berlin",
-    "trade_slug": "elektrotechniker",
-    "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
     "format": "part_time",
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
@@ -2242,7 +2205,7 @@
     "latitude": 52.4966028,
     "longitude": 13.388784,
     "availability": "waitlist",
-    "source_url": "https://www.bildung4u.de/kurse/meistervorbereitungslehrgang-elektrotechnik-teil-i-und-teil-ii-3911,0,coursedetail.html?id=58007&search-onr=3911&img=10"
+    "source_url": "https://www.bildung4u.de/kurse/meistervorbereitungslehrgang-elektrotechnik-teil-i-und-teil-ii-3911,0,coursedetail.html?id=58007&search-onr=3911&img=8"
   },
   {
     "chamber_slug": "hwk-berlin",
@@ -2279,7 +2242,7 @@
     "latitude": 52.4966028,
     "longitude": 13.388784,
     "availability": "waitlist",
-    "source_url": "https://www.bildung4u.de/kurse/meistervorbereitungslehrgang-elektrotechnik-teil-i-und-teil-ii-3911,0,coursedetail.html?id=57667&search-onr=3911&img=15"
+    "source_url": "https://www.bildung4u.de/kurse/meistervorbereitungslehrgang-elektrotechnik-teil-i-und-teil-ii-3911,0,coursedetail.html?id=57667&search-onr=3911&img=13"
   },
   {
     "chamber_slug": "hwk-berlin",
@@ -2316,7 +2279,7 @@
     "latitude": 52.4966028,
     "longitude": 13.388784,
     "availability": "waitlist",
-    "source_url": "https://www.bildung4u.de/kurse/meistervorbereitungslehrgang-elektrotechnik-teil-i-und-teil-ii-3911,0,coursedetail.html?id=60781&search-onr=3911&img=13"
+    "source_url": "https://www.bildung4u.de/kurse/meistervorbereitungslehrgang-elektrotechnik-teil-i-und-teil-ii-3911,0,coursedetail.html?id=60781&search-onr=3911&img=11"
   },
   {
     "chamber_slug": "hwk-berlin",
@@ -2353,7 +2316,7 @@
     "latitude": 52.4966028,
     "longitude": 13.388784,
     "availability": "waitlist",
-    "source_url": "https://www.bildung4u.de/kurse/meistervorbereitungslehrgang-install-und-heizungsbauer-teil-i-und-teil-ii-3911,0,coursedetail.html?id=61061&search-onr=3911&img=3"
+    "source_url": "https://www.bildung4u.de/kurse/meistervorbereitungslehrgang-install-und-heizungsbauer-teil-i-und-teil-ii-3911,0,coursedetail.html?id=61061&search-onr=3911&img=1"
   },
   {
     "chamber_slug": "hwk-berlin",
@@ -2390,7 +2353,7 @@
     "latitude": 52.4966028,
     "longitude": 13.388784,
     "availability": "available",
-    "source_url": "https://www.bildung4u.de/kurse/meistervorbereitungslehrgang-maler-und-lackierer-teil-i-und-teil-ii-3911,0,coursedetail.html?id=58548&search-onr=3911&img=5"
+    "source_url": "https://www.bildung4u.de/kurse/meistervorbereitungslehrgang-maler-und-lackierer-teil-i-und-teil-ii-3911,0,coursedetail.html?id=58548&search-onr=3911&img=3"
   },
   {
     "chamber_slug": "hwk-berlin",
@@ -2427,7 +2390,7 @@
     "latitude": 52.4966028,
     "longitude": 13.388784,
     "availability": "available",
-    "source_url": "https://www.bildung4u.de/kurse/meistervorbereitungslehrgang-schilder-und-lichtreklamehersteller-handwerk-teil-i-und-ii-3911,0,coursedetail.html?id=58535&search-onr=3911&img=6"
+    "source_url": "https://www.bildung4u.de/kurse/meistervorbereitungslehrgang-schilder-und-lichtreklamehersteller-handwerk-teil-i-und-ii-3911,0,coursedetail.html?id=58535&search-onr=3911&img=4"
   },
   {
     "chamber_slug": "hwk-berlin",
@@ -2464,7 +2427,7 @@
     "latitude": 52.4966028,
     "longitude": 13.388784,
     "availability": "waitlist",
-    "source_url": "https://www.bildung4u.de/kurse/meistervorbereitungslehrgang-tischler-teil-i-und-teil-ii-3911,0,coursedetail.html?id=60106&search-onr=3911&img=2"
+    "source_url": "https://www.bildung4u.de/kurse/meistervorbereitungslehrgang-tischler-teil-i-und-teil-ii-3911,0,coursedetail.html?id=60106&search-onr=3911&img=20"
   },
   {
     "chamber_slug": "hwk-berlin",
@@ -2501,7 +2464,7 @@
     "latitude": 52.4966028,
     "longitude": 13.388784,
     "availability": "available",
-    "source_url": "https://www.bildung4u.de/kurse/meistervorbereitungslehrgang-tischler-teil-i-und-teil-ii-3911,0,coursedetail.html?id=60638&search-onr=3911&img=10"
+    "source_url": "https://www.bildung4u.de/kurse/meistervorbereitungslehrgang-tischler-teil-i-und-teil-ii-3911,0,coursedetail.html?id=60638&search-onr=3911&img=8"
   },
   {
     "chamber_slug": "hwk-berlin",
@@ -2538,43 +2501,7 @@
     "latitude": 52.4966028,
     "longitude": 13.388784,
     "availability": "available",
-    "source_url": "https://www.bildung4u.de/kurse/meistervorbereitungslehrgang-tischler-teil-i-und-teil-ii-3911,0,coursedetail.html?id=61000&search-onr=3911&img=12"
-  },
-  {
-    "chamber_slug": "hwk-berlin",
-    "chamber_name": "HWK Berlin",
-    "chamber_region": "Berlin",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-08-28",
-    "end_date": "2027-02-12",
-    "start_date_note": "",
-    "duration_hours": 288,
-    "course_fee": 2100.0,
-    "course_fee_display": "2.100 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 168.75,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "169 €",
-      "from_tariff": true
-    },
-    "city": "Berlin",
-    "street": "Mehringdamm 14",
-    "zip_code": "10961",
-    "latitude": 52.4966028,
-    "longitude": 13.388784,
-    "availability": "waitlist",
-    "source_url": "https://www.bildung4u.de/kurse/meistervorbereitungslehrgang-teil-iii-wirtschafts-und-rechtskunde-11-26-flex-3911,0,coursedetail.html?id=57940&search-onr=3911&img=1"
+    "source_url": "https://www.bildung4u.de/kurse/meistervorbereitungslehrgang-tischler-teil-i-und-teil-ii-3911,0,coursedetail.html?id=61000&search-onr=3911&img=10"
   },
   {
     "chamber_slug": "hwk-berlin",
@@ -2610,7 +2537,7 @@
     "latitude": 52.4966028,
     "longitude": 13.388784,
     "availability": "available",
-    "source_url": "https://www.bildung4u.de/kurse/meistervorbereitungslehrgang-teil-iii-wirtschafts-und-rechtskunde-6-26-3911,0,coursedetail.html?id=57921&search-onr=3911&img=4"
+    "source_url": "https://www.bildung4u.de/kurse/meistervorbereitungslehrgang-teil-iii-wirtschafts-und-rechtskunde-6-26-3911,0,coursedetail.html?id=57921&search-onr=3911&img=2"
   },
   {
     "chamber_slug": "hwk-berlin",
@@ -2646,7 +2573,7 @@
     "latitude": 52.4966028,
     "longitude": 13.388784,
     "availability": "waitlist",
-    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iv-ausbildereignungsverordnung-aevo-speed-2-26-3911,0,coursedetail.html?id=58098&search-onr=3911&img=7"
+    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iv-ausbildereignungsverordnung-aevo-speed-2-26-3911,0,coursedetail.html?id=58098&search-onr=3911&img=5"
   },
   {
     "chamber_slug": "hwk-berlin",
@@ -2682,7 +2609,7 @@
     "latitude": 52.4966028,
     "longitude": 13.388784,
     "availability": "waitlist",
-    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iv-ausbildereignungsverordnung-aevo-speed-hybrid-blended-5-26-3911,0,coursedetail.html?id=58106&search-onr=3911&img=8"
+    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iv-ausbildereignungsverordnung-aevo-speed-hybrid-blended-5-26-3911,0,coursedetail.html?id=58106&search-onr=3911&img=6"
   },
   {
     "chamber_slug": "hwk-berlin",
@@ -2718,7 +2645,7 @@
     "latitude": 52.4966028,
     "longitude": 13.388784,
     "availability": "waitlist",
-    "source_url": "https://www.bildung4u.de/kurse/meistervorbereitungslehrgang-teil-iii-wirtschafts-und-rechtskunde-8-26-3911,0,coursedetail.html?id=57927&search-onr=3911&img=9"
+    "source_url": "https://www.bildung4u.de/kurse/meistervorbereitungslehrgang-teil-iii-wirtschafts-und-rechtskunde-8-26-3911,0,coursedetail.html?id=57927&search-onr=3911&img=7"
   },
   {
     "chamber_slug": "hwk-berlin",
@@ -2754,7 +2681,7 @@
     "latitude": 52.4966028,
     "longitude": 13.388784,
     "availability": "waitlist",
-    "source_url": "https://www.bildung4u.de/kurse/meistervorbereitungslehrgang-teil-iv-ausbildereignungsverordnung-aevo-10-26-3911,0,coursedetail.html?id=58080&search-onr=3911&img=11"
+    "source_url": "https://www.bildung4u.de/kurse/meistervorbereitungslehrgang-teil-iv-ausbildereignungsverordnung-aevo-10-26-3911,0,coursedetail.html?id=58080&search-onr=3911&img=9"
   },
   {
     "chamber_slug": "hwk-berlin",
@@ -2790,7 +2717,7 @@
     "latitude": 52.4966028,
     "longitude": 13.388784,
     "availability": "available",
-    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iii-wirtschafts-und-rechtskunde-1-27-3911,0,coursedetail.html?id=61128&search-onr=3911&img=12"
+    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iii-wirtschafts-und-rechtskunde-1-27-3911,0,coursedetail.html?id=61128&search-onr=3911&img=10"
   },
   {
     "chamber_slug": "hwk-berlin",
@@ -2826,7 +2753,7 @@
     "latitude": 52.4966028,
     "longitude": 13.388784,
     "availability": "available",
-    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iv-ausbildereignungsverordnung-aevo-1-27-3911,0,coursedetail.html?id=61107&search-onr=3911&img=13"
+    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iv-ausbildereignungsverordnung-aevo-1-27-3911,0,coursedetail.html?id=61107&search-onr=3911&img=11"
   },
   {
     "chamber_slug": "hwk-berlin",
@@ -2863,7 +2790,7 @@
     "latitude": 52.4966028,
     "longitude": 13.388784,
     "availability": "available",
-    "source_url": "https://www.bildung4u.de/kurse/wirtschafts-und-rechtskunde-teil-iii-und-ausbildereignungsverordnung-teil-iv-kombi-1-27-3911,0,coursedetail.html?id=61194&search-onr=3911&img=14"
+    "source_url": "https://www.bildung4u.de/kurse/wirtschafts-und-rechtskunde-teil-iii-und-ausbildereignungsverordnung-teil-iv-kombi-1-27-3911,0,coursedetail.html?id=61194&search-onr=3911&img=12"
   },
   {
     "chamber_slug": "hwk-berlin",
@@ -2899,7 +2826,7 @@
     "latitude": 52.4966028,
     "longitude": 13.388784,
     "availability": "available",
-    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iv-ausbildereignungsverordnung-aevo-2-27-3911,0,coursedetail.html?id=61110&search-onr=3911&img=16"
+    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iv-ausbildereignungsverordnung-aevo-2-27-3911,0,coursedetail.html?id=61110&search-onr=3911&img=14"
   },
   {
     "chamber_slug": "hwk-berlin",
@@ -2935,7 +2862,7 @@
     "latitude": 52.4966028,
     "longitude": 13.388784,
     "availability": "available",
-    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iii-wirtschafts-und-rechtskunde-9-27-flex-3911,0,coursedetail.html?id=61158&search-onr=3911&img=17"
+    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iii-wirtschafts-und-rechtskunde-9-27-flex-3911,0,coursedetail.html?id=61158&search-onr=3911&img=15"
   },
   {
     "chamber_slug": "hwk-berlin",
@@ -2971,7 +2898,7 @@
     "latitude": 52.4966028,
     "longitude": 13.388784,
     "availability": "available",
-    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iv-ausbildereignungsverordnung-aevo-3-27-hybrid-blended-3911,0,coursedetail.html?id=61233&search-onr=3911&img=19"
+    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iv-ausbildereignungsverordnung-aevo-3-27-hybrid-blended-3911,0,coursedetail.html?id=61233&search-onr=3911&img=17"
   },
   {
     "chamber_slug": "hwk-berlin",
@@ -3007,7 +2934,7 @@
     "latitude": 52.4966028,
     "longitude": 13.388784,
     "availability": "available",
-    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iv-ausbildereignungsverordnung-aevo-4-27-3911,0,coursedetail.html?id=61113&search-onr=3911&img=18"
+    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iv-ausbildereignungsverordnung-aevo-4-27-3911,0,coursedetail.html?id=61113&search-onr=3911&img=16"
   },
   {
     "chamber_slug": "hwk-berlin",
@@ -3043,7 +2970,7 @@
     "latitude": 52.4966028,
     "longitude": 13.388784,
     "availability": "available",
-    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iv-ausbildereignungsverordnung-aevo-5-27-3911,0,coursedetail.html?id=61170&search-onr=3911&img=20"
+    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iv-ausbildereignungsverordnung-aevo-5-27-3911,0,coursedetail.html?id=61170&search-onr=3911&img=18"
   },
   {
     "chamber_slug": "hwk-berlin",
@@ -3079,7 +3006,7 @@
     "latitude": 52.4966028,
     "longitude": 13.388784,
     "availability": "available",
-    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iii-wirtschafts-und-rechtskunde-digital-live-2-27-3911,0,coursedetail.html?id=61134&search-onr=3911&img=1"
+    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iii-wirtschafts-und-rechtskunde-digital-live-2-27-3911,0,coursedetail.html?id=61134&search-onr=3911&img=19"
   },
   {
     "chamber_slug": "hwk-berlin",
@@ -3115,7 +3042,7 @@
     "latitude": 52.4966028,
     "longitude": 13.388784,
     "availability": "available",
-    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iii-wirtschafts-und-rechtskunde-3-27-3911,0,coursedetail.html?id=61137&search-onr=3911&img=4"
+    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iii-wirtschafts-und-rechtskunde-3-27-3911,0,coursedetail.html?id=61137&search-onr=3911&img=2"
   },
   {
     "chamber_slug": "hwk-berlin",
@@ -3151,7 +3078,7 @@
     "latitude": 52.4966028,
     "longitude": 13.388784,
     "availability": "available",
-    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iv-ausbildereignungsverordnung-aevo-6-27-3911,0,coursedetail.html?id=61173&search-onr=3911&img=5"
+    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iv-ausbildereignungsverordnung-aevo-6-27-3911,0,coursedetail.html?id=61173&search-onr=3911&img=3"
   },
   {
     "chamber_slug": "hwk-berlin",
@@ -3187,7 +3114,7 @@
     "latitude": 52.4966028,
     "longitude": 13.388784,
     "availability": "available",
-    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iv-ausbildereignungsverordnung-aevo-7-27-3911,0,coursedetail.html?id=61176&search-onr=3911&img=6"
+    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iv-ausbildereignungsverordnung-aevo-7-27-3911,0,coursedetail.html?id=61176&search-onr=3911&img=4"
   },
   {
     "chamber_slug": "hwk-berlin",
@@ -3223,7 +3150,7 @@
     "latitude": 52.4966028,
     "longitude": 13.388784,
     "availability": "available",
-    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iii-wirtschafts-und-rechtskunde-speed-4-27-3911,0,coursedetail.html?id=61141&search-onr=3911&img=7"
+    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iii-wirtschafts-und-rechtskunde-speed-4-27-3911,0,coursedetail.html?id=61141&search-onr=3911&img=5"
   },
   {
     "chamber_slug": "hwk-berlin",
@@ -3259,7 +3186,7 @@
     "latitude": 52.4966028,
     "longitude": 13.388784,
     "availability": "available",
-    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iv-ausbildereignungsverordnung-aevo-8-27-3911,0,coursedetail.html?id=61179&search-onr=3911&img=8"
+    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iv-ausbildereignungsverordnung-aevo-8-27-3911,0,coursedetail.html?id=61179&search-onr=3911&img=6"
   },
   {
     "chamber_slug": "hwk-berlin",
@@ -3295,7 +3222,7 @@
     "latitude": 52.4966028,
     "longitude": 13.388784,
     "availability": "available",
-    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iv-ausbildereignungsverordnung-aevo-9-27-3911,0,coursedetail.html?id=61182&search-onr=3911&img=9"
+    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iv-ausbildereignungsverordnung-aevo-9-27-3911,0,coursedetail.html?id=61182&search-onr=3911&img=7"
   },
   {
     "chamber_slug": "hwk-berlin",
@@ -3331,7 +3258,7 @@
     "latitude": 52.4966028,
     "longitude": 13.388784,
     "availability": "available",
-    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iii-wirtschafts-und-rechtskunde-5-27-3911,0,coursedetail.html?id=61144&search-onr=3911&img=11"
+    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iii-wirtschafts-und-rechtskunde-5-27-3911,0,coursedetail.html?id=61144&search-onr=3911&img=9"
   },
   {
     "chamber_slug": "hwk-berlin",
@@ -3367,7 +3294,7 @@
     "latitude": 52.4966028,
     "longitude": 13.388784,
     "availability": "available",
-    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iv-ausbildereignungsverordnung-aevo-10-27-hybrid-blended-3911,0,coursedetail.html?id=61243&search-onr=3911&img=14"
+    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iv-ausbildereignungsverordnung-aevo-10-27-hybrid-blended-3911,0,coursedetail.html?id=61243&search-onr=3911&img=12"
   },
   {
     "chamber_slug": "hwk-berlin",
@@ -3403,7 +3330,7 @@
     "latitude": 52.4966028,
     "longitude": 13.388784,
     "availability": "available",
-    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iii-wirtschafts-und-rechtskunde-6-27-3911,0,coursedetail.html?id=61148&search-onr=3911&img=16"
+    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iii-wirtschafts-und-rechtskunde-6-27-3911,0,coursedetail.html?id=61148&search-onr=3911&img=14"
   },
   {
     "chamber_slug": "hwk-berlin",
@@ -3439,7 +3366,7 @@
     "latitude": 52.4966028,
     "longitude": 13.388784,
     "availability": "available",
-    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iv-ausbildereignungsverordnung-aevo-11-27-3911,0,coursedetail.html?id=61185&search-onr=3911&img=15"
+    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iv-ausbildereignungsverordnung-aevo-11-27-3911,0,coursedetail.html?id=61185&search-onr=3911&img=13"
   },
   {
     "chamber_slug": "hwk-berlin",
@@ -3475,7 +3402,7 @@
     "latitude": 52.4966028,
     "longitude": 13.388784,
     "availability": "available",
-    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iii-wirtschafts-und-rechtskunde-digital-live-7-27-3911,0,coursedetail.html?id=61152&search-onr=3911&img=18"
+    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iii-wirtschafts-und-rechtskunde-digital-live-7-27-3911,0,coursedetail.html?id=61152&search-onr=3911&img=16"
   },
   {
     "chamber_slug": "hwk-berlin",
@@ -3511,7 +3438,7 @@
     "latitude": 52.4966028,
     "longitude": 13.388784,
     "availability": "available",
-    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iv-ausbildereignungsverordnung-aevo-12-27-3911,0,coursedetail.html?id=61188&search-onr=3911&img=17"
+    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iv-ausbildereignungsverordnung-aevo-12-27-3911,0,coursedetail.html?id=61188&search-onr=3911&img=15"
   },
   {
     "chamber_slug": "hwk-berlin",
@@ -3547,7 +3474,7 @@
     "latitude": 52.4966028,
     "longitude": 13.388784,
     "availability": "available",
-    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iii-wirtschafts-und-rechtskunde-speed-8-27-3911,0,coursedetail.html?id=61155&search-onr=3911&img=19"
+    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iii-wirtschafts-und-rechtskunde-speed-8-27-3911,0,coursedetail.html?id=61155&search-onr=3911&img=17"
   },
   {
     "chamber_slug": "hwk-berlin",
@@ -3583,7 +3510,7 @@
     "latitude": 52.4966028,
     "longitude": 13.388784,
     "availability": "available",
-    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iv-ausbildereignungsverordnung-aevo-13-27-3911,0,coursedetail.html?id=61191&search-onr=3911&img=20"
+    "source_url": "https://www.bildung4u.de/kurse/mvl-teil-iv-ausbildereignungsverordnung-aevo-13-27-3911,0,coursedetail.html?id=61191&search-onr=3911&img=18"
   },
   {
     "chamber_slug": "hwk-berlin",
@@ -3620,7 +3547,7 @@
     "latitude": 52.4966028,
     "longitude": 13.388784,
     "availability": "unknown",
-    "source_url": "https://www.bildung4u.de/kurse/meistervorbereitungslehrgang-zahntechnik-teil-i-und-teil-ii-vollzeit-1-26-3911,0,coursedetail.html?id=59136&search-onr=3911&img=2"
+    "source_url": "https://www.bildung4u.de/kurse/meistervorbereitungslehrgang-zahntechnik-teil-i-und-teil-ii-vollzeit-1-26-3911,0,coursedetail.html?id=59136&search-onr=3911&img=1"
   },
   {
     "chamber_slug": "hwk-braunschweig-lueneburg-stade",
@@ -3878,7 +3805,7 @@
     "zip_code": "",
     "latitude": 52.2646577,
     "longitude": 10.5236066,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://weiterbildung.hwk-bls.de/22,0,coursedetail.html?id=318341"
   },
   {
@@ -3917,43 +3844,6 @@
     "longitude": 9.4923003,
     "availability": "waitlist",
     "source_url": "https://weiterbildung.hwk-bls.de/22,0,coursedetail.html?id=323897"
-  },
-  {
-    "chamber_slug": "hwk-braunschweig-lueneburg-stade",
-    "chamber_name": "HWK Braunschweig-Lüneburg-Stade",
-    "chamber_region": "Niedersachsen",
-    "trade_slug": "kfz-techniker",
-    "trade_name": "Kfz.-Techniker",
-    "title": "Kfz.-Techniker (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-09-14",
-    "end_date": "2028-04-28",
-    "start_date_note": "",
-    "duration_hours": 860,
-    "course_fee": 8900.0,
-    "course_fee_display": "8.900 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 1790.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "1.790 €",
-      "from_tariff": true
-    },
-    "city": "Braunschweig",
-    "street": "Hamburger Straße 234",
-    "zip_code": "38114",
-    "latitude": 52.2850901,
-    "longitude": 10.5199812,
-    "availability": "available",
-    "source_url": "https://weiterbildung.hwk-bls.de/22,0,coursedetail.html?id=305049"
   },
   {
     "chamber_slug": "hwk-braunschweig-lueneburg-stade",
@@ -10534,7 +10424,7 @@
     "zip_code": "09116",
     "latitude": 50.8307235,
     "longitude": 12.8727524,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_745"
   },
   {
@@ -15997,45 +15887,9 @@
     ],
     "format": "full_time",
     "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-09-01",
-    "end_date": "2026-09-16",
-    "start_date_note": "",
-    "duration_hours": 96,
-    "course_fee": 960.0,
-    "course_fee_display": "960 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 255.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "255 €",
-      "from_tariff": true
-    },
-    "city": "Cottbus",
-    "street": "Schorbuser Weg 2",
-    "zip_code": "03051",
-    "latitude": 51.7021156,
-    "longitude": 14.3591764,
-    "availability": "available",
-    "source_url": "https://www.hwk-cottbus.de/7,0,coursedetail.html?id=65237"
-  },
-  {
-    "chamber_slug": "hwk-cottbus",
-    "chamber_name": "HWK Cottbus",
-    "chamber_region": "Brandenburg",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-09-15",
-    "end_date": "2026-11-17",
+    "teaching_mode": "online",
+    "start_date": "2026-09-28",
+    "end_date": "2026-10-13",
     "start_date_note": "",
     "duration_hours": 96,
     "course_fee": 799.0,
@@ -16049,13 +15903,13 @@
       "display": "255 €",
       "from_tariff": true
     },
-    "city": "Wildau",
-    "street": "Schwartzkopffstraße 1",
-    "zip_code": "15745",
-    "latitude": 52.3198785,
-    "longitude": 13.6310976,
+    "city": "00000 keine Angabe",
+    "street": "",
+    "zip_code": "",
+    "latitude": null,
+    "longitude": null,
     "availability": "available",
-    "source_url": "https://www.hwk-cottbus.de/7,0,coursedetail.html?id=66896"
+    "source_url": "https://www.hwk-cottbus.de/7,0,coursedetail.html?id=64367"
   },
   {
     "chamber_slug": "hwk-cottbus",
@@ -17438,43 +17292,6 @@
       1,
       2
     ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "online",
-    "start_date": "2026-10-26",
-    "end_date": "2027-07-09",
-    "start_date_note": "",
-    "duration_hours": 1320,
-    "course_fee": 9480.0,
-    "course_fee_display": "9.480 €",
-    "exam_fee_scraped": 1899.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 1899.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "1.899 €",
-      "from_tariff": false
-    },
-    "city": "Dortmund",
-    "street": "Schützenstraße 32-34",
-    "zip_code": "44147",
-    "latitude": 51.5206367,
-    "longitude": 7.4529522,
-    "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/augenoptiker-in-vollzeitlehrgang-meistervorbereitung-teile-i-und-ii/#termin-1"
-  },
-  {
-    "chamber_slug": "hwk-dortmund",
-    "chamber_name": "HWK Dortmund",
-    "chamber_region": "Nordrhein-Westfalen",
-    "trade_slug": "augenoptiker",
-    "trade_name": "Augenoptiker",
-    "title": "Augenoptiker (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
     "format": "part_time",
     "format_display": "Teilzeit",
     "teaching_mode": "online",
@@ -17979,7 +17796,7 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-geruestbauer/geruestbauer-in-vollzeitlehrgang-meistervorbereitung-teile-i-und-ii-2/#termin-2"
   },
   {
@@ -18110,8 +17927,8 @@
     "end_date": "2027-11-12",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3730.0,
-    "course_fee_display": "3.730 €",
+    "course_fee": 3530.0,
+    "course_fee_display": "3.530 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -18127,7 +17944,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-2"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-1"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -18146,8 +17963,8 @@
     "end_date": "2027-11-12",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3730.0,
-    "course_fee_display": "3.730 €",
+    "course_fee": 3530.0,
+    "course_fee_display": "3.530 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -18163,7 +17980,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-4"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-3"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -18271,7 +18088,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-3"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-2"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -18343,7 +18160,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-2"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-3"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -18434,8 +18251,8 @@
     "end_date": "2028-11-10",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3730.0,
-    "course_fee_display": "3.730 €",
+    "course_fee": 3530.0,
+    "course_fee_display": "3.530 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -18451,7 +18268,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-1"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-2"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -18470,8 +18287,8 @@
     "end_date": "2028-11-10",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3730.0,
-    "course_fee_display": "3.730 €",
+    "course_fee": 3530.0,
+    "course_fee_display": "3.530 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -18487,7 +18304,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-3"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-4"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -18961,7 +18778,7 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-1"
   },
   {
@@ -19142,7 +18959,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-teilzeit/#termin-9"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-teilzeit/#termin-8"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -19394,7 +19211,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-teilzeit/#termin-10"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-teilzeit/#termin-9"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -19429,7 +19246,7 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufm-betriebsfuehrung-hwo-teilzeit/#termin-12"
   },
   {
@@ -19466,7 +19283,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-teilzeit/#termin-11"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-teilzeit/#termin-10"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -19682,7 +19499,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-teilzeit/#termin-12"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-teilzeit/#termin-11"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -20150,7 +19967,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-teilzeit/#termin-13"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-teilzeit/#termin-12"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -20186,7 +20003,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-teilzeit/#termin-14"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-teilzeit/#termin-13"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -20510,7 +20327,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-teilzeit/#termin-15"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-teilzeit/#termin-14"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -21868,8 +21685,8 @@
     "end_date": "2027-08-26",
     "start_date_note": "",
     "duration_hours": 837,
-    "course_fee": 6990.0,
-    "course_fee_display": "6.990 €",
+    "course_fee": 7300.0,
+    "course_fee_display": "7.300 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -21976,8 +21793,8 @@
     "end_date": "2027-02-12",
     "start_date_note": "",
     "duration_hours": 528,
-    "course_fee": 5950.0,
-    "course_fee_display": "5.950 €",
+    "course_fee": 6900.0,
+    "course_fee_display": "6.900 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -23346,11 +23163,11 @@
     "parts": [
       4
     ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
+    "format": "part_time",
+    "format_display": "Teilzeit",
     "teaching_mode": "presence",
     "start_date": "2027-03-08",
-    "end_date": "2027-03-19",
+    "end_date": "2027-05-12",
     "start_date_note": "",
     "duration_hours": 80,
     "course_fee": 850.0,
@@ -23382,11 +23199,11 @@
     "parts": [
       4
     ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
+    "format": "full_time",
+    "format_display": "Vollzeit",
     "teaching_mode": "presence",
     "start_date": "2027-03-08",
-    "end_date": "2027-05-12",
+    "end_date": "2027-03-19",
     "start_date_note": "",
     "duration_hours": 80,
     "course_fee": 850.0,
@@ -26107,7 +25924,7 @@
     "latitude": 51.0833678,
     "longitude": 13.7677525,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/zahntechnikerhandwerk-teil-ii-166520.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/zahntechnikerhandwerk-teil-ii-166525.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -26549,7 +26366,7 @@
     "zip_code": "47166",
     "latitude": 51.4987229,
     "longitude": 6.7701435,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-duesseldorf.de/31,0,coursedetail.html?id=61405"
   },
   {
@@ -31050,42 +30867,6 @@
     "longitude": 11.0287364,
     "availability": "available",
     "source_url": "https://www.hwk-erfurt.de/4,0,coursedetail.html?id=63936"
-  },
-  {
-    "chamber_slug": "hwk-erfurt",
-    "chamber_name": "HWK Erfurt",
-    "chamber_region": "Thüringen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-08-28",
-    "end_date": "2026-11-21",
-    "start_date_note": "",
-    "duration_hours": 120,
-    "course_fee": 785.0,
-    "course_fee_display": "785 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 340.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "340 €",
-      "from_tariff": true
-    },
-    "city": "Erfurt",
-    "street": "",
-    "zip_code": "",
-    "latitude": 50.9777974,
-    "longitude": 11.0287364,
-    "availability": "available",
-    "source_url": "https://www.hwk-erfurt.de/4,0,coursedetail.html?id=63165"
   },
   {
     "chamber_slug": "hwk-erfurt",
@@ -37353,7 +37134,7 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
-    "start_date": "2027-05-10",
+    "start_date": "2027-05-03",
     "end_date": "2027-07-09",
     "start_date_note": "",
     "duration_hours": 288,
@@ -37389,7 +37170,7 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
-    "start_date": "2027-05-10",
+    "start_date": "2027-05-03",
     "end_date": "2027-07-09",
     "start_date_note": "",
     "duration_hours": 248,
@@ -38876,7 +38657,7 @@
     "zip_code": "21079",
     "latitude": 53.4582352,
     "longitude": 9.9959008,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.elbcampus.de/weiterbildung/gepr.-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo/"
   },
   {
@@ -43053,7 +42834,7 @@
     "zip_code": "74078",
     "latitude": 49.1847456,
     "longitude": 9.169312,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwk-heilbronn.de/seminar/mv-iiiiv-vz-fruehjahr/#kurs-37"
   },
   {
@@ -46049,12 +45830,12 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
-    "start_date": null,
-    "end_date": null,
+    "start_date": "2027-03-08",
+    "end_date": "2027-09-03",
     "start_date_note": "",
     "duration_hours": null,
-    "course_fee": null,
-    "course_fee_display": "—",
+    "course_fee": 10427.0,
+    "course_fee_display": "10.427 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -46069,7 +45850,7 @@
     "zip_code": "34537",
     "latitude": 51.1300434,
     "longitude": 9.1225344,
-    "availability": "unknown",
+    "availability": "available",
     "source_url": "https://veranstaltung.holzfachschule.de/seminar/modellbauermeister-in-teil-i-ii_104878"
   },
   {
@@ -48960,7 +48741,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=112327&search-onr=52&img=9"
+    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=112327&search-onr=52&img=10"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -48997,7 +48778,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=110619&search-onr=52&img=2"
+    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=110619&search-onr=52&img=3"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -49034,7 +48815,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=115146&search-onr=52&img=19"
+    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=115146&search-onr=52&img=20"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -49071,7 +48852,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=112332&search-onr=52&img=20"
+    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=112332&search-onr=52&img=1"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -49108,7 +48889,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=116774&search-onr=52&img=4"
+    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=116774&search-onr=52&img=5"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -49145,7 +48926,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=114994&search-onr=52&img=5"
+    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=114994&search-onr=52&img=6"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -49182,7 +48963,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=119250&search-onr=52&img=7"
+    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=119250&search-onr=52&img=8"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -49219,7 +49000,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=117151&search-onr=52&img=8"
+    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=117151&search-onr=52&img=9"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -49256,7 +49037,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=118637&search-onr=52&img=11"
+    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=118637&search-onr=52&img=12"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -49293,7 +49074,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=120060&search-onr=52&img=13"
+    "source_url": "https://www.hwk-koblenz.de/kurse/elektrotechniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=120060&search-onr=52&img=14"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -49478,7 +49259,7 @@
     "latitude": 50.3603382,
     "longitude": 7.5844202,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/fleischer-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=119741&search-onr=52&img=17"
+    "source_url": "https://www.hwk-koblenz.de/kurse/fleischer-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=119741&search-onr=52&img=18"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -49737,7 +49518,7 @@
     "latitude": 50.3603382,
     "longitude": 7.5844202,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/geruestbauer-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=120978&search-onr=52&img=15"
+    "source_url": "https://www.hwk-koblenz.de/kurse/geruestbauer-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=120978&search-onr=52&img=16"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -49885,7 +49666,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=108316&search-onr=52&img=6"
+    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=108316&search-onr=52&img=7"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -49922,7 +49703,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=110696&search-onr=52&img=18"
+    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=110696&search-onr=52&img=19"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -49959,7 +49740,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=115931&search-onr=52&img=1"
+    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=115931&search-onr=52&img=2"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -49996,7 +49777,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=113746&search-onr=52&img=3"
+    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=113746&search-onr=52&img=4"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -50033,7 +49814,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=115926&search-onr=52&img=6"
+    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=115926&search-onr=52&img=7"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -50070,7 +49851,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=122002&search-onr=52&img=9"
+    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=122002&search-onr=52&img=10"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -50107,7 +49888,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=118234&search-onr=52&img=10"
+    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=118234&search-onr=52&img=11"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -50144,7 +49925,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=119662&search-onr=52&img=12"
+    "source_url": "https://www.hwk-koblenz.de/kurse/installateur-und-heizungsbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=119662&search-onr=52&img=13"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -50218,7 +49999,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/karosserie-und-fahrzeugbauer-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=121990&search-onr=52&img=2"
+    "source_url": "https://www.hwk-koblenz.de/kurse/karosserie-und-fahrzeugbauer-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=121990&search-onr=52&img=3"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -50440,7 +50221,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/kfz-techniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=120460&search-onr=52&img=11"
+    "source_url": "https://www.hwk-koblenz.de/kurse/kfz-techniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=120460&search-onr=52&img=12"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -50477,7 +50258,7 @@
     "latitude": 50.7821939,
     "longitude": 7.740086,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/kfz-techniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=121099&search-onr=52&img=19"
+    "source_url": "https://www.hwk-koblenz.de/kurse/kfz-techniker-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=121099&search-onr=52&img=20"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -50514,7 +50295,7 @@
     "latitude": 50.3603382,
     "longitude": 7.5844202,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/kfz-techniker-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=119721&search-onr=52&img=4"
+    "source_url": "https://www.hwk-koblenz.de/kurse/kfz-techniker-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=119721&search-onr=52&img=5"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -50588,7 +50369,7 @@
     "latitude": 50.3603382,
     "longitude": 7.5844202,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/konditoren-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=119736&search-onr=52&img=12"
+    "source_url": "https://www.hwk-koblenz.de/kurse/konditoren-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=119736&search-onr=52&img=13"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -50625,7 +50406,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/land-und-baumaschinenmechatroniker-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=120601&search-onr=52&img=16"
+    "source_url": "https://www.hwk-koblenz.de/kurse/land-und-baumaschinenmechatroniker-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=120601&search-onr=52&img=17"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -50810,7 +50591,7 @@
     "latitude": 50.3895583,
     "longitude": 7.5708933,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/maler-und-lackierer-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=121760&search-onr=52&img=8"
+    "source_url": "https://www.hwk-koblenz.de/kurse/maler-und-lackierer-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=121760&search-onr=52&img=9"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -50921,7 +50702,7 @@
     "latitude": 50.3895583,
     "longitude": 7.5708933,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/maurer-und-betonbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=120845&search-onr=52&img=4"
+    "source_url": "https://www.hwk-koblenz.de/kurse/maurer-und-betonbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=120845&search-onr=52&img=5"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -51037,6 +50818,42 @@
     "chamber_slug": "hwk-koblenz",
     "chamber_name": "HWK Koblenz",
     "chamber_region": "Rheinland-Pfalz",
+    "trade_slug": "steinmetzen-und-steinbildhauer",
+    "trade_name": "Steinmetzen und Steinbildhauer",
+    "title": "Steinmetzen und Steinbildhauer (Teil I)",
+    "parts": [
+      1
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-11-26",
+    "end_date": "2027-12-18",
+    "start_date_note": "",
+    "duration_hours": 100,
+    "course_fee": 1550.0,
+    "course_fee_display": "1.550 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 1200.0,
+      "fee_max": null,
+      "qualifier": "bis zu",
+      "display": "bis zu 1.200 €",
+      "from_tariff": true
+    },
+    "city": "Koblenz",
+    "street": "August-Horch-Str. 6",
+    "zip_code": "56070",
+    "latitude": 50.3895583,
+    "longitude": 7.5708933,
+    "availability": "available",
+    "source_url": "https://www.hwk-koblenz.de/kurse/steinmetzen-und-steinbildhauer-teil-i-in-vollzeit-52,0,coursedetail.html?id=122074&search-onr=52&img=4"
+  },
+  {
+    "chamber_slug": "hwk-koblenz",
+    "chamber_name": "HWK Koblenz",
+    "chamber_region": "Rheinland-Pfalz",
     "trade_slug": "strassenbauer",
     "trade_name": "Straßenbauer",
     "title": "Straßenbauer (Teile I + II)",
@@ -51142,7 +50959,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/strassenbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=119901&search-onr=52&img=7"
+    "source_url": "https://www.hwk-koblenz.de/kurse/strassenbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=119901&search-onr=52&img=8"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -51253,7 +51070,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/tischler-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=118921&search-onr=52&img=8"
+    "source_url": "https://www.hwk-koblenz.de/kurse/tischler-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=118921&search-onr=52&img=9"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -51290,7 +51107,7 @@
     "latitude": 50.3895583,
     "longitude": 7.5708933,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/tischler-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=120519&search-onr=52&img=3"
+    "source_url": "https://www.hwk-koblenz.de/kurse/tischler-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=120519&search-onr=52&img=4"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -52067,7 +51884,7 @@
     "latitude": 49.850123,
     "longitude": 7.8827044,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-vollzeit-52,0,coursedetail.html?id=120011&search-onr=52&img=10"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-vollzeit-52,0,coursedetail.html?id=120011&search-onr=52&img=11"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -52104,7 +51921,7 @@
     "latitude": 50.3603382,
     "longitude": 7.5844202,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-vollzeit-52,0,coursedetail.html?id=120016&search-onr=52&img=13"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-vollzeit-52,0,coursedetail.html?id=120016&search-onr=52&img=14"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -52141,7 +51958,7 @@
     "latitude": 50.5456433,
     "longitude": 7.1017081,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-crashkurs-52,0,coursedetail.html?id=120021&search-onr=52&img=14"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-crashkurs-52,0,coursedetail.html?id=120021&search-onr=52&img=15"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -52178,7 +51995,7 @@
     "latitude": 50.7821939,
     "longitude": 7.740086,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-crashkurs-52,0,coursedetail.html?id=120026&search-onr=52&img=15"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-crashkurs-52,0,coursedetail.html?id=120026&search-onr=52&img=16"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -52215,7 +52032,7 @@
     "latitude": 49.9837081,
     "longitude": 7.5250674,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-crashkurs-52,0,coursedetail.html?id=120031&search-onr=52&img=16"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-crashkurs-52,0,coursedetail.html?id=120031&search-onr=52&img=17"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -52252,7 +52069,7 @@
     "latitude": 50.3603382,
     "longitude": 7.5844202,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-teilzeit-52,0,coursedetail.html?id=120036&search-onr=52&img=18"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-teilzeit-52,0,coursedetail.html?id=120036&search-onr=52&img=19"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -52289,7 +52106,7 @@
     "latitude": 50.3603382,
     "longitude": 7.5844202,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-crashkurs-52,0,coursedetail.html?id=120041&search-onr=52&img=1"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-crashkurs-52,0,coursedetail.html?id=120041&search-onr=52&img=2"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -52326,7 +52143,7 @@
     "latitude": 50.1524067,
     "longitude": 7.1673054,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-crashkurs-52,0,coursedetail.html?id=120046&search-onr=52&img=20"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-crashkurs-52,0,coursedetail.html?id=120046&search-onr=52&img=1"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -52363,7 +52180,7 @@
     "latitude": 50.7821939,
     "longitude": 7.740086,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-vollzeit-52,0,coursedetail.html?id=120118&search-onr=52&img=6"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-vollzeit-52,0,coursedetail.html?id=120118&search-onr=52&img=7"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -52400,7 +52217,7 @@
     "latitude": 50.3603382,
     "longitude": 7.5844202,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-vollzeit-52,0,coursedetail.html?id=120123&search-onr=52&img=5"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-vollzeit-52,0,coursedetail.html?id=120123&search-onr=52&img=6"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -52437,7 +52254,7 @@
     "latitude": 49.7813929,
     "longitude": 7.3375888,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-teilzeit-52,0,coursedetail.html?id=120134&search-onr=52&img=7"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-teilzeit-52,0,coursedetail.html?id=120134&search-onr=52&img=8"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -52474,7 +52291,7 @@
     "latitude": 50.3603382,
     "longitude": 7.5844202,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-teilzeit-52,0,coursedetail.html?id=120158&search-onr=52&img=9"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-teilzeit-52,0,coursedetail.html?id=120158&search-onr=52&img=10"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -52511,7 +52328,7 @@
     "latitude": 50.7821939,
     "longitude": 7.740086,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-teilzeit-52,0,coursedetail.html?id=120138&search-onr=52&img=10"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-teilzeit-52,0,coursedetail.html?id=120138&search-onr=52&img=11"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -52548,7 +52365,7 @@
     "latitude": 50.5456433,
     "longitude": 7.1017081,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-teilzeit-52,0,coursedetail.html?id=120145&search-onr=52&img=11"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-teilzeit-52,0,coursedetail.html?id=120145&search-onr=52&img=12"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -52585,7 +52402,7 @@
     "latitude": 50.1524067,
     "longitude": 7.1673054,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-teilzeit-52,0,coursedetail.html?id=120148&search-onr=52&img=13"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-teilzeit-52,0,coursedetail.html?id=120148&search-onr=52&img=14"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -52622,7 +52439,7 @@
     "latitude": 50.3603382,
     "longitude": 7.5844202,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-teilzeit-52,0,coursedetail.html?id=120153&search-onr=52&img=12"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-teilzeit-52,0,coursedetail.html?id=120153&search-onr=52&img=13"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -52659,7 +52476,7 @@
     "latitude": 50.5456433,
     "longitude": 7.1017081,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-crashkurs-52,0,coursedetail.html?id=120128&search-onr=52&img=14"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-crashkurs-52,0,coursedetail.html?id=120128&search-onr=52&img=15"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -52733,7 +52550,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/zimmerer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=116380&search-onr=52&img=5"
+    "source_url": "https://www.hwk-koblenz.de/kurse/zimmerer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=116380&search-onr=52&img=6"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -52770,7 +52587,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/zimmerer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=120631&search-onr=52&img=17"
+    "source_url": "https://www.hwk-koblenz.de/kurse/zimmerer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=120631&search-onr=52&img=18"
   },
   {
     "chamber_slug": "hwk-koeln",
@@ -53160,8 +52977,8 @@
     "end_date": "2031-03-14",
     "start_date_note": "",
     "duration_hours": 1060,
-    "course_fee": 12198.0,
-    "course_fee_display": "12.198 €",
+    "course_fee": 11926.0,
+    "course_fee_display": "11.926 €",
     "exam_fee_scraped": 1910.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -53197,8 +53014,8 @@
     "end_date": "2030-11-09",
     "start_date_note": "",
     "duration_hours": 1060,
-    "course_fee": 12808.0,
-    "course_fee_display": "12.808 €",
+    "course_fee": 11926.0,
+    "course_fee_display": "11.926 €",
     "exam_fee_scraped": 1910.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -53234,8 +53051,8 @@
     "end_date": "2030-12-14",
     "start_date_note": "",
     "duration_hours": 1060,
-    "course_fee": 12808.0,
-    "course_fee_display": "12.808 €",
+    "course_fee": 11926.0,
+    "course_fee_display": "11.926 €",
     "exam_fee_scraped": 1910.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -54298,8 +54115,8 @@
     "end_date": "2028-10-27",
     "start_date_note": "",
     "duration_hours": 1010,
-    "course_fee": 10026.0,
-    "course_fee_display": "10.026 €",
+    "course_fee": 9800.0,
+    "course_fee_display": "9.800 €",
     "exam_fee_scraped": 1390.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -61552,7 +61369,7 @@
     "zip_code": "04451",
     "latitude": 51.348242,
     "longitude": 12.5485819,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-leipzig.de/3,0,coursedetail.html?id=67748"
   },
   {
@@ -61670,6 +61487,43 @@
     "chamber_slug": "hwk-leipzig",
     "chamber_name": "HWK zu Leipzig",
     "chamber_region": "Sachsen",
+    "trade_slug": "fliesen-platten-und-mosaikleger",
+    "trade_name": "Fliesen-, Platten- und Mosaikleger",
+    "title": "Fliesen-, Platten- und Mosaikleger (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-08-23",
+    "end_date": "2028-01-14",
+    "start_date_note": "",
+    "duration_hours": 660,
+    "course_fee": 10061.0,
+    "course_fee_display": "10.061 €",
+    "exam_fee_scraped": 770.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 770.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "770 €",
+      "from_tariff": false
+    },
+    "city": "Borsdorf",
+    "street": "Steinweg 3",
+    "zip_code": "04451",
+    "latitude": 51.348242,
+    "longitude": 12.5485819,
+    "availability": "available",
+    "source_url": "https://www.hwk-leipzig.de/3,0,coursedetail.html?id=77547"
+  },
+  {
+    "chamber_slug": "hwk-leipzig",
+    "chamber_name": "HWK zu Leipzig",
+    "chamber_region": "Sachsen",
     "trade_slug": "installateur-und-heizungsbauer",
     "trade_name": "Installateur- und Heizungsbauer",
     "title": "Installateur- und Heizungsbauer (Teile I + II)",
@@ -61776,6 +61630,43 @@
     "longitude": 12.5485819,
     "availability": "available",
     "source_url": "https://www.hwk-leipzig.de/3,0,coursedetail.html?id=59047"
+  },
+  {
+    "chamber_slug": "hwk-leipzig",
+    "chamber_name": "HWK zu Leipzig",
+    "chamber_region": "Sachsen",
+    "trade_slug": "maurer-und-betonbauer",
+    "trade_name": "Maurer und Betonbauer",
+    "title": "Maurer und Betonbauer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-08-24",
+    "end_date": "2028-05-12",
+    "start_date_note": "",
+    "duration_hours": 1156,
+    "course_fee": 12577.0,
+    "course_fee_display": "12.577 €",
+    "exam_fee_scraped": 770.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 770.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "770 €",
+      "from_tariff": false
+    },
+    "city": "Borsdorf",
+    "street": "Steinweg 3",
+    "zip_code": "04451",
+    "latitude": 51.348242,
+    "longitude": 12.5485819,
+    "availability": "available",
+    "source_url": "https://www.hwk-leipzig.de/3,0,coursedetail.html?id=77554"
   },
   {
     "chamber_slug": "hwk-leipzig",
@@ -64845,43 +64736,6 @@
     "longitude": 11.6400789,
     "availability": "available",
     "source_url": "https://www.hwk-magdeburg.de/16,0,coursedetail.html?id=48501"
-  },
-  {
-    "chamber_slug": "hwk-magdeburg",
-    "chamber_name": "HWK Magdeburg",
-    "chamber_region": "Sachsen-Anhalt",
-    "trade_slug": "friseur",
-    "trade_name": "Friseur",
-    "title": "Friseur (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-10-13",
-    "end_date": "2028-02-26",
-    "start_date_note": "",
-    "duration_hours": 480,
-    "course_fee": 4350.0,
-    "course_fee_display": "4.350 €",
-    "exam_fee_scraped": 530.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 530.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "530 €",
-      "from_tariff": false
-    },
-    "city": "Magdeburg",
-    "street": "",
-    "zip_code": "",
-    "latitude": 52.1314783,
-    "longitude": 11.6400789,
-    "availability": "available",
-    "source_url": "https://www.hwk-magdeburg.de/16,0,coursedetail.html?id=48260"
   },
   {
     "chamber_slug": "hwk-magdeburg",
@@ -70142,7 +69996,7 @@
     "zip_code": "81671",
     "latitude": 48.1282296,
     "longitude": 11.6098462,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1229533"
   },
   {
@@ -70180,43 +70034,6 @@
     "longitude": 11.6098462,
     "availability": "available",
     "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1229536"
-  },
-  {
-    "chamber_slug": "hwk-muenchen-und-oberbayern",
-    "chamber_name": "HWK für München und Oberbayern",
-    "chamber_region": "Bayern",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
-    "parts": [
-      3,
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-09-07",
-    "end_date": "2027-03-06",
-    "start_date_note": "",
-    "duration_hours": 340,
-    "course_fee": 2865.0,
-    "course_fee_display": "2.865 €",
-    "exam_fee_scraped": 312.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 312.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "312 €",
-      "from_tariff": false
-    },
-    "city": "Freising",
-    "street": "Gute Änger 11",
-    "zip_code": "85356",
-    "latitude": 48.3888054,
-    "longitude": 11.7586366,
-    "availability": "available",
-    "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1220287"
   },
   {
     "chamber_slug": "hwk-muenchen-und-oberbayern",
@@ -74001,7 +73818,7 @@
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
     "start_date": "2028-09-18",
-    "end_date": "2029-04-30",
+    "end_date": "2029-04-27",
     "start_date_note": "",
     "duration_hours": null,
     "course_fee": 10595.0,
@@ -74131,7 +73948,7 @@
     "zip_code": "48147",
     "latitude": 51.9830337,
     "longitude": 7.6358696,
-    "availability": "waitlist",
+    "availability": "available",
     "source_url": "https://www.hbz-bildung.de/de/weiterbildung/land-und-baumaschinenmechatroniker-meisterschule-teile-i-und-ii-teilzeit-93991#termin-1"
   },
   {
@@ -80996,7 +80813,7 @@
     "zip_code": "92421",
     "latitude": 49.3456906,
     "longitude": 12.1756219,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1008923"
   },
   {
@@ -81824,7 +81641,7 @@
     "zip_code": "94315",
     "latitude": 48.8708639,
     "longitude": 12.5760232,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1011355"
   },
   {
@@ -86074,6 +85891,78 @@
     "longitude": 12.4925217,
     "availability": "unknown",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1025222"
+  },
+  {
+    "chamber_slug": "hwk-niederbayern-oberpfalz",
+    "chamber_name": "HWK Niederbayern-Oberpfalz",
+    "chamber_region": "Bayern",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
+    "parts": [
+      4
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2029-07-01",
+    "end_date": null,
+    "start_date_note": "Genauer Termin steht noch nicht fest.",
+    "duration_hours": 80,
+    "course_fee": null,
+    "course_fee_display": "—",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": null,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "",
+      "from_tariff": false
+    },
+    "city": "Landshut",
+    "street": "Am Lurzenhof 10 b",
+    "zip_code": "84036",
+    "latitude": 48.5594648,
+    "longitude": 12.1999128,
+    "availability": "unknown",
+    "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1025521"
+  },
+  {
+    "chamber_slug": "hwk-niederbayern-oberpfalz",
+    "chamber_name": "HWK Niederbayern-Oberpfalz",
+    "chamber_region": "Bayern",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2029-08-01",
+    "end_date": "2029-10-01",
+    "start_date_note": "Genauer Termin steht noch nicht fest.",
+    "duration_hours": 264,
+    "course_fee": null,
+    "course_fee_display": "—",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": null,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "",
+      "from_tariff": false
+    },
+    "city": "Landshut",
+    "street": "Am Lurzenhof 10 b",
+    "zip_code": "84036",
+    "latitude": 48.5594648,
+    "longitude": 12.1999128,
+    "availability": "unknown",
+    "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1025524"
   },
   {
     "chamber_slug": "hwk-niederbayern-oberpfalz",
@@ -101799,43 +101688,6 @@
     "chamber_slug": "hwk-ostmecklenburg-vorpommern",
     "chamber_name": "HWK Ostmecklenburg-Vorpommern",
     "chamber_region": "Mecklenburg-Vorpommern",
-    "trade_slug": "kfz-techniker",
-    "trade_name": "Kfz.-Techniker",
-    "title": "Kfz.-Techniker (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-08-28",
-    "end_date": "2028-03-18",
-    "start_date_note": "",
-    "duration_hours": 860,
-    "course_fee": 7603.0,
-    "course_fee_display": "7.603 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": null,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "",
-      "from_tariff": false
-    },
-    "city": "Neubrandenburg",
-    "street": "Friedrich-Engels-Ring 11",
-    "zip_code": "17033",
-    "latitude": 53.5612193,
-    "longitude": 13.2606667,
-    "availability": "full",
-    "source_url": "https://www.hwk-omv.de/18,0,coursedetail.html?id=103382"
-  },
-  {
-    "chamber_slug": "hwk-ostmecklenburg-vorpommern",
-    "chamber_name": "HWK Ostmecklenburg-Vorpommern",
-    "chamber_region": "Mecklenburg-Vorpommern",
     "trade_slug": "land-und-baumaschinenmechatroniker",
     "trade_name": "Land- und Baumaschinenmechatroniker",
     "title": "Land- und Baumaschinenmechatroniker (Teile I + II)",
@@ -102709,7 +102561,7 @@
     "zip_code": "07937",
     "latitude": 50.6531977,
     "longitude": 11.9958817,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwk-gera.de/5,0,coursedetail.html?id=118009"
   },
   {
@@ -104765,7 +104617,7 @@
     "zip_code": "33613",
     "latitude": 52.0325564,
     "longitude": 8.5354738,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://bbz.handwerk-owl.de/3351,0,coursedetail.html?id=131126"
   },
   {
@@ -107489,7 +107341,7 @@
     "zip_code": "14550",
     "latitude": 52.4063025,
     "longitude": 12.7280699,
-    "availability": "waitlist",
+    "availability": "available",
     "source_url": "https://www.hwk-potsdam.de/9,0,coursedetail.html?id=356351"
   },
   {
@@ -107951,11 +107803,11 @@
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
     "start_date": "2027-04-23",
-    "end_date": "2029-02-24",
+    "end_date": "2028-10-07",
     "start_date_note": "",
-    "duration_hours": 808,
-    "course_fee": 9900.0,
-    "course_fee_display": "9.900 €",
+    "duration_hours": 760,
+    "course_fee": 10400.0,
+    "course_fee_display": "10.400 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -111536,8 +111388,45 @@
     "end_date": "2028-04-08",
     "start_date_note": "",
     "duration_hours": 610,
-    "course_fee": 5200.0,
-    "course_fee_display": "5.200 €",
+    "course_fee": 5400.0,
+    "course_fee_display": "5.400 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 900.0,
+      "fee_max": 2700.0,
+      "qualifier": "",
+      "display": "900 € bis 2.700 €",
+      "from_tariff": true
+    },
+    "city": "Mainz",
+    "street": "Robert-Bosch-Straße 8",
+    "zip_code": "55129",
+    "latitude": 49.959692,
+    "longitude": 8.260685,
+    "availability": "available",
+    "source_url": "https://www.hwk.de/seminar/fliesenleger-i-und-ii-fli/"
+  },
+  {
+    "chamber_slug": "hwk-rheinhessen",
+    "chamber_name": "HWK Rheinhessen",
+    "chamber_region": "Rheinland-Pfalz",
+    "trade_slug": "fliesen-platten-und-mosaikleger",
+    "trade_name": "Fliesen-, Platten- und Mosaikleger",
+    "title": "Fliesen-, Platten- und Mosaikleger (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-04-17",
+    "end_date": "2029-04-07",
+    "start_date_note": "",
+    "duration_hours": 610,
+    "course_fee": 5400.0,
+    "course_fee_display": "5.400 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -114780,7 +114669,7 @@
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
     "start_date": "2026-09-15",
-    "end_date": "2028-06-08",
+    "end_date": "2028-06-13",
     "start_date_note": "",
     "duration_hours": 532,
     "course_fee": 5480.0,
@@ -126045,7 +125934,7 @@
     "zip_code": "59755",
     "latitude": 51.4470454,
     "longitude": 7.9631509,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.bbz-arnsberg.de/kurse/meisterkurs-kraftfahrzeugtechniker-vollzeit#termin-4"
   },
   {
@@ -126656,8 +126545,8 @@
     "end_date": "2026-10-02",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -126672,7 +126561,7 @@
     "zip_code": "59755",
     "latitude": 51.4470454,
     "longitude": 7.9631509,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.bbz-arnsberg.de/kurse/ausbildung-der-ausbilder-nach-aevo#termin-1"
   },
   {
@@ -126728,8 +126617,8 @@
     "end_date": "2026-12-12",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -126764,8 +126653,8 @@
     "end_date": "2026-12-18",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -126872,8 +126761,8 @@
     "end_date": "2027-01-29",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -126944,8 +126833,8 @@
     "end_date": "2027-03-19",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -126980,8 +126869,8 @@
     "end_date": "2027-04-23",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -127088,8 +126977,8 @@
     "end_date": "2027-07-16",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -127196,8 +127085,8 @@
     "end_date": "2027-08-13",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -127268,8 +127157,8 @@
     "end_date": "2027-10-01",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -127304,8 +127193,8 @@
     "end_date": "2027-11-27",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -127376,8 +127265,8 @@
     "end_date": "2027-12-17",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -127412,8 +127301,8 @@
     "end_date": "2028-01-21",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -127556,8 +127445,8 @@
     "end_date": "2028-03-17",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -127592,8 +127481,8 @@
     "end_date": "2028-04-13",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -127736,8 +127625,8 @@
     "end_date": "2028-07-21",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -127772,8 +127661,8 @@
     "end_date": "2028-08-11",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -127880,8 +127769,8 @@
     "end_date": "2028-09-29",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -127916,8 +127805,8 @@
     "end_date": "2028-11-25",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -127988,8 +127877,8 @@
     "end_date": "2028-12-15",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -129879,7 +129768,7 @@
     "zip_code": "89077",
     "latitude": 48.3856229,
     "longitude": 9.9563226,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.bildungsakademie-ulm.de/seminar/1-mv-maurer/#kurs-1-MV-MAURER"
   },
   {
@@ -131774,7 +131663,7 @@
     "zip_code": "",
     "latitude": 50.0451485,
     "longitude": 10.2340647,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-ufr.de/78,0,coursedetail.html?id=456871"
   },
   {

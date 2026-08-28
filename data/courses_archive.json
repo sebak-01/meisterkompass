@@ -867,6 +867,42 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-teilzeit/#termin-7"
+  },
+  {
+    "chamber_slug": "hwk-dortmund",
+    "chamber_name": "HWK Dortmund",
+    "chamber_region": "Nordrhein-Westfalen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
+    "parts": [
+      4
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-08-25",
+    "end_date": "2026-12-08",
+    "start_date_note": "",
+    "duration_hours": 108,
+    "course_fee": 750.0,
+    "course_fee_display": "750 €",
+    "exam_fee_scraped": 239.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 239.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "239 €",
+      "from_tariff": false
+    },
+    "city": "Dortmund",
+    "street": "Schützenstraße 32-34",
+    "zip_code": "44147",
+    "latitude": 51.5206367,
+    "longitude": 7.4529522,
+    "availability": "available",
     "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-teilzeit/#termin-8"
   },
   {
