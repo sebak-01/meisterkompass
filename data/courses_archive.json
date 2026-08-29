@@ -473,6 +473,78 @@
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo-ausbildung-der-ausbilder/#termin_425"
   },
   {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
+    "parts": [
+      4
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-08-28",
+    "end_date": "2027-07-03",
+    "start_date_note": "",
+    "duration_hours": 390,
+    "course_fee": 3170.0,
+    "course_fee_display": "3.170 €",
+    "exam_fee_scraped": 420.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 420.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "420 €",
+      "from_tariff": false
+    },
+    "city": "Chemnitz",
+    "street": "Limbacher Straße 195",
+    "zip_code": "09116",
+    "latitude": 50.8307235,
+    "longitude": 12.8727524,
+    "availability": "full",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo-ausbildung-der-ausbilder/#termin_503"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-08-28",
+    "end_date": "2027-04-10",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2380.0,
+    "course_fee_display": "2.380 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Chemnitz",
+    "street": "Limbacher Straße 195",
+    "zip_code": "09116",
+    "latitude": 50.8307235,
+    "longitude": 12.8727524,
+    "availability": "full",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_505"
+  },
+  {
     "chamber_slug": "hwk-cottbus",
     "chamber_name": "HWK Cottbus",
     "chamber_region": "Brandenburg",
