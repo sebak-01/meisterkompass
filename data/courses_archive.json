@@ -3606,6 +3606,45 @@
     "source_url": "https://www.hwk-potsdam.de/9,0,coursedetail.html?id=353671"
   },
   {
+    "chamber_slug": "hwk-saarland",
+    "chamber_name": "HWK des Saarlandes",
+    "chamber_region": "Saarland",
+    "trade_slug": "elektrotechniker",
+    "trade_name": "Elektrotechniker",
+    "title": "Elektrotechniker (Teile I + II + III + IV)",
+    "parts": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2024-02-21",
+    "end_date": null,
+    "start_date_note": "",
+    "duration_hours": 1400,
+    "course_fee": 6040.0,
+    "course_fee_display": "6.040 €",
+    "exam_fee_scraped": 1790.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 1790.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "1.790 €",
+      "from_tariff": false
+    },
+    "city": "Saarbrücken",
+    "street": "Hohenzollernstraße 47-49",
+    "zip_code": "66117",
+    "latitude": 49.2297,
+    "longitude": 6.9967,
+    "availability": "unknown",
+    "source_url": "https://www.hwk-saarland.de/seminar/ms-elektrotechnik-vollzeit-msvzet/"
+  },
+  {
     "chamber_slug": "hwk-schwaben",
     "chamber_name": "HWK für Schwaben",
     "chamber_region": "Bayern",

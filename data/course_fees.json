@@ -135,17 +135,6 @@
     "is_generic": true
   },
   {
-    "chamber_slug": "hwk-magdeburg",
-    "trade_slug": "friseur",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 4350.0,
-    "exam_fee_scraped": 530.0,
-    "is_generic": false
-  },
-  {
     "chamber_slug": "hwk-ostwestfalen-lippe-zu-bielefeld",
     "trade_slug": "allgemein-teil-iii-iv",
     "parts": [
@@ -501,6 +490,16 @@
       3
     ],
     "fee": 2220.0,
+    "exam_fee_scraped": null,
+    "is_generic": true
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      4
+    ],
+    "fee": 750.0,
     "exam_fee_scraped": null,
     "is_generic": true
   },
@@ -1640,6 +1639,16 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-kassel",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      3
+    ],
+    "fee": 2100.0,
+    "exam_fee_scraped": null,
+    "is_generic": true
+  },
+  {
     "chamber_slug": "hwk-muenchen-und-oberbayern",
     "trade_slug": "friseur",
     "parts": [
@@ -1758,16 +1767,6 @@
     "is_generic": true
   },
   {
-    "chamber_slug": "hwk-kassel",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      3
-    ],
-    "fee": 1485.0,
-    "exam_fee_scraped": null,
-    "is_generic": true
-  },
-  {
     "chamber_slug": "hwk-oberfranken",
     "trade_slug": "allgemein-teil-iii-iv",
     "parts": [
@@ -1817,6 +1816,17 @@
       2
     ],
     "fee": 9799.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "trade_slug": "metallbauer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 9086.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
@@ -2504,16 +2514,6 @@
     "fee": 9300.0,
     "exam_fee_scraped": null,
     "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      4
-    ],
-    "fee": 720.0,
-    "exam_fee_scraped": null,
-    "is_generic": true
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -3447,6 +3447,17 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-magdeburg",
+    "trade_slug": "friseur",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 4350.0,
+    "exam_fee_scraped": 530.0,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-saarland",
     "trade_slug": "dachdecker",
     "parts": [
@@ -3662,6 +3673,17 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-kassel",
+    "trade_slug": "maler-und-lackierer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 7100.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-konstanz",
     "trade_slug": "konditor",
     "parts": [
@@ -3724,17 +3746,6 @@
     ],
     "fee": 4490.0,
     "exam_fee_scraped": 1425.0,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "trade_slug": "maler-und-lackierer",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 7120.0,
-    "exam_fee_scraped": null,
     "is_generic": false
   },
   {
@@ -5221,6 +5232,17 @@
     ],
     "fee": 4220.0,
     "exam_fee_scraped": 255.0,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "trade_slug": "feinwerkmechaniker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 9086.0,
+    "exam_fee_scraped": null,
     "is_generic": false
   },
   {
@@ -7142,19 +7164,6 @@
   },
   {
     "chamber_slug": "hwk-saarland",
-    "trade_slug": "elektrotechniker",
-    "parts": [
-      1,
-      2,
-      3,
-      4
-    ],
-    "fee": 6040.0,
-    "exam_fee_scraped": 1790.0,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-saarland",
     "trade_slug": "fahrzeuglackierer",
     "parts": [
       1
@@ -8048,6 +8057,19 @@
     ],
     "fee": 4548.0,
     "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-saarland",
+    "trade_slug": "elektrotechniker",
+    "parts": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "fee": 6040.0,
+    "exam_fee_scraped": 1790.0,
     "is_generic": false
   },
   {
