@@ -152,10 +152,7 @@ class HwkSaarlandScraper(BaseScraper):
         runs = self._parse_runs(text)
 
         if not runs:
-            # Fallback: single entry — only if start date is in the future or None
             fb_start = self._parse_date(text)
-            if fb_start and fb_start < date.today():
-                fb_start = None  # discard past dates
             fb_end = self._parse_end_date(text)
             return [RawCourseOffer(
                 trade_name=resolved, title=title, parts=parts, format_key=fmt,
@@ -186,9 +183,7 @@ class HwkSaarlandScraper(BaseScraper):
         Strategy 1: look for "DD.MM.YYYY bis DD.MM.YYYY" near each marker.
         Strategy 2: single DD.MM.YYYY per marker (tight 200-char window).
         Strategy 3: "Ab Monat Jahr" patterns (for pages without full dates).
-        Only future start dates are used; past dates are discarded.
         """
-        today = date.today()
         runs = []
         segments = re.split(r"Termin im Kalender speichern", text)
 
@@ -206,7 +201,7 @@ class HwkSaarlandScraper(BaseScraper):
         for mm in dash_re.finditer(text):
             start = to_date(mm.group(1), mm.group(2), mm.group(3))
             end   = to_date(mm.group(4), mm.group(5), mm.group(6))
-            if not start or start < today:
+            if not start:
                 continue
             ctx   = text[mm.end():mm.end() + 300]
             next_date = dash_re.search(ctx)
@@ -224,7 +219,7 @@ class HwkSaarlandScraper(BaseScraper):
             if m:
                 start = to_date(m.group(1), m.group(2), m.group(3))
                 end   = to_date(m.group(4), m.group(5), m.group(6))
-                if start and start >= today:
+                if start:
                     next_seg = segments[i + 1][:400]
                     runs.append({"start": start, "end": end,
                                  "availability": self._parse_availability(next_seg)})
@@ -236,7 +231,7 @@ class HwkSaarlandScraper(BaseScraper):
             found = []
             for d, m, y in re.findall(r"\b(\d{2})\.(\d{2})\.(\d{4})\b", seg[-200:]):
                 dt = to_date(d, m, y)
-                if dt and dt >= today:
+                if dt:
                     found.append(dt)
             if not found:
                 continue
@@ -256,7 +251,7 @@ class HwkSaarlandScraper(BaseScraper):
         seen_starts = set()
         for mm in month_re.finditer(text):
             start = date(int(mm.group(2)), MONTH_DE[mm.group(1)], 1)
-            if start < today or start in seen_starts:
+            if start in seen_starts:
                 continue
             seen_starts.add(start)
             # Look at surrounding 400 chars (before + after) for availability
