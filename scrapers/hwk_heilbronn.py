@@ -6,8 +6,8 @@ from dataclasses import dataclass
 
 from bs4 import BeautifulSoup, Tag
 
-from .base import BaseScraper, RawCourseOffer, build_course_title
-from .bw_course_spec import DATE_RE, ancestor_matching, parse_bw_availability
+from .base import BaseScraper, RawCourseOffer, ancestor_matching, build_course_title, german_amount
+from .bw_course_spec import DATE_RE, parse_bw_availability
 
 logger = logging.getLogger(__name__)
 
@@ -75,22 +75,20 @@ CITY_LOCATION = {
 def parse_availability(text: str) -> str:
     return parse_bw_availability(text)
 
-def _german_amount(match: re.Match, whole_group: int, cents_group: int) -> float:
-    return float(match.group(whole_group).replace(".", "") + "." + (match.group(cents_group) or "00"))
-
 
 def parse_exam_fee(text: str, parts: tuple[int, ...]) -> tuple[float | None, str]:
     if set(parts) == {1, 2}:
         base = BASE_EXAM_FEE_RE.search(text)
         surcharge = PRACTICAL_SURCHARGE_RE.search(text)
         if base and surcharge:
-            total = _german_amount(base, 1, 2) + _german_amount(surcharge, 1, 2)
+            total = (german_amount(base.group(1), base.group(2))
+                     + german_amount(surcharge.group(1), surcharge.group(2)))
             return total, "ca."
         if base:
-            return _german_amount(base, 1, 2), ""
+            return german_amount(base.group(1), base.group(2)), ""
     if set(parts) <= {3, 4}:
         fees = {
-            match.group(1).upper(): _german_amount(match, 2, 3)
+            match.group(1).upper(): german_amount(match.group(2), match.group(3))
             for match in PART_EXAM_FEE_RE.finditer(text)
         }
         wanted = ("III" if part == 3 else "IV" for part in parts)

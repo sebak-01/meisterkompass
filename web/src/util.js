@@ -28,6 +28,7 @@ export const ANMELDEGEBUEHR_NOTE =
 
 /** Start date published as month/year only — exact day not yet fixed. */
 export const TENTATIVE_START_DATE_NOTE = "Genauer Termin steht noch nicht fest.";
+
 // ── Disclosure dropdowns ───────────────────────────────────────────────
 
 /**
@@ -50,10 +51,12 @@ export function initDropdown({ button, panel, boundary = panel }) {
     if (!boundary.contains(e.target)) close();
   });
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && panel.classList.contains("open")) {
-      close();
-      button.focus();
-    }
+    if (e.key !== "Escape" || !panel.classList.contains("open")) return;
+    // Only pull focus back if the user was actually in this dropdown —
+    // otherwise two open panels fight over it and the last one registered wins.
+    const held = boundary.contains(document.activeElement);
+    close();
+    if (held) button.focus();
   });
 
   syncAria();

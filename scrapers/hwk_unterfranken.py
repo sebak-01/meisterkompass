@@ -21,4 +21,4 @@ class HwkUnterfrankenScraper(BavariaOdavScraper):
     )
 
     def postprocess_offer(self, offer: RawCourseOffer) -> RawCourseOffer:
-        return normalize_base_trade_offer(offer)
+        return super().postprocess_offer(normalize_base_trade_offer(offer))

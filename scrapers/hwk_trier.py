@@ -19,7 +19,7 @@ from datetime import date
 
 from bs4 import BeautifulSoup
 
-from .base import BaseScraper, RawCourseOffer, build_course_title, euro_from_groups
+from .base import BaseScraper, RawCourseOffer, build_course_title, german_amount
 from .exam_fee_tariff import (
     download_pdf_text,
     parse_trier_meister_fees,
@@ -73,10 +73,10 @@ TRADE_ALIASES = {
 
 def parse_price(text: str) -> float | None:
     m = PRICE_PATTERN.search(text)
-    return euro_from_groups(m.group(1), m.group(2)) if m else None
+    return german_amount(m.group(1), m.group(2)) if m else None
 
 def _parse_euro_prose(match: re.Match) -> float:
-    return euro_from_groups(match.group(1), match.group(2))
+    return german_amount(match.group(1), match.group(2))
 
 def parse_duration(text: str) -> int | None:
     m = DURATION_PATTERN.search(text)

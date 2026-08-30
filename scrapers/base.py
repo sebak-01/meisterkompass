@@ -8,10 +8,11 @@ import re
 import time
 import unicodedata
 from abc import ABC, abstractmethod
+from collections.abc import Callable
 from dataclasses import dataclass, field
 
 import requests
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Tag
 from requests.exceptions import ConnectTimeout
 
 logger = logging.getLogger(__name__)
@@ -63,7 +64,7 @@ def slugify(value: str) -> str:
     return re.sub(r"[-\s]+", "-", value).strip("-_")
 
 
-def euro_from_groups(whole: str, cents: str | None) -> float:
+def german_amount(whole: str, cents: str | None = None) -> float:
     """
     Convert a German-formatted amount ("1.234", "56") to a float.
 
@@ -105,6 +106,50 @@ def city_between(
         if line and 2 < len(line) < 60 and _CITY_LINE_RE.match(line):
             return line
     return default
+
+
+def ancestor_matching(
+    start: Tag,
+    predicate: Callable[[str], bool],
+    *,
+    max_depth: int,
+) -> Tag | None:
+    """
+    Walk up from ``start`` and return the first ancestor whose text satisfies
+    ``predicate``, or None within ``max_depth`` levels.
+
+    Chamber CMSes bury a course run's details in an ancestor of its date
+    heading, but neither the nesting depth nor the marker tokens agree between
+    chambers — hence both are supplied by the caller.
+    """
+    node: Tag | None = start
+    for _ in range(max_depth):
+        node = node.parent if node is not None else None
+        if not isinstance(node, Tag):
+            return None
+        if predicate(node.get_text(" ", strip=True)):
+            return node
+    return None
+
+
+def _lehrgangsort_from_soup(soup: BeautifulSoup) -> tuple[str, str] | None:
+    """Return (street, zip_code) from a detail page's Lehrgangsort block."""
+    text = soup.get_text("\n")
+    idx = text.find("Lehrgangsort")
+    if idx < 0:
+        return None
+
+    block = text[idx:idx + 300]
+    zip_m = re.search(r"(\d{5})\s+(\S+.*)", block)
+    if not zip_m:
+        return None
+
+    lines = block[:zip_m.start()].strip().split("\n")
+    street = lines[-1].strip() if lines else ""
+    # A real street line carries a house number; anything else is prose.
+    if street and re.search(r"\d", street):
+        return street, zip_m.group(1)
+    return None
 
 
 def canonicalize_trade_name(trade_name: str) -> str:
@@ -261,28 +306,22 @@ class BaseScraper(ABC):
         Returns (street, zip_code), falling back to the chamber's own
         Bildungsstätte when the page omits the block or the street line carries
         no house number.
+
+        Any failure degrades to that fallback rather than propagating: the
+        caller has already parsed the rest of the offer from the list card, and
+        its per-card ``except`` would drop the whole course over a missing
+        street.
         """
         if not url:
             return default_street, default_zip
-        soup = self.parse_html(url)
-        if soup is None:
-            return default_street, default_zip
-
-        text = soup.get_text("\n")
-        idx = text.find("Lehrgangsort")
-        if idx < 0:
-            return default_street, default_zip
-
-        block = text[idx:idx + 300]
-        zip_m = re.search(r"(\d{5})\s+(\S+.*)", block)
-        if not zip_m:
-            return default_street, default_zip
-
-        lines = block[:zip_m.start()].strip().split("\n")
-        street = lines[-1].strip() if lines else ""
-        # A real street line carries a house number; anything else is prose.
-        if street and re.search(r"\d", street):
-            return street, zip_m.group(1)
+        try:
+            soup = self.parse_html(url)
+            if soup is not None:
+                address = _lehrgangsort_from_soup(soup)
+                if address:
+                    return address
+        except Exception as exc:
+            logger.warning("Could not fetch detail address from %s: %s", url, exc)
         return default_street, default_zip
 
     def scraped_exam_fee_rows(self, offers: list[RawCourseOffer]) -> list[dict]:

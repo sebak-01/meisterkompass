@@ -444,7 +444,7 @@ class BavariaRegistrationTests(unittest.TestCase):
         self.assertEqual(result.exam_fee_scraped, 500.0)
         self.assertEqual(result.exam_fee_qualifier, "")
 
-    def test_detail_pages_state_exam_fees_flag_controls_scrubbing(self):
+    def test_detail_pages_publish_exam_fees_flag_controls_scrubbing(self):
         def offer():
             return RawCourseOffer(
                 title="Elektrotechniker (Teil I)",

@@ -28,7 +28,7 @@ import re
 
 from bs4 import BeautifulSoup, Tag
 
-from .base import BaseScraper, RawCourseOffer, build_course_title, euro_from_groups
+from .base import BaseScraper, RawCourseOffer, build_course_title, german_amount
 from .exam_fee_tariff import (
     download_pdf_text,
     parse_berlin_meister_fees,
@@ -127,7 +127,7 @@ def parse_format_and_mode(text: str) -> tuple[str, str]:
 
 def parse_price(text: str) -> float | None:
     m = PRICE_PATTERN.search(text)
-    return euro_from_groups(m.group(1), m.group(2)) if m else None
+    return german_amount(m.group(1), m.group(2)) if m else None
 
 
 def parse_duration(text: str) -> int | None:

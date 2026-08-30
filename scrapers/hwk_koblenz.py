@@ -19,7 +19,7 @@ import re
 
 from bs4 import BeautifulSoup, Tag
 
-from .base import BaseScraper, RawCourseOffer, build_course_title, city_between, euro_from_groups
+from .base import BaseScraper, RawCourseOffer, build_course_title, city_between, german_amount
 from .exam_fee_tariff import (
     download_pdf_text,
     parse_koblenz_meister_fees,
@@ -95,7 +95,7 @@ def parse_format_and_mode(text: str) -> tuple[str, str]:
 
 def parse_price(text: str) -> float | None:
     m = PRICE_PATTERN.search(text)
-    return euro_from_groups(m.group(1), m.group(2)) if m else None
+    return german_amount(m.group(1), m.group(2)) if m else None
 
 
 def parse_duration(text: str) -> int | None:
@@ -133,6 +133,9 @@ class HwkKoblenzScraper(BaseScraper):
     chamber_region  = "Rheinland-Pfalz"
     chamber_website = "https://www.hwk-koblenz.de"
     source_url      = LIST_URL.format(offset=0)
+    # Detail-page fetches previously slept an extra 0.5 s on top of the base
+    # delay; keep the same 1.5 s spacing now that the inline sleep is gone.
+    request_delay   = 1.5
 
     def fetch_raw_courses(self) -> list[RawCourseOffer]:
         first = self.parse_html(LIST_URL.format(offset=0))

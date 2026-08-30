@@ -15,6 +15,8 @@ from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
 
+from .base import german_amount
+
 logger = logging.getLogger(__name__)
 
 ROMAN = {"I": 1, "II": 2, "III": 3, "IV": 4}
@@ -29,10 +31,6 @@ KASSEL_SYMBOL_FEES = {
     "ψύτ": 490.0,
     "όφτ": 820.0,
 }
-
-
-def german_amount(whole: str, cents: str | None = None) -> float:
-    return float(whole.replace(".", "") + "." + (cents or "00"))
 
 
 def extract_pdf_text(content: bytes) -> str:

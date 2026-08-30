@@ -70,7 +70,7 @@ class HwkPotsdamScraper(BavariaOdavScraper):
         page_size=100,
         implicit_trade_parts=True,
     )
-    detail_pages_state_exam_fees = False
+    detail_pages_publish_exam_fees = False
 
 
     def transform_offer(

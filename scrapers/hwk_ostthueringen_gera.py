@@ -168,7 +168,7 @@ class HwkOstthueringenGeraScraper(BavariaOdavScraper):
         3: re.compile(r"5\.3\s+Teil\s+III[\s\S]{0,160}?([\d.]+),(\d{2})\s*€"),
         4: re.compile(r"5\.4\s+Teil\s+IV[\s\S]{0,120}?([\d.]+),(\d{2})\s*€"),
     }
-    detail_pages_state_exam_fees = False
+    detail_pages_publish_exam_fees = False
 
     def fetch_raw_courses(self):
         unique: dict[str, dict] = {}

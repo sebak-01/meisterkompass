@@ -441,10 +441,11 @@ class BavariaOdavScraper(BaseScraper):
     catalogue: BavariaCatalogue
     chamber_region = "Bayern"
 
-    # Detail pages of these chambers label only the Lehrgang fee. Any amount
-    # scraped from their prose is a course fee, never an exam fee, so it must
-    # not reach resolve_exam_fee — the Gebührenverzeichnis is authoritative.
-    detail_pages_state_exam_fees: bool = True
+    # Set False for chambers whose detail pages label only the Lehrgang fee:
+    # any amount scraped from their prose is a course fee, never an exam fee,
+    # so postprocess_offer drops it and the Gebührenverzeichnis stays
+    # authoritative.
+    detail_pages_publish_exam_fees: bool = True
 
     def fetch_raw_courses(self) -> list[RawCourseOffer]:
         first_url = self._list_url(0)
@@ -617,7 +618,7 @@ class BavariaOdavScraper(BaseScraper):
 
     def postprocess_offer(self, offer: RawCourseOffer) -> RawCourseOffer:
         """Hook for chamber-specific offer normalization."""
-        if not self.detail_pages_state_exam_fees:
+        if not self.detail_pages_publish_exam_fees:
             offer.exam_fee_scraped = None
             offer.exam_fee_qualifier = ""
         return offer

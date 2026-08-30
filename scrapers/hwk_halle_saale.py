@@ -6,8 +6,7 @@ from urllib.parse import urljoin, urlsplit, urlunsplit
 
 from bs4 import BeautifulSoup, Tag
 
-from .base import BaseScraper, RawCourseOffer, build_course_title, normalize_trade
-from .bw_course_spec import ancestor_matching
+from .base import BaseScraper, RawCourseOffer, ancestor_matching, build_course_title, normalize_trade
 from .hwk_bayern import parse_parts, parse_trade
 from .exam_fee_tariff import download_pdf_text
 

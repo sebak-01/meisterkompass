@@ -37,7 +37,7 @@ class HwkErfurtScraper(BavariaOdavScraper):
         list_url=OVERVIEW_URL,
         default_city="Erfurt",
     )
-    detail_pages_state_exam_fees = False
+    detail_pages_publish_exam_fees = False
 
     def fetch_raw_courses(self):
         soup = self.parse_html(OVERVIEW_URL)

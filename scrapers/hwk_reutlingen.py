@@ -6,8 +6,8 @@ from dataclasses import dataclass
 
 from bs4 import BeautifulSoup, Tag
 
-from .base import BaseScraper, RawCourseOffer, build_course_title
-from .bw_course_spec import DATE_RE, ancestor_matching, parse_bw_availability
+from .base import BaseScraper, RawCourseOffer, ancestor_matching, build_course_title
+from .bw_course_spec import DATE_RE, parse_bw_availability
 from .exam_fee_tariff import published_bw_322_exam_fee_rows
 
 logger = logging.getLogger(__name__)

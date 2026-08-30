@@ -28,7 +28,7 @@ from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup, Tag
 
-from .base import BaseScraper, RawCourseOffer, build_course_title, euro_from_groups
+from .base import BaseScraper, RawCourseOffer, build_course_title, german_amount
 from .format_keys import parse_format_key
 from .exam_fee_tariff import (
     download_pdf_text,
@@ -340,7 +340,7 @@ def parse_date(text: str) -> str | None:
 
 def parse_price(text: str) -> float | None:
     m = PRICE_RE.search(text)
-    return euro_from_groups(m.group(1), m.group(2)) if m else None
+    return german_amount(m.group(1), m.group(2)) if m else None
 
 
 def parse_duration(text: str) -> int | None:

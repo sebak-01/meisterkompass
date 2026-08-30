@@ -15,7 +15,8 @@ HTML structure (verified 2026-05-27 via debug_pfalz.py):
   - Title parts separator: " - " (hyphen) instead of " und "
   - Price includes exam fee on list page: "2.900,00 € （inkl. Prüfung）" (Japanese brackets)
   - Duration: "340 UStd." (UStd. = Unterrichtsstunden, same value as Std.)
-  - Extra flag "Garantierte Durchführung" in card text (stored in notes)
+  - Extra flag "Garantierte Durchführung" in card text; not stored, but it
+    terminates the city field the way seat-count markers do elsewhere
 
   Strategy:
   1. Parse all list pages for card metadata (title, dates, city, availability, detail URL).
@@ -31,7 +32,7 @@ import re
 
 from bs4 import BeautifulSoup, Tag
 
-from .base import BaseScraper, RawCourseOffer, build_course_title, city_between, euro_from_groups
+from .base import BaseScraper, RawCourseOffer, build_course_title, city_between, german_amount
 
 logger = logging.getLogger(__name__)
 
@@ -115,7 +116,7 @@ def parse_pfalz_title(raw_title: str) -> tuple[list[int], str | None]:
 
 def parse_price(text: str) -> float | None:
     m = PRICE_RE.search(text)
-    return euro_from_groups(m.group(1), m.group(2)) if m else None
+    return german_amount(m.group(1), m.group(2)) if m else None
 
 
 def parse_duration(text: str) -> int | None:
@@ -261,9 +262,6 @@ class HwkPfalzScraper(BaseScraper):
         city           = parse_city(card_text)
         availability   = parse_availability(card_text)
 
-        # "Garantierte Durchführung" flag
-        guaranteed = bool(re.search(r"Garantierte\s+Durchführung", card_text, re.IGNORECASE))
-
         return {
             "raw_title":      raw_title,
             "trade_name":     trade_name,
@@ -275,7 +273,6 @@ class HwkPfalzScraper(BaseScraper):
             "combined_price": combined_price,   # includes exam fee
             "city":           city,
             "availability":   availability,
-            "guaranteed":     guaranteed,
             "detail_url":     detail_url,
         }
 
