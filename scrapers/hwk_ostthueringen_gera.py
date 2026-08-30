@@ -168,6 +168,7 @@ class HwkOstthueringenGeraScraper(BavariaOdavScraper):
         3: re.compile(r"5\.3\s+Teil\s+III[\s\S]{0,160}?([\d.]+),(\d{2})\s*€"),
         4: re.compile(r"5\.4\s+Teil\s+IV[\s\S]{0,120}?([\d.]+),(\d{2})\s*€"),
     }
+    detail_pages_state_exam_fees = False
 
     def fetch_raw_courses(self):
         unique: dict[str, dict] = {}
@@ -268,12 +269,6 @@ class HwkOstthueringenGeraScraper(BavariaOdavScraper):
     def resolve_schedule_dates(self, soup, card, main_text):
         return _parse_ostthueringen_schedule(soup, card)
 
-    def postprocess_offer(self, offer):
-        # The detail's "Kurs" amount is a course fee. Exam fees come from the
-        # chamber's Gebühren- und Entgeltverzeichnis PDF (see collect()).
-        offer.exam_fee_scraped = None
-        offer.exam_fee_qualifier = ""
-        return offer
 
     @staticmethod
     def parse_meister_exam_fees(text: str) -> dict[int, float]:

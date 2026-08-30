@@ -13,6 +13,7 @@ from urllib.parse import urljoin, urlsplit, urlunsplit
 from bs4 import BeautifulSoup, Tag
 
 from .base import BaseScraper, RawCourseOffer, build_course_title, normalize_trade
+from .bw_course_spec import ancestor_matching
 from .exam_fee_tariff import (
     combo_fee_rows,
     download_pdf_text,
@@ -243,15 +244,11 @@ class HwkUlmScraper(BaseScraper):
 
     @staticmethod
     def _run_container(marker: Tag) -> Tag | None:
-        node: Tag | None = marker
-        for _ in range(4):
-            node = node.parent if node is not None else None
-            if node is None or not isinstance(node, Tag):
-                return None
-            text = node.get_text(" ", strip=True)
-            if "Kurstyp" in text and "Kursort" in text and "Kurs-Nr." in text:
-                return node
-        return None
+        return ancestor_matching(
+            marker,
+            lambda text: "Kurstyp" in text and "Kursort" in text and "Kurs-Nr." in text,
+            max_depth=4,
+        )
 
     def published_exam_fee_rows(self) -> list[dict]:
         text = download_pdf_text(self, EXAM_FEES_PDF_URL, label="HWK Ulm")

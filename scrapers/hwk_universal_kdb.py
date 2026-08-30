@@ -6,7 +6,7 @@ import logging
 import re
 from dataclasses import dataclass
 from datetime import date
-from .base import BaseScraper, RawCourseOffer, build_course_title
+from .base import BaseScraper, RawCourseOffer, build_course_title, euro_from_groups
 from .hwk_bayern import parse_format_and_mode, parse_parts, parse_trade
 
 logger = logging.getLogger(__name__)
@@ -150,9 +150,7 @@ def parse_kdb_price(text: str | None) -> float | None:
     if not text:
         return None
     match = PRICE_RE.search(text.replace("\xa0", " "))
-    if not match:
-        return None
-    return float(match.group(1).replace(".", "") + "." + match.group(2))
+    return euro_from_groups(match.group(1), match.group(2)) if match else None
 
 
 def _city_from_kdb_venue(venue: str, ort: str) -> str | None:

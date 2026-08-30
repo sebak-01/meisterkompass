@@ -63,6 +63,50 @@ def slugify(value: str) -> str:
     return re.sub(r"[-\s]+", "-", value).strip("-_")
 
 
+def euro_from_groups(whole: str, cents: str | None) -> float:
+    """
+    Convert a German-formatted amount ("1.234", "56") to a float.
+
+    Chamber pages agree on the notation — thousands dot, decimal comma — but
+    each publishes it behind its own regex, so callers supply the two captured
+    groups rather than the raw text. A missing cents group means "1.234,-".
+    """
+    return float(f"{whole.replace('.', '')}.{cents or '00'}")
+
+
+# A bare city line: letters, spaces and hyphens only — no dots, digits or
+# slashes, which is what distinguishes it from surrounding course prose.
+_CITY_LINE_RE = re.compile(r"^[A-ZÄÖÜa-zäöüß][A-ZÄÖÜa-zäöüß\s\-]+$")
+
+
+def city_between(
+    text: str,
+    duration_match: re.Match | None,
+    availability_match: re.Match | None,
+    *,
+    default: str,
+) -> str:
+    """
+    Pull the venue city out of the gap between a course's duration and its
+    availability keyword.
+
+    Several chamber CMSes render the city on its own line there without
+    marking it up, so position is the only available signal. Callers pass
+    their own already-run matches because the duration and availability
+    patterns differ per chamber.
+    """
+    if not (duration_match and availability_match):
+        return default
+    if duration_match.end() >= availability_match.start():
+        return default
+    between = text[duration_match.end():availability_match.start()]
+    for line in between.split("\n"):
+        line = line.strip()
+        if line and 2 < len(line) < 60 and _CITY_LINE_RE.match(line):
+            return line
+    return default
+
+
 def canonicalize_trade_name(trade_name: str) -> str:
     """Map alternate chamber trade labels to the canonical display name."""
     return TRADE_CANONICAL_ALIASES.get(trade_name.lower(), trade_name)
@@ -203,6 +247,43 @@ class BaseScraper(ABC):
     def parse_html(self, url: str, **kwargs) -> BeautifulSoup | None:
         r = self.get(url, **kwargs)
         return BeautifulSoup(r.text, "html.parser") if r else None
+
+    def lehrgangsort_address(
+        self,
+        url: str,
+        *,
+        default_street: str,
+        default_zip: str,
+    ) -> tuple[str, str]:
+        """
+        Read the "Lehrgangsort" address off a course detail page.
+
+        Returns (street, zip_code), falling back to the chamber's own
+        Bildungsstätte when the page omits the block or the street line carries
+        no house number.
+        """
+        if not url:
+            return default_street, default_zip
+        soup = self.parse_html(url)
+        if soup is None:
+            return default_street, default_zip
+
+        text = soup.get_text("\n")
+        idx = text.find("Lehrgangsort")
+        if idx < 0:
+            return default_street, default_zip
+
+        block = text[idx:idx + 300]
+        zip_m = re.search(r"(\d{5})\s+(\S+.*)", block)
+        if not zip_m:
+            return default_street, default_zip
+
+        lines = block[:zip_m.start()].strip().split("\n")
+        street = lines[-1].strip() if lines else ""
+        # A real street line carries a house number; anything else is prose.
+        if street and re.search(r"\d", street):
+            return street, zip_m.group(1)
+        return default_street, default_zip
 
     def scraped_exam_fee_rows(self, offers: list[RawCourseOffer]) -> list[dict]:
         """

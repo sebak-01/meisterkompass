@@ -1,11 +1,15 @@
 """
 Shared helpers for Baden-Württemberg HWK seminar CMS scrapers
 (Heilbronn, Reutlingen and similar ``/seminar/<slug>/`` pages).
+
+``ancestor_matching`` is CMS-agnostic and is also used by chambers outside
+Baden-Württemberg (Halle, Südthüringen, Ulm) that bury run details the same way.
 """
 
 from __future__ import annotations
 
 import re
+from collections.abc import Callable
 
 from bs4 import Tag
 
@@ -40,17 +44,39 @@ def iso_date_from_match(match: re.Match, day_g: int, month_g: int, year_g: int) 
     return f"{match.group(year_g)}-{match.group(month_g)}-{match.group(day_g)}"
 
 
+def ancestor_matching(
+    start: Tag,
+    predicate: Callable[[str], bool],
+    *,
+    max_depth: int,
+) -> Tag | None:
+    """
+    Walk up from ``start`` and return the first ancestor whose text satisfies
+    ``predicate``, or None within ``max_depth`` levels.
+
+    Chamber CMSes bury a course run's details in an ancestor of its date
+    heading, but neither the nesting depth nor the marker tokens agree between
+    chambers — hence both are supplied by the caller.
+    """
+    node: Tag | None = start
+    for _ in range(max_depth):
+        node = node.parent if node is not None else None
+        if not isinstance(node, Tag):
+            return None
+        if predicate(node.get_text(" ", strip=True)):
+            return node
+    return None
+
+
 def nearest_run_container(heading: Tag, *, max_depth: int = 6) -> Tag | None:
     """Walk up from an h4 date heading to the block that contains the run details."""
-    node: Tag | None = heading
-    for _ in range(max_depth):
-        if node is None:
-            return None
-        parent = node.parent
-        if parent is None:
-            return None
-        text = parent.get_text(" ", strip=True)
-        if any(token in text for token in ("Kursnummer", "Gebühr", "Kosten", "Seminardauer")):
-            return parent
-        node = parent if isinstance(parent, Tag) else None
+    container = ancestor_matching(
+        heading,
+        lambda text: any(
+            token in text for token in ("Kursnummer", "Gebühr", "Kosten", "Seminardauer")
+        ),
+        max_depth=max_depth,
+    )
+    if container is not None:
+        return container
     return heading.parent if isinstance(heading.parent, Tag) else None

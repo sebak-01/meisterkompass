@@ -7,7 +7,7 @@ from dataclasses import dataclass
 from bs4 import BeautifulSoup, Tag
 
 from .base import BaseScraper, RawCourseOffer, build_course_title
-from .bw_course_spec import DATE_RE, parse_bw_availability
+from .bw_course_spec import DATE_RE, ancestor_matching, parse_bw_availability
 from .exam_fee_tariff import published_bw_322_exam_fee_rows
 
 logger = logging.getLogger(__name__)
@@ -142,15 +142,11 @@ class HwkReutlingenScraper(BaseScraper):
 
     @staticmethod
     def _run_container(heading: Tag) -> Tag | None:
-        node: Tag | None = heading
-        for _ in range(5):
-            node = node.parent if node is not None else None
-            if node is None or not isinstance(node, Tag):
-                return None
-            text = node.get_text(" ", strip=True)
-            if "Seminardauer" in text and ("Kursnummer" in text or "Kurstyp" in text):
-                return node
-        return None
+        return ancestor_matching(
+            heading,
+            lambda text: "Seminardauer" in text and ("Kursnummer" in text or "Kurstyp" in text),
+            max_depth=5,
+        )
 
     @staticmethod
     def _placeholder(spec: CourseSpec) -> RawCourseOffer:

@@ -104,6 +104,7 @@ class HwkHildesheimSuedniedersachsenScraper(BavariaOdavScraper):
         page_size=100,
         implicit_trade_parts=True,
     )
+    detail_pages_state_exam_fees = False
 
     def _parse_card(self, link: Tag, detail_url: str | None = None) -> dict | None:
         raw_title = link.get_text(" ", strip=True)
@@ -151,10 +152,6 @@ class HwkHildesheimSuedniedersachsenScraper(BavariaOdavScraper):
                 card = {**card, "trade_name": trade_name}
         return super()._enrich(card)
 
-    def postprocess_offer(self, offer: RawCourseOffer) -> RawCourseOffer:
-        offer.exam_fee_scraped = None
-        offer.exam_fee_qualifier = ""
-        return offer
 
     def transform_offer(
         self, offer: RawCourseOffer, detail_text: str

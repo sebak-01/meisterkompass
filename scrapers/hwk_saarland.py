@@ -12,6 +12,7 @@ Page structure (WordPress, www.hwk-saarland.de):
 """
 
 import re
+from contextlib import suppress
 from datetime import date
 from decimal import Decimal
 from typing import Optional
@@ -323,10 +324,8 @@ class HwkSaarlandScraper(BaseScraper):
         if dmy:
             dates = []
             for d, m, y in dmy:
-                try:
+                with suppress(ValueError):
                     dates.append(date(int(y), int(m), int(d)))
-                except ValueError:
-                    pass
             if dates:
                 return min(dates)  # earliest = start date
         # Fallback: "Ab Monat Jahr"
@@ -346,10 +345,8 @@ class HwkSaarlandScraper(BaseScraper):
             return None
         dates = []
         for d, m, y in dmy:
-            try:
+            with suppress(ValueError):
                 dates.append(date(int(y), int(m), int(d)))
-            except ValueError:
-                pass
         if len(dates) < 2:
             return None
         return max(dates)  # latest = end date
@@ -378,10 +375,8 @@ class HwkSaarlandScraper(BaseScraper):
             return "full"
         if "warteliste" in t:
             return "waitlist"
-        # "Noch 1 freier Platz" or "Noch 3 freie Plätze"
-        m = re.search(r"noch\s+(\d+)\s+freie?r?\s+pl[äa]tze?", t)
-        if m:
-            return "available" if int(m.group(1)) <= 3 else "available"
+        if re.search(r"noch\s+\d+\s+freie?r?\s+pl[äa]tze?", t):
+            return "available"
         if re.search(r"es gibt noch freie plätze|freie plätze vorhanden", t):
             return "available"
         return "unknown"

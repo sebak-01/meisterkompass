@@ -37,6 +37,7 @@ class HwkErfurtScraper(BavariaOdavScraper):
         list_url=OVERVIEW_URL,
         default_city="Erfurt",
     )
+    detail_pages_state_exam_fees = False
 
     def fetch_raw_courses(self):
         soup = self.parse_html(OVERVIEW_URL)
@@ -77,12 +78,6 @@ class HwkErfurtScraper(BavariaOdavScraper):
             card["trade_name"] = "Friseur"
         return card
 
-    def postprocess_offer(self, offer):
-        # Detail pages label only the Lehrgang fee; chamber exam fees are not
-        # stated there and must not be inferred from unrelated page prose.
-        offer.exam_fee_scraped = None
-        offer.exam_fee_qualifier = ""
-        return offer
 
     def published_exam_fee_rows(self) -> list[dict]:
         pdf_url = resolve_pdf_url_from_page(

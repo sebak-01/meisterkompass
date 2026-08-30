@@ -6,7 +6,7 @@ from urllib.parse import urljoin
 
 from bs4 import Tag
 
-from .base import RawCourseOffer, normalize_trade
+from .base import RawCourseOffer
 from .exam_fee_tariff import (
     download_pdf_text,
     parse_bw_meister_fees_from_html,

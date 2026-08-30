@@ -16,7 +16,7 @@ try:
 except ImportError:  # pragma: no cover - exercised via fallback in tests
     cloudscraper = None
 
-from .base import BaseScraper, RawCourseOffer, build_course_title, normalize_trade
+from .base import BaseScraper, RawCourseOffer, build_course_title
 from .hwk_bayern import parse_parts, parse_trade
 from .exam_fee_tariff import download_pdf_text
 

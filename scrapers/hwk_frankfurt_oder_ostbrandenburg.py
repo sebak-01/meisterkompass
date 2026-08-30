@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup, Tag
 from .base import BaseScraper, RawCourseOffer, build_course_title
 from .format_keys import parse_format_key
 from .hwk_bayern import parse_parts, parse_trade
-from .exam_fee_tariff import download_pdf_text
+from .exam_fee_tariff import download_pdf_text, part_fee_rows
 
 logger = logging.getLogger(__name__)
 
@@ -328,14 +328,9 @@ class HwkFrankfurtOderOstbrandenburgScraper(BaseScraper):
 
     def published_exam_fee_rows(self) -> list[dict]:
         fees = self._fetch_exam_fees_from_pdf() or GENERIC_EXAM_FEES
-        return [
-            {
-                "chamber_slug": self.chamber_slug,
-                "trade_slug": None,
-                "part": part,
-                "fee": fee,
-                "qualifier": EXAM_FEE_QUALIFIER,
-                "source_url": EXAM_FEES_PDF_URL,
-            }
-            for part, fee in fees.items()
-        ]
+        return part_fee_rows(
+            self.chamber_slug,
+            fees,
+            source_url=EXAM_FEES_PDF_URL,
+            qualifier=EXAM_FEE_QUALIFIER,
+        )

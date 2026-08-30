@@ -28,7 +28,7 @@ from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup, Tag
 
-from .base import BaseScraper, RawCourseOffer, build_course_title
+from .base import BaseScraper, RawCourseOffer, build_course_title, euro_from_groups
 from .format_keys import parse_format_key
 from .exam_fee_tariff import (
     download_pdf_text,
@@ -340,7 +340,7 @@ def parse_date(text: str) -> str | None:
 
 def parse_price(text: str) -> float | None:
     m = PRICE_RE.search(text)
-    return float(m.group(1).replace(".", "") + "." + m.group(2)) if m else None
+    return euro_from_groups(m.group(1), m.group(2)) if m else None
 
 
 def parse_duration(text: str) -> int | None:
@@ -671,7 +671,6 @@ class HwkRheinhessenScraper(BaseScraper):
             # Block has no useful data — skip (likely a boilerplate section)
             return None
 
-        coords = resolve_coords(street)
         return RawCourseOffer(
             title=title_override or build_course_title(trade_name, parts),
             trade_name=trade_name,

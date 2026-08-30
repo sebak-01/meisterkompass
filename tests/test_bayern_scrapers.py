@@ -14,6 +14,7 @@ from scrapers.hwk_bayern import (
     parse_parts,
     parse_trade,
 )
+from scrapers.hwk_cottbus import HwkCottbusScraper
 from scrapers.hwk_mittelfranken import HwkMittelfrankenScraper
 from scrapers.hwk_muenchen_und_oberbayern import HwkMuenchenUndOberbayernScraper
 from scrapers.hwk_niederbayern_oberpfalz import HwkNiederbayernOberpfalzScraper
@@ -442,6 +443,35 @@ class BavariaRegistrationTests(unittest.TestCase):
         result = HwkSchwabenScraper().postprocess_offer(offer)
         self.assertEqual(result.exam_fee_scraped, 500.0)
         self.assertEqual(result.exam_fee_qualifier, "")
+
+    def test_detail_pages_state_exam_fees_flag_controls_scrubbing(self):
+        def offer():
+            return RawCourseOffer(
+                title="Elektrotechniker (Teil I)",
+                trade_name="Elektrotechniker",
+                parts=[1],
+                format_key="full_time",
+                teaching_mode="presence",
+                start_date="2028-11-06",
+                end_date="2029-06-08",
+                duration_hours=1360,
+                course_fee=8150.0,
+                exam_fee_scraped=999.0,
+                exam_fee_qualifier="ca.",
+                city="Cottbus",
+            )
+
+        # Chambers whose detail pages only ever state the Lehrgang fee: any
+        # amount scraped there is a course fee and must not reach the exam-fee
+        # lookup, which the Gebührenverzeichnis owns.
+        scrubbed = HwkCottbusScraper().postprocess_offer(offer())
+        self.assertIsNone(scrubbed.exam_fee_scraped)
+        self.assertEqual(scrubbed.exam_fee_qualifier, "")
+
+        # Chambers that do publish exam fees on the detail page keep them.
+        kept = HwkMittelfrankenScraper().postprocess_offer(offer())
+        self.assertEqual(kept.exam_fee_scraped, 999.0)
+        self.assertEqual(kept.exam_fee_qualifier, "ca.")
 
 
 if __name__ == "__main__":
