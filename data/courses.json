@@ -490,78 +490,6 @@
     "format": "part_time",
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
-    "start_date": "2026-08-29",
-    "end_date": "2027-05-20",
-    "start_date_note": "",
-    "duration_hours": 310,
-    "course_fee": 1935.0,
-    "course_fee_display": "1.935 €",
-    "exam_fee_scraped": 250.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 250.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "250 €",
-      "from_tariff": false
-    },
-    "city": "Aachen",
-    "street": "Tempelhofer Str. 15 - 17",
-    "zip_code": "52068",
-    "latitude": 50.7818511,
-    "longitude": 6.1312387,
-    "availability": "waitlist",
-    "source_url": "https://www.hwk-aachen.de/33,0,coursedetail.html?id=40375"
-  },
-  {
-    "chamber_slug": "hwk-aachen",
-    "chamber_name": "HWK Aachen",
-    "chamber_region": "Nordrhein-Westfalen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-08-29",
-    "end_date": "2026-10-16",
-    "start_date_note": "",
-    "duration_hours": 310,
-    "course_fee": 1935.0,
-    "course_fee_display": "1.935 €",
-    "exam_fee_scraped": 250.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 250.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "250 €",
-      "from_tariff": false
-    },
-    "city": "Aachen",
-    "street": "Tempelhofer Str. 15 - 17",
-    "zip_code": "52068",
-    "latitude": 50.7818511,
-    "longitude": 6.1312387,
-    "availability": "waitlist",
-    "source_url": "https://www.hwk-aachen.de/33,0,coursedetail.html?id=40382"
-  },
-  {
-    "chamber_slug": "hwk-aachen",
-    "chamber_name": "HWK Aachen",
-    "chamber_region": "Nordrhein-Westfalen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
     "start_date": "2026-08-31",
     "end_date": "2026-10-16",
     "start_date_note": "",
@@ -17908,7 +17836,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-3"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-4"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -17980,7 +17908,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-2"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-1"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -18016,7 +17944,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-3"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-2"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -18088,7 +18016,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-1"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-3"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -18232,7 +18160,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-4"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-3"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -37588,7 +37516,7 @@
     "zip_code": "21079",
     "latitude": 53.4582352,
     "longitude": 9.9959008,
-    "availability": "waitlist",
+    "availability": "full",
     "source_url": "https://www.elbcampus.de/weiterbildung/meistervorbereitung-im-elektrotechnikerhandwerk/"
   },
   {
@@ -43504,42 +43432,6 @@
     "longitude": 9.9705455,
     "availability": "available",
     "source_url": "https://www.hwk-hildesheim.de/24,0,coursedetail.html?id=59477"
-  },
-  {
-    "chamber_slug": "hwk-hildesheim-suedniedersachsen",
-    "chamber_name": "HWK Hildesheim-Südniedersachsen",
-    "chamber_region": "Niedersachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "hybrid",
-    "start_date": "2026-08-29",
-    "end_date": "2026-12-12",
-    "start_date_note": "",
-    "duration_hours": 114,
-    "course_fee": 820.0,
-    "course_fee_display": "820 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 349.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "349 €",
-      "from_tariff": true
-    },
-    "city": "Hildesheim",
-    "street": "Kruppstraße 18",
-    "zip_code": "31135",
-    "latitude": 52.1681541,
-    "longitude": 9.9705455,
-    "availability": "unknown",
-    "source_url": "https://www.hwk-hildesheim.de/24,0,coursedetail.html?id=58613"
   },
   {
     "chamber_slug": "hwk-hildesheim-suedniedersachsen",
@@ -65145,78 +65037,6 @@
     "longitude": 11.6400789,
     "availability": "available",
     "source_url": "https://www.hwk-magdeburg.de/16,0,coursedetail.html?id=50916"
-  },
-  {
-    "chamber_slug": "hwk-magdeburg",
-    "chamber_name": "HWK Magdeburg",
-    "chamber_region": "Sachsen-Anhalt",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-08-29",
-    "end_date": "2026-12-19",
-    "start_date_note": "",
-    "duration_hours": 120,
-    "course_fee": 660.0,
-    "course_fee_display": "660 €",
-    "exam_fee_scraped": 240.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 240.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "240 €",
-      "from_tariff": false
-    },
-    "city": "Magdeburg",
-    "street": "",
-    "zip_code": "",
-    "latitude": 52.1314783,
-    "longitude": 11.6400789,
-    "availability": "available",
-    "source_url": "https://www.hwk-magdeburg.de/16,0,coursedetail.html?id=45401"
-  },
-  {
-    "chamber_slug": "hwk-magdeburg",
-    "chamber_name": "HWK Magdeburg",
-    "chamber_region": "Sachsen-Anhalt",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-08-29",
-    "end_date": "2027-06-19",
-    "start_date_note": "",
-    "duration_hours": 272,
-    "course_fee": 1590.0,
-    "course_fee_display": "1.590 €",
-    "exam_fee_scraped": 250.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 250.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "250 €",
-      "from_tariff": false
-    },
-    "city": "Magdeburg",
-    "street": "",
-    "zip_code": "",
-    "latitude": 52.1314783,
-    "longitude": 11.6400789,
-    "availability": "available",
-    "source_url": "https://www.hwk-magdeburg.de/16,0,coursedetail.html?id=46627"
   },
   {
     "chamber_slug": "hwk-magdeburg",
@@ -102090,43 +101910,6 @@
     "chamber_slug": "hwk-ostthueringen-gera",
     "chamber_name": "HWK für Ostthüringen",
     "chamber_region": "Thüringen",
-    "trade_slug": "dachdecker",
-    "trade_name": "Dachdecker",
-    "title": "Dachdecker (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-09-07",
-    "end_date": "2027-03-25",
-    "start_date_note": "",
-    "duration_hours": 1140,
-    "course_fee": 8710.0,
-    "course_fee_display": "8.710 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 555.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "555 €",
-      "from_tariff": true
-    },
-    "city": "Lehesten",
-    "street": "Friedrichsbruch 3",
-    "zip_code": "07349",
-    "latitude": 50.4796375,
-    "longitude": 11.4489243,
-    "availability": "available",
-    "source_url": "https://dachdeckerschule-lehesten.de/de-de/meisterlehrgaenge/meistervorbereitungslehrgang-dachdecker-teil-1-und-teil-2-3174697/"
-  },
-  {
-    "chamber_slug": "hwk-ostthueringen-gera",
-    "chamber_name": "HWK für Ostthüringen",
-    "chamber_region": "Thüringen",
     "trade_slug": "elektrotechniker",
     "trade_name": "Elektrotechniker",
     "title": "Elektrotechniker (Teile I + II)",
@@ -103290,43 +103073,6 @@
     "longitude": 11.9958817,
     "availability": "unknown",
     "source_url": "https://www.hwk-gera.de/5,0,coursedetail.html?id=121598"
-  },
-  {
-    "chamber_slug": "hwk-ostthueringen-gera",
-    "chamber_name": "HWK für Ostthüringen",
-    "chamber_region": "Thüringen",
-    "trade_slug": "zimmerer",
-    "trade_name": "Zimmerer",
-    "title": "Zimmerer (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-09-07",
-    "end_date": "2027-03-25",
-    "start_date_note": "",
-    "duration_hours": 1140,
-    "course_fee": 8420.0,
-    "course_fee_display": "8.420 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 555.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "555 €",
-      "from_tariff": true
-    },
-    "city": "Lehesten",
-    "street": "Friedrichsbruch 3",
-    "zip_code": "07349",
-    "latitude": 50.4796375,
-    "longitude": 11.4489243,
-    "availability": "available",
-    "source_url": "https://dachdeckerschule-lehesten.de/de-de/meisterlehrgaenge/meistervorbereitungslehrgang-zimmerer-teil-1-und-teil-2-5100981/"
   },
   {
     "chamber_slug": "hwk-ostwestfalen-lippe-zu-bielefeld",

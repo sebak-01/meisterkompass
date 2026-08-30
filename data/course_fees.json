@@ -1,25 +1,5 @@
 [
   {
-    "chamber_slug": "hwk-magdeburg",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      4
-    ],
-    "fee": 660.0,
-    "exam_fee_scraped": 240.0,
-    "is_generic": true
-  },
-  {
-    "chamber_slug": "hwk-magdeburg",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      3
-    ],
-    "fee": 1590.0,
-    "exam_fee_scraped": 250.0,
-    "is_generic": true
-  },
-  {
     "chamber_slug": "hwk-cottbus",
     "trade_slug": "kosmetiker",
     "parts": [
@@ -579,28 +559,6 @@
     "is_generic": true
   },
   {
-    "chamber_slug": "hwk-ostthueringen-gera",
-    "trade_slug": "dachdecker",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 8710.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-ostthueringen-gera",
-    "trade_slug": "zimmerer",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 8420.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
     "chamber_slug": "hwk-rhein-main",
     "trade_slug": "fleischer",
     "parts": [
@@ -730,6 +688,16 @@
     "fee": 5940.0,
     "exam_fee_scraped": null,
     "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-magdeburg",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      4
+    ],
+    "fee": 660.0,
+    "exam_fee_scraped": 240.0,
+    "is_generic": true
   },
   {
     "chamber_slug": "hwk-ulm",
@@ -3435,6 +3403,16 @@
     "fee": 12640.0,
     "exam_fee_scraped": 925.0,
     "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-magdeburg",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      3
+    ],
+    "fee": 1590.0,
+    "exam_fee_scraped": 250.0,
+    "is_generic": true
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -6845,17 +6823,6 @@
     "is_generic": false
   },
   {
-    "chamber_slug": "hwk-hamburg",
-    "trade_slug": "elektrotechniker",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 12900.0,
-    "exam_fee_scraped": 860.0,
-    "is_generic": false
-  },
-  {
     "chamber_slug": "hwk-wiesbaden",
     "trade_slug": "dachdecker",
     "parts": [
@@ -6905,6 +6872,17 @@
     ],
     "fee": 4115.0,
     "exam_fee_scraped": 450.0,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-hamburg",
+    "trade_slug": "elektrotechniker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 13500.0,
+    "exam_fee_scraped": 860.0,
     "is_generic": false
   },
   {
