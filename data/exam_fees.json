@@ -768,13 +768,6 @@
           "qualifier": ""
         }
       },
-      "fleischer": {
-        "1,2": {
-          "fee": 730.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
       "friseur": {
         "1,2": {
           "fee": 960.0,
