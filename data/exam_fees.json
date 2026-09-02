@@ -824,13 +824,6 @@
           "qualifier": ""
         }
       },
-      "orthopadieschuhmacher": {
-        "1,2": {
-          "fee": 1530.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
       "orthopadietechniker": {
         "1,2": {
           "fee": 1640.0,
@@ -1830,6 +1823,13 @@
           "qualifier": ""
         }
       },
+      "kosmetiker": {
+        "1,2": {
+          "fee": 1100.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
       "maler-und-lackierer": {
         "1,2": {
           "fee": 1650.0,
@@ -2031,7 +2031,7 @@
       },
       "dachdecker": {
         "1,2": {
-          "fee": 770.0,
+          "fee": 830.0,
           "fee_max": null,
           "qualifier": ""
         }
@@ -2045,7 +2045,7 @@
       },
       "fleischer": {
         "1,2": {
-          "fee": 830.0,
+          "fee": 715.0,
           "fee_max": null,
           "qualifier": ""
         }
