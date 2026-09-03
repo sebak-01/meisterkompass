@@ -1,5 +1,228 @@
 {
   "nested": {
+    "hwk-halle-saale": {
+      "null": {
+        "2": {
+          "fee": 323.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "3": {
+          "fee": 208.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "4": {
+          "fee": 210.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "elektrotechniker": {
+        "1": {
+          "fee": 430.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "friseur": {
+        "1": {
+          "fee": 346.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "installateur-und-heizungsbauer": {
+        "1": {
+          "fee": 421.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "kfz-techniker": {
+        "1": {
+          "fee": 370.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "maler-und-lackierer": {
+        "1": {
+          "fee": 489.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "maurer-und-betonbauer": {
+        "1": {
+          "fee": 398.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "metallbauer": {
+        "1": {
+          "fee": 428.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "tischler": {
+        "1": {
+          "fee": 432.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "zimmerer": {
+        "1": {
+          "fee": 406.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      }
+    },
+    "hwk-osnabrueck-emsland-grafschaft-bentheim": {
+      "null": {
+        "2": {
+          "fee": 406.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "3": {
+          "fee": 290.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "4": {
+          "fee": 221.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "dachdecker": {
+        "1": {
+          "fee": 937.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "elektrotechniker": {
+        "1": {
+          "fee": 716.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "feinwerkmechaniker": {
+        "1": {
+          "fee": 637.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "fliesen-platten-und-mosaikleger": {
+        "1": {
+          "fee": 857.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "friseur": {
+        "1": {
+          "fee": 468.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "installateur-und-heizungsbauer": {
+        "1": {
+          "fee": 594.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "karosserie-und-fahrzeugbauer": {
+        "1": {
+          "fee": 695.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "kfz-techniker": {
+        "1": {
+          "fee": 962.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "land-und-baumaschinenmechatroniker": {
+        "1": {
+          "fee": 695.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "maler-und-lackierer": {
+        "1": {
+          "fee": 356.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "mauerer-und-betonbauer": {
+        "1": {
+          "fee": 688.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "metallbauer": {
+        "1": {
+          "fee": 725.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "tischler": {
+        "1": {
+          "fee": 453.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "zimmerer": {
+        "1": {
+          "fee": 610.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      }
+    },
+    "hwk-suedthueringen-suhl": {
+      "null": {
+        "1": {
+          "fee": 335.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 220.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "3": {
+          "fee": 205.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "4": {
+          "fee": 165.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      }
+    },
     "hwk-aachen": {
       "null": {
         "1": {
@@ -1073,88 +1296,6 @@
       "zahntechniker": {
         "1,2": {
           "fee": 750.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      }
-    },
-    "hwk-halle-saale": {
-      "null": {
-        "2": {
-          "fee": 323.0,
-          "fee_max": null,
-          "qualifier": ""
-        },
-        "3": {
-          "fee": 208.0,
-          "fee_max": null,
-          "qualifier": ""
-        },
-        "4": {
-          "fee": 210.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "elektrotechniker": {
-        "1": {
-          "fee": 430.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "friseur": {
-        "1": {
-          "fee": 346.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "installateur-und-heizungsbauer": {
-        "1": {
-          "fee": 421.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "kfz-techniker": {
-        "1": {
-          "fee": 370.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "maler-und-lackierer": {
-        "1": {
-          "fee": 489.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "maurer-und-betonbauer": {
-        "1": {
-          "fee": 398.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "metallbauer": {
-        "1": {
-          "fee": 428.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "tischler": {
-        "1": {
-          "fee": 432.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "zimmerer": {
-        "1": {
-          "fee": 406.0,
           "fee_max": null,
           "qualifier": ""
         }
@@ -2962,123 +3103,6 @@
         }
       }
     },
-    "hwk-osnabrueck-emsland-grafschaft-bentheim": {
-      "null": {
-        "2": {
-          "fee": 406.0,
-          "fee_max": null,
-          "qualifier": ""
-        },
-        "3": {
-          "fee": 290.0,
-          "fee_max": null,
-          "qualifier": ""
-        },
-        "4": {
-          "fee": 221.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "dachdecker": {
-        "1": {
-          "fee": 937.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "elektrotechniker": {
-        "1": {
-          "fee": 716.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "feinwerkmechaniker": {
-        "1": {
-          "fee": 637.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "fliesen-platten-und-mosaikleger": {
-        "1": {
-          "fee": 857.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "friseur": {
-        "1": {
-          "fee": 468.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "installateur-und-heizungsbauer": {
-        "1": {
-          "fee": 594.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "karosserie-und-fahrzeugbauer": {
-        "1": {
-          "fee": 695.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "kfz-techniker": {
-        "1": {
-          "fee": 962.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "land-und-baumaschinenmechatroniker": {
-        "1": {
-          "fee": 695.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "maler-und-lackierer": {
-        "1": {
-          "fee": 356.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "mauerer-und-betonbauer": {
-        "1": {
-          "fee": 688.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "metallbauer": {
-        "1": {
-          "fee": 725.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "tischler": {
-        "1": {
-          "fee": 453.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "zimmerer": {
-        "1": {
-          "fee": 610.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      }
-    },
     "hwk-ostfriesland": {
       "null": {
         "1": {
@@ -3720,30 +3744,6 @@
         },
         "4": {
           "fee": 180.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      }
-    },
-    "hwk-suedthueringen-suhl": {
-      "null": {
-        "1": {
-          "fee": 335.0,
-          "fee_max": null,
-          "qualifier": ""
-        },
-        "2": {
-          "fee": 220.0,
-          "fee_max": null,
-          "qualifier": ""
-        },
-        "3": {
-          "fee": 205.0,
-          "fee_max": null,
-          "qualifier": ""
-        },
-        "4": {
-          "fee": 165.0,
           "fee_max": null,
           "qualifier": ""
         }
