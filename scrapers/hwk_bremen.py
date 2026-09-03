@@ -13,7 +13,7 @@ from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
 
-from .base import BaseScraper, RawCourseOffer, build_course_title, normalize_trade
+from .base import BaseScraper, RawCourseOffer, build_course_title, german_amount, normalize_trade
 from .exam_fee_tariff import (
     download_pdf_text,
     parse_bremen_meister_fees,
@@ -167,11 +167,7 @@ def parse_price(gebuehrentext: str | None) -> float | None:
     if not gebuehrentext:
         return None
     match = PRICE_PATTERN.search(gebuehrentext.replace("\xa0", " "))
-    if not match:
-        return None
-    euros = match.group(1).replace(".", "")
-    cents = match.group(2) or "00"
-    return float(f"{euros}.{cents}")
+    return german_amount(match.group(1), match.group(2)) if match else None
 
 
 def parse_format(zeitablauf: str | None) -> str:

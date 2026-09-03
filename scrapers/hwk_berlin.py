@@ -28,7 +28,7 @@ import re
 
 from bs4 import BeautifulSoup, Tag
 
-from .base import BaseScraper, RawCourseOffer, build_course_title
+from .base import BaseScraper, RawCourseOffer, build_course_title, german_amount
 from .exam_fee_tariff import (
     download_pdf_text,
     parse_berlin_meister_fees,
@@ -127,9 +127,7 @@ def parse_format_and_mode(text: str) -> tuple[str, str]:
 
 def parse_price(text: str) -> float | None:
     m = PRICE_PATTERN.search(text)
-    if not m:
-        return None
-    return float(m.group(1).replace(".", "") + "." + m.group(2))
+    return german_amount(m.group(1), m.group(2)) if m else None
 
 
 def parse_duration(text: str) -> int | None:
@@ -229,7 +227,9 @@ class HwkBerlinScraper(BaseScraper):
         duration_hours = parse_duration(card_text)
         availability   = parse_availability(card_text)
 
-        street, zip_code = self._parse_detail_address(detail_url)
+        street, zip_code = self.lehrgangsort_address(
+            detail_url, default_street=DEFAULT_STREET, default_zip=DEFAULT_ZIP,
+        )
 
         return RawCourseOffer(
             title=title_clean,
@@ -252,33 +252,6 @@ class HwkBerlinScraper(BaseScraper):
                 "card_text": card_text[:500],
             },
         )
-
-    def _parse_detail_address(self, url: str) -> tuple[str, str]:
-        """
-        Fetch the course detail page and extract the Lehrgangsort address.
-        Returns (street, zip_code), falling back to the chamber's Bildungsstätte.
-        """
-        if not url:
-            return DEFAULT_STREET, DEFAULT_ZIP
-        try:
-            soup = self.parse_html(url)
-            if soup is None:
-                return DEFAULT_STREET, DEFAULT_ZIP
-            text = soup.get_text("\n")
-            idx = text.find("Lehrgangsort")
-            if idx >= 0:
-                block = text[idx:idx + 300]
-                zip_m = re.search(r"(\d{5})\s+(\S+.*)", block)
-                if zip_m:
-                    zip_code = zip_m.group(1)
-                    lines = block[:zip_m.start()].strip().split("\n")
-                    street = lines[-1].strip() if lines else ""
-                    if street and re.search(r"\d", street):
-                        return street, zip_code
-        except Exception as exc:
-            logger.warning("Could not fetch detail address from %s: %s", url, exc)
-
-        return DEFAULT_STREET, DEFAULT_ZIP
 
     def published_exam_fee_rows(self) -> list[dict]:
         pdf_url = resolve_pdf_url_from_page(

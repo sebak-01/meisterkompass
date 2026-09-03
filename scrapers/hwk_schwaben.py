@@ -38,7 +38,7 @@ class HwkSchwabenScraper(BavariaOdavScraper):
         # Base Prüfungsgebühr (e.g. Teil I+II = 500 €) is authoritative.
         # Do not surface "zzgl. gewerkspezifischer Prüfungsgebühr" as a note.
         offer.exam_fee_qualifier = ""
-        return offer
+        return super().postprocess_offer(offer)
 
     def published_exam_fee_rows(self) -> list[dict]:
         pdf_url = resolve_pdf_url_from_page(

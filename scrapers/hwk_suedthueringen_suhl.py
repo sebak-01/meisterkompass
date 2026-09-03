@@ -6,7 +6,7 @@ from urllib.parse import urljoin, urlsplit, urlunsplit
 
 from bs4 import BeautifulSoup, Tag
 
-from .base import BaseScraper, RawCourseOffer, build_course_title
+from .base import BaseScraper, RawCourseOffer, ancestor_matching, build_course_title
 from .hwk_bayern import parse_parts, parse_trade
 
 logger = logging.getLogger(__name__)
@@ -257,15 +257,11 @@ class HwkSuedthueringenSuhlScraper(BaseScraper):
 
     @staticmethod
     def _run_container(heading: Tag) -> Tag | None:
-        node: Tag | None = heading
-        for _ in range(6):
-            node = node.parent if node is not None else None
-            if node is None or not isinstance(node, Tag):
-                return None
-            text = node.get_text(" ", strip=True)
-            if "Kursnummer" in text and ("Kosten" in text or "Kurstyp" in text):
-                return node
-        return None
+        return ancestor_matching(
+            heading,
+            lambda text: "Kursnummer" in text and ("Kosten" in text or "Kurstyp" in text),
+            max_depth=6,
+        )
 
 
     def published_exam_fee_rows(self) -> list[dict]:

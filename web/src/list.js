@@ -2,7 +2,7 @@ import courses from "virtual:courses";  // courses.json with frontend-unused fie
 import chambers from "@data/chambers.json";
 import trades from "@data/trades.json";
 import { initNav } from "./nav.js";
-import { ROMAN, partsLabel, esc } from "./util.js";
+import { ROMAN, partsLabel, esc, initDropdown } from "./util.js";
 import { applyFilters, rowHtml, emptyRow, pageItems, fmtDate, chamberFilterHtml, sortCourses, sortIndicator } from "./render.js";
 
 // Leaflet (~140 KB) + its CSS are loaded only when the map view is first opened,
@@ -300,11 +300,12 @@ function wire() {
   );
 
   // Chambers dropdown
-  const chambersBtn = document.getElementById("chambers-btn");
   const chambersDrop = document.getElementById("chambers-dropdown");
-  const syncChambersAria = () => chambersBtn.setAttribute("aria-expanded", String(chambersDrop.classList.contains("open")));
-  chambersBtn.addEventListener("click", (e) => { e.stopPropagation(); chambersDrop.classList.toggle("open"); syncChambersAria(); });
-
+  initDropdown({
+    button: document.getElementById("chambers-btn"),
+    panel: chambersDrop,
+    boundary: document.getElementById("chambers-wrap"),
+  });
   chambersDrop.addEventListener("change", (e) => {
     if (!e.target.classList.contains("f-chamber")) return;
     const selectedChambers = [...document.querySelectorAll(".f-chamber")].filter((cb) => cb.checked).map((cb) => cb.value);
@@ -312,10 +313,12 @@ function wire() {
   });
 
   // Parts dropdown
-  const partsBtn = document.getElementById("parts-btn");
   const partsDrop = document.getElementById("parts-dropdown");
-  const syncPartsAria = () => partsBtn.setAttribute("aria-expanded", String(partsDrop.classList.contains("open")));
-  partsBtn.addEventListener("click", (e) => { e.stopPropagation(); partsDrop.classList.toggle("open"); syncPartsAria(); });
+  initDropdown({
+    button: document.getElementById("parts-btn"),
+    panel: partsDrop,
+    boundary: document.getElementById("parts-wrap"),
+  });
 
   const applyPartsFilter = () => {
     const parts = [...document.querySelectorAll(".f-part")].filter((cb) => cb.checked).map((cb) => Number(cb.value));
@@ -324,17 +327,6 @@ function wire() {
   };
   partsDrop.addEventListener("change", (e) => {
     if (e.target.classList.contains("f-part") || e.target.id === "f-include-combos") applyPartsFilter();
-  });
-
-  document.addEventListener("click", (e) => {
-    if (!document.getElementById("parts-wrap").contains(e.target)) { partsDrop.classList.remove("open"); syncPartsAria(); }
-    if (!document.getElementById("chambers-wrap").contains(e.target)) { chambersDrop.classList.remove("open"); syncChambersAria(); }
-  });
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      if (partsDrop.classList.contains("open")) { partsDrop.classList.remove("open"); syncPartsAria(); partsBtn.focus(); }
-      if (chambersDrop.classList.contains("open")) { chambersDrop.classList.remove("open"); syncChambersAria(); chambersBtn.focus(); }
-    }
   });
 
   // View toggle

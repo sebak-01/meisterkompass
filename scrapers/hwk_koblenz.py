@@ -19,7 +19,7 @@ import re
 
 from bs4 import BeautifulSoup, Tag
 
-from .base import BaseScraper, RawCourseOffer, build_course_title
+from .base import BaseScraper, RawCourseOffer, build_course_title, city_between, german_amount
 from .exam_fee_tariff import (
     download_pdf_text,
     parse_koblenz_meister_fees,
@@ -41,6 +41,10 @@ EXAM_FEES_PDF_FALLBACK = (
     "https://www.hwk-koblenz.de/downloads/gebuehrenverzeichnis-2025-52,1964.pdf"
 )
 GENERIC_EXAM_FEES = {1: 1200.0, 2: 600.0, 3: 400.0, 4: 400.0}
+
+# HWK Koblenz Bildungsstätte — used when a detail page omits Lehrgangsort.
+DEFAULT_STREET = "Friedrich-Ebert-Ring 33"
+DEFAULT_ZIP    = "56068"
 
 # Maps title/heading keywords to (format_key, teaching_mode)
 FORMAT_MAP = {
@@ -91,9 +95,7 @@ def parse_format_and_mode(text: str) -> tuple[str, str]:
 
 def parse_price(text: str) -> float | None:
     m = PRICE_PATTERN.search(text)
-    if not m:
-        return None
-    return float(m.group(1).replace(".", "") + "." + m.group(2))
+    return german_amount(m.group(1), m.group(2)) if m else None
 
 
 def parse_duration(text: str) -> int | None:
@@ -110,24 +112,19 @@ def parse_availability(text: str) -> str:
     return "unknown"
 
 
+AVAILABILITY_MARKER_RE = re.compile(
+    r"ausgebucht|warteliste|freie\s+Plätze|wenige\s+Plätze", re.IGNORECASE
+)
+
+
 def parse_city(text: str) -> str:
-    """
-    City appears between duration ('650 Std.') and availability text.
-    Valid city names contain only letters, spaces, hyphens — no dots or slashes.
-    """
     text = text.replace("\xa0", " ")
-    dur_match   = DURATION_PATTERN.search(text)
-    avail_match = re.search(
-        r"ausgebucht|warteliste|freie\s+Plätze|wenige\s+Plätze", text, re.IGNORECASE
+    return city_between(
+        text,
+        DURATION_PATTERN.search(text),
+        AVAILABILITY_MARKER_RE.search(text),
+        default="Koblenz",
     )
-    if dur_match and avail_match and dur_match.end() < avail_match.start():
-        between = text[dur_match.end():avail_match.start()]
-        valid_city = re.compile(r"^[A-ZÄÖÜa-zäöüß][A-ZÄÖÜa-zäöüß\s\-]+$")
-        for line in between.split("\n"):
-            line = line.strip()
-            if line and 2 < len(line) < 60 and valid_city.match(line):
-                return line
-    return "Koblenz"  # fallback: all HWK Koblenz courses are in Koblenz
 
 
 class HwkKoblenzScraper(BaseScraper):
@@ -136,6 +133,9 @@ class HwkKoblenzScraper(BaseScraper):
     chamber_region  = "Rheinland-Pfalz"
     chamber_website = "https://www.hwk-koblenz.de"
     source_url      = LIST_URL.format(offset=0)
+    # Detail-page fetches previously slept an extra 0.5 s on top of the base
+    # delay; keep the same 1.5 s spacing now that the inline sleep is gone.
+    request_delay   = 1.5
 
     def fetch_raw_courses(self) -> list[RawCourseOffer]:
         first = self.parse_html(LIST_URL.format(offset=0))
@@ -204,8 +204,9 @@ class HwkKoblenzScraper(BaseScraper):
         city           = parse_city(card_text)
         availability   = parse_availability(card_text)
 
-        # Fetch detail page to get exact Lehrgangsort address
-        street, zip_code = self._parse_detail_address(detail_url, city)
+        street, zip_code = self.lehrgangsort_address(
+            detail_url, default_street=DEFAULT_STREET, default_zip=DEFAULT_ZIP,
+        )
 
         return RawCourseOffer(
             title=title_clean,
@@ -228,40 +229,6 @@ class HwkKoblenzScraper(BaseScraper):
                 "card_text": card_text[:500],
             },
         )
-
-    def _parse_detail_address(self, url: str, fallback_city: str) -> tuple[str, str]:
-        """
-        Fetch the course detail page and extract the Lehrgangsort address.
-        Returns (street, zip_code). Falls back to known default if not found.
-        """
-        import time
-        DEFAULT_STREET  = "Friedrich-Ebert-Ring 33"
-        DEFAULT_ZIP     = "56068"
-
-        try:
-            time.sleep(0.5)  # polite delay
-            soup = self.parse_html(url)
-            if soup is None:
-                return DEFAULT_STREET, DEFAULT_ZIP
-            text = soup.get_text("\n")
-            # Look for ZIP+street pattern near "Lehrgangsort"
-            idx = text.find("Lehrgangsort")
-            if idx >= 0:
-                block = text[idx:idx + 300]
-                zip_m = re.search(r"(\d{5})\s+(\S+.*)", block)
-                if zip_m:
-                    zip_code = zip_m.group(1)
-                    city_line = zip_m.group(2).strip().split("\n")[0]
-                    # Street is the line just before the ZIP
-                    lines = block[:zip_m.start()].strip().split("\n")
-                    street = lines[-1].strip() if lines else ""
-                    # Valid street: contains a number (house number)
-                    if street and re.search(r"\d", street):
-                        return street, zip_code
-        except Exception as exc:
-            logger.warning("Could not fetch detail address from %s: %s", url, exc)
-
-        return DEFAULT_STREET, DEFAULT_ZIP
 
     def published_exam_fee_rows(self) -> list[dict]:
         pdf_url = resolve_pdf_url_from_page(

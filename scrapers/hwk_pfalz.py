@@ -15,7 +15,8 @@ HTML structure (verified 2026-05-27 via debug_pfalz.py):
   - Title parts separator: " - " (hyphen) instead of " und "
   - Price includes exam fee on list page: "2.900,00 € （inkl. Prüfung）" (Japanese brackets)
   - Duration: "340 UStd." (UStd. = Unterrichtsstunden, same value as Std.)
-  - Extra flag "Garantierte Durchführung" in card text (stored in notes)
+  - Extra flag "Garantierte Durchführung" in card text; not stored, but it
+    terminates the city field the way seat-count markers do elsewhere
 
   Strategy:
   1. Parse all list pages for card metadata (title, dates, city, availability, detail URL).
@@ -28,11 +29,10 @@ HTML structure (verified 2026-05-27 via debug_pfalz.py):
 
 import logging
 import re
-from datetime import date
 
 from bs4 import BeautifulSoup, Tag
 
-from .base import BaseScraper, RawCourseOffer, build_course_title
+from .base import BaseScraper, RawCourseOffer, build_course_title, city_between, german_amount
 
 logger = logging.getLogger(__name__)
 
@@ -116,7 +116,7 @@ def parse_pfalz_title(raw_title: str) -> tuple[list[int], str | None]:
 
 def parse_price(text: str) -> float | None:
     m = PRICE_RE.search(text)
-    return float(m.group(1).replace(".", "") + "." + m.group(2)) if m else None
+    return german_amount(m.group(1), m.group(2)) if m else None
 
 
 def parse_duration(text: str) -> int | None:
@@ -143,25 +143,21 @@ def parse_availability(text: str) -> str:
     return "unknown"
 
 
+# Pfalz also flags guaranteed runs where other chambers only show seat counts.
+AVAILABILITY_MARKER_RE = re.compile(
+    r"ausgebucht|warteliste|freie\s+Plätze|wenige\s+Plätze|Garantierte\s+Durchführung",
+    re.IGNORECASE,
+)
+
+
 def parse_city(text: str) -> str:
-    """
-    City appears between the duration value and the availability keyword.
-    Same positional approach as HWK Koblenz.
-    """
     text = text.replace("\xa0", " ")
-    dur_m   = DURATION_RE.search(text)
-    avail_m = re.search(
-        r"ausgebucht|warteliste|freie\s+Plätze|wenige\s+Plätze|Garantierte\s+Durchführung",
-        text, re.IGNORECASE,
+    return city_between(
+        text,
+        DURATION_RE.search(text),
+        AVAILABILITY_MARKER_RE.search(text),
+        default="Kaiserslautern",
     )
-    if dur_m and avail_m and dur_m.end() < avail_m.start():
-        between = text[dur_m.end():avail_m.start()]
-        valid = re.compile(r"^[A-ZÄÖÜa-zäöüß][A-ZÄÖÜa-zäöüß\s\-]+$")
-        for line in between.split("\n"):
-            line = line.strip()
-            if line and 2 < len(line) < 60 and valid.match(line):
-                return line
-    return "Kaiserslautern"  # fallback: HWK Pfalz main location
 
 
 class HwkPfalzScraper(BaseScraper):
@@ -266,9 +262,6 @@ class HwkPfalzScraper(BaseScraper):
         city           = parse_city(card_text)
         availability   = parse_availability(card_text)
 
-        # "Garantierte Durchführung" flag
-        guaranteed = bool(re.search(r"Garantierte\s+Durchführung", card_text, re.IGNORECASE))
-
         return {
             "raw_title":      raw_title,
             "trade_name":     trade_name,
@@ -280,7 +273,6 @@ class HwkPfalzScraper(BaseScraper):
             "combined_price": combined_price,   # includes exam fee
             "city":           city,
             "availability":   availability,
-            "guaranteed":     guaranteed,
             "detail_url":     detail_url,
         }
 
@@ -347,8 +339,6 @@ class HwkPfalzScraper(BaseScraper):
         # Fallback: use combined price if no breakdown found
         if course_fee is None:
             course_fee = card["combined_price"]
-
-        notes = "Garantierte Durchführung" if card["guaranteed"] else ""
 
         return RawCourseOffer(
             title=build_course_title(card["trade_name"], card["parts"]),

@@ -5,6 +5,7 @@ import examFeesData from "@data/exam_fees.json";
 import { initNav } from "./nav.js";
 import {
   esc,
+  initDropdown,
   partsLabel,
   TOOLTIP_COURSE_EXAM,
   TOOLTIP_TARIFF,
@@ -500,30 +501,11 @@ initNav();
   container.innerHTML = chamberSelectAccordionHtml(chambersData, currentCid || "");
   syncChamberBtnLabel();
 
-  const syncAria = () => btn.setAttribute("aria-expanded", String(drop.classList.contains("open")));
-  btn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    drop.classList.toggle("open");
-    syncAria();
-  });
+  const { close } = initDropdown({ button: btn, panel: drop, boundary: wrap });
   container.addEventListener("change", (e) => {
     if (!e.target.classList.contains("f-chamber-select")) return;
     onChamberChange();
-    drop.classList.remove("open");
-    syncAria();
-  });
-  document.addEventListener("click", (e) => {
-    if (!wrap.contains(e.target)) {
-      drop.classList.remove("open");
-      syncAria();
-    }
-  });
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && drop.classList.contains("open")) {
-      drop.classList.remove("open");
-      syncAria();
-      btn.focus();
-    }
+    close();
   });
 })();
 document.getElementById("btn-mode-auto").addEventListener("click", () => setMode("auto"));

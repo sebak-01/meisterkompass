@@ -1092,7 +1092,7 @@ class HwkKasselScraper(BaseScraper):
                 # component Teil III/IV runs share the same flat fee and are
                 # part of the same programme, so only the leading part-I run
                 # represents a bookable course offer here.
-                for parts, sub, start, end in future_labelled:
+                for parts, _sub, start, end in future_labelled:
                     if 1 not in parts:
                         continue
                     key = (tuple(parts), start, end)

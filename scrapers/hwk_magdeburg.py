@@ -10,9 +10,6 @@ from .base import RawCourseOffer, normalize_trade
 from .hwk_bayern import (
     BavariaCatalogue,
     BavariaOdavScraper,
-    DATE_RE,
-    MONTH_DATE_RE,
-    NUMERIC_MONTH_RE,
     TENTATIVE_DATE_NOTE,
     canonical_detail_url,
     course_id_from_url,
@@ -166,8 +163,6 @@ class HwkMagdeburgScraper(BavariaOdavScraper):
             "card_text": text[:1000],
         }
 
-    def postprocess_offer(self, offer: RawCourseOffer) -> RawCourseOffer:
-        return offer
 
     def resolve_schedule_dates(
         self,

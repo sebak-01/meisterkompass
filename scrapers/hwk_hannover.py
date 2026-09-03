@@ -104,6 +104,7 @@ class HwkHannoverScraper(BavariaOdavScraper):
         page_size=100,
         implicit_trade_parts=True,
     )
+    detail_pages_publish_exam_fees = False
 
     def fetch_raw_courses(self) -> list[RawCourseOffer]:
         unique: dict[str, dict] = {}
@@ -193,10 +194,6 @@ class HwkHannoverScraper(BavariaOdavScraper):
                 card = {**card, "trade_name": trade_name}
         return super()._enrich(card)
 
-    def postprocess_offer(self, offer: RawCourseOffer) -> RawCourseOffer:
-        offer.exam_fee_scraped = None
-        offer.exam_fee_qualifier = ""
-        return offer
 
     @staticmethod
     def parse_part_i_exam_fees(text: str) -> dict[str, float]:

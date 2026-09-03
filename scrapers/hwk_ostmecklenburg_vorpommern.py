@@ -19,7 +19,7 @@ from .hwk_bayern import (
     parse_trade,
     DURATION_RE,
 )
-from .exam_fee_tariff import download_pdf_text
+from .exam_fee_tariff import download_pdf_text, part_fee_rows
 
 logger = logging.getLogger(__name__)
 
@@ -121,6 +121,7 @@ class HwkOstmecklenburgVorpommernScraper(BavariaOdavScraper):
         page_size=100,
         implicit_trade_parts=True,
     )
+    detail_pages_publish_exam_fees = False
 
     def _parse_card(self, link: Tag, detail_url: str | None = None) -> dict | None:
         raw_title = link.get_text(" ", strip=True)
@@ -168,10 +169,6 @@ class HwkOstmecklenburgVorpommernScraper(BavariaOdavScraper):
                 card = {**card, "trade_name": trade_name}
         return super()._enrich(card)
 
-    def postprocess_offer(self, offer: RawCourseOffer) -> RawCourseOffer:
-        offer.exam_fee_scraped = None
-        offer.exam_fee_qualifier = ""
-        return offer
 
     def transform_offer(
         self, offer: RawCourseOffer, detail_text: str
@@ -251,14 +248,8 @@ class HwkOstmecklenburgVorpommernScraper(BavariaOdavScraper):
 
     def published_exam_fee_rows(self) -> list[dict]:
         fees = self._fetch_exam_fees_from_pdf() or GENERIC_EXAM_FEES
-        return [
-            {
-                "chamber_slug": self.chamber_slug,
-                "trade_slug": None,
-                "part": part,
-                "fee": fee,
-                "qualifier": "",
-                "source_url": EXAM_FEES_PAGE_URL,
-            }
-            for part, fee in fees.items()
-        ]
+        return part_fee_rows(
+            self.chamber_slug,
+            fees,
+            source_url=EXAM_FEES_PAGE_URL,
+        )
