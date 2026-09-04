@@ -3927,6 +3927,42 @@
     "source_url": "https://www.hwk-oldenburg.de/weiterbildung/kurse-und-seminare#/vorlage/MVK/905?kurs=42266"
   },
   {
+    "chamber_slug": "hwk-oldenburg",
+    "chamber_name": "HWK Oldenburg",
+    "chamber_region": "Niedersachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
+    "parts": [
+      4
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-09-03",
+    "end_date": "2026-11-26",
+    "start_date_note": "",
+    "duration_hours": 100,
+    "course_fee": 690.0,
+    "course_fee_display": "690 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 300.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "300 €",
+      "from_tariff": true
+    },
+    "city": "Oldenburg/Tweelbäke",
+    "street": "Schütte-Lanz-Straße 8-10/15",
+    "zip_code": "26135",
+    "latitude": 53.1144351,
+    "longitude": 8.2605231,
+    "availability": "available",
+    "source_url": "https://www.hwk-oldenburg.de/weiterbildung/kurse-und-seminare#/vorlage/MVK/1035?kurs=42507"
+  },
+  {
     "chamber_slug": "hwk-ostfriesland",
     "chamber_name": "HWK Ostfriesland",
     "chamber_region": "Niedersachsen",
