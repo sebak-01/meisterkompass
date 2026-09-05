@@ -869,6 +869,78 @@
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_484"
   },
   {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
+    "parts": [
+      4
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-09-04",
+    "end_date": "2027-06-19",
+    "start_date_note": "",
+    "duration_hours": 390,
+    "course_fee": 3170.0,
+    "course_fee_display": "3.170 €",
+    "exam_fee_scraped": 420.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 420.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "420 €",
+      "from_tariff": false
+    },
+    "city": "Zwickau",
+    "street": "Scheffelstraße 39",
+    "zip_code": "08066",
+    "latitude": 50.7334417,
+    "longitude": 12.5051553,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo-ausbildung-der-ausbilder/#termin_535"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-09-04",
+    "end_date": "2027-03-20",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2380.0,
+    "course_fee_display": "2.380 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Zwickau",
+    "street": "Scheffelstraße 39",
+    "zip_code": "08066",
+    "latitude": 50.7334417,
+    "longitude": 12.5051553,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_537"
+  },
+  {
     "chamber_slug": "hwk-cottbus",
     "chamber_name": "HWK Cottbus",
     "chamber_region": "Brandenburg",
@@ -2834,6 +2906,43 @@
     "source_url": "https://www.hwk-koblenz.de/kurse/konditoren-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=111930&search-onr=52&img=1"
   },
   {
+    "chamber_slug": "hwk-koblenz",
+    "chamber_name": "HWK Koblenz",
+    "chamber_region": "Rheinland-Pfalz",
+    "trade_slug": "stuckateur",
+    "trade_name": "Stuckateur",
+    "title": "Stuckateur (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-09-04",
+    "end_date": "2027-10-22",
+    "start_date_note": "",
+    "duration_hours": 610,
+    "course_fee": 6450.0,
+    "course_fee_display": "6.450 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 1800.0,
+      "fee_max": null,
+      "qualifier": "bis zu",
+      "display": "bis zu 1.800 €",
+      "from_tariff": true
+    },
+    "city": "Koblenz",
+    "street": "August-Horch-Str. 6",
+    "zip_code": "56070",
+    "latitude": 50.3895583,
+    "longitude": 7.5708933,
+    "availability": "available",
+    "source_url": "https://www.hwk-koblenz.de/kurse/stuckateur-teile-i-und-ii-in-teilzeit-52,0,coursedetail.html?id=113477&search-onr=52&img=1"
+  },
+  {
     "chamber_slug": "hwk-koeln",
     "chamber_name": "HWK zu Köln",
     "chamber_region": "Nordrhein-Westfalen",
@@ -3015,6 +3124,43 @@
     "longitude": 8.8426339,
     "availability": "available",
     "source_url": "https://www.bildungsakademie.de/seminar/mv_elektro/#uni-kurs-1001020"
+  },
+  {
+    "chamber_slug": "hwk-konstanz",
+    "chamber_name": "HWK Konstanz",
+    "chamber_region": "Baden-Württemberg",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "parts": [
+      3,
+      4
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-09-04",
+    "end_date": "2027-07-03",
+    "start_date_note": "",
+    "duration_hours": 372,
+    "course_fee": 2735.0,
+    "course_fee_display": "2.735 €",
+    "exam_fee_scraped": 360.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 360.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "360 €",
+      "from_tariff": false
+    },
+    "city": "Singen",
+    "street": "Lange Straße 20",
+    "zip_code": "78224",
+    "latitude": 47.7546664,
+    "longitude": 8.8426339,
+    "availability": "available",
+    "source_url": "https://www.bildungsakademie.de/seminar/mv_iiiiv_si/#uni-kurs-1001036"
   },
   {
     "chamber_slug": "hwk-leipzig",
@@ -3454,6 +3600,43 @@
     "longitude": 11.6098462,
     "availability": "available",
     "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1215871"
+  },
+  {
+    "chamber_slug": "hwk-muenchen-und-oberbayern",
+    "chamber_name": "HWK für München und Oberbayern",
+    "chamber_region": "Bayern",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "parts": [
+      3,
+      4
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "hybrid",
+    "start_date": "2026-09-04",
+    "end_date": "2027-02-25",
+    "start_date_note": "",
+    "duration_hours": 340,
+    "course_fee": 2865.0,
+    "course_fee_display": "2.865 €",
+    "exam_fee_scraped": 312.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 312.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "312 €",
+      "from_tariff": false
+    },
+    "city": "München",
+    "street": "Mühldorfstraße 6",
+    "zip_code": "81671",
+    "latitude": 48.1282296,
+    "longitude": 11.6098462,
+    "availability": "full",
+    "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1229533"
   },
   {
     "chamber_slug": "hwk-niederbayern-oberpfalz",
