@@ -1251,6 +1251,13 @@
           "qualifier": ""
         }
       },
+      "tischler": {
+        "1,2": {
+          "fee": 1010.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
       "zahntechniker": {
         "1,2": {
           "fee": 860.0,
@@ -1456,7 +1463,7 @@
       },
       "friseur": {
         "1,2": {
-          "fee": 1375.0,
+          "fee": 1525.0,
           "fee_max": null,
           "qualifier": "ca."
         }
@@ -1717,7 +1724,7 @@
           "qualifier": ""
         },
         "4": {
-          "fee": 640.0,
+          "fee": 300.0,
           "fee_max": null,
           "qualifier": ""
         }
@@ -1847,13 +1854,6 @@
       "tischler": {
         "1,2": {
           "fee": 1390.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "zahntechniker": {
-        "1,2": {
-          "fee": 2370.0,
           "fee_max": null,
           "qualifier": ""
         }
@@ -2052,7 +2052,7 @@
       },
       "maurer-und-betonbauer": {
         "1,2": {
-          "fee": 830.0,
+          "fee": 770.0,
           "fee_max": null,
           "qualifier": ""
         }
@@ -3200,13 +3200,6 @@
         },
         "2": {
           "fee": 400.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "land-und-baumaschinenmechatroniker": {
-        "1": {
-          "fee": 1100.0,
           "fee_max": null,
           "qualifier": ""
         }
