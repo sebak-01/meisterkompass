@@ -1,15 +1,5 @@
 [
   {
-    "chamber_slug": "hwk-chemnitz",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      4
-    ],
-    "fee": 790.0,
-    "exam_fee_scraped": 205.0,
-    "is_generic": true
-  },
-  {
     "chamber_slug": "hwk-flensburg",
     "trade_slug": "informationstechniker",
     "parts": [
@@ -1161,6 +1151,16 @@
     ],
     "fee": 1700.0,
     "exam_fee_scraped": null,
+    "is_generic": true
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      4
+    ],
+    "fee": 790.0,
+    "exam_fee_scraped": 205.0,
     "is_generic": true
   },
   {
@@ -6628,17 +6628,6 @@
     "is_generic": false
   },
   {
-    "chamber_slug": "hwk-dresden",
-    "trade_slug": "land-und-baumaschinenmechatroniker",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 8990.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
     "chamber_slug": "hwk-hamburg",
     "trade_slug": "kalteanlagenbauer",
     "parts": [
@@ -7948,6 +7937,17 @@
       2
     ],
     "fee": 3750.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-dresden",
+    "trade_slug": "land-und-baumaschinenmechatroniker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 8990.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },

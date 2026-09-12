@@ -941,6 +941,78 @@
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_537"
   },
   {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
+    "parts": [
+      4
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-09-11",
+    "end_date": "2026-11-21",
+    "start_date_note": "",
+    "duration_hours": 100,
+    "course_fee": 790.0,
+    "course_fee_display": "790 €",
+    "exam_fee_scraped": 205.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 205.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "205 €",
+      "from_tariff": false
+    },
+    "city": "Annaberg-Buchholz",
+    "street": "Bahnhofstraße 1",
+    "zip_code": "09456",
+    "latitude": 50.5739084,
+    "longitude": 13.0021358,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_986"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
+    "parts": [
+      4
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-09-11",
+    "end_date": "2027-06-26",
+    "start_date_note": "",
+    "duration_hours": 390,
+    "course_fee": 3170.0,
+    "course_fee_display": "3.170 €",
+    "exam_fee_scraped": 420.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 420.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "420 €",
+      "from_tariff": false
+    },
+    "city": "Annaberg-Buchholz",
+    "street": "Bahnhofstraße 1",
+    "zip_code": "09456",
+    "latitude": 50.5739084,
+    "longitude": 13.0021358,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo-ausbildung-der-ausbilder/#termin_988"
+  },
+  {
     "chamber_slug": "hwk-cottbus",
     "chamber_name": "HWK Cottbus",
     "chamber_region": "Brandenburg",
@@ -1661,6 +1733,43 @@
     "longitude": 13.7677525,
     "availability": "waitlist",
     "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/installateur-und-heizungsbauerhandwerk-teil-i-148855.html"
+  },
+  {
+    "chamber_slug": "hwk-dresden",
+    "chamber_name": "HWK Dresden",
+    "chamber_region": "Sachsen",
+    "trade_slug": "land-und-baumaschinenmechatroniker",
+    "trade_name": "Land- und Baumaschinenmechatroniker",
+    "title": "Land- und Baumaschinenmechatroniker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-09-11",
+    "end_date": "2027-12-03",
+    "start_date_note": "",
+    "duration_hours": 800,
+    "course_fee": 8990.0,
+    "course_fee_display": "8.990 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 740.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "740 €",
+      "from_tariff": true
+    },
+    "city": "Dresden",
+    "street": "Am Lagerplatz 8",
+    "zip_code": "01099",
+    "latitude": 51.0833678,
+    "longitude": 13.7677525,
+    "availability": "waitlist",
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/land-und-baumaschinenmechatronikerhandwerk-teile-ii-und-i-191977.html"
   },
   {
     "chamber_slug": "hwk-dresden",
