@@ -3125,6 +3125,42 @@
     "source_url": "https://www.handwerk-calw.de/seminare/termindetails?tx_sfeventmgt_pieventdetail%5Baction%5D=detail&tx_sfeventmgt_pieventdetail%5Bcontroller%5D=Event&tx_sfeventmgt_pieventdetail%5Bevent%5D=6881&cHash=cdd0a468cc4e88fdc469996f8d24dff2"
   },
   {
+    "chamber_slug": "hwk-karlsruhe",
+    "chamber_name": "HWK Karlsruhe",
+    "chamber_region": "Baden-Württemberg",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "online",
+    "start_date": "2026-09-15",
+    "end_date": "2027-04-13",
+    "start_date_note": "",
+    "duration_hours": 240,
+    "course_fee": 1820.0,
+    "course_fee_display": "1.820 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 200.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "200 €",
+      "from_tariff": true
+    },
+    "city": "Karlsruhe",
+    "street": "Hertzstr. 177",
+    "zip_code": "76187",
+    "latitude": 49.039484,
+    "longitude": 8.36939,
+    "availability": "available",
+    "source_url": "https://www.bia-karlsruhe.de/kurse/meistervorbereitung-im-handwerk-teil-3-wirtschaftlich-rechtliche-kenntnisse-3631,0,coursedetail.html?id=91171&search-onr=3631&img=1"
+  },
+  {
     "chamber_slug": "hwk-kassel",
     "chamber_name": "HWK Kassel",
     "chamber_region": "Hessen",
@@ -5573,6 +5609,43 @@
     "source_url": "https://www.hwk-potsdam.de/9,0,coursedetail.html?id=353671"
   },
   {
+    "chamber_slug": "hwk-reutlingen",
+    "chamber_name": "HWK Reutlingen",
+    "chamber_region": "Baden-Württemberg",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "parts": [
+      3,
+      4
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-09-15",
+    "end_date": "2027-04-22",
+    "start_date_note": "",
+    "duration_hours": 355,
+    "course_fee": 2750.0,
+    "course_fee_display": "2.750 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 450.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "450 €",
+      "from_tariff": true
+    },
+    "city": "Reutlingen",
+    "street": "Hindenburgstraße 58",
+    "zip_code": "72762",
+    "latitude": 48.4857514,
+    "longitude": 9.2063686,
+    "availability": "full",
+    "source_url": "https://www.hwk-reutlingen.de/seminar/r-mv-iii-iv-tz/#kurs-17"
+  },
+  {
     "chamber_slug": "hwk-rheinhessen",
     "chamber_name": "HWK Rheinhessen",
     "chamber_region": "Rheinland-Pfalz",
@@ -6013,6 +6086,43 @@
     "longitude": 10.891878,
     "availability": "full",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/kfz_-zrm-teil-i-ii/#kurs-208151"
+  },
+  {
+    "chamber_slug": "hwk-suedwestfalen",
+    "chamber_name": "HWK Südwestfalen",
+    "chamber_region": "Nordrhein-Westfalen",
+    "trade_slug": "installateur-und-heizungsbauer",
+    "trade_name": "Installateur- und Heizungsbauer",
+    "title": "Installateur- und Heizungsbauer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-09-15",
+    "end_date": "2027-04-16",
+    "start_date_note": "",
+    "duration_hours": 1200,
+    "course_fee": 10200.0,
+    "course_fee_display": "10.200 €",
+    "exam_fee_scraped": 1000.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 1000.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "1.000 €",
+      "from_tariff": false
+    },
+    "city": "Arnsberg",
+    "street": "Im Hülsenfeld 42",
+    "zip_code": "59755",
+    "latitude": 51.4470454,
+    "longitude": 7.9631509,
+    "availability": "full",
+    "source_url": "https://www.bbz-arnsberg.de/kurse/meisterkurs-installateure-und-heizungsbauer-vollzeit#termin-1"
   },
   {
     "chamber_slug": "hwk-suedwestfalen",

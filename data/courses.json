@@ -2025,7 +2025,7 @@
     "zip_code": "10961",
     "latitude": 52.4966028,
     "longitude": 13.388784,
-    "availability": "available",
+    "availability": "unknown",
     "source_url": "https://www.bildung4u.de/kurse/meistervorbereitungslehrgang-schilder-und-lichtreklamehersteller-handwerk-teil-i-und-ii-3911,0,coursedetail.html?id=58535&search-onr=3911&img=1"
   },
   {
@@ -11358,7 +11358,7 @@
     "zip_code": "09116",
     "latitude": 50.8307235,
     "longitude": 12.8727524,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/vorbereitungskurs-zimmerermeister-teile-i-ii/#termin_1202"
   },
   {
@@ -12415,8 +12415,8 @@
     "end_date": "2027-05-21",
     "start_date_note": "",
     "duration_hours": 960,
-    "course_fee": 10000.0,
-    "course_fee_display": "10.000 €",
+    "course_fee": 12795.0,
+    "course_fee_display": "12.795 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -12726,7 +12726,7 @@
     "zip_code": "01983",
     "latitude": 51.580024,
     "longitude": 13.9997132,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwk-cottbus.de/7,0,coursedetail.html?id=65141"
   },
   {
@@ -14893,8 +14893,8 @@
     "end_date": "2027-11-12",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3530.0,
-    "course_fee_display": "3.530 €",
+    "course_fee": 3730.0,
+    "course_fee_display": "3.730 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -14910,7 +14910,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-1"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-3"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -14929,8 +14929,8 @@
     "end_date": "2027-11-12",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3530.0,
-    "course_fee_display": "3.530 €",
+    "course_fee": 3730.0,
+    "course_fee_display": "3.730 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -14946,7 +14946,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-3"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-4"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15018,7 +15018,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-1"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-2"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15054,7 +15054,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-2"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-4"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15126,7 +15126,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-3"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-1"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15162,7 +15162,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-4"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-3"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15217,8 +15217,8 @@
     "end_date": "2028-11-10",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3530.0,
-    "course_fee_display": "3.530 €",
+    "course_fee": 3730.0,
+    "course_fee_display": "3.730 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -15234,7 +15234,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-2"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-1"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15253,8 +15253,8 @@
     "end_date": "2028-11-10",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3530.0,
-    "course_fee_display": "3.530 €",
+    "course_fee": 3730.0,
+    "course_fee_display": "3.730 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -15270,7 +15270,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-4"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-2"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -28160,7 +28160,7 @@
     "zip_code": "",
     "latitude": 54.5797194,
     "longitude": 9.5331938,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.hwk-flensburg.de/weiterbildung/kurse-seminare#/vorlage/MVK/476?kurs=24685"
   },
   {
@@ -28304,7 +28304,7 @@
     "zip_code": "",
     "latitude": 54.5797194,
     "longitude": 9.5331938,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwk-flensburg.de/weiterbildung/kurse-seminare#/vorlage/MVK/476?kurs=25185"
   },
   {
@@ -29042,7 +29042,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-teile-i-und-ii-im-kraftfahrzeugtechniker-handwerk/#termin-2"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-teile-i-und-ii-im-kraftfahrzeugtechniker-handwerk/#termin-1"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -29079,7 +29079,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-teile-i-und-ii-im-kraftfahrzeugtechniker-handwerk/#termin-3"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-teile-i-und-ii-im-kraftfahrzeugtechniker-handwerk/#termin-2"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -29116,7 +29116,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-teile-i-und-ii-im-kraftfahrzeugtechniker-handwerk/#termin-4"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-teile-i-und-ii-im-kraftfahrzeugtechniker-handwerk/#termin-3"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -29153,7 +29153,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-teile-i-und-ii-im-kraftfahrzeugtechniker-handwerk/#termin-5"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-teile-i-und-ii-im-kraftfahrzeugtechniker-handwerk/#termin-4"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -30749,8 +30749,8 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
-    "start_date": "2027-08-23",
-    "end_date": "2027-09-10",
+    "start_date": "2027-08-16",
+    "end_date": "2027-09-04",
     "start_date_note": "",
     "duration_hours": 98,
     "course_fee": 768.0,
@@ -30764,11 +30764,11 @@
       "display": "275 €",
       "from_tariff": false
     },
-    "city": "Frankfurt (Oder)",
-    "street": "Spiekerstraße 11",
-    "zip_code": "15230",
-    "latitude": 52.3388204,
-    "longitude": 14.5470716,
+    "city": "Hennickendorf",
+    "street": "",
+    "zip_code": "",
+    "latitude": 52.1667755,
+    "longitude": 13.1045766,
     "availability": "available",
     "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-5"
   },
@@ -30786,8 +30786,8 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
-    "start_date": "2027-08-23",
-    "end_date": "2027-11-27",
+    "start_date": "2027-08-16",
+    "end_date": "2027-11-12",
     "start_date_note": "",
     "duration_hours": 378,
     "course_fee": 3050.0,
@@ -30801,13 +30801,49 @@
       "display": "625 €",
       "from_tariff": false
     },
-    "city": "Frankfurt (Oder)",
-    "street": "Spiekerstraße 11",
-    "zip_code": "15230",
-    "latitude": 52.3388204,
-    "longitude": 14.5470716,
+    "city": "Hennickendorf",
+    "street": "",
+    "zip_code": "",
+    "latitude": 52.1667755,
+    "longitude": 13.1045766,
     "availability": "available",
     "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-6"
+  },
+  {
+    "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
+    "chamber_name": "HWK Frankfurt (Oder) – Region Ostbrandenburg",
+    "chamber_region": "Brandenburg",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-09-13",
+    "end_date": "2027-11-12",
+    "start_date_note": "",
+    "duration_hours": 280,
+    "course_fee": 2280.0,
+    "course_fee_display": "2.280 €",
+    "exam_fee_scraped": 350.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 350.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "350 €",
+      "from_tariff": false
+    },
+    "city": "Hennickendorf",
+    "street": "",
+    "zip_code": "",
+    "latitude": 52.1667755,
+    "longitude": 13.1045766,
+    "availability": "available",
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-6"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -30881,42 +30917,6 @@
     "longitude": 13.1045766,
     "availability": "available",
     "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-7"
-  },
-  {
-    "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
-    "chamber_name": "HWK Frankfurt (Oder) – Region Ostbrandenburg",
-    "chamber_region": "Brandenburg",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-09-20",
-    "end_date": "2027-11-27",
-    "start_date_note": "",
-    "duration_hours": 280,
-    "course_fee": 2280.0,
-    "course_fee_display": "2.280 €",
-    "exam_fee_scraped": 350.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 350.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "350 €",
-      "from_tariff": false
-    },
-    "city": "Frankfurt (Oder)",
-    "street": "Spiekerstraße 11",
-    "zip_code": "15230",
-    "latitude": 52.3388204,
-    "longitude": 14.5470716,
-    "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-6"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -40261,42 +40261,6 @@
     "chamber_region": "Baden-Württemberg",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "online",
-    "start_date": "2026-09-15",
-    "end_date": "2027-04-13",
-    "start_date_note": "",
-    "duration_hours": 240,
-    "course_fee": 1820.0,
-    "course_fee_display": "1.820 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 200.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "200 €",
-      "from_tariff": true
-    },
-    "city": "Karlsruhe",
-    "street": "Hertzstr. 177",
-    "zip_code": "76187",
-    "latitude": 49.039484,
-    "longitude": 8.36939,
-    "availability": "available",
-    "source_url": "https://www.bia-karlsruhe.de/kurse/meistervorbereitung-im-handwerk-teil-3-wirtschaftlich-rechtliche-kenntnisse-3631,0,coursedetail.html?id=91171&search-onr=3631&img=1"
-  },
-  {
-    "chamber_slug": "hwk-karlsruhe",
-    "chamber_name": "HWK Karlsruhe",
-    "chamber_region": "Baden-Württemberg",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
     "parts": [
       3,
@@ -40532,6 +40496,43 @@
     "duration_hours": 1200,
     "course_fee": 9750.0,
     "course_fee_display": "9.750 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 730.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "730 €",
+      "from_tariff": true
+    },
+    "city": "Petersberg",
+    "street": "Goerdelerstraße 139",
+    "zip_code": "36100",
+    "latitude": 50.5673891,
+    "longitude": 9.699491,
+    "availability": "available",
+    "source_url": "https://www.bbz-mitte.de/de/kursfinder/elektrotechnikermeister-teil-ii-i-vollzeit"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "elektrotechniker",
+    "trade_name": "Elektrotechniker",
+    "title": "Elektrotechniker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-08-28",
+    "end_date": "2029-06-22",
+    "start_date_note": "",
+    "duration_hours": 1200,
+    "course_fee": 9850.0,
+    "course_fee_display": "9.850 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -61504,14 +61505,14 @@
     "duration_hours": 410,
     "course_fee": 6850.0,
     "course_fee_display": "6.850 €",
-    "exam_fee_scraped": 630.0,
-    "exam_fee_qualifier": "ca.",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 630.0,
       "fee_max": null,
-      "qualifier": "ca.",
-      "display": "ca. 630 €",
-      "from_tariff": false
+      "qualifier": "",
+      "display": "630 €",
+      "from_tariff": true
     },
     "city": "Nürnberg",
     "street": "Deumentenstraße 1",
@@ -61874,14 +61875,14 @@
     "duration_hours": 1350,
     "course_fee": 10999.0,
     "course_fee_display": "10.999 €",
-    "exam_fee_scraped": 680.0,
-    "exam_fee_qualifier": "ca.",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 680.0,
+      "fee": 630.0,
       "fee_max": null,
-      "qualifier": "ca.",
-      "display": "ca. 680 €",
-      "from_tariff": false
+      "qualifier": "",
+      "display": "630 €",
+      "from_tariff": true
     },
     "city": "Nürnberg",
     "street": "Sieboldstraße 9",
@@ -61911,14 +61912,14 @@
     "duration_hours": 1350,
     "course_fee": 11999.0,
     "course_fee_display": "11.999 €",
-    "exam_fee_scraped": 680.0,
-    "exam_fee_qualifier": "ca.",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 680.0,
+      "fee": 630.0,
       "fee_max": null,
-      "qualifier": "ca.",
-      "display": "ca. 680 €",
-      "from_tariff": false
+      "qualifier": "",
+      "display": "630 €",
+      "from_tariff": true
     },
     "city": "Nürnberg",
     "street": "Sieboldstraße 9",
@@ -61948,14 +61949,14 @@
     "duration_hours": 210,
     "course_fee": 5750.0,
     "course_fee_display": "5.750 €",
-    "exam_fee_scraped": 630.0,
-    "exam_fee_qualifier": "ca.",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 630.0,
       "fee_max": null,
-      "qualifier": "ca.",
-      "display": "ca. 630 €",
-      "from_tariff": false
+      "qualifier": "",
+      "display": "630 €",
+      "from_tariff": true
     },
     "city": "Nürnberg",
     "street": "Deumentenstraße 1",
@@ -61985,14 +61986,14 @@
     "duration_hours": 220,
     "course_fee": 6050.0,
     "course_fee_display": "6.050 €",
-    "exam_fee_scraped": 630.0,
-    "exam_fee_qualifier": "ca.",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 630.0,
       "fee_max": null,
-      "qualifier": "ca.",
-      "display": "ca. 630 €",
-      "from_tariff": false
+      "qualifier": "",
+      "display": "630 €",
+      "from_tariff": true
     },
     "city": "Nürnberg",
     "street": "Deumentenstraße 1",
@@ -63945,14 +63946,14 @@
     "duration_hours": 1140,
     "course_fee": 14500.0,
     "course_fee_display": "14.500 €",
-    "exam_fee_scraped": 680.0,
-    "exam_fee_qualifier": "ca.",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 680.0,
+      "fee": 630.0,
       "fee_max": null,
-      "qualifier": "ca.",
-      "display": "ca. 680 €",
-      "from_tariff": false
+      "qualifier": "",
+      "display": "630 €",
+      "from_tariff": true
     },
     "city": "Nürnberg",
     "street": "Lenbachstraße 8",
@@ -63982,14 +63983,14 @@
     "duration_hours": 1140,
     "course_fee": 15800.0,
     "course_fee_display": "15.800 €",
-    "exam_fee_scraped": 680.0,
-    "exam_fee_qualifier": "ca.",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 680.0,
+      "fee": 630.0,
       "fee_max": null,
-      "qualifier": "ca.",
-      "display": "ca. 680 €",
-      "from_tariff": false
+      "qualifier": "",
+      "display": "630 €",
+      "from_tariff": true
     },
     "city": "Nürnberg",
     "street": "Lenbachstraße 8",
@@ -64366,7 +64367,7 @@
     "zip_code": "85051",
     "latitude": 48.7589347,
     "longitude": 11.4306089,
-    "availability": "available",
+    "availability": "unknown",
     "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1230789"
   },
   {
@@ -65092,7 +65093,7 @@
     "zip_code": "83278",
     "latitude": 47.855512,
     "longitude": 12.6341286,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1220049"
   },
   {
@@ -65168,79 +65169,6 @@
     "longitude": 12.6341286,
     "availability": "unknown",
     "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1229619"
-  },
-  {
-    "chamber_slug": "hwk-muenchen-und-oberbayern",
-    "chamber_name": "HWK für München und Oberbayern",
-    "chamber_region": "Bayern",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
-    "parts": [
-      3,
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-09-16",
-    "end_date": "2026-11-06",
-    "start_date_note": "",
-    "duration_hours": 340,
-    "course_fee": 2865.0,
-    "course_fee_display": "2.865 €",
-    "exam_fee_scraped": 312.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 312.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "312 €",
-      "from_tariff": false
-    },
-    "city": "Mühldorf",
-    "street": "Töginger Straße 49",
-    "zip_code": "84453",
-    "latitude": 48.2462844,
-    "longitude": 12.5306834,
-    "availability": "available",
-    "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1216998"
-  },
-  {
-    "chamber_slug": "hwk-muenchen-und-oberbayern",
-    "chamber_name": "HWK für München und Oberbayern",
-    "chamber_region": "Bayern",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-09-16",
-    "end_date": "2026-12-09",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 810.0,
-    "course_fee_display": "810 €",
-    "exam_fee_scraped": 156.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 156.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "156 €",
-      "from_tariff": false
-    },
-    "city": "Traunstein",
-    "street": "Mühlwiesen 4",
-    "zip_code": "83278",
-    "latitude": 47.855512,
-    "longitude": 12.6341286,
-    "availability": "available",
-    "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1228874"
   },
   {
     "chamber_slug": "hwk-muenchen-und-oberbayern",
@@ -72913,8 +72841,8 @@
     "end_date": "2027-12-01",
     "start_date_note": "Genauer Termin steht noch nicht fest.",
     "duration_hours": 304,
-    "course_fee": null,
-    "course_fee_display": "—",
+    "course_fee": 3650.0,
+    "course_fee_display": "3.650 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -73042,6 +72970,42 @@
     "longitude": 12.1756219,
     "availability": "full",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1011337"
+  },
+  {
+    "chamber_slug": "hwk-niederbayern-oberpfalz",
+    "chamber_name": "HWK Niederbayern-Oberpfalz",
+    "chamber_region": "Bayern",
+    "trade_slug": "installateur-und-heizungsbauer",
+    "trade_name": "Installateur- und Heizungsbauer",
+    "title": "Installateur- und Heizungsbauer (Teil I)",
+    "parts": [
+      1
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-02-16",
+    "end_date": "2027-03-18",
+    "start_date_note": "",
+    "duration_hours": 180,
+    "course_fee": 2090.0,
+    "course_fee_display": "2.090 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": null,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "",
+      "from_tariff": false
+    },
+    "city": "Passau",
+    "street": "Simmerlingweg 4 und 15",
+    "zip_code": "94036",
+    "latitude": 48.5626047,
+    "longitude": 13.4060264,
+    "availability": "full",
+    "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1025910"
   },
   {
     "chamber_slug": "hwk-niederbayern-oberpfalz",
@@ -73264,6 +73228,43 @@
     "longitude": 12.1756219,
     "availability": "unknown",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1025702"
+  },
+  {
+    "chamber_slug": "hwk-niederbayern-oberpfalz",
+    "chamber_name": "HWK Niederbayern-Oberpfalz",
+    "chamber_region": "Bayern",
+    "trade_slug": "installateur-und-heizungsbauer",
+    "trade_name": "Installateur- und Heizungsbauer",
+    "title": "Installateur- und Heizungsbauer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2030-01-01",
+    "end_date": "2030-08-01",
+    "start_date_note": "Genauer Termin steht noch nicht fest.",
+    "duration_hours": 960,
+    "course_fee": null,
+    "course_fee_display": "—",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": null,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "",
+      "from_tariff": false
+    },
+    "city": "Passau",
+    "street": "Simmerlingweg 4 und 15",
+    "zip_code": "94036",
+    "latitude": 48.5626047,
+    "longitude": 13.4060264,
+    "availability": "unknown",
+    "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1025865"
   },
   {
     "chamber_slug": "hwk-niederbayern-oberpfalz",
@@ -73966,8 +73967,9 @@
     "chamber_region": "Bayern",
     "trade_slug": "klempner",
     "trade_name": "Klempner",
-    "title": "Klempner (Teil II)",
+    "title": "Klempner (Teile I + II)",
     "parts": [
+      1,
       2
     ],
     "format": "full_time",
@@ -90684,7 +90686,7 @@
     "zip_code": "49088",
     "latitude": 52.290842,
     "longitude": 8.0401607,
-    "availability": "unknown",
+    "availability": "full",
     "source_url": "https://www.btz-osnabrueck.de/seminar/mstrmauvza/#kurs-20261"
   },
   {
@@ -99873,7 +99875,7 @@
     "latitude": 49.4760852,
     "longitude": 8.4080881,
     "availability": "available",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-elektrotechniker-teile-i-ii-51,0,coursedetail.html?id=110304&search-onr=51&img=9"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-elektrotechniker-teile-i-ii-51,0,coursedetail.html?id=110304&search-onr=51&img=10"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -100147,15 +100149,15 @@
     "end_date": "2029-12-15",
     "start_date_note": "",
     "duration_hours": 620,
-    "course_fee": null,
-    "course_fee_display": "—",
-    "exam_fee_scraped": null,
+    "course_fee": 4000.0,
+    "course_fee_display": "4.000 €",
+    "exam_fee_scraped": 600.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": null,
+      "fee": 600.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "",
+      "display": "600 €",
       "from_tariff": false
     },
     "city": "Kaiserslautern",
@@ -100163,8 +100165,44 @@
     "zip_code": "67655",
     "latitude": 49.444007,
     "longitude": 7.7687411,
-    "availability": "unknown",
+    "availability": "available",
     "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-kraftfahrzeugtechniker-teil-ii-51,0,coursedetail.html?id=107662&search-onr=51&img=1"
+  },
+  {
+    "chamber_slug": "hwk-pfalz",
+    "chamber_name": "HWK der Pfalz",
+    "chamber_region": "Rheinland-Pfalz",
+    "trade_slug": "kfz-techniker",
+    "trade_name": "Kfz.-Techniker",
+    "title": "Kfz.-Techniker (Teil II)",
+    "parts": [
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2030-09-14",
+    "end_date": "2031-12-13",
+    "start_date_note": "",
+    "duration_hours": 620,
+    "course_fee": null,
+    "course_fee_display": "—",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 600.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "600 €",
+      "from_tariff": true
+    },
+    "city": "Kaiserslautern",
+    "street": "Am Altenhof 15",
+    "zip_code": "67655",
+    "latitude": 49.444007,
+    "longitude": 7.7687411,
+    "availability": "unknown",
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-kraftfahrzeugtechniker-teil-ii-51,0,coursedetail.html?id=111486&search-onr=51&img=9"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -103551,43 +103589,6 @@
     "longitude": 9.059163,
     "availability": "available",
     "source_url": "https://www.hwk-reutlingen.de/seminar/t-mv-i-ii_metall-tz/#kurs-9"
-  },
-  {
-    "chamber_slug": "hwk-reutlingen",
-    "chamber_name": "HWK Reutlingen",
-    "chamber_region": "Baden-Württemberg",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
-    "parts": [
-      3,
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-09-15",
-    "end_date": "2027-04-22",
-    "start_date_note": "",
-    "duration_hours": 355,
-    "course_fee": 2750.0,
-    "course_fee_display": "2.750 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 450.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "450 €",
-      "from_tariff": true
-    },
-    "city": "Reutlingen",
-    "street": "Hindenburgstraße 58",
-    "zip_code": "72762",
-    "latitude": 48.4857514,
-    "longitude": 9.2063686,
-    "availability": "full",
-    "source_url": "https://www.hwk-reutlingen.de/seminar/r-mv-iii-iv-tz/#kurs-17"
   },
   {
     "chamber_slug": "hwk-reutlingen",
@@ -107762,42 +107763,6 @@
     "longitude": 6.9967,
     "availability": "unknown",
     "source_url": "https://www.hwk-saarland.de/seminar/ms-friseure-vollzeit-msvzfri/"
-  },
-  {
-    "chamber_slug": "hwk-saarland",
-    "chamber_name": "HWK des Saarlandes",
-    "chamber_region": "Saarland",
-    "trade_slug": "installateur-und-heizungsbauer",
-    "trade_name": "Installateur und Heizungsbauer",
-    "title": "Installateur und Heizungsbauer (Teil I)",
-    "parts": [
-      1
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-10-30",
-    "end_date": "2027-04-22",
-    "start_date_note": "",
-    "duration_hours": 240,
-    "course_fee": 3035.0,
-    "course_fee_display": "3.035 €",
-    "exam_fee_scraped": 990.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 990.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "990 €",
-      "from_tariff": false
-    },
-    "city": "Saarbrücken",
-    "street": "Hohenzollernstraße 47-49",
-    "zip_code": "66117",
-    "latitude": 49.2297,
-    "longitude": 6.9967,
-    "availability": "available",
-    "source_url": "https://www.hwk-saarland.de/seminar/mv-teil-i-installateur-und-heizungsbauer-m1ih/"
   },
   {
     "chamber_slug": "hwk-saarland",
@@ -113156,7 +113121,7 @@
     "zip_code": "",
     "latitude": 53.6288297,
     "longitude": 11.4148038,
-    "availability": "available",
+    "availability": "unknown",
     "source_url": "https://www.hwk-schwerin.de/19,0,coursedetail.html?id=88060"
   },
   {
@@ -118795,43 +118760,6 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
-    "start_date": "2026-09-15",
-    "end_date": "2027-04-16",
-    "start_date_note": "",
-    "duration_hours": 1200,
-    "course_fee": 10200.0,
-    "course_fee_display": "10.200 €",
-    "exam_fee_scraped": 1000.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 1000.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "1.000 €",
-      "from_tariff": false
-    },
-    "city": "Arnsberg",
-    "street": "Im Hülsenfeld 42",
-    "zip_code": "59755",
-    "latitude": 51.4470454,
-    "longitude": 7.9631509,
-    "availability": "full",
-    "source_url": "https://www.bbz-arnsberg.de/kurse/meisterkurs-installateure-und-heizungsbauer-vollzeit#termin-1"
-  },
-  {
-    "chamber_slug": "hwk-suedwestfalen",
-    "chamber_name": "HWK Südwestfalen",
-    "chamber_region": "Nordrhein-Westfalen",
-    "trade_slug": "installateur-und-heizungsbauer",
-    "trade_name": "Installateur- und Heizungsbauer",
-    "title": "Installateur- und Heizungsbauer (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
     "start_date": "2027-02-02",
     "end_date": "2027-09-03",
     "start_date_note": "",
@@ -118853,7 +118781,7 @@
     "latitude": 51.4470454,
     "longitude": 7.9631509,
     "availability": "full",
-    "source_url": "https://www.bbz-arnsberg.de/kurse/meisterkurs-installateure-und-heizungsbauer-vollzeit#termin-2"
+    "source_url": "https://www.bbz-arnsberg.de/kurse/meisterkurs-installateure-und-heizungsbauer-vollzeit#termin-1"
   },
   {
     "chamber_slug": "hwk-suedwestfalen",
@@ -118890,7 +118818,7 @@
     "latitude": 51.4470454,
     "longitude": 7.9631509,
     "availability": "full",
-    "source_url": "https://www.bbz-arnsberg.de/kurse/meisterkurs-installateure-und-heizungsbauer-vollzeit#termin-3"
+    "source_url": "https://www.bbz-arnsberg.de/kurse/meisterkurs-installateure-und-heizungsbauer-vollzeit#termin-2"
   },
   {
     "chamber_slug": "hwk-suedwestfalen",
@@ -118927,7 +118855,7 @@
     "latitude": 51.4470454,
     "longitude": 7.9631509,
     "availability": "full",
-    "source_url": "https://www.bbz-arnsberg.de/kurse/meisterkurs-installateure-und-heizungsbauer-vollzeit#termin-4"
+    "source_url": "https://www.bbz-arnsberg.de/kurse/meisterkurs-installateure-und-heizungsbauer-vollzeit#termin-3"
   },
   {
     "chamber_slug": "hwk-suedwestfalen",
@@ -119001,7 +118929,7 @@
     "latitude": 51.4470454,
     "longitude": 7.9631509,
     "availability": "full",
-    "source_url": "https://www.bbz-arnsberg.de/kurse/meisterkurs-installateure-und-heizungsbauer-vollzeit#termin-5"
+    "source_url": "https://www.bbz-arnsberg.de/kurse/meisterkurs-installateure-und-heizungsbauer-vollzeit#termin-4"
   },
   {
     "chamber_slug": "hwk-suedwestfalen",
@@ -119074,7 +119002,7 @@
     "zip_code": "59755",
     "latitude": 51.4470454,
     "longitude": 7.9631509,
-    "availability": "waitlist",
+    "availability": "full",
     "source_url": "https://www.bbz-arnsberg.de/kurse/meisterkurs-kraftfahrzeugtechniker-vollzeit#termin-1"
   },
   {

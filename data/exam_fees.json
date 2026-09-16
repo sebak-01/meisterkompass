@@ -2284,13 +2284,6 @@
           "qualifier": ""
         }
       },
-      "backer": {
-        "1,2": {
-          "fee": 630.0,
-          "fee_max": null,
-          "qualifier": "ca."
-        }
-      },
       "feinwerkmechaniker": {
         "1,2": {
           "fee": 630.0,
@@ -2303,20 +2296,6 @@
           "fee": 630.0,
           "fee_max": null,
           "qualifier": ""
-        }
-      },
-      "installateur-und-heizungsbauer": {
-        "1,2": {
-          "fee": 680.0,
-          "fee_max": null,
-          "qualifier": "ca."
-        }
-      },
-      "konditor": {
-        "1,2": {
-          "fee": 630.0,
-          "fee_max": null,
-          "qualifier": "ca."
         }
       },
       "maler-und-lackierer": {
@@ -2354,13 +2333,6 @@
           "qualifier": "ca."
         }
       },
-      "zahntechniker": {
-        "1,2": {
-          "fee": 680.0,
-          "fee_max": null,
-          "qualifier": "ca."
-        }
-      },
       "zimmerer": {
         "1,2": {
           "fee": 630.0,
@@ -2378,11 +2350,6 @@
         },
         "3,4": {
           "fee": 312.0,
-          "fee_max": null,
-          "qualifier": ""
-        },
-        "4": {
-          "fee": 156.0,
           "fee_max": null,
           "qualifier": ""
         }
@@ -3186,6 +3153,13 @@
         },
         "2": {
           "fee": 400.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "kfz-techniker": {
+        "2": {
+          "fee": 600.0,
           "fee_max": null,
           "qualifier": ""
         }
