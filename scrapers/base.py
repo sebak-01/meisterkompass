@@ -36,6 +36,7 @@ TRADE_CANONICAL_ALIASES: dict[str, str] = {
     "friseure": "Friseur",
     "friseurinnen": "Friseur",
     "steinmetze und steinbildhauer": "Steinmetz und Steinbildhauer",
+    "steinmetzen und steinbildhauer": "Steinmetz und Steinbildhauer",
     "edelsteinschleifer- und graveure": "Edelsteinschleifer und Graveur",
     "schilder- und lichtreklamehersteller-handwerk": "Schilder- und Lichtreklamehersteller",
     "maler": "Maler und Lackierer",
