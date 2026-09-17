@@ -2291,20 +2291,6 @@
           "qualifier": ""
         }
       },
-      "friseur": {
-        "1,2": {
-          "fee": 630.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "maler-und-lackierer": {
-        "1,2": {
-          "fee": 630.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
       "maurer-und-betonbauer": {
         "1,2": {
           "fee": 630.0,
@@ -2317,13 +2303,6 @@
           "fee": 630.0,
           "fee_max": null,
           "qualifier": ""
-        }
-      },
-      "stuckateur": {
-        "1,2": {
-          "fee": 630.0,
-          "fee_max": null,
-          "qualifier": "ca."
         }
       },
       "tischler": {

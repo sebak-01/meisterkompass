@@ -3382,43 +3382,6 @@
       1,
       2
     ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "hybrid",
-    "start_date": "2027-05-13",
-    "end_date": "2030-03-15",
-    "start_date_note": "",
-    "duration_hours": 1430,
-    "course_fee": 14500.0,
-    "course_fee_display": "14.500 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 1960.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "1.960 €",
-      "from_tariff": true
-    },
-    "city": "Braunschweig",
-    "street": "",
-    "zip_code": "",
-    "latitude": 52.2646577,
-    "longitude": 10.5236066,
-    "availability": "waitlist",
-    "source_url": "https://weiterbildung.hwk-bls.de/22,0,coursedetail.html?id=318341"
-  },
-  {
-    "chamber_slug": "hwk-braunschweig-lueneburg-stade",
-    "chamber_name": "HWK Braunschweig-Lüneburg-Stade",
-    "chamber_region": "Niedersachsen",
-    "trade_slug": "installateur-und-heizungsbauer",
-    "trade_name": "Installateur- und Heizungsbauer",
-    "title": "Installateur- und Heizungsbauer (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
@@ -4986,6 +4949,43 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
+    "start_date": "2026-10-19",
+    "end_date": "2027-02-12",
+    "start_date_note": "",
+    "duration_hours": 480,
+    "course_fee": 4600.0,
+    "course_fee_display": "4.600 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 840.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "840 €",
+      "from_tariff": true
+    },
+    "city": "Bremen",
+    "street": "Schongauerstr. 2",
+    "zip_code": "28219",
+    "latitude": 53.0979216,
+    "longitude": 8.7803106,
+    "availability": "available",
+    "source_url": "https://www.handwerkbremen.de/service-center/kurse-und-seminare#/vorlage/MVK/214539?kurs=75283"
+  },
+  {
+    "chamber_slug": "hwk-bremen",
+    "chamber_name": "HWK Bremen",
+    "chamber_region": "Bremen",
+    "trade_slug": "friseur",
+    "trade_name": "Friseur",
+    "title": "Friseur (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
     "start_date": "2027-10-18",
     "end_date": "2028-02-11",
     "start_date_note": "",
@@ -5447,6 +5447,43 @@
     "longitude": 8.7803106,
     "availability": "unknown",
     "source_url": "https://www.handwerkbremen.de/meister-in/meisterkurse/meisterkurs-tischler-in-vollzeit"
+  },
+  {
+    "chamber_slug": "hwk-bremen",
+    "chamber_name": "HWK Bremen",
+    "chamber_region": "Bremen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "parts": [
+      3,
+      4
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-10-05",
+    "end_date": "2026-12-11",
+    "start_date_note": "",
+    "duration_hours": 300,
+    "course_fee": 2800.0,
+    "course_fee_display": "2.800 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 320.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "320 €",
+      "from_tariff": true
+    },
+    "city": "Bremen",
+    "street": "Schongauerstr. 2",
+    "zip_code": "28219",
+    "latitude": 53.0979216,
+    "longitude": 8.7803106,
+    "availability": "available",
+    "source_url": "https://www.handwerkbremen.de/service-center/kurse-und-seminare#/vorlage/MVK/215045?kurs=64638"
   },
   {
     "chamber_slug": "hwk-bremen",
@@ -13747,6 +13784,42 @@
     "chamber_region": "Brandenburg",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
+    "parts": [
+      4
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-07-19",
+    "end_date": "2027-08-03",
+    "start_date_note": "",
+    "duration_hours": 96,
+    "course_fee": 940.0,
+    "course_fee_display": "940 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 255.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "255 €",
+      "from_tariff": true
+    },
+    "city": "Wildau",
+    "street": "Schwartzkopffstraße 1",
+    "zip_code": "15745",
+    "latitude": 52.3198785,
+    "longitude": 13.6310976,
+    "availability": "available",
+    "source_url": "https://www.hwk-cottbus.de/7,0,coursedetail.html?id=68506"
+  },
+  {
+    "chamber_slug": "hwk-cottbus",
+    "chamber_name": "HWK Cottbus",
+    "chamber_region": "Brandenburg",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Wirtschaft und Recht (Teil III)",
     "parts": [
       3
@@ -14893,8 +14966,8 @@
     "end_date": "2027-11-12",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3730.0,
-    "course_fee_display": "3.730 €",
+    "course_fee": 3530.0,
+    "course_fee_display": "3.530 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -14910,7 +14983,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-3"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-1"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -14929,8 +15002,8 @@
     "end_date": "2027-11-12",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3730.0,
-    "course_fee_display": "3.730 €",
+    "course_fee": 3530.0,
+    "course_fee_display": "3.530 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -14946,7 +15019,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-4"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-2"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15018,7 +15091,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-2"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-1"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15054,7 +15127,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-4"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-2"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15126,7 +15199,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-1"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-3"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15162,7 +15235,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-3"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-4"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15217,8 +15290,8 @@
     "end_date": "2028-11-10",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3730.0,
-    "course_fee_display": "3.730 €",
+    "course_fee": 3530.0,
+    "course_fee_display": "3.530 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -15233,8 +15306,8 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-1"
+    "availability": "waitlist",
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-3"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15253,8 +15326,8 @@
     "end_date": "2028-11-10",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3730.0,
-    "course_fee_display": "3.730 €",
+    "course_fee": 3530.0,
+    "course_fee_display": "3.530 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -15270,7 +15343,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-2"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-4"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15637,7 +15710,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-2"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-1"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15672,7 +15745,7 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "waitlist",
+    "availability": "available",
     "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-2"
   },
   {
@@ -15709,7 +15782,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-3"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-2"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15852,8 +15925,8 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-4"
+    "availability": "available",
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-3"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15961,7 +16034,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-5"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-4"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -16141,7 +16214,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-6"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-5"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -16213,7 +16286,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-7"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-6"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -16357,7 +16430,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-8"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-7"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -16429,7 +16502,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-9"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-8"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -16501,7 +16574,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-10"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-9"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -16573,7 +16646,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-11"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-10"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -16645,7 +16718,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-12"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-11"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -16717,7 +16790,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-13"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-12"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -16933,7 +17006,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-14"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-13"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -17005,7 +17078,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-15"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-14"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -17077,7 +17150,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-16"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-15"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -17221,7 +17294,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-17"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-16"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -27038,6 +27111,80 @@
     "chamber_slug": "hwk-erfurt",
     "chamber_name": "HWK Erfurt",
     "chamber_region": "Thüringen",
+    "trade_slug": "kfz-techniker",
+    "trade_name": "Kfz.-Techniker",
+    "title": "Kfz.-Techniker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-02-12",
+    "end_date": "2028-12-02",
+    "start_date_note": "",
+    "duration_hours": 850,
+    "course_fee": 8100.0,
+    "course_fee_display": "8.100 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 760.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "760 €",
+      "from_tariff": true
+    },
+    "city": "Erfurt",
+    "street": "",
+    "zip_code": "",
+    "latitude": 50.9777974,
+    "longitude": 11.0287364,
+    "availability": "available",
+    "source_url": "https://www.hwk-erfurt.de/4,0,coursedetail.html?id=67321"
+  },
+  {
+    "chamber_slug": "hwk-erfurt",
+    "chamber_name": "HWK Erfurt",
+    "chamber_region": "Thüringen",
+    "trade_slug": "kfz-techniker",
+    "trade_name": "Kfz.-Techniker",
+    "title": "Kfz.-Techniker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-02-22",
+    "end_date": "2027-11-26",
+    "start_date_note": "",
+    "duration_hours": 850,
+    "course_fee": 8100.0,
+    "course_fee_display": "8.100 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 760.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "760 €",
+      "from_tariff": true
+    },
+    "city": "Erfurt",
+    "street": "",
+    "zip_code": "",
+    "latitude": 50.9777974,
+    "longitude": 11.0287364,
+    "availability": "waitlist",
+    "source_url": "https://www.hwk-erfurt.de/4,0,coursedetail.html?id=67316"
+  },
+  {
+    "chamber_slug": "hwk-erfurt",
+    "chamber_name": "HWK Erfurt",
+    "chamber_region": "Thüringen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Wirtschaft und Recht (Teil III)",
@@ -29391,8 +29538,8 @@
     "format": "part_time",
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
-    "start_date": "2027-11-26",
-    "end_date": "2028-12-02",
+    "start_date": "2027-11-02",
+    "end_date": "2028-12-09",
     "start_date_note": "",
     "duration_hours": 950,
     "course_fee": 9850.0,
@@ -30313,8 +30460,8 @@
     "format": "part_time",
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
-    "start_date": "2026-12-11",
-    "end_date": "2027-07-03",
+    "start_date": "2027-01-08",
+    "end_date": "2027-07-10",
     "start_date_note": "",
     "duration_hours": 280,
     "course_fee": 2280.0,
@@ -32788,78 +32935,6 @@
     "chamber_region": "Sachsen-Anhalt",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-10-12",
-    "end_date": "2026-12-11",
-    "start_date_note": "",
-    "duration_hours": 288,
-    "course_fee": 2800.0,
-    "course_fee_display": "2.800 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 208.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "208 €",
-      "from_tariff": true
-    },
-    "city": "Halle (Saale)",
-    "street": "Straße der Handwerker 2",
-    "zip_code": "06132",
-    "latitude": 51.4232026,
-    "longitude": 12.0122588,
-    "availability": "available",
-    "source_url": "https://www.hwkhalle.de/seminar/fb-uf-fkm-bf/#kurs-27606"
-  },
-  {
-    "chamber_slug": "hwk-halle-saale",
-    "chamber_name": "HWK Halle (Saale)",
-    "chamber_region": "Sachsen-Anhalt",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-10-12",
-    "end_date": "2026-12-11",
-    "start_date_note": "",
-    "duration_hours": 248,
-    "course_fee": 2000.0,
-    "course_fee_display": "2.000 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 208.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "208 €",
-      "from_tariff": true
-    },
-    "city": "Halle (Saale)",
-    "street": "Straße der Handwerker 2",
-    "zip_code": "06132",
-    "latitude": 51.4232026,
-    "longitude": 12.0122588,
-    "availability": "available",
-    "source_url": "https://www.hwkhalle.de/seminar/mvl-gem-iii/#kurs-27688"
-  },
-  {
-    "chamber_slug": "hwk-halle-saale",
-    "chamber_name": "HWK Halle (Saale)",
-    "chamber_region": "Sachsen-Anhalt",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Berufs- und Arbeitspädagogik (Teil IV)",
     "parts": [
       4
@@ -35001,7 +35076,7 @@
     "zip_code": "21079",
     "latitude": 53.4582352,
     "longitude": 9.9959008,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.elbcampus.de/weiterbildung/ada-ausbildung-der-ausbilder/"
   },
   {
@@ -40365,6 +40440,42 @@
     "longitude": 8.36939,
     "availability": "available",
     "source_url": "https://www.bia-karlsruhe.de/kurse/meistervorbereitung-im-handwerk-teil-3-u-4-vollzeit-wirtschaftlich-rechtliche-kenntnisse-und-berufs-arbeitspaedagogische-kenntnisse-3631,0,coursedetail.html?id=90964&search-onr=3631&img=3"
+  },
+  {
+    "chamber_slug": "hwk-karlsruhe",
+    "chamber_name": "HWK Karlsruhe",
+    "chamber_region": "Baden-Württemberg",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": null,
+    "end_date": null,
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": null,
+    "course_fee_display": "—",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 200.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "200 €",
+      "from_tariff": true
+    },
+    "city": "Karlsruhe",
+    "street": "Hertzstraße 177",
+    "zip_code": "76187",
+    "latitude": 49.039484,
+    "longitude": 8.36939,
+    "availability": "unknown",
+    "source_url": "https://www.bia-karlsruhe.de/artikel/meistervorbereitung-teil-iii-3631,0,399.html"
   },
   {
     "chamber_slug": "hwk-kassel",
@@ -46835,7 +46946,7 @@
     "latitude": 50.5456433,
     "longitude": 7.1017081,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-crashkurs-52,0,coursedetail.html?id=115504&search-onr=52&img=19"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-crashkurs-52,0,coursedetail.html?id=115504&search-onr=52&img=20"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -46872,7 +46983,7 @@
     "latitude": 49.9837081,
     "longitude": 7.5250674,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-crashkurs-52,0,coursedetail.html?id=115509&search-onr=52&img=1"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-crashkurs-52,0,coursedetail.html?id=115509&search-onr=52&img=19"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -46909,7 +47020,7 @@
     "latitude": 50.7821939,
     "longitude": 7.740086,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-crashkurs-52,0,coursedetail.html?id=115514&search-onr=52&img=20"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-crashkurs-52,0,coursedetail.html?id=115514&search-onr=52&img=1"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -47131,7 +47242,7 @@
     "latitude": 50.5456433,
     "longitude": 7.1017081,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-teilzeit-52,0,coursedetail.html?id=115566&search-onr=52&img=4"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-teilzeit-52,0,coursedetail.html?id=115566&search-onr=52&img=3"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -47168,7 +47279,7 @@
     "latitude": 50.7821939,
     "longitude": 7.740086,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-teilzeit-52,0,coursedetail.html?id=115571&search-onr=52&img=3"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-teilzeit-52,0,coursedetail.html?id=115571&search-onr=52&img=4"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -47612,7 +47723,7 @@
     "latitude": 50.7821939,
     "longitude": 7.740086,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-vollzeit-52,0,coursedetail.html?id=120118&search-onr=52&img=18"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-vollzeit-52,0,coursedetail.html?id=120118&search-onr=52&img=17"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -47649,7 +47760,7 @@
     "latitude": 50.3603382,
     "longitude": 7.5844202,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-vollzeit-52,0,coursedetail.html?id=120123&search-onr=52&img=17"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-vollzeit-52,0,coursedetail.html?id=120123&search-onr=52&img=18"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -61616,14 +61727,14 @@
     "duration_hours": 415,
     "course_fee": 5700.0,
     "course_fee_display": "5.700 €",
-    "exam_fee_scraped": 630.0,
+    "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 630.0,
       "fee_max": null,
       "qualifier": "",
       "display": "630 €",
-      "from_tariff": false
+      "from_tariff": true
     },
     "city": "Nürnberg",
     "street": "Lenbachstraße 8",
@@ -61653,14 +61764,14 @@
     "duration_hours": 415,
     "course_fee": 6400.0,
     "course_fee_display": "6.400 €",
-    "exam_fee_scraped": 630.0,
+    "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 630.0,
       "fee_max": null,
       "qualifier": "",
       "display": "630 €",
-      "from_tariff": false
+      "from_tariff": true
     },
     "city": "Nürnberg",
     "street": "Lenbachstraße 8",
@@ -61690,14 +61801,14 @@
     "duration_hours": 415,
     "course_fee": 6400.0,
     "course_fee_display": "6.400 €",
-    "exam_fee_scraped": 630.0,
+    "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 630.0,
       "fee_max": null,
       "qualifier": "",
       "display": "630 €",
-      "from_tariff": false
+      "from_tariff": true
     },
     "city": "Nürnberg",
     "street": "Lenbachstraße 8",
@@ -61727,14 +61838,14 @@
     "duration_hours": 415,
     "course_fee": 7100.0,
     "course_fee_display": "7.100 €",
-    "exam_fee_scraped": 630.0,
+    "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 630.0,
       "fee_max": null,
       "qualifier": "",
       "display": "630 €",
-      "from_tariff": false
+      "from_tariff": true
     },
     "city": "Nürnberg",
     "street": "Lenbachstraße 8",
@@ -61764,14 +61875,14 @@
     "duration_hours": 415,
     "course_fee": 7100.0,
     "course_fee_display": "7.100 €",
-    "exam_fee_scraped": 630.0,
+    "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 630.0,
       "fee_max": null,
       "qualifier": "",
       "display": "630 €",
-      "from_tariff": false
+      "from_tariff": true
     },
     "city": "Nürnberg",
     "street": "Lenbachstraße 8",
@@ -61801,14 +61912,14 @@
     "duration_hours": 415,
     "course_fee": 7500.0,
     "course_fee_display": "7.500 €",
-    "exam_fee_scraped": 630.0,
+    "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 630.0,
       "fee_max": null,
       "qualifier": "",
       "display": "630 €",
-      "from_tariff": false
+      "from_tariff": true
     },
     "city": "Nürnberg",
     "street": "Lenbachstraße 8",
@@ -61838,14 +61949,14 @@
     "duration_hours": 415,
     "course_fee": 7500.0,
     "course_fee_display": "7.500 €",
-    "exam_fee_scraped": 630.0,
+    "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 630.0,
       "fee_max": null,
       "qualifier": "",
       "display": "630 €",
-      "from_tariff": false
+      "from_tariff": true
     },
     "city": "Nürnberg",
     "street": "Lenbachstraße 8",
@@ -62023,14 +62134,14 @@
     "duration_hours": 1000,
     "course_fee": 11350.0,
     "course_fee_display": "11.350 €",
-    "exam_fee_scraped": 630.0,
+    "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 630.0,
       "fee_max": null,
       "qualifier": "",
       "display": "630 €",
-      "from_tariff": false
+      "from_tariff": true
     },
     "city": "Nürnberg",
     "street": "Sieboldstraße 9",
@@ -62060,14 +62171,14 @@
     "duration_hours": 1200,
     "course_fee": 11850.0,
     "course_fee_display": "11.850 €",
-    "exam_fee_scraped": 630.0,
+    "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 630.0,
       "fee_max": null,
       "qualifier": "",
       "display": "630 €",
-      "from_tariff": false
+      "from_tariff": true
     },
     "city": "Nürnberg",
     "street": "",
@@ -62097,14 +62208,14 @@
     "duration_hours": null,
     "course_fee": 12200.0,
     "course_fee_display": "12.200 €",
-    "exam_fee_scraped": 630.0,
+    "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 630.0,
       "fee_max": null,
       "qualifier": "",
       "display": "630 €",
-      "from_tariff": false
+      "from_tariff": true
     },
     "city": "Nürnberg",
     "street": "",
@@ -62319,14 +62430,14 @@
     "duration_hours": 915,
     "course_fee": 10550.0,
     "course_fee_display": "10.550 €",
-    "exam_fee_scraped": 630.0,
-    "exam_fee_qualifier": "ca.",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 630.0,
       "fee_max": null,
-      "qualifier": "ca.",
-      "display": "ca. 630 €",
-      "from_tariff": false
+      "qualifier": "",
+      "display": "630 €",
+      "from_tariff": true
     },
     "city": "Nürnberg",
     "street": "Sieboldstraße 9",
@@ -62704,6 +62815,43 @@
     "longitude": 11.077298,
     "availability": "available",
     "source_url": "https://www.hwk-akademie.de/3751,0,coursedetail.html?id=623164"
+  },
+  {
+    "chamber_slug": "hwk-mittelfranken",
+    "chamber_name": "HWK für Mittelfranken",
+    "chamber_region": "Bayern",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "parts": [
+      3,
+      4
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-03-16",
+    "end_date": "2027-05-21",
+    "start_date_note": "",
+    "duration_hours": 335,
+    "course_fee": 3200.0,
+    "course_fee_display": "3.200 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 330.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "330 €",
+      "from_tariff": true
+    },
+    "city": "Ansbach",
+    "street": "",
+    "zip_code": "",
+    "latitude": 49.2888745,
+    "longitude": 10.5597693,
+    "availability": "available",
+    "source_url": "https://www.hwk-akademie.de/3751,0,coursedetail.html?id=619699"
   },
   {
     "chamber_slug": "hwk-mittelfranken",
@@ -64367,7 +64515,7 @@
     "zip_code": "85051",
     "latitude": 48.7589347,
     "longitude": 11.4306089,
-    "availability": "unknown",
+    "availability": "available",
     "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1230789"
   },
   {
@@ -65040,16 +65188,16 @@
     "end_date": "2029-09-01",
     "start_date_note": "Genauer Termin steht noch nicht fest.",
     "duration_hours": 870,
-    "course_fee": null,
-    "course_fee_display": "—",
-    "exam_fee_scraped": null,
+    "course_fee": 7680.0,
+    "course_fee_display": "7.680 €",
+    "exam_fee_scraped": 440.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 440.0,
       "fee_max": null,
       "qualifier": "",
       "display": "440 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Traunstein",
     "street": "Mühlwiesen 4",
@@ -65110,27 +65258,27 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
-    "start_date": "2026-10-05",
-    "end_date": "2027-07-30",
-    "start_date_note": "Genauer Termin steht noch nicht fest.",
+    "start_date": "2027-10-04",
+    "end_date": "2028-07-28",
+    "start_date_note": "",
     "duration_hours": 1200,
-    "course_fee": null,
-    "course_fee_display": "—",
-    "exam_fee_scraped": null,
+    "course_fee": 8490.0,
+    "course_fee_display": "8.490 €",
+    "exam_fee_scraped": 440.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 440.0,
       "fee_max": null,
       "qualifier": "",
       "display": "440 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Traunstein",
     "street": "Mühlwiesen 4",
     "zip_code": "83278",
     "latitude": 47.855512,
     "longitude": 12.6341286,
-    "availability": "unknown",
+    "availability": "available",
     "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1229014"
   },
   {
@@ -65147,27 +65295,27 @@
     "format": "part_time",
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
-    "start_date": "2029-10-01",
-    "end_date": "2028-03-01",
-    "start_date_note": "Genauer Termin steht noch nicht fest.",
+    "start_date": "2028-03-10",
+    "end_date": "2029-08-11",
+    "start_date_note": "",
     "duration_hours": 1200,
-    "course_fee": null,
-    "course_fee_display": "—",
-    "exam_fee_scraped": null,
+    "course_fee": 8490.0,
+    "course_fee_display": "8.490 €",
+    "exam_fee_scraped": 440.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 440.0,
       "fee_max": null,
       "qualifier": "",
       "display": "440 €",
-      "from_tariff": true
+      "from_tariff": false
     },
     "city": "Traunstein",
     "street": "Mühlwiesen 4",
     "zip_code": "83278",
     "latitude": 47.855512,
     "longitude": 12.6341286,
-    "availability": "unknown",
+    "availability": "available",
     "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1229619"
   },
   {
@@ -69602,7 +69750,7 @@
     "zip_code": "48147",
     "latitude": 51.9830337,
     "longitude": 7.6358696,
-    "availability": "waitlist",
+    "availability": "available",
     "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-frau-meisterschule-teil-iv-iii-teilzeit-92291#termin-1"
   },
   {
@@ -73812,7 +73960,7 @@
     "zip_code": "93055",
     "latitude": 49.0144753,
     "longitude": 12.1382992,
-    "availability": "unknown",
+    "availability": "full",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1021266"
   },
   {
@@ -86740,7 +86888,7 @@
     "zip_code": "26123",
     "latitude": 53.1481773,
     "longitude": 8.2215208,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.hwk-oldenburg.de/weiterbildung/kurse-und-seminare#/vorlage/MVK/2124?kurs=44946"
   },
   {
@@ -96319,8 +96467,8 @@
     "end_date": "2027-07-09",
     "start_date_note": "",
     "duration_hours": 1140,
-    "course_fee": null,
-    "course_fee_display": "—",
+    "course_fee": 10645.0,
+    "course_fee_display": "10.645 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -96335,7 +96483,7 @@
     "zip_code": "18055",
     "latitude": 54.0753091,
     "longitude": 12.141125,
-    "availability": "unknown",
+    "availability": "available",
     "source_url": "https://www.hwk-omv.de/18,0,coursedetail.html?id=106587"
   },
   {
@@ -103108,7 +103256,7 @@
     "zip_code": "72072",
     "latitude": 48.5004109,
     "longitude": 9.059163,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwk-reutlingen.de/seminar/t-mv-i-ii_elo-tz/#kurs-11"
   },
   {
@@ -104592,42 +104740,6 @@
     "longitude": 8.65682,
     "availability": "available",
     "source_url": "https://portal.hwk-rhein-main.de/seminar/ml-99hv/"
-  },
-  {
-    "chamber_slug": "hwk-rhein-main",
-    "chamber_name": "HWK Frankfurt-Rhein-Main",
-    "chamber_region": "Hessen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-01-13",
-    "end_date": "2027-03-05",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": 2320.0,
-    "course_fee_display": "2.320 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 340.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "340 €",
-      "from_tariff": true
-    },
-    "city": "Frankfurt am Main",
-    "street": "Schönstraße 21",
-    "zip_code": "60327",
-    "latitude": 50.1013705,
-    "longitude": 8.65682,
-    "availability": "available",
-    "source_url": "https://portal.hwk-rhein-main.de/seminar/ml-99vz/"
   },
   {
     "chamber_slug": "hwk-rhein-main",
@@ -108967,42 +109079,6 @@
     "longitude": 6.9967,
     "availability": "unknown",
     "source_url": "https://www.hwk-saarland.de/seminar/ms-tischler-vollzeit-msvzti/"
-  },
-  {
-    "chamber_slug": "hwk-saarland",
-    "chamber_name": "HWK des Saarlandes",
-    "chamber_region": "Saarland",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-09-19",
-    "end_date": "2026-09-26",
-    "start_date_note": "",
-    "duration_hours": 56,
-    "course_fee": 505.0,
-    "course_fee_display": "505 €",
-    "exam_fee_scraped": 130.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 130.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "130 €",
-      "from_tariff": false
-    },
-    "city": "Saarbrücken",
-    "street": "Hohenzollernstraße 47-49",
-    "zip_code": "66117",
-    "latitude": 49.2297,
-    "longitude": 6.9967,
-    "availability": "available",
-    "source_url": "https://www.hwk-saarland.de/seminar/mv-teil-iv-m4vz/"
   },
   {
     "chamber_slug": "hwk-saarland",
@@ -121110,7 +121186,7 @@
     "zip_code": "54292",
     "latitude": 49.775426,
     "longitude": 6.6804464,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-trier.de/kurse/teil-iii-elektrotechniker-54,0,coursedetail.html?id=60549&search-onr=54&img=2"
   },
   {
@@ -124882,7 +124958,7 @@
     "zip_code": "97082",
     "latitude": 49.7990834,
     "longitude": 9.9071335,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-ufr.de/78,0,coursedetail.html?id=456576"
   },
   {
