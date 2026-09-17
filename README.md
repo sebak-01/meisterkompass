@@ -91,7 +91,10 @@ meisterkompass/
 │   ├── fees.py                # exam-fee resolution (course page → tariff → manual overlay)
 │   ├── geocode.py             # Photon geocoder + committed cache
 │   ├── pipeline.py            # scrape → merge → geocode → resolve → split → write JSON
-│   └── run.py                 # CLI: python -m scrapers.run [--mode courses|fees|all|…]
+│   ├── run.py                 # CLI: python -m scrapers.run [--mode courses|fees|all|…]
+│   ├── biv_suedwest.py        # shared ADB/BIV Südwest Bäcker Meister parser (used by Stuttgart)
+│   ├── bw_course_spec.py      # shared BW seminar CMS helpers (Heilbronn, Reutlingen, …)
+│   └── format_keys.py         # shared Vollzeit/Teilzeit detection from course-page prose
 ├── data/                       # checked-in dataset (consumed by web, written by CI)
 │   ├── courses.json            # UPCOMING + undated offers (resolved exam_fee baked in)
 │   ├── courses_archive.json    # PAST offers (lazy-loaded by the site on demand)
@@ -107,12 +110,15 @@ meisterkompass/
 │   ├── public/                 # favicon.svg, og-image.png, fonts/, sitemap.xml, robots.txt
 │   └── src/                    # base/list/afbg.css + nav/list/map/afbg/render/util.js
 ├── scripts/import_manual_fees_from_live.py  # recover curated fees from old site
-├── tests/test_{base,fees,exam_fee_tariff,scrape_pipeline,trier,bw,bayern,thueringen,sachsen_anhalt,sachsen,
-│              brandenburg,mecklenburg_vorpommern,schleswig_holstein,city_states,
-│              niedersachsen,nrw,rheinhessen}_scrapers.py
+├── tests/
+│   ├── test_{bayern,bw,brandenburg,city_states,mecklenburg_vorpommern,niedersachsen,
+│   │          nrw,sachsen,sachsen_anhalt,schleswig_holstein,thueringen,trier}_scrapers.py
+│   ├── test_{rheinhessen,saarland,hwk_kassel}_scraper.py
+│   ├── test_{base,fees,exam_fee_tariff,scrape_pipeline,geocode,format_keys}.py
+│   └── test_render_sort.mjs
 ├── requirements.txt             # requests, beautifulsoup4, pypdf, cloudscraper
 ├── mise.toml                    # pins python 3.12 + node 22
-└── .github/workflows/{scrape.yml, scrape-fees.yml, deploy.yml}
+└── .github/workflows/{scrape.yml, scrape-fees.yml, deploy.yml, test.yml, canary.yml}
 ```
 
 #### Exam fees — resolution priority
@@ -294,7 +300,7 @@ block so overview mentions of Teil III/IV on the same page do not pick up wrong 
 
 | Chamber | Slug | Course source | Exam-fee tariff |
 |---|---|---|---|
-| Koblenz | `hwk-koblenz` | bildung4u.de (ODAV) | Gebührenverzeichnis PDF (`bis zu` ceilings) |
+| Koblenz | `hwk-koblenz` | hwk-koblenz.de (paginated coursedetail CMS) | Gebührenverzeichnis PDF (`bis zu` ceilings) |
 | der Pfalz | `hwk-pfalz` | hwk-pfalz.de | course-page `exam_fee_scraped` where published |
 | Rheinhessen | `hwk-rheinhessen` | hwk-rheinhessen.de (WordPress) + [AFH Lübeck](https://www.afh-luebeck.de/en/meistervorbereitung/) portal for Hörakustiker | Gebührenverzeichnis PDF (fee ranges) |
 | Trier | `hwk-trier` | hwk-trier.de (Meistervorbereitungskurse + coursedetail) | course-page fees where published; weekly fallback from [Rechtsgrundlagen → Gebührenverzeichnis PDF](https://www.hwk-trier.de/artikel/rechtsgrundlagen-54,182,1061.html) for missing parts (e.g. generic Teil III) |
@@ -357,7 +363,7 @@ resolve time when present.
 
 | Chamber | Slug | Source |
 |---|---|---|
-| Berlin | `hwk-berlin` | bildung4u.de (same ODAV-style CMS as Koblenz) |
+| Berlin | `hwk-berlin` | bildung4u.de (same coursedetail CMS as Koblenz) |
 | Hamburg | `hwk-hamburg` | elbcampus.de (schema.org `Course` JSON-LD per trade page) |
 | Bremen | `hwk-bremen` | universal-kdb bulk feed + handwerkbremen.de Meisterkurs pages |
 
