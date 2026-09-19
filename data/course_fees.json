@@ -1,46 +1,5 @@
 [
   {
-    "chamber_slug": "hwk-dresden",
-    "trade_slug": "installateur-und-heizungsbauer",
-    "parts": [
-      2
-    ],
-    "fee": 6990.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      4
-    ],
-    "fee": 768.0,
-    "exam_fee_scraped": 275.0,
-    "is_generic": true
-  },
-  {
-    "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      3,
-      4
-    ],
-    "fee": 3050.0,
-    "exam_fee_scraped": 625.0,
-    "is_generic": true
-  },
-  {
-    "chamber_slug": "hwk-konstanz",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      4
-    ],
-    "fee": 780.0,
-    "exam_fee_scraped": 180.0,
-    "is_generic": true
-  },
-  {
     "chamber_slug": "hwk-braunschweig-lueneburg-stade",
     "trade_slug": "friseur",
     "parts": [
@@ -1326,6 +1285,17 @@
     "fee": 8630.0,
     "exam_fee_scraped": 1630.0,
     "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      3,
+      4
+    ],
+    "fee": 3050.0,
+    "exam_fee_scraped": 625.0,
+    "is_generic": true
   },
   {
     "chamber_slug": "hwk-mannheim",
@@ -3509,6 +3479,16 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      4
+    ],
+    "fee": 768.0,
+    "exam_fee_scraped": 275.0,
+    "is_generic": true
+  },
+  {
     "chamber_slug": "hwk-mittelfranken",
     "trade_slug": "maurer-und-betonbauer",
     "parts": [
@@ -4678,6 +4658,16 @@
     "fee": 3550.0,
     "exam_fee_scraped": 430.0,
     "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-konstanz",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      4
+    ],
+    "fee": 780.0,
+    "exam_fee_scraped": 180.0,
+    "is_generic": true
   },
   {
     "chamber_slug": "hwk-muenchen-und-oberbayern",
@@ -6818,6 +6808,16 @@
     ],
     "fee": 3219.0,
     "exam_fee_scraped": 450.0,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-dresden",
+    "trade_slug": "installateur-und-heizungsbauer",
+    "parts": [
+      2
+    ],
+    "fee": 7300.0,
+    "exam_fee_scraped": null,
     "is_generic": false
   },
   {
