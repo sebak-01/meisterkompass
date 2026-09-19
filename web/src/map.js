@@ -48,7 +48,7 @@ export function renderMap(mapData, listHref) {
     map = null;
   }
   map = L.map("map").setView([50.0, 7.0], 8);
-  L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+  L.tileLayer(`https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png?apiKey=${import.meta.env.VITE_CARTO_API_KEY}`, {
     attribution:
       '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors © <a href="https://carto.com/">CARTO</a>',
     maxZoom: 19,

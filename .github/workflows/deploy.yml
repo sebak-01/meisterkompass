@@ -52,6 +52,7 @@ jobs:
         # must be served from that base path. For a custom domain, set "/".
         env:
           VITE_BASE: "/"
+          VITE_CARTO_API_KEY: ${{ secrets.CARTO_API_KEY }}
         run: npm run build
 
       - name: Upload Pages artifact
