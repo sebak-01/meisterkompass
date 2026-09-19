@@ -1877,7 +1877,7 @@
     "zip_code": "10961",
     "latitude": 52.4966028,
     "longitude": 13.388784,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.bildung4u.de/kurse/meistervorbereitungslehrgang-elektrotechnik-teil-i-und-teil-ii-3911,0,coursedetail.html?id=58007&search-onr=3911&img=4"
   },
   {
@@ -7603,7 +7603,7 @@
     "zip_code": "09116",
     "latitude": 50.8307235,
     "longitude": 12.8727524,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/vorbereitungskurs-metallbauermeister-teile-i-ii/#termin_726"
   },
   {
@@ -12945,7 +12945,7 @@
     "zip_code": "15745",
     "latitude": 52.3198785,
     "longitude": 13.6310976,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwk-cottbus.de/7,0,coursedetail.html?id=65215"
   },
   {
@@ -14909,7 +14909,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-3"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-2"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -14945,7 +14945,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-4"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-3"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15017,7 +15017,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-1"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-3"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15125,7 +15125,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-2"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-1"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15161,7 +15161,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-3"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-2"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15269,7 +15269,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-2"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-4"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -26603,6 +26603,42 @@
     "chamber_region": "Nordrhein-Westfalen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2030-01-14",
+    "end_date": "2030-07-11",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2033.0,
+    "course_fee_display": "2.033 €",
+    "exam_fee_scraped": 230.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 230.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "230 €",
+      "from_tariff": false
+    },
+    "city": "Wuppertal",
+    "street": "Bachstraße 17",
+    "zip_code": "42275",
+    "latitude": 51.2735029,
+    "longitude": 7.2042967,
+    "availability": "available",
+    "source_url": "https://www.hwk-duesseldorf.de/31,0,coursedetail.html?id=63105"
+  },
+  {
+    "chamber_slug": "hwk-duesseldorf",
+    "chamber_name": "HWK Düsseldorf",
+    "chamber_region": "Nordrhein-Westfalen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Berufs- und Arbeitspädagogik (Teil IV)",
     "parts": [
       4
@@ -34606,7 +34642,7 @@
     "zip_code": "22045",
     "latitude": 53.5802004,
     "longitude": 10.1200455,
-    "availability": "waitlist",
+    "availability": "full",
     "source_url": "https://www.elbcampus.de/weiterbildung/meistervorbereitung-im-tischlerhandwerk/"
   },
   {
@@ -41725,7 +41761,7 @@
     "zip_code": "34537",
     "latitude": 51.1300434,
     "longitude": 9.1225344,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://veranstaltung.holzfachschule.de/seminar/vorbereitungslehrgang-auf-die-meisterpruefung-im-tischlerhandwerk-teil-i-ii_104765"
   },
   {
@@ -46965,7 +47001,7 @@
     "format": "part_time",
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
-    "start_date": "2027-09-02",
+    "start_date": "2027-08-31",
     "end_date": "2028-06-10",
     "start_date_note": "",
     "duration_hours": 374,
@@ -46986,7 +47022,7 @@
     "latitude": 49.7813929,
     "longitude": 7.3375888,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-teilzeit-52,0,coursedetail.html?id=115551&search-onr=52&img=17"
+    "source_url": "https://www.hwk-koblenz.de/kurse/teile-iii-und-iv-in-teilzeit-52,0,coursedetail.html?id=115551&search-onr=52&img=15"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -47409,7 +47445,7 @@
     "format": "part_time",
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
-    "start_date": "2028-02-01",
+    "start_date": "2028-01-31",
     "end_date": "2028-11-17",
     "start_date_note": "",
     "duration_hours": 374,
@@ -50204,10 +50240,10 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 640.0,
+      "fee": 300.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "640 €",
+      "display": "300 €",
       "from_tariff": true
     },
     "city": "Köln",
@@ -64335,7 +64371,7 @@
     "zip_code": "85051",
     "latitude": 48.7587386,
     "longitude": 11.4306481,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1207306"
   },
   {
@@ -69460,7 +69496,7 @@
     "zip_code": "48147",
     "latitude": 51.9830337,
     "longitude": 7.6358696,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-frau-meisterschule-teil-iv-iii-teilzeit-92291#termin-1"
   },
   {
@@ -73786,6 +73822,43 @@
     "chamber_slug": "hwk-niederbayern-oberpfalz",
     "chamber_name": "HWK Niederbayern-Oberpfalz",
     "chamber_region": "Bayern",
+    "trade_slug": "kfz-techniker",
+    "trade_name": "Kfz.-Techniker",
+    "title": "Kfz.-Techniker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2029-04-01",
+    "end_date": "2029-11-01",
+    "start_date_note": "Genauer Termin steht noch nicht fest.",
+    "duration_hours": 850,
+    "course_fee": null,
+    "course_fee_display": "—",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": null,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "",
+      "from_tariff": false
+    },
+    "city": "Regensburg",
+    "street": "Ditthornstraße 10",
+    "zip_code": "93055",
+    "latitude": 49.0144753,
+    "longitude": 12.1382992,
+    "availability": "unknown",
+    "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1025974"
+  },
+  {
+    "chamber_slug": "hwk-niederbayern-oberpfalz",
+    "chamber_name": "HWK Niederbayern-Oberpfalz",
+    "chamber_region": "Bayern",
     "trade_slug": "klempner",
     "trade_name": "Klempner",
     "title": "Klempner (Teile I + II)",
@@ -74852,7 +74925,7 @@
     "zip_code": "94036",
     "latitude": 48.5626047,
     "longitude": 13.4060264,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1018335"
   },
   {
@@ -89214,7 +89287,7 @@
     "zip_code": "49088",
     "latitude": 52.290842,
     "longitude": 8.0401607,
-    "availability": "full",
+    "availability": "unknown",
     "source_url": "https://www.btz-osnabrueck.de/seminar/mstretzb/#kurs-20271"
   },
   {
@@ -107801,7 +107874,7 @@
     "zip_code": "66117",
     "latitude": 49.2297,
     "longitude": 6.9967,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.hwk-saarland.de/seminar/mv-teil-i-kraftfahrzeugtechniker-m1km/"
   },
   {
@@ -110471,7 +110544,7 @@
     "zip_code": "86161",
     "latitude": 48.3486219,
     "longitude": 10.9175439,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=387122"
   },
   {
@@ -111748,8 +111821,8 @@
     "end_date": "2028-02-24",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 2950.0,
-    "course_fee_display": "2.950 €",
+    "course_fee": 3000.0,
+    "course_fee_display": "3.000 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -111785,8 +111858,8 @@
     "end_date": "2028-03-03",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 2950.0,
-    "course_fee_display": "2.950 €",
+    "course_fee": 3000.0,
+    "course_fee_display": "3.000 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -111822,8 +111895,8 @@
     "end_date": "2028-03-10",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 2950.0,
-    "course_fee_display": "2.950 €",
+    "course_fee": 3000.0,
+    "course_fee_display": "3.000 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -111859,8 +111932,8 @@
     "end_date": "2028-04-13",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 2950.0,
-    "course_fee_display": "2.950 €",
+    "course_fee": 3000.0,
+    "course_fee_display": "3.000 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -111896,8 +111969,8 @@
     "end_date": "2028-04-27",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 2950.0,
-    "course_fee_display": "2.950 €",
+    "course_fee": 3000.0,
+    "course_fee_display": "3.000 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -111933,8 +112006,8 @@
     "end_date": "2028-06-08",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 2950.0,
-    "course_fee_display": "2.950 €",
+    "course_fee": 3000.0,
+    "course_fee_display": "3.000 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -111969,8 +112042,8 @@
     "end_date": "2028-07-29",
     "start_date_note": "",
     "duration_hours": 260,
-    "course_fee": 2290.0,
-    "course_fee_display": "2.290 €",
+    "course_fee": 2350.0,
+    "course_fee_display": "2.350 €",
     "exam_fee_scraped": 175.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -112006,8 +112079,8 @@
     "end_date": "2028-06-29",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 2950.0,
-    "course_fee_display": "2.950 €",
+    "course_fee": 3000.0,
+    "course_fee_display": "3.000 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -112043,8 +112116,8 @@
     "end_date": "2028-07-20",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 2950.0,
-    "course_fee_display": "2.950 €",
+    "course_fee": 3000.0,
+    "course_fee_display": "3.000 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -112080,8 +112153,8 @@
     "end_date": "2028-07-20",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 2950.0,
-    "course_fee_display": "2.950 €",
+    "course_fee": 3000.0,
+    "course_fee_display": "3.000 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -112116,8 +112189,8 @@
     "end_date": "2028-11-18",
     "start_date_note": "",
     "duration_hours": 260,
-    "course_fee": 2290.0,
-    "course_fee_display": "2.290 €",
+    "course_fee": 2350.0,
+    "course_fee_display": "2.350 €",
     "exam_fee_scraped": 175.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -112153,8 +112226,8 @@
     "end_date": "2028-10-26",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 2950.0,
-    "course_fee_display": "2.950 €",
+    "course_fee": 3000.0,
+    "course_fee_display": "3.000 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -112190,8 +112263,8 @@
     "end_date": "2028-10-26",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 2950.0,
-    "course_fee_display": "2.950 €",
+    "course_fee": 3000.0,
+    "course_fee_display": "3.000 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -112227,8 +112300,8 @@
     "end_date": "2028-11-03",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 2950.0,
-    "course_fee_display": "2.950 €",
+    "course_fee": 3000.0,
+    "course_fee_display": "3.000 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -112264,8 +112337,8 @@
     "end_date": "2028-11-30",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 2950.0,
-    "course_fee_display": "2.950 €",
+    "course_fee": 3000.0,
+    "course_fee_display": "3.000 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -112301,8 +112374,8 @@
     "end_date": "2028-11-30",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 2950.0,
-    "course_fee_display": "2.950 €",
+    "course_fee": 3000.0,
+    "course_fee_display": "3.000 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -112338,8 +112411,8 @@
     "end_date": "2029-03-08",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 2950.0,
-    "course_fee_display": "2.950 €",
+    "course_fee": 3000.0,
+    "course_fee_display": "3.000 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -112375,8 +112448,8 @@
     "end_date": "2029-07-12",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 2950.0,
-    "course_fee_display": "2.950 €",
+    "course_fee": 3000.0,
+    "course_fee_display": "3.000 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -112412,8 +112485,8 @@
     "end_date": "2029-10-26",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 2950.0,
-    "course_fee_display": "2.950 €",
+    "course_fee": 3000.0,
+    "course_fee_display": "3.000 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -126620,7 +126693,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-maler-und-lackierer-handwerk-teile-i-ii-schwerpunkt-gestaltung-und-instandhaltung-teilzeit-mit-vollzeitblock-44,0,coursedetail.html?id=114502&search-onr=44&img=2"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-maler-und-lackierer-handwerk-teile-i-ii-schwerpunkt-gestaltung-und-instandhaltung-teilzeit-mit-vollzeitblock-44,0,coursedetail.html?id=114502&search-onr=44&img=3"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -126657,7 +126730,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-maler-und-lackiererhandwerk-teile-i-ii-schwerpunkt-fahrzeuglackierung-teilzeit-mit-vollzeitblock-44,0,coursedetail.html?id=114521&search-onr=44&img=3"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-maler-und-lackiererhandwerk-teile-i-ii-schwerpunkt-fahrzeuglackierung-teilzeit-mit-vollzeitblock-44,0,coursedetail.html?id=114521&search-onr=44&img=2"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -127566,7 +127639,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-teilzeit-44,0,coursedetail.html?id=123886&search-onr=44&img=18"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-teilzeit-44,0,coursedetail.html?id=123886&search-onr=44&img=19"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -127603,7 +127676,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-teilzeit-44,0,coursedetail.html?id=115841&search-onr=44&img=19"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-teilzeit-44,0,coursedetail.html?id=115841&search-onr=44&img=18"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
