@@ -14892,8 +14892,8 @@
     "end_date": "2027-11-12",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3730.0,
-    "course_fee_display": "3.730 €",
+    "course_fee": 3530.0,
+    "course_fee_display": "3.530 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -14909,7 +14909,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-2"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-1"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -14928,8 +14928,8 @@
     "end_date": "2027-11-12",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3730.0,
-    "course_fee_display": "3.730 €",
+    "course_fee": 3530.0,
+    "course_fee_display": "3.530 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -14945,7 +14945,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-3"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-2"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15216,8 +15216,8 @@
     "end_date": "2028-11-10",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3730.0,
-    "course_fee_display": "3.730 €",
+    "course_fee": 3530.0,
+    "course_fee_display": "3.530 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -15233,7 +15233,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-1"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-3"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15252,8 +15252,8 @@
     "end_date": "2028-11-10",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3730.0,
-    "course_fee_display": "3.730 €",
+    "course_fee": 3530.0,
+    "course_fee_display": "3.530 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -19212,12 +19212,12 @@
       "from_tariff": true
     },
     "city": "Dresden",
-    "street": "Preuschwitzer Straße 20",
-    "zip_code": "02625",
-    "latitude": 51.1721673,
-    "longitude": 14.4213099,
+    "street": "Melanchthonstr. 19",
+    "zip_code": "02826",
+    "latitude": 51.1449422,
+    "longitude": 14.970535,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113964.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-243978.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -19236,8 +19236,8 @@
     "end_date": "2027-01-14",
     "start_date_note": "",
     "duration_hours": 296,
-    "course_fee": 2480.0,
-    "course_fee_display": "2.480 €",
+    "course_fee": 2830.0,
+    "course_fee_display": "2.830 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -19247,7 +19247,7 @@
       "display": "240 €",
       "from_tariff": true
     },
-    "city": "Dresden",
+    "city": "Bautzen",
     "street": "Am Lagerplatz 8",
     "zip_code": "01099",
     "latitude": 51.0833678,
@@ -19428,12 +19428,12 @@
       "from_tariff": true
     },
     "city": "Dresden",
-    "street": "Preuschwitzer Straße 20",
-    "zip_code": "02625",
-    "latitude": 51.1721673,
-    "longitude": 14.4213099,
+    "street": "Melanchthonstr. 19",
+    "zip_code": "02826",
+    "latitude": 51.1449422,
+    "longitude": 14.970535,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113964.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-243978.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -19572,12 +19572,12 @@
       "from_tariff": true
     },
     "city": "Dresden",
-    "street": "Preuschwitzer Straße 20",
-    "zip_code": "02625",
-    "latitude": 51.1721673,
-    "longitude": 14.4213099,
+    "street": "Melanchthonstr. 19",
+    "zip_code": "02826",
+    "latitude": 51.1449422,
+    "longitude": 14.970535,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113964.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-243978.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -19607,13 +19607,13 @@
       "display": "240 €",
       "from_tariff": true
     },
-    "city": "Bautzen",
-    "street": "Preuschwitzer Straße 20",
-    "zip_code": "02625",
-    "latitude": 51.172008,
-    "longitude": 14.4215662,
+    "city": "Görlitz",
+    "street": "Melanchthonstr. 19",
+    "zip_code": "02826",
+    "latitude": 51.1449422,
+    "longitude": 14.970535,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113964.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-243978.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -19824,12 +19824,12 @@
       "from_tariff": true
     },
     "city": "Riesa",
-    "street": "Preuschwitzer Straße 20",
-    "zip_code": "02625",
-    "latitude": 51.1721673,
-    "longitude": 14.4213099,
+    "street": "Melanchthonstr. 19",
+    "zip_code": "02826",
+    "latitude": 51.1449422,
+    "longitude": 14.970535,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113964.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-243978.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -19896,12 +19896,12 @@
       "from_tariff": true
     },
     "city": "Görlitz",
-    "street": "Preuschwitzer Straße 20",
-    "zip_code": "02625",
-    "latitude": 51.1721673,
-    "longitude": 14.4213099,
+    "street": "Melanchthonstr. 19",
+    "zip_code": "02826",
+    "latitude": 51.1449422,
+    "longitude": 14.970535,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113964.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-243978.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -19968,12 +19968,12 @@
       "from_tariff": true
     },
     "city": "Bautzen",
-    "street": "Preuschwitzer Straße 20",
-    "zip_code": "02625",
-    "latitude": 51.172008,
-    "longitude": 14.4215662,
+    "street": "Melanchthonstr. 19",
+    "zip_code": "02826",
+    "latitude": 51.1449422,
+    "longitude": 14.970535,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113964.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-243978.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -20148,12 +20148,12 @@
       "from_tariff": true
     },
     "city": "Dresden",
-    "street": "Preuschwitzer Straße 20",
-    "zip_code": "02625",
-    "latitude": 51.1721673,
-    "longitude": 14.4213099,
+    "street": "Melanchthonstr. 19",
+    "zip_code": "02826",
+    "latitude": 51.1449422,
+    "longitude": 14.970535,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113964.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-243978.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -20220,12 +20220,12 @@
       "from_tariff": true
     },
     "city": "Riesa",
-    "street": "Preuschwitzer Straße 20",
-    "zip_code": "02625",
-    "latitude": 51.1721673,
-    "longitude": 14.4213099,
+    "street": "Melanchthonstr. 19",
+    "zip_code": "02826",
+    "latitude": 51.1449422,
+    "longitude": 14.970535,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113964.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-243978.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -20292,12 +20292,12 @@
       "from_tariff": true
     },
     "city": "Bautzen",
-    "street": "Preuschwitzer Straße 20",
-    "zip_code": "02625",
-    "latitude": 51.172008,
-    "longitude": 14.4215662,
+    "street": "Melanchthonstr. 19",
+    "zip_code": "02826",
+    "latitude": 51.1449422,
+    "longitude": 14.970535,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113964.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-243978.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -20328,12 +20328,12 @@
       "from_tariff": true
     },
     "city": "Dresden",
-    "street": "Preuschwitzer Straße 20",
-    "zip_code": "02625",
-    "latitude": 51.1721673,
-    "longitude": 14.4213099,
+    "street": "Melanchthonstr. 19",
+    "zip_code": "02826",
+    "latitude": 51.1449422,
+    "longitude": 14.970535,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113964.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-243978.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -20580,12 +20580,12 @@
       "from_tariff": true
     },
     "city": "Görlitz",
-    "street": "Preuschwitzer Straße 20",
-    "zip_code": "02625",
-    "latitude": 51.1721673,
-    "longitude": 14.4213099,
+    "street": "Melanchthonstr. 19",
+    "zip_code": "02826",
+    "latitude": 51.1449422,
+    "longitude": 14.970535,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113964.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-243978.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -20652,12 +20652,12 @@
       "from_tariff": true
     },
     "city": "Bautzen",
-    "street": "Preuschwitzer Straße 20",
-    "zip_code": "02625",
-    "latitude": 51.172008,
-    "longitude": 14.4215662,
+    "street": "Melanchthonstr. 19",
+    "zip_code": "02826",
+    "latitude": 51.1449422,
+    "longitude": 14.970535,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113964.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-243978.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -20688,12 +20688,12 @@
       "from_tariff": true
     },
     "city": "Dresden",
-    "street": "Preuschwitzer Straße 20",
-    "zip_code": "02625",
-    "latitude": 51.1721673,
-    "longitude": 14.4213099,
+    "street": "Melanchthonstr. 19",
+    "zip_code": "02826",
+    "latitude": 51.1449422,
+    "longitude": 14.970535,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113964.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-243978.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -20832,12 +20832,12 @@
       "from_tariff": true
     },
     "city": "Dresden",
-    "street": "Preuschwitzer Straße 20",
-    "zip_code": "02625",
-    "latitude": 51.1721673,
-    "longitude": 14.4213099,
+    "street": "Melanchthonstr. 19",
+    "zip_code": "02826",
+    "latitude": 51.1449422,
+    "longitude": 14.970535,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113964.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-243978.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -20976,12 +20976,12 @@
       "from_tariff": true
     },
     "city": "Bautzen",
-    "street": "Preuschwitzer Straße 20",
-    "zip_code": "02625",
-    "latitude": 51.172008,
-    "longitude": 14.4215662,
+    "street": "Melanchthonstr. 19",
+    "zip_code": "02826",
+    "latitude": 51.1449422,
+    "longitude": 14.970535,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113964.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-243978.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -21119,13 +21119,13 @@
       "display": "240 €",
       "from_tariff": true
     },
-    "city": "Bautzen",
-    "street": "Preuschwitzer Straße 20",
-    "zip_code": "02625",
-    "latitude": 51.172008,
-    "longitude": 14.4215662,
+    "city": "Görlitz",
+    "street": "Melanchthonstr. 19",
+    "zip_code": "02826",
+    "latitude": 51.1449422,
+    "longitude": 14.970535,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113964.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-243978.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -21192,12 +21192,12 @@
       "from_tariff": true
     },
     "city": "Riesa",
-    "street": "Preuschwitzer Straße 20",
-    "zip_code": "02625",
-    "latitude": 51.1721673,
-    "longitude": 14.4213099,
+    "street": "Melanchthonstr. 19",
+    "zip_code": "02826",
+    "latitude": 51.1449422,
+    "longitude": 14.970535,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113964.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-243978.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -21264,12 +21264,12 @@
       "from_tariff": true
     },
     "city": "Görlitz",
-    "street": "Preuschwitzer Straße 20",
-    "zip_code": "02625",
-    "latitude": 51.1721673,
-    "longitude": 14.4213099,
+    "street": "Melanchthonstr. 19",
+    "zip_code": "02826",
+    "latitude": 51.1449422,
+    "longitude": 14.970535,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113964.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-243978.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -21408,12 +21408,12 @@
       "from_tariff": true
     },
     "city": "Bautzen",
-    "street": "Preuschwitzer Straße 20",
-    "zip_code": "02625",
-    "latitude": 51.172008,
-    "longitude": 14.4215662,
+    "street": "Melanchthonstr. 19",
+    "zip_code": "02826",
+    "latitude": 51.1449422,
+    "longitude": 14.970535,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113964.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-243978.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -21480,12 +21480,12 @@
       "from_tariff": true
     },
     "city": "Dresden",
-    "street": "Preuschwitzer Straße 20",
-    "zip_code": "02625",
-    "latitude": 51.1721673,
-    "longitude": 14.4213099,
+    "street": "Melanchthonstr. 19",
+    "zip_code": "02826",
+    "latitude": 51.1449422,
+    "longitude": 14.970535,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113964.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-243978.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -21588,12 +21588,12 @@
       "from_tariff": true
     },
     "city": "Riesa",
-    "street": "Preuschwitzer Straße 20",
-    "zip_code": "02625",
-    "latitude": 51.1721673,
-    "longitude": 14.4213099,
+    "street": "Melanchthonstr. 19",
+    "zip_code": "02826",
+    "latitude": 51.1449422,
+    "longitude": 14.970535,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113964.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-243978.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -21768,12 +21768,12 @@
       "from_tariff": true
     },
     "city": "Bautzen",
-    "street": "Preuschwitzer Straße 20",
-    "zip_code": "02625",
-    "latitude": 51.172008,
-    "longitude": 14.4215662,
+    "street": "Melanchthonstr. 19",
+    "zip_code": "02826",
+    "latitude": 51.1449422,
+    "longitude": 14.970535,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113964.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-243978.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -21804,12 +21804,12 @@
       "from_tariff": true
     },
     "city": "Dresden",
-    "street": "Preuschwitzer Straße 20",
-    "zip_code": "02625",
-    "latitude": 51.1721673,
-    "longitude": 14.4213099,
+    "street": "Melanchthonstr. 19",
+    "zip_code": "02826",
+    "latitude": 51.1449422,
+    "longitude": 14.970535,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113964.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-243978.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -21947,13 +21947,13 @@
       "display": "240 €",
       "from_tariff": true
     },
-    "city": "Bautzen",
-    "street": "Preuschwitzer Straße 20",
-    "zip_code": "02625",
-    "latitude": 51.172008,
-    "longitude": 14.4215662,
+    "city": "Görlitz",
+    "street": "Melanchthonstr. 19",
+    "zip_code": "02826",
+    "latitude": 51.1449422,
+    "longitude": 14.970535,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113964.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-243978.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -22020,12 +22020,12 @@
       "from_tariff": true
     },
     "city": "Görlitz",
-    "street": "Preuschwitzer Straße 20",
-    "zip_code": "02625",
-    "latitude": 51.1721673,
-    "longitude": 14.4213099,
+    "street": "Melanchthonstr. 19",
+    "zip_code": "02826",
+    "latitude": 51.1449422,
+    "longitude": 14.970535,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113964.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-243978.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -22272,12 +22272,12 @@
       "from_tariff": true
     },
     "city": "Bautzen",
-    "street": "Preuschwitzer Straße 20",
-    "zip_code": "02625",
-    "latitude": 51.172008,
-    "longitude": 14.4215662,
+    "street": "Melanchthonstr. 19",
+    "zip_code": "02826",
+    "latitude": 51.1449422,
+    "longitude": 14.970535,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113964.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-243978.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -22344,12 +22344,12 @@
       "from_tariff": true
     },
     "city": "Dresden",
-    "street": "Preuschwitzer Straße 20",
-    "zip_code": "02625",
-    "latitude": 51.1721673,
-    "longitude": 14.4213099,
+    "street": "Melanchthonstr. 19",
+    "zip_code": "02826",
+    "latitude": 51.1449422,
+    "longitude": 14.970535,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113964.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-243978.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -30335,7 +30335,7 @@
     "latitude": 52.3388204,
     "longitude": 14.5470716,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-2"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-1"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -30408,7 +30408,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-3"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-2"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -30481,7 +30481,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-4"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-3"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -30591,7 +30591,7 @@
     "latitude": 52.3388204,
     "longitude": 14.5470716,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-5"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-4"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -30699,7 +30699,7 @@
     "latitude": 52.3388204,
     "longitude": 14.5470716,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-2"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-1"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -30735,7 +30735,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-3"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-2"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -30771,7 +30771,7 @@
     "latitude": 52.3388204,
     "longitude": 14.5470716,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-4"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-3"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -30807,7 +30807,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-5"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-4"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -30844,7 +30844,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-6"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-5"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -30916,7 +30916,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-6"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-5"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -30953,7 +30953,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-7"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-6"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -30989,7 +30989,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-7"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-6"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -31025,7 +31025,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-8"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-7"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -31062,7 +31062,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-8"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-7"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -31098,7 +31098,7 @@
     "latitude": 52.3388204,
     "longitude": 14.5470716,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-9"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-8"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -31135,7 +31135,7 @@
     "latitude": 52.3388204,
     "longitude": 14.5470716,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-9"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-8"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -31207,7 +31207,7 @@
     "latitude": 52.3388204,
     "longitude": 14.5470716,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-11"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-10"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -124194,42 +124194,6 @@
     "longitude": 10.2229162,
     "availability": "available",
     "source_url": "https://www.hwk-ufr.de/78,0,coursedetail.html?id=458058"
-  },
-  {
-    "chamber_slug": "hwk-unterfranken",
-    "chamber_name": "HWK für Unterfranken",
-    "chamber_region": "Bayern",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "online",
-    "start_date": "2026-09-19",
-    "end_date": "2026-12-15",
-    "start_date_note": "",
-    "duration_hours": 115,
-    "course_fee": 825.0,
-    "course_fee_display": "825 €",
-    "exam_fee_scraped": 165.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 165.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "165 €",
-      "from_tariff": false
-    },
-    "city": "Würzburg",
-    "street": "Dieselstr. 12",
-    "zip_code": "97082",
-    "latitude": 49.7990834,
-    "longitude": 9.9071335,
-    "availability": "waitlist",
-    "source_url": "https://www.hwk-ufr.de/78,0,coursedetail.html?id=449059"
   },
   {
     "chamber_slug": "hwk-unterfranken",

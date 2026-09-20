@@ -1101,7 +1101,7 @@
     "parts": [
       3
     ],
-    "fee": 2480.0,
+    "fee": 2830.0,
     "exam_fee_scraped": null,
     "is_generic": true
   },
@@ -5067,7 +5067,7 @@
     "parts": [
       1
     ],
-    "fee": 3730.0,
+    "fee": 3530.0,
     "exam_fee_scraped": 854.0,
     "is_generic": false
   },
