@@ -1,16 +1,5 @@
 [
   {
-    "chamber_slug": "hwk-braunschweig-lueneburg-stade",
-    "trade_slug": "friseur",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 6750.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
     "chamber_slug": "hwk-bremen",
     "trade_slug": "kfz-techniker",
     "parts": [
@@ -62,17 +51,6 @@
     "is_generic": false
   },
   {
-    "chamber_slug": "hwk-koblenz",
-    "trade_slug": "friseur",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 5290.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
     "chamber_slug": "hwk-konstanz",
     "trade_slug": "allgemein-teil-iii-iv",
     "parts": [
@@ -81,37 +59,6 @@
     ],
     "fee": 2735.0,
     "exam_fee_scraped": 360.0,
-    "is_generic": true
-  },
-  {
-    "chamber_slug": "hwk-mittelfranken",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      3,
-      4
-    ],
-    "fee": 3200.0,
-    "exam_fee_scraped": null,
-    "is_generic": true
-  },
-  {
-    "chamber_slug": "hwk-mittelfranken",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      4
-    ],
-    "fee": 800.0,
-    "exam_fee_scraped": null,
-    "is_generic": true
-  },
-  {
-    "chamber_slug": "hwk-ulm",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      4
-    ],
-    "fee": 850.0,
-    "exam_fee_scraped": null,
     "is_generic": true
   },
   {
@@ -344,6 +291,17 @@
     "fee": 7417.0,
     "exam_fee_scraped": 830.0,
     "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-mittelfranken",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      3,
+      4
+    ],
+    "fee": 3200.0,
+    "exam_fee_scraped": null,
+    "is_generic": true
   },
   {
     "chamber_slug": "hwk-muenchen-und-oberbayern",
@@ -1101,7 +1059,7 @@
     "parts": [
       3
     ],
-    "fee": 2830.0,
+    "fee": 2480.0,
     "exam_fee_scraped": null,
     "is_generic": true
   },
@@ -2310,6 +2268,16 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-ulm",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      4
+    ],
+    "fee": 850.0,
+    "exam_fee_scraped": null,
+    "is_generic": true
+  },
+  {
     "chamber_slug": "hwk-koeln",
     "trade_slug": "tischler",
     "parts": [
@@ -3022,6 +2990,17 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-koblenz",
+    "trade_slug": "friseur",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 5390.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-leipzig",
     "trade_slug": "allgemein-teil-iii-iv",
     "parts": [
@@ -3278,6 +3257,17 @@
       2
     ],
     "fee": 10400.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-braunschweig-lueneburg-stade",
+    "trade_slug": "friseur",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 7200.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
@@ -5067,7 +5057,7 @@
     "parts": [
       1
     ],
-    "fee": 3530.0,
+    "fee": 3730.0,
     "exam_fee_scraped": 854.0,
     "is_generic": false
   },
@@ -6584,17 +6574,6 @@
     "is_generic": false
   },
   {
-    "chamber_slug": "hwk-koeln",
-    "trade_slug": "backer",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 5150.0,
-    "exam_fee_scraped": 1750.0,
-    "is_generic": false
-  },
-  {
     "chamber_slug": "hwk-hamburg",
     "trade_slug": "kalteanlagenbauer",
     "parts": [
@@ -7291,17 +7270,6 @@
   },
   {
     "chamber_slug": "hwk-ostwestfalen-lippe-zu-bielefeld",
-    "trade_slug": "elektrotechniker",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 10990.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-ostwestfalen-lippe-zu-bielefeld",
     "trade_slug": "friseur",
     "parts": [
       1,
@@ -7525,6 +7493,17 @@
       1
     ],
     "fee": 3490.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-ostwestfalen-lippe-zu-bielefeld",
+    "trade_slug": "elektrotechniker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 10990.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },

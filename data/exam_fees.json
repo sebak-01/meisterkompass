@@ -1,5 +1,34 @@
 {
   "nested": {
+    "hwk-reutlingen": {
+      "null": {
+        "1": {
+          "fee": 300.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "1,2,3,4": {
+          "fee": 1100.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 350.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "3": {
+          "fee": 200.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "4": {
+          "fee": 250.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      }
+    },
     "hwk-aachen": {
       "null": {
         "1": {
@@ -1722,13 +1751,6 @@
           "qualifier": ""
         }
       },
-      "backer": {
-        "1,2": {
-          "fee": 1750.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
       "dachdecker": {
         "1,2": {
           "fee": 1400.0,
@@ -3172,35 +3194,6 @@
           "fee": 215.0,
           "fee_max": null,
           "qualifier": "zzgl. Auslagen"
-        }
-      }
-    },
-    "hwk-reutlingen": {
-      "null": {
-        "1": {
-          "fee": 300.0,
-          "fee_max": null,
-          "qualifier": ""
-        },
-        "1,2,3,4": {
-          "fee": 1100.0,
-          "fee_max": null,
-          "qualifier": ""
-        },
-        "2": {
-          "fee": 350.0,
-          "fee_max": null,
-          "qualifier": ""
-        },
-        "3": {
-          "fee": 200.0,
-          "fee_max": null,
-          "qualifier": ""
-        },
-        "4": {
-          "fee": 250.0,
-          "fee_max": null,
-          "qualifier": ""
         }
       }
     },
