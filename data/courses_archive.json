@@ -363,6 +363,42 @@
     "source_url": "https://www.handwerkbremen.de/service-center/kurse-und-seminare#/vorlage/MVK/218285?kurs=73196"
   },
   {
+    "chamber_slug": "hwk-bremen",
+    "chamber_name": "HWK Bremen",
+    "chamber_region": "Bremen",
+    "trade_slug": "kfz-techniker",
+    "trade_name": "Kfz.-Techniker",
+    "title": "Kfz.-Techniker (Teil I)",
+    "parts": [
+      1
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-09-21",
+    "end_date": "2026-11-27",
+    "start_date_note": "",
+    "duration_hours": 400,
+    "course_fee": 5500.0,
+    "course_fee_display": "5.500 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 250.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "250 €",
+      "from_tariff": true
+    },
+    "city": "Bremen",
+    "street": "Schongauerstr. 2",
+    "zip_code": "28219",
+    "latitude": 53.0979216,
+    "longitude": 8.7803106,
+    "availability": "available",
+    "source_url": "https://www.handwerkbremen.de/service-center/kurse-und-seminare#/vorlage/MVK/217305?kurs=66658"
+  },
+  {
     "chamber_slug": "hwk-chemnitz",
     "chamber_name": "HWK Chemnitz",
     "chamber_region": "Sachsen",
@@ -1883,6 +1919,42 @@
     "chamber_slug": "hwk-dresden",
     "chamber_name": "HWK Dresden",
     "chamber_region": "Sachsen",
+    "trade_slug": "maler-und-lackierer",
+    "trade_name": "Maler und Lackierer",
+    "title": "Maler und Lackierer (Teil II)",
+    "parts": [
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-09-21",
+    "end_date": "2027-01-22",
+    "start_date_note": "",
+    "duration_hours": 600,
+    "course_fee": 5250.0,
+    "course_fee_display": "5.250 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 300.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "300 €",
+      "from_tariff": true
+    },
+    "city": "Dresden",
+    "street": "Am Lagerplatz 8",
+    "zip_code": "01099",
+    "latitude": 51.0833678,
+    "longitude": 13.7677525,
+    "availability": "available",
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/maler-und-lackiererhandwerk-teil-ii-168857.html"
+  },
+  {
+    "chamber_slug": "hwk-dresden",
+    "chamber_name": "HWK Dresden",
+    "chamber_region": "Sachsen",
     "trade_slug": "metallbauer",
     "trade_name": "Metallbauer",
     "title": "Metallbauer (Teil II)",
@@ -2094,6 +2166,42 @@
     "longitude": 13.7677525,
     "availability": "available",
     "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114155.html"
+  },
+  {
+    "chamber_slug": "hwk-dresden",
+    "chamber_name": "HWK Dresden",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-09-21",
+    "end_date": "2026-11-26",
+    "start_date_note": "",
+    "duration_hours": 296,
+    "course_fee": 2480.0,
+    "course_fee_display": "2.480 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 240.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "240 €",
+      "from_tariff": true
+    },
+    "city": "Dresden",
+    "street": "Am Lagerplatz 8",
+    "zip_code": "01099",
+    "latitude": 51.0833678,
+    "longitude": 13.7677525,
+    "availability": "available",
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114157.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -2648,6 +2756,42 @@
     "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-1"
   },
   {
+    "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
+    "chamber_name": "HWK Frankfurt (Oder) – Region Ostbrandenburg",
+    "chamber_region": "Brandenburg",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-09-21",
+    "end_date": "2026-12-04",
+    "start_date_note": "",
+    "duration_hours": 280,
+    "course_fee": 2280.0,
+    "course_fee_display": "2.280 €",
+    "exam_fee_scraped": 350.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 350.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "350 €",
+      "from_tariff": false
+    },
+    "city": "Hennickendorf",
+    "street": "",
+    "zip_code": "",
+    "latitude": 52.1667755,
+    "longitude": 13.1045766,
+    "availability": "available",
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-1"
+  },
+  {
     "chamber_slug": "hwk-halle-saale",
     "chamber_name": "HWK Halle (Saale)",
     "chamber_region": "Sachsen-Anhalt",
@@ -2794,6 +2938,79 @@
     "source_url": "https://www.hwkhalle.de/seminar/fb-aep-kompakt/#kurs-27572"
   },
   {
+    "chamber_slug": "hwk-halle-saale",
+    "chamber_name": "HWK Halle (Saale)",
+    "chamber_region": "Sachsen-Anhalt",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
+    "parts": [
+      4
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-09-21",
+    "end_date": "2026-10-02",
+    "start_date_note": "",
+    "duration_hours": 78,
+    "course_fee": 810.0,
+    "course_fee_display": "810 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 210.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "210 €",
+      "from_tariff": true
+    },
+    "city": "Halle (Saale)",
+    "street": "Straße der Handwerker 2",
+    "zip_code": "06132",
+    "latitude": 51.4232026,
+    "longitude": 12.0122588,
+    "availability": "available",
+    "source_url": "https://www.hwkhalle.de/seminar/fb-aep-kompakt/#kurs-27573"
+  },
+  {
+    "chamber_slug": "hwk-hamburg",
+    "chamber_name": "HWK Hamburg",
+    "chamber_region": "Hamburg",
+    "trade_slug": "feinwerkmechaniker",
+    "trade_name": "Feinwerkmechaniker",
+    "title": "Feinwerkmechaniker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-09-21",
+    "end_date": "2027-04-06",
+    "start_date_note": "",
+    "duration_hours": 880,
+    "course_fee": 9445.0,
+    "course_fee_display": "9.445 €",
+    "exam_fee_scraped": 860.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 860.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "860 €",
+      "from_tariff": false
+    },
+    "city": "Hamburg",
+    "street": "Zum Handwerkszentrum 1",
+    "zip_code": "21079",
+    "latitude": 53.4582352,
+    "longitude": 9.9959008,
+    "availability": "available",
+    "source_url": "https://www.elbcampus.de/weiterbildung/meistervorbereitung-im-feinwerkmechanikerhandwerk/"
+  },
+  {
     "chamber_slug": "hwk-hamburg",
     "chamber_name": "HWK Hamburg",
     "chamber_region": "Hamburg",
@@ -2865,6 +3082,43 @@
     "latitude": 53.4582352,
     "longitude": 9.9959008,
     "availability": "available",
+    "source_url": "https://www.elbcampus.de/weiterbildung/meistervorbereitung-im-metallbauerhandwerk/"
+  },
+  {
+    "chamber_slug": "hwk-hamburg",
+    "chamber_name": "HWK Hamburg",
+    "chamber_region": "Hamburg",
+    "trade_slug": "metallbauer",
+    "trade_name": "Metallbauer",
+    "title": "Metallbauer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-09-21",
+    "end_date": "2027-04-06",
+    "start_date_note": "",
+    "duration_hours": 880,
+    "course_fee": 9445.0,
+    "course_fee_display": "9.445 €",
+    "exam_fee_scraped": 860.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 860.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "860 €",
+      "from_tariff": false
+    },
+    "city": "Hamburg",
+    "street": "Zum Handwerkszentrum 1",
+    "zip_code": "21079",
+    "latitude": 53.4582352,
+    "longitude": 9.9959008,
+    "availability": "waitlist",
     "source_url": "https://www.elbcampus.de/weiterbildung/meistervorbereitung-im-metallbauerhandwerk/"
   },
   {
@@ -3965,6 +4219,43 @@
     "longitude": 8.2170138,
     "availability": "available",
     "source_url": "https://www.bildungsakademie.de/seminar/mv_iv_tz/#uni-kurs-1004423"
+  },
+  {
+    "chamber_slug": "hwk-konstanz",
+    "chamber_name": "HWK Konstanz",
+    "chamber_region": "Baden-Württemberg",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "parts": [
+      3,
+      4
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-09-21",
+    "end_date": "2026-12-09",
+    "start_date_note": "",
+    "duration_hours": 372,
+    "course_fee": 2735.0,
+    "course_fee_display": "2.735 €",
+    "exam_fee_scraped": 360.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 360.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "360 €",
+      "from_tariff": false
+    },
+    "city": "Waldshut-Tiengen",
+    "street": "Friedrichstraße 3",
+    "zip_code": "79761",
+    "latitude": 47.6246072,
+    "longitude": 8.2170138,
+    "availability": "available",
+    "source_url": "https://www.bildungsakademie.de/seminar/mv_iiiiv_wt/#uni-kurs-1003913"
   },
   {
     "chamber_slug": "hwk-konstanz",
@@ -5133,6 +5424,42 @@
     "source_url": "https://www.hwk-oldenburg.de/weiterbildung/kurse-und-seminare#/vorlage/MVK/2085?kurs=40586"
   },
   {
+    "chamber_slug": "hwk-oldenburg",
+    "chamber_name": "HWK Oldenburg",
+    "chamber_region": "Niedersachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
+    "parts": [
+      4
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-09-21",
+    "end_date": "2026-10-02",
+    "start_date_note": "",
+    "duration_hours": 80,
+    "course_fee": 690.0,
+    "course_fee_display": "690 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 300.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "300 €",
+      "from_tariff": true
+    },
+    "city": "Oldenburg/Tweelbäke",
+    "street": "Schütte-Lanz-Straße 8-10/15",
+    "zip_code": "26135",
+    "latitude": 53.1144351,
+    "longitude": 8.2605231,
+    "availability": "full",
+    "source_url": "https://www.hwk-oldenburg.de/weiterbildung/kurse-und-seminare#/vorlage/MVK/2069?kurs=42294"
+  },
+  {
     "chamber_slug": "hwk-osnabrueck-emsland-grafschaft-bentheim",
     "chamber_name": "HWK Osnabrück-Emsland-Grafschaft Bentheim",
     "chamber_region": "Niedersachsen",
@@ -5240,6 +5567,43 @@
     "longitude": 8.0401607,
     "availability": "full",
     "source_url": "https://www.btz-osnabrueck.de/seminar/mstrbvzb/#kurs-20267"
+  },
+  {
+    "chamber_slug": "hwk-osnabrueck-emsland-grafschaft-bentheim",
+    "chamber_name": "HWK Osnabrück-Emsland-Grafschaft Bentheim",
+    "chamber_region": "Niedersachsen",
+    "trade_slug": "zimmerer",
+    "trade_name": "Zimmerer",
+    "title": "Zimmerer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-09-21",
+    "end_date": "2027-03-26",
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": 9025.0,
+    "course_fee_display": "9.025 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 1016.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "1.016 €",
+      "from_tariff": true
+    },
+    "city": "Osnabrück",
+    "street": "Bramscher Straße 134 - 136",
+    "zip_code": "49088",
+    "latitude": 52.290842,
+    "longitude": 8.0401607,
+    "availability": "full",
+    "source_url": "https://www.btz-osnabrueck.de/seminar/mstrzimvza/#kurs-20261"
   },
   {
     "chamber_slug": "hwk-ostfriesland",
@@ -6781,6 +7145,42 @@
     "longitude": null,
     "availability": "waitlist",
     "source_url": "https://www.hwk-ufr.de/78,0,coursedetail.html?id=449059"
+  },
+  {
+    "chamber_slug": "hwk-wiesbaden",
+    "chamber_name": "HWK Wiesbaden",
+    "chamber_region": "Hessen",
+    "trade_slug": "kfz-techniker",
+    "trade_name": "Kfz.-Techniker",
+    "title": "Kfz.-Techniker (Teil II)",
+    "parts": [
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-09-21",
+    "end_date": "2026-12-17",
+    "start_date_note": "",
+    "duration_hours": 556,
+    "course_fee": 4550.0,
+    "course_fee_display": "4.550 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 420.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "420 €",
+      "from_tariff": true
+    },
+    "city": "Wetzlar",
+    "street": "Dillufer 40",
+    "zip_code": "35576",
+    "latitude": 50.5548159,
+    "longitude": 8.4921662,
+    "availability": "available",
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-kraftfahrzeugtechnikerhandwerk-teil-ii-vollzeit-handlungsfeld-fahrzeugsysteme-44,0,coursedetail.html?id=102541&search-onr=44&img=1"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
