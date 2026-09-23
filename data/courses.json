@@ -2106,6 +2106,43 @@
     "chamber_slug": "hwk-berlin",
     "chamber_name": "HWK Berlin",
     "chamber_region": "Berlin",
+    "trade_slug": "tischler",
+    "trade_name": "Tischler",
+    "title": "Tischler (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-04-24",
+    "end_date": "2028-12-15",
+    "start_date_note": "",
+    "duration_hours": 1000,
+    "course_fee": 8900.0,
+    "course_fee_display": "8.900 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 587.5,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "588 €",
+      "from_tariff": true
+    },
+    "city": "Berlin",
+    "street": "Mehringdamm 14",
+    "zip_code": "10961",
+    "latitude": 52.4966028,
+    "longitude": 13.388784,
+    "availability": "available",
+    "source_url": "https://www.bildung4u.de/kurse/meistervorbereitungslehrgang-tischler-teil-i-und-teil-ii-3911,0,coursedetail.html?id=61925&search-onr=3911&img=16"
+  },
+  {
+    "chamber_slug": "hwk-berlin",
+    "chamber_name": "HWK Berlin",
+    "chamber_region": "Berlin",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Berufs- und Arbeitspädagogik (Teil IV)",
@@ -7123,7 +7160,7 @@
     "zip_code": "09116",
     "latitude": 50.8307235,
     "longitude": 12.8727524,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/vorbereitungskurs-kraftfahrzeugtechnikermeister-teile-i-ii/#termin_587"
   },
   {
@@ -14782,8 +14819,8 @@
     "end_date": "2027-11-12",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3730.0,
-    "course_fee_display": "3.730 €",
+    "course_fee": 3530.0,
+    "course_fee_display": "3.530 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -14799,7 +14836,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-2"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-1"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -14818,8 +14855,8 @@
     "end_date": "2027-11-12",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3730.0,
-    "course_fee_display": "3.730 €",
+    "course_fee": 3530.0,
+    "course_fee_display": "3.530 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -14835,7 +14872,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-4"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-2"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -14907,7 +14944,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-2"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-3"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15051,7 +15088,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-3"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-2"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15106,8 +15143,8 @@
     "end_date": "2028-11-10",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3730.0,
-    "course_fee_display": "3.730 €",
+    "course_fee": 3530.0,
+    "course_fee_display": "3.530 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -15122,8 +15159,8 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-1"
+    "availability": "waitlist",
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-3"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15142,8 +15179,8 @@
     "end_date": "2028-11-10",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3730.0,
-    "course_fee_display": "3.730 €",
+    "course_fee": 3530.0,
+    "course_fee_display": "3.530 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -15158,8 +15195,8 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-3"
+    "availability": "available",
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-4"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15741,7 +15778,7 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-3"
   },
   {
@@ -15993,7 +16030,7 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "waitlist",
+    "availability": "available",
     "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-5"
   },
   {
@@ -30264,7 +30301,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-2"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-1"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -30337,7 +30374,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-3"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-2"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -30410,7 +30447,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-4"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-3"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -30520,7 +30557,7 @@
     "latitude": 52.3388204,
     "longitude": 14.5470716,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-5"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-4"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -30773,7 +30810,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-6"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-5"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -31064,7 +31101,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-7"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-6"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -31136,7 +31173,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-8"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-7"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -31172,7 +31209,7 @@
     "latitude": 52.3388204,
     "longitude": 14.5470716,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-9"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-8"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -31724,7 +31761,7 @@
     "zip_code": "77652",
     "latitude": 48.4713854,
     "longitude": 7.9361019,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.gewerbeakademie.de/weiterbildung/kursangebot/kategorie/meister-kompetenz/seminar/mvkteiliii-tz/81/"
   },
   {
@@ -31760,7 +31797,7 @@
     "zip_code": "79110",
     "latitude": 48.0251899,
     "longitude": 7.8137345,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.gewerbeakademie.de/weiterbildung/kursangebot/kategorie/meister-kompetenz/seminar/mvkteiliv-vz/65/"
   },
   {
@@ -36277,6 +36314,43 @@
     "longitude": 9.5920065,
     "availability": "full",
     "source_url": "https://www.hwk-hannover.de/23,0,coursedetail.html?id=79098"
+  },
+  {
+    "chamber_slug": "hwk-hannover",
+    "chamber_name": "HWK Hannover",
+    "chamber_region": "Niedersachsen",
+    "trade_slug": "kfz-techniker",
+    "trade_name": "Kfz.-Techniker",
+    "title": "Kfz.-Techniker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-08-16",
+    "end_date": "2028-02-04",
+    "start_date_note": "",
+    "duration_hours": 860,
+    "course_fee": 11500.0,
+    "course_fee_display": "11.500 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 1080.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "1.080 €",
+      "from_tariff": true
+    },
+    "city": "Garbsen",
+    "street": "Seeweg 4",
+    "zip_code": "30827",
+    "latitude": 52.4347317,
+    "longitude": 9.5920065,
+    "availability": "full",
+    "source_url": "https://www.hwk-hannover.de/23,0,coursedetail.html?id=79103"
   },
   {
     "chamber_slug": "hwk-hannover",
@@ -56805,7 +56879,7 @@
     "zip_code": "04451",
     "latitude": 51.348242,
     "longitude": 12.5485819,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-leipzig.de/3,0,coursedetail.html?id=74295"
   },
   {
@@ -56950,7 +57024,7 @@
     "zip_code": "04103",
     "latitude": 51.3390316,
     "longitude": 12.3918037,
-    "availability": "waitlist",
+    "availability": "available",
     "source_url": "https://www.hwk-leipzig.de/3,0,coursedetail.html?id=73291"
   },
   {
@@ -68947,7 +69021,7 @@
     "zip_code": "48147",
     "latitude": 51.9830337,
     "longitude": 7.6358696,
-    "availability": "waitlist",
+    "availability": "available",
     "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-frau-meisterschule-teil-iv-iii-teilzeit-92291#termin-1"
   },
   {
@@ -80973,7 +81047,7 @@
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
     "start_date": "2026-11-09",
-    "end_date": "2027-03-25",
+    "end_date": "2027-04-01",
     "start_date_note": "",
     "duration_hours": 800,
     "course_fee": 8700.0,
@@ -81010,7 +81084,7 @@
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
     "start_date": "2027-11-08",
-    "end_date": "2028-03-24",
+    "end_date": "2028-04-03",
     "start_date_note": "",
     "duration_hours": 800,
     "course_fee": 8700.0,
@@ -81047,7 +81121,7 @@
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
     "start_date": "2028-11-06",
-    "end_date": "2029-03-23",
+    "end_date": "2029-04-03",
     "start_date_note": "",
     "duration_hours": 800,
     "course_fee": 8700.0,
@@ -88701,7 +88775,7 @@
     "zip_code": "49088",
     "latitude": 52.290842,
     "longitude": 8.0401607,
-    "availability": "unknown",
+    "availability": "full",
     "source_url": "https://www.btz-osnabrueck.de/seminar/mstretzb/#kurs-20271"
   },
   {
@@ -94229,7 +94303,7 @@
     "zip_code": "26603",
     "latitude": 53.4780195,
     "longitude": 7.4858939,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwk-aurich.de/weiterbildung/kurse-and-seminare-finden#/vorlage/MVK/1060?kurs=26358"
   },
   {
@@ -95353,7 +95427,7 @@
     "zip_code": "18055",
     "latitude": 54.0753091,
     "longitude": 12.141125,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwk-omv.de/18,0,coursedetail.html?id=105740"
   },
   {
@@ -95534,7 +95608,7 @@
     "zip_code": "18055",
     "latitude": 54.0753091,
     "longitude": 12.141125,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwk-omv.de/18,0,coursedetail.html?id=106587"
   },
   {
@@ -114057,7 +114131,7 @@
     "zip_code": "70499",
     "latitude": 48.8229051,
     "longitude": 9.0972983,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.bia-stuttgart.de/kurse/berufsspezialist-kfz-servicetechnik/#termin-154966"
   },
   {
@@ -114170,6 +114244,42 @@
     "longitude": 9.0972983,
     "availability": "full",
     "source_url": "https://www.bia-stuttgart.de/kurse/ausbilderschein-handwerkskammer-meister-teil-4/#termin-154206"
+  },
+  {
+    "chamber_slug": "hwk-stuttgart",
+    "chamber_name": "HWK Region Stuttgart",
+    "chamber_region": "Baden-Württemberg",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-10-12",
+    "end_date": "2026-11-27",
+    "start_date_note": "",
+    "duration_hours": 240,
+    "course_fee": 1570.0,
+    "course_fee_display": "1.570 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 180.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "180 €",
+      "from_tariff": true
+    },
+    "city": "Stuttgart",
+    "street": "Holderäckerstraße 37",
+    "zip_code": "70499",
+    "latitude": 48.8229051,
+    "longitude": 9.0972983,
+    "availability": "full",
+    "source_url": "https://www.bia-stuttgart.de/kurse/meisterkurs-teil-3/#termin-154120"
   },
   {
     "chamber_slug": "hwk-stuttgart",
@@ -114901,6 +115011,42 @@
     "parts": [
       4
     ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-10-11",
+    "end_date": "2027-10-22",
+    "start_date_note": "",
+    "duration_hours": 88,
+    "course_fee": 860.0,
+    "course_fee_display": "860 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 180.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "180 €",
+      "from_tariff": true
+    },
+    "city": "Stuttgart",
+    "street": "Holderäckerstraße 37",
+    "zip_code": "70499",
+    "latitude": 48.8229051,
+    "longitude": 9.0972983,
+    "availability": "available",
+    "source_url": "https://www.bia-stuttgart.de/kurse/ausbilderschein-handwerkskammer-meister-teil-4/#termin-158133"
+  },
+  {
+    "chamber_slug": "hwk-stuttgart",
+    "chamber_name": "HWK Region Stuttgart",
+    "chamber_region": "Baden-Württemberg",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
+    "parts": [
+      4
+    ],
     "format": "part_time",
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
@@ -114926,6 +115072,42 @@
     "longitude": 9.0972983,
     "availability": "available",
     "source_url": "https://www.bia-stuttgart.de/kurse/ausbilderschein-handwerkskammer-meister-teil-4/#termin-158126"
+  },
+  {
+    "chamber_slug": "hwk-stuttgart",
+    "chamber_name": "HWK Region Stuttgart",
+    "chamber_region": "Baden-Württemberg",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
+    "parts": [
+      4
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-11-08",
+    "end_date": "2027-11-19",
+    "start_date_note": "",
+    "duration_hours": 88,
+    "course_fee": 860.0,
+    "course_fee_display": "860 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 180.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "180 €",
+      "from_tariff": true
+    },
+    "city": "Stuttgart",
+    "street": "Holderäckerstraße 37",
+    "zip_code": "70499",
+    "latitude": 48.8229051,
+    "longitude": 9.0972983,
+    "availability": "available",
+    "source_url": "https://www.bia-stuttgart.de/kurse/ausbilderschein-handwerkskammer-meister-teil-4/#termin-158134"
   },
   {
     "chamber_slug": "hwk-suedthueringen-suhl",
@@ -120878,8 +121060,8 @@
     "end_date": "2027-09-10",
     "start_date_note": "",
     "duration_hours": 1220,
-    "course_fee": 8305.0,
-    "course_fee_display": "8.305 €",
+    "course_fee": 8150.0,
+    "course_fee_display": "8.150 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -120952,8 +121134,8 @@
     "end_date": "2028-03-10",
     "start_date_note": "",
     "duration_hours": 1220,
-    "course_fee": 8305.0,
-    "course_fee_display": "8.305 €",
+    "course_fee": 8150.0,
+    "course_fee_display": "8.150 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -123075,7 +123257,7 @@
     "zip_code": "",
     "latitude": 50.0451485,
     "longitude": 10.2340647,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-ufr.de/78,0,coursedetail.html?id=458778"
   },
   {
@@ -125418,6 +125600,43 @@
     "chamber_slug": "hwk-wiesbaden",
     "chamber_name": "HWK Wiesbaden",
     "chamber_region": "Hessen",
+    "trade_slug": "fliesen-platten-und-mosaikleger",
+    "trade_name": "Fliesen-, Platten- und Mosaikleger",
+    "title": "Fliesen-, Platten- und Mosaikleger (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-08-09",
+    "end_date": "2028-06-24",
+    "start_date_note": "",
+    "duration_hours": 626,
+    "course_fee": 5300.0,
+    "course_fee_display": "5.300 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 730.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "730 €",
+      "from_tariff": true
+    },
+    "city": "Wiesbaden",
+    "street": "Brunhildenstraße 110",
+    "zip_code": "65189",
+    "latitude": 50.0652806,
+    "longitude": 8.2590004,
+    "availability": "available",
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-fliesen-platten-und-mosaiklegerhandwerk-teile-i-ii-teilzeit-mit-vollzeitblock-44,0,coursedetail.html?id=127442&search-onr=44&img=1"
+  },
+  {
+    "chamber_slug": "hwk-wiesbaden",
+    "chamber_name": "HWK Wiesbaden",
+    "chamber_region": "Hessen",
     "trade_slug": "friseur",
     "trade_name": "Friseur",
     "title": "Friseur (Teil I)",
@@ -125520,7 +125739,7 @@
     "zip_code": "65189",
     "latitude": 50.0652806,
     "longitude": 8.2590004,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-friseurhandwerk-teile-i-iv-vollzeit-44,0,coursedetail.html?id=124674&search-onr=44&img=3"
   },
   {
@@ -125776,7 +125995,7 @@
     "zip_code": "35576",
     "latitude": 50.5548159,
     "longitude": 8.4921662,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-maler-und-lackierer-handwerk-teil-i-ii-vollzeit-schwerpunkt-gestaltung-und-instandhaltung-44,0,coursedetail.html?id=113114&search-onr=44&img=1"
   },
   {
@@ -125814,7 +126033,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-maler-und-lackierer-handwerk-teile-i-ii-schwerpunkt-gestaltung-und-instandhaltung-teilzeit-mit-vollzeitblock-44,0,coursedetail.html?id=114502&search-onr=44&img=3"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-maler-und-lackierer-handwerk-teile-i-ii-schwerpunkt-gestaltung-und-instandhaltung-teilzeit-mit-vollzeitblock-44,0,coursedetail.html?id=114502&search-onr=44&img=2"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -125851,7 +126070,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-maler-und-lackiererhandwerk-teile-i-ii-schwerpunkt-fahrzeuglackierung-teilzeit-mit-vollzeitblock-44,0,coursedetail.html?id=114521&search-onr=44&img=2"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-maler-und-lackiererhandwerk-teile-i-ii-schwerpunkt-fahrzeuglackierung-teilzeit-mit-vollzeitblock-44,0,coursedetail.html?id=114521&search-onr=44&img=3"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
