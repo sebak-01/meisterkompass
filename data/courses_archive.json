@@ -5460,6 +5460,42 @@
     "source_url": "https://www.hwk-oldenburg.de/weiterbildung/kurse-und-seminare#/vorlage/MVK/2069?kurs=42294"
   },
   {
+    "chamber_slug": "hwk-oldenburg",
+    "chamber_name": "HWK Oldenburg",
+    "chamber_region": "Niedersachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
+    "parts": [
+      4
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "online",
+    "start_date": "2026-09-23",
+    "end_date": "2026-11-30",
+    "start_date_note": "",
+    "duration_hours": 80,
+    "course_fee": 690.0,
+    "course_fee_display": "690 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 300.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "300 €",
+      "from_tariff": true
+    },
+    "city": "Online",
+    "street": "",
+    "zip_code": "",
+    "latitude": null,
+    "longitude": null,
+    "availability": "available",
+    "source_url": "https://www.hwk-oldenburg.de/weiterbildung/kurse-und-seminare#/vorlage/MVK/1282?kurs=42509"
+  },
+  {
     "chamber_slug": "hwk-osnabrueck-emsland-grafschaft-bentheim",
     "chamber_name": "HWK Osnabrück-Emsland-Grafschaft Bentheim",
     "chamber_region": "Niedersachsen",

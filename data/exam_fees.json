@@ -1,5 +1,34 @@
 {
   "nested": {
+    "hwk-freiburg": {
+      "null": {
+        "1": {
+          "fee": 400.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "1,2,3,4": {
+          "fee": 1150.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 350.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "3": {
+          "fee": 200.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "4": {
+          "fee": 200.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      }
+    },
     "hwk-aachen": {
       "null": {
         "1": {
@@ -986,77 +1015,6 @@
         }
       }
     },
-    "hwk-freiburg": {
-      "null": {
-        "1": {
-          "fee": 400.0,
-          "fee_max": null,
-          "qualifier": ""
-        },
-        "1,2,3,4": {
-          "fee": 1150.0,
-          "fee_max": null,
-          "qualifier": ""
-        },
-        "2": {
-          "fee": 350.0,
-          "fee_max": null,
-          "qualifier": ""
-        },
-        "3": {
-          "fee": 200.0,
-          "fee_max": null,
-          "qualifier": ""
-        },
-        "4": {
-          "fee": 200.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "elektrotechniker": {
-        "1,2": {
-          "fee": 750.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "feinwerkmechaniker": {
-        "1,2": {
-          "fee": 750.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "installateur-und-heizungsbauer": {
-        "1,2": {
-          "fee": 750.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "metallbauer": {
-        "1,2": {
-          "fee": 750.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "tischler": {
-        "1,2": {
-          "fee": 750.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "zahntechniker": {
-        "1,2": {
-          "fee": 750.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      }
-    },
     "hwk-halle-saale": {
       "null": {
         "2": {
@@ -1767,18 +1725,6 @@
       "karosserie-und-fahrzeugbauer": {
         "1": {
           "fee": 950.0,
-          "fee_max": null,
-          "qualifier": ""
-        },
-        "2": {
-          "fee": 450.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "kfz-techniker": {
-        "1": {
-          "fee": 750.0,
           "fee_max": null,
           "qualifier": ""
         },
