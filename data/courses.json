@@ -49916,10 +49916,10 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 300.0,
+      "fee": 640.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "300 €",
+      "display": "640 €",
       "from_tariff": true
     },
     "city": "Köln",
