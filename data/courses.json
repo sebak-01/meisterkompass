@@ -15003,8 +15003,8 @@
     "end_date": "2027-11-12",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3530.0,
-    "course_fee_display": "3.530 €",
+    "course_fee": 3730.0,
+    "course_fee_display": "3.730 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -15020,7 +15020,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-1"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-2"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15039,8 +15039,8 @@
     "end_date": "2027-11-12",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3530.0,
-    "course_fee_display": "3.530 €",
+    "course_fee": 3730.0,
+    "course_fee_display": "3.730 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -15056,7 +15056,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-2"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-3"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15128,7 +15128,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-3"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-1"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15164,7 +15164,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-4"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-2"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15236,7 +15236,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-1"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-3"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15272,7 +15272,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-2"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-4"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15327,8 +15327,8 @@
     "end_date": "2028-11-10",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3530.0,
-    "course_fee_display": "3.530 €",
+    "course_fee": 3730.0,
+    "course_fee_display": "3.730 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -15344,7 +15344,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-3"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-1"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15363,8 +15363,8 @@
     "end_date": "2028-11-10",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3530.0,
-    "course_fee_display": "3.530 €",
+    "course_fee": 3730.0,
+    "course_fee_display": "3.730 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -36052,7 +36052,7 @@
     "zip_code": "21079",
     "latitude": 53.4582352,
     "longitude": 9.9959008,
-    "availability": "waitlist",
+    "availability": "full",
     "source_url": "https://www.elbcampus.de/weiterbildung/meistervorbereitung-im-zimmererhandwerk/"
   },
   {
@@ -115712,42 +115712,6 @@
     "parts": [
       4
     ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "hybrid",
-    "start_date": "2026-09-26",
-    "end_date": "2026-11-21",
-    "start_date_note": "",
-    "duration_hours": 80,
-    "course_fee": 735.0,
-    "course_fee_display": "735 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 165.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "165 €",
-      "from_tariff": true
-    },
-    "city": "Rohr",
-    "street": "Kloster 1",
-    "zip_code": "98530",
-    "latitude": 50.707055,
-    "longitude": 10.891878,
-    "availability": "available",
-    "source_url": "https://www.hwk-suedthueringen.de/seminar/aevo_hybrid/#kurs-207937"
-  },
-  {
-    "chamber_slug": "hwk-suedthueringen-suhl",
-    "chamber_name": "HWK Südthüringen",
-    "chamber_region": "Thüringen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
@@ -121895,7 +121859,7 @@
     "zip_code": "89077",
     "latitude": 48.3856229,
     "longitude": 9.9563226,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.bildungsakademie-ulm.de/seminar/1-mv-teil-iii-vz/#kurs-1-MV-Teil"
   },
   {
