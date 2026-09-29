@@ -1,37 +1,5 @@
 [
   {
-    "chamber_slug": "hwk-dortmund",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      4
-    ],
-    "fee": 725.0,
-    "exam_fee_scraped": 239.0,
-    "is_generic": true
-  },
-  {
-    "chamber_slug": "hwk-muenster",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      3,
-      4
-    ],
-    "fee": 3059.0,
-    "exam_fee_scraped": 500.0,
-    "is_generic": true
-  },
-  {
-    "chamber_slug": "hwk-niederbayern-oberpfalz",
-    "trade_slug": "orthopadieschuhmacher",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 15960.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
     "chamber_slug": "hwk-braunschweig-lueneburg-stade",
     "trade_slug": "allgemein-teil-iii-iv",
     "parts": [
@@ -426,6 +394,16 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-stuttgart",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      3
+    ],
+    "fee": 1570.0,
+    "exam_fee_scraped": null,
+    "is_generic": true
+  },
+  {
     "chamber_slug": "hwk-suedwestfalen",
     "trade_slug": "feinwerkmechaniker",
     "parts": [
@@ -476,6 +454,16 @@
       4
     ],
     "fee": 770.0,
+    "exam_fee_scraped": null,
+    "is_generic": true
+  },
+  {
+    "chamber_slug": "hwk-stuttgart",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      4
+    ],
+    "fee": 860.0,
     "exam_fee_scraped": null,
     "is_generic": true
   },
@@ -827,6 +815,17 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-muenster",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      3,
+      4
+    ],
+    "fee": 3059.0,
+    "exam_fee_scraped": 500.0,
+    "is_generic": true
+  },
+  {
     "chamber_slug": "hwk-ostwestfalen-lippe-zu-bielefeld",
     "trade_slug": "installateur-und-heizungsbauer",
     "parts": [
@@ -972,6 +971,16 @@
     "fee": 7980.0,
     "exam_fee_scraped": 730.0,
     "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-dortmund",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      4
+    ],
+    "fee": 750.0,
+    "exam_fee_scraped": 239.0,
+    "is_generic": true
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -2249,16 +2258,6 @@
     "is_generic": true
   },
   {
-    "chamber_slug": "hwk-stuttgart",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      4
-    ],
-    "fee": 860.0,
-    "exam_fee_scraped": null,
-    "is_generic": true
-  },
-  {
     "chamber_slug": "hwk-magdeburg",
     "trade_slug": "allgemein-teil-iii-iv",
     "parts": [
@@ -2480,16 +2479,6 @@
     "fee": 6644.0,
     "exam_fee_scraped": 1310.0,
     "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-stuttgart",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      3
-    ],
-    "fee": 1790.0,
-    "exam_fee_scraped": null,
-    "is_generic": true
   },
   {
     "chamber_slug": "hwk-kassel",
@@ -3023,7 +3012,7 @@
     "parts": [
       3
     ],
-    "fee": 2350.0,
+    "fee": 2400.0,
     "exam_fee_scraped": 175.0,
     "is_generic": true
   },
@@ -3262,17 +3251,6 @@
       2
     ],
     "fee": 8500.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-braunschweig-lueneburg-stade",
-    "trade_slug": "elektrotechniker",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 13000.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
@@ -4719,17 +4697,6 @@
     "is_generic": false
   },
   {
-    "chamber_slug": "hwk-muenchen-und-oberbayern",
-    "trade_slug": "tischler",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 8490.0,
-    "exam_fee_scraped": 440.0,
-    "is_generic": false
-  },
-  {
     "chamber_slug": "hwk-niederbayern-oberpfalz",
     "trade_slug": "orthopadietechniker",
     "parts": [
@@ -5034,6 +5001,17 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-erfurt",
+    "trade_slug": "maler-und-lackierer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 10700.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-cottbus",
     "trade_slug": "dachdecker",
     "parts": [
@@ -5050,7 +5028,7 @@
     "parts": [
       1
     ],
-    "fee": 3530.0,
+    "fee": 3730.0,
     "exam_fee_scraped": 854.0,
     "is_generic": false
   },
@@ -5160,6 +5138,17 @@
       2
     ],
     "fee": 9750.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-erfurt",
+    "trade_slug": "zahntechniker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 12925.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
@@ -5469,6 +5458,17 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-duesseldorf",
+    "trade_slug": "fleischer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 2836.0,
+    "exam_fee_scraped": 730.0,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-oberfranken",
     "trade_slug": "feinwerkmechaniker",
     "parts": [
@@ -5545,6 +5545,17 @@
     ],
     "fee": 15040.0,
     "exam_fee_scraped": 1530.0,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-muenchen-und-oberbayern",
+    "trade_slug": "tischler",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 8490.0,
+    "exam_fee_scraped": 440.0,
     "is_generic": false
   },
   {
@@ -6552,7 +6563,7 @@
       1,
       2
     ],
-    "fee": 8600.0,
+    "fee": 8800.0,
     "exam_fee_scraped": 500.0,
     "is_generic": false
   },
@@ -6832,6 +6843,17 @@
       2
     ],
     "fee": 5000.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-braunschweig-lueneburg-stade",
+    "trade_slug": "elektrotechniker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 13000.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
@@ -7739,6 +7761,17 @@
       4
     ],
     "fee": 8760.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-niederbayern-oberpfalz",
+    "trade_slug": "orthopadieschuhmacher",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 16780.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },

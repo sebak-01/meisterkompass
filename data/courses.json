@@ -3220,7 +3220,7 @@
     "zip_code": "38114",
     "latitude": 52.2850901,
     "longitude": 10.5199812,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://weiterbildung.hwk-bls.de/22,0,coursedetail.html?id=318336"
   },
   {
@@ -15003,8 +15003,8 @@
     "end_date": "2027-11-12",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3530.0,
-    "course_fee_display": "3.530 €",
+    "course_fee": 3730.0,
+    "course_fee_display": "3.730 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -15020,7 +15020,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-1"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-3"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15039,8 +15039,8 @@
     "end_date": "2027-11-12",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3530.0,
-    "course_fee_display": "3.530 €",
+    "course_fee": 3730.0,
+    "course_fee_display": "3.730 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -15056,7 +15056,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-3"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-4"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15327,8 +15327,8 @@
     "end_date": "2028-11-10",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3530.0,
-    "course_fee_display": "3.530 €",
+    "course_fee": 3730.0,
+    "course_fee_display": "3.730 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -15343,8 +15343,8 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-2"
+    "availability": "waitlist",
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-1"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15363,8 +15363,8 @@
     "end_date": "2028-11-10",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3530.0,
-    "course_fee_display": "3.530 €",
+    "course_fee": 3730.0,
+    "course_fee_display": "3.730 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -15379,8 +15379,8 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-4"
+    "availability": "available",
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-2"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15676,42 +15676,6 @@
     "longitude": 7.4529522,
     "availability": "unknown",
     "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/tischler-in-teilzeitlehrgang-meistervorbereitung-teile-i-und-ii/#termin-2"
-  },
-  {
-    "chamber_slug": "hwk-dortmund",
-    "chamber_name": "HWK Dortmund",
-    "chamber_region": "Nordrhein-Westfalen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-09-28",
-    "end_date": "2026-10-16",
-    "start_date_note": "",
-    "duration_hours": 108,
-    "course_fee": 725.0,
-    "course_fee_display": "725 €",
-    "exam_fee_scraped": 239.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 239.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "239 €",
-      "from_tariff": false
-    },
-    "city": "Dortmund",
-    "street": "Schützenstraße 32-34",
-    "zip_code": "44147",
-    "latitude": 51.5206367,
-    "longitude": 7.4529522,
-    "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-1"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -19360,42 +19324,6 @@
       "from_tariff": true
     },
     "city": "Dresden",
-    "street": "Am Lagerplatz 8",
-    "zip_code": "01099",
-    "latitude": 51.0833678,
-    "longitude": 13.7677525,
-    "availability": "waitlist",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114157.html"
-  },
-  {
-    "chamber_slug": "hwk-dresden",
-    "chamber_name": "HWK Dresden",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-11-09",
-    "end_date": "2027-09-22",
-    "start_date_note": "",
-    "duration_hours": 296,
-    "course_fee": 2830.0,
-    "course_fee_display": "2.830 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 240.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "240 €",
-      "from_tariff": true
-    },
-    "city": "Görlitz",
     "street": "Am Lagerplatz 8",
     "zip_code": "01099",
     "latitude": 51.0833678,
@@ -23462,6 +23390,43 @@
     "chamber_slug": "hwk-duesseldorf",
     "chamber_name": "HWK Düsseldorf",
     "chamber_region": "Nordrhein-Westfalen",
+    "trade_slug": "fleischer",
+    "trade_name": "Fleischer",
+    "title": "Fleischer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-02-14",
+    "end_date": "2028-05-06",
+    "start_date_note": "",
+    "duration_hours": 220,
+    "course_fee": 2836.0,
+    "course_fee_display": "2.836 €",
+    "exam_fee_scraped": 730.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 730.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "730 €",
+      "from_tariff": false
+    },
+    "city": "Essen",
+    "street": "Lützowstraße 20",
+    "zip_code": "45141",
+    "latitude": 51.4667289,
+    "longitude": 7.0231617,
+    "availability": "available",
+    "source_url": "https://www.hwk-duesseldorf.de/31,0,coursedetail.html?id=63263"
+  },
+  {
+    "chamber_slug": "hwk-duesseldorf",
+    "chamber_name": "HWK Düsseldorf",
+    "chamber_region": "Nordrhein-Westfalen",
     "trade_slug": "friseur",
     "trade_name": "Friseur",
     "title": "Friseur (Teile I + II)",
@@ -23901,43 +23866,6 @@
     "longitude": 6.7597173,
     "availability": "available",
     "source_url": "https://www.hwk-duesseldorf.de/31,0,coursedetail.html?id=62794"
-  },
-  {
-    "chamber_slug": "hwk-duesseldorf",
-    "chamber_name": "HWK Düsseldorf",
-    "chamber_region": "Nordrhein-Westfalen",
-    "trade_slug": "installateur-und-heizungsbauer",
-    "trade_name": "Installateur- und Heizungsbauer",
-    "title": "Installateur- und Heizungsbauer (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2032-09-27",
-    "end_date": "2033-09-02",
-    "start_date_note": "",
-    "duration_hours": 1330,
-    "course_fee": 12167.0,
-    "course_fee_display": "12.167 €",
-    "exam_fee_scraped": 1450.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 1450.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "1.450 €",
-      "from_tariff": false
-    },
-    "city": "Düsseldorf",
-    "street": "Georg-Schulhoff-Platz 1",
-    "zip_code": "40221",
-    "latitude": 51.2067505,
-    "longitude": 6.7597173,
-    "availability": "waitlist",
-    "source_url": "https://www.hwk-duesseldorf.de/31,0,coursedetail.html?id=61885"
   },
   {
     "chamber_slug": "hwk-duesseldorf",
@@ -27334,6 +27262,80 @@
     "chamber_slug": "hwk-erfurt",
     "chamber_name": "HWK Erfurt",
     "chamber_region": "Thüringen",
+    "trade_slug": "maler-und-lackierer",
+    "trade_name": "Maler und Lackierer",
+    "title": "Maler und Lackierer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-11-12",
+    "end_date": "2029-07-28",
+    "start_date_note": "",
+    "duration_hours": 950,
+    "course_fee": 10700.0,
+    "course_fee_display": "10.700 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 760.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "760 €",
+      "from_tariff": true
+    },
+    "city": "Erfurt",
+    "street": "",
+    "zip_code": "",
+    "latitude": 50.9777974,
+    "longitude": 11.0287364,
+    "availability": "available",
+    "source_url": "https://www.hwk-erfurt.de/4,0,coursedetail.html?id=67495"
+  },
+  {
+    "chamber_slug": "hwk-erfurt",
+    "chamber_name": "HWK Erfurt",
+    "chamber_region": "Thüringen",
+    "trade_slug": "maler-und-lackierer",
+    "trade_name": "Maler und Lackierer",
+    "title": "Maler und Lackierer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-11-12",
+    "end_date": "2029-07-28",
+    "start_date_note": "",
+    "duration_hours": 950,
+    "course_fee": 10700.0,
+    "course_fee_display": "10.700 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 760.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "760 €",
+      "from_tariff": true
+    },
+    "city": "Erfurt",
+    "street": "",
+    "zip_code": "",
+    "latitude": 50.9777974,
+    "longitude": 11.0287364,
+    "availability": "available",
+    "source_url": "https://www.hwk-erfurt.de/4,0,coursedetail.html?id=67501"
+  },
+  {
+    "chamber_slug": "hwk-erfurt",
+    "chamber_name": "HWK Erfurt",
+    "chamber_region": "Thüringen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Wirtschaft und Recht (Teil III)",
@@ -27941,6 +27943,43 @@
     "longitude": 11.0287364,
     "availability": "available",
     "source_url": "https://www.hwk-erfurt.de/4,0,coursedetail.html?id=65860"
+  },
+  {
+    "chamber_slug": "hwk-erfurt",
+    "chamber_name": "HWK Erfurt",
+    "chamber_region": "Thüringen",
+    "trade_slug": "zahntechniker",
+    "trade_name": "Zahntechniker",
+    "title": "Zahntechniker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-12-03",
+    "end_date": "2029-12-22",
+    "start_date_note": "",
+    "duration_hours": 1100,
+    "course_fee": 12925.0,
+    "course_fee_display": "12.925 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 760.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "760 €",
+      "from_tariff": true
+    },
+    "city": "Erfurt",
+    "street": "",
+    "zip_code": "",
+    "latitude": 50.9777974,
+    "longitude": 11.0287364,
+    "availability": "available",
+    "source_url": "https://www.hwk-erfurt.de/4,0,coursedetail.html?id=67485"
   },
   {
     "chamber_slug": "hwk-flensburg",
@@ -62124,7 +62163,7 @@
     "zip_code": "",
     "latitude": 49.453872,
     "longitude": 11.077298,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-akademie.de/3751,0,coursedetail.html?id=617062"
   },
   {
@@ -62179,7 +62218,7 @@
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
     "start_date": "2027-03-16",
-    "end_date": "2027-05-21",
+    "end_date": "2027-05-26",
     "start_date_note": "",
     "duration_hours": 335,
     "course_fee": 3200.0,
@@ -64552,7 +64591,7 @@
     "zip_code": "83278",
     "latitude": 47.855512,
     "longitude": 12.6341286,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1229014"
   },
   {
@@ -68890,43 +68929,6 @@
       3,
       4
     ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-09-29",
-    "end_date": "2027-09-30",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": 3059.0,
-    "course_fee_display": "3.059 €",
-    "exam_fee_scraped": 500.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 500.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "500 €",
-      "from_tariff": false
-    },
-    "city": "Münster",
-    "street": "Albrecht-Thaer-Straße 9",
-    "zip_code": "48147",
-    "latitude": 51.9830337,
-    "longitude": 7.6358696,
-    "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-frau-meisterschule-teil-iv-iii-teilzeit-92291#termin-1"
-  },
-  {
-    "chamber_slug": "hwk-muenster",
-    "chamber_name": "HWK Münster",
-    "chamber_region": "Nordrhein-Westfalen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
-    "parts": [
-      3,
-      4
-    ],
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
@@ -68988,7 +68990,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-frau-meisterschule-teil-iv-iii-teilzeit-92291#termin-2"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-frau-meisterschule-teil-iv-iii-teilzeit-92291#termin-1"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -69173,7 +69175,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-frau-meisterschule-teil-iv-iii-teilzeit-92291#termin-3"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-frau-meisterschule-teil-iv-iii-teilzeit-92291#termin-2"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -69284,7 +69286,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-frau-meisterschule-teil-iv-iii-teilzeit-92291#termin-4"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-frau-meisterschule-teil-iv-iii-teilzeit-92291#termin-3"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -69506,7 +69508,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-frau-meisterschule-teil-iv-iii-teilzeit-92291#termin-5"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-frau-meisterschule-teil-iv-iii-teilzeit-92291#termin-4"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -69580,7 +69582,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-frau-meisterschule-teil-iv-iii-teilzeit-92291#termin-6"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-frau-meisterschule-teil-iv-iii-teilzeit-92291#termin-5"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -69839,7 +69841,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-frau-meisterschule-teil-iv-iii-teilzeit-92291#termin-7"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-frau-meisterschule-teil-iv-iii-teilzeit-92291#termin-6"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -69913,7 +69915,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-frau-meisterschule-teil-iv-iii-teilzeit-92291#termin-8"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-frau-meisterschule-teil-iv-iii-teilzeit-92291#termin-7"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -70024,7 +70026,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-frau-meisterschule-teil-iv-iii-teilzeit-92291#termin-9"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-frau-meisterschule-teil-iv-iii-teilzeit-92291#termin-8"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -70394,7 +70396,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-frau-meisterschule-teil-iv-iii-teilzeit-92291#termin-10"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-frau-meisterschule-teil-iv-iii-teilzeit-92291#termin-9"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -73975,43 +73977,6 @@
     "longitude": 12.5760232,
     "availability": "available",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1018796"
-  },
-  {
-    "chamber_slug": "hwk-niederbayern-oberpfalz",
-    "chamber_name": "HWK Niederbayern-Oberpfalz",
-    "chamber_region": "Bayern",
-    "trade_slug": "orthopadieschuhmacher",
-    "trade_name": "Orthopädieschuhmacher",
-    "title": "Orthopädieschuhmacher (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-09-29",
-    "end_date": "2027-05-26",
-    "start_date_note": "",
-    "duration_hours": 1180,
-    "course_fee": 15960.0,
-    "course_fee_display": "15.960 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": null,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "",
-      "from_tariff": false
-    },
-    "city": "Landshut",
-    "street": "Am Lurzenhof 10 b",
-    "zip_code": "84036",
-    "latitude": 48.5594648,
-    "longitude": 12.1999128,
-    "availability": "available",
-    "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1007415"
   },
   {
     "chamber_slug": "hwk-niederbayern-oberpfalz",
@@ -79717,6 +79682,42 @@
     "chamber_region": "Bayern",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
+    "parts": [
+      4
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2029-07-01",
+    "end_date": null,
+    "start_date_note": "Genauer Termin steht noch nicht fest.",
+    "duration_hours": 80,
+    "course_fee": null,
+    "course_fee_display": "—",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": null,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "",
+      "from_tariff": false
+    },
+    "city": "Passau",
+    "street": "Simmerlingweg 4 und 15",
+    "zip_code": "94036",
+    "latitude": 48.5626047,
+    "longitude": 13.4060264,
+    "availability": "unknown",
+    "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1026105"
+  },
+  {
+    "chamber_slug": "hwk-niederbayern-oberpfalz",
+    "chamber_name": "HWK Niederbayern-Oberpfalz",
+    "chamber_region": "Bayern",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Wirtschaft und Recht (Teil III)",
     "parts": [
       3
@@ -79818,6 +79819,42 @@
     "longitude": 12.1382992,
     "availability": "unknown",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1025707"
+  },
+  {
+    "chamber_slug": "hwk-niederbayern-oberpfalz",
+    "chamber_name": "HWK Niederbayern-Oberpfalz",
+    "chamber_region": "Bayern",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2029-08-01",
+    "end_date": "2029-10-01",
+    "start_date_note": "Genauer Termin steht noch nicht fest.",
+    "duration_hours": 264,
+    "course_fee": null,
+    "course_fee_display": "—",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": null,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "",
+      "from_tariff": false
+    },
+    "city": "Passau",
+    "street": "Simmerlingweg 4 und 15",
+    "zip_code": "94036",
+    "latitude": 48.5626047,
+    "longitude": 13.4060264,
+    "availability": "unknown",
+    "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1026102"
   },
   {
     "chamber_slug": "hwk-niederbayern-oberpfalz",
@@ -89650,43 +89687,6 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
-    "start_date": "2026-09-28",
-    "end_date": "2027-03-26",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": 8890.0,
-    "course_fee_display": "8.890 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 406.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "406 €",
-      "from_tariff": true
-    },
-    "city": "Osnabrück",
-    "street": "Bramscher Straße 134 - 136",
-    "zip_code": "49088",
-    "latitude": 52.290842,
-    "longitude": 8.0401607,
-    "availability": "full",
-    "source_url": "https://www.btz-osnabrueck.de/seminar/mstrmauvza/#kurs-20261"
-  },
-  {
-    "chamber_slug": "hwk-osnabrueck-emsland-grafschaft-bentheim",
-    "chamber_name": "HWK Osnabrück-Emsland-Grafschaft Bentheim",
-    "chamber_region": "Niedersachsen",
-    "trade_slug": "maurer-und-betonbauer",
-    "trade_name": "Maurer und Betonbauer",
-    "title": "Maurer und Betonbauer (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
     "start_date": "2027-08-20",
     "end_date": "2029-03-30",
     "start_date_note": "",
@@ -99043,7 +99043,7 @@
     "latitude": 49.4760852,
     "longitude": 8.4080881,
     "availability": "available",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=104969&search-onr=51&img=7"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=104969&search-onr=51&img=8"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -99080,7 +99080,7 @@
     "latitude": 49.444007,
     "longitude": 7.7687411,
     "availability": "available",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105601&search-onr=51&img=8"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105601&search-onr=51&img=7"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -109069,8 +109069,8 @@
     "end_date": "2028-05-20",
     "start_date_note": "",
     "duration_hours": 640,
-    "course_fee": 6750.0,
-    "course_fee_display": "6.750 €",
+    "course_fee": 6900.0,
+    "course_fee_display": "6.900 €",
     "exam_fee_scraped": 500.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -109106,8 +109106,8 @@
     "end_date": "2028-03-17",
     "start_date_note": "",
     "duration_hours": 1072,
-    "course_fee": 8600.0,
-    "course_fee_display": "8.600 €",
+    "course_fee": 8800.0,
+    "course_fee_display": "8.800 €",
     "exam_fee_scraped": 500.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -109143,8 +109143,8 @@
     "end_date": "2029-03-16",
     "start_date_note": "",
     "duration_hours": 1072,
-    "course_fee": 8400.0,
-    "course_fee_display": "8.400 €",
+    "course_fee": 8800.0,
+    "course_fee_display": "8.800 €",
     "exam_fee_scraped": 500.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -109180,8 +109180,8 @@
     "end_date": "2030-03-15",
     "start_date_note": "",
     "duration_hours": 1072,
-    "course_fee": 8400.0,
-    "course_fee_display": "8.400 €",
+    "course_fee": 8800.0,
+    "course_fee_display": "8.800 €",
     "exam_fee_scraped": 500.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -109217,8 +109217,8 @@
     "end_date": "2031-03-14",
     "start_date_note": "",
     "duration_hours": 1072,
-    "course_fee": 8400.0,
-    "course_fee_display": "8.400 €",
+    "course_fee": 8800.0,
+    "course_fee_display": "8.800 €",
     "exam_fee_scraped": 500.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -109254,8 +109254,8 @@
     "end_date": "2032-04-23",
     "start_date_note": "",
     "duration_hours": 1072,
-    "course_fee": 8600.0,
-    "course_fee_display": "8.600 €",
+    "course_fee": 8800.0,
+    "course_fee_display": "8.800 €",
     "exam_fee_scraped": 500.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -109735,8 +109735,8 @@
     "end_date": "2027-02-26",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 3000.0,
-    "course_fee_display": "3.000 €",
+    "course_fee": 3100.0,
+    "course_fee_display": "3.100 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -109809,8 +109809,8 @@
     "end_date": "2027-03-04",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 3000.0,
-    "course_fee_display": "3.000 €",
+    "course_fee": 3100.0,
+    "course_fee_display": "3.100 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -109846,8 +109846,8 @@
     "end_date": "2027-03-04",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 3000.0,
-    "course_fee_display": "3.000 €",
+    "course_fee": 3100.0,
+    "course_fee_display": "3.100 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -109920,8 +109920,8 @@
     "end_date": "2027-04-16",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 3000.0,
-    "course_fee_display": "3.000 €",
+    "course_fee": 3100.0,
+    "course_fee_display": "3.100 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -109957,8 +109957,8 @@
     "end_date": "2027-04-29",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 3000.0,
-    "course_fee_display": "3.000 €",
+    "course_fee": 3100.0,
+    "course_fee_display": "3.100 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -109994,8 +109994,8 @@
     "end_date": "2027-05-07",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 3000.0,
-    "course_fee_display": "3.000 €",
+    "course_fee": 3100.0,
+    "course_fee_display": "3.100 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -110030,8 +110030,8 @@
     "end_date": "2027-07-17",
     "start_date_note": "",
     "duration_hours": 260,
-    "course_fee": 2350.0,
-    "course_fee_display": "2.350 €",
+    "course_fee": 2400.0,
+    "course_fee_display": "2.400 €",
     "exam_fee_scraped": 175.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -110067,8 +110067,8 @@
     "end_date": "2027-06-04",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 3000.0,
-    "course_fee_display": "3.000 €",
+    "course_fee": 3100.0,
+    "course_fee_display": "3.100 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -110104,8 +110104,8 @@
     "end_date": "2027-06-24",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 3000.0,
-    "course_fee_display": "3.000 €",
+    "course_fee": 3100.0,
+    "course_fee_display": "3.100 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -110141,8 +110141,8 @@
     "end_date": "2027-07-23",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 3000.0,
-    "course_fee_display": "3.000 €",
+    "course_fee": 3100.0,
+    "course_fee_display": "3.100 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -110547,8 +110547,8 @@
     "end_date": "2028-02-24",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 3000.0,
-    "course_fee_display": "3.000 €",
+    "course_fee": 3100.0,
+    "course_fee_display": "3.100 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -110584,8 +110584,8 @@
     "end_date": "2028-03-03",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 3000.0,
-    "course_fee_display": "3.000 €",
+    "course_fee": 3100.0,
+    "course_fee_display": "3.100 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -110621,8 +110621,8 @@
     "end_date": "2028-03-10",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 3000.0,
-    "course_fee_display": "3.000 €",
+    "course_fee": 3100.0,
+    "course_fee_display": "3.100 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -110658,8 +110658,8 @@
     "end_date": "2028-04-13",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 3000.0,
-    "course_fee_display": "3.000 €",
+    "course_fee": 3100.0,
+    "course_fee_display": "3.100 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -110695,8 +110695,8 @@
     "end_date": "2028-04-27",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 3000.0,
-    "course_fee_display": "3.000 €",
+    "course_fee": 3100.0,
+    "course_fee_display": "3.100 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -110732,8 +110732,8 @@
     "end_date": "2028-06-08",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 3000.0,
-    "course_fee_display": "3.000 €",
+    "course_fee": 3100.0,
+    "course_fee_display": "3.100 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -110768,8 +110768,8 @@
     "end_date": "2028-07-29",
     "start_date_note": "",
     "duration_hours": 260,
-    "course_fee": 2350.0,
-    "course_fee_display": "2.350 €",
+    "course_fee": 2400.0,
+    "course_fee_display": "2.400 €",
     "exam_fee_scraped": 175.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -110805,8 +110805,8 @@
     "end_date": "2028-06-29",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 3000.0,
-    "course_fee_display": "3.000 €",
+    "course_fee": 3100.0,
+    "course_fee_display": "3.100 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -110842,8 +110842,8 @@
     "end_date": "2028-07-20",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 3000.0,
-    "course_fee_display": "3.000 €",
+    "course_fee": 3100.0,
+    "course_fee_display": "3.100 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -110879,8 +110879,8 @@
     "end_date": "2028-07-20",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 3000.0,
-    "course_fee_display": "3.000 €",
+    "course_fee": 3100.0,
+    "course_fee_display": "3.100 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -110915,8 +110915,8 @@
     "end_date": "2028-11-18",
     "start_date_note": "",
     "duration_hours": 260,
-    "course_fee": 2350.0,
-    "course_fee_display": "2.350 €",
+    "course_fee": 2400.0,
+    "course_fee_display": "2.400 €",
     "exam_fee_scraped": 175.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -110952,8 +110952,8 @@
     "end_date": "2028-10-26",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 3000.0,
-    "course_fee_display": "3.000 €",
+    "course_fee": 3100.0,
+    "course_fee_display": "3.100 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -110989,8 +110989,8 @@
     "end_date": "2028-10-26",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 3000.0,
-    "course_fee_display": "3.000 €",
+    "course_fee": 3100.0,
+    "course_fee_display": "3.100 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -111026,8 +111026,8 @@
     "end_date": "2028-11-03",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 3000.0,
-    "course_fee_display": "3.000 €",
+    "course_fee": 3100.0,
+    "course_fee_display": "3.100 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -111063,8 +111063,8 @@
     "end_date": "2028-11-30",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 3000.0,
-    "course_fee_display": "3.000 €",
+    "course_fee": 3100.0,
+    "course_fee_display": "3.100 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -111100,8 +111100,8 @@
     "end_date": "2028-11-30",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 3000.0,
-    "course_fee_display": "3.000 €",
+    "course_fee": 3100.0,
+    "course_fee_display": "3.100 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -111137,8 +111137,8 @@
     "end_date": "2029-03-08",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 3000.0,
-    "course_fee_display": "3.000 €",
+    "course_fee": 3100.0,
+    "course_fee_display": "3.100 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -111174,8 +111174,8 @@
     "end_date": "2029-07-12",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 3000.0,
-    "course_fee_display": "3.000 €",
+    "course_fee": 3100.0,
+    "course_fee_display": "3.100 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -111211,8 +111211,8 @@
     "end_date": "2029-10-26",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 3000.0,
-    "course_fee_display": "3.000 €",
+    "course_fee": 3100.0,
+    "course_fee_display": "3.100 €",
     "exam_fee_scraped": 350.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -113628,8 +113628,44 @@
     "zip_code": "70499",
     "latitude": 48.8229051,
     "longitude": 9.0972983,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.bia-stuttgart.de/kurse/meisterkurs-teil-3/#termin-154120"
+  },
+  {
+    "chamber_slug": "hwk-stuttgart",
+    "chamber_name": "HWK Region Stuttgart",
+    "chamber_region": "Baden-Württemberg",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
+    "parts": [
+      4
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-10-16",
+    "end_date": "2026-11-25",
+    "start_date_note": "",
+    "duration_hours": 80,
+    "course_fee": 860.0,
+    "course_fee_display": "860 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 180.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "180 €",
+      "from_tariff": true
+    },
+    "city": "Stuttgart",
+    "street": "Holderäckerstraße 37",
+    "zip_code": "70499",
+    "latitude": 48.8229051,
+    "longitude": 9.0972983,
+    "availability": "available",
+    "source_url": "https://www.bia-stuttgart.de/kurse/ausbilderschein-handwerkskammer-meister-teil-4/#termin-154212"
   },
   {
     "chamber_slug": "hwk-stuttgart",
@@ -113772,7 +113808,7 @@
     "zip_code": "70499",
     "latitude": 48.8229051,
     "longitude": 9.0972983,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.bia-stuttgart.de/kurse/ausbilderschein-handwerkskammer-meister-teil-4/#termin-158120"
   },
   {
@@ -125274,7 +125310,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-maler-und-lackierer-handwerk-teile-i-ii-schwerpunkt-gestaltung-und-instandhaltung-teilzeit-mit-vollzeitblock-44,0,coursedetail.html?id=114502&search-onr=44&img=2"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-maler-und-lackierer-handwerk-teile-i-ii-schwerpunkt-gestaltung-und-instandhaltung-teilzeit-mit-vollzeitblock-44,0,coursedetail.html?id=114502&search-onr=44&img=3"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -125311,7 +125347,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-maler-und-lackiererhandwerk-teile-i-ii-schwerpunkt-fahrzeuglackierung-teilzeit-mit-vollzeitblock-44,0,coursedetail.html?id=114521&search-onr=44&img=3"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-maler-und-lackiererhandwerk-teile-i-ii-schwerpunkt-fahrzeuglackierung-teilzeit-mit-vollzeitblock-44,0,coursedetail.html?id=114521&search-onr=44&img=2"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
