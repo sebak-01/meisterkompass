@@ -795,7 +795,7 @@
     "zip_code": "52068",
     "latitude": 50.7818511,
     "longitude": 6.1312387,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-aachen.de/33,0,coursedetail.html?id=42607"
   },
   {
@@ -831,7 +831,7 @@
     "zip_code": "52068",
     "latitude": 50.7818511,
     "longitude": 6.1312387,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-aachen.de/33,0,coursedetail.html?id=42662"
   },
   {
@@ -1877,7 +1877,7 @@
     "zip_code": "10961",
     "latitude": 52.4966028,
     "longitude": 13.388784,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.bildung4u.de/kurse/meistervorbereitungslehrgang-elektrotechnik-teil-i-und-teil-ii-3911,0,coursedetail.html?id=58007&search-onr=3911&img=4"
   },
   {
@@ -5388,12 +5388,12 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
-    "start_date": null,
-    "end_date": null,
+    "start_date": "2028-07-31",
+    "end_date": "2029-01-26",
     "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": null,
-    "course_fee_display": "—",
+    "duration_hours": 750,
+    "course_fee": 9800.0,
+    "course_fee_display": "9.800 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -5408,8 +5408,8 @@
     "zip_code": "28219",
     "latitude": 53.0979216,
     "longitude": 8.7803106,
-    "availability": "unknown",
-    "source_url": "https://www.handwerkbremen.de/meister-in/meisterkurse/meisterkurs-tischler-in-vollzeit"
+    "availability": "available",
+    "source_url": "https://www.handwerkbremen.de/service-center/kurse-und-seminare#/vorlage/MVK/216145?kurs=78916"
   },
   {
     "chamber_slug": "hwk-bremen",
@@ -5662,42 +5662,6 @@
     "longitude": 8.7803106,
     "availability": "available",
     "source_url": "https://www.handwerkbremen.de/service-center/kurse-und-seminare#/vorlage/MVK/209280?kurs=75124"
-  },
-  {
-    "chamber_slug": "hwk-bremen",
-    "chamber_name": "HWK Bremen",
-    "chamber_region": "Bremen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-05-03",
-    "end_date": "2027-05-14",
-    "start_date_note": "",
-    "duration_hours": 80,
-    "course_fee": 1050.0,
-    "course_fee_display": "1.050 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 100.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "100 €",
-      "from_tariff": true
-    },
-    "city": "Bremen",
-    "street": "Schongauerstr. 2",
-    "zip_code": "28219",
-    "latitude": 53.0979216,
-    "longitude": 8.7803106,
-    "availability": "available",
-    "source_url": "https://www.handwerkbremen.de/service-center/kurse-und-seminare#/vorlage/MVK/209280?kurs=77917"
   },
   {
     "chamber_slug": "hwk-bremen",
@@ -7935,7 +7899,7 @@
     "zip_code": "09116",
     "latitude": 50.8307235,
     "longitude": 12.8727524,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_560"
   },
   {
@@ -7971,7 +7935,7 @@
     "zip_code": "09116",
     "latitude": 50.8307235,
     "longitude": 12.8727524,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo-ausbildung-der-ausbilder/#termin_562"
   },
   {
@@ -8081,6 +8045,114 @@
     "longitude": 12.5051553,
     "availability": "available",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo-ausbildung-der-ausbilder/#termin_536"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-11-09",
+    "end_date": "2027-06-09",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2380.0,
+    "course_fee_display": "2.380 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Chemnitz",
+    "street": "Limbacher Straße 195",
+    "zip_code": "09116",
+    "latitude": 50.8307235,
+    "longitude": 12.8727524,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_506"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-11-10",
+    "end_date": "2027-07-07",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2380.0,
+    "course_fee_display": "2.380 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Plauen",
+    "street": "Rähnisstraße 19",
+    "zip_code": "08523",
+    "latitude": 50.4993901,
+    "longitude": 12.1453036,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_426"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-12-04",
+    "end_date": "2027-06-26",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2380.0,
+    "course_fee_display": "2.380 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Annaberg-Buchholz",
+    "street": "Bahnhofstraße 1",
+    "zip_code": "09456",
+    "latitude": 50.5739084,
+    "longitude": 13.0021358,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_990"
   },
   {
     "chamber_slug": "hwk-chemnitz",
@@ -8304,6 +8376,186 @@
     "chamber_region": "Sachsen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-01-16",
+    "end_date": "2027-06-23",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2380.0,
+    "course_fee_display": "2.380 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Chemnitz",
+    "street": "Limbacher Straße 195",
+    "zip_code": "09116",
+    "latitude": 50.8307235,
+    "longitude": 12.8727524,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_564"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-01-22",
+    "end_date": "2027-07-03",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2380.0,
+    "course_fee_display": "2.380 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Zwickau",
+    "street": "Scheffelstraße 39",
+    "zip_code": "08066",
+    "latitude": 50.7334417,
+    "longitude": 12.5051553,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_538"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-02-01",
+    "end_date": "2027-03-25",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2450.0,
+    "course_fee_display": "2.450 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Plauen",
+    "street": "Rähnisstraße 19",
+    "zip_code": "08523",
+    "latitude": 50.4993901,
+    "longitude": 12.1453036,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_572"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-02-01",
+    "end_date": "2027-03-25",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2450.0,
+    "course_fee_display": "2.450 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Chemnitz",
+    "street": "Limbacher Straße 195",
+    "zip_code": "09116",
+    "latitude": 50.8307235,
+    "longitude": 12.8727524,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_743"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-02-01",
+    "end_date": "2027-03-25",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2450.0,
+    "course_fee_display": "2.450 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Chemnitz",
+    "street": "Limbacher Straße 195",
+    "zip_code": "09116",
+    "latitude": 50.8307235,
+    "longitude": 12.8727524,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_744"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Berufs- und Arbeitspädagogik (Teil IV)",
     "parts": [
       4
@@ -8441,6 +8693,42 @@
     "longitude": 12.8727524,
     "availability": "available",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_501"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-04-26",
+    "end_date": "2027-06-25",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2450.0,
+    "course_fee_display": "2.450 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Chemnitz",
+    "street": "Limbacher Straße 195",
+    "zip_code": "09116",
+    "latitude": 50.8307235,
+    "longitude": 12.8727524,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_742"
   },
   {
     "chamber_slug": "hwk-chemnitz",
@@ -8916,6 +9204,42 @@
     "chamber_region": "Sachsen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-09-11",
+    "end_date": "2028-04-01",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2450.0,
+    "course_fee_display": "2.450 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Chemnitz",
+    "street": "Limbacher Straße 195",
+    "zip_code": "09116",
+    "latitude": 50.8307235,
+    "longitude": 12.8727524,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_732"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Berufs- und Arbeitspädagogik (Teil IV)",
     "parts": [
       4
@@ -8945,6 +9269,150 @@
     "longitude": 12.5051553,
     "availability": "available",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo-ausbildung-der-ausbilder/#termin_752"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-09-24",
+    "end_date": "2028-04-01",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2450.0,
+    "course_fee_display": "2.450 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Zwickau",
+    "street": "Scheffelstraße 39",
+    "zip_code": "08066",
+    "latitude": 50.7334417,
+    "longitude": 12.5051553,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_755"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-09-27",
+    "end_date": "2027-11-19",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2450.0,
+    "course_fee_display": "2.450 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Plauen",
+    "street": "Rähnisstraße 19",
+    "zip_code": "08523",
+    "latitude": 50.4993901,
+    "longitude": 12.1453036,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_573"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-09-27",
+    "end_date": "2027-11-25",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2450.0,
+    "course_fee_display": "2.450 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Chemnitz",
+    "street": "Limbacher Straße 195",
+    "zip_code": "09116",
+    "latitude": 50.8307235,
+    "longitude": 12.8727524,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_745"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-09-27",
+    "end_date": "2027-11-25",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2450.0,
+    "course_fee_display": "2.450 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Chemnitz",
+    "street": "Limbacher Straße 195",
+    "zip_code": "09116",
+    "latitude": 50.8307235,
+    "longitude": 12.8727524,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_748"
   },
   {
     "chamber_slug": "hwk-chemnitz",
@@ -9089,6 +9557,150 @@
     "longitude": 12.5051553,
     "availability": "available",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo-ausbildung-der-ausbilder/#termin_754"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-11-22",
+    "end_date": "2028-06-14",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2450.0,
+    "course_fee_display": "2.450 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Chemnitz",
+    "street": "Limbacher Straße 195",
+    "zip_code": "09116",
+    "latitude": 50.8307235,
+    "longitude": 12.8727524,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_731"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-11-23",
+    "end_date": "2028-07-05",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2450.0,
+    "course_fee_display": "2.450 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Plauen",
+    "street": "Rähnisstraße 19",
+    "zip_code": "08523",
+    "latitude": 50.4993901,
+    "longitude": 12.1453036,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_574"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-11-27",
+    "end_date": "2028-07-01",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2450.0,
+    "course_fee_display": "2.450 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Annaberg-Buchholz",
+    "street": "Bahnhofstraße 1",
+    "zip_code": "09456",
+    "latitude": 50.5739084,
+    "longitude": 13.0021358,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_1024"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-01-08",
+    "end_date": "2028-06-21",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2450.0,
+    "course_fee_display": "2.450 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Chemnitz",
+    "street": "Limbacher Straße 195",
+    "zip_code": "09116",
+    "latitude": 50.8307235,
+    "longitude": 12.8727524,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_756"
   },
   {
     "chamber_slug": "hwk-chemnitz",
@@ -9312,6 +9924,150 @@
     "chamber_region": "Sachsen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-01-28",
+    "end_date": "2028-07-08",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2450.0,
+    "course_fee_display": "2.450 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Zwickau",
+    "street": "Scheffelstraße 39",
+    "zip_code": "08066",
+    "latitude": 50.7334417,
+    "longitude": 12.5051553,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_757"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-01-31",
+    "end_date": "2028-03-24",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2670.0,
+    "course_fee_display": "2.670 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Plauen",
+    "street": "Rähnisstraße 19",
+    "zip_code": "08523",
+    "latitude": 50.4993901,
+    "longitude": 12.1453036,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_1132"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-01-31",
+    "end_date": "2028-03-30",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2670.0,
+    "course_fee_display": "2.670 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Chemnitz",
+    "street": "Limbacher Straße 195",
+    "zip_code": "09116",
+    "latitude": 50.8307235,
+    "longitude": 12.8727524,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_998"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-03-30",
+    "end_date": "2028-03-30",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2670.0,
+    "course_fee_display": "2.670 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Chemnitz",
+    "street": "Limbacher Straße 195",
+    "zip_code": "09116",
+    "latitude": 50.8307235,
+    "longitude": 12.8727524,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_997"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Berufs- und Arbeitspädagogik (Teil IV)",
     "parts": [
       4
@@ -9449,6 +10205,42 @@
     "longitude": 12.5051553,
     "availability": "available",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_749"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-05-15",
+    "end_date": "2028-07-14",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2670.0,
+    "course_fee_display": "2.670 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Chemnitz",
+    "street": "Limbacher Straße 195",
+    "zip_code": "09116",
+    "latitude": 50.8307235,
+    "longitude": 12.8727524,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_999"
   },
   {
     "chamber_slug": "hwk-chemnitz",
@@ -9924,6 +10716,42 @@
     "chamber_region": "Sachsen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-09-09",
+    "end_date": "2029-04-14",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2670.0,
+    "course_fee_display": "2.670 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Chemnitz",
+    "street": "Limbacher Straße 195",
+    "zip_code": "09116",
+    "latitude": 50.8307235,
+    "longitude": 12.8727524,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_1011"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Berufs- und Arbeitspädagogik (Teil IV)",
     "parts": [
       4
@@ -9960,6 +10788,42 @@
     "chamber_region": "Sachsen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-09-15",
+    "end_date": "2029-03-24",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2670.0,
+    "course_fee_display": "2.670 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Zwickau",
+    "street": "Scheffelstraße 39",
+    "zip_code": "08066",
+    "latitude": 50.7334417,
+    "longitude": 12.5051553,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_1016"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Berufs- und Arbeitspädagogik (Teil IV)",
     "parts": [
       4
@@ -9989,6 +10853,150 @@
     "longitude": 13.3229558,
     "availability": "available",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo-ausbildung-der-ausbilder/#termin_1023"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-09-16",
+    "end_date": "2029-04-07",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2670.0,
+    "course_fee_display": "2.670 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Freiberg",
+    "street": "Mühlweg 5",
+    "zip_code": "09599",
+    "latitude": 50.9102617,
+    "longitude": 13.3229558,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_1026"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-09-25",
+    "end_date": "2028-11-23",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2670.0,
+    "course_fee_display": "2.670 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Chemnitz",
+    "street": "Limbacher Straße 195",
+    "zip_code": "09116",
+    "latitude": 50.8307235,
+    "longitude": 12.8727524,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_1004"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-09-25",
+    "end_date": "2028-11-23",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2670.0,
+    "course_fee_display": "2.670 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Chemnitz",
+    "street": "Limbacher Straße 195",
+    "zip_code": "09116",
+    "latitude": 50.8307235,
+    "longitude": 12.8727524,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_1005"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-09-25",
+    "end_date": "2028-11-24",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2670.0,
+    "course_fee_display": "2.670 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Plauen",
+    "street": "Rähnisstraße 19",
+    "zip_code": "08523",
+    "latitude": 50.4993901,
+    "longitude": 12.1453036,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_1133"
   },
   {
     "chamber_slug": "hwk-chemnitz",
@@ -10068,6 +11076,42 @@
     "chamber_region": "Sachsen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-11-17",
+    "end_date": "2029-06-09",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2670.0,
+    "course_fee_display": "2.670 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Annaberg-Buchholz",
+    "street": "Bahnhofstraße 1",
+    "zip_code": "09456",
+    "latitude": 50.5739084,
+    "longitude": 13.0021358,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_1025"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Berufs- und Arbeitspädagogik (Teil IV)",
     "parts": [
       4
@@ -10133,6 +11177,78 @@
     "longitude": 12.8727524,
     "availability": "available",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo-ausbildung-der-ausbilder/#termin_1028"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-11-20",
+    "end_date": "2029-06-13",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2670.0,
+    "course_fee_display": "2.670 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Chemnitz",
+    "street": "Limbacher Straße 195",
+    "zip_code": "09116",
+    "latitude": 50.8307235,
+    "longitude": 12.8727524,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_1010"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-11-28",
+    "end_date": "2029-07-18",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2670.0,
+    "course_fee_display": "2.670 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Plauen",
+    "street": "Rähnisstraße 19",
+    "zip_code": "08523",
+    "latitude": 50.4993901,
+    "longitude": 12.1453036,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_1144"
   },
   {
     "chamber_slug": "hwk-chemnitz",
@@ -10356,6 +11472,186 @@
     "chamber_region": "Sachsen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2029-01-29",
+    "end_date": "2029-03-29",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2750.0,
+    "course_fee_display": "2.750 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Chemnitz",
+    "street": "Limbacher Straße 195",
+    "zip_code": "09116",
+    "latitude": 50.8307235,
+    "longitude": 12.8727524,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_1042"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2029-01-29",
+    "end_date": "2029-03-29",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2750.0,
+    "course_fee_display": "2.750 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Chemnitz",
+    "street": "Limbacher Straße 195",
+    "zip_code": "09116",
+    "latitude": 50.8307235,
+    "longitude": 12.8727524,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_1069"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2029-01-29",
+    "end_date": "2029-03-29",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2750.0,
+    "course_fee_display": "2.750 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Plauen",
+    "street": "Rähnisstraße 19",
+    "zip_code": "08523",
+    "latitude": 50.4993901,
+    "longitude": 12.1453036,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_1136"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2029-02-02",
+    "end_date": "2029-07-17",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2670.0,
+    "course_fee_display": "2.670 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Zwickau",
+    "street": "Scheffelstraße 39",
+    "zip_code": "08066",
+    "latitude": 50.7334417,
+    "longitude": 12.5051553,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_1017"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2029-02-03",
+    "end_date": "2029-07-18",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2670.0,
+    "course_fee_display": "2.670 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Chemnitz",
+    "street": "Limbacher Straße 195",
+    "zip_code": "09116",
+    "latitude": 50.8307235,
+    "longitude": 12.8727524,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_1029"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Berufs- und Arbeitspädagogik (Teil IV)",
     "parts": [
       4
@@ -10536,6 +11832,42 @@
     "chamber_region": "Sachsen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2029-04-30",
+    "end_date": "2029-06-29",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2750.0,
+    "course_fee_display": "2.750 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Chemnitz",
+    "street": "Limbacher Straße 195",
+    "zip_code": "09116",
+    "latitude": 50.8307235,
+    "longitude": 12.8727524,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_1070"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Berufs- und Arbeitspädagogik (Teil IV)",
     "parts": [
       4
@@ -10637,6 +11969,42 @@
     "longitude": 12.8727524,
     "availability": "available",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo-ausbildung-der-ausbilder/#termin_1498"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2029-08-31",
+    "end_date": "2030-04-06",
+    "start_date_note": "",
+    "duration_hours": 390,
+    "course_fee": 2750.0,
+    "course_fee_display": "2.750 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Chemnitz",
+    "street": "Limbacher Straße 195",
+    "zip_code": "09116",
+    "latitude": 50.8307235,
+    "longitude": 12.8727524,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_1504"
   },
   {
     "chamber_slug": "hwk-chemnitz",
@@ -10968,6 +12336,42 @@
     "chamber_region": "Sachsen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2029-09-07",
+    "end_date": "2030-03-30",
+    "start_date_note": "",
+    "duration_hours": 390,
+    "course_fee": 2750.0,
+    "course_fee_display": "2.750 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Zwickau",
+    "street": "Scheffelstraße 39",
+    "zip_code": "08066",
+    "latitude": 50.7334417,
+    "longitude": 12.5051553,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_1506"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Berufs- und Arbeitspädagogik (Teil IV)",
     "parts": [
       4
@@ -11033,6 +12437,114 @@
     "longitude": 13.0021358,
     "availability": "available",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo-ausbildung-der-ausbilder/#termin_1501"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2029-09-24",
+    "end_date": "2029-11-23",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2750.0,
+    "course_fee_display": "2.750 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Chemnitz",
+    "street": "Limbacher Straße 195",
+    "zip_code": "09116",
+    "latitude": 50.8307235,
+    "longitude": 12.8727524,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_1071"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2029-09-24",
+    "end_date": "2029-11-23",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2750.0,
+    "course_fee_display": "2.750 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Chemnitz",
+    "street": "Limbacher Straße 195",
+    "zip_code": "09116",
+    "latitude": 50.8307235,
+    "longitude": 12.8727524,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_1072"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2029-09-24",
+    "end_date": "2029-11-23",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2750.0,
+    "course_fee_display": "2.750 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Plauen",
+    "street": "Rähnisstraße 19",
+    "zip_code": "08523",
+    "latitude": 50.4993901,
+    "longitude": 12.1453036,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_1146"
   },
   {
     "chamber_slug": "hwk-chemnitz",
@@ -11177,6 +12689,186 @@
     "longitude": 12.5051553,
     "availability": "available",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo-ausbildung-der-ausbilder/#termin_1503"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2029-11-13",
+    "end_date": "2030-07-10",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2750.0,
+    "course_fee_display": "2.750 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Plauen",
+    "street": "Rähnisstraße 19",
+    "zip_code": "08523",
+    "latitude": 50.4993901,
+    "longitude": 12.1453036,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_1145"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2029-11-19",
+    "end_date": "2030-06-26",
+    "start_date_note": "",
+    "duration_hours": 390,
+    "course_fee": 2750.0,
+    "course_fee_display": "2.750 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Chemnitz",
+    "street": "Limbacher Straße 195",
+    "zip_code": "09116",
+    "latitude": 50.8307235,
+    "longitude": 12.8727524,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_1505"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2029-12-07",
+    "end_date": "2030-07-06",
+    "start_date_note": "",
+    "duration_hours": 390,
+    "course_fee": 2750.0,
+    "course_fee_display": "2.750 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Annaberg-Buchholz",
+    "street": "Bahnhofstraße 1",
+    "zip_code": "09456",
+    "latitude": 50.5739084,
+    "longitude": 13.0021358,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_1507"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2030-01-18",
+    "end_date": "2030-06-29",
+    "start_date_note": "",
+    "duration_hours": 390,
+    "course_fee": 2750.0,
+    "course_fee_display": "2.750 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Zwickau",
+    "street": "Scheffelstraße 39",
+    "zip_code": "08066",
+    "latitude": 50.7334417,
+    "longitude": 12.5051553,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_1509"
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2030-01-19",
+    "end_date": "2030-06-26",
+    "start_date_note": "",
+    "duration_hours": 390,
+    "course_fee": 2750.0,
+    "course_fee_display": "2.750 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Chemnitz",
+    "street": "Limbacher Straße 195",
+    "zip_code": "09116",
+    "latitude": 50.8307235,
+    "longitude": 12.8727524,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_1508"
   },
   {
     "chamber_slug": "hwk-chemnitz",
@@ -15128,7 +16820,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-1"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-2"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15236,7 +16928,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-2"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-1"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15343,7 +17035,7 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "waitlist",
+    "availability": "available",
     "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-1"
   },
   {
@@ -15379,7 +17071,7 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-2"
   },
   {
@@ -15747,7 +17439,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-2"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-1"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15891,7 +17583,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-3"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-2"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -15963,7 +17655,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-4"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-3"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -16179,7 +17871,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-5"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-4"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -16251,7 +17943,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-6"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-5"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -16323,7 +18015,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-7"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-6"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -16467,7 +18159,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-8"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-7"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -16539,7 +18231,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-9"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-8"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -16611,7 +18303,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-10"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-9"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -16683,7 +18375,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-11"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-10"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -16755,7 +18447,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-12"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-11"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -16971,7 +18663,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-13"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-12"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -17043,7 +18735,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-14"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-13"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -17115,7 +18807,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-15"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-14"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -17259,7 +18951,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-16"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-15"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -17331,7 +19023,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-17"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-16"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -17511,7 +19203,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-18"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-17"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -17547,7 +19239,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-19"
+    "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-18"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -18875,6 +20567,42 @@
     "duration_hours": 718,
     "course_fee": 7750.0,
     "course_fee_display": "7.750 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 300.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "300 €",
+      "from_tariff": true
+    },
+    "city": "Dresden",
+    "street": "Am Lagerplatz 8",
+    "zip_code": "01099",
+    "latitude": 51.0833678,
+    "longitude": 13.7677525,
+    "availability": "available",
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/metallbauerhandwerk-teil-ii-222322.html"
+  },
+  {
+    "chamber_slug": "hwk-dresden",
+    "chamber_name": "HWK Dresden",
+    "chamber_region": "Sachsen",
+    "trade_slug": "metallbauer",
+    "trade_name": "Metallbauer",
+    "title": "Metallbauer (Teil II)",
+    "parts": [
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-09-06",
+    "end_date": "2028-01-20",
+    "start_date_note": "",
+    "duration_hours": 718,
+    "course_fee": 7150.0,
+    "course_fee_display": "7.150 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -25194,7 +26922,7 @@
     "zip_code": "42275",
     "latitude": 51.2735029,
     "longitude": 7.2042967,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-duesseldorf.de/31,0,coursedetail.html?id=59940"
   },
   {
@@ -27581,7 +29309,7 @@
     "zip_code": "",
     "latitude": 50.9777974,
     "longitude": 11.0287364,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-erfurt.de/4,0,coursedetail.html?id=65857"
   },
   {
@@ -32353,6 +34081,78 @@
     "chamber_region": "Baden-Württemberg",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "hybrid",
+    "start_date": "2027-10-01",
+    "end_date": "2028-02-26",
+    "start_date_note": "",
+    "duration_hours": 254,
+    "course_fee": 2200.0,
+    "course_fee_display": "2.200 €",
+    "exam_fee_scraped": 200.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 200.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "200 €",
+      "from_tariff": false
+    },
+    "city": "Offenburg",
+    "street": "Wasserstraße 19",
+    "zip_code": "77652",
+    "latitude": 48.4713854,
+    "longitude": 7.9361019,
+    "availability": "available",
+    "source_url": "https://www.gewerbeakademie.de/weiterbildung/kursangebot/kategorie/meister-kompetenz/seminar/mvkteiliii-tz/85/"
+  },
+  {
+    "chamber_slug": "hwk-freiburg",
+    "chamber_name": "HWK Freiburg",
+    "chamber_region": "Baden-Württemberg",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
+    "parts": [
+      4
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "hybrid",
+    "start_date": "2027-10-01",
+    "end_date": "2028-02-25",
+    "start_date_note": "",
+    "duration_hours": 120,
+    "course_fee": 1100.0,
+    "course_fee_display": "1.100 €",
+    "exam_fee_scraped": 200.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 200.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "200 €",
+      "from_tariff": false
+    },
+    "city": "Offenburg",
+    "street": "Wasserstraße 19",
+    "zip_code": "77652",
+    "latitude": 48.4713854,
+    "longitude": 7.9361019,
+    "availability": "available",
+    "source_url": "https://www.gewerbeakademie.de/weiterbildung/kursangebot/kategorie/meister-kompetenz/seminar/mvkteiliv-tz/81/"
+  },
+  {
+    "chamber_slug": "hwk-freiburg",
+    "chamber_name": "HWK Freiburg",
+    "chamber_region": "Baden-Württemberg",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Berufs- und Arbeitspädagogik (Teil IV)",
     "parts": [
       4
@@ -32382,6 +34182,78 @@
     "longitude": 7.8137345,
     "availability": "available",
     "source_url": "https://www.gewerbeakademie.de/weiterbildung/kursangebot/kategorie/meister-kompetenz/seminar/mvkteiliv-vz/69/"
+  },
+  {
+    "chamber_slug": "hwk-freiburg",
+    "chamber_name": "HWK Freiburg",
+    "chamber_region": "Baden-Württemberg",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "hybrid",
+    "start_date": "2028-03-01",
+    "end_date": "2028-07-22",
+    "start_date_note": "",
+    "duration_hours": 254,
+    "course_fee": 2300.0,
+    "course_fee_display": "2.300 €",
+    "exam_fee_scraped": 200.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 200.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "200 €",
+      "from_tariff": false
+    },
+    "city": "Offenburg",
+    "street": "Wasserstraße 19",
+    "zip_code": "77652",
+    "latitude": 48.4713854,
+    "longitude": 7.9361019,
+    "availability": "available",
+    "source_url": "https://www.gewerbeakademie.de/weiterbildung/kursangebot/kategorie/meister-kompetenz/seminar/mvkteiliii-tz/86/"
+  },
+  {
+    "chamber_slug": "hwk-freiburg",
+    "chamber_name": "HWK Freiburg",
+    "chamber_region": "Baden-Württemberg",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
+    "parts": [
+      4
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "hybrid",
+    "start_date": "2028-03-01",
+    "end_date": "2028-07-19",
+    "start_date_note": "",
+    "duration_hours": 120,
+    "course_fee": 1200.0,
+    "course_fee_display": "1.200 €",
+    "exam_fee_scraped": 200.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 200.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "200 €",
+      "from_tariff": false
+    },
+    "city": "Offenburg",
+    "street": "Wasserstraße 19",
+    "zip_code": "77652",
+    "latitude": 48.4713854,
+    "longitude": 7.9361019,
+    "availability": "available",
+    "source_url": "https://www.gewerbeakademie.de/weiterbildung/kursangebot/kategorie/meister-kompetenz/seminar/mvkteiliv-tz/82/"
   },
   {
     "chamber_slug": "hwk-freiburg",
@@ -37261,10 +39133,10 @@
       "from_tariff": true
     },
     "city": "Garbsen",
-    "street": "",
-    "zip_code": "",
-    "latitude": 52.4276606,
-    "longitude": 9.6005102,
+    "street": "Seeweg 4",
+    "zip_code": "30827",
+    "latitude": 52.4347317,
+    "longitude": 9.5920065,
     "availability": "available",
     "source_url": "https://www.hwk-hannover.de/23,0,coursedetail.html?id=78991"
   },
@@ -38644,43 +40516,6 @@
     "longitude": 9.169312,
     "availability": "available",
     "source_url": "https://www.hwk-heilbronn.de/seminar/mv-metallbau-iii-tz/#kurs-26"
-  },
-  {
-    "chamber_slug": "hwk-heilbronn-franken",
-    "chamber_name": "HWK Heilbronn-Franken",
-    "chamber_region": "Baden-Württemberg",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
-    "parts": [
-      3,
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-09-29",
-    "end_date": "2026-11-30",
-    "start_date_note": "",
-    "duration_hours": 320,
-    "course_fee": 2090.0,
-    "course_fee_display": "2.090 €",
-    "exam_fee_scraped": 400.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 400.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "400 €",
-      "from_tariff": false
-    },
-    "city": "Heilbronn",
-    "street": "Wannenäckerstraße 62",
-    "zip_code": "74078",
-    "latitude": 49.1847456,
-    "longitude": 9.169312,
-    "availability": "full",
-    "source_url": "https://www.hwk-heilbronn.de/seminar/mv-iiiiv-vz-herbst/#kurs-25"
   },
   {
     "chamber_slug": "hwk-heilbronn-franken",
@@ -40487,188 +42322,6 @@
     "chamber_slug": "hwk-kassel",
     "chamber_name": "HWK Kassel",
     "chamber_region": "Hessen",
-    "trade_slug": "elektrotechniker",
-    "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teil II)",
-    "parts": [
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-02-16",
-    "end_date": "2028-09-23",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": 6150.0,
-    "course_fee_display": "6.150 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 420.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "420 €",
-      "from_tariff": true
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/elektrotechnikermeister-teil-ii"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "elektrotechniker",
-    "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-08-23",
-    "end_date": "2028-06-14",
-    "start_date_note": "",
-    "duration_hours": 1200,
-    "course_fee": 9750.0,
-    "course_fee_display": "9.750 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 730.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "730 €",
-      "from_tariff": true
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/elektrotechnikermeister-teil-ii-i-vollzeit"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "elektrotechniker",
-    "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2028-08-28",
-    "end_date": "2029-06-22",
-    "start_date_note": "",
-    "duration_hours": 1200,
-    "course_fee": 9850.0,
-    "course_fee_display": "9.850 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 730.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "730 €",
-      "from_tariff": true
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/elektrotechnikermeister-teil-ii-i-vollzeit"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "elektrotechniker",
-    "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teil I)",
-    "parts": [
-      1
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": null,
-    "end_date": null,
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": null,
-    "course_fee_display": "—",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 420.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "420 €",
-      "from_tariff": true
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/elektrotechnikermeister-teil-i"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "elektrotechniker",
-    "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teil II)",
-    "parts": [
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": null,
-    "end_date": null,
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": null,
-    "course_fee_display": "—",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 420.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "420 €",
-      "from_tariff": true
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/elektrotechnikermeister-teil-ii"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
     "trade_slug": "feinwerkmechaniker",
     "trade_name": "Feinwerkmechaniker",
     "title": "Feinwerkmechaniker (Teile I + II)",
@@ -41042,42 +42695,6 @@
     "chamber_region": "Hessen",
     "trade_slug": "kfz-techniker",
     "trade_name": "Kfz.-Techniker",
-    "title": "Kfz.-Techniker (Teil II)",
-    "parts": [
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-03-08",
-    "end_date": "2027-06-11",
-    "start_date_note": "",
-    "duration_hours": 530,
-    "course_fee": 3990.0,
-    "course_fee_display": "3.990 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 420.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "420 €",
-      "from_tariff": true
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-im-kfz-techniker-handwerk"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "kfz-techniker",
-    "trade_name": "Kfz.-Techniker",
     "title": "Kfz.-Techniker (Teile I + II)",
     "parts": [
       1,
@@ -41108,42 +42725,6 @@
     "longitude": 8.7666044,
     "availability": "available",
     "source_url": "https://www.bbz-marburg.de/kurs/mv-kfz-tz/"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "kfz-techniker",
-    "trade_name": "Kfz.-Techniker",
-    "title": "Kfz.-Techniker (Teil I)",
-    "parts": [
-      1
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-06-14",
-    "end_date": "2027-08-06",
-    "start_date_note": "",
-    "duration_hours": 320,
-    "course_fee": 2990.0,
-    "course_fee_display": "2.990 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 420.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "420 €",
-      "from_tariff": true
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/kraftfahrzeugservicetechniker"
   },
   {
     "chamber_slug": "hwk-kassel",
@@ -41217,78 +42798,6 @@
     "longitude": 8.7666044,
     "availability": "available",
     "source_url": "https://www.bbz-marburg.de/kurs/mv-kfz-tz/"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "kfz-techniker",
-    "trade_name": "Kfz.-Techniker",
-    "title": "Kfz.-Techniker (Teil II)",
-    "parts": [
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2028-03-13",
-    "end_date": "2028-06-16",
-    "start_date_note": "",
-    "duration_hours": 530,
-    "course_fee": 4600.0,
-    "course_fee_display": "4.600 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 420.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "420 €",
-      "from_tariff": true
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-im-kfz-techniker-handwerk"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "kfz-techniker",
-    "trade_name": "Kfz.-Techniker",
-    "title": "Kfz.-Techniker (Teil I)",
-    "parts": [
-      1
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2028-06-19",
-    "end_date": "2028-08-11",
-    "start_date_note": "",
-    "duration_hours": 320,
-    "course_fee": 3700.0,
-    "course_fee_display": "3.700 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 420.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "420 €",
-      "from_tariff": true
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/kraftfahrzeugservicetechniker"
   },
   {
     "chamber_slug": "hwk-kassel",
@@ -41398,43 +42907,6 @@
     "longitude": 9.498614,
     "availability": "unknown",
     "source_url": "https://www.kfz-innung-kassel.de/aus-und-weiterbildung-im-ftz/seminare-im-ftz#accordion-content-1109-490"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "land-und-baumaschinenmechatroniker",
-    "trade_name": "Land- und Baumaschinenmechatroniker",
-    "title": "Land- und Baumaschinenmechatroniker (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-10-04",
-    "end_date": "2028-04-28",
-    "start_date_note": "",
-    "duration_hours": 1100,
-    "course_fee": 11000.0,
-    "course_fee_display": "11.000 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 730.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "730 €",
-      "from_tariff": true
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-landmaschinenmechaniker-handwerk-teile-i-ii"
   },
   {
     "chamber_slug": "hwk-kassel",
@@ -41694,43 +43166,6 @@
     "longitude": 9.1225344,
     "availability": "available",
     "source_url": "https://veranstaltung.holzfachschule.de/seminar/vorbereitungslehrgang-auf-die-meisterpruefung-im-tischlerhandwerk-teil-i-ii_104765"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "tischler",
-    "trade_name": "Tischler",
-    "title": "Tischler (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-01-18",
-    "end_date": "2027-06-11",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": 9975.0,
-    "course_fee_display": "9.975 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 730.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "730 €",
-      "from_tariff": true
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungslehrgang-im-tischler-schreinerhandwerk"
   },
   {
     "chamber_slug": "hwk-kassel",
@@ -42509,42 +43944,6 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
-    "start_date": "2027-05-10",
-    "end_date": "2027-07-09",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": 1830.0,
-    "course_fee_display": "1.830 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 340.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "340 €",
-      "from_tariff": true
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-teil-iii-fuer-alle-gewerke-im-handwerk"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
     "start_date": "2027-06-14",
     "end_date": "2027-07-16",
     "start_date_note": "",
@@ -42748,42 +44147,6 @@
     "longitude": 8.7666044,
     "availability": "available",
     "source_url": "https://www.bbz-marburg.de/kurs/ada-vz-96/"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-08-09",
-    "end_date": "2027-10-01",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": 1830.0,
-    "course_fee_display": "1.830 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 340.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "340 €",
-      "from_tariff": true
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-teil-iii-fuer-alle-gewerke-im-handwerk"
   },
   {
     "chamber_slug": "hwk-kassel",
@@ -43153,42 +44516,6 @@
     "chamber_region": "Hessen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2028-01-10",
-    "end_date": "2028-02-29",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": 1920.0,
-    "course_fee_display": "1.920 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 340.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "340 €",
-      "from_tariff": true
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-teil-iii-fuer-alle-gewerke-im-handwerk"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Berufs- und Arbeitspädagogik (Teil IV)",
     "parts": [
       4
@@ -43254,78 +44581,6 @@
     "longitude": 9.4991416,
     "availability": "available",
     "source_url": "https://www.bubiza.de/kurse/vollzeit-hoehere-berufsbildung/zimmermeister-holzbau-deutschland-anerkannt.html"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2028-05-08",
-    "end_date": "2028-06-30",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": 1920.0,
-    "course_fee_display": "1.920 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 340.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "340 €",
-      "from_tariff": true
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-teil-iii-fuer-alle-gewerke-im-handwerk"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2028-07-31",
-    "end_date": "2028-09-22",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": 1920.0,
-    "course_fee_display": "1.920 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 340.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "340 €",
-      "from_tariff": true
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-teil-iii-fuer-alle-gewerke-im-handwerk"
   },
   {
     "chamber_slug": "hwk-kassel",
@@ -46029,7 +47284,7 @@
     "zip_code": "56070",
     "latitude": 50.3895583,
     "longitude": 7.5708933,
-    "availability": "waitlist",
+    "availability": "available",
     "source_url": "https://www.hwk-koblenz.de/kurse/maler-und-lackierer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=113412&search-onr=52&img=2"
   },
   {
@@ -48722,7 +49977,7 @@
     "zip_code": "50827",
     "latitude": 50.9758161,
     "longitude": 6.8975287,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-koeln.de/32,0,coursedetail.html?id=37031"
   },
   {
@@ -61922,7 +63177,7 @@
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
     "start_date": "2026-11-23",
-    "end_date": "2027-07-31",
+    "end_date": "2027-07-17",
     "start_date_note": "",
     "duration_hours": 1190,
     "course_fee": 11800.0,
@@ -63887,14 +65142,14 @@
     "duration_hours": 550,
     "course_fee": 5050.0,
     "course_fee_display": "5.050 €",
-    "exam_fee_scraped": 200.0,
+    "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 200.0,
       "fee_max": null,
       "qualifier": "",
       "display": "200 €",
-      "from_tariff": false
+      "from_tariff": true
     },
     "city": "Ingolstadt",
     "street": "Brückenkopf 3",
@@ -69211,7 +70466,7 @@
     "zip_code": "48147",
     "latitude": 51.9830337,
     "longitude": 7.6358696,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-5"
   },
   {
@@ -72428,7 +73683,7 @@
     "zip_code": "94036",
     "latitude": 48.5626047,
     "longitude": 13.4060264,
-    "availability": "unknown",
+    "availability": "full",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1019117"
   },
   {
@@ -74325,6 +75580,43 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
+    "start_date": "2028-04-01",
+    "end_date": "2028-12-01",
+    "start_date_note": "Genauer Termin steht noch nicht fest.",
+    "duration_hours": 1000,
+    "course_fee": 8740.0,
+    "course_fee_display": "8.740 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": null,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "",
+      "from_tariff": false
+    },
+    "city": "Passau",
+    "street": "Simmerlingweg 4 und 15",
+    "zip_code": "94036",
+    "latitude": 48.5626047,
+    "longitude": 13.4060264,
+    "availability": "unknown",
+    "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1026140"
+  },
+  {
+    "chamber_slug": "hwk-niederbayern-oberpfalz",
+    "chamber_name": "HWK Niederbayern-Oberpfalz",
+    "chamber_region": "Bayern",
+    "trade_slug": "tischler",
+    "trade_name": "Tischler",
+    "title": "Tischler (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
     "start_date": "2028-11-01",
     "end_date": "2029-06-01",
     "start_date_note": "Genauer Termin steht noch nicht fest.",
@@ -74849,7 +76141,7 @@
     "zip_code": "94315",
     "latitude": 48.8708639,
     "longitude": 12.5760232,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1011352"
   },
   {
@@ -75209,7 +76501,7 @@
     "zip_code": "92637",
     "latitude": 49.6703429,
     "longitude": 12.1626407,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1014103"
   },
   {
@@ -75497,7 +76789,7 @@
     "zip_code": "84347",
     "latitude": 48.4287108,
     "longitude": 12.9312606,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1018409"
   },
   {
@@ -75677,7 +76969,7 @@
     "zip_code": "84347",
     "latitude": 48.4287108,
     "longitude": 12.9312606,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1018406"
   },
   {
@@ -76505,7 +77797,7 @@
     "zip_code": "94036",
     "latitude": 48.5626047,
     "longitude": 13.4060264,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1016578"
   },
   {
@@ -76577,7 +77869,7 @@
     "zip_code": "93055",
     "latitude": 49.0144753,
     "longitude": 12.1382992,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1018871"
   },
   {
@@ -76721,7 +78013,7 @@
     "zip_code": "93055",
     "latitude": 49.0144753,
     "longitude": 12.1382992,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1018875"
   },
   {
@@ -79531,6 +80823,42 @@
     "longitude": 12.4925217,
     "availability": "unknown",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1025225"
+  },
+  {
+    "chamber_slug": "hwk-niederbayern-oberpfalz",
+    "chamber_name": "HWK Niederbayern-Oberpfalz",
+    "chamber_region": "Bayern",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2029-05-01",
+    "end_date": "2029-06-01",
+    "start_date_note": "Genauer Termin steht noch nicht fest.",
+    "duration_hours": 264,
+    "course_fee": null,
+    "course_fee_display": "—",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": null,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "",
+      "from_tariff": false
+    },
+    "city": "Landshut",
+    "street": "Am Lurzenhof 10 b",
+    "zip_code": "84036",
+    "latitude": 48.5594648,
+    "longitude": 12.1999128,
+    "availability": "unknown",
+    "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1026151"
   },
   {
     "chamber_slug": "hwk-niederbayern-oberpfalz",
@@ -99043,7 +100371,7 @@
     "latitude": 49.4760852,
     "longitude": 8.4080881,
     "availability": "available",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=104969&search-onr=51&img=8"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=104969&search-onr=51&img=7"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -99080,7 +100408,7 @@
     "latitude": 49.444007,
     "longitude": 7.7687411,
     "availability": "available",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105601&search-onr=51&img=7"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105601&search-onr=51&img=8"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -100322,7 +101650,7 @@
     "zip_code": "14558",
     "latitude": 52.3529105,
     "longitude": 13.1031758,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-potsdam.de/9,0,coursedetail.html?id=361775"
   },
   {
@@ -102135,43 +103463,6 @@
     "longitude": 9.059163,
     "availability": "available",
     "source_url": "https://www.hwk-reutlingen.de/seminar/t-mv-i-ii_metall-tz/#kurs-9"
-  },
-  {
-    "chamber_slug": "hwk-reutlingen",
-    "chamber_name": "HWK Reutlingen",
-    "chamber_region": "Baden-Württemberg",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
-    "parts": [
-      3,
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-09-29",
-    "end_date": "2026-12-07",
-    "start_date_note": "",
-    "duration_hours": 355,
-    "course_fee": 2750.0,
-    "course_fee_display": "2.750 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 450.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "450 €",
-      "from_tariff": true
-    },
-    "city": "Reutlingen",
-    "street": "Hindenburgstraße 58",
-    "zip_code": "72762",
-    "latitude": 48.4857514,
-    "longitude": 9.2063686,
-    "availability": "full",
-    "source_url": "https://www.hwk-reutlingen.de/seminar/r-mv-iii-iv-vz/#kurs-16"
   },
   {
     "chamber_slug": "hwk-reutlingen",
@@ -109677,7 +110968,7 @@
     "zip_code": "86161",
     "latitude": 48.3522511,
     "longitude": 10.9173148,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=382156"
   },
   {
@@ -111832,42 +113123,6 @@
     "parts": [
       4
     ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-10-09",
-    "end_date": "2026-11-21",
-    "start_date_note": "",
-    "duration_hours": 80,
-    "course_fee": 550.0,
-    "course_fee_display": "550 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 200.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "200 €",
-      "from_tariff": true
-    },
-    "city": "Schwerin",
-    "street": "Werkstraße 600",
-    "zip_code": "19061",
-    "latitude": 53.5721017,
-    "longitude": 11.3867432,
-    "availability": "full",
-    "source_url": "https://www.hwk-schwerin.de/19,0,coursedetail.html?id=84706"
-  },
-  {
-    "chamber_slug": "hwk-schwerin",
-    "chamber_name": "HWK Schwerin",
-    "chamber_region": "Mecklenburg-Vorpommern",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
@@ -113628,7 +114883,7 @@
     "zip_code": "70499",
     "latitude": 48.8229051,
     "longitude": 9.0972983,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.bia-stuttgart.de/kurse/meisterkurs-teil-3/#termin-154120"
   },
   {
@@ -121208,6 +122463,43 @@
     "chamber_slug": "hwk-ulm",
     "chamber_name": "HWK Ulm",
     "chamber_region": "Baden-Württemberg",
+    "trade_slug": "maurer-und-betonbauer",
+    "trade_name": "Maurer und Betonbauer",
+    "title": "Maurer und Betonbauer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-01-07",
+    "end_date": "2028-12-16",
+    "start_date_note": "",
+    "duration_hours": 840,
+    "course_fee": 7950.0,
+    "course_fee_display": "7.950 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 1490.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "1.490 €",
+      "from_tariff": true
+    },
+    "city": "Ulm",
+    "street": "Köllestraße 55",
+    "zip_code": "89077",
+    "latitude": 48.3856229,
+    "longitude": 9.9563226,
+    "availability": "available",
+    "source_url": "https://www.bildungsakademie-ulm.de/seminar/1-mv-maurer/#kurs-1-MV-MAURER"
+  },
+  {
+    "chamber_slug": "hwk-ulm",
+    "chamber_name": "HWK Ulm",
+    "chamber_region": "Baden-Württemberg",
     "trade_slug": "metallbauer",
     "trade_name": "Metallbauer",
     "title": "Metallbauer (Teile I + II)",
@@ -121385,7 +122677,7 @@
     "zip_code": "89077",
     "latitude": 48.3856229,
     "longitude": 9.9563226,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.bildungsakademie-ulm.de/seminar/1-mv-teil-iii-vz/#kurs-1-MV-Teil"
   },
   {
@@ -122320,13 +123612,13 @@
     "duration_hours": 1048,
     "course_fee": 13230.0,
     "course_fee_display": "13.230 €",
-    "exam_fee_scraped": 1400.0,
+    "exam_fee_scraped": 1435.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1400.0,
+      "fee": 1435.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.400 €",
+      "display": "1.435 €",
       "from_tariff": false
     },
     "city": "Schweinfurt",
@@ -122359,13 +123651,13 @@
     "duration_hours": 1048,
     "course_fee": 14015.0,
     "course_fee_display": "14.015 €",
-    "exam_fee_scraped": 1400.0,
+    "exam_fee_scraped": 1435.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1400.0,
+      "fee": 1435.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.400 €",
+      "display": "1.435 €",
       "from_tariff": false
     },
     "city": "Schweinfurt",
@@ -122437,13 +123729,13 @@
     "duration_hours": 1048,
     "course_fee": 14015.0,
     "course_fee_display": "14.015 €",
-    "exam_fee_scraped": 1400.0,
+    "exam_fee_scraped": 1435.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1400.0,
+      "fee": 1435.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.400 €",
+      "display": "1.435 €",
       "from_tariff": false
     },
     "city": "Schweinfurt",
@@ -122515,13 +123807,13 @@
     "duration_hours": 1048,
     "course_fee": 14015.0,
     "course_fee_display": "14.015 €",
-    "exam_fee_scraped": 1400.0,
+    "exam_fee_scraped": 1435.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1400.0,
+      "fee": 1435.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.400 €",
+      "display": "1.435 €",
       "from_tariff": false
     },
     "city": "Schweinfurt",
@@ -122554,13 +123846,13 @@
     "duration_hours": 1052,
     "course_fee": 14435.0,
     "course_fee_display": "14.435 €",
-    "exam_fee_scraped": 1400.0,
+    "exam_fee_scraped": 1435.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1400.0,
+      "fee": 1435.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.400 €",
+      "display": "1.435 €",
       "from_tariff": false
     },
     "city": "Schweinfurt",
@@ -122632,13 +123924,13 @@
     "duration_hours": 1052,
     "course_fee": 14435.0,
     "course_fee_display": "14.435 €",
-    "exam_fee_scraped": 1400.0,
+    "exam_fee_scraped": 1435.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1400.0,
+      "fee": 1435.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.400 €",
+      "display": "1.435 €",
       "from_tariff": false
     },
     "city": "Schweinfurt",
@@ -122710,13 +124002,13 @@
     "duration_hours": 1052,
     "course_fee": 14435.0,
     "course_fee_display": "14.435 €",
-    "exam_fee_scraped": 1400.0,
+    "exam_fee_scraped": 1435.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1400.0,
+      "fee": 1435.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.400 €",
+      "display": "1.435 €",
       "from_tariff": false
     },
     "city": "Schweinfurt",
@@ -124916,42 +126208,6 @@
     "chamber_region": "Hessen",
     "trade_slug": "friseur",
     "trade_name": "Friseur",
-    "title": "Friseur (Teil I)",
-    "parts": [
-      1
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-10-01",
-    "end_date": "2027-02-27",
-    "start_date_note": "",
-    "duration_hours": 806,
-    "course_fee": 6400.0,
-    "course_fee_display": "6.400 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 420.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "420 €",
-      "from_tariff": true
-    },
-    "city": "Wetzlar",
-    "street": "Dillufer 40",
-    "zip_code": "35576",
-    "latitude": 50.5548159,
-    "longitude": 8.4921662,
-    "availability": "waitlist",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-friseurhandwerk-teil-i-iv-vollzeit-44,0,coursedetail.html?id=109383&search-onr=44&img=1"
-  },
-  {
-    "chamber_slug": "hwk-wiesbaden",
-    "chamber_name": "HWK Wiesbaden",
-    "chamber_region": "Hessen",
-    "trade_slug": "friseur",
-    "trade_name": "Friseur",
     "title": "Friseur (Teile I + II)",
     "parts": [
       1,
@@ -124981,7 +126237,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-friseurhandwerk-teile-i-ii-teilzeit-44,0,coursedetail.html?id=124801&search-onr=44&img=2"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-friseurhandwerk-teile-i-ii-teilzeit-44,0,coursedetail.html?id=124801&search-onr=44&img=1"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -125017,7 +126273,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-friseurhandwerk-teile-i-iv-vollzeit-44,0,coursedetail.html?id=124674&search-onr=44&img=3"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-friseurhandwerk-teile-i-iv-vollzeit-44,0,coursedetail.html?id=124674&search-onr=44&img=2"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -125054,7 +126310,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-friseurhandwerk-teile-i-ii-vollzeit-44,0,coursedetail.html?id=121726&search-onr=44&img=4"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-friseurhandwerk-teile-i-ii-vollzeit-44,0,coursedetail.html?id=121726&search-onr=44&img=3"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -125091,7 +126347,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-friseurhandwerk-teile-i-ii-teilzeit-44,0,coursedetail.html?id=125561&search-onr=44&img=5"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-friseurhandwerk-teile-i-ii-teilzeit-44,0,coursedetail.html?id=125561&search-onr=44&img=4"
   },
   {
     "chamber_slug": "hwk-wiesbaden",

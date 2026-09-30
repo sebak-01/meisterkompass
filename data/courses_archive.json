@@ -3303,6 +3303,43 @@
     "source_url": "https://www.hwk-hannover.de/23,0,coursedetail.html?id=75533"
   },
   {
+    "chamber_slug": "hwk-heilbronn-franken",
+    "chamber_name": "HWK Heilbronn-Franken",
+    "chamber_region": "Baden-Württemberg",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "parts": [
+      3,
+      4
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-09-29",
+    "end_date": "2026-11-30",
+    "start_date_note": "",
+    "duration_hours": 320,
+    "course_fee": 2090.0,
+    "course_fee_display": "2.090 €",
+    "exam_fee_scraped": 400.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 400.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "400 €",
+      "from_tariff": false
+    },
+    "city": "Heilbronn",
+    "street": "Wannenäckerstraße 62",
+    "zip_code": "74078",
+    "latitude": 49.1847456,
+    "longitude": 9.169312,
+    "availability": "full",
+    "source_url": "https://www.hwk-heilbronn.de/seminar/mv-iiiiv-vz-herbst/#kurs-25"
+  },
+  {
     "chamber_slug": "hwk-hildesheim-suedniedersachsen",
     "chamber_name": "HWK Hildesheim-Südniedersachsen",
     "chamber_region": "Niedersachsen",
@@ -6298,6 +6335,43 @@
     "longitude": 9.2063686,
     "availability": "full",
     "source_url": "https://www.hwk-reutlingen.de/seminar/r-mv-iii-iv-tz/#kurs-17"
+  },
+  {
+    "chamber_slug": "hwk-reutlingen",
+    "chamber_name": "HWK Reutlingen",
+    "chamber_region": "Baden-Württemberg",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "parts": [
+      3,
+      4
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-09-29",
+    "end_date": "2026-12-07",
+    "start_date_note": "",
+    "duration_hours": 355,
+    "course_fee": 2750.0,
+    "course_fee_display": "2.750 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 450.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "450 €",
+      "from_tariff": true
+    },
+    "city": "Reutlingen",
+    "street": "Hindenburgstraße 58",
+    "zip_code": "72762",
+    "latitude": 48.4857514,
+    "longitude": 9.2063686,
+    "availability": "full",
+    "source_url": "https://www.hwk-reutlingen.de/seminar/r-mv-iii-iv-vz/#kurs-16"
   },
   {
     "chamber_slug": "hwk-rheinhessen",
