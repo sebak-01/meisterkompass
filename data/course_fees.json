@@ -385,9 +385,9 @@
     "chamber_slug": "hwk-ostwestfalen-lippe-zu-bielefeld",
     "trade_slug": "allgemein-teil-iii-iv",
     "parts": [
-      4
+      3
     ],
-    "fee": 965.0,
+    "fee": 2650.0,
     "exam_fee_scraped": null,
     "is_generic": true
   },
@@ -1353,6 +1353,16 @@
     ],
     "fee": 990.0,
     "exam_fee_scraped": 200.0,
+    "is_generic": true
+  },
+  {
+    "chamber_slug": "hwk-ostwestfalen-lippe-zu-bielefeld",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      4
+    ],
+    "fee": 965.0,
+    "exam_fee_scraped": null,
     "is_generic": true
   },
   {
@@ -2459,6 +2469,16 @@
     "is_generic": true
   },
   {
+    "chamber_slug": "hwk-kassel",
+    "trade_slug": "elektrotechniker",
+    "parts": [
+      2
+    ],
+    "fee": 6150.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-magdeburg",
     "trade_slug": "maler-und-lackierer",
     "parts": [
@@ -2695,6 +2715,16 @@
   },
   {
     "chamber_slug": "hwk-stuttgart",
+    "trade_slug": "kfz-techniker",
+    "parts": [
+      2
+    ],
+    "fee": 3990.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-kassel",
     "trade_slug": "kfz-techniker",
     "parts": [
       2
@@ -3234,17 +3264,6 @@
     "is_generic": false
   },
   {
-    "chamber_slug": "hwk-schwerin",
-    "trade_slug": "kfz-techniker",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 8500.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
     "chamber_slug": "hwk-ostfriesland",
     "trade_slug": "allgemein-teil-iii-iv",
     "parts": [
@@ -3679,6 +3698,17 @@
       2
     ],
     "fee": 12785.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "trade_slug": "elektrotechniker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 9750.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
@@ -4673,6 +4703,17 @@
     ],
     "fee": 6950.0,
     "exam_fee_scraped": 1644.0,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "trade_slug": "land-und-baumaschinenmechatroniker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 11000.0,
+    "exam_fee_scraped": null,
     "is_generic": false
   },
   {
@@ -6025,6 +6066,17 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-schwerin",
+    "trade_slug": "kfz-techniker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 8500.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-cottbus",
     "trade_slug": "stuckateur",
     "parts": [
@@ -6568,17 +6620,6 @@
     "is_generic": false
   },
   {
-    "chamber_slug": "hwk-koeln",
-    "trade_slug": "elektrotechniker",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 11360.0,
-    "exam_fee_scraped": 1650.0,
-    "is_generic": false
-  },
-  {
     "chamber_slug": "hwk-schwaben",
     "trade_slug": "elektrotechniker",
     "parts": [
@@ -6989,6 +7030,17 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-koeln",
+    "trade_slug": "elektrotechniker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 5888.0,
+    "exam_fee_scraped": 1650.0,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-schwerin",
     "trade_slug": "tischler",
     "parts": [
@@ -7338,16 +7390,6 @@
     "fee": 5140.0,
     "exam_fee_scraped": null,
     "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-ostwestfalen-lippe-zu-bielefeld",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      3
-    ],
-    "fee": 2650.0,
-    "exam_fee_scraped": null,
-    "is_generic": true
   },
   {
     "chamber_slug": "hwk-suedwestfalen",
@@ -7853,17 +7895,6 @@
       2
     ],
     "fee": 8420.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "trade_slug": "elektrotechniker",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 9500.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
