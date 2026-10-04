@@ -6845,17 +6845,6 @@
     "is_generic": false
   },
   {
-    "chamber_slug": "hwk-hamburg",
-    "trade_slug": "elektrotechniker",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 13500.0,
-    "exam_fee_scraped": 860.0,
-    "is_generic": false
-  },
-  {
     "chamber_slug": "hwk-berlin",
     "trade_slug": "installateur-und-heizungsbauer",
     "parts": [
@@ -7508,6 +7497,17 @@
       2
     ],
     "fee": 10500.0,
+    "exam_fee_scraped": 860.0,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-hamburg",
+    "trade_slug": "elektrotechniker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 12900.0,
     "exam_fee_scraped": 860.0,
     "is_generic": false
   },
