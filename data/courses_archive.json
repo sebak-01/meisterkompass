@@ -3267,6 +3267,42 @@
     "source_url": "https://www.hwkhalle.de/seminar/fb-aep-kompakt/#kurs-27573"
   },
   {
+    "chamber_slug": "hwk-halle-saale",
+    "chamber_name": "HWK Halle (Saale)",
+    "chamber_region": "Sachsen-Anhalt",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "online",
+    "start_date": "2026-10-06",
+    "end_date": "2027-04-29",
+    "start_date_note": "",
+    "duration_hours": 288,
+    "course_fee": 2800.0,
+    "course_fee_display": "2.800 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 208.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "208 €",
+      "from_tariff": true
+    },
+    "city": "Online",
+    "street": "",
+    "zip_code": "",
+    "latitude": null,
+    "longitude": null,
+    "availability": "available",
+    "source_url": "https://www.hwkhalle.de/seminar/fb-uf-fkm-bf/#kurs-27759"
+  },
+  {
     "chamber_slug": "hwk-hamburg",
     "chamber_name": "HWK Hamburg",
     "chamber_region": "Hamburg",
@@ -3563,6 +3599,43 @@
     "chamber_slug": "hwk-heilbronn-franken",
     "chamber_name": "HWK Heilbronn-Franken",
     "chamber_region": "Baden-Württemberg",
+    "trade_slug": "karosserie-und-fahrzeugbauer",
+    "trade_name": "Karosserie- und Fahrzeugbauer",
+    "title": "Karosserie- und Fahrzeugbauer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-10-06",
+    "end_date": "2028-03-04",
+    "start_date_note": "",
+    "duration_hours": 700,
+    "course_fee": 5990.0,
+    "course_fee_display": "5.990 €",
+    "exam_fee_scraped": 1665.0,
+    "exam_fee_qualifier": "ca.",
+    "exam_fee": {
+      "fee": 1665.0,
+      "fee_max": null,
+      "qualifier": "ca.",
+      "display": "ca. 1.665 €",
+      "from_tariff": false
+    },
+    "city": "Heilbronn",
+    "street": "Wannenäckerstraße 62",
+    "zip_code": "74078",
+    "latitude": 49.1847456,
+    "longitude": 9.169312,
+    "availability": "available",
+    "source_url": "https://www.hwk-heilbronn.de/seminar/mv-karobau-iii-tz-hn/#kurs-15"
+  },
+  {
+    "chamber_slug": "hwk-heilbronn-franken",
+    "chamber_name": "HWK Heilbronn-Franken",
+    "chamber_region": "Baden-Württemberg",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
@@ -3595,6 +3668,43 @@
     "longitude": 9.169312,
     "availability": "full",
     "source_url": "https://www.hwk-heilbronn.de/seminar/mv-iiiiv-vz-herbst/#kurs-25"
+  },
+  {
+    "chamber_slug": "hwk-heilbronn-franken",
+    "chamber_name": "HWK Heilbronn-Franken",
+    "chamber_region": "Baden-Württemberg",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "parts": [
+      3,
+      4
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-10-06",
+    "end_date": "2027-07-15",
+    "start_date_note": "",
+    "duration_hours": 320,
+    "course_fee": 2090.0,
+    "course_fee_display": "2.090 €",
+    "exam_fee_scraped": 400.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 400.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "400 €",
+      "from_tariff": false
+    },
+    "city": "Heilbronn",
+    "street": "Wannenäckerstraße 62",
+    "zip_code": "74078",
+    "latitude": 49.1847456,
+    "longitude": 9.169312,
+    "availability": "available",
+    "source_url": "https://www.hwk-heilbronn.de/seminar/mv-iiiiv-tz-2/#kurs-24"
   },
   {
     "chamber_slug": "hwk-hildesheim-suedniedersachsen",
@@ -8024,6 +8134,42 @@
     "longitude": 7.9631509,
     "availability": "available",
     "source_url": "https://www.bbz-arnsberg.de/kurse/ausbildung-der-ausbilder-nach-aevo#termin-1"
+  },
+  {
+    "chamber_slug": "hwk-suedwestfalen",
+    "chamber_name": "HWK Südwestfalen",
+    "chamber_region": "Nordrhein-Westfalen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-10-06",
+    "end_date": "2026-11-20",
+    "start_date_note": "",
+    "duration_hours": 300,
+    "course_fee": 1810.0,
+    "course_fee_display": "1.810 €",
+    "exam_fee_scraped": 275.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 275.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "275 €",
+      "from_tariff": false
+    },
+    "city": "Arnsberg",
+    "street": "Im Hülsenfeld 42",
+    "zip_code": "59755",
+    "latitude": 51.4470454,
+    "longitude": 7.9631509,
+    "availability": "available",
+    "source_url": "https://www.bbz-arnsberg.de/kurse/gepruefte-r-fachfrau-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo#termin-1"
   },
   {
     "chamber_slug": "hwk-unterfranken",
