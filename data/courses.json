@@ -3481,7 +3481,7 @@
     "zip_code": "",
     "latitude": 53.248706,
     "longitude": 10.407855,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://weiterbildung.hwk-bls.de/22,0,coursedetail.html?id=312175"
   },
   {
@@ -3518,7 +3518,7 @@
     "zip_code": "",
     "latitude": 53.248706,
     "longitude": 10.407855,
-    "availability": "waitlist",
+    "availability": "available",
     "source_url": "https://weiterbildung.hwk-bls.de/22,0,coursedetail.html?id=326330"
   },
   {
@@ -3810,7 +3810,7 @@
     "zip_code": "",
     "latitude": 52.7798987,
     "longitude": 9.2984612,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://weiterbildung.hwk-bls.de/22,0,coursedetail.html?id=315230"
   },
   {
@@ -7644,7 +7644,7 @@
     "zip_code": "09116",
     "latitude": 50.8307235,
     "longitude": 12.8727524,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/vorbereitungskurs-tischlermeister-teile-i-ii/#termin_969"
   },
   {
@@ -13400,43 +13400,6 @@
       1,
       2
     ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-10-13",
-    "end_date": "2028-11-24",
-    "start_date_note": "",
-    "duration_hours": 1100,
-    "course_fee": 10690.0,
-    "course_fee_display": "10.690 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 825.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "825 €",
-      "from_tariff": true
-    },
-    "city": "Wildau",
-    "street": "Schwartzkopffstraße 1",
-    "zip_code": "15745",
-    "latitude": 52.3198785,
-    "longitude": 13.6310976,
-    "availability": "available",
-    "source_url": "https://www.hwk-cottbus.de/7,0,coursedetail.html?id=65035"
-  },
-  {
-    "chamber_slug": "hwk-cottbus",
-    "chamber_name": "HWK Cottbus",
-    "chamber_region": "Brandenburg",
-    "trade_slug": "installateur-und-heizungsbauer",
-    "trade_name": "Installateur- und Heizungsbauer",
-    "title": "Installateur- und Heizungsbauer (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
@@ -14529,7 +14492,7 @@
     "zip_code": "15745",
     "latitude": 52.3198785,
     "longitude": 13.6310976,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.hwk-cottbus.de/7,0,coursedetail.html?id=65215"
   },
   {
@@ -16601,7 +16564,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-1"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-2"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -16637,7 +16600,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-2"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-3"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -16709,7 +16672,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-3"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-1"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -17183,7 +17146,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-2"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-1"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -17327,7 +17290,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-3"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-2"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -17472,7 +17435,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-4"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-3"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -17652,7 +17615,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-5"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-4"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -17724,7 +17687,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-6"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-5"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -17868,7 +17831,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-7"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-6"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -17940,7 +17903,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-8"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-7"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -18011,8 +17974,8 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-9"
+    "availability": "waitlist",
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-8"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -18084,7 +18047,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-10"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-9"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -18156,7 +18119,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-11"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-10"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -18228,7 +18191,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-12"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-11"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -18444,7 +18407,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-13"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-12"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -18516,7 +18479,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-14"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-13"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -18588,7 +18551,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-15"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-14"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -18732,7 +18695,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-16"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo-vollzeit/#termin-15"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -20730,7 +20693,7 @@
     "zip_code": "01099",
     "latitude": 51.0833678,
     "longitude": 13.7677525,
-    "availability": "waitlist",
+    "availability": "available",
     "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-113926.html"
   },
   {
@@ -47504,7 +47467,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "available",
-    "source_url": "https://www.hwk-koblenz.de/kurse/strassenbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=115610&search-onr=52&img=9"
+    "source_url": "https://www.hwk-koblenz.de/kurse/strassenbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=115610&search-onr=52&img=10"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -48947,7 +48910,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/zimmerer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=113734&search-onr=52&img=10"
+    "source_url": "https://www.hwk-koblenz.de/kurse/zimmerer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=113734&search-onr=52&img=9"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -50998,7 +50961,7 @@
     "zip_code": "50827",
     "latitude": 50.9758161,
     "longitude": 6.8975287,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-koeln.de/32,0,coursedetail.html?id=34314"
   },
   {
@@ -64567,7 +64530,7 @@
     "zip_code": "84453",
     "latitude": 48.2462844,
     "longitude": 12.5306834,
-    "availability": "available",
+    "availability": "unknown",
     "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1218856"
   },
   {
@@ -65588,7 +65551,7 @@
     "zip_code": "82362",
     "latitude": 47.8455509,
     "longitude": 11.146713,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1224048"
   },
   {
@@ -66711,6 +66674,43 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
+    "start_date": "2028-01-17",
+    "end_date": "2028-03-17",
+    "start_date_note": "",
+    "duration_hours": 340,
+    "course_fee": 2865.0,
+    "course_fee_display": "2.865 €",
+    "exam_fee_scraped": 312.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 312.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "312 €",
+      "from_tariff": false
+    },
+    "city": "Freising",
+    "street": "Gute Änger 11",
+    "zip_code": "85356",
+    "latitude": 48.3888054,
+    "longitude": 11.7586366,
+    "availability": "available",
+    "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1234565"
+  },
+  {
+    "chamber_slug": "hwk-muenchen-und-oberbayern",
+    "chamber_name": "HWK für München und Oberbayern",
+    "chamber_region": "Bayern",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "parts": [
+      3,
+      4
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
     "start_date": "2028-03-20",
     "end_date": "2028-05-19",
     "start_date_note": "",
@@ -66770,6 +66770,43 @@
     "longitude": 11.146713,
     "availability": "available",
     "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1230569"
+  },
+  {
+    "chamber_slug": "hwk-muenchen-und-oberbayern",
+    "chamber_name": "HWK für München und Oberbayern",
+    "chamber_region": "Bayern",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "parts": [
+      3,
+      4
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-04-24",
+    "end_date": "2028-06-30",
+    "start_date_note": "",
+    "duration_hours": 340,
+    "course_fee": 2865.0,
+    "course_fee_display": "2.865 €",
+    "exam_fee_scraped": 312.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 312.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "312 €",
+      "from_tariff": false
+    },
+    "city": "Freising",
+    "street": "Gute Änger 11",
+    "zip_code": "85356",
+    "latitude": 48.3888054,
+    "longitude": 11.7586366,
+    "availability": "available",
+    "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1234570"
   },
   {
     "chamber_slug": "hwk-muenchen-und-oberbayern",
@@ -67006,6 +67043,43 @@
     ],
     "format": "full_time",
     "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-10-02",
+    "end_date": "2028-12-01",
+    "start_date_note": "",
+    "duration_hours": 340,
+    "course_fee": 2865.0,
+    "course_fee_display": "2.865 €",
+    "exam_fee_scraped": 312.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 312.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "312 €",
+      "from_tariff": false
+    },
+    "city": "Freising",
+    "street": "Gute Änger 11",
+    "zip_code": "85356",
+    "latitude": 48.3888054,
+    "longitude": 11.7586366,
+    "availability": "available",
+    "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1234575"
+  },
+  {
+    "chamber_slug": "hwk-muenchen-und-oberbayern",
+    "chamber_name": "HWK für München und Oberbayern",
+    "chamber_region": "Bayern",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "parts": [
+      3,
+      4
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
     "teaching_mode": "online",
     "start_date": "2028-10-09",
     "end_date": "2028-12-08",
@@ -67161,13 +67235,13 @@
     "duration_hours": null,
     "course_fee": 11500.0,
     "course_fee_display": "11.500 €",
-    "exam_fee_scraped": 1850.0,
+    "exam_fee_scraped": 1950.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1850.0,
+      "fee": 1950.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.850 €",
+      "display": "1.950 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -67198,13 +67272,13 @@
     "duration_hours": null,
     "course_fee": 11500.0,
     "course_fee_display": "11.500 €",
-    "exam_fee_scraped": 1850.0,
+    "exam_fee_scraped": 1950.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1850.0,
+      "fee": 1950.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.850 €",
+      "display": "1.950 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -67235,13 +67309,13 @@
     "duration_hours": null,
     "course_fee": 11500.0,
     "course_fee_display": "11.500 €",
-    "exam_fee_scraped": 1850.0,
+    "exam_fee_scraped": 1950.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1850.0,
+      "fee": 1950.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.850 €",
+      "display": "1.950 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -67272,13 +67346,13 @@
     "duration_hours": null,
     "course_fee": 11500.0,
     "course_fee_display": "11.500 €",
-    "exam_fee_scraped": 1850.0,
+    "exam_fee_scraped": 1950.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1850.0,
+      "fee": 1950.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.850 €",
+      "display": "1.950 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -67309,13 +67383,13 @@
     "duration_hours": null,
     "course_fee": 11500.0,
     "course_fee_display": "11.500 €",
-    "exam_fee_scraped": 1850.0,
+    "exam_fee_scraped": 1950.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1850.0,
+      "fee": 1950.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.850 €",
+      "display": "1.950 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -67346,13 +67420,13 @@
     "duration_hours": null,
     "course_fee": 11500.0,
     "course_fee_display": "11.500 €",
-    "exam_fee_scraped": 1850.0,
+    "exam_fee_scraped": 1950.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1850.0,
+      "fee": 1950.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.850 €",
+      "display": "1.950 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -67383,13 +67457,13 @@
     "duration_hours": null,
     "course_fee": 11500.0,
     "course_fee_display": "11.500 €",
-    "exam_fee_scraped": 1850.0,
+    "exam_fee_scraped": 1950.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1850.0,
+      "fee": 1950.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.850 €",
+      "display": "1.950 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -67420,13 +67494,13 @@
     "duration_hours": null,
     "course_fee": 13312.69,
     "course_fee_display": "13.313 €",
-    "exam_fee_scraped": 1850.0,
+    "exam_fee_scraped": 1950.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1850.0,
+      "fee": 1950.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.850 €",
+      "display": "1.950 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -67457,13 +67531,13 @@
     "duration_hours": null,
     "course_fee": 13312.69,
     "course_fee_display": "13.313 €",
-    "exam_fee_scraped": 1850.0,
+    "exam_fee_scraped": 1950.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1850.0,
+      "fee": 1950.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.850 €",
+      "display": "1.950 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -67494,13 +67568,13 @@
     "duration_hours": null,
     "course_fee": 13312.69,
     "course_fee_display": "13.313 €",
-    "exam_fee_scraped": 1850.0,
+    "exam_fee_scraped": 1950.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1850.0,
+      "fee": 1950.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.850 €",
+      "display": "1.950 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -67531,13 +67605,13 @@
     "duration_hours": null,
     "course_fee": 13312.69,
     "course_fee_display": "13.313 €",
-    "exam_fee_scraped": 1850.0,
+    "exam_fee_scraped": 1950.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1850.0,
+      "fee": 1950.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.850 €",
+      "display": "1.950 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -67642,13 +67716,13 @@
     "duration_hours": null,
     "course_fee": 10995.0,
     "course_fee_display": "10.995 €",
-    "exam_fee_scraped": 1850.0,
+    "exam_fee_scraped": 1950.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1850.0,
+      "fee": 1950.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.850 €",
+      "display": "1.950 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -67679,13 +67753,13 @@
     "duration_hours": null,
     "course_fee": 10995.0,
     "course_fee_display": "10.995 €",
-    "exam_fee_scraped": 1850.0,
+    "exam_fee_scraped": 1950.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1850.0,
+      "fee": 1950.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.850 €",
+      "display": "1.950 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -67827,13 +67901,13 @@
     "duration_hours": null,
     "course_fee": 7000.0,
     "course_fee_display": "7.000 €",
-    "exam_fee_scraped": 1300.0,
+    "exam_fee_scraped": 1500.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1300.0,
+      "fee": 1500.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.300 €",
+      "display": "1.500 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -67864,13 +67938,13 @@
     "duration_hours": null,
     "course_fee": 5395.0,
     "course_fee_display": "5.395 €",
-    "exam_fee_scraped": 960.0,
+    "exam_fee_scraped": 1060.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 960.0,
+      "fee": 1060.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "960 €",
+      "display": "1.060 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -67901,13 +67975,13 @@
     "duration_hours": null,
     "course_fee": 5395.0,
     "course_fee_display": "5.395 €",
-    "exam_fee_scraped": 960.0,
+    "exam_fee_scraped": 1060.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 960.0,
+      "fee": 1060.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "960 €",
+      "display": "1.060 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -67938,13 +68012,13 @@
     "duration_hours": null,
     "course_fee": 5395.0,
     "course_fee_display": "5.395 €",
-    "exam_fee_scraped": 960.0,
+    "exam_fee_scraped": 1060.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 960.0,
+      "fee": 1060.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "960 €",
+      "display": "1.060 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -67975,13 +68049,13 @@
     "duration_hours": null,
     "course_fee": 12780.0,
     "course_fee_display": "12.780 €",
-    "exam_fee_scraped": 1350.0,
+    "exam_fee_scraped": 1450.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1350.0,
+      "fee": 1450.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.350 €",
+      "display": "1.450 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -68012,13 +68086,13 @@
     "duration_hours": null,
     "course_fee": 12780.0,
     "course_fee_display": "12.780 €",
-    "exam_fee_scraped": 1350.0,
+    "exam_fee_scraped": 1450.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1350.0,
+      "fee": 1450.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.350 €",
+      "display": "1.450 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -68049,13 +68123,13 @@
     "duration_hours": null,
     "course_fee": 12780.0,
     "course_fee_display": "12.780 €",
-    "exam_fee_scraped": 1350.0,
+    "exam_fee_scraped": 1450.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1350.0,
+      "fee": 1450.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.350 €",
+      "display": "1.450 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -68086,13 +68160,13 @@
     "duration_hours": null,
     "course_fee": 12780.0,
     "course_fee_display": "12.780 €",
-    "exam_fee_scraped": 1350.0,
+    "exam_fee_scraped": 1450.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1350.0,
+      "fee": 1450.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.350 €",
+      "display": "1.450 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -68123,13 +68197,13 @@
     "duration_hours": null,
     "course_fee": 13165.0,
     "course_fee_display": "13.165 €",
-    "exam_fee_scraped": 1350.0,
+    "exam_fee_scraped": 1450.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1350.0,
+      "fee": 1450.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.350 €",
+      "display": "1.450 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -68160,13 +68234,13 @@
     "duration_hours": null,
     "course_fee": 12780.0,
     "course_fee_display": "12.780 €",
-    "exam_fee_scraped": 1350.0,
+    "exam_fee_scraped": 1450.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1350.0,
+      "fee": 1450.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.350 €",
+      "display": "1.450 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -68197,13 +68271,13 @@
     "duration_hours": null,
     "course_fee": 12780.0,
     "course_fee_display": "12.780 €",
-    "exam_fee_scraped": 1350.0,
+    "exam_fee_scraped": 1450.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1350.0,
+      "fee": 1450.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.350 €",
+      "display": "1.450 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -68234,13 +68308,13 @@
     "duration_hours": null,
     "course_fee": 12780.0,
     "course_fee_display": "12.780 €",
-    "exam_fee_scraped": 1350.0,
+    "exam_fee_scraped": 1450.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1350.0,
+      "fee": 1450.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.350 €",
+      "display": "1.450 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -68271,13 +68345,13 @@
     "duration_hours": null,
     "course_fee": 12780.0,
     "course_fee_display": "12.780 €",
-    "exam_fee_scraped": 1350.0,
+    "exam_fee_scraped": 1450.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1350.0,
+      "fee": 1450.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.350 €",
+      "display": "1.450 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -68308,13 +68382,13 @@
     "duration_hours": null,
     "course_fee": 13970.0,
     "course_fee_display": "13.970 €",
-    "exam_fee_scraped": 1350.0,
+    "exam_fee_scraped": 1450.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1350.0,
+      "fee": 1450.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.350 €",
+      "display": "1.450 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -68345,13 +68419,13 @@
     "duration_hours": null,
     "course_fee": 13970.0,
     "course_fee_display": "13.970 €",
-    "exam_fee_scraped": 1350.0,
+    "exam_fee_scraped": 1450.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1350.0,
+      "fee": 1450.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.350 €",
+      "display": "1.450 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -68382,13 +68456,13 @@
     "duration_hours": null,
     "course_fee": 13295.0,
     "course_fee_display": "13.295 €",
-    "exam_fee_scraped": 2100.0,
+    "exam_fee_scraped": 2300.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 2100.0,
+      "fee": 2300.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "2.100 €",
+      "display": "2.300 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -68419,13 +68493,13 @@
     "duration_hours": null,
     "course_fee": 12395.0,
     "course_fee_display": "12.395 €",
-    "exam_fee_scraped": 2100.0,
+    "exam_fee_scraped": 2300.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 2100.0,
+      "fee": 2300.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "2.100 €",
+      "display": "2.300 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -68456,13 +68530,13 @@
     "duration_hours": null,
     "course_fee": 12595.0,
     "course_fee_display": "12.595 €",
-    "exam_fee_scraped": 2100.0,
+    "exam_fee_scraped": 2300.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 2100.0,
+      "fee": 2300.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "2.100 €",
+      "display": "2.300 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -68493,13 +68567,13 @@
     "duration_hours": null,
     "course_fee": 13295.0,
     "course_fee_display": "13.295 €",
-    "exam_fee_scraped": 2100.0,
+    "exam_fee_scraped": 2300.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 2100.0,
+      "fee": 2300.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "2.100 €",
+      "display": "2.300 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -68530,13 +68604,13 @@
     "duration_hours": null,
     "course_fee": 13295.0,
     "course_fee_display": "13.295 €",
-    "exam_fee_scraped": 2100.0,
+    "exam_fee_scraped": 2300.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 2100.0,
+      "fee": 2300.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "2.100 €",
+      "display": "2.300 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -68567,13 +68641,13 @@
     "duration_hours": null,
     "course_fee": 11395.0,
     "course_fee_display": "11.395 €",
-    "exam_fee_scraped": 1450.0,
+    "exam_fee_scraped": 1550.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1450.0,
+      "fee": 1550.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.450 €",
+      "display": "1.550 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -68604,13 +68678,13 @@
     "duration_hours": null,
     "course_fee": 11195.0,
     "course_fee_display": "11.195 €",
-    "exam_fee_scraped": 1450.0,
+    "exam_fee_scraped": 1550.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1450.0,
+      "fee": 1550.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.450 €",
+      "display": "1.550 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -68641,13 +68715,13 @@
     "duration_hours": null,
     "course_fee": 10595.0,
     "course_fee_display": "10.595 €",
-    "exam_fee_scraped": 1450.0,
+    "exam_fee_scraped": 1550.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1450.0,
+      "fee": 1550.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.450 €",
+      "display": "1.550 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -68678,13 +68752,13 @@
     "duration_hours": null,
     "course_fee": 11395.0,
     "course_fee_display": "11.395 €",
-    "exam_fee_scraped": 1450.0,
+    "exam_fee_scraped": 1550.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1450.0,
+      "fee": 1550.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.450 €",
+      "display": "1.550 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -68715,13 +68789,13 @@
     "duration_hours": null,
     "course_fee": 10595.0,
     "course_fee_display": "10.595 €",
-    "exam_fee_scraped": 1450.0,
+    "exam_fee_scraped": 1550.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1450.0,
+      "fee": 1550.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.450 €",
+      "display": "1.550 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -68752,13 +68826,13 @@
     "duration_hours": null,
     "course_fee": 10595.0,
     "course_fee_display": "10.595 €",
-    "exam_fee_scraped": 1450.0,
+    "exam_fee_scraped": 1550.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1450.0,
+      "fee": 1550.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.450 €",
+      "display": "1.550 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -68789,13 +68863,13 @@
     "duration_hours": null,
     "course_fee": 11395.0,
     "course_fee_display": "11.395 €",
-    "exam_fee_scraped": 1450.0,
+    "exam_fee_scraped": 1550.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1450.0,
+      "fee": 1550.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.450 €",
+      "display": "1.550 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -68826,13 +68900,13 @@
     "duration_hours": null,
     "course_fee": 11195.0,
     "course_fee_display": "11.195 €",
-    "exam_fee_scraped": 1450.0,
+    "exam_fee_scraped": 1550.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1450.0,
+      "fee": 1550.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.450 €",
+      "display": "1.550 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -68900,13 +68974,13 @@
     "duration_hours": null,
     "course_fee": 14395.0,
     "course_fee_display": "14.395 €",
-    "exam_fee_scraped": 1450.0,
+    "exam_fee_scraped": 1650.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1450.0,
+      "fee": 1650.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.450 €",
+      "display": "1.650 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -68937,13 +69011,13 @@
     "duration_hours": null,
     "course_fee": 14395.0,
     "course_fee_display": "14.395 €",
-    "exam_fee_scraped": 1450.0,
+    "exam_fee_scraped": 1650.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1450.0,
+      "fee": 1650.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.450 €",
+      "display": "1.650 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -68974,13 +69048,13 @@
     "duration_hours": null,
     "course_fee": 14395.0,
     "course_fee_display": "14.395 €",
-    "exam_fee_scraped": 1450.0,
+    "exam_fee_scraped": 1650.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1450.0,
+      "fee": 1650.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.450 €",
+      "display": "1.650 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -69011,13 +69085,13 @@
     "duration_hours": null,
     "course_fee": 14395.0,
     "course_fee_display": "14.395 €",
-    "exam_fee_scraped": 1450.0,
+    "exam_fee_scraped": 1650.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1450.0,
+      "fee": 1650.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.450 €",
+      "display": "1.650 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -69048,13 +69122,13 @@
     "duration_hours": null,
     "course_fee": 8900.0,
     "course_fee_display": "8.900 €",
-    "exam_fee_scraped": 1750.0,
+    "exam_fee_scraped": 1950.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1750.0,
+      "fee": 1950.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.750 €",
+      "display": "1.950 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -69085,13 +69159,13 @@
     "duration_hours": null,
     "course_fee": 8900.0,
     "course_fee_display": "8.900 €",
-    "exam_fee_scraped": 1750.0,
+    "exam_fee_scraped": 1950.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1750.0,
+      "fee": 1950.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.750 €",
+      "display": "1.950 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -69122,13 +69196,13 @@
     "duration_hours": null,
     "course_fee": 8900.0,
     "course_fee_display": "8.900 €",
-    "exam_fee_scraped": 1750.0,
+    "exam_fee_scraped": 1950.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1750.0,
+      "fee": 1950.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.750 €",
+      "display": "1.950 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -69159,13 +69233,13 @@
     "duration_hours": null,
     "course_fee": 9900.0,
     "course_fee_display": "9.900 €",
-    "exam_fee_scraped": 1100.0,
+    "exam_fee_scraped": 1200.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1100.0,
+      "fee": 1200.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.100 €",
+      "display": "1.200 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -69196,13 +69270,13 @@
     "duration_hours": null,
     "course_fee": 9900.0,
     "course_fee_display": "9.900 €",
-    "exam_fee_scraped": 1100.0,
+    "exam_fee_scraped": 1200.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1100.0,
+      "fee": 1200.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.100 €",
+      "display": "1.200 €",
       "from_tariff": false
     },
     "city": "Münster",
@@ -74166,6 +74240,43 @@
     "chamber_slug": "hwk-niederbayern-oberpfalz",
     "chamber_name": "HWK Niederbayern-Oberpfalz",
     "chamber_region": "Bayern",
+    "trade_slug": "land-und-baumaschinenmechatroniker",
+    "trade_name": "Land- und Baumaschinenmechatroniker",
+    "title": "Land- und Baumaschinenmechatroniker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2031-09-01",
+    "end_date": "2032-03-01",
+    "start_date_note": "Genauer Termin steht noch nicht fest.",
+    "duration_hours": 800,
+    "course_fee": null,
+    "course_fee_display": "—",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": null,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "",
+      "from_tariff": false
+    },
+    "city": "Landshut",
+    "street": "Am Lurzenhof 10 b",
+    "zip_code": "84036",
+    "latitude": 48.5594648,
+    "longitude": 12.1999128,
+    "availability": "unknown",
+    "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1026264"
+  },
+  {
+    "chamber_slug": "hwk-niederbayern-oberpfalz",
+    "chamber_name": "HWK Niederbayern-Oberpfalz",
+    "chamber_region": "Bayern",
     "trade_slug": "maler-und-lackierer",
     "trade_name": "Maler und Lackierer",
     "title": "Maler und Lackierer (Teile I + II)",
@@ -76016,7 +76127,7 @@
     "zip_code": "84036",
     "latitude": 48.5594648,
     "longitude": 12.1999128,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1018854"
   },
   {
@@ -76484,7 +76595,7 @@
     "zip_code": "94036",
     "latitude": 48.5626047,
     "longitude": 13.4060264,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1014039"
   },
   {
@@ -81679,8 +81790,8 @@
     "format": "part_time",
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
-    "start_date": "2029-06-15",
-    "end_date": "2031-10-18",
+    "start_date": "2029-02-16",
+    "end_date": "2031-06-21",
     "start_date_note": "",
     "duration_hours": 1300,
     "course_fee": 10000.0,
@@ -82620,7 +82731,7 @@
     "zip_code": "95448",
     "latitude": 49.9423427,
     "longitude": 11.599074,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.hwk-oberfranken.de/72,0,coursedetail.html?id=309200"
   },
   {
@@ -95476,7 +95587,7 @@
     "zip_code": "18055",
     "latitude": 54.0753091,
     "longitude": 12.141125,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.hwk-omv.de/18,0,coursedetail.html?id=107785"
   },
   {
@@ -98006,7 +98117,7 @@
     "zip_code": "33613",
     "latitude": 52.0325564,
     "longitude": 8.5354738,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://bbz.handwerk-owl.de/3351,0,coursedetail.html?id=131117"
   },
   {
@@ -98222,7 +98333,7 @@
     "zip_code": "33613",
     "latitude": 52.0325564,
     "longitude": 8.5354738,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://bbz.handwerk-owl.de/3351,0,coursedetail.html?id=131128"
   },
   {
@@ -104108,6 +104219,42 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
+    "start_date": "2027-08-24",
+    "end_date": "2027-10-13",
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": 2320.0,
+    "course_fee_display": "2.320 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 340.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "340 €",
+      "from_tariff": true
+    },
+    "city": "Frankfurt am Main",
+    "street": "Schönstraße 21",
+    "zip_code": "60327",
+    "latitude": 50.1013705,
+    "longitude": 8.65682,
+    "availability": "available",
+    "source_url": "https://portal.hwk-rhein-main.de/seminar/ml-99vz/"
+  },
+  {
+    "chamber_slug": "hwk-rhein-main",
+    "chamber_name": "HWK Frankfurt-Rhein-Main",
+    "chamber_region": "Hessen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
     "start_date": "2027-09-15",
     "end_date": "2027-11-06",
     "start_date_note": "",
@@ -109675,7 +109822,7 @@
     "zip_code": "87435",
     "latitude": 47.7174731,
     "longitude": 10.3185888,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=378790"
   },
   {
@@ -121554,13 +121701,13 @@
     "duration_hours": 1007,
     "course_fee": 14735.0,
     "course_fee_display": "14.735 €",
-    "exam_fee_scraped": 1400.0,
+    "exam_fee_scraped": 1435.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1400.0,
+      "fee": 1435.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.400 €",
+      "display": "1.435 €",
       "from_tariff": false
     },
     "city": "Schweinfurt",
@@ -121671,13 +121818,13 @@
     "duration_hours": 1007,
     "course_fee": 15180.0,
     "course_fee_display": "15.180 €",
-    "exam_fee_scraped": 1400.0,
+    "exam_fee_scraped": 1435.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1400.0,
+      "fee": 1435.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.400 €",
+      "display": "1.435 €",
       "from_tariff": false
     },
     "city": "Schweinfurt",
@@ -121749,13 +121896,13 @@
     "duration_hours": 1007,
     "course_fee": 15180.0,
     "course_fee_display": "15.180 €",
-    "exam_fee_scraped": 1400.0,
+    "exam_fee_scraped": 1435.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1400.0,
+      "fee": 1435.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.400 €",
+      "display": "1.435 €",
       "from_tariff": false
     },
     "city": "Schweinfurt",
@@ -121824,7 +121971,7 @@
     "start_date": "2027-03-01",
     "end_date": "2027-12-23",
     "start_date_note": "",
-    "duration_hours": 1175,
+    "duration_hours": 1344,
     "course_fee": 14600.0,
     "course_fee_display": "14.600 €",
     "exam_fee_scraped": 1525.0,
@@ -121863,16 +122010,16 @@
     "start_date": "2027-09-06",
     "end_date": "2028-06-30",
     "start_date_note": "",
-    "duration_hours": 1175,
+    "duration_hours": 1344,
     "course_fee": 14600.0,
     "course_fee_display": "14.600 €",
-    "exam_fee_scraped": 1530.0,
+    "exam_fee_scraped": 1525.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1530.0,
+      "fee": 1525.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.530 €",
+      "display": "1.525 €",
       "from_tariff": false
     },
     "city": "Schweinfurt",
@@ -121905,13 +122052,13 @@
     "duration_hours": 1344,
     "course_fee": 15040.0,
     "course_fee_display": "15.040 €",
-    "exam_fee_scraped": 1530.0,
+    "exam_fee_scraped": 1525.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1530.0,
+      "fee": 1525.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.530 €",
+      "display": "1.525 €",
       "from_tariff": false
     },
     "city": "Schweinfurt",
@@ -121944,13 +122091,13 @@
     "duration_hours": 1344,
     "course_fee": 15040.0,
     "course_fee_display": "15.040 €",
-    "exam_fee_scraped": 1530.0,
+    "exam_fee_scraped": 1525.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1530.0,
+      "fee": 1525.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.530 €",
+      "display": "1.525 €",
       "from_tariff": false
     },
     "city": "Schweinfurt",
@@ -124314,7 +124461,7 @@
     "zip_code": "35576",
     "latitude": 50.5548159,
     "longitude": 8.4921662,
-    "availability": "waitlist",
+    "availability": "available",
     "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-maler-und-lackierer-handwerk-teil-i-ii-vollzeit-schwerpunkt-gestaltung-und-instandhaltung-44,0,coursedetail.html?id=113114&search-onr=44&img=1"
   },
   {
