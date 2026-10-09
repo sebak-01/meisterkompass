@@ -676,6 +676,13 @@
           "qualifier": ""
         }
       },
+      "zimmerer": {
+        "1,2": {
+          "fee": 1089.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
       "zweiradmechaniker": {
         "1": {
           "fee": 1011.0,
@@ -1804,7 +1811,7 @@
       },
       "maler-und-lackierer": {
         "1,2": {
-          "fee": 1650.0,
+          "fee": 2400.0,
           "fee_max": null,
           "qualifier": ""
         }
@@ -2483,47 +2490,47 @@
       },
       "metallbauer": {
         "1,2": {
-          "fee": 1250.0,
+          "fee": 1350.0,
           "fee_max": null,
           "qualifier": ""
         }
       },
       "ofen-und-luftheizungsbauer": {
         "1,2": {
-          "fee": 1700.0,
+          "fee": 1900.0,
           "fee_max": null,
           "qualifier": ""
         }
       },
       "raumausstatter": {
         "1,2": {
-          "fee": 1500.0,
+          "fee": 1700.0,
           "fee_max": null,
           "qualifier": ""
         }
       },
       "tischler": {
         "1,2": {
-          "fee": 1300.0,
+          "fee": 1400.0,
           "fee_max": null,
           "qualifier": ""
         }
       },
       "zahntechniker": {
         "1,2": {
-          "fee": 1540.0,
+          "fee": 1650.0,
           "fee_max": null,
           "qualifier": ""
         }
       },
       "zweiradmechaniker": {
         "1,2": {
-          "fee": 1350.0,
+          "fee": 1450.0,
           "fee_max": null,
           "qualifier": ""
         },
         "2": {
-          "fee": 250.0,
+          "fee": 350.0,
           "fee_max": null,
           "qualifier": ""
         }
@@ -3795,7 +3802,7 @@
       },
       "elektrotechniker": {
         "1,2": {
-          "fee": 630.0,
+          "fee": 1457.25,
           "fee_max": null,
           "qualifier": ""
         }
@@ -3837,7 +3844,7 @@
       },
       "metallbauer": {
         "1,2": {
-          "fee": 630.0,
+          "fee": 1130.0,
           "fee_max": null,
           "qualifier": ""
         }

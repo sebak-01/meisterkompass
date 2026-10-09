@@ -8194,10 +8194,10 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 630.0,
+      "fee": 1457.25,
       "fee_max": null,
       "qualifier": "",
-      "display": "630 €",
+      "display": "1.457 €",
       "from_tariff": true
     },
     "city": "Würzburg",
