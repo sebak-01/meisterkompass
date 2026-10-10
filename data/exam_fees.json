@@ -728,33 +728,33 @@
           "qualifier": ""
         },
         "3": {
-          "fee": 230.0,
+          "fee": 240.0,
           "fee_max": null,
           "qualifier": ""
         },
         "4": {
-          "fee": 260.0,
+          "fee": 270.0,
           "fee_max": null,
           "qualifier": ""
         }
       },
       "dachdecker": {
         "1,2": {
-          "fee": 1470.0,
+          "fee": 1480.0,
           "fee_max": null,
           "qualifier": ""
         }
       },
       "elektrotechniker": {
         "1,2": {
-          "fee": 3210.0,
+          "fee": 3220.0,
           "fee_max": null,
           "qualifier": ""
         }
       },
       "fahrzeuglackierer": {
         "1,2": {
-          "fee": 2080.0,
+          "fee": 2190.0,
           "fee_max": null,
           "qualifier": ""
         }
@@ -768,49 +768,49 @@
       },
       "fleischer": {
         "1,2": {
-          "fee": 730.0,
+          "fee": 740.0,
           "fee_max": null,
           "qualifier": ""
         }
       },
       "friseur": {
         "1,2": {
-          "fee": 960.0,
+          "fee": 970.0,
           "fee_max": null,
           "qualifier": ""
         }
       },
       "gebaudereiniger": {
         "1,2": {
-          "fee": 1830.0,
+          "fee": 1840.0,
           "fee_max": null,
           "qualifier": ""
         }
       },
       "installateur-und-heizungsbauer": {
         "1,2": {
-          "fee": 1450.0,
+          "fee": 1460.0,
           "fee_max": null,
           "qualifier": ""
         }
       },
       "kfz-techniker": {
         "1,2": {
-          "fee": 770.0,
+          "fee": 1020.0,
           "fee_max": null,
           "qualifier": ""
         }
       },
       "maler-und-lackierer": {
         "1,2": {
-          "fee": 1690.0,
+          "fee": 1700.0,
           "fee_max": null,
           "qualifier": ""
         }
       },
       "maurer-und-betonbauer": {
         "1,2": {
-          "fee": 1840.0,
+          "fee": 1850.0,
           "fee_max": null,
           "qualifier": ""
         }
@@ -824,21 +824,21 @@
       },
       "orthopadietechniker": {
         "1,2": {
-          "fee": 1640.0,
+          "fee": 1870.0,
           "fee_max": null,
           "qualifier": ""
         }
       },
       "tischler": {
         "1,2": {
-          "fee": 2210.0,
+          "fee": 2220.0,
           "fee_max": null,
           "qualifier": ""
         }
       },
       "zahntechniker": {
         "1,2": {
-          "fee": 3010.0,
+          "fee": 3020.0,
           "fee_max": null,
           "qualifier": ""
         }
@@ -1475,7 +1475,7 @@
       },
       "friseur": {
         "1,2": {
-          "fee": 1375.0,
+          "fee": 1525.0,
           "fee_max": null,
           "qualifier": "ca."
         }
@@ -1736,7 +1736,7 @@
           "qualifier": ""
         },
         "4": {
-          "fee": 640.0,
+          "fee": 300.0,
           "fee_max": null,
           "qualifier": ""
         }
@@ -1840,13 +1840,6 @@
       "tischler": {
         "1,2": {
           "fee": 1390.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "zahntechniker": {
-        "1,2": {
-          "fee": 2370.0,
           "fee_max": null,
           "qualifier": ""
         }
@@ -2024,7 +2017,7 @@
       },
       "fleischer": {
         "1,2": {
-          "fee": 830.0,
+          "fee": 715.0,
           "fee_max": null,
           "qualifier": ""
         }
@@ -2045,7 +2038,7 @@
       },
       "maurer-und-betonbauer": {
         "1,2": {
-          "fee": 830.0,
+          "fee": 770.0,
           "fee_max": null,
           "qualifier": ""
         }
@@ -3122,13 +3115,6 @@
           "qualifier": ""
         }
       },
-      "land-und-baumaschinenmechatroniker": {
-        "1": {
-          "fee": 1100.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
       "strassenbauer": {
         "1,2": {
           "fee": 1300.0,
@@ -3249,15 +3235,6 @@
         "4": {
           "fee": 220.0,
           "fee_max": 500.0,
-          "qualifier": ""
-        }
-      }
-    },
-    "hwk-saarland": {
-      "elektrotechniker": {
-        "1,2,3,4": {
-          "fee": 1790.0,
-          "fee_max": null,
           "qualifier": ""
         }
       }
@@ -3853,7 +3830,7 @@
       },
       "kfz-techniker": {
         "1,2,3,4": {
-          "fee": 1400.0,
+          "fee": 1435.0,
           "fee_max": null,
           "qualifier": ""
         }
