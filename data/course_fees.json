@@ -1,16 +1,5 @@
 [
   {
-    "chamber_slug": "hwk-karlsruhe",
-    "trade_slug": "augenoptiker",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 6599.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
     "chamber_slug": "hwk-heilbronn-franken",
     "trade_slug": "allgemein-teil-iii-iv",
     "parts": [
@@ -6296,17 +6285,6 @@
     "is_generic": false
   },
   {
-    "chamber_slug": "hwk-hamburg",
-    "trade_slug": "kalteanlagenbauer",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 9450.0,
-    "exam_fee_scraped": 860.0,
-    "is_generic": false
-  },
-  {
     "chamber_slug": "hwk-suedwestfalen",
     "trade_slug": "maurer-und-betonbauer",
     "parts": [
@@ -6605,6 +6583,17 @@
     ],
     "fee": 7980.0,
     "exam_fee_scraped": 610.0,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-hamburg",
+    "trade_slug": "kalteanlagenbauer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 9900.0,
+    "exam_fee_scraped": 860.0,
     "is_generic": false
   },
   {
@@ -7417,6 +7406,17 @@
       4
     ],
     "fee": 9150.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-karlsruhe",
+    "trade_slug": "augenoptiker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 6599.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
