@@ -3719,42 +3719,6 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
-    "start_date": "2026-10-12",
-    "end_date": "2026-10-29",
-    "start_date_note": "",
-    "duration_hours": 96,
-    "course_fee": 800.0,
-    "course_fee_display": "800 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 590.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "590 €",
-      "from_tariff": true
-    },
-    "city": "Lüneburg",
-    "street": "",
-    "zip_code": "",
-    "latitude": 53.248706,
-    "longitude": 10.407855,
-    "availability": "available",
-    "source_url": "https://weiterbildung.hwk-bls.de/22,0,coursedetail.html?id=316492"
-  },
-  {
-    "chamber_slug": "hwk-braunschweig-lueneburg-stade",
-    "chamber_name": "HWK Braunschweig-Lüneburg-Stade",
-    "chamber_region": "Niedersachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
     "start_date": "2026-10-19",
     "end_date": "2026-11-05",
     "start_date_note": "",
@@ -14287,43 +14251,6 @@
       1,
       2
     ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-10-12",
-    "end_date": "2027-05-14",
-    "start_date_note": "",
-    "duration_hours": 910,
-    "course_fee": 13080.0,
-    "course_fee_display": "13.080 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 825.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "825 €",
-      "from_tariff": true
-    },
-    "city": "Cottbus",
-    "street": "Schorbuser Weg 2",
-    "zip_code": "03051",
-    "latitude": 51.7021156,
-    "longitude": 14.3591764,
-    "availability": "available",
-    "source_url": "https://www.hwk-cottbus.de/7,0,coursedetail.html?id=65151"
-  },
-  {
-    "chamber_slug": "hwk-cottbus",
-    "chamber_name": "HWK Cottbus",
-    "chamber_region": "Brandenburg",
-    "trade_slug": "tischler",
-    "trade_name": "Tischler",
-    "title": "Tischler (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
     "format": "part_time",
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
@@ -15733,43 +15660,6 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
-    "start_date": "2026-10-12",
-    "end_date": "2027-06-16",
-    "start_date_note": "",
-    "duration_hours": 1120,
-    "course_fee": 9950.0,
-    "course_fee_display": "9.950 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 825.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "825 €",
-      "from_tariff": true
-    },
-    "city": "Großräschen",
-    "street": "Werner-Seelenbinder-Straße 24",
-    "zip_code": "01983",
-    "latitude": 51.580024,
-    "longitude": 13.9997132,
-    "availability": "full",
-    "source_url": "https://www.hwk-cottbus.de/7,0,coursedetail.html?id=65156"
-  },
-  {
-    "chamber_slug": "hwk-cottbus",
-    "chamber_name": "HWK Cottbus",
-    "chamber_region": "Brandenburg",
-    "trade_slug": "zimmerer",
-    "trade_name": "Zimmerer",
-    "title": "Zimmerer (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
     "start_date": "2027-10-11",
     "end_date": "2028-06-16",
     "start_date_note": "",
@@ -16439,8 +16329,8 @@
     "end_date": "2027-11-12",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3730.0,
-    "course_fee_display": "3.730 €",
+    "course_fee": 3530.0,
+    "course_fee_display": "3.530 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -16456,7 +16346,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-2"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-1"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -16475,8 +16365,8 @@
     "end_date": "2027-11-12",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3730.0,
-    "course_fee_display": "3.730 €",
+    "course_fee": 3530.0,
+    "course_fee_display": "3.530 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -16492,7 +16382,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-4"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-3"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -16564,7 +16454,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-1"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-2"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -16600,7 +16490,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-3"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-4"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -16672,7 +16562,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-2"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-1"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -16708,7 +16598,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-4"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-3"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -16763,8 +16653,8 @@
     "end_date": "2028-11-10",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3730.0,
-    "course_fee_display": "3.730 €",
+    "course_fee": 3530.0,
+    "course_fee_display": "3.530 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -16780,7 +16670,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-1"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-2"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -16799,8 +16689,8 @@
     "end_date": "2028-11-10",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3730.0,
-    "course_fee_display": "3.730 €",
+    "course_fee": 3530.0,
+    "course_fee_display": "3.530 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -16816,7 +16706,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-3"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-4"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -39908,43 +39798,6 @@
       3,
       4
     ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "hybrid",
-    "start_date": "2026-10-10",
-    "end_date": "2027-07-17",
-    "start_date_note": "",
-    "duration_hours": 320,
-    "course_fee": 2090.0,
-    "course_fee_display": "2.090 €",
-    "exam_fee_scraped": 400.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 400.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "400 €",
-      "from_tariff": false
-    },
-    "city": "Heilbronn",
-    "street": "Wannenäckerstraße 62",
-    "zip_code": "74078",
-    "latitude": 49.1847456,
-    "longitude": 9.169312,
-    "availability": "available",
-    "source_url": "https://www.hwk-heilbronn.de/seminar/mv-iiiiv-e-learning/#kurs-10"
-  },
-  {
-    "chamber_slug": "hwk-heilbronn-franken",
-    "chamber_name": "HWK Heilbronn-Franken",
-    "chamber_region": "Baden-Württemberg",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
-    "parts": [
-      3,
-      4
-    ],
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
@@ -40710,42 +40563,6 @@
     "longitude": 9.9705455,
     "availability": "full",
     "source_url": "https://www.hwk-hildesheim.de/24,0,coursedetail.html?id=59477"
-  },
-  {
-    "chamber_slug": "hwk-hildesheim-suedniedersachsen",
-    "chamber_name": "HWK Hildesheim-Südniedersachsen",
-    "chamber_region": "Niedersachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "hybrid",
-    "start_date": "2026-10-12",
-    "end_date": "2026-10-30",
-    "start_date_note": "",
-    "duration_hours": 99,
-    "course_fee": 820.0,
-    "course_fee_display": "820 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 349.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "349 €",
-      "from_tariff": true
-    },
-    "city": "Hildesheim",
-    "street": "Kruppstraße 18",
-    "zip_code": "31135",
-    "latitude": 52.1681541,
-    "longitude": 9.9705455,
-    "availability": "available",
-    "source_url": "https://www.hwk-hildesheim.de/24,0,coursedetail.html?id=58771"
   },
   {
     "chamber_slug": "hwk-hildesheim-suedniedersachsen",
@@ -49399,42 +49216,6 @@
     "chamber_region": "Nordrhein-Westfalen",
     "trade_slug": "karosserie-und-fahrzeugbauer",
     "trade_name": "Karosserie- und Fahrzeugbauer",
-    "title": "Karosserie- und Fahrzeugbauer (Teil I)",
-    "parts": [
-      1
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-10-10",
-    "end_date": "2027-05-31",
-    "start_date_note": "",
-    "duration_hours": 488,
-    "course_fee": null,
-    "course_fee_display": "—",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 950.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "950 €",
-      "from_tariff": true
-    },
-    "city": "Köln",
-    "street": "Hugo Eckener Str. 16",
-    "zip_code": "50829",
-    "latitude": 50.9782563,
-    "longitude": 6.8936135,
-    "availability": "waitlist",
-    "source_url": "https://www.hwk-koeln.de/32,0,coursedetail.html?id=39652"
-  },
-  {
-    "chamber_slug": "hwk-koeln",
-    "chamber_name": "HWK zu Köln",
-    "chamber_region": "Nordrhein-Westfalen",
-    "trade_slug": "karosserie-und-fahrzeugbauer",
-    "trade_name": "Karosserie- und Fahrzeugbauer",
     "title": "Karosserie- und Fahrzeugbauer (Teil II)",
     "parts": [
       2
@@ -50162,43 +49943,6 @@
     "longitude": 6.8975287,
     "availability": "waitlist",
     "source_url": "https://www.hwk-koeln.de/32,0,coursedetail.html?id=36191"
-  },
-  {
-    "chamber_slug": "hwk-koeln",
-    "chamber_name": "HWK zu Köln",
-    "chamber_region": "Nordrhein-Westfalen",
-    "trade_slug": "strassenbauer",
-    "trade_name": "Straßenbauer",
-    "title": "Straßenbauer (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-10-12",
-    "end_date": "2027-04-30",
-    "start_date_note": "",
-    "duration_hours": 1100,
-    "course_fee": 8150.0,
-    "course_fee_display": "8.150 €",
-    "exam_fee_scraped": 1290.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 1290.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "1.290 €",
-      "from_tariff": false
-    },
-    "city": "Köln",
-    "street": "Köhlstr. 8",
-    "zip_code": "50827",
-    "latitude": 50.9758161,
-    "longitude": 6.8975287,
-    "availability": "waitlist",
-    "source_url": "https://www.hwk-koeln.de/32,0,coursedetail.html?id=35666"
   },
   {
     "chamber_slug": "hwk-koeln",
@@ -57747,42 +57491,6 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
-    "start_date": "2026-10-12",
-    "end_date": "2026-10-23",
-    "start_date_note": "",
-    "duration_hours": 90,
-    "course_fee": 963.0,
-    "course_fee_display": "963 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 190.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "190 €",
-      "from_tariff": true
-    },
-    "city": "Borsdorf",
-    "street": "Steinweg 3",
-    "zip_code": "04451",
-    "latitude": 51.348242,
-    "longitude": 12.5485819,
-    "availability": "waitlist",
-    "source_url": "https://www.hwk-leipzig.de/3,0,coursedetail.html?id=73379"
-  },
-  {
-    "chamber_slug": "hwk-leipzig",
-    "chamber_name": "HWK zu Leipzig",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
     "start_date": "2026-10-26",
     "end_date": "2026-11-13",
     "start_date_note": "",
@@ -64426,43 +64134,6 @@
     "chamber_slug": "hwk-muenchen-und-oberbayern",
     "chamber_name": "HWK für München und Oberbayern",
     "chamber_region": "Bayern",
-    "trade_slug": "friseur",
-    "trade_name": "Friseur",
-    "title": "Friseur (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-10-12",
-    "end_date": "2027-07-30",
-    "start_date_note": "",
-    "duration_hours": 480,
-    "course_fee": 4220.0,
-    "course_fee_display": "4.220 €",
-    "exam_fee_scraped": 440.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 440.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "440 €",
-      "from_tariff": false
-    },
-    "city": "Mühldorf",
-    "street": "Töginger Straße 49",
-    "zip_code": "84453",
-    "latitude": 48.2462844,
-    "longitude": 12.5306834,
-    "availability": "unknown",
-    "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1218856"
-  },
-  {
-    "chamber_slug": "hwk-muenchen-und-oberbayern",
-    "chamber_name": "HWK für München und Oberbayern",
-    "chamber_region": "Bayern",
     "trade_slug": "installateur-und-heizungsbauer",
     "trade_name": "Installateur- und Heizungsbauer",
     "title": "Installateur- und Heizungsbauer (Teile I + II)",
@@ -65051,6 +64722,43 @@
     "format": "part_time",
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
+    "start_date": "2027-09-10",
+    "end_date": "2029-02-24",
+    "start_date_note": "Genauer Termin steht noch nicht fest.",
+    "duration_hours": 1235,
+    "course_fee": 9040.0,
+    "course_fee_display": "9.040 €",
+    "exam_fee_scraped": 440.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 440.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "440 €",
+      "from_tariff": false
+    },
+    "city": "Traunstein",
+    "street": "Mühlwiesen 4",
+    "zip_code": "83278",
+    "latitude": 47.855512,
+    "longitude": 12.6341286,
+    "availability": "available",
+    "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1229052"
+  },
+  {
+    "chamber_slug": "hwk-muenchen-und-oberbayern",
+    "chamber_name": "HWK für München und Oberbayern",
+    "chamber_region": "Bayern",
+    "trade_slug": "maurer-und-betonbauer",
+    "trade_name": "Maurer und Betonbauer",
+    "title": "Maurer und Betonbauer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
     "start_date": "2027-09-13",
     "end_date": "2029-02-28",
     "start_date_note": "",
@@ -65073,43 +64781,6 @@
     "longitude": 11.4306089,
     "availability": "available",
     "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1225082"
-  },
-  {
-    "chamber_slug": "hwk-muenchen-und-oberbayern",
-    "chamber_name": "HWK für München und Oberbayern",
-    "chamber_region": "Bayern",
-    "trade_slug": "maurer-und-betonbauer",
-    "trade_name": "Maurer und Betonbauer",
-    "title": "Maurer und Betonbauer (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-09-13",
-    "end_date": "2029-02-28",
-    "start_date_note": "Genauer Termin steht noch nicht fest.",
-    "duration_hours": 1235,
-    "course_fee": 9040.0,
-    "course_fee_display": "9.040 €",
-    "exam_fee_scraped": 440.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 440.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "440 €",
-      "from_tariff": false
-    },
-    "city": "Traunstein",
-    "street": "Mühlwiesen 4",
-    "zip_code": "83278",
-    "latitude": 47.855512,
-    "longitude": 12.6341286,
-    "availability": "unknown",
-    "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1229052"
   },
   {
     "chamber_slug": "hwk-muenchen-und-oberbayern",
@@ -65258,80 +64929,6 @@
     "longitude": 12.6341286,
     "availability": "available",
     "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1229619"
-  },
-  {
-    "chamber_slug": "hwk-muenchen-und-oberbayern",
-    "chamber_name": "HWK für München und Oberbayern",
-    "chamber_region": "Bayern",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
-    "parts": [
-      3,
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-10-12",
-    "end_date": "2026-12-11",
-    "start_date_note": "",
-    "duration_hours": 340,
-    "course_fee": 2865.0,
-    "course_fee_display": "2.865 €",
-    "exam_fee_scraped": 312.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 312.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "312 €",
-      "from_tariff": false
-    },
-    "city": "Rosenheim",
-    "street": "Klepperstraße 22",
-    "zip_code": "83026",
-    "latitude": 47.8472914,
-    "longitude": 12.1201462,
-    "availability": "full",
-    "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1218954"
-  },
-  {
-    "chamber_slug": "hwk-muenchen-und-oberbayern",
-    "chamber_name": "HWK für München und Oberbayern",
-    "chamber_region": "Bayern",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
-    "parts": [
-      3,
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-10-12",
-    "end_date": "2026-12-04",
-    "start_date_note": "",
-    "duration_hours": 340,
-    "course_fee": 2865.0,
-    "course_fee_display": "2.865 €",
-    "exam_fee_scraped": 312.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 312.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "312 €",
-      "from_tariff": false
-    },
-    "city": "Traunstein",
-    "street": "Mühlwiesen 4",
-    "zip_code": "83278",
-    "latitude": 47.855512,
-    "longitude": 12.6341286,
-    "availability": "available",
-    "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1228859"
   },
   {
     "chamber_slug": "hwk-muenchen-und-oberbayern",
@@ -73902,43 +73499,6 @@
     "longitude": 12.1999128,
     "availability": "unknown",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1023638"
-  },
-  {
-    "chamber_slug": "hwk-niederbayern-oberpfalz",
-    "chamber_name": "HWK Niederbayern-Oberpfalz",
-    "chamber_region": "Bayern",
-    "trade_slug": "konditor",
-    "trade_name": "Konditor",
-    "title": "Konditor (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-10-12",
-    "end_date": "2026-12-17",
-    "start_date_note": "",
-    "duration_hours": 360,
-    "course_fee": 5140.0,
-    "course_fee_display": "5.140 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": null,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "",
-      "from_tariff": false
-    },
-    "city": "Straubing",
-    "street": "Johannes-Kepler-Straße 14",
-    "zip_code": "94315",
-    "latitude": 48.8708639,
-    "longitude": 12.5760232,
-    "availability": "full",
-    "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1014169"
   },
   {
     "chamber_slug": "hwk-niederbayern-oberpfalz",
@@ -95559,42 +95119,6 @@
     "chamber_region": "Mecklenburg-Vorpommern",
     "trade_slug": "friseur",
     "trade_name": "Friseur",
-    "title": "Friseur (Teil I)",
-    "parts": [
-      1
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-10-12",
-    "end_date": "2027-03-16",
-    "start_date_note": "",
-    "duration_hours": 253,
-    "course_fee": 3036.0,
-    "course_fee_display": "3.036 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": null,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "",
-      "from_tariff": false
-    },
-    "city": "Neustrelitz",
-    "street": "Straße des Handwerks 1",
-    "zip_code": "17235",
-    "latitude": 53.3826667,
-    "longitude": 13.0470412,
-    "availability": "unknown",
-    "source_url": "https://www.hwk-omv.de/18,0,coursedetail.html?id=106507"
-  },
-  {
-    "chamber_slug": "hwk-ostmecklenburg-vorpommern",
-    "chamber_name": "HWK Ostmecklenburg-Vorpommern",
-    "chamber_region": "Mecklenburg-Vorpommern",
-    "trade_slug": "friseur",
-    "trade_name": "Friseur",
     "title": "Friseur (Teile I + II)",
     "parts": [
       1,
@@ -98090,78 +97614,6 @@
     "chamber_region": "Nordrhein-Westfalen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-10-12",
-    "end_date": "2026-12-04",
-    "start_date_note": "",
-    "duration_hours": 320,
-    "course_fee": 2650.0,
-    "course_fee_display": "2.650 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 250.0,
-      "fee_max": 980.0,
-      "qualifier": "",
-      "display": "250 € bis 980 €",
-      "from_tariff": true
-    },
-    "city": "Bielefeld",
-    "street": "Campus Handwerk 1",
-    "zip_code": "33613",
-    "latitude": 52.0325564,
-    "longitude": 8.5354738,
-    "availability": "full",
-    "source_url": "https://bbz.handwerk-owl.de/3351,0,coursedetail.html?id=131117"
-  },
-  {
-    "chamber_slug": "hwk-ostwestfalen-lippe-zu-bielefeld",
-    "chamber_name": "HWK Ostwestfalen-Lippe zu Bielefeld",
-    "chamber_region": "Nordrhein-Westfalen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-10-12",
-    "end_date": "2026-10-30",
-    "start_date_note": "",
-    "duration_hours": 120,
-    "course_fee": 965.0,
-    "course_fee_display": "965 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 325.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "325 €",
-      "from_tariff": true
-    },
-    "city": "Bielefeld",
-    "street": "Campus Handwerk 1",
-    "zip_code": "33613",
-    "latitude": 52.0325564,
-    "longitude": 8.5354738,
-    "availability": "available",
-    "source_url": "https://bbz.handwerk-owl.de/3351,0,coursedetail.html?id=131127"
-  },
-  {
-    "chamber_slug": "hwk-ostwestfalen-lippe-zu-bielefeld",
-    "chamber_name": "HWK Ostwestfalen-Lippe zu Bielefeld",
-    "chamber_region": "Nordrhein-Westfalen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Berufs- und Arbeitspädagogik (Teil IV)",
     "parts": [
       4
@@ -100346,42 +99798,6 @@
     "chamber_region": "Brandenburg",
     "trade_slug": "elektrotechniker",
     "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teil I)",
-    "parts": [
-      1
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-10-12",
-    "end_date": "2026-11-20",
-    "start_date_note": "",
-    "duration_hours": 248,
-    "course_fee": 3590.0,
-    "course_fee_display": "3.590 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 370.0,
-      "fee_max": null,
-      "qualifier": "zzgl. Auslagen",
-      "display": "370 €",
-      "from_tariff": true
-    },
-    "city": "Groß Kreutz (Havel)",
-    "street": "Am Mühlenberg 15",
-    "zip_code": "14550",
-    "latitude": 52.4063025,
-    "longitude": 12.7280699,
-    "availability": "waitlist",
-    "source_url": "https://www.hwk-potsdam.de/9,0,coursedetail.html?id=324176"
-  },
-  {
-    "chamber_slug": "hwk-potsdam",
-    "chamber_name": "HWK Potsdam",
-    "chamber_region": "Brandenburg",
-    "trade_slug": "elektrotechniker",
-    "trade_name": "Elektrotechniker",
     "title": "Elektrotechniker (Teil II)",
     "parts": [
       2
@@ -101287,43 +100703,6 @@
     "longitude": 12.7280699,
     "availability": "available",
     "source_url": "https://www.hwk-potsdam.de/9,0,coursedetail.html?id=352451"
-  },
-  {
-    "chamber_slug": "hwk-potsdam",
-    "chamber_name": "HWK Potsdam",
-    "chamber_region": "Brandenburg",
-    "trade_slug": "maurer-und-betonbauer",
-    "trade_name": "Maurer und Betonbauer",
-    "title": "Maurer und Betonbauer (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-10-12",
-    "end_date": "2027-04-23",
-    "start_date_note": "",
-    "duration_hours": 890,
-    "course_fee": 9200.0,
-    "course_fee_display": "9.200 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 740.0,
-      "fee_max": null,
-      "qualifier": "zzgl. Auslagen",
-      "display": "740 €",
-      "from_tariff": true
-    },
-    "city": "Groß Kreutz (Havel)",
-    "street": "Am Mühlenberg 15",
-    "zip_code": "14550",
-    "latitude": 52.4063025,
-    "longitude": 12.7280699,
-    "availability": "available",
-    "source_url": "https://www.hwk-potsdam.de/9,0,coursedetail.html?id=354551"
   },
   {
     "chamber_slug": "hwk-potsdam",
@@ -109122,43 +108501,6 @@
     "longitude": 10.9173148,
     "availability": "available",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=396602"
-  },
-  {
-    "chamber_slug": "hwk-schwaben",
-    "chamber_name": "HWK für Schwaben",
-    "chamber_region": "Bayern",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
-    "parts": [
-      3,
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "online",
-    "start_date": "2026-10-12",
-    "end_date": "2026-12-03",
-    "start_date_note": "",
-    "duration_hours": 340,
-    "course_fee": 2950.0,
-    "course_fee_display": "2.950 €",
-    "exam_fee_scraped": 350.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 350.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "350 €",
-      "from_tariff": false
-    },
-    "city": "Augsburg",
-    "street": "Siebentischstraße 54",
-    "zip_code": "86161",
-    "latitude": 48.3522511,
-    "longitude": 10.9173148,
-    "availability": "full",
-    "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=382156"
   },
   {
     "chamber_slug": "hwk-schwaben",
@@ -119451,7 +118793,7 @@
     "start_date": "2027-03-15",
     "end_date": "2028-09-18",
     "start_date_note": "",
-    "duration_hours": 1220,
+    "duration_hours": 1360,
     "course_fee": 8150.0,
     "course_fee_display": "8.150 €",
     "exam_fee_scraped": null,
@@ -119488,7 +118830,7 @@
     "start_date": "2027-03-15",
     "end_date": "2027-09-10",
     "start_date_note": "",
-    "duration_hours": 1220,
+    "duration_hours": 1360,
     "course_fee": 8150.0,
     "course_fee_display": "8.150 €",
     "exam_fee_scraped": null,
@@ -119525,7 +118867,7 @@
     "start_date": "2027-09-06",
     "end_date": "2028-03-03",
     "start_date_note": "",
-    "duration_hours": 1220,
+    "duration_hours": 1360,
     "course_fee": 8150.0,
     "course_fee_display": "8.150 €",
     "exam_fee_scraped": null,
@@ -119562,7 +118904,7 @@
     "start_date": "2027-09-13",
     "end_date": "2028-03-10",
     "start_date_note": "",
-    "duration_hours": 1220,
+    "duration_hours": 1360,
     "course_fee": 8150.0,
     "course_fee_display": "8.150 €",
     "exam_fee_scraped": null,
@@ -119599,7 +118941,7 @@
     "start_date": "2028-09-04",
     "end_date": "2029-03-02",
     "start_date_note": "",
-    "duration_hours": 1220,
+    "duration_hours": 1360,
     "course_fee": 8150.0,
     "course_fee_display": "8.150 €",
     "exam_fee_scraped": null,
@@ -119636,7 +118978,7 @@
     "start_date": "2029-03-12",
     "end_date": "2030-09-16",
     "start_date_note": "",
-    "duration_hours": 1220,
+    "duration_hours": 1360,
     "course_fee": 8150.0,
     "course_fee_display": "8.150 €",
     "exam_fee_scraped": null,
@@ -123880,43 +123222,6 @@
     "chamber_slug": "hwk-wiesbaden",
     "chamber_name": "HWK Wiesbaden",
     "chamber_region": "Hessen",
-    "trade_slug": "fahrzeuglackierer",
-    "trade_name": "Fahrzeuglackierer",
-    "title": "Fahrzeuglackierer (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-11-09",
-    "end_date": "2028-03-11",
-    "start_date_note": "",
-    "duration_hours": 1050,
-    "course_fee": 7950.0,
-    "course_fee_display": "7.950 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 730.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "730 €",
-      "from_tariff": true
-    },
-    "city": "Wiesbaden",
-    "street": "Brunhildenstraße 110",
-    "zip_code": "65189",
-    "latitude": 50.0652806,
-    "longitude": 8.2590004,
-    "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-maler-und-lackiererhandwerk-teile-i-ii-schwerpunkt-fahrzeuglackierung-teilzeit-mit-vollzeitblock-44,0,coursedetail.html?id=114521&search-onr=44&img=1"
-  },
-  {
-    "chamber_slug": "hwk-wiesbaden",
-    "chamber_name": "HWK Wiesbaden",
-    "chamber_region": "Hessen",
     "trade_slug": "feinwerkmechaniker",
     "trade_name": "Feinwerkmechaniker",
     "title": "Feinwerkmechaniker (Teile I + II)",
@@ -124293,8 +123598,8 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
-    "start_date": "2026-10-12",
-    "end_date": "2027-04-16",
+    "start_date": "2026-11-09",
+    "end_date": "2028-03-11",
     "start_date_note": "",
     "duration_hours": 1050,
     "course_fee": 7950.0,
@@ -124308,13 +123613,13 @@
       "display": "730 €",
       "from_tariff": true
     },
-    "city": "Wetzlar",
-    "street": "Dillufer 40",
-    "zip_code": "35576",
-    "latitude": 50.5548159,
-    "longitude": 8.4921662,
-    "availability": "unknown",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-maler-und-lackierer-handwerk-teil-i-ii-vollzeit-schwerpunkt-gestaltung-und-instandhaltung-44,0,coursedetail.html?id=113114&search-onr=44&img=1"
+    "city": "Wiesbaden",
+    "street": "Brunhildenstraße 110",
+    "zip_code": "65189",
+    "latitude": 50.0652806,
+    "longitude": 8.2590004,
+    "availability": "available",
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-maler-und-lackierer-handwerk-teile-i-ii-schwerpunkt-gestaltung-und-instandhaltung-teilzeit-mit-vollzeitblock-44,0,coursedetail.html?id=114502&search-onr=44&img=2"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -124351,44 +123656,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-maler-und-lackierer-handwerk-teile-i-ii-schwerpunkt-gestaltung-und-instandhaltung-teilzeit-mit-vollzeitblock-44,0,coursedetail.html?id=114502&search-onr=44&img=3"
-  },
-  {
-    "chamber_slug": "hwk-wiesbaden",
-    "chamber_name": "HWK Wiesbaden",
-    "chamber_region": "Hessen",
-    "trade_slug": "maler-und-lackierer",
-    "trade_name": "Maler und Lackierer",
-    "title": "Maler und Lackierer (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-11-09",
-    "end_date": "2028-03-11",
-    "start_date_note": "",
-    "duration_hours": 1050,
-    "course_fee": 7950.0,
-    "course_fee_display": "7.950 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 730.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "730 €",
-      "from_tariff": true
-    },
-    "city": "Wiesbaden",
-    "street": "Brunhildenstraße 110",
-    "zip_code": "65189",
-    "latitude": 50.0652806,
-    "longitude": 8.2590004,
-    "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-maler-und-lackiererhandwerk-teile-i-ii-schwerpunkt-fahrzeuglackierung-teilzeit-mit-vollzeitblock-44,0,coursedetail.html?id=114521&search-onr=44&img=2"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-maler-und-lackiererhandwerk-teile-i-ii-schwerpunkt-fahrzeuglackierung-teilzeit-mit-vollzeitblock-44,0,coursedetail.html?id=114521&search-onr=44&img=1"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -124425,7 +123693,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-maler-und-lackierer-handwerk-teile-iii-schwerpunkt-gestaltung-und-instandhaltung-vollzeit-44,0,coursedetail.html?id=125641&search-onr=44&img=4"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-maler-und-lackierer-handwerk-teile-iii-schwerpunkt-gestaltung-und-instandhaltung-vollzeit-44,0,coursedetail.html?id=125641&search-onr=44&img=3"
   },
   {
     "chamber_slug": "hwk-wiesbaden",

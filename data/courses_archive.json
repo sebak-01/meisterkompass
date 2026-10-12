@@ -3818,6 +3818,43 @@
     "source_url": "https://www.hwk-heilbronn.de/seminar/mv-iiiiv-tz-2/#kurs-24"
   },
   {
+    "chamber_slug": "hwk-heilbronn-franken",
+    "chamber_name": "HWK Heilbronn-Franken",
+    "chamber_region": "Baden-Württemberg",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "parts": [
+      3,
+      4
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "hybrid",
+    "start_date": "2026-10-10",
+    "end_date": "2027-07-17",
+    "start_date_note": "",
+    "duration_hours": 320,
+    "course_fee": 2090.0,
+    "course_fee_display": "2.090 €",
+    "exam_fee_scraped": 400.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 400.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "400 €",
+      "from_tariff": false
+    },
+    "city": "Heilbronn",
+    "street": "Wannenäckerstraße 62",
+    "zip_code": "74078",
+    "latitude": 49.1847456,
+    "longitude": 9.169312,
+    "availability": "available",
+    "source_url": "https://www.hwk-heilbronn.de/seminar/mv-iiiiv-e-learning/#kurs-10"
+  },
+  {
     "chamber_slug": "hwk-hildesheim-suedniedersachsen",
     "chamber_name": "HWK Hildesheim-Südniedersachsen",
     "chamber_region": "Niedersachsen",
@@ -4515,6 +4552,42 @@
     "longitude": 6.8936135,
     "availability": "available",
     "source_url": "https://www.hwk-koeln.de/32,0,coursedetail.html?id=35770"
+  },
+  {
+    "chamber_slug": "hwk-koeln",
+    "chamber_name": "HWK zu Köln",
+    "chamber_region": "Nordrhein-Westfalen",
+    "trade_slug": "karosserie-und-fahrzeugbauer",
+    "trade_name": "Karosserie- und Fahrzeugbauer",
+    "title": "Karosserie- und Fahrzeugbauer (Teil I)",
+    "parts": [
+      1
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-10-10",
+    "end_date": "2027-05-31",
+    "start_date_note": "",
+    "duration_hours": 488,
+    "course_fee": null,
+    "course_fee_display": "—",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 950.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "950 €",
+      "from_tariff": true
+    },
+    "city": "Köln",
+    "street": "Hugo Eckener Str. 16",
+    "zip_code": "50829",
+    "latitude": 50.9782563,
+    "longitude": 6.8936135,
+    "availability": "waitlist",
+    "source_url": "https://www.hwk-koeln.de/32,0,coursedetail.html?id=39652"
   },
   {
     "chamber_slug": "hwk-koeln",
