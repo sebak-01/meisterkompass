@@ -3498,7 +3498,7 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
-    "start_date": "2027-01-18",
+    "start_date": "2027-01-11",
     "end_date": "2027-06-04",
     "start_date_note": "",
     "duration_hours": 800,
@@ -12957,43 +12957,6 @@
       1,
       2
     ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-10-14",
-    "end_date": "2027-07-02",
-    "start_date_note": "",
-    "duration_hours": 1250,
-    "course_fee": 10950.0,
-    "course_fee_display": "10.950 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 825.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "825 €",
-      "from_tariff": true
-    },
-    "city": "Wildau",
-    "street": "Schwartzkopffstraße 1",
-    "zip_code": "15745",
-    "latitude": 52.3198785,
-    "longitude": 13.6310976,
-    "availability": "full",
-    "source_url": "https://www.hwk-cottbus.de/7,0,coursedetail.html?id=64994"
-  },
-  {
-    "chamber_slug": "hwk-cottbus",
-    "chamber_name": "HWK Cottbus",
-    "chamber_region": "Brandenburg",
-    "trade_slug": "elektrotechniker",
-    "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
     "format": "part_time",
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
@@ -15879,43 +15842,6 @@
       1,
       2
     ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "online",
-    "start_date": "2026-10-13",
-    "end_date": "2028-11-28",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": null,
-    "course_fee_display": "—",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 720.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "720 €",
-      "from_tariff": true
-    },
-    "city": "Dortmund",
-    "street": "Schützenstraße 32-34",
-    "zip_code": "44147",
-    "latitude": 51.5206367,
-    "longitude": 7.4529522,
-    "availability": "unknown",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/elektrotechniker-in-teilzeitlehrgang-schwerpunkt-energie-und-gebaeudetechnik-meistervorbereitung-teile-i-und-ii/"
-  },
-  {
-    "chamber_slug": "hwk-dortmund",
-    "chamber_name": "HWK Dortmund",
-    "chamber_region": "Nordrhein-Westfalen",
-    "trade_slug": "elektrotechniker",
-    "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "online",
@@ -16382,7 +16308,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-3"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-2"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -16490,7 +16416,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-3"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-2"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -16562,7 +16488,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-2"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-3"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -16669,8 +16595,8 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-2"
+    "availability": "available",
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-3"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -16705,7 +16631,7 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-4"
   },
   {
@@ -19344,7 +19270,7 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-zweiradmechaniker/zweiradmechaniker-in-vollzeitlehrgang-schwerpunkt-motorradtechnik-meistervorbereitung-teil-i/#termin-1"
   },
   {
@@ -19827,6 +19753,43 @@
     "chamber_region": "Sachsen",
     "trade_slug": "installateur-und-heizungsbauer",
     "trade_name": "Installateur- und Heizungsbauer",
+    "title": "Installateur- und Heizungsbauer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-08-23",
+    "end_date": "2027-11-26",
+    "start_date_note": "",
+    "duration_hours": 240,
+    "course_fee": 5590.0,
+    "course_fee_display": "5.590 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 740.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "740 €",
+      "from_tariff": true
+    },
+    "city": "Dresden",
+    "street": "Am Lagerplatz 8",
+    "zip_code": "01099",
+    "latitude": 51.0833678,
+    "longitude": 13.7677525,
+    "availability": "available",
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/elektroinstallationstechnik-fuer-installateur-und-heizungsbauermeister-nach-7a-hwo-247565.html"
+  },
+  {
+    "chamber_slug": "hwk-dresden",
+    "chamber_name": "HWK Dresden",
+    "chamber_region": "Sachsen",
+    "trade_slug": "installateur-und-heizungsbauer",
+    "trade_name": "Installateur- und Heizungsbauer",
     "title": "Installateur- und Heizungsbauer (Teil I)",
     "parts": [
       1
@@ -19906,8 +19869,8 @@
     "format": "part_time",
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
-    "start_date": "2026-11-02",
-    "end_date": "2027-02-12",
+    "start_date": "2027-11-01",
+    "end_date": "2028-02-11",
     "start_date_note": "",
     "duration_hours": 528,
     "course_fee": 6900.0,
@@ -19927,7 +19890,7 @@
     "latitude": 51.0833678,
     "longitude": 13.7677525,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/klempnerhandwerk-teil-ii-194559.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/klempnerhandwerk-teil-ii-249647.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -19942,8 +19905,8 @@
     "format": "part_time",
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
-    "start_date": "2027-02-22",
-    "end_date": "2027-03-12",
+    "start_date": "2028-02-21",
+    "end_date": "2028-03-10",
     "start_date_note": "",
     "duration_hours": 120,
     "course_fee": 3045.0,
@@ -19963,7 +19926,7 @@
     "latitude": 51.0833678,
     "longitude": 13.7677525,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/klempnerhandwerk-teil-i-194569.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/klempnerhandwerk-teil-i-249648.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -20399,7 +20362,7 @@
     "zip_code": "01099",
     "latitude": 51.0833678,
     "longitude": 13.7677525,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/raumausstatterhandwerk-teile-ii-und-i-185061.html"
   },
   {
@@ -33828,6 +33791,43 @@
       1,
       2
     ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-11-15",
+    "end_date": "2028-06-09",
+    "start_date_note": "",
+    "duration_hours": 1160,
+    "course_fee": 10660.0,
+    "course_fee_display": "10.660 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 753.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "753 €",
+      "from_tariff": true
+    },
+    "city": "Halle (Saale)",
+    "street": "Straße der Handwerker 2",
+    "zip_code": "06132",
+    "latitude": 51.4232026,
+    "longitude": 12.0122588,
+    "availability": "full",
+    "source_url": "https://www.hwkhalle.de/seminar/mvl-el-teil-1und2-v/#kurs-27792"
+  },
+  {
+    "chamber_slug": "hwk-halle-saale",
+    "chamber_name": "HWK Halle (Saale)",
+    "chamber_region": "Sachsen-Anhalt",
+    "trade_slug": "elektrotechniker",
+    "trade_name": "Elektrotechniker",
+    "title": "Elektrotechniker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
     "format": "part_time",
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
@@ -33853,43 +33853,6 @@
     "longitude": 12.0122588,
     "availability": "full",
     "source_url": "https://www.hwkhalle.de/seminar/mvl-el-teil-1-und-2/#kurs-27454"
-  },
-  {
-    "chamber_slug": "hwk-halle-saale",
-    "chamber_name": "HWK Halle (Saale)",
-    "chamber_region": "Sachsen-Anhalt",
-    "trade_slug": "elektrotechniker",
-    "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": null,
-    "end_date": null,
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": null,
-    "course_fee_display": "—",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 753.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "753 €",
-      "from_tariff": true
-    },
-    "city": "Halle (Saale)",
-    "street": "Straße der Handwerker 2",
-    "zip_code": "06132",
-    "latitude": 51.4232026,
-    "longitude": 12.0122588,
-    "availability": "unknown",
-    "source_url": "https://www.hwkhalle.de/seminar/mvl-el-teil-1und2-v/"
   },
   {
     "chamber_slug": "hwk-halle-saale",
@@ -41114,6 +41077,188 @@
     "chamber_slug": "hwk-kassel",
     "chamber_name": "HWK Kassel",
     "chamber_region": "Hessen",
+    "trade_slug": "elektrotechniker",
+    "trade_name": "Elektrotechniker",
+    "title": "Elektrotechniker (Teil II)",
+    "parts": [
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-02-16",
+    "end_date": "2028-09-23",
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": 6150.0,
+    "course_fee_display": "6.150 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 420.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "420 €",
+      "from_tariff": true
+    },
+    "city": "Petersberg",
+    "street": "Goerdelerstraße 139",
+    "zip_code": "36100",
+    "latitude": 50.5673891,
+    "longitude": 9.699491,
+    "availability": "available",
+    "source_url": "https://www.bbz-mitte.de/de/kursfinder/elektrotechnikermeister-teil-ii"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "elektrotechniker",
+    "trade_name": "Elektrotechniker",
+    "title": "Elektrotechniker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-08-23",
+    "end_date": "2028-06-14",
+    "start_date_note": "",
+    "duration_hours": 1200,
+    "course_fee": 9750.0,
+    "course_fee_display": "9.750 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 730.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "730 €",
+      "from_tariff": true
+    },
+    "city": "Petersberg",
+    "street": "Goerdelerstraße 139",
+    "zip_code": "36100",
+    "latitude": 50.5673891,
+    "longitude": 9.699491,
+    "availability": "available",
+    "source_url": "https://www.bbz-mitte.de/de/kursfinder/elektrotechnikermeister-teil-ii-i-vollzeit"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "elektrotechniker",
+    "trade_name": "Elektrotechniker",
+    "title": "Elektrotechniker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-08-28",
+    "end_date": "2029-06-22",
+    "start_date_note": "",
+    "duration_hours": 1200,
+    "course_fee": 9850.0,
+    "course_fee_display": "9.850 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 730.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "730 €",
+      "from_tariff": true
+    },
+    "city": "Petersberg",
+    "street": "Goerdelerstraße 139",
+    "zip_code": "36100",
+    "latitude": 50.5673891,
+    "longitude": 9.699491,
+    "availability": "available",
+    "source_url": "https://www.bbz-mitte.de/de/kursfinder/elektrotechnikermeister-teil-ii-i-vollzeit"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "elektrotechniker",
+    "trade_name": "Elektrotechniker",
+    "title": "Elektrotechniker (Teil I)",
+    "parts": [
+      1
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": null,
+    "end_date": null,
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": null,
+    "course_fee_display": "—",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 420.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "420 €",
+      "from_tariff": true
+    },
+    "city": "Petersberg",
+    "street": "Goerdelerstraße 139",
+    "zip_code": "36100",
+    "latitude": 50.5673891,
+    "longitude": 9.699491,
+    "availability": "available",
+    "source_url": "https://www.bbz-mitte.de/de/kursfinder/elektrotechnikermeister-teil-i"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "elektrotechniker",
+    "trade_name": "Elektrotechniker",
+    "title": "Elektrotechniker (Teil II)",
+    "parts": [
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": null,
+    "end_date": null,
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": null,
+    "course_fee_display": "—",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 420.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "420 €",
+      "from_tariff": true
+    },
+    "city": "Petersberg",
+    "street": "Goerdelerstraße 139",
+    "zip_code": "36100",
+    "latitude": 50.5673891,
+    "longitude": 9.699491,
+    "availability": "available",
+    "source_url": "https://www.bbz-mitte.de/de/kursfinder/elektrotechnikermeister-teil-ii"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
     "trade_slug": "feinwerkmechaniker",
     "trade_name": "Feinwerkmechaniker",
     "title": "Feinwerkmechaniker (Teile I + II)",
@@ -41487,6 +41632,42 @@
     "chamber_region": "Hessen",
     "trade_slug": "kfz-techniker",
     "trade_name": "Kfz.-Techniker",
+    "title": "Kfz.-Techniker (Teil II)",
+    "parts": [
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-03-08",
+    "end_date": "2027-06-11",
+    "start_date_note": "",
+    "duration_hours": 530,
+    "course_fee": 3990.0,
+    "course_fee_display": "3.990 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 420.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "420 €",
+      "from_tariff": true
+    },
+    "city": "Petersberg",
+    "street": "Goerdelerstraße 139",
+    "zip_code": "36100",
+    "latitude": 50.5673891,
+    "longitude": 9.699491,
+    "availability": "available",
+    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-im-kfz-techniker-handwerk"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "kfz-techniker",
+    "trade_name": "Kfz.-Techniker",
     "title": "Kfz.-Techniker (Teile I + II)",
     "parts": [
       1,
@@ -41517,6 +41698,42 @@
     "longitude": 8.7666044,
     "availability": "available",
     "source_url": "https://www.bbz-marburg.de/kurs/mv-kfz-tz/"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "kfz-techniker",
+    "trade_name": "Kfz.-Techniker",
+    "title": "Kfz.-Techniker (Teil I)",
+    "parts": [
+      1
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-06-14",
+    "end_date": "2027-08-06",
+    "start_date_note": "",
+    "duration_hours": 320,
+    "course_fee": 2990.0,
+    "course_fee_display": "2.990 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 420.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "420 €",
+      "from_tariff": true
+    },
+    "city": "Petersberg",
+    "street": "Goerdelerstraße 139",
+    "zip_code": "36100",
+    "latitude": 50.5673891,
+    "longitude": 9.699491,
+    "availability": "available",
+    "source_url": "https://www.bbz-mitte.de/de/kursfinder/kraftfahrzeugservicetechniker"
   },
   {
     "chamber_slug": "hwk-kassel",
@@ -41590,6 +41807,78 @@
     "longitude": 8.7666044,
     "availability": "available",
     "source_url": "https://www.bbz-marburg.de/kurs/mv-kfz-tz/"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "kfz-techniker",
+    "trade_name": "Kfz.-Techniker",
+    "title": "Kfz.-Techniker (Teil II)",
+    "parts": [
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-03-13",
+    "end_date": "2028-06-16",
+    "start_date_note": "",
+    "duration_hours": 530,
+    "course_fee": 4600.0,
+    "course_fee_display": "4.600 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 420.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "420 €",
+      "from_tariff": true
+    },
+    "city": "Petersberg",
+    "street": "Goerdelerstraße 139",
+    "zip_code": "36100",
+    "latitude": 50.5673891,
+    "longitude": 9.699491,
+    "availability": "available",
+    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-im-kfz-techniker-handwerk"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "kfz-techniker",
+    "trade_name": "Kfz.-Techniker",
+    "title": "Kfz.-Techniker (Teil I)",
+    "parts": [
+      1
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-06-19",
+    "end_date": "2028-08-11",
+    "start_date_note": "",
+    "duration_hours": 320,
+    "course_fee": 3700.0,
+    "course_fee_display": "3.700 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 420.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "420 €",
+      "from_tariff": true
+    },
+    "city": "Petersberg",
+    "street": "Goerdelerstraße 139",
+    "zip_code": "36100",
+    "latitude": 50.5673891,
+    "longitude": 9.699491,
+    "availability": "available",
+    "source_url": "https://www.bbz-mitte.de/de/kursfinder/kraftfahrzeugservicetechniker"
   },
   {
     "chamber_slug": "hwk-kassel",
@@ -41699,6 +41988,43 @@
     "longitude": 9.498614,
     "availability": "unknown",
     "source_url": "https://www.kfz-innung-kassel.de/aus-und-weiterbildung-im-ftz/seminare-im-ftz#accordion-content-1109-490"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "land-und-baumaschinenmechatroniker",
+    "trade_name": "Land- und Baumaschinenmechatroniker",
+    "title": "Land- und Baumaschinenmechatroniker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-10-04",
+    "end_date": "2028-04-28",
+    "start_date_note": "",
+    "duration_hours": 1100,
+    "course_fee": 11000.0,
+    "course_fee_display": "11.000 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 730.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "730 €",
+      "from_tariff": true
+    },
+    "city": "Petersberg",
+    "street": "Goerdelerstraße 139",
+    "zip_code": "36100",
+    "latitude": 50.5673891,
+    "longitude": 9.699491,
+    "availability": "available",
+    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-landmaschinenmechaniker-handwerk-teile-i-ii"
   },
   {
     "chamber_slug": "hwk-kassel",
@@ -41921,6 +42247,43 @@
     "longitude": 9.1225344,
     "availability": "available",
     "source_url": "https://veranstaltung.holzfachschule.de/seminar/modellbauermeister-in-teil-i-ii_104878"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "tischler",
+    "trade_name": "Tischler",
+    "title": "Tischler (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-01-18",
+    "end_date": "2027-06-11",
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": 9975.0,
+    "course_fee_display": "9.975 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 730.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "730 €",
+      "from_tariff": true
+    },
+    "city": "Petersberg",
+    "street": "Goerdelerstraße 139",
+    "zip_code": "36100",
+    "latitude": 50.5673891,
+    "longitude": 9.699491,
+    "availability": "available",
+    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungslehrgang-im-tischler-schreinerhandwerk"
   },
   {
     "chamber_slug": "hwk-kassel",
@@ -42663,6 +43026,42 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
+    "start_date": "2027-05-10",
+    "end_date": "2027-07-09",
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": 1830.0,
+    "course_fee_display": "1.830 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 340.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "340 €",
+      "from_tariff": true
+    },
+    "city": "Petersberg",
+    "street": "Goerdelerstraße 139",
+    "zip_code": "36100",
+    "latitude": 50.5673891,
+    "longitude": 9.699491,
+    "availability": "available",
+    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-teil-iii-fuer-alle-gewerke-im-handwerk"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
     "start_date": "2027-06-14",
     "end_date": "2027-07-16",
     "start_date_note": "",
@@ -42866,6 +43265,42 @@
     "longitude": 8.7666044,
     "availability": "available",
     "source_url": "https://www.bbz-marburg.de/kurs/ada-vz-96/"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-08-09",
+    "end_date": "2027-10-01",
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": 1830.0,
+    "course_fee_display": "1.830 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 340.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "340 €",
+      "from_tariff": true
+    },
+    "city": "Petersberg",
+    "street": "Goerdelerstraße 139",
+    "zip_code": "36100",
+    "latitude": 50.5673891,
+    "longitude": 9.699491,
+    "availability": "available",
+    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-teil-iii-fuer-alle-gewerke-im-handwerk"
   },
   {
     "chamber_slug": "hwk-kassel",
@@ -43235,6 +43670,42 @@
     "chamber_region": "Hessen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-01-10",
+    "end_date": "2028-02-29",
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": 1920.0,
+    "course_fee_display": "1.920 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 340.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "340 €",
+      "from_tariff": true
+    },
+    "city": "Petersberg",
+    "street": "Goerdelerstraße 139",
+    "zip_code": "36100",
+    "latitude": 50.5673891,
+    "longitude": 9.699491,
+    "availability": "available",
+    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-teil-iii-fuer-alle-gewerke-im-handwerk"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Berufs- und Arbeitspädagogik (Teil IV)",
     "parts": [
       4
@@ -43300,6 +43771,78 @@
     "longitude": 9.4991416,
     "availability": "available",
     "source_url": "https://www.bubiza.de/kurse/vollzeit-hoehere-berufsbildung/zimmermeister-holzbau-deutschland-anerkannt.html"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-05-08",
+    "end_date": "2028-06-30",
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": 1920.0,
+    "course_fee_display": "1.920 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 340.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "340 €",
+      "from_tariff": true
+    },
+    "city": "Petersberg",
+    "street": "Goerdelerstraße 139",
+    "zip_code": "36100",
+    "latitude": 50.5673891,
+    "longitude": 9.699491,
+    "availability": "available",
+    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-teil-iii-fuer-alle-gewerke-im-handwerk"
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "chamber_name": "HWK Kassel",
+    "chamber_region": "Hessen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-07-31",
+    "end_date": "2028-09-22",
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": 1920.0,
+    "course_fee_display": "1.920 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 340.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "340 €",
+      "from_tariff": true
+    },
+    "city": "Petersberg",
+    "street": "Goerdelerstraße 139",
+    "zip_code": "36100",
+    "latitude": 50.5673891,
+    "longitude": 9.699491,
+    "availability": "available",
+    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-teil-iii-fuer-alle-gewerke-im-handwerk"
   },
   {
     "chamber_slug": "hwk-kassel",
@@ -46409,7 +46952,7 @@
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/strassenbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=115610&search-onr=52&img=10"
+    "source_url": "https://www.hwk-koblenz.de/kurse/strassenbauer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=115610&search-onr=52&img=9"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -47847,12 +48390,12 @@
       "from_tariff": true
     },
     "city": "Koblenz",
-    "street": "August-Horch-Straße 8",
+    "street": "August-Horch-Str. 8",
     "zip_code": "56070",
     "latitude": 50.3894351,
     "longitude": 7.5720768,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-koblenz.de/kurse/zimmerer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=113734&search-onr=52&img=9"
+    "source_url": "https://www.hwk-koblenz.de/kurse/zimmerer-teile-i-und-ii-in-vollzeit-52,0,coursedetail.html?id=113734&search-onr=52&img=10"
   },
   {
     "chamber_slug": "hwk-koblenz",
@@ -49046,7 +49589,7 @@
     "format": "part_time",
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
-    "start_date": "2028-04-09",
+    "start_date": "2028-04-07",
     "end_date": "2029-12-08",
     "start_date_note": "",
     "duration_hours": 1140,
@@ -49305,7 +49848,7 @@
     "format": "part_time",
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
-    "start_date": "2028-04-09",
+    "start_date": "2028-04-07",
     "end_date": "2029-07-14",
     "start_date_note": "",
     "duration_hours": 1026,
@@ -57152,6 +57695,42 @@
     "chamber_region": "Sachsen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
+    "parts": [
+      4
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-04-29",
+    "end_date": "2027-05-27",
+    "start_date_note": "",
+    "duration_hours": 120,
+    "course_fee": 963.0,
+    "course_fee_display": "963 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 190.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "190 €",
+      "from_tariff": true
+    },
+    "city": "Leipzig",
+    "street": "Dresdner Straße 11/13",
+    "zip_code": "04103",
+    "latitude": 51.3390316,
+    "longitude": 12.3918037,
+    "availability": "available",
+    "source_url": "https://www.hwk-leipzig.de/3,0,coursedetail.html?id=76540"
+  },
+  {
+    "chamber_slug": "hwk-leipzig",
+    "chamber_name": "HWK zu Leipzig",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Wirtschaft und Recht (Teil III)",
     "parts": [
       3
@@ -63215,7 +63794,7 @@
     "zip_code": "84453",
     "latitude": 48.2462844,
     "longitude": 12.5306834,
-    "availability": "full",
+    "availability": "unknown",
     "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1205487"
   },
   {
@@ -67764,86 +68343,12 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
-    "start_date": "2027-01-11",
-    "end_date": "2027-08-06",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": 14395.0,
-    "course_fee_display": "14.395 €",
-    "exam_fee_scraped": 1650.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 1650.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "1.650 €",
-      "from_tariff": false
-    },
-    "city": "Münster",
-    "street": "Albrecht-Thaer-Straße 9",
-    "zip_code": "48147",
-    "latitude": 51.9830337,
-    "longitude": 7.6358696,
-    "availability": "waitlist",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/land-und-baumaschinenmechatroniker-meisterschule-teile-i-und-ii-vollzeit-93955#termin-1"
-  },
-  {
-    "chamber_slug": "hwk-muenster",
-    "chamber_name": "HWK Münster",
-    "chamber_region": "Nordrhein-Westfalen",
-    "trade_slug": "land-und-baumaschinenmechatroniker",
-    "trade_name": "Land- und Baumaschinenmechatroniker",
-    "title": "Land- und Baumaschinenmechatroniker (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2028-01-10",
-    "end_date": "2028-06-30",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": 14395.0,
-    "course_fee_display": "14.395 €",
-    "exam_fee_scraped": 1650.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 1650.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "1.650 €",
-      "from_tariff": false
-    },
-    "city": "Münster",
-    "street": "Albrecht-Thaer-Straße 9",
-    "zip_code": "48147",
-    "latitude": 51.9830337,
-    "longitude": 7.6358696,
-    "availability": "waitlist",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/land-und-baumaschinenmechatroniker-meisterschule-teile-i-und-ii-vollzeit-93955#termin-2"
-  },
-  {
-    "chamber_slug": "hwk-muenster",
-    "chamber_name": "HWK Münster",
-    "chamber_region": "Nordrhein-Westfalen",
-    "trade_slug": "land-und-baumaschinenmechatroniker",
-    "trade_name": "Land- und Baumaschinenmechatroniker",
-    "title": "Land- und Baumaschinenmechatroniker (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
     "start_date": "2029-01-08",
     "end_date": "2029-06-29",
     "start_date_note": "",
     "duration_hours": null,
-    "course_fee": 14395.0,
-    "course_fee_display": "14.395 €",
+    "course_fee": 13695.0,
+    "course_fee_display": "13.695 €",
     "exam_fee_scraped": 1650.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -67858,8 +68363,8 @@
     "zip_code": "48147",
     "latitude": 51.9830337,
     "longitude": 7.6358696,
-    "availability": "waitlist",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/land-und-baumaschinenmechatroniker-meisterschule-teile-i-und-ii-vollzeit-93955#termin-3"
+    "availability": "available",
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/land-und-baumaschinenmechatroniker-meisterschule-teile-i-und-ii-vollzeit-93955#termin-1"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -67879,8 +68384,8 @@
     "end_date": "2030-08-09",
     "start_date_note": "",
     "duration_hours": null,
-    "course_fee": 14395.0,
-    "course_fee_display": "14.395 €",
+    "course_fee": 13695.0,
+    "course_fee_display": "13.695 €",
     "exam_fee_scraped": 1650.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -67896,7 +68401,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/land-und-baumaschinenmechatroniker-meisterschule-teile-i-und-ii-vollzeit-93955#termin-4"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/land-und-baumaschinenmechatroniker-meisterschule-teile-i-und-ii-vollzeit-93955#termin-2"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -68205,43 +68710,6 @@
       1,
       2
     ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-10-14",
-    "end_date": "2028-07-07",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": 9100.0,
-    "course_fee_display": "9.100 €",
-    "exam_fee_scraped": 1400.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 1400.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "1.400 €",
-      "from_tariff": false
-    },
-    "city": "Münster",
-    "street": "Albrecht-Thaer-Straße 9",
-    "zip_code": "48147",
-    "latitude": 51.9830337,
-    "longitude": 7.6358696,
-    "availability": "waitlist",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/tischler-meisterschule-teile-i-und-ii-teilzeit-92819#termin-1"
-  },
-  {
-    "chamber_slug": "hwk-muenster",
-    "chamber_name": "HWK Münster",
-    "chamber_region": "Nordrhein-Westfalen",
-    "trade_slug": "tischler",
-    "trade_name": "Tischler",
-    "title": "Tischler (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
@@ -68340,7 +68808,7 @@
     "latitude": 51.9830337,
     "longitude": 7.6358696,
     "availability": "available",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/tischler-meisterschule-teile-i-und-ii-teilzeit-92819#termin-2"
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/tischler-meisterschule-teile-i-und-ii-teilzeit-92819#termin-1"
   },
   {
     "chamber_slug": "hwk-muenster",
@@ -70279,191 +70747,6 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
-    "start_date": "2026-10-14",
-    "end_date": "2027-06-18",
-    "start_date_note": "",
-    "duration_hours": 1216,
-    "course_fee": 8980.0,
-    "course_fee_display": "8.980 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": null,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "",
-      "from_tariff": false
-    },
-    "city": "Straubing",
-    "street": "Johannes-Kepler-Straße 14",
-    "zip_code": "94315",
-    "latitude": 48.8708639,
-    "longitude": 12.5760232,
-    "availability": "full",
-    "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1008773"
-  },
-  {
-    "chamber_slug": "hwk-niederbayern-oberpfalz",
-    "chamber_name": "HWK Niederbayern-Oberpfalz",
-    "chamber_region": "Bayern",
-    "trade_slug": "elektrotechniker",
-    "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-10-14",
-    "end_date": "2027-06-18",
-    "start_date_note": "",
-    "duration_hours": 1216,
-    "course_fee": 8980.0,
-    "course_fee_display": "8.980 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": null,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "",
-      "from_tariff": false
-    },
-    "city": "Regensburg",
-    "street": "Ditthornstraße 10",
-    "zip_code": "93055",
-    "latitude": 49.0144753,
-    "longitude": 12.1382992,
-    "availability": "full",
-    "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1009058"
-  },
-  {
-    "chamber_slug": "hwk-niederbayern-oberpfalz",
-    "chamber_name": "HWK Niederbayern-Oberpfalz",
-    "chamber_region": "Bayern",
-    "trade_slug": "elektrotechniker",
-    "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-10-14",
-    "end_date": "2027-06-18",
-    "start_date_note": "",
-    "duration_hours": 1216,
-    "course_fee": 8980.0,
-    "course_fee_display": "8.980 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": null,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "",
-      "from_tariff": false
-    },
-    "city": "Landshut",
-    "street": "Am Lurzenhof 10 b",
-    "zip_code": "84036",
-    "latitude": 48.5594648,
-    "longitude": 12.1999128,
-    "availability": "full",
-    "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1009657"
-  },
-  {
-    "chamber_slug": "hwk-niederbayern-oberpfalz",
-    "chamber_name": "HWK Niederbayern-Oberpfalz",
-    "chamber_region": "Bayern",
-    "trade_slug": "elektrotechniker",
-    "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-10-14",
-    "end_date": "2027-06-18",
-    "start_date_note": "",
-    "duration_hours": 1216,
-    "course_fee": 9750.0,
-    "course_fee_display": "9.750 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": null,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "",
-      "from_tariff": false
-    },
-    "city": "Schwandorf",
-    "street": "Charlottenhof 1",
-    "zip_code": "92421",
-    "latitude": 49.3456906,
-    "longitude": 12.1756219,
-    "availability": "full",
-    "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1014113"
-  },
-  {
-    "chamber_slug": "hwk-niederbayern-oberpfalz",
-    "chamber_name": "HWK Niederbayern-Oberpfalz",
-    "chamber_region": "Bayern",
-    "trade_slug": "elektrotechniker",
-    "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-10-14",
-    "end_date": "2027-06-18",
-    "start_date_note": "",
-    "duration_hours": 1216,
-    "course_fee": 9750.0,
-    "course_fee_display": "9.750 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": null,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "",
-      "from_tariff": false
-    },
-    "city": "Schwandorf",
-    "street": "Charlottenhof 1",
-    "zip_code": "92421",
-    "latitude": 49.3456906,
-    "longitude": 12.1756219,
-    "availability": "full",
-    "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1014120"
-  },
-  {
-    "chamber_slug": "hwk-niederbayern-oberpfalz",
-    "chamber_name": "HWK Niederbayern-Oberpfalz",
-    "chamber_region": "Bayern",
-    "trade_slug": "elektrotechniker",
-    "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
     "start_date": "2027-10-13",
     "end_date": "2028-06-14",
     "start_date_note": "",
@@ -71795,6 +72078,43 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
+    "start_date": "2028-04-01",
+    "end_date": "2028-12-01",
+    "start_date_note": "Genauer Termin steht noch nicht fest.",
+    "duration_hours": 960,
+    "course_fee": null,
+    "course_fee_display": "—",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": null,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "",
+      "from_tariff": false
+    },
+    "city": "Schwandorf",
+    "street": "Charlottenhof 1",
+    "zip_code": "92421",
+    "latitude": 49.3456906,
+    "longitude": 12.1756219,
+    "availability": "full",
+    "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1019204"
+  },
+  {
+    "chamber_slug": "hwk-niederbayern-oberpfalz",
+    "chamber_name": "HWK Niederbayern-Oberpfalz",
+    "chamber_region": "Bayern",
+    "trade_slug": "installateur-und-heizungsbauer",
+    "trade_name": "Installateur- und Heizungsbauer",
+    "title": "Installateur- und Heizungsbauer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
     "start_date": "2028-09-01",
     "end_date": "2029-04-01",
     "start_date_note": "Genauer Termin steht noch nicht fest.",
@@ -72770,7 +73090,7 @@
     "zip_code": "94315",
     "latitude": 48.8708639,
     "longitude": 12.5760232,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1018714"
   },
   {
@@ -87958,16 +88278,15 @@
     "chamber_region": "Niedersachsen",
     "trade_slug": "dachdecker",
     "trade_name": "Dachdecker",
-    "title": "Dachdecker (Teile I + II)",
+    "title": "Dachdecker (Teil II)",
     "parts": [
-      1,
       2
     ],
     "format": "part_time",
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
-    "start_date": null,
-    "end_date": null,
+    "start_date": "2027-05-21",
+    "end_date": "2028-12-09",
     "start_date_note": "",
     "duration_hours": null,
     "course_fee": null,
@@ -87975,19 +88294,19 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 1343.0,
+      "fee": 406.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "1.343 €",
+      "display": "406 €",
       "from_tariff": true
     },
     "city": "Osnabrück",
-    "street": "Bramscher Straße 134-136",
+    "street": "Bramscher Straße 134 - 136",
     "zip_code": "49088",
     "latitude": 52.290842,
     "longitude": 8.0401607,
-    "availability": "unknown",
-    "source_url": "https://www.btz-osnabrueck.de/seminar/mstrdachtza/"
+    "availability": "available",
+    "source_url": "https://www.btz-osnabrueck.de/seminar/mstrdachtzb/#kurs-20271"
   },
   {
     "chamber_slug": "hwk-osnabrueck-emsland-grafschaft-bentheim",
@@ -88488,8 +88807,8 @@
     "end_date": "2030-05-25",
     "start_date_note": "",
     "duration_hours": null,
-    "course_fee": 6995.0,
-    "course_fee_display": "6.995 €",
+    "course_fee": 7900.0,
+    "course_fee_display": "7.900 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -88599,8 +88918,8 @@
     "end_date": "2028-03-31",
     "start_date_note": "",
     "duration_hours": null,
-    "course_fee": 6700.0,
-    "course_fee_display": "6.700 €",
+    "course_fee": 7200.0,
+    "course_fee_display": "7.200 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -88636,8 +88955,8 @@
     "end_date": "2029-05-07",
     "start_date_note": "",
     "duration_hours": null,
-    "course_fee": 6700.0,
-    "course_fee_display": "6.700 €",
+    "course_fee": 7200.0,
+    "course_fee_display": "7.200 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -88673,8 +88992,8 @@
     "end_date": "2029-03-30",
     "start_date_note": "",
     "duration_hours": null,
-    "course_fee": 6700.0,
-    "course_fee_display": "6.700 €",
+    "course_fee": 7200.0,
+    "course_fee_display": "7.200 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -88710,8 +89029,8 @@
     "end_date": "2030-05-13",
     "start_date_note": "",
     "duration_hours": null,
-    "course_fee": 6700.0,
-    "course_fee_display": "6.700 €",
+    "course_fee": 7200.0,
+    "course_fee_display": "7.200 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -88747,8 +89066,8 @@
     "end_date": "2027-11-19",
     "start_date_note": "",
     "duration_hours": null,
-    "course_fee": 10395.0,
-    "course_fee_display": "10.395 €",
+    "course_fee": null,
+    "course_fee_display": "—",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -88784,8 +89103,8 @@
     "end_date": "2029-09-22",
     "start_date_note": "",
     "duration_hours": null,
-    "course_fee": 10395.0,
-    "course_fee_display": "10.395 €",
+    "course_fee": 11500.0,
+    "course_fee_display": "11.500 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -88821,8 +89140,8 @@
     "end_date": "2028-11-17",
     "start_date_note": "",
     "duration_hours": null,
-    "course_fee": 10395.0,
-    "course_fee_display": "10.395 €",
+    "course_fee": null,
+    "course_fee_display": "—",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -88858,8 +89177,8 @@
     "end_date": "2030-09-14",
     "start_date_note": "",
     "duration_hours": null,
-    "course_fee": 10395.0,
-    "course_fee_display": "10.395 €",
+    "course_fee": 11500.0,
+    "course_fee_display": "11.500 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -89040,7 +89359,7 @@
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
     "start_date": "2028-08-29",
-    "end_date": "2030-05-24",
+    "end_date": "2030-05-25",
     "start_date_note": "",
     "duration_hours": null,
     "course_fee": 9930.0,
@@ -89228,8 +89547,8 @@
     "end_date": "2029-03-30",
     "start_date_note": "",
     "duration_hours": null,
-    "course_fee": 8890.0,
-    "course_fee_display": "8.890 €",
+    "course_fee": 9900.0,
+    "course_fee_display": "9.900 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -89265,8 +89584,8 @@
     "end_date": "2028-03-24",
     "start_date_note": "",
     "duration_hours": null,
-    "course_fee": 8890.0,
-    "course_fee_display": "8.890 €",
+    "course_fee": 9900.0,
+    "course_fee_display": "9.900 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -89302,8 +89621,8 @@
     "end_date": "2029-03-30",
     "start_date_note": "",
     "duration_hours": null,
-    "course_fee": 8890.0,
-    "course_fee_display": "8.890 €",
+    "course_fee": 9900.0,
+    "course_fee_display": "9.900 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -89339,8 +89658,8 @@
     "end_date": "2031-03-28",
     "start_date_note": "",
     "duration_hours": null,
-    "course_fee": 8890.0,
-    "course_fee_display": "8.890 €",
+    "course_fee": 9900.0,
+    "course_fee_display": "9.900 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -89376,8 +89695,8 @@
     "end_date": "2030-03-29",
     "start_date_note": "",
     "duration_hours": null,
-    "course_fee": 8890.0,
-    "course_fee_display": "8.890 €",
+    "course_fee": 9900.0,
+    "course_fee_display": "9.900 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -89653,6 +89972,43 @@
     "longitude": 8.0401607,
     "availability": "full",
     "source_url": "https://www.btz-osnabrueck.de/seminar/mstrtischtza/#kurs-20261"
+  },
+  {
+    "chamber_slug": "hwk-osnabrueck-emsland-grafschaft-bentheim",
+    "chamber_name": "HWK Osnabrück-Emsland-Grafschaft Bentheim",
+    "chamber_region": "Niedersachsen",
+    "trade_slug": "tischler",
+    "trade_name": "Tischler",
+    "title": "Tischler (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-11-10",
+    "end_date": "2030-04-20",
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": 8500.0,
+    "course_fee_display": "8.500 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 859.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "859 €",
+      "from_tariff": true
+    },
+    "city": "Osnabrück",
+    "street": "Bramscher Straße 134 - 136",
+    "zip_code": "49088",
+    "latitude": 52.290842,
+    "longitude": 8.0401607,
+    "availability": "available",
+    "source_url": "https://www.btz-osnabrueck.de/seminar/mstrtischtza/#kurs-20281"
   },
   {
     "chamber_slug": "hwk-osnabrueck-emsland-grafschaft-bentheim",
@@ -100938,7 +101294,7 @@
     "zip_code": "72072",
     "latitude": 48.5004109,
     "longitude": 9.059163,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.hwk-reutlingen.de/seminar/t-mv-i-ii_elo-tz/#kurs-11"
   },
   {
@@ -102246,79 +102602,6 @@
     "chamber_region": "Hessen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
-    "parts": [
-      3,
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-01-09",
-    "end_date": "2027-07-10",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": 3190.0,
-    "course_fee_display": "3.190 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 490.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "490 €",
-      "from_tariff": true
-    },
-    "city": "Frankfurt am Main",
-    "street": "Schönstraße 21",
-    "zip_code": "60327",
-    "latitude": 50.1013705,
-    "longitude": 8.65682,
-    "availability": "available",
-    "source_url": "https://portal.hwk-rhein-main.de/seminar/ml-99tz/"
-  },
-  {
-    "chamber_slug": "hwk-rhein-main",
-    "chamber_name": "HWK Frankfurt-Rhein-Main",
-    "chamber_region": "Hessen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-01-09",
-    "end_date": "2027-05-26",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": 2320.0,
-    "course_fee_display": "2.320 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 340.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "340 €",
-      "from_tariff": true
-    },
-    "city": "Frankfurt am Main",
-    "street": "Schönstraße 21",
-    "zip_code": "60327",
-    "latitude": 50.1013705,
-    "longitude": 8.65682,
-    "availability": "available",
-    "source_url": "https://portal.hwk-rhein-main.de/seminar/ml-99tz/"
-  },
-  {
-    "chamber_slug": "hwk-rhein-main",
-    "chamber_name": "HWK Frankfurt-Rhein-Main",
-    "chamber_region": "Hessen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Wirtschaft und Recht (Teil III)",
     "parts": [
       3
@@ -102348,42 +102631,6 @@
     "longitude": 8.65682,
     "availability": "available",
     "source_url": "https://portal.hwk-rhein-main.de/seminar/ml-99hv/"
-  },
-  {
-    "chamber_slug": "hwk-rhein-main",
-    "chamber_name": "HWK Frankfurt-Rhein-Main",
-    "chamber_region": "Hessen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-01-20",
-    "end_date": "2027-03-12",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": 2320.0,
-    "course_fee_display": "2.320 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 340.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "340 €",
-      "from_tariff": true
-    },
-    "city": "Weiterstadt",
-    "street": "Rudolf-Diesel-Straße 30",
-    "zip_code": "64331",
-    "latitude": 49.9011703,
-    "longitude": 8.6137976,
-    "availability": "available",
-    "source_url": "https://portal.hwk-rhein-main.de/seminar/ml-99vz/"
   },
   {
     "chamber_slug": "hwk-rhein-main",
@@ -102602,42 +102849,6 @@
     "longitude": 8.65682,
     "availability": "available",
     "source_url": "https://portal.hwk-rhein-main.de/seminar/ml-99bb/"
-  },
-  {
-    "chamber_slug": "hwk-rhein-main",
-    "chamber_name": "HWK Frankfurt-Rhein-Main",
-    "chamber_region": "Hessen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-06-01",
-    "end_date": "2027-07-10",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": 870.0,
-    "course_fee_display": "870 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 235.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "235 €",
-      "from_tariff": true
-    },
-    "city": "Frankfurt am Main",
-    "street": "Schönstraße 21",
-    "zip_code": "60327",
-    "latitude": 50.1013705,
-    "longitude": 8.65682,
-    "availability": "available",
-    "source_url": "https://portal.hwk-rhein-main.de/seminar/ml-99tz/"
   },
   {
     "chamber_slug": "hwk-rhein-main",
@@ -106769,42 +106980,6 @@
     "chamber_region": "Saarland",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-11-16",
-    "end_date": "2027-01-14",
-    "start_date_note": "",
-    "duration_hours": 56,
-    "course_fee": 505.0,
-    "course_fee_display": "505 €",
-    "exam_fee_scraped": 130.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 130.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "130 €",
-      "from_tariff": false
-    },
-    "city": "Saarbrücken",
-    "street": "Hohenzollernstraße 47-49",
-    "zip_code": "66117",
-    "latitude": 49.2297,
-    "longitude": 6.9967,
-    "availability": "available",
-    "source_url": "https://www.hwk-saarland.de/seminar/mv-teil-iv-ada-m4tz/"
-  },
-  {
-    "chamber_slug": "hwk-saarland",
-    "chamber_name": "HWK des Saarlandes",
-    "chamber_region": "Saarland",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Wirtschaft und Recht (Teil III)",
     "parts": [
       3
@@ -110878,7 +111053,7 @@
     "zip_code": "",
     "latitude": 53.6288297,
     "longitude": 11.4148038,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwk-schwerin.de/19,0,coursedetail.html?id=86312"
   },
   {
@@ -124041,7 +124216,7 @@
     "zip_code": "65189",
     "latitude": 50.0652806,
     "longitude": 8.2590004,
-    "availability": "waitlist",
+    "availability": "available",
     "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iii-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=94344&search-onr=44&img=1"
   },
   {
