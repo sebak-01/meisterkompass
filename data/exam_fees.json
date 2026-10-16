@@ -1,34 +1,5 @@
 {
   "nested": {
-    "hwk-hamburg": {
-      "null": {
-        "1": {
-          "fee": 430.0,
-          "fee_max": null,
-          "qualifier": ""
-        },
-        "1,2,3,4": {
-          "fee": 1300.0,
-          "fee_max": null,
-          "qualifier": ""
-        },
-        "2": {
-          "fee": 430.0,
-          "fee_max": null,
-          "qualifier": ""
-        },
-        "3": {
-          "fee": 350.0,
-          "fee_max": null,
-          "qualifier": ""
-        },
-        "4": {
-          "fee": 350.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      }
-    },
     "hwk-aachen": {
       "null": {
         "1": {
@@ -1182,6 +1153,140 @@
       "zimmerer": {
         "1": {
           "fee": 406.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      }
+    },
+    "hwk-hamburg": {
+      "null": {
+        "1": {
+          "fee": 430.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "1,2,3,4": {
+          "fee": 1300.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "2": {
+          "fee": 430.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "3": {
+          "fee": 330.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
+        "4": {
+          "fee": 225.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "elektrotechniker": {
+        "1,2": {
+          "fee": 860.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "feinwerkmechaniker": {
+        "1,2": {
+          "fee": 860.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "fliesen-platten-und-mosaikleger": {
+        "1,2": {
+          "fee": 860.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "friseur": {
+        "1,2": {
+          "fee": 1300.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "kalteanlagenbauer": {
+        "1,2": {
+          "fee": 860.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "maler-und-lackierer": {
+        "1,2": {
+          "fee": 860.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "massschneider": {
+        "1,2": {
+          "fee": 860.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "maurer-und-betonbauer": {
+        "1,2": {
+          "fee": 860.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "metallbauer": {
+        "1,2": {
+          "fee": 860.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "orthopadietechniker": {
+        "1,2": {
+          "fee": 430.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "rollladen-und-sonnenschutztechniker": {
+        "1,2": {
+          "fee": 860.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "tischler": {
+        "1,2": {
+          "fee": 1010.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "zahntechniker": {
+        "1,2": {
+          "fee": 860.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "zimmerer": {
+        "1,2": {
+          "fee": 860.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "zweiradmechaniker": {
+        "1,2": {
+          "fee": 860.0,
           "fee_max": null,
           "qualifier": ""
         }
@@ -2351,13 +2456,6 @@
       "kfz-techniker": {
         "1,2": {
           "fee": 1550.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
-      "land-und-baumaschinenmechatroniker": {
-        "1,2": {
-          "fee": 1650.0,
           "fee_max": null,
           "qualifier": ""
         }
