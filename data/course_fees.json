@@ -667,17 +667,6 @@
   },
   {
     "chamber_slug": "hwk-wiesbaden",
-    "trade_slug": "fahrzeuglackierer",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 7950.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-wiesbaden",
     "trade_slug": "maler-und-lackierer",
     "parts": [
       1,
@@ -1046,16 +1035,6 @@
     "fee": 8230.0,
     "exam_fee_scraped": 730.0,
     "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-rhein-main",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      3
-    ],
-    "fee": 2290.0,
-    "exam_fee_scraped": null,
-    "is_generic": true
   },
   {
     "chamber_slug": "hwk-schwaben",
@@ -1590,6 +1569,16 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-rhein-main",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      3
+    ],
+    "fee": 2290.0,
+    "exam_fee_scraped": null,
+    "is_generic": true
+  },
+  {
     "chamber_slug": "hwk-rheinhessen",
     "trade_slug": "allgemein-teil-iii-iv",
     "parts": [
@@ -1637,6 +1626,16 @@
     ],
     "fee": 1850.0,
     "exam_fee_scraped": null,
+    "is_generic": true
+  },
+  {
+    "chamber_slug": "hwk-duesseldorf",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      3
+    ],
+    "fee": 1955.0,
+    "exam_fee_scraped": 240.0,
     "is_generic": true
   },
   {
@@ -1726,16 +1725,6 @@
     "is_generic": true
   },
   {
-    "chamber_slug": "hwk-duesseldorf",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      3
-    ],
-    "fee": 1955.0,
-    "exam_fee_scraped": 240.0,
-    "is_generic": true
-  },
-  {
     "chamber_slug": "hwk-koeln",
     "trade_slug": "friseur",
     "parts": [
@@ -1776,6 +1765,17 @@
       2
     ],
     "fee": 8000.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "trade_slug": "tischler",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 9975.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
@@ -1913,17 +1913,6 @@
     ],
     "fee": 11800.0,
     "exam_fee_scraped": 860.0,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-konstanz",
-    "trade_slug": "feinwerkmechaniker",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 6950.0,
-    "exam_fee_scraped": 2120.0,
     "is_generic": false
   },
   {
@@ -2127,6 +2116,16 @@
     "is_generic": true
   },
   {
+    "chamber_slug": "hwk-kassel",
+    "trade_slug": "elektrotechniker",
+    "parts": [
+      2
+    ],
+    "fee": 6150.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-magdeburg",
     "trade_slug": "maler-und-lackierer",
     "parts": [
@@ -2256,17 +2255,6 @@
     "is_generic": false
   },
   {
-    "chamber_slug": "hwk-kassel",
-    "trade_slug": "tischler",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 9612.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
     "chamber_slug": "hwk-magdeburg",
     "trade_slug": "allgemein-teil-iii-iv",
     "parts": [
@@ -2297,7 +2285,7 @@
       1,
       2
     ],
-    "fee": 9950.0,
+    "fee": 10700.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
@@ -2308,7 +2296,7 @@
       1,
       2
     ],
-    "fee": 9950.0,
+    "fee": 10700.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
@@ -2387,6 +2375,16 @@
   },
   {
     "chamber_slug": "hwk-stuttgart",
+    "trade_slug": "kfz-techniker",
+    "parts": [
+      2
+    ],
+    "fee": 3990.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-kassel",
     "trade_slug": "kfz-techniker",
     "parts": [
       2
@@ -2877,7 +2875,7 @@
       1,
       2
     ],
-    "fee": 9500.0,
+    "fee": 10700.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
@@ -3418,6 +3416,17 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-kassel",
+    "trade_slug": "elektrotechniker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 9750.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-leipzig",
     "trade_slug": "fliesen-platten-und-mosaikleger",
     "parts": [
@@ -3624,7 +3633,7 @@
       1,
       2
     ],
-    "fee": 9150.0,
+    "fee": 10500.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
@@ -4509,6 +4518,17 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-kassel",
+    "trade_slug": "land-und-baumaschinenmechatroniker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 11000.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-konstanz",
     "trade_slug": "maurer-und-betonbauer",
     "parts": [
@@ -4615,6 +4635,17 @@
       2
     ],
     "fee": 10650.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-flensburg",
+    "trade_slug": "land-und-baumaschinenmechatroniker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 10200.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
@@ -5292,6 +5323,17 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-konstanz",
+    "trade_slug": "feinwerkmechaniker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 6950.0,
+    "exam_fee_scraped": 2120.0,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-ostfriesland",
     "trade_slug": "elektrotechniker",
     "parts": [
@@ -5427,7 +5469,7 @@
       1,
       2
     ],
-    "fee": 10990.0,
+    "fee": 11900.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
@@ -6181,17 +6223,6 @@
     "is_generic": false
   },
   {
-    "chamber_slug": "hwk-duesseldorf",
-    "trade_slug": "installateur-und-heizungsbauer",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 11465.0,
-    "exam_fee_scraped": 1460.0,
-    "is_generic": false
-  },
-  {
     "chamber_slug": "hwk-oberfranken",
     "trade_slug": "zimmerer",
     "parts": [
@@ -6493,6 +6524,17 @@
     ],
     "fee": 10150.0,
     "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-duesseldorf",
+    "trade_slug": "installateur-und-heizungsbauer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 11928.0,
+    "exam_fee_scraped": 1460.0,
     "is_generic": false
   },
   {
@@ -7785,17 +7827,6 @@
     "is_generic": false
   },
   {
-    "chamber_slug": "hwk-kassel",
-    "trade_slug": "elektrotechniker",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 9500.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
     "chamber_slug": "hwk-ostthueringen-gera",
     "trade_slug": "klempner",
     "parts": [
@@ -7894,17 +7925,6 @@
     ],
     "fee": 6040.0,
     "exam_fee_scraped": 1790.0,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-flensburg",
-    "trade_slug": "land-und-baumaschinenmechatroniker",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 9900.0,
-    "exam_fee_scraped": null,
     "is_generic": false
   },
   {
