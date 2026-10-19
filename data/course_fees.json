@@ -1,15 +1,5 @@
 [
   {
-    "chamber_slug": "hwk-braunschweig-lueneburg-stade",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      4
-    ],
-    "fee": 800.0,
-    "exam_fee_scraped": null,
-    "is_generic": true
-  },
-  {
     "chamber_slug": "hwk-bremen",
     "trade_slug": "friseur",
     "parts": [
@@ -19,16 +9,6 @@
     "fee": 4600.0,
     "exam_fee_scraped": null,
     "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-cottbus",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      3
-    ],
-    "fee": 2490.0,
-    "exam_fee_scraped": null,
-    "is_generic": true
   },
   {
     "chamber_slug": "hwk-hamburg",
@@ -47,16 +27,6 @@
       3
     ],
     "fee": 1485.0,
-    "exam_fee_scraped": null,
-    "is_generic": true
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      4
-    ],
-    "fee": 750.0,
     "exam_fee_scraped": null,
     "is_generic": true
   },
@@ -132,16 +102,6 @@
     "fee": 9086.0,
     "exam_fee_scraped": null,
     "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-koeln",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      3
-    ],
-    "fee": 2100.0,
-    "exam_fee_scraped": 360.0,
-    "is_generic": true
   },
   {
     "chamber_slug": "hwk-leipzig",
@@ -269,6 +229,16 @@
     "fee": 8995.0,
     "exam_fee_scraped": null,
     "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-cottbus",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      3
+    ],
+    "fee": 1950.0,
+    "exam_fee_scraped": null,
+    "is_generic": true
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -993,6 +963,16 @@
     "fee": 9300.0,
     "exam_fee_scraped": null,
     "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-kassel",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      4
+    ],
+    "fee": 720.0,
+    "exam_fee_scraped": null,
+    "is_generic": true
   },
   {
     "chamber_slug": "hwk-mittelfranken",
@@ -2074,6 +2054,16 @@
     "is_generic": true
   },
   {
+    "chamber_slug": "hwk-koeln",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      3
+    ],
+    "fee": 2250.0,
+    "exam_fee_scraped": 360.0,
+    "is_generic": true
+  },
+  {
     "chamber_slug": "hwk-rhein-main",
     "trade_slug": "allgemein-teil-iii-iv",
     "parts": [
@@ -2081,6 +2071,16 @@
       4
     ],
     "fee": 2990.0,
+    "exam_fee_scraped": null,
+    "is_generic": true
+  },
+  {
+    "chamber_slug": "hwk-braunschweig-lueneburg-stade",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      4
+    ],
+    "fee": 800.0,
     "exam_fee_scraped": null,
     "is_generic": true
   },
