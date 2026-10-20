@@ -2392,7 +2392,7 @@
       },
       "dachdecker": {
         "1,2": {
-          "fee": 1650.0,
+          "fee": 1750.0,
           "fee_max": null,
           "qualifier": ""
         }
@@ -2456,6 +2456,13 @@
       "kfz-techniker": {
         "1,2": {
           "fee": 1550.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
+      "land-und-baumaschinenmechatroniker": {
+        "1,2": {
+          "fee": 1650.0,
           "fee_max": null,
           "qualifier": ""
         }
