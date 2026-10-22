@@ -465,6 +465,16 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-dortmund",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      3
+    ],
+    "fee": 2015.0,
+    "exam_fee_scraped": 260.0,
+    "is_generic": true
+  },
+  {
     "chamber_slug": "hwk-dresden",
     "trade_slug": "tischler",
     "parts": [
@@ -1244,7 +1254,7 @@
       2
     ],
     "fee": 11500.0,
-    "exam_fee_scraped": 630.0,
+    "exam_fee_scraped": 1420.0,
     "is_generic": false
   },
   {
@@ -1585,16 +1595,6 @@
     "is_generic": true
   },
   {
-    "chamber_slug": "hwk-duesseldorf",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      4
-    ],
-    "fee": 705.0,
-    "exam_fee_scraped": 270.0,
-    "is_generic": true
-  },
-  {
     "chamber_slug": "hwk-mannheim",
     "trade_slug": "maler-und-lackierer",
     "parts": [
@@ -1647,6 +1647,16 @@
     ],
     "fee": 3100.0,
     "exam_fee_scraped": 350.0,
+    "is_generic": true
+  },
+  {
+    "chamber_slug": "hwk-duesseldorf",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      4
+    ],
+    "fee": 705.0,
+    "exam_fee_scraped": 270.0,
     "is_generic": true
   },
   {
@@ -2617,16 +2627,6 @@
     "fee": 8500.0,
     "exam_fee_scraped": null,
     "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-dortmund",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      3
-    ],
-    "fee": 2015.0,
-    "exam_fee_scraped": 260.0,
-    "is_generic": true
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -4958,7 +4958,7 @@
     "parts": [
       1
     ],
-    "fee": 3730.0,
+    "fee": 3530.0,
     "exam_fee_scraped": 854.0,
     "is_generic": false
   },
@@ -7125,19 +7125,6 @@
   },
   {
     "chamber_slug": "hwk-saarland",
-    "trade_slug": "feinwerkmechaniker",
-    "parts": [
-      1,
-      2,
-      3,
-      4
-    ],
-    "fee": 6070.0,
-    "exam_fee_scraped": 1790.0,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-saarland",
     "trade_slug": "friseur",
     "parts": [
       1,
@@ -7173,16 +7160,6 @@
     ],
     "fee": 3950.0,
     "exam_fee_scraped": 1400.0,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-saarland",
-    "trade_slug": "konditor",
-    "parts": [
-      1
-    ],
-    "fee": 1435.0,
-    "exam_fee_scraped": 990.0,
     "is_generic": false
   },
   {
