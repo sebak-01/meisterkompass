@@ -225,6 +225,25 @@ class CollapseGuardTests(unittest.TestCase):
         self.assertEqual(merged["hwk-empty"], {"maler": {"1": 400.0}})
         self.assertEqual(merged["hwk-healthy"], {"maurer": {"1": 300.0}})
 
+    def test_unscraped_chambers_keep_fees_when_lookup_carries_tariff_rows(self):
+        """The exam-fee lookup spans all chambers (stored tariff rows), so the
+        nested dict derived from it also covers unscraped chambers. Replacing
+        their previous entries with that tariff-only subset would drop the
+        trade rows derived from their course offers."""
+        previous_fees = {
+            "hwk-unscraped": {"null": {"1,2": 610.0}, "tischler": {"1,2": 610.0}},
+            "hwk-scraped": {"null": {"1": 300.0}},
+        }
+        current_fees = {
+            "hwk-unscraped": {"null": {"1,2": 610.0}},
+            "hwk-scraped": {"null": {"1": 350.0}},
+        }
+
+        merged = _merge_exam_fees_nested(previous_fees, current_fees, {"hwk-scraped"})
+
+        self.assertEqual(merged["hwk-unscraped"], {"null": {"1,2": 610.0}, "tischler": {"1,2": 610.0}})
+        self.assertEqual(merged["hwk-scraped"], {"null": {"1": 350.0}})
+
     def test_ratio_zero_disables_the_guard(self):
         """Escape hatch for a real collapse (a chamber genuinely retiring its
         programme) so the dataset can never be permanently pinned."""

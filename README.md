@@ -199,7 +199,9 @@ chamber scrape:
 - **BZ Bildungszentrum Kassel GmbH** (bz-kassel.de) — implemented
 - **Berufsbildungszentrum Marburg GmbH** (bbz-marburg.de) — implemented
 - **Bubiza** (bubiza.de) — implemented (Zimmerer/Dachdecker; per-part fees,
-  combined-run fee = sum of component parts)
+  combined-run fee = sum of component parts; Grundkurs + Aufbaukurs of one
+  part-group are shown as a single course (Anfang Grundkurs → Ende Aufbaukurs,
+  fee and "U.-Std." hours summed))
 - **BBZ Mitte GmbH** (bbz-mitte.de) — implemented (its `/de/kursfinder` list is
   JS-rendered, but the underlying `/de/seminar-navigator/search-results` AJAX
   endpoint returns the same results server-side as a static HTML fragment)

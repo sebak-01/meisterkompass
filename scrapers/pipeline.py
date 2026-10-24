@@ -637,8 +637,14 @@ def _load_previous_exam_fees_nested() -> dict:
 def _merge_exam_fees_nested(previous: dict, current: dict, scraped_chambers: set[str] | None) -> dict:
     if scraped_chambers is None:
         return current
-    merged = {slug: fees for slug, fees in previous.items() if slug not in scraped_chambers}
-    merged.update(current)
+    merged = dict(previous)
+    for slug, fees in current.items():
+        # Only scraped chambers may have their derived fees replaced. The
+        # lookup-derived dict also spans unscraped chambers (via stored tariff
+        # rows) — taking those entries would clobber their course-derived
+        # trade rows with the tariff-only subset.
+        if slug in scraped_chambers or slug not in merged:
+            merged[slug] = fees
     return merged
 
 

@@ -58,6 +58,20 @@ Berufsbildungszentrum Marburg GmbH (bbz-marburg.de):
     run yields a single dateless (start_date=None) offer so its price still
     appears in comparisons, mirroring the HWK Rheinhessen fallback pattern.
 
+Bubiza (bubiza.de):
+  - Zimmerer/Dachdecker Meisterkurse, one detail page per course. Each page
+    has labelled "Termine" / "Dauer" / "Kosten" blocks; dated runs repeat at
+    the bottom as "Kursteile" cards (duplicates of the Termine block).
+  - Per-part fees ("Teile I+II", "Teil III", "Teil IV"); a combined run
+    ("Teile I-IV") is priced as the sum of its component groups. Runs with
+    "Grund"/"Aufbau" markers are two halves of ONE course (e.g. Dachdecker
+    Teile I + II) and are emitted as a single offer spanning Anfang
+    Grundkurs → Ende Aufbaukurs with summed fee and hours.
+  - Teaching hours use the unit "U.-Std.": either listed per part in the
+    "Dauer" block ("Teil I Fachpraxis: 50 U.-Std."; plain "Teil III:"/
+    "Teil: IV" entries are sub-independent) or written inline on the run's
+    Termin line ("ca. 1.450 U.-Std.").
+
 BBZ Mitte GmbH (bbz-mitte.de):
   - Neos/Flow CMS. Its /de/kursfinder listing renders results client-side,
     but the underlying AJAX endpoint /de/seminar-navigator/search-results
@@ -313,6 +327,79 @@ def _extract_bubiza_trade(title: str) -> str | None:
     if "dachdeck" in t:
         return "Dachdecker"
     return None
+
+
+# "U.-Std." is Bubiza's unit for Unterrichtsstunden; other pages write
+# "ca. 880 U.-Std." inline on the Termin line, the Dachdecker page lists
+# exact values in a separate "Dauer" block ("Teil I Fachpraxis: 50 U.-Std.").
+BUBIZA_DURATION_RE = re.compile(r"(\d[\d.]*)\s*U\.-Std\.", re.I)
+_BUBIZA_DAUER_LABEL_RE = re.compile(r"^[ \t]*(?:Termin\s*/\s*)?Dauer[ \t]*$", re.M)
+_BUBIZA_SUB_MARKER_RE  = re.compile(r"^(Grund|Aufbau)kurs:?$", re.I)
+_BUBIZA_DAUER_PART_RE  = re.compile(rf"Teil\s*:?\s*({_ROMAN_ALT})", re.I)
+_BUBIZA_QUALIFIER_RE   = re.compile(r"Fachpraxis|Fachtheorie", re.I)
+
+
+def _parse_bubiza_hours(text: str) -> int | None:
+    """Parse a Bubiza duration value ("1.450 U.-Std." → 1450)."""
+    m = BUBIZA_DURATION_RE.search(text)
+    if not m:
+        return None
+    return int(m.group(1).replace(".", ""))
+
+
+def _parse_bubiza_dauer(page_text: str) -> dict[tuple[int, str | None], int]:
+    """Parse the "Dauer" block into ``{(part, sub): hours}``.
+
+    Entries read "Teil I Fachpraxis: 50 U.-Std." / "Teil III: 265 U.-Std." /
+    "Teil: IV 100 U.-Std." (roman part marker + value). Bare "Grundkurs:" /
+    "Aufbaukurs:" marker lines set the sub-context for the entries that
+    follow; only qualified entries ("Teil I Fachpraxis"/"Teil II Fachtheorie")
+    inherit it, plain "Teil III:"/"Teil: IV" entries are sub-independent, so
+    the trailing Teil III/IV values are not swallowed by the Aufbaukurs
+    section."""
+    m = _BUBIZA_DAUER_LABEL_RE.search(page_text)
+    if not m:
+        return {}
+    window = page_text[m.end():m.end() + 800]
+    result: dict[tuple[int, str | None], int] = {}
+    sub: str | None = None
+    for line in window.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        marker = _BUBIZA_SUB_MARKER_RE.fullmatch(line)
+        if marker:
+            sub = marker.group(1).lower()
+            continue
+        hours = _parse_bubiza_hours(line)
+        if hours is None:
+            continue
+        pm = _BUBIZA_DAUER_PART_RE.search(line)
+        if not pm:
+            continue
+        entry_sub = sub if _BUBIZA_QUALIFIER_RE.search(line) else None
+        result[(ROMAN[pm.group(1).upper()], entry_sub)] = hours
+    return result
+
+
+def _resolve_bubiza_hours(
+    dauer: dict[tuple[int, str | None], int],
+    parts: list[int], sub: str | None,
+    inline: int | None = None,
+) -> int | None:
+    """Resolve a run's teaching hours: inline value on its Termin line wins,
+    else the sum of the matching per-part entries of the "Dauer" block."""
+    if inline is not None:
+        return inline
+    total = 0
+    matched = False
+    for part in parts:
+        for key in ((part, sub), (part, None)):
+            if key in dauer:
+                total += dauer[key]
+                matched = True
+                break
+    return total if matched else None
 
 
 # ----------------------------------------------------------------------
@@ -1032,10 +1119,18 @@ class HwkKasselScraper(BaseScraper):
           * per-part pricing — a "Kosten" block lists a fee per part-group
             ("Teile I+II", "Teil III", "Teil IV"), and dated runs are
             labelled with the same part-groups. A combined run ("Teile I-IV")
-            is priced as the sum of its component groups.
+            is priced as the sum of its component groups. When a part-group
+            is offered as two halves ("Grundkurs" + "Aufbaukurs", e.g. the
+            Dachdecker Teile I+II page), both halves are one course: it is
+            emitted once with the Grundkurs start, the Aufbaukurs end and
+            the summed fee and teaching hours.
           * flat pricing — a single course fee with no part breakdown; every
             dated run shares that fee (parts inferred from the run labels or,
             failing that, the course body).
+
+        Teaching hours are taken from the "Dauer" block ("Teil …: n U.-Std.")
+        or, failing that, from a "U.-Std." value written inline on the run's
+        own Termin line.
         """
         soup = self.parse_html(card["url"])
         if soup is None:
@@ -1047,20 +1142,24 @@ class HwkKasselScraper(BaseScraper):
         trade_name = _extract_bubiza_trade(title)
         today = datetime.today().strftime("%Y-%m-%d")
 
+        dauer = _parse_bubiza_dauer(page_text)
         groups, flat_fee = self._parse_bubiza_kosten(page_text)
         runs = self._parse_bubiza_runs(page_text)
         labelled = [r for r in runs if r[0]]
 
-        def make_offer(parts: list[int], fee: float | None, start, end, avail: str, note=None):
+        def make_offer(parts: list[int], fee: float | None, start, end, avail: str,
+                       hours: int | None = None, note=None, extra_raw=None):
             resolved_trade = None if set(parts) <= {3, 4} else trade_name
             raw = {"title": title}
             if note:
                 raw["note"] = note
+            if extra_raw:
+                raw.update(extra_raw)
             return RawCourseOffer(
                 title=build_course_title(resolved_trade, parts),
                 trade_name=resolved_trade, parts=parts,
                 format_key="full_time", teaching_mode="presence",
-                start_date=start, end_date=end, duration_hours=None,
+                start_date=start, end_date=end, duration_hours=hours,
                 course_fee=fee,
                 city=BUBIZA_DEFAULT_CITY, street=BUBIZA_DEFAULT_STREET,
                 zip_code=BUBIZA_DEFAULT_ZIP,
@@ -1068,20 +1167,67 @@ class HwkKasselScraper(BaseScraper):
                 source_url=card["url"], scraped_raw=raw,
             )
 
+        def run_hours(parts: list[int], sub: str | None, inline: int | None) -> int | None:
+            return _resolve_bubiza_hours(dauer, parts, sub, inline)
+
         offers: list[RawCourseOffer] = []
-        seen: set[tuple] = set()
 
         # Shape 1: per-part pricing with labelled runs.
         if groups and labelled:
-            for parts, sub, start, end in labelled:
-                if start < today:
+            # Each run appears twice ("Termine" block + "Kursteile" cards).
+            unique: list[tuple] = []
+            seen_runs: set[tuple] = set()
+            for run in labelled:
+                key = (tuple(run[0]), run[1], run[2], run[3])
+                if key in seen_runs:
                     continue
-                key = (tuple(parts), start, end)
-                if key in seen:
-                    continue
-                seen.add(key)
-                fee = self._resolve_bubiza_fee(groups, flat_fee, parts, sub)
-                offers.append(make_offer(parts, fee, start, end, "available"))
+                seen_runs.add(key)
+                unique.append(run)
+
+            by_parts: dict[tuple, list[tuple]] = {}
+            for run in unique:
+                by_parts.setdefault(tuple(run[0]), []).append(run)
+
+            for parts_key, part_runs in by_parts.items():
+                parts = list(parts_key)
+                grund  = [r for r in part_runs if r[1] == "grund"]
+                aufbau = [r for r in part_runs if r[1] == "aufbau"]
+                consumed: set[tuple] = set()
+
+                # Grundkurs + Aufbaukurs of one part-group are two halves of
+                # a single course (Anfang Grundkurs → Ende Aufbaukurs).
+                if len(grund) == 1 and len(aufbau) == 1:
+                    g, a = grund[0], aufbau[0]
+                    consumed = {(g[1], g[2], g[3]), (a[1], a[2], a[3])}
+                    if g[2] >= today:
+                        fees = [f for f in (
+                            self._resolve_bubiza_fee(groups, flat_fee, parts, "grund"),
+                            self._resolve_bubiza_fee(groups, flat_fee, parts, "aufbau"),
+                        ) if f is not None]
+                        hours = [h for h in (
+                            run_hours(parts, "grund", g[4]),
+                            run_hours(parts, "aufbau", a[4]),
+                        ) if h is not None]
+                        offers.append(make_offer(
+                            parts,
+                            sum(fees) if fees else flat_fee,
+                            g[2], a[3], "available",
+                            hours=sum(hours) if hours else None,
+                            extra_raw={"merged_runs": {
+                                "grundkurs": [g[2], g[3]],
+                                "aufbaukurs": [a[2], a[3]],
+                            }},
+                        ))
+
+                for run_parts, sub, start, end, inline in part_runs:
+                    if (sub, start, end) in consumed:
+                        continue
+                    if start < today:
+                        continue
+                    fee = self._resolve_bubiza_fee(groups, flat_fee, run_parts, sub)
+                    offers.append(make_offer(
+                        run_parts, fee, start, end, "available",
+                        hours=run_hours(run_parts, sub, inline)))
             return offers
 
         # Shape 2: flat pricing.
@@ -1092,22 +1238,27 @@ class HwkKasselScraper(BaseScraper):
                 # component Teil III/IV runs share the same flat fee and are
                 # part of the same programme, so only the leading part-I run
                 # represents a bookable course offer here.
-                for parts, _sub, start, end in future_labelled:
+                seen: set[tuple] = set()
+                for parts, sub, start, end, inline in future_labelled:
                     if 1 not in parts:
                         continue
                     key = (tuple(parts), start, end)
                     if key in seen:
                         continue
                     seen.add(key)
-                    offers.append(make_offer(parts, flat_fee, start, end, "available"))
+                    offers.append(make_offer(
+                        parts, flat_fee, start, end, "available",
+                        hours=run_hours(parts, sub, inline)))
                 if offers:
                     return offers
             # No usable labelled runs — a single price-only offer.
             bare_future = [r for r in runs if not r[0] and r[2] >= today]
             parts = self._infer_bubiza_parts(title, page_text)
             if bare_future:
-                for _p, _s, start, end in bare_future:
-                    offers.append(make_offer(parts, flat_fee, start, end, "available"))
+                for _p, _s, start, end, inline in bare_future:
+                    offers.append(make_offer(
+                        parts, flat_fee, start, end, "available",
+                        hours=run_hours(parts, None, inline)))
                 return offers
             return [make_offer(parts, flat_fee, None, None, "unknown",
                                note="Keine Termine veröffentlicht")]
@@ -1140,8 +1291,9 @@ class HwkKasselScraper(BaseScraper):
 
     def _parse_bubiza_runs(self, page_text: str) -> list[tuple]:
         """Parse every dated run on the page into
-        ``[(parts, sub_type, start, end)]``; ``parts`` is ``[]`` for a run
-        whose line carries no "Teil …" label."""
+        ``[(parts, sub_type, start, end, inline_hours)]``; ``parts`` is ``[]``
+        for a run whose line carries no "Teil …" label and ``inline_hours`` is
+        the U.-Std. value written on the run line itself (else None)."""
         result: list[tuple] = []
         for line in page_text.splitlines():
             line = line.strip()
@@ -1150,7 +1302,10 @@ class HwkKasselScraper(BaseScraper):
                 continue
             start = f"{dm.group(3)}-{dm.group(2)}-{dm.group(1)}"
             end   = f"{dm.group(6)}-{dm.group(5)}-{dm.group(4)}"
-            result.append((_parse_bubiza_label_parts(line), _parse_bubiza_sub(line), start, end))
+            result.append((
+                _parse_bubiza_label_parts(line), _parse_bubiza_sub(line),
+                start, end, _parse_bubiza_hours(line),
+            ))
         return result
 
     @staticmethod
