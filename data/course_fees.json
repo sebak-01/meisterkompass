@@ -1,15 +1,5 @@
 [
   {
-    "chamber_slug": "hwk-chemnitz",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      4
-    ],
-    "fee": 790.0,
-    "exam_fee_scraped": 205.0,
-    "is_generic": true
-  },
-  {
     "chamber_slug": "hwk-cottbus",
     "trade_slug": "maler-und-lackierer",
     "parts": [
@@ -198,6 +188,16 @@
     "fee": 4465.0,
     "exam_fee_scraped": 610.0,
     "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      4
+    ],
+    "fee": 790.0,
+    "exam_fee_scraped": 205.0,
+    "is_generic": true
   },
   {
     "chamber_slug": "hwk-cottbus",
@@ -4946,7 +4946,7 @@
     "parts": [
       1
     ],
-    "fee": 3730.0,
+    "fee": 3530.0,
     "exam_fee_scraped": 854.0,
     "is_generic": false
   },

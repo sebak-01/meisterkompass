@@ -7661,78 +7661,6 @@
     "parts": [
       4
     ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-10-24",
-    "end_date": "2026-12-16",
-    "start_date_note": "",
-    "duration_hours": 100,
-    "course_fee": 790.0,
-    "course_fee_display": "790 €",
-    "exam_fee_scraped": 205.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 205.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "205 €",
-      "from_tariff": false
-    },
-    "city": "Chemnitz",
-    "street": "Limbacher Straße 195",
-    "zip_code": "09116",
-    "latitude": 50.8307235,
-    "longitude": 12.8727524,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_560"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-10-24",
-    "end_date": "2027-06-23",
-    "start_date_note": "",
-    "duration_hours": 390,
-    "course_fee": 3170.0,
-    "course_fee_display": "3.170 €",
-    "exam_fee_scraped": 420.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 420.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "420 €",
-      "from_tariff": false
-    },
-    "city": "Chemnitz",
-    "street": "Limbacher Straße 195",
-    "zip_code": "09116",
-    "latitude": 50.8307235,
-    "longitude": 12.8727524,
-    "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo-ausbildung-der-ausbilder/#termin_562"
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "chamber_name": "HWK Chemnitz",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
@@ -16185,8 +16113,8 @@
     "end_date": "2027-11-12",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3730.0,
-    "course_fee_display": "3.730 €",
+    "course_fee": 3530.0,
+    "course_fee_display": "3.530 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -16202,7 +16130,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-3"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-1"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -16221,8 +16149,8 @@
     "end_date": "2027-11-12",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3730.0,
-    "course_fee_display": "3.730 €",
+    "course_fee": 3530.0,
+    "course_fee_display": "3.530 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -16310,7 +16238,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-3"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-2"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -16454,7 +16382,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-2"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-3"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -16509,8 +16437,8 @@
     "end_date": "2028-11-10",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3730.0,
-    "course_fee_display": "3.730 €",
+    "course_fee": 3530.0,
+    "course_fee_display": "3.530 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -16525,8 +16453,8 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-1"
+    "availability": "available",
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-2"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -16545,8 +16473,8 @@
     "end_date": "2028-11-10",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3730.0,
-    "course_fee_display": "3.730 €",
+    "course_fee": 3530.0,
+    "course_fee_display": "3.530 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -16561,8 +16489,8 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-2"
+    "availability": "waitlist",
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-3"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -67467,6 +67395,43 @@
     "longitude": 7.6358696,
     "availability": "available",
     "source_url": "https://www.hbz-bildung.de/de/weiterbildung/elektrotechniker-meisterschule-teile-i-und-ii-vollzeit-104531#termin-4"
+  },
+  {
+    "chamber_slug": "hwk-muenster",
+    "chamber_name": "HWK Münster",
+    "chamber_region": "Nordrhein-Westfalen",
+    "trade_slug": "elektrotechniker",
+    "trade_name": "Elektrotechniker",
+    "title": "Elektrotechniker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": null,
+    "end_date": null,
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": null,
+    "course_fee_display": "—",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 1950.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "1.950 €",
+      "from_tariff": true
+    },
+    "city": "Münster",
+    "street": "Albrecht-Thaer-Straße 9",
+    "zip_code": "48147",
+    "latitude": 51.9830337,
+    "longitude": 7.6358696,
+    "availability": "unknown",
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/elektrotechniker-meisterschule-teile-i-und-ii-teilzeit-102231"
   },
   {
     "chamber_slug": "hwk-muenster",
