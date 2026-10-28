@@ -604,11 +604,6 @@
           "fee_max": null,
           "qualifier": ""
         },
-        "3,4": {
-          "fee": 510.0,
-          "fee_max": null,
-          "qualifier": ""
-        },
         "4": {
           "fee": 239.0,
           "fee_max": null,
