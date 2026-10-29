@@ -435,7 +435,7 @@
     "zip_code": "52068",
     "latitude": 50.7818511,
     "longitude": 6.1312387,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-aachen.de/33,0,coursedetail.html?id=40173"
   },
   {
@@ -9664,7 +9664,7 @@
     "latitude": 50.8307235,
     "longitude": 12.8727524,
     "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_998"
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_997"
   },
   {
     "chamber_slug": "hwk-chemnitz",
@@ -9679,7 +9679,7 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
-    "start_date": "2028-03-30",
+    "start_date": "2028-01-31",
     "end_date": "2028-03-30",
     "start_date_note": "",
     "duration_hours": 290,
@@ -9700,7 +9700,7 @@
     "latitude": 50.8307235,
     "longitude": 12.8727524,
     "availability": "available",
-    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_997"
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_998"
   },
   {
     "chamber_slug": "hwk-chemnitz",
@@ -12653,7 +12653,7 @@
     "zip_code": "09116",
     "latitude": 50.8307235,
     "longitude": 12.8727524,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/vorbereitungskurs-zimmerermeister-teile-i-ii/#termin_1202"
   },
   {
@@ -13319,7 +13319,7 @@
     "zip_code": "15745",
     "latitude": 52.3198785,
     "longitude": 13.6310976,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.hwk-cottbus.de/7,0,coursedetail.html?id=64425"
   },
   {
@@ -14311,42 +14311,6 @@
     "longitude": 13.9997132,
     "availability": "available",
     "source_url": "https://www.hwk-cottbus.de/7,0,coursedetail.html?id=67324"
-  },
-  {
-    "chamber_slug": "hwk-cottbus",
-    "chamber_name": "HWK Cottbus",
-    "chamber_region": "Brandenburg",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-02-22",
-    "end_date": "2027-03-09",
-    "start_date_note": "",
-    "duration_hours": 96,
-    "course_fee": 940.0,
-    "course_fee_display": "940 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 255.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "255 €",
-      "from_tariff": true
-    },
-    "city": "Wildau",
-    "street": "Schwartzkopffstraße 1",
-    "zip_code": "15745",
-    "latitude": 52.3198785,
-    "longitude": 13.6310976,
-    "availability": "available",
-    "source_url": "https://www.hwk-cottbus.de/7,0,coursedetail.html?id=66954"
   },
   {
     "chamber_slug": "hwk-cottbus",
@@ -16054,7 +16018,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-3"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-2"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -16198,7 +16162,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-2"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-3"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -16671,7 +16635,7 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufm-betriebsfuehrung-hwo-teilzeit/#termin-7"
   },
   {
@@ -35379,7 +35343,7 @@
     "zip_code": "21079",
     "latitude": 53.4582352,
     "longitude": 9.9959008,
-    "availability": "waitlist",
+    "availability": "available",
     "source_url": "https://www.elbcampus.de/weiterbildung/meistervorbereitung-im-fliesen-platten-und-mosaiklegerhandwerk/"
   },
   {
@@ -36220,7 +36184,7 @@
     "zip_code": "21079",
     "latitude": 53.4582352,
     "longitude": 9.9959008,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.elbcampus.de/weiterbildung/gepr.-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo/"
   },
   {
@@ -36269,8 +36233,8 @@
     "parts": [
       4
     ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
+    "format": "full_time",
+    "format_display": "Vollzeit",
     "teaching_mode": "presence",
     "start_date": "2027-04-02",
     "end_date": "2027-05-29",
@@ -36292,7 +36256,7 @@
     "zip_code": "21079",
     "latitude": 53.4582352,
     "longitude": 9.9959008,
-    "availability": "available",
+    "availability": "unknown",
     "source_url": "https://www.elbcampus.de/weiterbildung/ada-ausbildung-der-ausbilder/"
   },
   {
@@ -48521,8 +48485,8 @@
     "end_date": "2032-03-26",
     "start_date_note": "",
     "duration_hours": 1292,
-    "course_fee": 5888.0,
-    "course_fee_display": "5.888 €",
+    "course_fee": 10304.0,
+    "course_fee_display": "10.304 €",
     "exam_fee_scraped": 1650.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -57319,7 +57283,7 @@
     "zip_code": "04451",
     "latitude": 51.348242,
     "longitude": 12.5485819,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-leipzig.de/3,0,coursedetail.html?id=76558"
   },
   {
@@ -68592,6 +68556,43 @@
     "chamber_slug": "hwk-muenster",
     "chamber_name": "HWK Münster",
     "chamber_region": "Nordrhein-Westfalen",
+    "trade_slug": "tischler",
+    "trade_name": "Tischler",
+    "title": "Tischler (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2029-11-05",
+    "end_date": "2030-07-19",
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": 9800.0,
+    "course_fee_display": "9.800 €",
+    "exam_fee_scraped": 1400.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 1400.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "1.400 €",
+      "from_tariff": false
+    },
+    "city": "Münster",
+    "street": "Albrecht-Thaer-Straße 9",
+    "zip_code": "48147",
+    "latitude": 51.9830337,
+    "longitude": 7.6358696,
+    "availability": "available",
+    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/tischler-meisterschule-teile-i-und-ii-vollzeit-97693#termin-4"
+  },
+  {
+    "chamber_slug": "hwk-muenster",
+    "chamber_name": "HWK Münster",
+    "chamber_region": "Nordrhein-Westfalen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
@@ -68844,7 +68845,7 @@
     "zip_code": "48147",
     "latitude": 51.9830337,
     "longitude": 7.6358696,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-4"
   },
   {
@@ -68881,7 +68882,7 @@
     "zip_code": "48147",
     "latitude": 51.9830337,
     "longitude": 7.6358696,
-    "availability": "waitlist",
+    "availability": "available",
     "source_url": "https://www.hbz-bildung.de/de/weiterbildung/ada-und-gepr-fachmann-und-fachfrau-meisterschule-teile-iv-iii-vollzeit-92355#termin-5"
   },
   {
@@ -74121,7 +74122,7 @@
     "zip_code": "92421",
     "latitude": 49.3456906,
     "longitude": 12.1756219,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1008926"
   },
   {
@@ -75381,7 +75382,7 @@
     "zip_code": "94036",
     "latitude": 48.5626047,
     "longitude": 13.4060264,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1014039"
   },
   {
@@ -81035,7 +81036,7 @@
     "zip_code": "95448",
     "latitude": 49.9423427,
     "longitude": 11.599074,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwk-oberfranken.de/72,0,coursedetail.html?id=310812"
   },
   {
@@ -88640,7 +88641,7 @@
     "zip_code": "49088",
     "latitude": 52.290842,
     "longitude": 8.0401607,
-    "availability": "unknown",
+    "availability": "full",
     "source_url": "https://www.btz-osnabrueck.de/seminar/mstrfrivza/#kurs-20271"
   },
   {
@@ -98095,7 +98096,7 @@
     "zip_code": "67657",
     "latitude": 49.4495183,
     "longitude": 7.7678746,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-installateur-und-heizungsbauer-teil-ii-51,0,coursedetail.html?id=103650&search-onr=51&img=11"
   },
   {
@@ -101554,7 +101555,7 @@
     "zip_code": "72762",
     "latitude": 48.4857514,
     "longitude": 9.2063686,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwk-reutlingen.de/seminar/r-mv-iii-iv-vz/#kurs-17"
   },
   {
@@ -101868,43 +101869,6 @@
       1,
       2
     ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-03-15",
-    "end_date": "2027-08-20",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": 8990.0,
-    "course_fee_display": "8.990 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 730.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "730 €",
-      "from_tariff": true
-    },
-    "city": "Frankfurt am Main",
-    "street": "Schönstraße 21",
-    "zip_code": "60327",
-    "latitude": 50.1013705,
-    "longitude": 8.65682,
-    "availability": "available",
-    "source_url": "https://portal.hwk-rhein-main.de/seminar/ml-19vz-iii/"
-  },
-  {
-    "chamber_slug": "hwk-rhein-main",
-    "chamber_name": "HWK Frankfurt-Rhein-Main",
-    "chamber_region": "Hessen",
-    "trade_slug": "feinwerkmechaniker",
-    "trade_name": "Feinwerkmechaniker",
-    "title": "Feinwerkmechaniker (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
     "format": "part_time",
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
@@ -102082,6 +102046,43 @@
     "longitude": 8.65682,
     "availability": "available",
     "source_url": "https://portal.hwk-rhein-main.de/seminar/ml-16tz/"
+  },
+  {
+    "chamber_slug": "hwk-rhein-main",
+    "chamber_name": "HWK Frankfurt-Rhein-Main",
+    "chamber_region": "Hessen",
+    "trade_slug": "metallbauer",
+    "trade_name": "Metallbauer",
+    "title": "Metallbauer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-03-15",
+    "end_date": "2027-08-20",
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": 9490.0,
+    "course_fee_display": "9.490 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 730.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "730 €",
+      "from_tariff": true
+    },
+    "city": "Frankfurt am Main",
+    "street": "Schönstraße 21",
+    "zip_code": "60327",
+    "latitude": 50.1013705,
+    "longitude": 8.65682,
+    "availability": "available",
+    "source_url": "https://portal.hwk-rhein-main.de/seminar/ml-16vz-iii/"
   },
   {
     "chamber_slug": "hwk-rhein-main",
@@ -103217,7 +103218,7 @@
     "zip_code": "",
     "latitude": null,
     "longitude": null,
-    "availability": "available",
+    "availability": "unknown",
     "source_url": "https://portal.afh-luebeck.de/kurs/seminar-mvik-online-kurs-2/"
   },
   {
@@ -103349,6 +103350,80 @@
     "teaching_mode": "presence",
     "start_date": "2027-09-07",
     "end_date": "2028-12-22",
+    "start_date_note": "",
+    "duration_hours": 1000,
+    "course_fee": 8000.0,
+    "course_fee_display": "8.000 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 900.0,
+      "fee_max": 2700.0,
+      "qualifier": "",
+      "display": "900 € bis 2.700 €",
+      "from_tariff": true
+    },
+    "city": "Mainz",
+    "street": "Robert-Bosch-Straße 8",
+    "zip_code": "55129",
+    "latitude": 49.959692,
+    "longitude": 8.260685,
+    "availability": "available",
+    "source_url": "https://www.hwk.de/seminar/installateur-und-heizungsbauer-teile-i-und-ii-inst/"
+  },
+  {
+    "chamber_slug": "hwk-rheinhessen",
+    "chamber_name": "HWK Rheinhessen",
+    "chamber_region": "Rheinland-Pfalz",
+    "trade_slug": "installateur-und-heizungsbauer",
+    "trade_name": "Installateur- und Heizungsbauer",
+    "title": "Installateur- und Heizungsbauer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-08-29",
+    "end_date": "2029-12-21",
+    "start_date_note": "",
+    "duration_hours": 1000,
+    "course_fee": 8000.0,
+    "course_fee_display": "8.000 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 900.0,
+      "fee_max": 2700.0,
+      "qualifier": "",
+      "display": "900 € bis 2.700 €",
+      "from_tariff": true
+    },
+    "city": "Mainz",
+    "street": "Robert-Bosch-Straße 8",
+    "zip_code": "55129",
+    "latitude": 49.959692,
+    "longitude": 8.260685,
+    "availability": "available",
+    "source_url": "https://www.hwk.de/seminar/installateur-und-heizungsbauer-teile-i-und-ii-inst/"
+  },
+  {
+    "chamber_slug": "hwk-rheinhessen",
+    "chamber_name": "HWK Rheinhessen",
+    "chamber_region": "Rheinland-Pfalz",
+    "trade_slug": "installateur-und-heizungsbauer",
+    "trade_name": "Installateur- und Heizungsbauer",
+    "title": "Installateur- und Heizungsbauer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2029-08-28",
+    "end_date": "2030-12-20",
     "start_date_note": "",
     "duration_hours": 1000,
     "course_fee": 8000.0,
@@ -108550,7 +108625,7 @@
     "zip_code": "86161",
     "latitude": 48.3522511,
     "longitude": 10.9173148,
-    "availability": "unknown",
+    "availability": "available",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=381362"
   },
   {
@@ -123782,7 +123857,7 @@
     "zip_code": "35576",
     "latitude": 50.5548159,
     "longitude": 8.4921662,
-    "availability": "waitlist",
+    "availability": "available",
     "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-vollzeit-44,0,coursedetail.html?id=77273&search-onr=44&img=4"
   },
   {
