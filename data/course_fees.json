@@ -1,16 +1,5 @@
 [
   {
-    "chamber_slug": "hwk-dortmund",
-    "trade_slug": "fliesen-platten-und-mosaikleger",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 6696.0,
-    "exam_fee_scraped": 1514.0,
-    "is_generic": false
-  },
-  {
     "chamber_slug": "hwk-chemnitz",
     "trade_slug": "allgemein-teil-iii-iv",
     "parts": [
@@ -4906,6 +4895,17 @@
     ],
     "fee": 5050.0,
     "exam_fee_scraped": 200.0,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-dortmund",
+    "trade_slug": "fliesen-platten-und-mosaikleger",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 6696.0,
+    "exam_fee_scraped": 1514.0,
     "is_generic": false
   },
   {
