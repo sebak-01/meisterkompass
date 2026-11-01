@@ -341,16 +341,6 @@
     "is_generic": false
   },
   {
-    "chamber_slug": "hwk-aachen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      3
-    ],
-    "fee": 1655.0,
-    "exam_fee_scraped": 250.0,
-    "is_generic": true
-  },
-  {
     "chamber_slug": "hwk-flensburg",
     "trade_slug": "tischler",
     "parts": [
@@ -1070,6 +1060,16 @@
     "chamber_slug": "hwk-aachen",
     "trade_slug": "allgemein-teil-iii-iv",
     "parts": [
+      3
+    ],
+    "fee": 1690.0,
+    "exam_fee_scraped": 250.0,
+    "is_generic": true
+  },
+  {
+    "chamber_slug": "hwk-aachen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
       4
     ],
     "fee": 700.0,
@@ -1591,8 +1591,8 @@
       3,
       4
     ],
-    "fee": 2300.0,
-    "exam_fee_scraped": 600.0,
+    "fee": 2900.0,
+    "exam_fee_scraped": null,
     "is_generic": true
   },
   {

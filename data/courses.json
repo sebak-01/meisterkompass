@@ -471,7 +471,7 @@
     "zip_code": "52068",
     "latitude": 50.7818511,
     "longitude": 6.1312387,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-aachen.de/33,0,coursedetail.html?id=40187"
   },
   {
@@ -14538,7 +14538,7 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-2"
   },
   {
@@ -14574,7 +14574,7 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "waitlist",
+    "availability": "available",
     "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-4"
   },
   {
@@ -66749,43 +66749,6 @@
     "chamber_slug": "hwk-muenster",
     "chamber_name": "HWK Münster",
     "chamber_region": "Nordrhein-Westfalen",
-    "trade_slug": "metallbauer",
-    "trade_name": "Metallbauer",
-    "title": "Metallbauer (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": null,
-    "end_date": null,
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": null,
-    "course_fee_display": "—",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 1350.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "1.350 €",
-      "from_tariff": true
-    },
-    "city": "Münster",
-    "street": "Albrecht-Thaer-Straße 9",
-    "zip_code": "48147",
-    "latitude": 51.9830337,
-    "longitude": 7.6358696,
-    "availability": "unknown",
-    "source_url": "https://www.hbz-bildung.de/de/weiterbildung/metallbauer-meisterschule-teile-i-und-ii-teilzeit-104295"
-  },
-  {
-    "chamber_slug": "hwk-muenster",
-    "chamber_name": "HWK Münster",
-    "chamber_region": "Nordrhein-Westfalen",
     "trade_slug": "ofen-und-luftheizungsbauer",
     "trade_name": "Ofen- und Luftheizungsbauer",
     "title": "Ofen- und Luftheizungsbauer (Teile I + II)",
@@ -96935,16 +96898,16 @@
     "end_date": "2027-11-06",
     "start_date_note": "",
     "duration_hours": 340,
-    "course_fee": 2300.0,
-    "course_fee_display": "2.300 €",
-    "exam_fee_scraped": 600.0,
+    "course_fee": 2900.0,
+    "course_fee_display": "2.900 €",
+    "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
       "fee": 600.0,
       "fee_max": null,
       "qualifier": "",
       "display": "600 €",
-      "from_tariff": false
+      "from_tariff": true
     },
     "city": "Kaiserslautern",
     "street": "Am Altenhof 15",
@@ -109398,11 +109361,11 @@
       "from_tariff": true
     },
     "city": "Schwerin",
-    "street": "Werkstraße 600",
+    "street": "Werkstraße 6",
     "zip_code": "19061",
-    "latitude": 53.5721017,
-    "longitude": 11.3867432,
-    "availability": "full",
+    "latitude": 53.5767489,
+    "longitude": 11.3870215,
+    "availability": "unknown",
     "source_url": "https://www.hwk-schwerin.de/19,0,coursedetail.html?id=84728"
   },
   {
