@@ -37,13 +37,6 @@
           "qualifier": ""
         }
       },
-      "friseur": {
-        "1,2": {
-          "fee": 610.0,
-          "fee_max": null,
-          "qualifier": ""
-        }
-      },
       "kfz-techniker": {
         "2": {
           "fee": 610.0,
