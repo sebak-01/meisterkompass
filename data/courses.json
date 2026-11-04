@@ -335,42 +335,6 @@
     "chamber_region": "Nordrhein-Westfalen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-11-04",
-    "end_date": "2027-01-28",
-    "start_date_note": "",
-    "duration_hours": 80,
-    "course_fee": 685.0,
-    "course_fee_display": "685 €",
-    "exam_fee_scraped": 150.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 150.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "150 €",
-      "from_tariff": false
-    },
-    "city": "Aachen",
-    "street": "Tempelhofer Str. 15 - 17",
-    "zip_code": "52068",
-    "latitude": 50.7818511,
-    "longitude": 6.1312387,
-    "availability": "waitlist",
-    "source_url": "https://www.hwk-aachen.de/33,0,coursedetail.html?id=40173"
-  },
-  {
-    "chamber_slug": "hwk-aachen",
-    "chamber_name": "HWK Aachen",
-    "chamber_region": "Nordrhein-Westfalen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Wirtschaft und Recht (Teil III)",
     "parts": [
       3
@@ -3168,7 +3132,7 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
-    "start_date": "2027-09-20",
+    "start_date": "2027-08-30",
     "end_date": "2027-12-17",
     "start_date_note": "",
     "duration_hours": 440,
@@ -3410,7 +3374,7 @@
     "zip_code": "",
     "latitude": 53.248706,
     "longitude": 10.407855,
-    "availability": "waitlist",
+    "availability": "available",
     "source_url": "https://weiterbildung.hwk-bls.de/22,0,coursedetail.html?id=312175"
   },
   {
@@ -5158,42 +5122,6 @@
     "longitude": 8.7803106,
     "availability": "available",
     "source_url": "https://www.handwerkbremen.de/service-center/kurse-und-seminare#/vorlage/MVK/121502?kurs=70657"
-  },
-  {
-    "chamber_slug": "hwk-bremen",
-    "chamber_name": "HWK Bremen",
-    "chamber_region": "Bremen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-02-08",
-    "end_date": "2027-02-19",
-    "start_date_note": "",
-    "duration_hours": 80,
-    "course_fee": 1050.0,
-    "course_fee_display": "1.050 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 100.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "100 €",
-      "from_tariff": true
-    },
-    "city": "Bremen",
-    "street": "Schongauerstr. 2",
-    "zip_code": "28219",
-    "latitude": 53.0979216,
-    "longitude": 8.7803106,
-    "availability": "available",
-    "source_url": "https://www.handwerkbremen.de/service-center/kurse-und-seminare#/vorlage/MVK/209280?kurs=75123"
   },
   {
     "chamber_slug": "hwk-bremen",
@@ -12231,42 +12159,6 @@
     "parts": [
       3
     ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-11-04",
-    "end_date": "2027-05-26",
-    "start_date_note": "",
-    "duration_hours": 240,
-    "course_fee": 1950.0,
-    "course_fee_display": "1.950 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 200.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "200 €",
-      "from_tariff": true
-    },
-    "city": "Cottbus",
-    "street": "Schorbuser Weg 2",
-    "zip_code": "03051",
-    "latitude": 51.7021156,
-    "longitude": 14.3591764,
-    "availability": "available",
-    "source_url": "https://www.hwk-cottbus.de/7,0,coursedetail.html?id=65212"
-  },
-  {
-    "chamber_slug": "hwk-cottbus",
-    "chamber_name": "HWK Cottbus",
-    "chamber_region": "Brandenburg",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
@@ -13046,7 +12938,7 @@
     "zip_code": "15745",
     "latitude": 52.3198785,
     "longitude": 13.6310976,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwk-cottbus.de/7,0,coursedetail.html?id=66936"
   },
   {
@@ -13980,8 +13872,8 @@
     "end_date": "2027-11-12",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3530.0,
-    "course_fee_display": "3.530 €",
+    "course_fee": 3730.0,
+    "course_fee_display": "3.730 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -13997,7 +13889,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-1"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-2"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -14016,8 +13908,8 @@
     "end_date": "2027-11-12",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3530.0,
-    "course_fee_display": "3.530 €",
+    "course_fee": 3730.0,
+    "course_fee_display": "3.730 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -14033,7 +13925,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-2"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-3"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -14141,7 +14033,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-3"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-2"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -14213,7 +14105,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-2"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-3"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -14304,8 +14196,8 @@
     "end_date": "2028-11-10",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3530.0,
-    "course_fee_display": "3.530 €",
+    "course_fee": 3730.0,
+    "course_fee_display": "3.730 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -14321,7 +14213,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "available",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-3"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-1"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -14340,8 +14232,8 @@
     "end_date": "2028-11-10",
     "start_date_note": "",
     "duration_hours": 336,
-    "course_fee": 3530.0,
-    "course_fee_display": "3.530 €",
+    "course_fee": 3730.0,
+    "course_fee_display": "3.730 €",
     "exam_fee_scraped": 854.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -14356,7 +14248,7 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "waitlist",
+    "availability": "available",
     "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-4"
   },
   {
@@ -14686,7 +14578,7 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/gepr-fachmann-frau-fuer-kaufm-betriebsfuehrung-hwo-teilzeit/#termin-7"
   },
   {
@@ -14722,7 +14614,7 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-do.de/event/seminar/meisterkurse-ausbildung-der-ausbilder/ausbildung-der-ausbilder-nach-der-aevo-vollzeit/#termin-1"
   },
   {
@@ -18133,42 +18025,6 @@
     "chamber_region": "Sachsen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-11-23",
-    "end_date": "2027-02-04",
-    "start_date_note": "",
-    "duration_hours": 296,
-    "course_fee": 2830.0,
-    "course_fee_display": "2.830 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 240.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "240 €",
-      "from_tariff": true
-    },
-    "city": "Riesa",
-    "street": "Preuschwitzer Straße 20",
-    "zip_code": "02625",
-    "latitude": 51.1721673,
-    "longitude": 14.4213099,
-    "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114135.html"
-  },
-  {
-    "chamber_slug": "hwk-dresden",
-    "chamber_name": "HWK Dresden",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Berufs- und Arbeitspädagogik (Teil IV)",
     "parts": [
       4
@@ -18198,42 +18054,6 @@
     "longitude": 13.7677525,
     "availability": "waitlist",
     "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-113928.html"
-  },
-  {
-    "chamber_slug": "hwk-dresden",
-    "chamber_name": "HWK Dresden",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-12-07",
-    "end_date": "2026-12-12",
-    "start_date_note": "",
-    "duration_hours": 54,
-    "course_fee": 660.0,
-    "course_fee_display": "660 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 240.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "240 €",
-      "from_tariff": true
-    },
-    "city": "Dresden",
-    "street": "Am Lagerplatz 8",
-    "zip_code": "01099",
-    "latitude": 51.0833678,
-    "longitude": 13.7677525,
-    "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113936.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -18353,6 +18173,42 @@
     "parts": [
       4
     ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-02-01",
+    "end_date": "2027-02-06",
+    "start_date_note": "",
+    "duration_hours": 54,
+    "course_fee": 700.0,
+    "course_fee_display": "700 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 240.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "240 €",
+      "from_tariff": true
+    },
+    "city": "Dresden",
+    "street": "Preuschwitzer Straße 20",
+    "zip_code": "02625",
+    "latitude": 51.1721673,
+    "longitude": 14.4213099,
+    "availability": "available",
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-163629.html"
+  },
+  {
+    "chamber_slug": "hwk-dresden",
+    "chamber_name": "HWK Dresden",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
+    "parts": [
+      4
+    ],
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
@@ -18372,12 +18228,12 @@
       "from_tariff": true
     },
     "city": "Dresden",
-    "street": "Am Lagerplatz 8",
-    "zip_code": "01099",
-    "latitude": 51.0833678,
-    "longitude": 13.7677525,
+    "street": "Preuschwitzer Straße 20",
+    "zip_code": "02625",
+    "latitude": 51.1721673,
+    "longitude": 14.4213099,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113936.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-163629.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -18407,13 +18263,13 @@
       "display": "240 €",
       "from_tariff": true
     },
-    "city": "Dresden",
-    "street": "Am Lagerplatz 8",
-    "zip_code": "01099",
-    "latitude": 51.0833678,
-    "longitude": 13.7677525,
+    "city": "Bautzen",
+    "street": "Preuschwitzer Straße 20",
+    "zip_code": "02625",
+    "latitude": 51.172008,
+    "longitude": 14.4215662,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113936.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-163629.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -18624,12 +18480,12 @@
       "from_tariff": true
     },
     "city": "Riesa",
-    "street": "Am Lagerplatz 8",
-    "zip_code": "01099",
-    "latitude": 51.0833678,
-    "longitude": 13.7677525,
+    "street": "Preuschwitzer Straße 20",
+    "zip_code": "02625",
+    "latitude": 51.1721673,
+    "longitude": 14.4213099,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113936.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-163629.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -18696,12 +18552,12 @@
       "from_tariff": true
     },
     "city": "Görlitz",
-    "street": "Am Lagerplatz 8",
-    "zip_code": "01099",
-    "latitude": 51.0833678,
-    "longitude": 13.7677525,
+    "street": "Preuschwitzer Straße 20",
+    "zip_code": "02625",
+    "latitude": 51.1721673,
+    "longitude": 14.4213099,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113936.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-163629.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -18768,12 +18624,12 @@
       "from_tariff": true
     },
     "city": "Bautzen",
-    "street": "Am Lagerplatz 8",
-    "zip_code": "01099",
-    "latitude": 51.0833678,
-    "longitude": 13.7677525,
+    "street": "Preuschwitzer Straße 20",
+    "zip_code": "02625",
+    "latitude": 51.172008,
+    "longitude": 14.4215662,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113936.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-163629.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -18948,12 +18804,12 @@
       "from_tariff": true
     },
     "city": "Dresden",
-    "street": "Am Lagerplatz 8",
-    "zip_code": "01099",
-    "latitude": 51.0833678,
-    "longitude": 13.7677525,
+    "street": "Preuschwitzer Straße 20",
+    "zip_code": "02625",
+    "latitude": 51.1721673,
+    "longitude": 14.4213099,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113936.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-163629.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -19020,12 +18876,12 @@
       "from_tariff": true
     },
     "city": "Riesa",
-    "street": "Am Lagerplatz 8",
-    "zip_code": "01099",
-    "latitude": 51.0833678,
-    "longitude": 13.7677525,
+    "street": "Preuschwitzer Straße 20",
+    "zip_code": "02625",
+    "latitude": 51.1721673,
+    "longitude": 14.4213099,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113936.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-163629.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -19092,12 +18948,12 @@
       "from_tariff": true
     },
     "city": "Bautzen",
-    "street": "Am Lagerplatz 8",
-    "zip_code": "01099",
-    "latitude": 51.0833678,
-    "longitude": 13.7677525,
+    "street": "Preuschwitzer Straße 20",
+    "zip_code": "02625",
+    "latitude": 51.172008,
+    "longitude": 14.4215662,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113936.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-163629.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -19128,12 +18984,12 @@
       "from_tariff": true
     },
     "city": "Dresden",
-    "street": "Am Lagerplatz 8",
-    "zip_code": "01099",
-    "latitude": 51.0833678,
-    "longitude": 13.7677525,
+    "street": "Preuschwitzer Straße 20",
+    "zip_code": "02625",
+    "latitude": 51.1721673,
+    "longitude": 14.4213099,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113936.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-163629.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -19380,12 +19236,12 @@
       "from_tariff": true
     },
     "city": "Görlitz",
-    "street": "Am Lagerplatz 8",
-    "zip_code": "01099",
-    "latitude": 51.0833678,
-    "longitude": 13.7677525,
+    "street": "Preuschwitzer Straße 20",
+    "zip_code": "02625",
+    "latitude": 51.1721673,
+    "longitude": 14.4213099,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113936.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-163629.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -19452,12 +19308,12 @@
       "from_tariff": true
     },
     "city": "Bautzen",
-    "street": "Am Lagerplatz 8",
-    "zip_code": "01099",
-    "latitude": 51.0833678,
-    "longitude": 13.7677525,
+    "street": "Preuschwitzer Straße 20",
+    "zip_code": "02625",
+    "latitude": 51.172008,
+    "longitude": 14.4215662,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113936.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-163629.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -19488,12 +19344,12 @@
       "from_tariff": true
     },
     "city": "Dresden",
-    "street": "Am Lagerplatz 8",
-    "zip_code": "01099",
-    "latitude": 51.0833678,
-    "longitude": 13.7677525,
+    "street": "Preuschwitzer Straße 20",
+    "zip_code": "02625",
+    "latitude": 51.1721673,
+    "longitude": 14.4213099,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113936.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-163629.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -19632,12 +19488,12 @@
       "from_tariff": true
     },
     "city": "Dresden",
-    "street": "Am Lagerplatz 8",
-    "zip_code": "01099",
-    "latitude": 51.0833678,
-    "longitude": 13.7677525,
+    "street": "Preuschwitzer Straße 20",
+    "zip_code": "02625",
+    "latitude": 51.1721673,
+    "longitude": 14.4213099,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113936.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-163629.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -19776,12 +19632,12 @@
       "from_tariff": true
     },
     "city": "Bautzen",
-    "street": "Am Lagerplatz 8",
-    "zip_code": "01099",
-    "latitude": 51.0833678,
-    "longitude": 13.7677525,
+    "street": "Preuschwitzer Straße 20",
+    "zip_code": "02625",
+    "latitude": 51.172008,
+    "longitude": 14.4215662,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113936.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-163629.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -19919,13 +19775,13 @@
       "display": "240 €",
       "from_tariff": true
     },
-    "city": "Dresden",
-    "street": "Am Lagerplatz 8",
-    "zip_code": "01099",
-    "latitude": 51.0833678,
-    "longitude": 13.7677525,
+    "city": "Bautzen",
+    "street": "Preuschwitzer Straße 20",
+    "zip_code": "02625",
+    "latitude": 51.172008,
+    "longitude": 14.4215662,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113936.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-163629.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -19992,12 +19848,12 @@
       "from_tariff": true
     },
     "city": "Riesa",
-    "street": "Am Lagerplatz 8",
-    "zip_code": "01099",
-    "latitude": 51.0833678,
-    "longitude": 13.7677525,
+    "street": "Preuschwitzer Straße 20",
+    "zip_code": "02625",
+    "latitude": 51.1721673,
+    "longitude": 14.4213099,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113936.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-163629.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -20064,12 +19920,12 @@
       "from_tariff": true
     },
     "city": "Görlitz",
-    "street": "Am Lagerplatz 8",
-    "zip_code": "01099",
-    "latitude": 51.0833678,
-    "longitude": 13.7677525,
+    "street": "Preuschwitzer Straße 20",
+    "zip_code": "02625",
+    "latitude": 51.1721673,
+    "longitude": 14.4213099,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113936.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-163629.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -20208,12 +20064,12 @@
       "from_tariff": true
     },
     "city": "Bautzen",
-    "street": "Am Lagerplatz 8",
-    "zip_code": "01099",
-    "latitude": 51.0833678,
-    "longitude": 13.7677525,
+    "street": "Preuschwitzer Straße 20",
+    "zip_code": "02625",
+    "latitude": 51.172008,
+    "longitude": 14.4215662,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113936.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-163629.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -20280,12 +20136,12 @@
       "from_tariff": true
     },
     "city": "Dresden",
-    "street": "Am Lagerplatz 8",
-    "zip_code": "01099",
-    "latitude": 51.0833678,
-    "longitude": 13.7677525,
+    "street": "Preuschwitzer Straße 20",
+    "zip_code": "02625",
+    "latitude": 51.1721673,
+    "longitude": 14.4213099,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113936.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-163629.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -20388,12 +20244,12 @@
       "from_tariff": true
     },
     "city": "Riesa",
-    "street": "Am Lagerplatz 8",
-    "zip_code": "01099",
-    "latitude": 51.0833678,
-    "longitude": 13.7677525,
+    "street": "Preuschwitzer Straße 20",
+    "zip_code": "02625",
+    "latitude": 51.1721673,
+    "longitude": 14.4213099,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113936.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-163629.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -20568,12 +20424,12 @@
       "from_tariff": true
     },
     "city": "Bautzen",
-    "street": "Am Lagerplatz 8",
-    "zip_code": "01099",
-    "latitude": 51.0833678,
-    "longitude": 13.7677525,
+    "street": "Preuschwitzer Straße 20",
+    "zip_code": "02625",
+    "latitude": 51.172008,
+    "longitude": 14.4215662,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113936.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-163629.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -20604,12 +20460,12 @@
       "from_tariff": true
     },
     "city": "Dresden",
-    "street": "Am Lagerplatz 8",
-    "zip_code": "01099",
-    "latitude": 51.0833678,
-    "longitude": 13.7677525,
+    "street": "Preuschwitzer Straße 20",
+    "zip_code": "02625",
+    "latitude": 51.1721673,
+    "longitude": 14.4213099,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113936.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-163629.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -20747,13 +20603,13 @@
       "display": "240 €",
       "from_tariff": true
     },
-    "city": "Dresden",
-    "street": "Am Lagerplatz 8",
-    "zip_code": "01099",
-    "latitude": 51.0833678,
-    "longitude": 13.7677525,
+    "city": "Bautzen",
+    "street": "Preuschwitzer Straße 20",
+    "zip_code": "02625",
+    "latitude": 51.172008,
+    "longitude": 14.4215662,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113936.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-163629.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -20820,12 +20676,12 @@
       "from_tariff": true
     },
     "city": "Görlitz",
-    "street": "Am Lagerplatz 8",
-    "zip_code": "01099",
-    "latitude": 51.0833678,
-    "longitude": 13.7677525,
+    "street": "Preuschwitzer Straße 20",
+    "zip_code": "02625",
+    "latitude": 51.1721673,
+    "longitude": 14.4213099,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113936.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-163629.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -21072,12 +20928,12 @@
       "from_tariff": true
     },
     "city": "Bautzen",
-    "street": "Am Lagerplatz 8",
-    "zip_code": "01099",
-    "latitude": 51.0833678,
-    "longitude": 13.7677525,
+    "street": "Preuschwitzer Straße 20",
+    "zip_code": "02625",
+    "latitude": 51.172008,
+    "longitude": 14.4215662,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113936.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-163629.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -21144,12 +21000,12 @@
       "from_tariff": true
     },
     "city": "Dresden",
-    "street": "Am Lagerplatz 8",
-    "zip_code": "01099",
-    "latitude": 51.0833678,
-    "longitude": 13.7677525,
+    "street": "Preuschwitzer Straße 20",
+    "zip_code": "02625",
+    "latitude": 51.1721673,
+    "longitude": 14.4213099,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-113936.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/ausbildereignung-nach-aevo-sprinter-163629.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -22699,6 +22555,43 @@
     "longitude": 6.4167293,
     "availability": "available",
     "source_url": "https://www.hwk-duesseldorf.de/31,0,coursedetail.html?id=61434"
+  },
+  {
+    "chamber_slug": "hwk-duesseldorf",
+    "chamber_name": "HWK Düsseldorf",
+    "chamber_region": "Nordrhein-Westfalen",
+    "trade_slug": "kfz-techniker",
+    "trade_name": "Kfz.-Techniker",
+    "title": "Kfz.-Techniker (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-08-23",
+    "end_date": "2028-03-17",
+    "start_date_note": "",
+    "duration_hours": 874,
+    "course_fee": 7710.0,
+    "course_fee_display": "7.710 €",
+    "exam_fee_scraped": 1020.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 1020.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "1.020 €",
+      "from_tariff": false
+    },
+    "city": "Düsseldorf",
+    "street": "Georg-Schulhoff-Platz 1",
+    "zip_code": "40221",
+    "latitude": 51.2067505,
+    "longitude": 6.7597173,
+    "availability": "available",
+    "source_url": "https://www.hwk-duesseldorf.de/31,0,coursedetail.html?id=59939"
   },
   {
     "chamber_slug": "hwk-duesseldorf",
@@ -26897,42 +26790,6 @@
     "chamber_region": "Schleswig-Holstein",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-11-03",
-    "end_date": "2026-11-19",
-    "start_date_note": "",
-    "duration_hours": 110,
-    "course_fee": 850.0,
-    "course_fee_display": "850 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 290.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "290 €",
-      "from_tariff": true
-    },
-    "city": "Flensburg",
-    "street": "",
-    "zip_code": "",
-    "latitude": 54.5797194,
-    "longitude": 9.5331938,
-    "availability": "full",
-    "source_url": "https://www.hwk-flensburg.de/weiterbildung/kurse-seminare#/vorlage/MVK/476?kurs=24685"
-  },
-  {
-    "chamber_slug": "hwk-flensburg",
-    "chamber_name": "HWK Flensburg",
-    "chamber_region": "Schleswig-Holstein",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Wirtschaft und Recht (Teil III)",
     "parts": [
       3
@@ -27817,43 +27674,6 @@
       1,
       2
     ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-12-10",
-    "end_date": "2028-09-30",
-    "start_date_note": "",
-    "duration_hours": 910,
-    "course_fee": 9500.0,
-    "course_fee_display": "9.500 €",
-    "exam_fee_scraped": 680.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 680.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "680 €",
-      "from_tariff": false
-    },
-    "city": "Hennickendorf",
-    "street": "",
-    "zip_code": "",
-    "latitude": 52.1667755,
-    "longitude": 13.1045766,
-    "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-teile-i-und-ii-im-kraftfahrzeugtechniker-handwerk/#termin-1"
-  },
-  {
-    "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
-    "chamber_name": "HWK Frankfurt (Oder) – Region Ostbrandenburg",
-    "chamber_region": "Brandenburg",
-    "trade_slug": "kfz-techniker",
-    "trade_name": "Kfz.-Techniker",
-    "title": "Kfz.-Techniker (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
@@ -27878,7 +27698,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-teile-i-und-ii-im-kraftfahrzeugtechniker-handwerk/#termin-2"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-teile-i-und-ii-im-kraftfahrzeugtechniker-handwerk/#termin-1"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -27915,7 +27735,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-teile-i-und-ii-im-kraftfahrzeugtechniker-handwerk/#termin-3"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-teile-i-und-ii-im-kraftfahrzeugtechniker-handwerk/#termin-2"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -27952,7 +27772,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-teile-i-und-ii-im-kraftfahrzeugtechniker-handwerk/#termin-4"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-teile-i-und-ii-im-kraftfahrzeugtechniker-handwerk/#termin-3"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -28322,7 +28142,7 @@
     "latitude": 52.3388204,
     "longitude": 14.5470716,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-teile-i-und-ii-im-maurer-und-betonbauer-handwerk/#termin-2"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-teile-i-und-ii-im-maurer-und-betonbauer-handwerk/#termin-1"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -28359,7 +28179,7 @@
     "latitude": 52.3388204,
     "longitude": 14.5470716,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-teile-i-und-ii-im-maurer-und-betonbauer-handwerk/#termin-3"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-teile-i-und-ii-im-maurer-und-betonbauer-handwerk/#termin-2"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -28396,7 +28216,7 @@
     "latitude": 52.3388204,
     "longitude": 14.5470716,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-teile-i-und-ii-im-maurer-und-betonbauer-handwerk/#termin-4"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-teile-i-und-ii-im-maurer-und-betonbauer-handwerk/#termin-3"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -28433,7 +28253,7 @@
     "latitude": 52.3388204,
     "longitude": 14.5470716,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-teile-i-und-ii-im-maurer-und-betonbauer-handwerk/#termin-5"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-teile-i-und-ii-im-maurer-und-betonbauer-handwerk/#termin-4"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -29073,79 +28893,6 @@
       3,
       4
     ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-05-10",
-    "end_date": "2027-07-30",
-    "start_date_note": "",
-    "duration_hours": 378,
-    "course_fee": 3050.0,
-    "course_fee_display": "3.050 €",
-    "exam_fee_scraped": 625.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 625.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "625 €",
-      "from_tariff": false
-    },
-    "city": "Hennickendorf",
-    "street": "",
-    "zip_code": "",
-    "latitude": 52.1667755,
-    "longitude": 13.1045766,
-    "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-3"
-  },
-  {
-    "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
-    "chamber_name": "HWK Frankfurt (Oder) – Region Ostbrandenburg",
-    "chamber_region": "Brandenburg",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-05-10",
-    "end_date": "2027-07-02",
-    "start_date_note": "",
-    "duration_hours": 280,
-    "course_fee": 2280.0,
-    "course_fee_display": "2.280 €",
-    "exam_fee_scraped": 350.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 350.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "350 €",
-      "from_tariff": false
-    },
-    "city": "Hennickendorf",
-    "street": "",
-    "zip_code": "",
-    "latitude": 52.1667755,
-    "longitude": 13.1045766,
-    "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-3"
-  },
-  {
-    "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
-    "chamber_name": "HWK Frankfurt (Oder) – Region Ostbrandenburg",
-    "chamber_region": "Brandenburg",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
-    "parts": [
-      3,
-      4
-    ],
     "format": "part_time",
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
@@ -29207,7 +28954,7 @@
     "latitude": 52.3388204,
     "longitude": 14.5470716,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-4"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-3"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -29243,7 +28990,7 @@
     "latitude": 52.3388204,
     "longitude": 14.5470716,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-4"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-3"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -29327,42 +29074,6 @@
     "parts": [
       4
     ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-07-12",
-    "end_date": "2027-07-30",
-    "start_date_note": "",
-    "duration_hours": 98,
-    "course_fee": 768.0,
-    "course_fee_display": "768 €",
-    "exam_fee_scraped": 275.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 275.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "275 €",
-      "from_tariff": false
-    },
-    "city": "Hennickendorf",
-    "street": "",
-    "zip_code": "",
-    "latitude": 52.1667755,
-    "longitude": 13.1045766,
-    "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-2"
-  },
-  {
-    "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
-    "chamber_name": "HWK Frankfurt (Oder) – Region Ostbrandenburg",
-    "chamber_region": "Brandenburg",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
     "format": "part_time",
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
@@ -29387,7 +29098,7 @@
     "latitude": 52.3388204,
     "longitude": 14.5470716,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-3"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-2"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -29423,7 +29134,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-4"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-3"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -29460,7 +29171,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-5"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-4"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -29496,7 +29207,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-5"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-4"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -29532,7 +29243,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-5"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-4"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -29569,7 +29280,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-6"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-5"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -29605,7 +29316,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-6"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-5"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -29641,7 +29352,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-7"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-6"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -29678,7 +29389,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-7"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-6"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -29714,7 +29425,7 @@
     "latitude": 52.3388204,
     "longitude": 14.5470716,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-8"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-7"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -29751,7 +29462,7 @@
     "latitude": 52.3388204,
     "longitude": 14.5470716,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-8"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-7"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -29787,7 +29498,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-6"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-5"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -29823,7 +29534,7 @@
     "latitude": 52.3388204,
     "longitude": 14.5470716,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-10"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-9"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -29859,7 +29570,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-7"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-6"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -29895,7 +29606,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-11"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-10"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -29932,7 +29643,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-10"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-9"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -29968,7 +29679,7 @@
     "latitude": 52.3388204,
     "longitude": 14.5470716,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-8"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-7"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -30004,7 +29715,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-12"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-11"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -30041,7 +29752,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-11"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-10"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -30077,7 +29788,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-10"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-9"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -30113,7 +29824,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-11"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-10"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -30150,7 +29861,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-12"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-11"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -30186,7 +29897,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-12"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-11"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -30222,7 +29933,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-13"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-12"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -30259,7 +29970,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-13"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-12"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -30295,7 +30006,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-14"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-13"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -30331,7 +30042,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-15"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-ausbildung-der-ausbilder/#termin-14"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -30368,7 +30079,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-14"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-13"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -30404,7 +30115,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-13"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-12"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -30440,7 +30151,7 @@
     "latitude": 52.1667755,
     "longitude": 13.1045766,
     "availability": "available",
-    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-14"
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-13"
   },
   {
     "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
@@ -33230,43 +32941,6 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
-    "start_date": "2026-11-04",
-    "end_date": "2027-06-04",
-    "start_date_note": "",
-    "duration_hours": 1074,
-    "course_fee": 10500.0,
-    "course_fee_display": "10.500 €",
-    "exam_fee_scraped": 860.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 860.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "860 €",
-      "from_tariff": false
-    },
-    "city": "Hamburg",
-    "street": "Zum Handwerkszentrum 1",
-    "zip_code": "21079",
-    "latitude": 53.4582352,
-    "longitude": 9.9959008,
-    "availability": "waitlist",
-    "source_url": "https://www.elbcampus.de/weiterbildung/meistervorbereitung-im-maurer-und-betonbauerhandwerk/"
-  },
-  {
-    "chamber_slug": "hwk-hamburg",
-    "chamber_name": "HWK Hamburg",
-    "chamber_region": "Hamburg",
-    "trade_slug": "maurer-und-betonbauer",
-    "trade_name": "Maurer- und Betonbauer",
-    "title": "Maurer- und Betonbauer (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
     "start_date": "2027-11-03",
     "end_date": "2028-06-02",
     "start_date_note": "",
@@ -34698,7 +34372,7 @@
     "zip_code": "21079",
     "latitude": 53.4582352,
     "longitude": 9.9959008,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.elbcampus.de/weiterbildung/meistervorbereitung-im-zahntechnikerhandwerk/"
   },
   {
@@ -43883,8 +43557,8 @@
     "end_date": "2027-06-16",
     "start_date_note": "",
     "duration_hours": 890,
-    "course_fee": 17200.0,
-    "course_fee_display": "17.200 €",
+    "course_fee": 8600.0,
+    "course_fee_display": "8.600 €",
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -52152,7 +51826,7 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
-    "start_date": "2027-05-31",
+    "start_date": "2027-06-01",
     "end_date": "2027-12-17",
     "start_date_note": "",
     "duration_hours": 970,
@@ -54352,42 +54026,6 @@
     "longitude": 12.5485819,
     "availability": "waitlist",
     "source_url": "https://www.hwk-leipzig.de/3,0,coursedetail.html?id=73295"
-  },
-  {
-    "chamber_slug": "hwk-leipzig",
-    "chamber_name": "HWK zu Leipzig",
-    "chamber_region": "Sachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-11-23",
-    "end_date": "2026-12-11",
-    "start_date_note": "",
-    "duration_hours": 120,
-    "course_fee": 963.0,
-    "course_fee_display": "963 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 190.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "190 €",
-      "from_tariff": true
-    },
-    "city": "Leipzig",
-    "street": "Dresdner Straße 11/13",
-    "zip_code": "04103",
-    "latitude": 51.3390316,
-    "longitude": 12.3918037,
-    "availability": "available",
-    "source_url": "https://www.hwk-leipzig.de/3,0,coursedetail.html?id=73385"
   },
   {
     "chamber_slug": "hwk-leipzig",
@@ -59193,7 +58831,7 @@
     "zip_code": "",
     "latitude": 49.453872,
     "longitude": 11.077298,
-    "availability": "waitlist",
+    "availability": "available",
     "source_url": "https://www.hwk-akademie.de/3751,0,coursedetail.html?id=617062"
   },
   {
@@ -70483,7 +70121,7 @@
     "zip_code": "93055",
     "latitude": 49.0144753,
     "longitude": 12.1382992,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1014915"
   },
   {
@@ -71232,42 +70870,6 @@
     "chamber_region": "Bayern",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-11-04",
-    "end_date": "2026-12-18",
-    "start_date_note": "",
-    "duration_hours": 264,
-    "course_fee": 1430.0,
-    "course_fee_display": "1.430 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": null,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "",
-      "from_tariff": false
-    },
-    "city": "Passau",
-    "street": "Simmerlingweg 4 und 15",
-    "zip_code": "94036",
-    "latitude": 48.5626047,
-    "longitude": 13.4060264,
-    "availability": "full",
-    "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1008807"
-  },
-  {
-    "chamber_slug": "hwk-niederbayern-oberpfalz",
-    "chamber_name": "HWK Niederbayern-Oberpfalz",
-    "chamber_region": "Bayern",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Berufs- und Arbeitspädagogik (Teil IV)",
     "parts": [
       4
@@ -71403,7 +71005,7 @@
     "zip_code": "94315",
     "latitude": 48.8708639,
     "longitude": 12.5760232,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://www.hwkno.de/76,0,coursedetail.html?id=1011352"
   },
   {
@@ -77657,7 +77259,7 @@
     "zip_code": "96450",
     "latitude": 50.2713886,
     "longitude": 10.9718498,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwk-oberfranken.de/72,0,coursedetail.html?id=302636"
   },
   {
@@ -82691,79 +82293,6 @@
     "chamber_region": "Niedersachsen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-11-03",
-    "end_date": "2027-05-26",
-    "start_date_note": "",
-    "duration_hours": 240,
-    "course_fee": 1690.0,
-    "course_fee_display": "1.690 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 300.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "300 €",
-      "from_tariff": true
-    },
-    "city": "Oldenburg/Tweelbäke",
-    "street": "Schütte-Lanz-Straße 8-10/15",
-    "zip_code": "26135",
-    "latitude": 53.1144351,
-    "longitude": 8.2605231,
-    "availability": "available",
-    "source_url": "https://www.hwk-oldenburg.de/weiterbildung/kurse-und-seminare#/vorlage/MVK/1002?kurs=42530"
-  },
-  {
-    "chamber_slug": "hwk-oldenburg",
-    "chamber_name": "HWK Oldenburg",
-    "chamber_region": "Niedersachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Allgemein (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-11-03",
-    "end_date": "2028-09-16",
-    "start_date_note": "",
-    "duration_hours": 1206,
-    "course_fee": 7950.0,
-    "course_fee_display": "7.950 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 350.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "350 €",
-      "from_tariff": true
-    },
-    "city": "Oldenburg/Tweelbäke",
-    "street": "Schütte-Lanz-Straße 8-10/15",
-    "zip_code": "26135",
-    "latitude": 53.1144351,
-    "longitude": 8.2605231,
-    "availability": "full",
-    "source_url": "https://www.hwk-oldenburg.de/weiterbildung/kurse-und-seminare#/vorlage/MVK/766?kurs=42707"
-  },
-  {
-    "chamber_slug": "hwk-oldenburg",
-    "chamber_name": "HWK Oldenburg",
-    "chamber_region": "Niedersachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Berufs- und Arbeitspädagogik (Teil IV)",
     "parts": [
       4
@@ -86554,7 +86083,7 @@
     "zip_code": "49088",
     "latitude": 52.290842,
     "longitude": 8.0401607,
-    "availability": "unknown",
+    "availability": "full",
     "source_url": "https://www.btz-osnabrueck.de/seminar/mstrmauvza/#kurs-20271"
   },
   {
@@ -93085,7 +92614,7 @@
     "zip_code": "33613",
     "latitude": 52.0325564,
     "longitude": 8.5354738,
-    "availability": "full",
+    "availability": "available",
     "source_url": "https://bbz.handwerk-owl.de/3351,0,coursedetail.html?id=131624"
   },
   {
@@ -93938,78 +93467,6 @@
     "longitude": 8.531007,
     "availability": "unknown",
     "source_url": "https://bbz.handwerk-owl.de/3351,0,coursedetail.html?id=134850"
-  },
-  {
-    "chamber_slug": "hwk-ostwestfalen-lippe-zu-bielefeld",
-    "chamber_name": "HWK Ostwestfalen-Lippe zu Bielefeld",
-    "chamber_region": "Nordrhein-Westfalen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-11-04",
-    "end_date": "2026-11-19",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": null,
-    "course_fee_display": "—",
-    "exam_fee_scraped": 325.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 325.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "325 €",
-      "from_tariff": false
-    },
-    "city": "Online",
-    "street": "",
-    "zip_code": "",
-    "latitude": null,
-    "longitude": null,
-    "availability": "available",
-    "source_url": "https://bbz.handwerk-owl.de/3351,0,coursedetail.html?id=135295"
-  },
-  {
-    "chamber_slug": "hwk-ostwestfalen-lippe-zu-bielefeld",
-    "chamber_name": "HWK Ostwestfalen-Lippe zu Bielefeld",
-    "chamber_region": "Nordrhein-Westfalen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
-    "parts": [
-      4
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-11-04",
-    "end_date": "2026-11-19",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": null,
-    "course_fee_display": "—",
-    "exam_fee_scraped": 325.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 325.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "325 €",
-      "from_tariff": false
-    },
-    "city": "Online",
-    "street": "",
-    "zip_code": "",
-    "latitude": null,
-    "longitude": null,
-    "availability": "available",
-    "source_url": "https://bbz.handwerk-owl.de/3351,0,coursedetail.html?id=135298"
   },
   {
     "chamber_slug": "hwk-ostwestfalen-lippe-zu-bielefeld",
@@ -110990,6 +110447,42 @@
     "chamber_slug": "hwk-suedthueringen-suhl",
     "chamber_name": "HWK Südthüringen",
     "chamber_region": "Thüringen",
+    "trade_slug": "kfz-techniker",
+    "trade_name": "Kfz.-Techniker",
+    "title": "Kfz.-Techniker (Teil II)",
+    "parts": [
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": null,
+    "end_date": null,
+    "start_date_note": "",
+    "duration_hours": 600,
+    "course_fee": 5250.0,
+    "course_fee_display": "5.250 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 220.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "220 €",
+      "from_tariff": true
+    },
+    "city": "Rohr",
+    "street": "Kloster 1",
+    "zip_code": "98530",
+    "latitude": 50.707055,
+    "longitude": 10.891878,
+    "availability": "unknown",
+    "source_url": "https://www.hwk-suedthueringen.de/seminar/m_kfz-ii_vz/"
+  },
+  {
+    "chamber_slug": "hwk-suedthueringen-suhl",
+    "chamber_name": "HWK Südthüringen",
+    "chamber_region": "Thüringen",
     "trade_slug": "land-und-baumaschinenmechatroniker",
     "trade_name": "Land- und Baumaschinenmechatroniker",
     "title": "Land- und Baumaschinenmechatroniker (Teile I + II)",
@@ -112790,7 +112283,7 @@
     "zip_code": "59755",
     "latitude": 51.4470454,
     "longitude": 7.9631509,
-    "availability": "waitlist",
+    "availability": "full",
     "source_url": "https://www.bbz-arnsberg.de/kurse/meisterkurs-elektrotechnik-vollzeit#termin-1"
   },
   {
@@ -113160,7 +112653,7 @@
     "zip_code": "59755",
     "latitude": 51.4470454,
     "longitude": 7.9631509,
-    "availability": "waitlist",
+    "availability": "full",
     "source_url": "https://www.bbz-arnsberg.de/kurse/meisterkurs-installateure-und-heizungsbauer-teilzeit#termin-1"
   },
   {
@@ -113771,8 +113264,8 @@
     "end_date": "2026-12-18",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -113787,7 +113280,7 @@
     "zip_code": "59755",
     "latitude": 51.4470454,
     "longitude": 7.9631509,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.bbz-arnsberg.de/kurse/ausbildung-der-ausbilder-nach-aevo#termin-1"
   },
   {
@@ -113879,8 +113372,8 @@
     "end_date": "2027-01-29",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -113951,8 +113444,8 @@
     "end_date": "2027-03-19",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -113987,8 +113480,8 @@
     "end_date": "2027-04-23",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -114095,8 +113588,8 @@
     "end_date": "2027-07-16",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -114203,8 +113696,8 @@
     "end_date": "2027-08-13",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -114275,8 +113768,8 @@
     "end_date": "2027-10-01",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -114311,8 +113804,8 @@
     "end_date": "2027-11-27",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -114383,8 +113876,8 @@
     "end_date": "2027-12-17",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -114419,8 +113912,8 @@
     "end_date": "2028-01-21",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -114563,8 +114056,8 @@
     "end_date": "2028-03-17",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -114599,8 +114092,8 @@
     "end_date": "2028-04-13",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -114743,8 +114236,8 @@
     "end_date": "2028-07-21",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -114779,8 +114272,8 @@
     "end_date": "2028-08-11",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -114887,8 +114380,8 @@
     "end_date": "2028-09-29",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -114923,8 +114416,8 @@
     "end_date": "2028-11-25",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -114995,8 +114488,8 @@
     "end_date": "2028-12-15",
     "start_date_note": "",
     "duration_hours": 120,
-    "course_fee": 650.0,
-    "course_fee_display": "650 €",
+    "course_fee": 735.0,
+    "course_fee_display": "735 €",
     "exam_fee_scraped": 275.0,
     "exam_fee_qualifier": "",
     "exam_fee": {
@@ -120194,43 +119687,6 @@
     "chamber_slug": "hwk-wiesbaden",
     "chamber_name": "HWK Wiesbaden",
     "chamber_region": "Hessen",
-    "trade_slug": "feinwerkmechaniker",
-    "trade_name": "Feinwerkmechaniker",
-    "title": "Feinwerkmechaniker (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-11-03",
-    "end_date": "2028-06-17",
-    "start_date_note": "",
-    "duration_hours": 856,
-    "course_fee": 7600.0,
-    "course_fee_display": "7.600 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 730.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "730 €",
-      "from_tariff": true
-    },
-    "city": "Wiesbaden",
-    "street": "Brunhildenstraße 110",
-    "zip_code": "65189",
-    "latitude": 50.0652806,
-    "longitude": 8.2590004,
-    "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-feinwerkmechanikerhandwerk-teil-iii-in-teilzeit-mit-vollzeitblock-44,0,coursedetail.html?id=111241&search-onr=44&img=1"
-  },
-  {
-    "chamber_slug": "hwk-wiesbaden",
-    "chamber_name": "HWK Wiesbaden",
-    "chamber_region": "Hessen",
     "trade_slug": "fliesen-platten-und-mosaikleger",
     "trade_name": "Fliesen-, Platten- und Mosaikleger",
     "title": "Fliesen-, Platten- und Mosaikleger (Teile I + II)",
@@ -120270,6 +119726,43 @@
     "chamber_region": "Hessen",
     "trade_slug": "friseur",
     "trade_name": "Friseur",
+    "title": "Friseur (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-01-04",
+    "end_date": "2027-11-15",
+    "start_date_note": "",
+    "duration_hours": 446,
+    "course_fee": 3950.0,
+    "course_fee_display": "3.950 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 730.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "730 €",
+      "from_tariff": true
+    },
+    "city": "Wiesbaden",
+    "street": "Brunhildenstraße 110",
+    "zip_code": "65189",
+    "latitude": 50.0652806,
+    "longitude": 8.2590004,
+    "availability": "available",
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-friseurhandwerk-teile-i-ii-teilzeit-44,0,coursedetail.html?id=124801&search-onr=44&img=1"
+  },
+  {
+    "chamber_slug": "hwk-wiesbaden",
+    "chamber_name": "HWK Wiesbaden",
+    "chamber_region": "Hessen",
+    "trade_slug": "friseur",
+    "trade_name": "Friseur",
     "title": "Friseur (Teil I)",
     "parts": [
       1
@@ -120298,7 +119791,7 @@
     "latitude": 50.0652806,
     "longitude": 8.2590004,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-friseurhandwerk-teile-i-iv-vollzeit-44,0,coursedetail.html?id=124674&search-onr=44&img=1"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-friseurhandwerk-teile-i-iv-vollzeit-44,0,coursedetail.html?id=124674&search-onr=44&img=2"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -120335,7 +119828,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-friseurhandwerk-teile-i-ii-vollzeit-44,0,coursedetail.html?id=121726&search-onr=44&img=2"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-friseurhandwerk-teile-i-ii-vollzeit-44,0,coursedetail.html?id=121726&search-onr=44&img=3"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -120372,7 +119865,7 @@
     "latitude": 50.5548159,
     "longitude": 8.4921662,
     "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-friseurhandwerk-teile-i-ii-teilzeit-44,0,coursedetail.html?id=125561&search-onr=44&img=3"
+    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-friseurhandwerk-teile-i-ii-teilzeit-44,0,coursedetail.html?id=125561&search-onr=44&img=4"
   },
   {
     "chamber_slug": "hwk-wiesbaden",
@@ -120635,43 +120128,6 @@
     "chamber_slug": "hwk-wiesbaden",
     "chamber_name": "HWK Wiesbaden",
     "chamber_region": "Hessen",
-    "trade_slug": "metallbauer",
-    "trade_name": "Metallbauer",
-    "title": "Metallbauer (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-11-03",
-    "end_date": "2028-06-17",
-    "start_date_note": "",
-    "duration_hours": 856,
-    "course_fee": 7600.0,
-    "course_fee_display": "7.600 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 730.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "730 €",
-      "from_tariff": true
-    },
-    "city": "Wiesbaden",
-    "street": "Brunhildenstraße 110",
-    "zip_code": "65189",
-    "latitude": 50.0652806,
-    "longitude": 8.2590004,
-    "availability": "available",
-    "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-im-metallbauerhandwerk-teil-iii-in-teilzeit-mit-vollzeitblock-44,0,coursedetail.html?id=111242&search-onr=44&img=1"
-  },
-  {
-    "chamber_slug": "hwk-wiesbaden",
-    "chamber_name": "HWK Wiesbaden",
-    "chamber_region": "Hessen",
     "trade_slug": "rollladen-und-sonnenschutztechniker",
     "trade_name": "Rollladen- und Sonnenschutztechniker",
     "title": "Rollladen- und Sonnenschutztechniker (Teile I + II)",
@@ -120884,7 +120340,7 @@
     "zip_code": "35576",
     "latitude": 50.5548159,
     "longitude": 8.4921662,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teile-iii-iv-vollzeit-44,0,coursedetail.html?id=77273&search-onr=44&img=4"
   },
   {
@@ -120992,7 +120448,7 @@
     "zip_code": "65189",
     "latitude": 50.0652806,
     "longitude": 8.2590004,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-wiesbaden.de/kurse/meistervorbereitung-teil-iv-vollzeit-praesenz-oder-wahlweise-virtuelles-klassenzimmer-44,0,coursedetail.html?id=103645&search-onr=44&img=6"
   },
   {
