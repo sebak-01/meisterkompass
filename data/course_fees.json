@@ -1,15 +1,5 @@
 [
   {
-    "chamber_slug": "hwk-dresden",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      3
-    ],
-    "fee": 2480.0,
-    "exam_fee_scraped": null,
-    "is_generic": true
-  },
-  {
     "chamber_slug": "hwk-bremen",
     "trade_slug": "allgemein-teil-iii-iv",
     "parts": [
@@ -61,6 +51,16 @@
     "fee": 8300.0,
     "exam_fee_scraped": null,
     "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-dresden",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      3
+    ],
+    "fee": 2480.0,
+    "exam_fee_scraped": null,
+    "is_generic": true
   },
   {
     "chamber_slug": "hwk-hannover",
@@ -486,6 +486,16 @@
     "fee": 9950.0,
     "exam_fee_scraped": null,
     "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-bremen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      3
+    ],
+    "fee": 1950.0,
+    "exam_fee_scraped": null,
+    "is_generic": true
   },
   {
     "chamber_slug": "hwk-cottbus",
@@ -1369,28 +1379,6 @@
     "is_generic": true
   },
   {
-    "chamber_slug": "hwk-rhein-main",
-    "trade_slug": "feinwerkmechaniker",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 8990.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-rhein-main",
-    "trade_slug": "metallbauer",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 9490.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
     "chamber_slug": "hwk-duesseldorf",
     "trade_slug": "allgemein-teil-iii-iv",
     "parts": [
@@ -1866,16 +1854,6 @@
     "is_generic": false
   },
   {
-    "chamber_slug": "hwk-stuttgart",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      3
-    ],
-    "fee": 1790.0,
-    "exam_fee_scraped": null,
-    "is_generic": true
-  },
-  {
     "chamber_slug": "hwk-kassel",
     "trade_slug": "elektrotechniker",
     "parts": [
@@ -1978,16 +1956,6 @@
     "fee": 9300.0,
     "exam_fee_scraped": 750.0,
     "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-bremen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      3
-    ],
-    "fee": 2150.0,
-    "exam_fee_scraped": null,
-    "is_generic": true
   },
   {
     "chamber_slug": "hwk-cottbus",
@@ -2145,6 +2113,16 @@
   },
   {
     "chamber_slug": "hwk-stuttgart",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      3
+    ],
+    "fee": 1790.0,
+    "exam_fee_scraped": null,
+    "is_generic": true
+  },
+  {
+    "chamber_slug": "hwk-stuttgart",
     "trade_slug": "kfz-techniker",
     "parts": [
       2
@@ -2292,6 +2270,17 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-rhein-main",
+    "trade_slug": "metallbauer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 9490.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-niederbayern-oberpfalz",
     "trade_slug": "glaser",
     "parts": [
@@ -2418,6 +2407,17 @@
     "fee": 2800.0,
     "exam_fee_scraped": null,
     "is_generic": true
+  },
+  {
+    "chamber_slug": "hwk-rhein-main",
+    "trade_slug": "feinwerkmechaniker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 8990.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
   },
   {
     "chamber_slug": "hwk-mittelfranken",
@@ -2589,6 +2589,16 @@
       2
     ],
     "fee": 8400.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-reutlingen",
+    "trade_slug": "kfz-techniker",
+    "parts": [
+      2
+    ],
+    "fee": 4850.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
@@ -3450,6 +3460,17 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-leipzig",
+    "trade_slug": "dachdecker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 10931.0,
+    "exam_fee_scraped": 770.0,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-osnabrueck-emsland-grafschaft-bentheim",
     "trade_slug": "land-und-baumaschinenmechatroniker",
     "parts": [
@@ -3479,6 +3500,17 @@
       2
     ],
     "fee": 12450.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-bremen",
+    "trade_slug": "installateur-und-heizungsbauer",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 8900.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
@@ -4941,17 +4973,6 @@
     "is_generic": false
   },
   {
-    "chamber_slug": "hwk-leipzig",
-    "trade_slug": "dachdecker",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 10931.0,
-    "exam_fee_scraped": 830.0,
-    "is_generic": false
-  },
-  {
     "chamber_slug": "hwk-oberfranken",
     "trade_slug": "gerustbauer",
     "parts": [
@@ -5615,16 +5636,6 @@
     ],
     "fee": 10302.0,
     "exam_fee_scraped": 3020.0,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-reutlingen",
-    "trade_slug": "kfz-techniker",
-    "parts": [
-      2
-    ],
-    "fee": 5400.0,
-    "exam_fee_scraped": null,
     "is_generic": false
   },
   {
@@ -7823,17 +7834,6 @@
     ],
     "fee": 6100.0,
     "exam_fee_scraped": 1100.0,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-bremen",
-    "trade_slug": "installateur-und-heizungsbauer",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 8100.0,
-    "exam_fee_scraped": null,
     "is_generic": false
   },
   {
