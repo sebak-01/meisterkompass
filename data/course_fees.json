@@ -1,90 +1,5 @@
 [
   {
-    "chamber_slug": "hwk-bremen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      4
-    ],
-    "fee": 850.0,
-    "exam_fee_scraped": null,
-    "is_generic": true
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "trade_slug": "glaser",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 10890.0,
-    "exam_fee_scraped": 730.0,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "trade_slug": "tischler",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 7980.0,
-    "exam_fee_scraped": 730.0,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-chemnitz",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      4
-    ],
-    "fee": 790.0,
-    "exam_fee_scraped": 205.0,
-    "is_generic": true
-  },
-  {
-    "chamber_slug": "hwk-dresden",
-    "trade_slug": "tischler",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 8300.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-dresden",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "parts": [
-      3
-    ],
-    "fee": 2480.0,
-    "exam_fee_scraped": null,
-    "is_generic": true
-  },
-  {
-    "chamber_slug": "hwk-luebeck",
-    "trade_slug": "tischler",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 9300.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-suedthueringen-suhl",
-    "trade_slug": "land-und-baumaschinenmechatroniker",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 11700.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
     "chamber_slug": "hwk-braunschweig-lueneburg-stade",
     "trade_slug": "allgemein-teil-iii-iv",
     "parts": [
@@ -568,6 +483,16 @@
     "fee": 4250.0,
     "exam_fee_scraped": null,
     "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-dresden",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      3
+    ],
+    "fee": 2480.0,
+    "exam_fee_scraped": null,
+    "is_generic": true
   },
   {
     "chamber_slug": "hwk-suedthueringen-suhl",
@@ -1070,6 +995,16 @@
     "fee": 10300.0,
     "exam_fee_scraped": null,
     "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      4
+    ],
+    "fee": 820.0,
+    "exam_fee_scraped": 205.0,
+    "is_generic": true
   },
   {
     "chamber_slug": "hwk-cottbus",
@@ -2320,6 +2255,16 @@
     ],
     "fee": 875.0,
     "exam_fee_scraped": 225.0,
+    "is_generic": true
+  },
+  {
+    "chamber_slug": "hwk-bremen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "parts": [
+      4
+    ],
+    "fee": 1050.0,
+    "exam_fee_scraped": null,
     "is_generic": true
   },
   {
@@ -4384,6 +4329,17 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-luebeck",
+    "trade_slug": "tischler",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 9300.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-bremen",
     "trade_slug": "allgemein-teil-iii-iv",
     "parts": [
@@ -5993,6 +5949,17 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-dresden",
+    "trade_slug": "tischler",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 8300.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-muenchen-und-oberbayern",
     "trade_slug": "elektrotechniker",
     "parts": [
@@ -6133,6 +6100,28 @@
     ],
     "fee": 9900.0,
     "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "trade_slug": "glaser",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 12040.0,
+    "exam_fee_scraped": 730.0,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-chemnitz",
+    "trade_slug": "tischler",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 8920.0,
+    "exam_fee_scraped": 730.0,
     "is_generic": false
   },
   {
@@ -7712,6 +7701,17 @@
       4
     ],
     "fee": 9150.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-suedthueringen-suhl",
+    "trade_slug": "land-und-baumaschinenmechatroniker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 11700.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },
