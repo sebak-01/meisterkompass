@@ -4182,6 +4182,43 @@
     "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo/#termin-1"
   },
   {
+    "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
+    "chamber_name": "HWK Frankfurt (Oder) – Region Ostbrandenburg",
+    "chamber_region": "Brandenburg",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "parts": [
+      3,
+      4
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-11-09",
+    "end_date": "2027-10-27",
+    "start_date_note": "",
+    "duration_hours": 378,
+    "course_fee": 3050.0,
+    "course_fee_display": "3.050 €",
+    "exam_fee_scraped": 625.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 625.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "625 €",
+      "from_tariff": false
+    },
+    "city": "Frankfurt (Oder)",
+    "street": "Spiekerstraße 11",
+    "zip_code": "15230",
+    "latitude": 52.3388204,
+    "longitude": 14.5470716,
+    "availability": "available",
+    "source_url": "https://www.weiterbildung-ostbrandenburg.de/lehrgang/meisterkurs-gepruefte-r-fachfrau-mann-fuer-kaufmaennische-betriebsfuehrung-nach-der-hwo-und-ausbildereignungspruefung/#termin-1"
+  },
+  {
     "chamber_slug": "hwk-halle-saale",
     "chamber_name": "HWK Halle (Saale)",
     "chamber_region": "Sachsen-Anhalt",
