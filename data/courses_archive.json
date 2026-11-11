@@ -1486,6 +1486,42 @@
     "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/ausbildung-der-ausbilder/#termin_534"
   },
   {
+    "chamber_slug": "hwk-chemnitz",
+    "chamber_name": "HWK Chemnitz",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-11-10",
+    "end_date": "2027-07-07",
+    "start_date_note": "",
+    "duration_hours": 290,
+    "course_fee": 2380.0,
+    "course_fee_display": "2.380 €",
+    "exam_fee_scraped": 215.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 215.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "215 €",
+      "from_tariff": false
+    },
+    "city": "Plauen",
+    "street": "Rähnisstraße 19",
+    "zip_code": "08523",
+    "latitude": 50.4993901,
+    "longitude": 12.1453036,
+    "availability": "available",
+    "source_url": "https://www.hwk-chemnitz.de/weiterbildung/kurs/gepr-fachmann-fuer-kfm-betriebsfuehrung-hwo/#termin_426"
+  },
+  {
     "chamber_slug": "hwk-cottbus",
     "chamber_name": "HWK Cottbus",
     "chamber_region": "Brandenburg",
@@ -9265,6 +9301,43 @@
     "longitude": 9.193541,
     "availability": "available",
     "source_url": "https://www.hwk-reutlingen.de/seminar/r-mv-i-ii_massschn-vz/#kurs-3"
+  },
+  {
+    "chamber_slug": "hwk-reutlingen",
+    "chamber_name": "HWK Reutlingen",
+    "chamber_region": "Baden-Württemberg",
+    "trade_slug": "metallbauer",
+    "trade_name": "Metallbauer",
+    "title": "Metallbauer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-11-10",
+    "end_date": "2027-10-30",
+    "start_date_note": "",
+    "duration_hours": 700,
+    "course_fee": 8250.0,
+    "course_fee_display": "8.250 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 650.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "650 €",
+      "from_tariff": true
+    },
+    "city": "Tübingen",
+    "street": "Raichbergstraße 87",
+    "zip_code": "72072",
+    "latitude": 48.5004109,
+    "longitude": 9.059163,
+    "availability": "available",
+    "source_url": "https://www.hwk-reutlingen.de/seminar/t-mv-i-ii_metall-tz/#kurs-8"
   },
   {
     "chamber_slug": "hwk-reutlingen",

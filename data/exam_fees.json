@@ -726,6 +726,13 @@
           "qualifier": ""
         }
       },
+      "backer": {
+        "1,2": {
+          "fee": 1500.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
       "dachdecker": {
         "1,2": {
           "fee": 1480.0,
