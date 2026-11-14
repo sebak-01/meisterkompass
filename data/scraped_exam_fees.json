@@ -899,19 +899,6 @@
       "source_url": "https://www.hwk-hamburg.de/artikel/gebuehren-und-beitraege-93,139,67.html"
     },
     {
-      "chamber_slug": "hwk-hamburg",
-      "trade_slug": null,
-      "parts": [
-        1,
-        2,
-        3,
-        4
-      ],
-      "fee": 1300.0,
-      "qualifier": "",
-      "source_url": "https://www.hwk-hamburg.de/artikel/gebuehren-und-beitraege-93,139,67.html"
-    },
-    {
       "chamber_slug": "hwk-hannover",
       "trade_slug": "gebaudereiniger",
       "part": 1,

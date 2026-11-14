@@ -1,37 +1,5 @@
 [
   {
-    "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
-    "trade_slug": "dachdecker",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 10200.0,
-    "exam_fee_scraped": 680.0,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-suedthueringen-suhl",
-    "trade_slug": "feinwerkmechaniker",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 9925.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
-    "chamber_slug": "hwk-suedthueringen-suhl",
-    "trade_slug": "metallbauer",
-    "parts": [
-      1
-    ],
-    "fee": 9450.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
     "chamber_slug": "hwk-dortmund",
     "trade_slug": "kfz-techniker",
     "parts": [
@@ -3913,6 +3881,17 @@
     "is_generic": false
   },
   {
+    "chamber_slug": "hwk-frankfurt-oder-ostbrandenburg",
+    "trade_slug": "dachdecker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 10200.0,
+    "exam_fee_scraped": 680.0,
+    "is_generic": false
+  },
+  {
     "chamber_slug": "hwk-luebeck",
     "trade_slug": "maurer-und-betonbauer",
     "parts": [
@@ -7744,6 +7723,27 @@
       4
     ],
     "fee": 9150.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-suedthueringen-suhl",
+    "trade_slug": "feinwerkmechaniker",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 9925.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-suedthueringen-suhl",
+    "trade_slug": "metallbauer",
+    "parts": [
+      1
+    ],
+    "fee": 9450.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },

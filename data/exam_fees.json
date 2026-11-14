@@ -1167,11 +1167,6 @@
           "fee_max": null,
           "qualifier": ""
         },
-        "1,2,3,4": {
-          "fee": 1300.0,
-          "fee_max": null,
-          "qualifier": ""
-        },
         "2": {
           "fee": 430.0,
           "fee_max": null,
@@ -1477,7 +1472,7 @@
       },
       "friseur": {
         "1,2": {
-          "fee": 1525.0,
+          "fee": 1375.0,
           "fee_max": null,
           "qualifier": "ca."
         }
@@ -1738,7 +1733,7 @@
           "qualifier": ""
         },
         "4": {
-          "fee": 300.0,
+          "fee": 640.0,
           "fee_max": null,
           "qualifier": ""
         }
@@ -2026,7 +2021,7 @@
       },
       "fleischer": {
         "1,2": {
-          "fee": 715.0,
+          "fee": 830.0,
           "fee_max": null,
           "qualifier": ""
         }
@@ -2047,7 +2042,7 @@
       },
       "maurer-und-betonbauer": {
         "1,2": {
-          "fee": 770.0,
+          "fee": 830.0,
           "fee_max": null,
           "qualifier": ""
         }
@@ -3124,6 +3119,13 @@
           "qualifier": ""
         }
       },
+      "land-und-baumaschinenmechatroniker": {
+        "1": {
+          "fee": 1100.0,
+          "fee_max": null,
+          "qualifier": ""
+        }
+      },
       "strassenbauer": {
         "1,2": {
           "fee": 1300.0,
@@ -4068,7 +4070,7 @@
       },
       "kfz-techniker": {
         "1,2,3,4": {
-          "fee": 1435.0,
+          "fee": 1400.0,
           "fee_max": null,
           "qualifier": ""
         }
