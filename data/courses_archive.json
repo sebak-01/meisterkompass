@@ -2031,7 +2031,7 @@
     "zip_code": "44147",
     "latitude": 51.5206367,
     "longitude": 7.4529522,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-berufsbegleitender-lehrgang-meistervorbereitung-teil-i/#termin-1"
   },
   {
@@ -3514,6 +3514,42 @@
     "longitude": 14.4213099,
     "availability": "available",
     "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114135.html"
+  },
+  {
+    "chamber_slug": "hwk-dresden",
+    "chamber_name": "HWK Dresden",
+    "chamber_region": "Sachsen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-11-06",
+    "end_date": "2027-07-03",
+    "start_date_note": "",
+    "duration_hours": 296,
+    "course_fee": 2480.0,
+    "course_fee_display": "2.480 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 240.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "240 €",
+      "from_tariff": true
+    },
+    "city": "Dresden",
+    "street": "Am Lagerplatz 8",
+    "zip_code": "01099",
+    "latitude": 51.0833678,
+    "longitude": 13.7677525,
+    "availability": "available",
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114161.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -8462,6 +8498,43 @@
     "longitude": 8.0401607,
     "availability": "full",
     "source_url": "https://www.btz-osnabrueck.de/seminar/mstrmauvza/#kurs-20261"
+  },
+  {
+    "chamber_slug": "hwk-osnabrueck-emsland-grafschaft-bentheim",
+    "chamber_name": "HWK Osnabrück-Emsland-Grafschaft Bentheim",
+    "chamber_region": "Niedersachsen",
+    "trade_slug": "metallbauer",
+    "trade_name": "Metallbauer",
+    "title": "Metallbauer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-11-17",
+    "end_date": "2028-05-27",
+    "start_date_note": "",
+    "duration_hours": null,
+    "course_fee": null,
+    "course_fee_display": "—",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 1131.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "1.131 €",
+      "from_tariff": true
+    },
+    "city": "Osnabrück",
+    "street": "Bramscher Straße 134 - 136",
+    "zip_code": "49088",
+    "latitude": 52.290842,
+    "longitude": 8.0401607,
+    "availability": "available",
+    "source_url": "https://www.btz-osnabrueck.de/seminar/mstrmetallbtza/#kurs-20261"
   },
   {
     "chamber_slug": "hwk-osnabrueck-emsland-grafschaft-bentheim",
