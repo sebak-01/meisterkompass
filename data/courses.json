@@ -3678,42 +3678,6 @@
     "chamber_region": "Niedersachsen",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "hybrid",
-    "start_date": "2027-04-12",
-    "end_date": "2027-11-26",
-    "start_date_note": "",
-    "duration_hours": 280,
-    "course_fee": 2400.0,
-    "course_fee_display": "2.400 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 690.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "690 €",
-      "from_tariff": true
-    },
-    "city": "x x",
-    "street": "",
-    "zip_code": "",
-    "latitude": 52.7798987,
-    "longitude": 9.2984612,
-    "availability": "waitlist",
-    "source_url": "https://weiterbildung.hwk-bls.de/22,0,coursedetail.html?id=315225"
-  },
-  {
-    "chamber_slug": "hwk-braunschweig-lueneburg-stade",
-    "chamber_name": "HWK Braunschweig-Lüneburg-Stade",
-    "chamber_region": "Niedersachsen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Berufs- und Arbeitspädagogik (Teil IV)",
     "parts": [
       4
@@ -5015,6 +4979,42 @@
     "longitude": 8.7803106,
     "availability": "available",
     "source_url": "https://www.handwerkbremen.de/service-center/kurse-und-seminare#/vorlage/MVK/216145?kurs=78916"
+  },
+  {
+    "chamber_slug": "hwk-bremen",
+    "chamber_name": "HWK Bremen",
+    "chamber_region": "Bremen",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-11-30",
+    "end_date": "2026-12-18",
+    "start_date_note": "",
+    "duration_hours": 135,
+    "course_fee": 1950.0,
+    "course_fee_display": "1.950 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 220.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "220 €",
+      "from_tariff": true
+    },
+    "city": "Bremen",
+    "street": "Schongauerstr. 2",
+    "zip_code": "28219",
+    "latitude": 53.0979216,
+    "longitude": 8.7803106,
+    "availability": "available",
+    "source_url": "https://www.handwerkbremen.de/service-center/kurse-und-seminare#/vorlage/MVK/215125?kurs=74058"
   },
   {
     "chamber_slug": "hwk-bremen",
@@ -13815,7 +13815,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-3"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-1"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -13851,7 +13851,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-4"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-3"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -13923,7 +13923,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-1"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-2"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -13959,7 +13959,7 @@
     "latitude": 51.5206367,
     "longitude": 7.4529522,
     "availability": "waitlist",
-    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-2"
+    "source_url": "https://www.hwk-do.de/event/seminar/weiterbildungsdatenbanken/kfz-techniker-in-vollzeitlehrgang-meistervorbereitung-teil-i-2/#termin-4"
   },
   {
     "chamber_slug": "hwk-dortmund",
@@ -17557,8 +17557,8 @@
       1,
       2
     ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
+    "format": "part_time",
+    "format_display": "Teilzeit",
     "teaching_mode": "presence",
     "start_date": "2027-10-25",
     "end_date": "2028-04-28",
@@ -17581,7 +17581,7 @@
     "latitude": 51.0833678,
     "longitude": 13.7677525,
     "availability": "waitlist",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/tischlerhandwerk-teile-ii-und-i-15238.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/tischlerhandwerk-teile-ii-und-i-223157.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -17618,7 +17618,7 @@
     "latitude": 51.0833678,
     "longitude": 13.7677525,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/tischlerhandwerk-teile-ii-und-i-15238.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/tischlerhandwerk-teile-ii-und-i-223157.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -17666,8 +17666,8 @@
     "parts": [
       3
     ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
+    "format": "part_time",
+    "format_display": "Teilzeit",
     "teaching_mode": "presence",
     "start_date": "2026-12-07",
     "end_date": "2027-02-26",
@@ -17690,7 +17690,7 @@
     "latitude": 51.0833678,
     "longitude": 13.7677525,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114161.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114165.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -17726,7 +17726,7 @@
     "latitude": 51.0833678,
     "longitude": 13.7677525,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114161.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114165.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -17906,7 +17906,7 @@
     "latitude": 51.0833678,
     "longitude": 13.7677525,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114161.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114165.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -17978,7 +17978,7 @@
     "latitude": 51.0833678,
     "longitude": 13.7677525,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114161.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114165.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -18122,7 +18122,7 @@
     "latitude": 51.0833678,
     "longitude": 13.7677525,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114161.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114165.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -18266,7 +18266,7 @@
     "latitude": 51.0833678,
     "longitude": 13.7677525,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114161.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114165.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -18302,7 +18302,7 @@
     "latitude": 51.0833678,
     "longitude": 13.7677525,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114161.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114165.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -18338,7 +18338,7 @@
     "latitude": 51.0833678,
     "longitude": 13.7677525,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114161.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114165.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -18446,7 +18446,7 @@
     "latitude": 51.0833678,
     "longitude": 13.7677525,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114161.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114165.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -18626,7 +18626,7 @@
     "latitude": 51.0833678,
     "longitude": 13.7677525,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114161.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114165.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -18698,7 +18698,7 @@
     "latitude": 51.0833678,
     "longitude": 13.7677525,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114161.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114165.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -18770,7 +18770,7 @@
     "latitude": 51.0833678,
     "longitude": 13.7677525,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114161.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114165.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -18878,7 +18878,7 @@
     "latitude": 51.0833678,
     "longitude": 13.7677525,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114161.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114165.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -18986,7 +18986,7 @@
     "latitude": 51.0833678,
     "longitude": 13.7677525,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114161.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114165.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -19058,7 +19058,7 @@
     "latitude": 51.0833678,
     "longitude": 13.7677525,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114161.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114165.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -19130,7 +19130,7 @@
     "latitude": 51.0833678,
     "longitude": 13.7677525,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114161.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114165.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -19202,7 +19202,7 @@
     "latitude": 51.0833678,
     "longitude": 13.7677525,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114161.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114165.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -19274,7 +19274,7 @@
     "latitude": 51.0833678,
     "longitude": 13.7677525,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114161.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114165.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -19346,7 +19346,7 @@
     "latitude": 51.0833678,
     "longitude": 13.7677525,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114161.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114165.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -19490,7 +19490,7 @@
     "latitude": 51.0833678,
     "longitude": 13.7677525,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114161.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114165.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -19598,7 +19598,7 @@
     "latitude": 51.0833678,
     "longitude": 13.7677525,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114161.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114165.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -19706,7 +19706,7 @@
     "latitude": 51.0833678,
     "longitude": 13.7677525,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114161.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114165.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -19778,7 +19778,7 @@
     "latitude": 51.0833678,
     "longitude": 13.7677525,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114161.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114165.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -19886,7 +19886,7 @@
     "latitude": 51.0833678,
     "longitude": 13.7677525,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114161.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114165.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -19922,7 +19922,7 @@
     "latitude": 51.0833678,
     "longitude": 13.7677525,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114161.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114165.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -20138,7 +20138,7 @@
     "latitude": 51.0833678,
     "longitude": 13.7677525,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114161.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114165.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -20246,7 +20246,7 @@
     "latitude": 51.0833678,
     "longitude": 13.7677525,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114161.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114165.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -20318,7 +20318,7 @@
     "latitude": 51.0833678,
     "longitude": 13.7677525,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114161.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114165.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -20390,7 +20390,7 @@
     "latitude": 51.0833678,
     "longitude": 13.7677525,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114161.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114165.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -20426,7 +20426,7 @@
     "latitude": 51.0833678,
     "longitude": 13.7677525,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114161.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114165.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -20498,7 +20498,7 @@
     "latitude": 51.0833678,
     "longitude": 13.7677525,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114161.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114165.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -20570,7 +20570,7 @@
     "latitude": 51.0833678,
     "longitude": 13.7677525,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114161.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114165.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -20678,7 +20678,7 @@
     "latitude": 51.0833678,
     "longitude": 13.7677525,
     "availability": "available",
-    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114161.html"
+    "source_url": "https://www.njumii.de/kurs-finden/kursdetails/kurs/gepruefter-fachmann-fuer-kaufmaennische-betriebsfuehrung-hwo-114165.html"
   },
   {
     "chamber_slug": "hwk-dresden",
@@ -23005,7 +23005,7 @@
     "zip_code": "40221",
     "latitude": 51.2067505,
     "longitude": 6.7597173,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-duesseldorf.de/31,0,coursedetail.html?id=60388"
   },
   {
@@ -25648,7 +25648,7 @@
     "zip_code": "",
     "latitude": 50.9777974,
     "longitude": 11.0287364,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.hwk-erfurt.de/4,0,coursedetail.html?id=65840"
   },
   {
@@ -30377,6 +30377,78 @@
     "chamber_region": "Baden-Württemberg",
     "trade_slug": "allgemein-teil-iii-iv",
     "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
+    "parts": [
+      4
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-01-10",
+    "end_date": "2028-01-28",
+    "start_date_note": "",
+    "duration_hours": 120,
+    "course_fee": 1200.0,
+    "course_fee_display": "1.200 €",
+    "exam_fee_scraped": 200.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 200.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "200 €",
+      "from_tariff": false
+    },
+    "city": "Freiburg",
+    "street": "Wirthstraße 28",
+    "zip_code": "79110",
+    "latitude": 48.0251899,
+    "longitude": 7.8137345,
+    "availability": "available",
+    "source_url": "https://www.gewerbeakademie.de/weiterbildung/kursangebot/kategorie/meister-kompetenz/seminar/mvkteiliv-vz/70/"
+  },
+  {
+    "chamber_slug": "hwk-freiburg",
+    "chamber_name": "HWK Freiburg",
+    "chamber_region": "Baden-Württemberg",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-02-08",
+    "end_date": "2028-04-07",
+    "start_date_note": "",
+    "duration_hours": 258,
+    "course_fee": 2300.0,
+    "course_fee_display": "2.300 €",
+    "exam_fee_scraped": 200.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 200.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "200 €",
+      "from_tariff": false
+    },
+    "city": "Freiburg",
+    "street": "Wirthstraße 28",
+    "zip_code": "79110",
+    "latitude": 48.0251899,
+    "longitude": 7.8137345,
+    "availability": "available",
+    "source_url": "https://www.gewerbeakademie.de/weiterbildung/kursangebot/kategorie/meister-kompetenz/seminar/mvkteiliii-vz/57/"
+  },
+  {
+    "chamber_slug": "hwk-freiburg",
+    "chamber_name": "HWK Freiburg",
+    "chamber_region": "Baden-Württemberg",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
     "title": "Wirtschaft und Recht (Teil III)",
     "parts": [
       3
@@ -30442,6 +30514,186 @@
     "longitude": 7.9361019,
     "availability": "available",
     "source_url": "https://www.gewerbeakademie.de/weiterbildung/kursangebot/kategorie/meister-kompetenz/seminar/mvkteiliv-tz/82/"
+  },
+  {
+    "chamber_slug": "hwk-freiburg",
+    "chamber_name": "HWK Freiburg",
+    "chamber_region": "Baden-Württemberg",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
+    "parts": [
+      4
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-04-24",
+    "end_date": "2028-05-12",
+    "start_date_note": "",
+    "duration_hours": 120,
+    "course_fee": 1200.0,
+    "course_fee_display": "1.200 €",
+    "exam_fee_scraped": 200.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 200.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "200 €",
+      "from_tariff": false
+    },
+    "city": "Freiburg",
+    "street": "Wirthstraße 28",
+    "zip_code": "79110",
+    "latitude": 48.0251899,
+    "longitude": 7.8137345,
+    "availability": "available",
+    "source_url": "https://www.gewerbeakademie.de/weiterbildung/kursangebot/kategorie/meister-kompetenz/seminar/mvkteiliv-vz/71/"
+  },
+  {
+    "chamber_slug": "hwk-freiburg",
+    "chamber_name": "HWK Freiburg",
+    "chamber_region": "Baden-Württemberg",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-05-16",
+    "end_date": "2028-07-21",
+    "start_date_note": "",
+    "duration_hours": 258,
+    "course_fee": 2300.0,
+    "course_fee_display": "2.300 €",
+    "exam_fee_scraped": 200.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 200.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "200 €",
+      "from_tariff": false
+    },
+    "city": "Freiburg",
+    "street": "Wirthstraße 28",
+    "zip_code": "79110",
+    "latitude": 48.0251899,
+    "longitude": 7.8137345,
+    "availability": "available",
+    "source_url": "https://www.gewerbeakademie.de/weiterbildung/kursangebot/kategorie/meister-kompetenz/seminar/mvkteiliii-vz/58/"
+  },
+  {
+    "chamber_slug": "hwk-freiburg",
+    "chamber_name": "HWK Freiburg",
+    "chamber_region": "Baden-Württemberg",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
+    "parts": [
+      4
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-06-26",
+    "end_date": "2028-07-14",
+    "start_date_note": "",
+    "duration_hours": 120,
+    "course_fee": 1200.0,
+    "course_fee_display": "1.200 €",
+    "exam_fee_scraped": 200.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 200.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "200 €",
+      "from_tariff": false
+    },
+    "city": "Freiburg",
+    "street": "Wirthstraße 28",
+    "zip_code": "79110",
+    "latitude": 48.0251899,
+    "longitude": 7.8137345,
+    "availability": "available",
+    "source_url": "https://www.gewerbeakademie.de/weiterbildung/kursangebot/kategorie/meister-kompetenz/seminar/mvkteiliv-vz/72/"
+  },
+  {
+    "chamber_slug": "hwk-freiburg",
+    "chamber_name": "HWK Freiburg",
+    "chamber_region": "Baden-Württemberg",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht (Teil III)",
+    "parts": [
+      3
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-08-21",
+    "end_date": "2028-10-20",
+    "start_date_note": "",
+    "duration_hours": 258,
+    "course_fee": 2300.0,
+    "course_fee_display": "2.300 €",
+    "exam_fee_scraped": 200.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 200.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "200 €",
+      "from_tariff": false
+    },
+    "city": "Freiburg",
+    "street": "Wirthstraße 28",
+    "zip_code": "79110",
+    "latitude": 48.0251899,
+    "longitude": 7.8137345,
+    "availability": "available",
+    "source_url": "https://www.gewerbeakademie.de/weiterbildung/kursangebot/kategorie/meister-kompetenz/seminar/mvkteiliii-vz/59/"
+  },
+  {
+    "chamber_slug": "hwk-freiburg",
+    "chamber_name": "HWK Freiburg",
+    "chamber_region": "Baden-Württemberg",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
+    "parts": [
+      4
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2028-10-30",
+    "end_date": "2028-11-17",
+    "start_date_note": "",
+    "duration_hours": 120,
+    "course_fee": 1200.0,
+    "course_fee_display": "1.200 €",
+    "exam_fee_scraped": 200.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 200.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "200 €",
+      "from_tariff": false
+    },
+    "city": "Freiburg",
+    "street": "Wirthstraße 28",
+    "zip_code": "79110",
+    "latitude": 48.0251899,
+    "longitude": 7.8137345,
+    "availability": "available",
+    "source_url": "https://www.gewerbeakademie.de/weiterbildung/kursangebot/kategorie/meister-kompetenz/seminar/mvkteiliv-vz/73/"
   },
   {
     "chamber_slug": "hwk-freiburg",
@@ -32081,7 +32333,7 @@
     "zip_code": "21079",
     "latitude": 53.4582352,
     "longitude": 9.9959008,
-    "availability": "available",
+    "availability": "waitlist",
     "source_url": "https://www.elbcampus.de/weiterbildung/meistervorbereitung-im-fliesen-platten-und-mosaiklegerhandwerk/"
   },
   {
@@ -32118,7 +32370,7 @@
     "zip_code": "21079",
     "latitude": 53.4582352,
     "longitude": 9.9959008,
-    "availability": "waitlist",
+    "availability": "available",
     "source_url": "https://www.elbcampus.de/weiterbildung/meistervorbereitung-im-friseurhandwerk/"
   },
   {
@@ -33371,7 +33623,7 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
-    "start_date": "2027-09-06",
+    "start_date": "2027-09-08",
     "end_date": "2027-10-22",
     "start_date_note": "",
     "duration_hours": 240,
@@ -33391,7 +33643,7 @@
     "zip_code": "21079",
     "latitude": 53.4582352,
     "longitude": 9.9959008,
-    "availability": "available",
+    "availability": "unknown",
     "source_url": "https://www.elbcampus.de/weiterbildung/gepr.-fachmann-frau-fuer-kaufmaennische-betriebsfuehrung-hwo/"
   },
   {
@@ -37158,188 +37410,6 @@
     "chamber_slug": "hwk-kassel",
     "chamber_name": "HWK Kassel",
     "chamber_region": "Hessen",
-    "trade_slug": "elektrotechniker",
-    "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teil II)",
-    "parts": [
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-02-16",
-    "end_date": "2028-09-23",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": 6150.0,
-    "course_fee_display": "6.150 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 420.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "420 €",
-      "from_tariff": true
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/elektrotechnikermeister-teil-ii"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "elektrotechniker",
-    "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-08-23",
-    "end_date": "2028-06-14",
-    "start_date_note": "",
-    "duration_hours": 1200,
-    "course_fee": 9750.0,
-    "course_fee_display": "9.750 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 730.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "730 €",
-      "from_tariff": true
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/elektrotechnikermeister-teil-ii-i-vollzeit"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "elektrotechniker",
-    "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2028-08-28",
-    "end_date": "2029-06-22",
-    "start_date_note": "",
-    "duration_hours": 1200,
-    "course_fee": 9850.0,
-    "course_fee_display": "9.850 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 730.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "730 €",
-      "from_tariff": true
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/elektrotechnikermeister-teil-ii-i-vollzeit"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "elektrotechniker",
-    "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teil I)",
-    "parts": [
-      1
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": null,
-    "end_date": null,
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": null,
-    "course_fee_display": "—",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 420.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "420 €",
-      "from_tariff": true
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/elektrotechnikermeister-teil-i"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "elektrotechniker",
-    "trade_name": "Elektrotechniker",
-    "title": "Elektrotechniker (Teil II)",
-    "parts": [
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": null,
-    "end_date": null,
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": null,
-    "course_fee_display": "—",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 420.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "420 €",
-      "from_tariff": true
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/elektrotechnikermeister-teil-ii"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
     "trade_slug": "feinwerkmechaniker",
     "trade_name": "Feinwerkmechaniker",
     "title": "Feinwerkmechaniker (Teile I + II)",
@@ -37941,42 +38011,6 @@
     "chamber_region": "Hessen",
     "trade_slug": "kfz-techniker",
     "trade_name": "Kfz.-Techniker",
-    "title": "Kfz.-Techniker (Teil II)",
-    "parts": [
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-03-08",
-    "end_date": "2027-06-11",
-    "start_date_note": "",
-    "duration_hours": 530,
-    "course_fee": 3990.0,
-    "course_fee_display": "3.990 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 420.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "420 €",
-      "from_tariff": true
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-im-kfz-techniker-handwerk"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "kfz-techniker",
-    "trade_name": "Kfz.-Techniker",
     "title": "Kfz.-Techniker (Teile I + II)",
     "parts": [
       1,
@@ -38007,42 +38041,6 @@
     "longitude": 8.7666044,
     "availability": "available",
     "source_url": "https://www.bbz-marburg.de/kurs/mv-kfz-tz/"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "kfz-techniker",
-    "trade_name": "Kfz.-Techniker",
-    "title": "Kfz.-Techniker (Teil I)",
-    "parts": [
-      1
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-06-14",
-    "end_date": "2027-08-06",
-    "start_date_note": "",
-    "duration_hours": 320,
-    "course_fee": 2990.0,
-    "course_fee_display": "2.990 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 420.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "420 €",
-      "from_tariff": true
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/kraftfahrzeugservicetechniker"
   },
   {
     "chamber_slug": "hwk-kassel",
@@ -38116,78 +38114,6 @@
     "longitude": 8.7666044,
     "availability": "available",
     "source_url": "https://www.bbz-marburg.de/kurs/mv-kfz-tz/"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "kfz-techniker",
-    "trade_name": "Kfz.-Techniker",
-    "title": "Kfz.-Techniker (Teil II)",
-    "parts": [
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2028-03-13",
-    "end_date": "2028-06-16",
-    "start_date_note": "",
-    "duration_hours": 530,
-    "course_fee": 4600.0,
-    "course_fee_display": "4.600 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 420.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "420 €",
-      "from_tariff": true
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-im-kfz-techniker-handwerk"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "kfz-techniker",
-    "trade_name": "Kfz.-Techniker",
-    "title": "Kfz.-Techniker (Teil I)",
-    "parts": [
-      1
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2028-06-19",
-    "end_date": "2028-08-11",
-    "start_date_note": "",
-    "duration_hours": 320,
-    "course_fee": 3700.0,
-    "course_fee_display": "3.700 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 420.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "420 €",
-      "from_tariff": true
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/kraftfahrzeugservicetechniker"
   },
   {
     "chamber_slug": "hwk-kassel",
@@ -38297,43 +38223,6 @@
     "longitude": 9.498614,
     "availability": "unknown",
     "source_url": "https://www.kfz-innung-kassel.de/aus-und-weiterbildung-im-ftz/seminare-im-ftz#accordion-content-1109-490"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "land-und-baumaschinenmechatroniker",
-    "trade_name": "Land- und Baumaschinenmechatroniker",
-    "title": "Land- und Baumaschinenmechatroniker (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-10-04",
-    "end_date": "2028-04-28",
-    "start_date_note": "",
-    "duration_hours": 1100,
-    "course_fee": 11000.0,
-    "course_fee_display": "11.000 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 730.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "730 €",
-      "from_tariff": true
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-landmaschinenmechaniker-handwerk-teile-i-ii"
   },
   {
     "chamber_slug": "hwk-kassel",
@@ -38556,43 +38445,6 @@
     "longitude": 9.1225344,
     "availability": "available",
     "source_url": "https://veranstaltung.holzfachschule.de/seminar/modellbauermeister-in-teil-i-ii_104878"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "tischler",
-    "trade_name": "Tischler",
-    "title": "Tischler (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-01-18",
-    "end_date": "2027-06-11",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": 9975.0,
-    "course_fee_display": "9.975 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 730.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "730 €",
-      "from_tariff": true
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungslehrgang-im-tischler-schreinerhandwerk"
   },
   {
     "chamber_slug": "hwk-kassel",
@@ -39300,42 +39152,6 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
-    "start_date": "2027-05-10",
-    "end_date": "2027-07-09",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": 1830.0,
-    "course_fee_display": "1.830 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 340.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "340 €",
-      "from_tariff": true
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-teil-iii-fuer-alle-gewerke-im-handwerk"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
     "start_date": "2027-06-14",
     "end_date": "2027-07-16",
     "start_date_note": "",
@@ -39539,42 +39355,6 @@
     "longitude": 8.7666044,
     "availability": "available",
     "source_url": "https://www.bbz-marburg.de/kurs/ada-vz-96/"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-08-09",
-    "end_date": "2027-10-01",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": 1830.0,
-    "course_fee_display": "1.830 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 340.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "340 €",
-      "from_tariff": true
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-teil-iii-fuer-alle-gewerke-im-handwerk"
   },
   {
     "chamber_slug": "hwk-kassel",
@@ -39914,42 +39694,6 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
-    "start_date": "2028-01-10",
-    "end_date": "2028-02-29",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": 1920.0,
-    "course_fee_display": "1.920 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 340.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "340 €",
-      "from_tariff": true
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-teil-iii-fuer-alle-gewerke-im-handwerk"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
     "start_date": "2028-01-31",
     "end_date": "2028-03-04",
     "start_date_note": "",
@@ -40167,42 +39911,6 @@
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
-    "start_date": "2028-05-08",
-    "end_date": "2028-06-30",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": 1920.0,
-    "course_fee_display": "1.920 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 340.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "340 €",
-      "from_tariff": true
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-teil-iii-fuer-alle-gewerke-im-handwerk"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
     "start_date": "2028-06-19",
     "end_date": "2028-07-22",
     "start_date_note": "",
@@ -40225,42 +39933,6 @@
     "longitude": 8.7666044,
     "availability": "available",
     "source_url": "https://www.bbz-marburg.de/kurs/mv-iii-vz/"
-  },
-  {
-    "chamber_slug": "hwk-kassel",
-    "chamber_name": "HWK Kassel",
-    "chamber_region": "Hessen",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2028-07-31",
-    "end_date": "2028-09-22",
-    "start_date_note": "",
-    "duration_hours": null,
-    "course_fee": 1920.0,
-    "course_fee_display": "1.920 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 340.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "340 €",
-      "from_tariff": true
-    },
-    "city": "Petersberg",
-    "street": "Goerdelerstraße 139",
-    "zip_code": "36100",
-    "latitude": 50.5673891,
-    "longitude": 9.699491,
-    "availability": "available",
-    "source_url": "https://www.bbz-mitte.de/de/kursfinder/meistervorbereitungskurs-teil-iii-fuer-alle-gewerke-im-handwerk"
   },
   {
     "chamber_slug": "hwk-kassel",
@@ -45729,43 +45401,6 @@
     "longitude": 6.8936135,
     "availability": "available",
     "source_url": "https://www.hwk-koeln.de/32,0,coursedetail.html?id=39459"
-  },
-  {
-    "chamber_slug": "hwk-koeln",
-    "chamber_name": "HWK zu Köln",
-    "chamber_region": "Nordrhein-Westfalen",
-    "trade_slug": "maler-und-lackierer",
-    "trade_name": "Maler und Lackierer",
-    "title": "Maler und Lackierer (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-11-20",
-    "end_date": "2028-02-19",
-    "start_date_note": "",
-    "duration_hours": 950,
-    "course_fee": 9985.0,
-    "course_fee_display": "9.985 €",
-    "exam_fee_scraped": 2400.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 2400.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "2.400 €",
-      "from_tariff": false
-    },
-    "city": "Köln",
-    "street": "Köhlstr. 8",
-    "zip_code": "50827",
-    "latitude": 50.9758161,
-    "longitude": 6.8975287,
-    "availability": "available",
-    "source_url": "https://www.hwk-koeln.de/32,0,coursedetail.html?id=34722"
   },
   {
     "chamber_slug": "hwk-koeln",
@@ -55988,80 +55623,6 @@
       1,
       2
     ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-04-01",
-    "end_date": "2028-02-01",
-    "start_date_note": "Genauer Termin steht noch nicht fest.",
-    "duration_hours": 984,
-    "course_fee": 7923.8,
-    "course_fee_display": "7.924 €",
-    "exam_fee_scraped": 890.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 890.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "890 €",
-      "from_tariff": false
-    },
-    "city": "Magdeburg",
-    "street": "",
-    "zip_code": "",
-    "latitude": 52.1314783,
-    "longitude": 11.6400789,
-    "availability": "unknown",
-    "source_url": "https://www.hwk-magdeburg.de/16,0,coursedetail.html?id=50769"
-  },
-  {
-    "chamber_slug": "hwk-magdeburg",
-    "chamber_name": "HWK Magdeburg",
-    "chamber_region": "Sachsen-Anhalt",
-    "trade_slug": "installateur-und-heizungsbauer",
-    "trade_name": "Installateur- und Heizungsbauer",
-    "title": "Installateur- und Heizungsbauer (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "full_time",
-    "format_display": "Vollzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-09-06",
-    "end_date": "2028-06-03",
-    "start_date_note": "",
-    "duration_hours": 984,
-    "course_fee": 7923.8,
-    "course_fee_display": "7.924 €",
-    "exam_fee_scraped": 890.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 890.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "890 €",
-      "from_tariff": false
-    },
-    "city": "Magdeburg",
-    "street": "",
-    "zip_code": "",
-    "latitude": 52.1314783,
-    "longitude": 11.6400789,
-    "availability": "full",
-    "source_url": "https://www.hwk-magdeburg.de/16,0,coursedetail.html?id=49764"
-  },
-  {
-    "chamber_slug": "hwk-magdeburg",
-    "chamber_name": "HWK Magdeburg",
-    "chamber_region": "Sachsen-Anhalt",
-    "trade_slug": "installateur-und-heizungsbauer",
-    "trade_name": "Installateur- und Heizungsbauer",
-    "title": "Installateur- und Heizungsbauer (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
     "format": "part_time",
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
@@ -58308,43 +57869,6 @@
       3,
       4
     ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2027-05-10",
-    "end_date": "2028-04-24",
-    "start_date_note": "",
-    "duration_hours": 335,
-    "course_fee": 3200.0,
-    "course_fee_display": "3.200 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 330.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "330 €",
-      "from_tariff": true
-    },
-    "city": "Nürnberg",
-    "street": "",
-    "zip_code": "",
-    "latitude": 49.453872,
-    "longitude": 11.077298,
-    "availability": "available",
-    "source_url": "https://www.hwk-akademie.de/3751,0,coursedetail.html?id=623170"
-  },
-  {
-    "chamber_slug": "hwk-mittelfranken",
-    "chamber_name": "HWK für Mittelfranken",
-    "chamber_region": "Bayern",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
-    "parts": [
-      3,
-      4
-    ],
     "format": "full_time",
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
@@ -58407,6 +57931,43 @@
     "longitude": 11.077298,
     "availability": "available",
     "source_url": "https://www.hwk-akademie.de/3751,0,coursedetail.html?id=623154"
+  },
+  {
+    "chamber_slug": "hwk-mittelfranken",
+    "chamber_name": "HWK für Mittelfranken",
+    "chamber_region": "Bayern",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "parts": [
+      3,
+      4
+    ],
+    "format": "part_time",
+    "format_display": "Teilzeit",
+    "teaching_mode": "presence",
+    "start_date": "2027-06-07",
+    "end_date": "2028-04-24",
+    "start_date_note": "",
+    "duration_hours": 335,
+    "course_fee": 3200.0,
+    "course_fee_display": "3.200 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 330.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "330 €",
+      "from_tariff": true
+    },
+    "city": "Nürnberg",
+    "street": "",
+    "zip_code": "",
+    "latitude": 49.453872,
+    "longitude": 11.077298,
+    "availability": "available",
+    "source_url": "https://www.hwk-akademie.de/3751,0,coursedetail.html?id=623170"
   },
   {
     "chamber_slug": "hwk-mittelfranken",
@@ -59720,7 +59281,7 @@
     "start_date": "2027-10-18",
     "end_date": "2028-07-28",
     "start_date_note": "",
-    "duration_hours": 480,
+    "duration_hours": 472,
     "course_fee": 4220.0,
     "course_fee_display": "4.220 €",
     "exam_fee_scraped": 440.0,
@@ -62309,6 +61870,154 @@
     "longitude": 11.1463017,
     "availability": "available",
     "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1230593"
+  },
+  {
+    "chamber_slug": "hwk-muenchen-und-oberbayern",
+    "chamber_name": "HWK für München und Oberbayern",
+    "chamber_region": "Bayern",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "parts": [
+      3,
+      4
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2029-01-08",
+    "end_date": "2029-03-09",
+    "start_date_note": "",
+    "duration_hours": 340,
+    "course_fee": 2865.0,
+    "course_fee_display": "2.865 €",
+    "exam_fee_scraped": 312.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 312.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "312 €",
+      "from_tariff": false
+    },
+    "city": "Ingolstadt",
+    "street": "Brückenkopf 3",
+    "zip_code": "85051",
+    "latitude": 48.7587386,
+    "longitude": 11.4306481,
+    "availability": "available",
+    "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1236078"
+  },
+  {
+    "chamber_slug": "hwk-muenchen-und-oberbayern",
+    "chamber_name": "HWK für München und Oberbayern",
+    "chamber_region": "Bayern",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "parts": [
+      3,
+      4
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2029-03-19",
+    "end_date": "2029-05-18",
+    "start_date_note": "",
+    "duration_hours": 340,
+    "course_fee": 2865.0,
+    "course_fee_display": "2.865 €",
+    "exam_fee_scraped": 312.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 312.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "312 €",
+      "from_tariff": false
+    },
+    "city": "Ingolstadt",
+    "street": "Brückenkopf 3",
+    "zip_code": "85051",
+    "latitude": 48.7587386,
+    "longitude": 11.4306481,
+    "availability": "available",
+    "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1236083"
+  },
+  {
+    "chamber_slug": "hwk-muenchen-und-oberbayern",
+    "chamber_name": "HWK für München und Oberbayern",
+    "chamber_region": "Bayern",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "parts": [
+      3,
+      4
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2029-05-28",
+    "end_date": "2029-07-27",
+    "start_date_note": "",
+    "duration_hours": 340,
+    "course_fee": 2865.0,
+    "course_fee_display": "2.865 €",
+    "exam_fee_scraped": 312.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 312.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "312 €",
+      "from_tariff": false
+    },
+    "city": "Ingolstadt",
+    "street": "Brückenkopf 3",
+    "zip_code": "85051",
+    "latitude": 48.7587386,
+    "longitude": 11.4306481,
+    "availability": "available",
+    "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1236088"
+  },
+  {
+    "chamber_slug": "hwk-muenchen-und-oberbayern",
+    "chamber_name": "HWK für München und Oberbayern",
+    "chamber_region": "Bayern",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Wirtschaft und Recht, Pädagogik (Teile III + IV)",
+    "parts": [
+      3,
+      4
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2029-09-17",
+    "end_date": "2029-11-16",
+    "start_date_note": "",
+    "duration_hours": 340,
+    "course_fee": 2865.0,
+    "course_fee_display": "2.865 €",
+    "exam_fee_scraped": 312.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 312.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "312 €",
+      "from_tariff": false
+    },
+    "city": "Ingolstadt",
+    "street": "Brückenkopf 3",
+    "zip_code": "85051",
+    "latitude": 48.7587386,
+    "longitude": 11.4306481,
+    "availability": "available",
+    "source_url": "https://www.hwk-muenchen.de/74,0,coursedetail.html?id=1236093"
   },
   {
     "chamber_slug": "hwk-muenchen-und-oberbayern",
@@ -78140,7 +77849,7 @@
     "format_display": "Vollzeit",
     "teaching_mode": "presence",
     "start_date": "2027-02-01",
-    "end_date": "2027-03-25",
+    "end_date": "2027-03-24",
     "start_date_note": "",
     "duration_hours": 290,
     "course_fee": 2490.0,
@@ -90687,7 +90396,7 @@
     "zip_code": "",
     "latitude": 50.7206063,
     "longitude": 11.3401985,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwk-gera.de/5,0,coursedetail.html?id=121862"
   },
   {
@@ -93422,7 +93131,7 @@
     "latitude": 49.4261268,
     "longitude": 7.7748284,
     "availability": "available",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-dachdecker-teil-ii-51,0,coursedetail.html?id=109082&search-onr=51&img=12"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-dachdecker-teil-ii-51,0,coursedetail.html?id=109082&search-onr=51&img=11"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -93459,7 +93168,7 @@
     "latitude": 49.4760852,
     "longitude": 8.4080881,
     "availability": "full",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-elektrotechniker-teile-i-ii-51,0,coursedetail.html?id=103638&search-onr=51&img=2"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-elektrotechniker-teile-i-ii-51,0,coursedetail.html?id=103638&search-onr=51&img=1"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -93496,7 +93205,7 @@
     "latitude": 49.4760852,
     "longitude": 8.4080881,
     "availability": "available",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-elektrotechniker-teile-i-ii-51,0,coursedetail.html?id=110304&search-onr=51&img=9"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-elektrotechniker-teile-i-ii-51,0,coursedetail.html?id=110304&search-onr=51&img=8"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -93532,7 +93241,7 @@
     "latitude": 49.444007,
     "longitude": 7.7687411,
     "availability": "available",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-fliesen-platten-und-mosaikleger-teil-ii-51,0,coursedetail.html?id=103642&search-onr=51&img=2"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-fliesen-platten-und-mosaikleger-teil-ii-51,0,coursedetail.html?id=103642&search-onr=51&img=1"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -93568,7 +93277,7 @@
     "latitude": 49.444007,
     "longitude": 7.7687411,
     "availability": "unknown",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-fliesen-platten-und-mosaikleger-teil-ii-51,0,coursedetail.html?id=109085&search-onr=51&img=3"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-fliesen-platten-und-mosaikleger-teil-ii-51,0,coursedetail.html?id=109085&search-onr=51&img=2"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -93605,7 +93314,7 @@
     "latitude": 49.4495183,
     "longitude": 7.7678746,
     "availability": "available",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-informationstechniker-teile-i-ii-51,0,coursedetail.html?id=91509&search-onr=51&img=9"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-informationstechniker-teile-i-ii-51,0,coursedetail.html?id=91509&search-onr=51&img=8"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -93641,7 +93350,7 @@
     "latitude": 49.4495183,
     "longitude": 7.7678746,
     "availability": "full",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-installateur-und-heizungsbauer-teil-ii-51,0,coursedetail.html?id=103650&search-onr=51&img=10"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-installateur-und-heizungsbauer-teil-ii-51,0,coursedetail.html?id=103650&search-onr=51&img=9"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -93678,7 +93387,7 @@
     "latitude": 49.4760852,
     "longitude": 8.4080881,
     "availability": "full",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-installateur-und-heizungsbauer-teile-i-ii-51,0,coursedetail.html?id=107527&search-onr=51&img=16"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-installateur-und-heizungsbauer-teile-i-ii-51,0,coursedetail.html?id=107527&search-onr=51&img=15"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -93715,7 +93424,7 @@
     "latitude": 49.4760852,
     "longitude": 8.4080881,
     "availability": "available",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-installateur-und-heizungsbauer-teile-i-ii-51,0,coursedetail.html?id=110030&search-onr=51&img=6"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-installateur-und-heizungsbauer-teile-i-ii-51,0,coursedetail.html?id=110030&search-onr=51&img=5"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -93751,7 +93460,7 @@
     "latitude": 49.4495183,
     "longitude": 7.7678746,
     "availability": "available",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-installateur-und-heizungsbauer-teil-ii-51,0,coursedetail.html?id=107707&search-onr=51&img=7"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-installateur-und-heizungsbauer-teil-ii-51,0,coursedetail.html?id=107707&search-onr=51&img=6"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -93787,7 +93496,7 @@
     "latitude": 49.444007,
     "longitude": 7.7687411,
     "availability": "available",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-kraftfahrzeugtechniker-teil-ii-51,0,coursedetail.html?id=107662&search-onr=51&img=20"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-kraftfahrzeugtechniker-teil-ii-51,0,coursedetail.html?id=107662&search-onr=51&img=19"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -93823,7 +93532,7 @@
     "latitude": 49.444007,
     "longitude": 7.7687411,
     "availability": "unknown",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-kraftfahrzeugtechniker-teil-ii-51,0,coursedetail.html?id=111486&search-onr=51&img=8"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-kraftfahrzeugtechniker-teil-ii-51,0,coursedetail.html?id=111486&search-onr=51&img=7"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -93859,44 +93568,7 @@
     "latitude": 49.444007,
     "longitude": 7.7687411,
     "availability": "unknown",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-metallbauer-teil-ii-51,0,coursedetail.html?id=92252&search-onr=51&img=8"
-  },
-  {
-    "chamber_slug": "hwk-pfalz",
-    "chamber_name": "HWK der Pfalz",
-    "chamber_region": "Rheinland-Pfalz",
-    "trade_slug": "strassenbauer",
-    "trade_name": "Straßenbauer",
-    "title": "Straßenbauer (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-11-20",
-    "end_date": "2028-03-24",
-    "start_date_note": "",
-    "duration_hours": 768,
-    "course_fee": 5400.0,
-    "course_fee_display": "5.400 €",
-    "exam_fee_scraped": 1300.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 1300.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "1.300 €",
-      "from_tariff": false
-    },
-    "city": "Kaiserslautern",
-    "street": "Im Stadtwald 15",
-    "zip_code": "67663",
-    "latitude": 49.4261268,
-    "longitude": 7.7748284,
-    "availability": "full",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-strassenbauer-teile-i-ii-51,0,coursedetail.html?id=103631&search-onr=51&img=1"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-metallbauer-teil-ii-51,0,coursedetail.html?id=92252&search-onr=51&img=7"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -93933,7 +93605,7 @@
     "latitude": 49.4261268,
     "longitude": 7.7748284,
     "availability": "available",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-strassenbauer-teile-i-ii-51,0,coursedetail.html?id=111061&search-onr=51&img=4"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-strassenbauer-teile-i-ii-51,0,coursedetail.html?id=111061&search-onr=51&img=3"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -93970,7 +93642,7 @@
     "latitude": 49.444007,
     "longitude": 7.7687411,
     "availability": "available",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105678&search-onr=51&img=3"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105678&search-onr=51&img=2"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -94007,7 +93679,7 @@
     "latitude": 49.444007,
     "longitude": 7.7687411,
     "availability": "full",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105652&search-onr=51&img=4"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105652&search-onr=51&img=3"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -94044,7 +93716,7 @@
     "latitude": 49.4760852,
     "longitude": 8.4080881,
     "availability": "available",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=104969&search-onr=51&img=7"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=104969&search-onr=51&img=6"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -94081,7 +93753,7 @@
     "latitude": 49.444007,
     "longitude": 7.7687411,
     "availability": "available",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105601&search-onr=51&img=6"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105601&search-onr=51&img=5"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -94118,7 +93790,7 @@
     "latitude": 49.2117701,
     "longitude": 8.1271493,
     "availability": "available",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105611&search-onr=51&img=5"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105611&search-onr=51&img=4"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -94155,7 +93827,7 @@
     "latitude": 49.444007,
     "longitude": 7.7687411,
     "availability": "available",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=104043&search-onr=51&img=11"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=104043&search-onr=51&img=10"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -94192,7 +93864,7 @@
     "latitude": 49.444007,
     "longitude": 7.7687411,
     "availability": "unknown",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105629&search-onr=51&img=13"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105629&search-onr=51&img=12"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -94229,7 +93901,7 @@
     "latitude": 49.444007,
     "longitude": 7.7687411,
     "availability": "unknown",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105647&search-onr=51&img=14"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105647&search-onr=51&img=13"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -94266,7 +93938,7 @@
     "latitude": 49.444007,
     "longitude": 7.7687411,
     "availability": "unknown",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=107655&search-onr=51&img=15"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=107655&search-onr=51&img=14"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -94303,7 +93975,7 @@
     "latitude": 49.444007,
     "longitude": 7.7687411,
     "availability": "unknown",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105606&search-onr=51&img=18"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105606&search-onr=51&img=17"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -94340,7 +94012,7 @@
     "latitude": 49.444007,
     "longitude": 7.7687411,
     "availability": "unknown",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105616&search-onr=51&img=17"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105616&search-onr=51&img=16"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -94377,7 +94049,7 @@
     "latitude": 49.444007,
     "longitude": 7.7687411,
     "availability": "unknown",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105621&search-onr=51&img=19"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105621&search-onr=51&img=18"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -94414,7 +94086,7 @@
     "latitude": 49.444007,
     "longitude": 7.7687411,
     "availability": "unknown",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105662&search-onr=51&img=1"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=105662&search-onr=51&img=20"
   },
   {
     "chamber_slug": "hwk-pfalz",
@@ -94451,7 +94123,7 @@
     "latitude": 49.444007,
     "longitude": 7.7687411,
     "availability": "unknown",
-    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=109016&search-onr=51&img=5"
+    "source_url": "https://www.hwk-pfalz.de/kurse/meistervorbereitung-teile-iii-iv-51,0,coursedetail.html?id=109016&search-onr=51&img=4"
   },
   {
     "chamber_slug": "hwk-potsdam",
@@ -96731,7 +96403,7 @@
     "zip_code": "72762",
     "latitude": 48.4857514,
     "longitude": 9.2063686,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.hwk-reutlingen.de/seminar/r-mv-ii_kfz-tz/#kurs-5"
   },
   {
@@ -101876,42 +101548,6 @@
     "format": "part_time",
     "format_display": "Teilzeit",
     "teaching_mode": "presence",
-    "start_date": "2026-11-21",
-    "end_date": "2027-12-11",
-    "start_date_note": "",
-    "duration_hours": 240,
-    "course_fee": 1925.0,
-    "course_fee_display": "1.925 €",
-    "exam_fee_scraped": 110.0,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 110.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "110 €",
-      "from_tariff": false
-    },
-    "city": "Saarbrücken",
-    "street": "Hohenzollernstraße 47-49",
-    "zip_code": "66117",
-    "latitude": 49.2297,
-    "longitude": 6.9967,
-    "availability": "available",
-    "source_url": "https://www.hwk-saarland.de/seminar/m3/"
-  },
-  {
-    "chamber_slug": "hwk-saarland",
-    "chamber_name": "HWK des Saarlandes",
-    "chamber_region": "Saarland",
-    "trade_slug": "allgemein-teil-iii-iv",
-    "trade_name": "Wirtschaft, Recht, Pädagogik",
-    "title": "Wirtschaft und Recht (Teil III)",
-    "parts": [
-      3
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
     "start_date": "2026-11-30",
     "end_date": "2027-01-23",
     "start_date_note": "",
@@ -103247,8 +102883,45 @@
     "zip_code": "87435",
     "latitude": 47.7174731,
     "longitude": 10.3185888,
-    "availability": "available",
+    "availability": "full",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=397415"
+  },
+  {
+    "chamber_slug": "hwk-schwaben",
+    "chamber_name": "HWK für Schwaben",
+    "chamber_region": "Bayern",
+    "trade_slug": "installateur-und-heizungsbauer",
+    "trade_name": "Installateur- und Heizungsbauer",
+    "title": "Installateur- und Heizungsbauer (Teile I + II)",
+    "parts": [
+      1,
+      2
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2031-09-08",
+    "end_date": "2032-06-12",
+    "start_date_note": "",
+    "duration_hours": 1430,
+    "course_fee": 9000.0,
+    "course_fee_display": "9.000 €",
+    "exam_fee_scraped": 500.0,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 500.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "500 €",
+      "from_tariff": false
+    },
+    "city": "Kempten",
+    "street": "Kotterner Straße 39",
+    "zip_code": "87435",
+    "latitude": 47.7174731,
+    "longitude": 10.3185888,
+    "availability": "available",
+    "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=404895"
   },
   {
     "chamber_slug": "hwk-schwaben",
@@ -103654,7 +103327,7 @@
     "zip_code": "86161",
     "latitude": 48.3522511,
     "longitude": 10.9173148,
-    "availability": "unknown",
+    "availability": "full",
     "source_url": "https://www.bildungschwaben.de/3711,0,coursedetail.html?id=386022"
   },
   {

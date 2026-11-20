@@ -2149,11 +2149,6 @@
           "fee_max": null,
           "qualifier": ""
         },
-        "1,2": {
-          "fee": 890.0,
-          "fee_max": null,
-          "qualifier": ""
-        },
         "2": {
           "fee": 240.0,
           "fee_max": null,
