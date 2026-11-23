@@ -2268,13 +2268,6 @@
           "fee_max": null,
           "qualifier": ""
         }
-      },
-      "tischler": {
-        "1,2": {
-          "fee": 630.0,
-          "fee_max": null,
-          "qualifier": "ca."
-        }
       }
     },
     "hwk-muenchen-und-oberbayern": {
