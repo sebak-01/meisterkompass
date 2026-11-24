@@ -4764,6 +4764,42 @@
     "source_url": "https://www.hwkhalle.de/seminar/fb-uf-fkm-bf/#kurs-27759"
   },
   {
+    "chamber_slug": "hwk-halle-saale",
+    "chamber_name": "HWK Halle (Saale)",
+    "chamber_region": "Sachsen-Anhalt",
+    "trade_slug": "allgemein-teil-iii-iv",
+    "trade_name": "Wirtschaft, Recht, Pädagogik",
+    "title": "Berufs- und Arbeitspädagogik (Teil IV)",
+    "parts": [
+      4
+    ],
+    "format": "full_time",
+    "format_display": "Vollzeit",
+    "teaching_mode": "presence",
+    "start_date": "2026-11-23",
+    "end_date": "2026-12-04",
+    "start_date_note": "",
+    "duration_hours": 78,
+    "course_fee": 810.0,
+    "course_fee_display": "810 €",
+    "exam_fee_scraped": null,
+    "exam_fee_qualifier": "",
+    "exam_fee": {
+      "fee": 210.0,
+      "fee_max": null,
+      "qualifier": "",
+      "display": "210 €",
+      "from_tariff": true
+    },
+    "city": "Halle (Saale)",
+    "street": "Straße der Handwerker 2",
+    "zip_code": "06132",
+    "latitude": 51.4232026,
+    "longitude": 12.0122588,
+    "availability": "available",
+    "source_url": "https://www.hwkhalle.de/seminar/fb-aep-kompakt/#kurs-27574"
+  },
+  {
     "chamber_slug": "hwk-hamburg",
     "chamber_name": "HWK Hamburg",
     "chamber_region": "Hamburg",

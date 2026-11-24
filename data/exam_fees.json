@@ -2142,6 +2142,11 @@
           "fee_max": null,
           "qualifier": ""
         },
+        "1,2": {
+          "fee": 890.0,
+          "fee_max": null,
+          "qualifier": ""
+        },
         "2": {
           "fee": 240.0,
           "fee_max": null,
@@ -2299,7 +2304,7 @@
       },
       "friseur": {
         "1,2": {
-          "fee": 440.0,
+          "fee": 530.0,
           "fee_max": null,
           "qualifier": ""
         }
