@@ -1,16 +1,5 @@
 [
   {
-    "chamber_slug": "hwk-suedthueringen-suhl",
-    "trade_slug": "tischler",
-    "parts": [
-      1,
-      2
-    ],
-    "fee": 9950.0,
-    "exam_fee_scraped": null,
-    "is_generic": false
-  },
-  {
     "chamber_slug": "hwk-bremen",
     "trade_slug": "allgemein-teil-iii-iv",
     "parts": [
@@ -7759,6 +7748,17 @@
       4
     ],
     "fee": 9150.0,
+    "exam_fee_scraped": null,
+    "is_generic": false
+  },
+  {
+    "chamber_slug": "hwk-suedthueringen-suhl",
+    "trade_slug": "tischler",
+    "parts": [
+      1,
+      2
+    ],
+    "fee": 9950.0,
     "exam_fee_scraped": null,
     "is_generic": false
   },

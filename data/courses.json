@@ -46486,10 +46486,10 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 300.0,
+      "fee": 640.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "300 €",
+      "display": "640 €",
       "from_tariff": true
     },
     "city": "Köln",
@@ -109429,43 +109429,6 @@
     "longitude": 10.891878,
     "availability": "unknown",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/mb_we/"
-  },
-  {
-    "chamber_slug": "hwk-suedthueringen-suhl",
-    "chamber_name": "HWK Südthüringen",
-    "chamber_region": "Thüringen",
-    "trade_slug": "tischler",
-    "trade_name": "Tischler",
-    "title": "Tischler (Teile I + II)",
-    "parts": [
-      1,
-      2
-    ],
-    "format": "part_time",
-    "format_display": "Teilzeit",
-    "teaching_mode": "presence",
-    "start_date": "2026-11-27",
-    "end_date": "2028-07-29",
-    "start_date_note": "",
-    "duration_hours": 900,
-    "course_fee": 9950.0,
-    "course_fee_display": "9.950 €",
-    "exam_fee_scraped": null,
-    "exam_fee_qualifier": "",
-    "exam_fee": {
-      "fee": 555.0,
-      "fee_max": null,
-      "qualifier": "",
-      "display": "555 €",
-      "from_tariff": true
-    },
-    "city": "Rohr",
-    "street": "Kloster 1",
-    "zip_code": "98530",
-    "latitude": 50.707055,
-    "longitude": 10.891878,
-    "availability": "available",
-    "source_url": "https://www.hwk-suedthueringen.de/seminar/m_tischler_we/#kurs-207638"
   },
   {
     "chamber_slug": "hwk-suedthueringen-suhl",
