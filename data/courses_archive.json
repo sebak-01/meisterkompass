@@ -7575,10 +7575,10 @@
     "exam_fee_scraped": null,
     "exam_fee_qualifier": "",
     "exam_fee": {
-      "fee": 312.0,
+      "fee": 330.0,
       "fee_max": null,
       "qualifier": "",
-      "display": "312 €",
+      "display": "330 €",
       "from_tariff": true
     },
     "city": "München",
@@ -10399,7 +10399,7 @@
     "zip_code": "98530",
     "latitude": 50.707055,
     "longitude": 10.891878,
-    "availability": "available",
+    "availability": "unknown",
     "source_url": "https://www.hwk-suedthueringen.de/seminar/m_tischler_we/#kurs-207638"
   },
   {
